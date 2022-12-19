@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.4395833mm"
+   height="4.1957521mm"
+   viewBox="0 0 3.4395833 4.1957521"
+   version="1.1"
+   id="svg7217"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="business_function.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7219"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.74118967"
+     inkscape:cx="-321.10539"
+     inkscape:cy="-142.33873"
+     inkscape:window-width="1419"
+     inkscape:window-height="1040"
+     inkscape:window-x="434"
+     inkscape:window-y="8"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs7214">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6">
+      <path
+         d="m 162,96 h 122 v 57 H 162 Z"
+         id="path942" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-154.2766,-186.38289)">
+    <polygon
+       fill="none"
+       clip-path="url(#clipPath6)"
+       points="277,107 277,116 271,110 265,116 265,107 271,102 "
+       stroke="#000000"
+       id="polygon1002"
+       transform="matrix(0.26458333,0,0,0.26458333,84.294312,159.5676)"
+       style="font-family:'Segoe UI';fill:#ffffb5;fill-opacity:1;stroke-linecap:butt;text-rendering:optimizeLegibility;stroke-width:0.80000001;stroke-dasharray:none" />
+  </g>
+</svg>
