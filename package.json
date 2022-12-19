@@ -1,6 +1,6 @@
 {
   "name": "archimate-js",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "An ArchiMate diagrams modeler builds on diagram-js modeler engine from bpmn.io project",
   "author": {
     "name": "Vincent Boulet"
