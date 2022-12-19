@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release
 
-* `FEAT`: 
-* `CORE`: 
-* `FIX`: 
+* `FEAT`: create Note
+* `CORE`: ArchiMate elements supported
+    * Bussiness layer : Actor, Interface, Function, Process
+    * Application layer : Interface, Function, Process
+    * Technology layer : Interface, Function, Process
+* `CORE`: ArchiMate relationships supported
+    * Association
