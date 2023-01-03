@@ -6,7 +6,9 @@
     "name": "Vincent Boulet"
   },
   "license": "MIT",
-  "keywords": ["archimate"],
+  "keywords": [
+    "archimate"
+  ],
   "scripts": {
     "all": "run-s lint test",
     "lint": "eslint ."
@@ -16,7 +18,6 @@
     "url": "https://github.com/archimodel/archimate-js"
   },
   "files": [
-    ".babelrc",
     "index.js",
     "assets",
     "dist",
@@ -39,8 +40,8 @@
   "dependencies": {
     "bpmn-font": "^0.10.0",
     "css.escape": "^1.5.1",
-    "diagram-js": "^7.6.0",
-    "diagram-js-direct-editing": "^1.6.3",
+    "diagram-js": "^11.4.1",
+    "diagram-js-direct-editing": "^2.0.0",
     "ids": "^1.0.0",
     "immutable": "^4.0.0",
     "inherits": "^2.0.4",
@@ -49,7 +50,6 @@
     "moddle": "^5.0.2",
     "moddle-xml": "^9.0.5",
     "object-refs": "^0.3.0",
-    "tiny-svg": "^2.2.2",
-    "uuid": "^8.3.2"
+    "tiny-svg": "^2.2.2"
   }
 }
