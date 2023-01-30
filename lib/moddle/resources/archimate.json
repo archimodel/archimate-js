@@ -159,6 +159,11 @@
       "superClass": ["IdObject"],
       "properties": [
         {
+          "name": "xsi:type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "style",
           "type": "Style"
         }
