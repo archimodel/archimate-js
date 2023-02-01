@@ -232,6 +232,11 @@
     { "name": "Style",
       "properties": [
         {
+          "name": "lineWidth",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
           "name": "font",
           "type": "Font"
         },
