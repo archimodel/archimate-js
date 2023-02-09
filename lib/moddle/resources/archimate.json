@@ -47,6 +47,21 @@
           "isReference": true,
           "type": "BaseElement",
           "isAttr": true
+        },
+        {
+          "name": "isDirected",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "accessType",
+          "type": "String",
+          "isAttr": true
         }
       ]
     },
