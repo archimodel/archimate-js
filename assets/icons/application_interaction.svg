@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-       d="M 10.5 1 Q 16.5 1 16.5 9 Q 16.5 17 10.5 17 Z M 7.5 17 Q 1.5 17 1.5 9 Q 1.5 1 7.5 1 Z" fill="#B5FFFF" stroke="black" stroke-width="0.8" />
+       d="m 10.5 2 q 6 0 6 7 q 0 7 -6 7 z m -3 14 q -6 0 -6 -7 q 0 -7 6 -7 z" fill="#B5FFFF" stroke="black" stroke-width="0.8" />
 </svg>
