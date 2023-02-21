@@ -510,7 +510,7 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
-.archimate-tool-note {
+.archimate-menu-tool-note {
 background-image: url("./icons/note.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
@@ -520,7 +520,7 @@ width: 22px !important;
 height: 22px !important;
 }
 
-.archimate-tool-note:hover {
+.archimate-menu-tool-note:hover {
 background-color: lightgrey;
 }
 
