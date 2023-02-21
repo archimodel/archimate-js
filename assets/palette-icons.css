@@ -45,11 +45,11 @@ background-color: lightgrey;
 .archimate-strategy-value-stream {
 background-image: url("./icons/strategy_value_stream.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-strategy-value-stream:hover {
@@ -59,11 +59,11 @@ background-color: lightgrey;
 .archimate-strategy-capability {
 background-image: url("./icons/strategy_capability.svg");
 background-repeat: no-repeat;
-background-size:20px 20px;
+background-size:18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-strategy-capability:hover {
@@ -73,11 +73,11 @@ background-color: lightgrey;
 .archimate-strategy-resource {
 background-image: url("./icons/strategy_resource.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-strategy-resource:hover {
@@ -87,11 +87,11 @@ background-color: lightgrey;
 .archimate-strategy-course-of-action {
 background-image: url("./icons/strategy_course_of_action.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-strategy-course-of-action:hover {
@@ -103,11 +103,11 @@ background-color: lightgrey;
 .archimate-business-actor {
 background-image: url("./icons/business_actor.svg");
 background-repeat: no-repeat;
-background-size: 21px 21px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-actor:hover {
@@ -117,11 +117,11 @@ background-color: lightgrey;
 .archimate-business-interface {
 background-image: url("./icons/business_interface.svg");
 background-repeat: no-repeat;
-background-size: 20px 21px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-interface:hover {
@@ -131,11 +131,11 @@ background-color: lightgrey;
 .archimate-business-collaboration {
 background-image: url("./icons/business_collaboration.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-collaboration:hover {
@@ -145,11 +145,11 @@ background-color: lightgrey;
 .archimate-business-function {
 background-image: url("./icons/business_function.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-function:hover {
@@ -159,11 +159,11 @@ background-color: lightgrey;
 .archimate-business-process {
 background-image: url("./icons/business_process.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-process:hover {
@@ -173,11 +173,11 @@ background-color: lightgrey;
 .archimate-business-interaction {
 background-image: url("./icons/business_interaction.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-interaction:hover {
@@ -187,11 +187,11 @@ background-color: lightgrey;
 .archimate-business-service {
 background-image: url("./icons/business_service.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-service:hover {
@@ -201,11 +201,11 @@ background-color: lightgrey;
 .archimate-business-role {
 background-image: url("./icons/business_role.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-role:hover {
@@ -215,11 +215,11 @@ background-color: lightgrey;
 .archimate-business-event {
 background-image: url("./icons/business_event.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-event:hover {
@@ -229,11 +229,11 @@ background-color: lightgrey;
 .archimate-business-object {
 background-image: url("./icons/business_object.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-object:hover {
@@ -243,11 +243,11 @@ background-color: lightgrey;
 .archimate-business-contract {
 background-image: url("./icons/business_contract.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-contract:hover {
@@ -257,11 +257,11 @@ background-color: lightgrey;
 .archimate-business-product {
 background-image: url("./icons/business_product.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-product:hover {
@@ -271,11 +271,11 @@ background-color: lightgrey;
 .archimate-business-representation {
 background-image: url("./icons/business_representation.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-business-representation:hover {
@@ -418,22 +418,36 @@ background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-technology-interface:hover {
 background-color: lightgrey;
 }
 
+.archimate-technology-service {
+background-image: url("./icons/technology_service.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-service:hover {
+background-color: lightgrey;
+}    
+
 .archimate-technology-function {
 background-image: url("./icons/technology_function.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-technology-function:hover {
@@ -443,25 +457,67 @@ background-color: lightgrey;
 .archimate-technology-process {
 background-image: url("./icons/technology_process.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-technology-process:hover {
 background-color: lightgrey;
 }
 
+.archimate-technology-interaction {
+background-image: url("./icons/technology_interaction.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-interaction:hover {
+background-color: lightgrey;
+}
+    
+.archimate-technology-collaboration {
+background-image: url("./icons/technology_collaboration.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-collaboration:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-event {
+background-image: url("./icons/technology_event.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-event:hover {
+background-color: lightgrey;
+}
+
 .archimate-tool-note {
 background-image: url("./icons/note.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .archimate-tool-note:hover {
@@ -471,11 +527,11 @@ background-color: lightgrey;
 .ajs-group {
 background-image: url("./icons/group.svg");
 background-repeat: no-repeat;
-background-size: 20px 20px;
+background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
-width: 24px !important;
-height: 24px !important;
+width: 22px !important;
+height: 22px !important;
 }
 
 .ajs-group:hover {
