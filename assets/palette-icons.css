@@ -510,6 +510,92 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
+.archimate-technology-artifact {
+background-image: url("./icons/technology_artifact.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-artifact:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-node {
+background-image: url("./icons/technology_node.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-node:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-system-software {
+background-image: url("./icons/technology_system_software.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-system-software:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-communication-network {
+background-image: url("./icons/technology_communication_network.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-communication-network:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-path {
+background-image: url("./icons/technology_path.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-path:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-device {
+background-image: url("./icons/technology_device.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-device:hover {
+background-color: lightgrey;
+}
+
+/* OTHER */
+
 .archimate-menu-tool-note {
 background-image: url("./icons/note.svg");
 background-repeat: no-repeat;
