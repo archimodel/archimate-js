@@ -27,6 +27,17 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2) !important;
 }
 
+/* TEXT OPTIONS POPUP MENU */
+
+.djs-popup.text-options .entry {
+  margin: 0;
+}
+
+.djs-popup.text-options .djs-popup-group {
+display: grid;
+grid: auto-flow / 1fr 1fr 1fr;
+}
+
 /* General */
 button {
   border: none;
