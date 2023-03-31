@@ -181,6 +181,10 @@
         {
           "name": "style",
           "type": "Style"
+        },
+        {
+          "name": "label",
+          "type": "String"
         }
       ]
     },
@@ -360,37 +364,6 @@
         {
           "name": "y",
           "type": "Integer",
-          "isAttr": true
-        }
-      ]
-    },
-    { "name": "Note",
-      "superClass": ["ViewElement"],
-      "properties": [
-        {
-          "name": "label",
-          "type": "String"
-        },
-        {
-          "name": "x",
-          "type": "Real",
-          "default": "0",
-          "isAttr": true
-        },
-        {
-          "name": "y",
-          "type": "Real",
-          "default": "0",
-          "isAttr": true
-        },
-        {
-          "name": "w",
-          "type": "Real",
-          "isAttr": true
-        },
-        {
-          "name": "h",
-          "type": "Real",
           "isAttr": true
         }
       ]

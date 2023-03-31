@@ -46,6 +46,7 @@
     "css.escape": "^1.5.1",
     "diagram-js": "^11.4.1",
     "diagram-js-direct-editing": "^2.0.0",
+    "hex-and-rgba": "^2.0.0",
     "ids": "^1.0.0",
     "inherits": "^2.0.4",
     "inherits-browser": "^0.1.0",
