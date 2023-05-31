@@ -47,6 +47,21 @@
           "isReference": true,
           "type": "BaseElement",
           "isAttr": true
+        },
+        {
+          "name": "isDirected",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "accessType",
+          "type": "String",
+          "isAttr": true
         }
       ]
     },
@@ -159,8 +174,17 @@
       "superClass": ["IdObject"],
       "properties": [
         {
+          "name": "xsi:type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
           "name": "style",
           "type": "Style"
+        },
+        {
+          "name": "label",
+          "type": "String"
         }
       ]
     },
@@ -226,6 +250,16 @@
     },
     { "name": "Style",
       "properties": [
+        {
+          "name": "lineWidth",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "textAlign",
+          "type": "String",
+          "isAttr": true
+        },
         {
           "name": "font",
           "type": "Font"
@@ -330,37 +364,6 @@
         {
           "name": "y",
           "type": "Integer",
-          "isAttr": true
-        }
-      ]
-    },
-    { "name": "Note",
-      "superClass": ["ViewElement"],
-      "properties": [
-        {
-          "name": "label",
-          "type": "String"
-        },
-        {
-          "name": "x",
-          "type": "Real",
-          "default": "0",
-          "isAttr": true
-        },
-        {
-          "name": "y",
-          "type": "Real",
-          "default": "0",
-          "isAttr": true
-        },
-        {
-          "name": "w",
-          "type": "Real",
-          "isAttr": true
-        },
-        {
-          "name": "h",
-          "type": "Real",
           "isAttr": true
         }
       ]

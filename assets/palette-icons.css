@@ -1,0 +1,638 @@
+.ajs-tool-hand {
+background-image: url("./icons/tool_hand.svg");
+background-repeat: no-repeat;
+background-size: 22px 22px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.ajs-tool-hand:hover {
+background-color: lightgrey;
+}
+
+.ajs-tool-select {
+background-image: url("./icons/tool_select.svg");
+background-repeat: no-repeat;
+background-size: 22px 22px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.ajs-tool-select:hover {
+background-color: lightgrey;
+}
+
+.ajs-tool-space {
+background-image: url("./icons/tool_space.svg");
+background-repeat: no-repeat;
+background-size: 22px 22px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.ajs-tool-space:hover {
+background-color: lightgrey;
+}
+
+/* STRATEGY LAYER */ 
+
+.archimate-strategy-value-stream {
+background-image: url("./icons/strategy_value_stream.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-strategy-value-stream:hover {
+background-color: lightgrey;
+}
+
+.archimate-strategy-capability {
+background-image: url("./icons/strategy_capability.svg");
+background-repeat: no-repeat;
+background-size:18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-strategy-capability:hover {
+background-color: lightgrey;
+}
+
+.archimate-strategy-resource {
+background-image: url("./icons/strategy_resource.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-strategy-resource:hover {
+background-color: lightgrey;
+}
+
+.archimate-strategy-course-of-action {
+background-image: url("./icons/strategy_course_of_action.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-strategy-course-of-action:hover {
+background-color: lightgrey;
+}
+
+/* BUSINESS LAYER */
+
+.archimate-business-actor {
+background-image: url("./icons/business_actor.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-actor:hover {
+background-color: lightgrey;
+} 
+
+.archimate-business-interface {
+background-image: url("./icons/business_interface.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-interface:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-collaboration {
+background-image: url("./icons/business_collaboration.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-collaboration:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-function {
+background-image: url("./icons/business_function.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-function:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-process {
+background-image: url("./icons/business_process.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-process:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-interaction {
+background-image: url("./icons/business_interaction.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-interaction:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-service {
+background-image: url("./icons/business_service.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-service:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-role {
+background-image: url("./icons/business_role.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-role:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-event {
+background-image: url("./icons/business_event.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-event:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-object {
+background-image: url("./icons/business_object.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-object:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-contract {
+background-image: url("./icons/business_contract.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-contract:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-product {
+background-image: url("./icons/business_product.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-product:hover {
+background-color: lightgrey;
+}
+
+.archimate-business-representation {
+background-image: url("./icons/business_representation.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-business-representation:hover {
+background-color: lightgrey;
+}
+
+/* APPLICATION LAYER */
+
+.archimate-application-component {
+background-image: url("./icons/application_component.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-component:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-event {
+background-image: url("./icons/application_event.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-event:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-interface {
+background-image: url("./icons/application_interface.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-interface:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-function {
+background-image: url("./icons/application_function.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-function:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-process {
+background-image: url("./icons/application_process.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-process:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-collaboration {
+background-image: url("./icons/application_collaboration.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-collaboration:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-service {
+background-image: url("./icons/application_service.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-service:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-data-object {
+background-image: url("./icons/application_data_object.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-data-object:hover {
+background-color: lightgrey;
+}
+
+.archimate-application-interaction {
+background-image: url("./icons/application_interaction.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-application-interaction:hover {
+background-color: lightgrey;
+}
+
+/* TECHNOLOGY LAYER */
+
+.archimate-technology-interface {
+background-image: url("./icons/technology_interface.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-interface:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-service {
+background-image: url("./icons/technology_service.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-service:hover {
+background-color: lightgrey;
+}    
+
+.archimate-technology-function {
+background-image: url("./icons/technology_function.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-function:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-process {
+background-image: url("./icons/technology_process.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-process:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-interaction {
+background-image: url("./icons/technology_interaction.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-interaction:hover {
+background-color: lightgrey;
+}
+    
+.archimate-technology-collaboration {
+background-image: url("./icons/technology_collaboration.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-collaboration:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-event {
+background-image: url("./icons/technology_event.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-event:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-artifact {
+background-image: url("./icons/technology_artifact.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-artifact:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-node {
+background-image: url("./icons/technology_node.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-node:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-system-software {
+background-image: url("./icons/technology_system_software.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-system-software:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-communication-network {
+background-image: url("./icons/technology_communication_network.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-communication-network:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-path {
+background-image: url("./icons/technology_path.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-path:hover {
+background-color: lightgrey;
+}
+
+.archimate-technology-device {
+background-image: url("./icons/technology_device.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-technology-device:hover {
+background-color: lightgrey;
+}
+
+/* OTHER */
+
+.archimate-menu-tool-note {
+background-image: url("./icons/note.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-menu-tool-note:hover {
+background-color: lightgrey;
+}
+
+.ajs-group {
+background-image: url("./icons/group.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.ajs-group:hover {
+background-color: lightgrey;
+}
+
+.ajs-image {
+background-image: url("./icons/image.svg");
+background-repeat: no-repeat;
+background-size: cover;
+margin: 8px 8px 4px 8px;
+width: 16px !important;
+height: 16px !important;
+}
+
+.ajs-image:hover {
+fill: rgb(255, 116, 0);
+}
