@@ -1,6 +1,6 @@
 {
   "name": "archimate-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An ArchiMate diagrams modeler builds on diagram-js modeler engine from bpmn.io project",
   "author": {
     "name": "Vincent Boulet"
@@ -41,7 +41,7 @@
     "webpack": "^5.61.0"
   },
   "dependencies": {
-    "archimate-font": "file:../archimate-font",
+    "archimate-font": "^0.0.2",
     "bpmn-font": "^0.10.0",
     "css.escape": "^1.5.1",
     "diagram-js": "^12.1.0",
