@@ -30,6 +30,10 @@
         {
           "name": "documentation",
           "type": "String"
+        },
+        {
+          "name": "propertiesNode",
+          "type": "Properties"
         }
       ]
     },
@@ -131,6 +135,29 @@
         }
       ]
     },
+    { "name": "Property",
+      "properties":[
+        {
+          "name": "propertyDefinitionRef",
+          "type": "PropertyDefinition",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "value",
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "Properties",
+      "properties": [
+        {
+          "name": "properties",
+          "type": "Property",
+          "isMany": true
+        }
+      ]
+    },
     { "name": "Views",
       "properties": [
         {
@@ -190,7 +217,12 @@
     },
     { "name": "Node",
       "superClass": ["ViewElement"],
-      "properties": [     
+      "properties": [
+        {
+          "name": "nodes",
+          "type": "Node",
+          "isMany": true
+        }, 
         {
           "name": "elementRef",
           "isAttr": true,
