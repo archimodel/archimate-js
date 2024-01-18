@@ -1,3 +1,11 @@
+@import url("./palette-icons.css");
+
+@import 'diagram-js/assets/diagram-js.css';
+@import 'archimate-font/dist/css/archimate-font.css';
+
+@import url("https://use.typekit.net/ubp7usd.css");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 @font-face {
   font-family: "IBM Plex";
   src: url("./ibm-plex-font/IBMPlexSans-Regular.ttf");
@@ -12,15 +20,6 @@
   url("./font-awesome-5/29f589f173dcc69ef6c805b711894998.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url("./font-awesome-5/29f589f173dcc69ef6c805b711894998.svg#Font Awesome 5 Free Solid") format("svg"); /* iOS 4.1- */
 }
-
-@import url("./palette-icons.css");
-
-@import 'diagram-js/assets/diagram-js.css';
-@import 'archimate-font/dist/css/archimate-font.css';
-
-@import url("https://use.typekit.net/ubp7usd.css");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
 
 /* OVERWRITING Diagram.js */
 .djs-palette {
