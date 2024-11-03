@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="2048"
+   height="2048"
+   id="svg3891">
+  <defs
+     id="defs3893" />
+    <g
+       id="layer1-6">
+      <path
+         d="M 600 1300 L 700 1200 L 800 1300 L 700 1400 Z M 800 1100 L 900 1000 L 1000 1100 L 900 1200 Z M 1000 900 L 1100 800 L 1200 900 L 1100 1000 Z M 1200 700 L 1300 600 L 1400 700 L 1300 800 Z M 1400 500 L 1500 400 L 1600 500 L 1500 600 Z M 1600 300 L 1700 400 L 1800 300 L 1700 200 Z M 450 950 L 150 1850 L 1050 1550 L 1006 1418 L 370 1630 L 582 994 Z M 500 1400 L 400 1500 L 500 1600 L 600 1500 Z"
+         id="path7791"
+	  />
+    </g>
+</svg>

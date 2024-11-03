@@ -1,0 +1,31 @@
+{
+  "name": "archimate-font",
+  "description": "An ArchiMate symbol font for archimate-js",
+  "version": "0.0.2",
+  "keywords": [
+    "archimate",
+    "font",
+    "iconfont",
+    "icons"
+  ],
+  "author": "Vincent Boulet",
+  "license": "OFL-1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archimodel/archimate-font.git"
+  },
+  "files": [
+    "lib/css/archimate-font-codes.css",
+    "lib/css/archimate-font-embedded.css",
+    "lib/css/archimate-font.css",
+    "lib/css/archimate-font-ie7-codes.css",
+    "lib/css/archimate-font-ie7.css",
+    "lib/css/animation.css",
+    "lib/font/",
+    "lib/demo.html",
+    "lib/LICENSE.txt",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://github.com/archimodel/archimate-font"
+}
