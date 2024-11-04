@@ -1,7 +1,7 @@
 @import url("./palette-icons.css");
 
 @import 'diagram-js/assets/diagram-js.css';
-@import 'archimate-font/dist/css/archimate-font.css';
+@import 'archimate-font/lib/css/archimate-font.css';
 
 @import url("https://use.typekit.net/ubp7usd.css");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
