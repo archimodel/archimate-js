@@ -144,6 +144,27 @@
     .i-code {
       display: none;
     }
+    .demo-links {
+      position: absolute;
+      right: 0;
+      top: 18px;
+      display: flex;
+      gap: 8px;
+    }
+    .demo-links a {
+      border: 1px solid #c8d0d9;
+      border-radius: 4px;
+      padding: 4px 9px;
+      color: #333;
+      background: #fff;
+      font-size: 13px;
+    }
+    .demo-links a:hover {
+      border-color: #8cb8ff;
+      background: #e9f1ff;
+      color: #333;
+      text-decoration: none;
+    }
     @font-face {
       font-family: 'archimate-font';
       src: url('./font/archimate-font.eot?23790614');
@@ -205,6 +226,10 @@
   <body>
     <div class="container header">
       <h1>archimate-font <small>font demo</small></h1>
+      <nav class="demo-links" aria-label="archimate-js demos">
+        <a href="../../demo/viewer.html">Viewer</a>
+        <a href="../../demo/editor.html">Editor</a>
+      </nav>
       <label class="switch">
         <input type="checkbox" onclick="toggleCodes(this.checked)">show codes
       </label>

@@ -1,0 +1,10 @@
+source: local licensed ArchiMate 4 Specification C260 PDF
+purpose: derived multiplicity notation signal check only; no normative prose copied
+pdf_pages: 207
+page=8 hits=multiplicity range_tokens=
+page=60 hits=none range_tokens=0..10
+page=68 hits=multiplicity|0..*|n..m range_tokens=*,0..*
+page=69 hits=multiplicity range_tokens=
+page=167 hits=none range_tokens=*
+page=200 hits=multiplicity range_tokens=
+derived_check: if C260 examples or notation include non-zero unbounded ranges such as 1..*, local validation must allow them instead of waiting for MEFF 4.0

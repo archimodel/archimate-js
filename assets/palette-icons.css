@@ -597,7 +597,7 @@ background-color: lightgrey;
 /* ARCHIMATE 4 COMMON DOMAIN */
 
 .archimate-common-role {
-background-image: url("./icons/business_role.svg");
+background-image: url("./icons/common_role.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -611,7 +611,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-collaboration {
-background-image: url("./icons/business_collaboration.svg");
+background-image: url("./icons/common_collaboration.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -625,7 +625,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-service {
-background-image: url("./icons/business_service.svg");
+background-image: url("./icons/common_service.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -639,7 +639,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-process {
-background-image: url("./icons/business_process.svg");
+background-image: url("./icons/common_process.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -653,7 +653,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-function {
-background-image: url("./icons/business_function.svg");
+background-image: url("./icons/common_function.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -667,7 +667,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-event {
-background-image: url("./icons/business_event.svg");
+background-image: url("./icons/common_event.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -681,7 +681,7 @@ background-color: lightgrey;
 }
 
 .archimate-common-path {
-background-image: url("./icons/technology_path.svg");
+background-image: url("./icons/common_path.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -696,7 +696,6 @@ background-color: lightgrey;
 
 .archimate-common-grouping,
 .archimate-common-location {
-background-image: url("./icons/group.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
@@ -708,6 +707,14 @@ height: 22px !important;
 .archimate-common-grouping:hover,
 .archimate-common-location:hover {
 background-color: lightgrey;
+}
+
+.archimate-common-grouping {
+background-image: url("./icons/common_grouping.svg");
+}
+
+.archimate-common-location {
+background-image: url("./icons/common_location.svg");
 }
 
 /* ARCHIMATE 4 FALLBACK ALIASES */

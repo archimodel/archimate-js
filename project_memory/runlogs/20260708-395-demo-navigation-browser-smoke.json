@@ -1,0 +1,49 @@
+{
+  "viewer": {
+    "canvasSvg": 1,
+    "djsElements": 9,
+    "paletteEntries": 0,
+    "status": "ready",
+    "title": "archimate-js Viewer Demo",
+    "url": "http://127.0.0.1:4174/demo/viewer.html"
+  },
+  "editor": {
+    "canvasSvg": 1,
+    "djsElements": 9,
+    "paletteEntries": 57,
+    "status": "ready",
+    "title": "archimate-js Editor Demo",
+    "url": "http://127.0.0.1:4174/demo/editor.html"
+  },
+  "index": {
+    "links": [
+      {
+        "href": "./viewer.html",
+        "text": "Viewer"
+      },
+      {
+        "href": "./editor.html",
+        "text": "Editor"
+      },
+      {
+        "href": "../archimate-font/lib/demo.html",
+        "text": "Font"
+      },
+      {
+        "href": "./viewer.html",
+        "text": "Viewer ArchiMate 4.0 read-only sample"
+      },
+      {
+        "href": "./editor.html",
+        "text": "Editor ArchiMate 4.0 editable sample"
+      }
+    ],
+    "title": "archimate-js Demo",
+    "url": "http://127.0.0.1:4174/demo/index.html"
+  },
+  "screenshots": [
+    ".codex-runlogs/demo-viewer-smoke.png",
+    ".codex-runlogs/demo-editor-smoke.png",
+    ".codex-runlogs/demo-index-smoke.png"
+  ]
+}

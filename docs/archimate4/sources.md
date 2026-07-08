@@ -108,6 +108,9 @@
 - Domain colors are resolved from `domain` first when available, then the legacy `layer` value.
 - The ArchiMate 4 palette exposes all 42 standard elements. `Grouping` and `Location` are Common
   composite elements and are no longer hidden by the legacy 3.x palette exclusion flag.
+- The Viewer and Editor demos now use a visible ArchiMate 4 Common Domain sample and the Editor
+  palette maps Common Domain entries to Common-colored `common_*.svg` assets, guarded by
+  `test/language-profile.test.mjs`.
 
 ## Viewpoint Mechanism
 

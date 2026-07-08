@@ -27,10 +27,10 @@ export function seedSampleCanvas(instance) {
   const elementFactory = instance.get('elementFactory');
   const root = canvas.getRootElement();
 
-  const actor = addShape(canvas, elementFactory, root, {
-    type: 'BusinessActor',
-    name: 'Customer',
-    x: 80,
+  const role = addShape(canvas, elementFactory, root, {
+    type: 'Role',
+    name: 'Customer Role',
+    x: 170,
     y: 92,
     width: 150,
     height: 76
@@ -39,7 +39,7 @@ export function seedSampleCanvas(instance) {
   const service = addShape(canvas, elementFactory, root, {
     type: 'Service',
     name: 'Digital Service',
-    x: 360,
+    x: 430,
     y: 92,
     width: 170,
     height: 76
@@ -48,48 +48,77 @@ export function seedSampleCanvas(instance) {
   const application = addShape(canvas, elementFactory, root, {
     type: 'ApplicationComponent',
     name: 'Experience App',
-    x: 650,
+    x: 720,
     y: 92,
     width: 190,
+    height: 76
+  });
+
+  const path = addShape(canvas, elementFactory, root, {
+    type: 'Path',
+    name: 'Experience Path',
+    x: 170,
+    y: 335,
+    width: 150,
+    height: 76
+  });
+
+  const grouping = addShape(canvas, elementFactory, root, {
+    type: 'Grouping',
+    name: 'Shared Context',
+    x: 430,
+    y: 260,
+    width: 170,
     height: 76
   });
 
   const junction = addShape(canvas, elementFactory, root, {
     type: 'AndJunction',
     name: '',
-    x: 450,
-    y: 245,
+    x: 632,
+    y: 277,
     width: 42,
     height: 42
   });
 
   const technology = addShape(canvas, elementFactory, root, {
     type: 'Equipment',
-    name: 'Edge Device',
-    x: 650,
-    y: 225,
+    name: 'Edge Equipment',
+    x: 720,
+    y: 260,
     width: 190,
     height: 76
   });
 
-  addConnection(canvas, elementFactory, root, actor, service, 'Serving', [
-    { x: 230, y: 130 },
-    { x: 360, y: 130 }
+  addConnection(canvas, elementFactory, root, role, service, 'Serving', [
+    { x: 320, y: 130 },
+    { x: 430, y: 130 }
   ]);
 
   addConnection(canvas, elementFactory, root, service, application, 'Realization', [
-    { x: 530, y: 130 },
-    { x: 650, y: 130 }
+    { x: 600, y: 130 },
+    { x: 720, y: 130 }
   ]);
 
   addConnection(canvas, elementFactory, root, service, junction, 'Flow', [
-    { x: 445, y: 168 },
-    { x: 471, y: 245 }
+    { x: 515, y: 168 },
+    { x: 653, y: 277 }
+  ]);
+
+  addConnection(canvas, elementFactory, root, path, junction, 'Flow', [
+    { x: 320, y: 373 },
+    { x: 653, y: 373 },
+    { x: 653, y: 319 }
   ]);
 
   addConnection(canvas, elementFactory, root, junction, technology, 'Flow', [
-    { x: 492, y: 266 },
-    { x: 650, y: 263 }
+    { x: 674, y: 298 },
+    { x: 720, y: 298 }
+  ]);
+
+  addConnection(canvas, elementFactory, root, grouping, service, 'Aggregation', [
+    { x: 515, y: 260 },
+    { x: 515, y: 168 }
   ]);
 
   canvas.zoom('fit-viewport');

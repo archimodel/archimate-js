@@ -1,0 +1,63 @@
+{
+  "readyState": {
+    "djsElements": 13,
+    "paletteEntries": 47,
+    "status": "ready"
+  },
+  "commonPalette": [
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_role.svg\")",
+      "className": "archimate-common-role",
+      "title": "Create Role"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_collaboration.svg\")",
+      "className": "archimate-common-collaboration",
+      "title": "Create Collaboration"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_path.svg\")",
+      "className": "archimate-common-path",
+      "title": "Create Path"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_service.svg\")",
+      "className": "archimate-common-service",
+      "title": "Create Service"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_process.svg\")",
+      "className": "archimate-common-process",
+      "title": "Create Process"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_function.svg\")",
+      "className": "archimate-common-function",
+      "title": "Create Function"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_event.svg\")",
+      "className": "archimate-common-event",
+      "title": "Create Event"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_grouping.svg\")",
+      "className": "archimate-common-grouping",
+      "title": "Create Grouping"
+    },
+    {
+      "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_location.svg\")",
+      "className": "archimate-common-location",
+      "title": "Create Location"
+    }
+  ],
+  "canvasLabels": [
+    "Customer Role",
+    "Digital Service",
+    "Experience App",
+    "Experience Path",
+    "Shared Context",
+    "AND",
+    "Edge Equipment"
+  ]
+}

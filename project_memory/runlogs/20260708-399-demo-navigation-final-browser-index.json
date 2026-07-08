@@ -1,0 +1,29 @@
+{
+  "entryCount": 2,
+  "firstEntryDisplay": "grid",
+  "links": [
+    {
+      "href": "./viewer.html",
+      "text": "Viewer"
+    },
+    {
+      "href": "./editor.html",
+      "text": "Editor"
+    },
+    {
+      "href": "../archimate-font/lib/demo.html",
+      "text": "Font"
+    },
+    {
+      "href": "./viewer.html",
+      "text": "Viewer ArchiMate 4.0 read-only sample"
+    },
+    {
+      "href": "./editor.html",
+      "text": "Editor ArchiMate 4.0 editable sample"
+    }
+  ],
+  "mainColumns": "320px 320px",
+  "title": "archimate-js Demo",
+  "url": "http://127.0.0.1:4174/demo/index.html"
+}

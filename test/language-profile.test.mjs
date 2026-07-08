@@ -161,6 +161,50 @@ test('archimate 4 palette exposes every standard element', async () => {
   }
 });
 
+test('archimate 4 Common Domain palette uses Common visual assets', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const css = await readFile(new URL('../assets/palette-icons.css', import.meta.url), 'utf8');
+  const commonIcons = new Map([
+    [ 'Role', 'common_role.svg' ],
+    [ 'Collaboration', 'common_collaboration.svg' ],
+    [ 'Path', 'common_path.svg' ],
+    [ 'Service', 'common_service.svg' ],
+    [ 'Process', 'common_process.svg' ],
+    [ 'Function', 'common_function.svg' ],
+    [ 'Event', 'common_event.svg' ],
+    [ 'Grouping', 'common_grouping.svg' ],
+    [ 'Location', 'common_location.svg' ]
+  ]);
+
+  for (const [ type, iconName ] of commonIcons) {
+    const element = profile.elements.find((candidate) => candidate.type === type);
+    const icon = await readFile(new URL('../assets/icons/' + iconName, import.meta.url), 'utf8');
+
+    assert.equal(element.domain, 'Common', `${type} must remain a Common Domain element`);
+    assert.equal(
+      css.includes(`.${element.className} {\nbackground-image: url("./icons/${iconName}")`),
+      true,
+      `${type} palette class must use ${iconName}`
+    );
+    assert.match(icon, /#D9D3C8/, `${iconName} must use the Common Domain color`);
+  }
+
+  assert.doesNotMatch(css, /\.archimate-common-role \{\nbackground-image: url\("\.\/icons\/business_role\.svg"\)/);
+  assert.doesNotMatch(css, /\.archimate-common-path \{\nbackground-image: url\("\.\/icons\/technology_path\.svg"\)/);
+});
+
+test('demo sample exposes ArchiMate 4 Common Domain concepts', async () => {
+  const sample = await readFile(new URL('../demo/src/sample-canvas.js', import.meta.url), 'utf8');
+
+  assert.match(sample, /type: 'Role'/);
+  assert.match(sample, /type: 'Service'/);
+  assert.match(sample, /type: 'Path'/);
+  assert.match(sample, /type: 'Grouping'/);
+  assert.doesNotMatch(sample, /type: 'BusinessRole'/);
+  assert.doesNotMatch(sample, /type: 'BusinessService'/);
+  assert.doesNotMatch(sample, /type: 'TechnologyPath'/);
+});
+
 test('archimate 4 profile pictogram refs are defined for renderer path map', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');

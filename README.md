@@ -99,3 +99,10 @@ const modeler = new Modeler({
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.
+
+## Demo
+
+Run `npm run demo:build`, then open `demo/index.html` from the local static server. The Viewer and
+Editor demos load an ArchiMate 4 sample with Common Domain `Role`, `Service`, `Path`, and `Grouping`
+notation. The Editor palette uses dedicated Common Domain icons instead of the old Business or
+Technology colored assets for those consolidated ArchiMate 4 concepts.

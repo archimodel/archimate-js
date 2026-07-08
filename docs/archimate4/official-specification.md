@@ -74,6 +74,9 @@ Runtime behavior:
   legacy `layer` property as a compatibility alias.
 - The ArchiMate 4 palette exposes every standard element in the 42-element catalog, including Common
   composite elements `Grouping` and `Location`.
+- ArchiMate 4 Common Domain palette entries must use Common-colored visual assets and must not reuse
+  the old Business or Technology colored palette icons for consolidated concepts such as `Role`,
+  `Service`, `Process`, `Function`, `Event`, and `Path`.
 - Default element color uses custom domain colors when supplied.
 - Relationship validation resolves custom specialized concepts to their standard base concept, so a
   `RiskEvent` specializing `Event` inherits the base `Event` relationship constraints.
@@ -385,6 +388,15 @@ Implemented relationship-concept aggregation guard:
   `OrJunction`.
 - The helper is intentionally narrower than the full Appendix B.6 table because the complete
   relationship table is still supplied externally.
+
+Implemented demo notation guard:
+
+- `demo/viewer.html` and `demo/editor.html` load an ArchiMate 4 sample that visibly uses Common
+  Domain `Role`, `Service`, `Path`, and `Grouping` elements rather than ArchiMate 3.x
+  layer-specific equivalents.
+- `assets/palette-icons.css` maps the ArchiMate 4 Common Domain palette entries to dedicated
+  Common-colored `common_*.svg` assets. The test suite prevents these entries from regressing to
+  old Business or Technology colored palette assets.
 
 ## Source Trace
 
