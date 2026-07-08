@@ -124,3 +124,11 @@ test('renderer uses a dedicated ArchiMate 4 Assessment magnifying-glass pictogra
   assert.doesNotMatch(pathMap, /'PICTO_ASSESSMENT': 'PICTO_OBJECT'/);
   assert.match(pathMap, /m 11 4\.5 a 1 1 90 0 0 0 7/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Goal target pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_GOAL': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_GOAL': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 9 2\.5 a 1 1 90 0 0 0 13/);
+});

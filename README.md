@@ -104,6 +104,7 @@ const modeler = new Modeler({
 * The ArchiMate 4 `Stakeholder` renderer pictogram uses a dedicated locally-authored cylinder path instead of the actor/person pictogram.
 * The ArchiMate 4 `Driver` renderer pictogram uses a dedicated locally-authored wheel path instead of the generic object pictogram.
 * The ArchiMate 4 `Assessment` renderer pictogram uses a dedicated locally-authored magnifying-glass path instead of the generic object pictogram.
+* The ArchiMate 4 `Goal` renderer pictogram uses a dedicated locally-authored target path instead of the generic object pictogram.
 * The ArchiMate 4 `Location` renderer pictogram uses a dedicated locally-authored pin path instead of the legacy generic object pictogram.
 * The ArchiMate 4 `Distribution Network` renderer pictogram uses a dedicated locally-authored bidirectional arrow path instead of the Communication Network node-link pictogram.
 * The ArchiMate 4 `Material` renderer pictogram uses a dedicated locally-authored hexagon path instead of the Artifact document pictogram.
