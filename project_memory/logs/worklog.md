@@ -773,3 +773,18 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-175-viewpoint-type-validation-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-viewpoint-type-validation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 65
+
+- Goal: expose a machine-readable ArchiMate 4 implementation status so host tooling can distinguish implemented support, experimental exchange behavior, and external-source blockers.
+- Current external recheck: `project_memory/runlogs/20260709-178-meff4-xsd-current-recheck.txt` confirms the official public XSD directory still lists 3.1 links only, while tested 4.0 directory and Model XSD candidate URLs returned 404.
+- Red test: `project_memory/runlogs/20260709-179-implementation-status-red-test.txt` failed because the ArchiMate 4 profile did not expose conformance metadata and no implementation status API existed.
+- Implemented: `archimate4-profile.json` now carries conformance metadata for C260 source, 42-element catalog completion, external Appendix B relationship matrix requirement, experimental MEFF 4 exchange boundary, and local icon coverage boundary.
+- Implemented: `getArchimate4ImplementationStatus()` returns the 4.0 profile version, namespace, element catalog count/completeness, relationship connector types, active relationship profile status, exchange/icon boundaries, and external blockers.
+- Public API: exported `getArchimate4ImplementationStatus()` from `index.js`.
+- Docs: README and `docs/archimate4` now describe the status API and record the refreshed MEFF 4 XSD recheck.
+- Verification: `npm run test:language` passed with 116 tests in `project_memory/runlogs/20260709-180-implementation-status-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-181-implementation-status-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-182-implementation-status-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-183-implementation-status-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-184-implementation-status-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-185-implementation-status-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-186-implementation-status-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-implementation-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

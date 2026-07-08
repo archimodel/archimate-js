@@ -14,6 +14,7 @@ export {
 
 export {
   createLanguageProfile,
+  getArchimate4ImplementationStatus,
   getLanguageProfile,
   normalizeArchimateVersion
 } from './lib/metamodel/languages';

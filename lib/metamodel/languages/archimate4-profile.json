@@ -3,6 +3,26 @@
   "namespace": "http://www.opengroup.org/xsd/archimate/4.0/",
   "schemaLocation": "",
   "experimental": true,
+  "conformance": {
+    "standard": "ArchiMate 4 Specification C260",
+    "elementCatalog": {
+      "status": "implemented",
+      "expectedCount": 42
+    },
+    "relationshipMatrix": {
+      "status": "external-profile-required",
+      "reason": "Appendix B table data is normative and is not embedded without redistribution rights."
+    },
+    "exchangeFormat": {
+      "status": "experimental",
+      "officialXsdRequired": true,
+      "officialXsdDirectory": "https://www.opengroup.org/xsd/archimate/"
+    },
+    "iconography": {
+      "status": "local-renderer-coverage",
+      "exactAppendixAVectorsConfirmed": false
+    }
+  },
   "domains": [
     { "name": "Common", "color": "#D9D3C8" },
     { "name": "Motivation", "color": "#CCCCFF" },

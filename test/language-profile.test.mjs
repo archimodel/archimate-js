@@ -467,3 +467,28 @@ test('language profile customization supports viewpoint definitions', async () =
   assert.match(readme, /viewpoints/);
   assert.match(sources, /allowed element and relationship types against the active profile/);
 });
+
+test('archimate 4 implementation status is machine-readable and preserves external blockers', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+
+  assert.equal(profile.conformance.standard, 'ArchiMate 4 Specification C260');
+  assert.equal(profile.conformance.elementCatalog.expectedCount, 42);
+  assert.equal(profile.conformance.elementCatalog.status, 'implemented');
+  assert.equal(profile.conformance.relationshipMatrix.status, 'external-profile-required');
+  assert.equal(profile.conformance.exchangeFormat.status, 'experimental');
+  assert.equal(profile.conformance.exchangeFormat.officialXsdRequired, true);
+  assert.equal(profile.conformance.iconography.status, 'local-renderer-coverage');
+  assert.equal(profile.conformance.iconography.exactAppendixAVectorsConfirmed, false);
+
+  assert.match(languageIndex, /export function getArchimate4ImplementationStatus/);
+  assert.match(languageIndex, /relationshipProfile: getArchimate4RelationshipProfileStatus\(\)/);
+  assert.match(languageIndex, /externalBlockers: \[/);
+  assert.match(languageIndex, /officialAppendixBRelationshipMatrix/);
+  assert.match(languageIndex, /officialMeff4Xsd/);
+  assert.match(languageIndex, /exactAppendixAArtworkRights/);
+  assert.match(entrypoint, /getArchimate4ImplementationStatus/);
+  assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
+});

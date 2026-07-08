@@ -1,0 +1,30 @@
+URL: https://www.opengroup.org/xsd/archimate/
+Status: 200
+Links:
+  3.1/
+  3.1/archimate3_Model.xsd
+  3.1/archimate3_View.xsd
+  3.1/archimate3_Diagram.xsd
+  3.1/html-model/
+  3.1/html-view/
+  3.1/html-diagram/
+  3.1/examples/
+  3.1/examples/_Snippets
+Signal: no archimate4-or-4.0 text
+---
+URL: https://www.opengroup.org/xsd/archimate/4.0/
+Status: 404
+Error: Response status code does not indicate success: 404 (Not Found).
+---
+URL: https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd
+Status: 404
+Error: Response status code does not indicate success: 404 (Not Found).
+---
+URL: https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd
+Status: 404
+Error: Response status code does not indicate success: 404 (Not Found).
+---
+URL: https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd
+Status: 200
+Signal: no archimate4-or-4.0 text
+---

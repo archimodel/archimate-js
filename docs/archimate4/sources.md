@@ -22,6 +22,8 @@
 - Because redistribution rights for Appendix B relationship tables are not confirmed, this repository
   does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement
   point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
+- `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
+  metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
 
 ## Current Public Release Notes Captured
 
@@ -387,6 +389,9 @@
 - `https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd` returned 404.
 - `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd` returned 200 and remains the
   public XSD reference currently covered by local tests.
+- Refreshed again on 2026-07-09 in `project_memory/runlogs/20260709-178-meff4-xsd-current-recheck.txt`;
+  the public directory returned 200 with 3.1 links only, while the tested 4.0 directory and Model XSD
+  candidates returned 404.
 - Refreshed again on 2026-07-08T20:15:00+09:00 in
   `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt`; the official directory
   returned 200 and listed 3.1 Model, Diagram, and View XSD links, with no discovered `archimate4` or
