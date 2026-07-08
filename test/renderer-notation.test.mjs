@@ -24,3 +24,15 @@ test('renderer draws ArchiMate 4 junction connectors as dot and ring markers', a
   assert.match(source, /fill: 'none',\s+stroke: DEFAULT_STROKE_COLOR/);
   assert.match(source, /if \(!isArchimate4Profile\(profile\)\) {\s+renderLabel\(parentGfx, elementType === RELATIONSHIP_JUNCTION_AND \? 'AND' : 'OR'/);
 });
+
+test('renderer draws ArchiMate 4 Motivation elements with chamfered bodies', async () => {
+  const rendererSource = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
+  const utilSource = await readFile(new URL('../lib/draw/ArchimateRendererUtil.js', import.meta.url), 'utf8');
+
+  assert.match(rendererSource, /getChamferedRectPath/);
+  assert.match(rendererSource, /function isArchimate4MotivationShape\(shape\)/);
+  assert.match(rendererSource, /isArchimate4Profile\(profile\) && shape\.aspect === 'Motivation'/);
+  assert.match(rendererSource, /drawShapePath\(parentGfx, getChamferedRectPath\(/);
+  assert.match(rendererSource, /drawRect\(parentGfx, shape\.width, shape\.height, borderRadius, attrs\)/);
+  assert.match(utilSource, /export function getChamferedRectPath\(shape, chamfer\)/);
+});

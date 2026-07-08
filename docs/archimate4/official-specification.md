@@ -192,6 +192,8 @@ Implementation notes:
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.
+- In ArchiMate 4 mode, Motivation elements must draw with clipped/chamfered body corners matching
+  the Appendix A notation summary. ArchiMate 3.x rendering remains unchanged.
 - Standard display labels preserve source casing, including `Course of Action`.
 
 ## Relationships And Junctions

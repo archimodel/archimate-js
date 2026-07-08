@@ -107,6 +107,11 @@
   `project_memory/runlogs/20260709-340-c260-appendix-a-junction-visual-check.txt`. The derived
   renderer requirement is limited to ArchiMate 4 `AndJunction` as a filled dot and `OrJunction` as an
   unfilled ring while preserving ArchiMate 3.x text marker rendering.
+- A local C260 Appendix A rendered visual check for Motivation body notation is recorded in
+  `project_memory/runlogs/20260709-351-c260-appendix-a-motivation-render.txt` and
+  `project_memory/runlogs/20260709-352-c260-appendix-a-motivation-visual-check.txt`. The derived
+  renderer requirement is limited to ArchiMate 4 Motivation elements using clipped/chamfered body
+  corners while preserving ArchiMate 3.x rectangle body rendering.
 
 ## Language Customization Mechanism
 

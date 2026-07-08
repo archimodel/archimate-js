@@ -977,3 +977,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-348-junction-renderer-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-junction-renderer-notation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 79
+
+- Goal: align the ArchiMate 4 Motivation element body shape with the C260 Appendix A notation while preserving ArchiMate 3.x behavior.
+- Source evidence: `project_memory/runlogs/20260709-351-c260-appendix-a-motivation-render.txt` and `project_memory/runlogs/20260709-352-c260-appendix-a-motivation-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-353-motivation-renderer-red-test.txt` failed because `ArchimateRenderer` and `ArchimateRendererUtil` had no ArchiMate 4-specific Motivation body path.
+- Implemented: `lib/draw/ArchimateRendererUtil.js` now exposes `getChamferedRectPath()` and `lib/draw/ArchimateRenderer.js` uses it to draw ArchiMate 4 Motivation elements with clipped/chamfered body corners.
+- Preserved: ArchiMate 3.x Motivation elements keep the existing rectangle body rendering.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Motivation renderer notation boundary.
+- Audit registry: scoped ESLint now includes `lib/draw/ArchimateRendererUtil.js`.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-354-motivation-renderer-test.txt`; `npm run test:language` passed with 137 tests in `project_memory/runlogs/20260709-355-motivation-renderer-test-language.txt`; original registry scoped ESLint passed in `project_memory/runlogs/20260709-356-motivation-renderer-eslint-registry.txt`; updated registry scoped ESLint passed with `ArchimateRendererUtil.js` included in `project_memory/runlogs/20260709-361-motivation-renderer-eslint-registry-updated.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-357-motivation-renderer-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-358-motivation-renderer-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-359-motivation-renderer-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-360-motivation-renderer-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-motivation-renderer-notation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
