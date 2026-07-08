@@ -11,6 +11,9 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
   published April 2026, 207 PDF pages.
 - Supporting source reviewed: launch transcript
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
+- W262 companion paper status: The Open Group publication page for W262 is reachable and lists a free
+  PDF download that requires login; the PDF is not yet present locally. The page check is recorded in
+  `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
 
@@ -31,6 +34,10 @@ five required clauses represented as `shall` entries and the example viewpoint c
 `may` entry. `getArchimate4ImplementationStatus()` must surface that map with summary counts so
 formal support, implementation-defined support, optional support, and external blockers are not
 collapsed into one ambiguous "supported" flag.
+
+`getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
+local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B
+relationship matrix, the MEFF 4.0 XSD, and Appendix A artwork-rights boundary visible to host tools.
 
 ## Language Structure
 

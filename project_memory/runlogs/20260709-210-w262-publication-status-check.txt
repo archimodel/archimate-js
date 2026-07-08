@@ -1,0 +1,33 @@
+URL: https://publications.opengroup.org/w262
+HTTP status: 200
+Relevant page signals:
+<meta name="title" content="The Motivation for Changes in the ArchiMate® 4 Specification"/>
+<title>The Motivation for Changes in the ArchiMate® 4 Specification</title>
+pageSize: 3,
+"initialImages": [{"thumb":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=90&width=90","img":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=700&width=700","full":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=&width=","caption":"The Motivation for Changes in the ArchiMate\u00ae 4 Specification","position":"1","isMain":true,"type":"image","videoUrl":null,"thumb_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp","img_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp","full_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp"}],
+"images": [{"thumb":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=90&width=90","img":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=700&width=700","full":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.png?quality=80&fit=bounds&height=&width=","caption":"The Motivation for Changes in the ArchiMate\u00ae 4 Specification","position":"1","isMain":true,"type":"image","videoUrl":null,"thumb_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp","img_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp","full_webp":"https:\/\/publications.opengroup.org\/media\/catalog\/product\/a\/r\/archimate-4-specification_1_3.webp"}],
+"pageSize": 4,
+this.calcPageSize();
+this.calcPageSize()
+calcPageSize() {
+this.pageSize = Math.round(slider.clientWidth / (slideEl.clientWidth + marginRight));
+this.pageSize * Math.ceil(this.itemCount / this.pageSize)
+this.activeSlide = Math.round(calculatedActiveSlide / this.pageSize) * this.pageSize;
+this.scrollTo(this.activeSlide - this.pageSize);
+this.scrollTo(this.activeSlide + this.pageSize);
+this.calcPageSize();
+<span class="base" data-ui-id="page-title-wrapper" itemprop="name">The Motivation for Changes in the ArchiMate® 4 Specification</span> </h1>
+# W262 </span>
+<span>Download Free PDF Edition</span>
+<span>Login to Download</span>
+scope="row">Author(s)</th>
+scope="row">Published</th>
+data-th="Published"
+scope="row">Pages</th>
+data-th="Pages"
+scope="row">Author(s)</th>
+scope="row">Published</th>
+data-th="Published"
+scope="row">Pages</th>
+data-th="Pages"
+const rawPageSize = "10";

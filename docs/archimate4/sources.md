@@ -17,7 +17,9 @@
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
 - C260 is a licensed copyrighted publication; this repository records a derived implementation
   specification and source trace, not copied normative prose or verbatim relationship tables.
-- W262 is still not present in this workspace.
+- W262 is published by The Open Group as a free PDF download that requires login. The current
+  publication-page check is recorded in `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`.
+  The W262 PDF itself is still not present in this workspace.
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
 - Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.
@@ -29,6 +31,8 @@
 - C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
   metadata so required, optional, implemented, and externally blocked support can be audited without
   treating fallback data as final conformance.
+- `getArchimate4ImplementationStatus()` also exposes source coverage metadata so local source
+  evidence, externally supplied normative data, and missing companion sources are distinguishable.
 
 ## Current Public Release Notes Captured
 

@@ -510,6 +510,23 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
 });
 
+test('archimate 4 implementation status exposes source coverage boundaries', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const sourceCoverage = profile.conformance.sourceCoverage;
+
+  assert.equal(sourceCoverage.c260.status, 'local-licensed-source-reviewed');
+  assert.equal(sourceCoverage.w262.status, 'external-download-required');
+  assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
+  assert.equal(sourceCoverage.w262.localSourcePresent, false);
+  assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
+
+  assert.match(languageIndex, /sourceCoverage: summarizeSourceCoverage/);
+  assert.match(languageIndex, /missingCompanionSources/);
+  assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
+});
+
 test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

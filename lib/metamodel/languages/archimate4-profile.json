@@ -57,7 +57,44 @@
         "status": "not-bundled-informative",
         "optional": true
       }
-    ]
+    ],
+    "sourceCoverage": {
+      "c260": {
+        "document": "C260",
+        "status": "local-licensed-source-reviewed",
+        "localSourcePresent": true
+      },
+      "w262": {
+        "document": "W262",
+        "status": "external-download-required",
+        "url": "https://publications.opengroup.org/w262",
+        "localSourcePresent": false,
+        "companion": true
+      },
+      "launchTranscript": {
+        "status": "local-transcript-reviewed",
+        "localSourcePresent": true
+      },
+      "appendixBRelationshipMatrix": {
+        "status": "external-profile-required",
+        "localSourcePresent": false,
+        "required": true,
+        "externalBlocker": "officialAppendixBRelationshipMatrix"
+      },
+      "meff4Xsd": {
+        "status": "external-source-required",
+        "url": "https://www.opengroup.org/xsd/archimate/",
+        "localSourcePresent": false,
+        "required": true,
+        "externalBlocker": "officialMeff4Xsd"
+      },
+      "appendixAArtworkRights": {
+        "status": "external-rights-required",
+        "localSourcePresent": false,
+        "required": true,
+        "externalBlocker": "exactAppendixAArtworkRights"
+      }
+    }
   },
   "domains": [
     { "name": "Common", "color": "#D9D3C8" },
