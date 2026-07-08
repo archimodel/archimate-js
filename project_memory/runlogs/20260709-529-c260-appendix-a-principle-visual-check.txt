@@ -1,0 +1,6 @@
+C260 Appendix A Principle pictogram visual check
+
+pdf_page=145
+rendered_png=tmp/pdfs/c260-page-145-principle-145.png
+observation=A.2 Motivation, Strategy, Implementation and Migration Elements shows Principle with a small rounded-square pictogram containing an exclamation mark, not the generic object/document pictogram.
+implementation_boundary=Do not embed or redistribute Appendix A artwork; replace the local renderer alias with a locally-authored rounded-square exclamation path for PICTO_PRINCIPLE.

@@ -1155,3 +1155,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-526-outcome-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-527-outcome-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-outcome-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 93
+
+- Goal: replace the ArchiMate 4 `Principle` renderer pictogram fallback with a C260 Appendix A-derived rounded-square exclamation path.
+- Source evidence: `project_memory/runlogs/20260709-528-c260-appendix-a-principle-render.txt` and `project_memory/runlogs/20260709-529-c260-appendix-a-principle-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-530-principle-pictogram-red-test.txt` failed because `PICTO_PRINCIPLE` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_PRINCIPLE` rounded-square exclamation path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Principle renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-531-principle-pictogram-test.txt`; `npm run test:language` passed with 151 tests in `project_memory/runlogs/20260709-532-principle-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-533-principle-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-534-principle-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-535-principle-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-536-principle-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-537-principle-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-538-principle-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-539-principle-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-principle-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

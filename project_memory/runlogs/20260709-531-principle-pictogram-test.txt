@@ -1,0 +1,25 @@
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (6.4396ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (2.6771ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (1.4954ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (1.4162ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (1.2299ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (1.0816ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (1.059ms)
+✔ renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path (1.0188ms)
+✔ renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path (0.9852ms)
+✔ renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram path (1.1114ms)
+✔ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (1.0712ms)
+✔ renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path (0.9244ms)
+✔ renderer uses a dedicated ArchiMate 4 Driver wheel pictogram path (0.7985ms)
+✔ renderer uses a dedicated ArchiMate 4 Assessment magnifying-glass pictogram path (0.9977ms)
+✔ renderer uses a dedicated ArchiMate 4 Goal target pictogram path (1.1784ms)
+✔ renderer uses a dedicated ArchiMate 4 Outcome target-arrow pictogram path (0.9903ms)
+✔ renderer uses a dedicated ArchiMate 4 Principle exclamation pictogram path (1.9225ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 106.7908
