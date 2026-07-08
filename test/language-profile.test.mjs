@@ -559,6 +559,26 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
 });
 
+test('archimate 4 implementation plan records current execution boundary', async () => {
+  const plan = await readFile(
+    new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
+    'utf8'
+  );
+
+  assert.match(plan, /## Current Execution Status/);
+  assert.match(plan, /M0 Source Gate/);
+  assert.match(plan, /M1 Runtime Boundary/);
+  assert.match(plan, /M2 XML Boundary/);
+  assert.match(plan, /M3 Semantics/);
+  assert.match(plan, /M4 Modeling UX/);
+  assert.match(plan, /M5 Release Readiness/);
+  assert.match(plan, /getArchimate4ImplementationStatus\(\)/);
+  assert.match(plan, /Official Appendix B relationship matrix data/);
+  assert.match(plan, /Official MEFF 4\.0 XSD/);
+  assert.match(plan, /W262 is still not present locally/);
+  assert.match(plan, /Exact Appendix A vector artwork redistribution rights remain unconfirmed/);
+});
+
 test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

@@ -8,6 +8,50 @@
 
 **Tech Stack:** JavaScript ES modules, diagram-js, moddle, moddle-xml, Node.js built-in test runner, PowerShell.
 
+## Current Execution Status
+
+Last reviewed against the current branch on 2026-07-09.
+
+This original plan is retained as the implementation brief. Its step checkboxes below are historical
+and should not be used alone as current progress. Use the implementation evidence in
+`docs/archimate4/official-specification.md`, `docs/archimate4/sources.md`,
+`project_memory/state/aria_state.json`, `project_memory/logs/worklog.md`, and the branch commits as
+the current source of truth.
+
+Implemented and verified on the current branch:
+
+- M0 Source Gate: C260 local PDF and launch transcript are recorded; W262, MEFF 4.0 XSD, Appendix B
+  relationship matrix redistribution, and exact Appendix A artwork rights remain explicit external
+  blockers.
+- M1 Runtime Boundary: `archimateVersion` selects versioned language profiles; ArchiMate 3.x remains
+  the default; ArchiMate 4 exposes the C260-derived 42-element catalog and relationship connectors.
+- M2 XML Boundary: moddle descriptors and model templates are version-aware. ArchiMate 4 exchange
+  remains experimental until an official MEFF 4.0 XSD is available.
+- M3 Semantics: relationship validation routes through the active profile; host-supplied Appendix B
+  profiles are supported as nested data, rows, matrices, CSV/TSV text, or JSON strings; migration and
+  derivation helpers are implemented from non-verbatim C260-derived requirements where redistribution
+  permits.
+- M4 Modeling UX: the palette, renderer, relationship options, multiplicity editing/persistence,
+  junction behavior, profile customization, viewpoint metadata, nested view nodes, organization tree
+  descriptors, and local Appendix A-derived pictogram paths are implemented for ArchiMate 4 mode.
+- M5 Release Readiness: README, CHANGELOG, source ledger, implementation specification, runlogs, and
+  audit reports document the opt-in status, compatibility behavior, verification commands, and
+  conformance boundaries.
+
+Current machine-readable status is exposed by `getArchimate4ImplementationStatus()`. As of commit
+`d5fdf90`, the iconography status reports `profilePictogramCoverage: dedicated-local-paths`,
+`genericObjectAliasCount: 0`, and only the legacy misspelled compatibility aliases
+`PICTO_DELIVRABLE` / `PICTO_STAKHOLDER`.
+
+Current unresolved items are external-source dependent rather than implementation omissions:
+
+- Official Appendix B relationship matrix data or redistribution approval is still required for final
+  embedded relationship-matrix conformance.
+- Official MEFF 4.0 XSD is still required before claiming official XML exchange conformance.
+- W262 is still not present locally; it is tracked as a companion source.
+- Exact Appendix A vector artwork redistribution rights remain unconfirmed; renderer and palette
+  assets use locally authored paths instead.
+
 ## Global Constraints
 
 - 既定動作は現行の ArchiMate 3.x と同じにする。

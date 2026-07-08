@@ -1219,3 +1219,14 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-592-pictogram-coverage-status-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-593-pictogram-coverage-status-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-pictogram-coverage-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 98
+
+- Goal: make the original ArchiMate 4 implementation plan safe to use as a handoff artifact after the branch has moved beyond the unchecked task list.
+- Implemented: `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now has a `Current Execution Status` section that maps M0-M5 to current implementation evidence and separates external-source blockers from implementation omissions.
+- Tests/docs: `test/language-profile.test.mjs` now guards that the plan keeps the current execution boundary, `getArchimate4ImplementationStatus()` handoff, and Appendix B / MEFF 4.0 XSD / W262 / Appendix A artwork-rights open items visible.
+- Verification: focused language-profile test passed in `project_memory/runlogs/20260709-594-plan-execution-status-test.txt`; `npm run test:language` passed with 157 tests in `project_memory/runlogs/20260709-595-plan-execution-status-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-596-plan-execution-status-eslint.txt`; JSON check passed in `project_memory/runlogs/20260709-597-plan-execution-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-598-plan-execution-status-diff-check.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-599-plan-execution-status-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-601-plan-execution-status-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-600-plan-execution-status-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-604-plan-execution-status-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-605-plan-execution-status-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-plan-execution-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
