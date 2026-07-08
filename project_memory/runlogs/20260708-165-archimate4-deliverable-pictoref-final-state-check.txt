@@ -1,0 +1,27 @@
+## git diff --check
+no output
+exit code: 0
+
+## state json parse
+state json ok
+exit code: 0
+
+## git status --short --branch
+## codex/archimate-4-support
+M  docs/archimate4/sources.md
+M  lib/draw/PathMap.js
+M  lib/metamodel/languages/archimate4-profile.json
+A  project_memory/audit/reports/20260708-archimate4-deliverable-pictoref-audit.md
+M  project_memory/logs/worklog.md
+A  project_memory/runlogs/20260708-157-archimate4-deliverable-pictoref-gap-check.txt
+A  project_memory/runlogs/20260708-158-archimate4-deliverable-pictoref-fix-check.txt
+A  project_memory/runlogs/20260708-159-archimate4-deliverable-pictoref-npm-test-language.txt
+A  project_memory/runlogs/20260708-160-archimate4-deliverable-pictoref-eslint-changed-js.txt
+A  project_memory/runlogs/20260708-161-archimate4-deliverable-pictoref-json-parse.txt
+A  project_memory/runlogs/20260708-162-archimate4-deliverable-pictoref-source-check.txt
+A  project_memory/runlogs/20260708-163-archimate4-deliverable-pictoref-git-diff-check.txt
+A  project_memory/runlogs/20260708-164-archimate4-deliverable-pictoref-repo-lint-legacy.txt
+A  project_memory/runlogs/20260708-165-archimate4-deliverable-pictoref-final-state-check.txt
+M  project_memory/state/aria_state.json
+M  test/language-profile.test.mjs
+exit code: 0

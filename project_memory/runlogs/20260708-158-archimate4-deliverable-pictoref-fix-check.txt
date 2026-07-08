@@ -1,0 +1,4 @@
+Deliverable pictoRef: PICTO_DELIVERABLE
+uses expected ref: true
+PathMap has expected ref: true
+PathMap keeps legacy misspelled alias: true

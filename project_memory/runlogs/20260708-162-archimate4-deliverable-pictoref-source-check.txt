@@ -1,0 +1,4 @@
+C260-derived fixture has Deliverable: True
+C260-derived fixture has Delivrable: False
+PDF term pages: Deliverable: count=16 pages=10, 16, 87, 121, 122, 123, 124, 125, 142, 189, 190, 191, 197, 199, 200, 204
+Derived facts only: the C260-derived local catalog uses the standard element name Deliverable. No normative prose is recorded here.

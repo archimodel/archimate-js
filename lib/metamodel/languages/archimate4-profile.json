@@ -67,7 +67,7 @@
     { "type": "Facility", "domain": "Technology", "aspect": "Active structure", "typeName": "Facility", "className": "archimate-technology-facility", "pictoRef": "PICTO_FACILITY" },
     { "type": "Material", "domain": "Technology", "aspect": "Passive structure", "typeName": "Material", "className": "archimate-technology-material", "pictoRef": "PICTO_MATERIAL" },
     { "type": "WorkPackage", "domain": "Implementation & Migration", "aspect": "Behavior", "typeName": "Work Package", "className": "archimate-imp-mig-work-package", "pictoRef": "PICTO_WORK_PACKAGE" },
-    { "type": "Deliverable", "domain": "Implementation & Migration", "aspect": "Passive structure", "typeName": "Deliverable", "className": "archimate-imp-mig-deliverable", "pictoRef": "PICTO_DELIVRABLE" },
+    { "type": "Deliverable", "domain": "Implementation & Migration", "aspect": "Passive structure", "typeName": "Deliverable", "className": "archimate-imp-mig-deliverable", "pictoRef": "PICTO_DELIVERABLE" },
     { "type": "Plateau", "domain": "Implementation & Migration", "aspect": "Composite", "typeName": "Plateau", "className": "archimate-imp-mig-plateau", "pictoRef": "PICTO_PLATEAU" }
   ],
   "relationships": [ "Composition", "Aggregation", "Assignment", "Realization", "Association", "Influence", "Access", "Serving", "Triggering", "Flow", "Specialization" ]

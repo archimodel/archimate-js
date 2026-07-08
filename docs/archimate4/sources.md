@@ -64,6 +64,9 @@
   avoiding redistribution of standard artwork before the exact licensing/source decision is resolved.
 - `test/language-profile.test.mjs` verifies that every ArchiMate 4 profile concept has a renderer
   `PathMap` entry.
+- The ArchiMate 4 `Deliverable` profile entry uses the correctly spelled `PICTO_DELIVERABLE`
+  reference. The older misspelled `PICTO_DELIVRABLE` key remains in `PathMap` only as a legacy
+  compatibility alias for existing 3.x profile metadata.
 
 ## Language Customization Mechanism
 

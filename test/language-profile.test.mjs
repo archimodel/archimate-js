@@ -90,6 +90,13 @@ test('archimate 4 exposes relationship junction connectors outside the element c
   assert.notEqual(connectors.get('OrJunction').palette, false);
 });
 
+test('archimate 4 deliverable pictogram ref uses standard spelling', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const deliverable = profile.elements.find((element) => element.type === 'Deliverable');
+
+  assert.equal(deliverable.pictoRef, 'PICTO_DELIVERABLE');
+});
+
 test('profile-aware metadata and palette include relationship junction connectors', async () => {
   const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
   const colorUtil = await readFile(new URL('../lib/util/ColorUtil.js', import.meta.url), 'utf8');
