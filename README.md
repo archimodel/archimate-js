@@ -34,7 +34,7 @@ const modeler = new Modeler({
 });
 ```
 
-The supplied profile may be an object or a JSON string loaded by the host application. It is validated against the ArchiMate 4 concept set, including elements, relationship connectors, and relationship types, before replacing the bundled compatibility fallback.
+The supplied profile may be an object or a JSON string loaded by the host application. It is validated against the ArchiMate 4 concept set, including elements, relationship connectors, and relationship types, before replacing the bundled compatibility fallback. Complete profiles must include every source-target cell, using an empty value for cells with no allowed relationship.
 
 ## ArchiMate 4 Notes
 

@@ -34,7 +34,9 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /VALID_ARCHIMATE4_CONCEPT_TYPES/);
   assert.match(source, /archimate4Profile\.connectors/);
   assert.match(source, /archimate4Profile\.relationships/);
+  assert.match(source, /requireCompleteTargets: true/);
   assert.match(loaderSource, /parseRelationshipProfile/);
+  assert.match(loaderSource, /assertCompleteTargetCoverage/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
@@ -149,6 +151,61 @@ test('archimate 4 relationship profile accepts relationship concepts and junctio
   assert.equal(maps.get('Grouping').get('AndJunction'), 'g');
   assert.equal(maps.get('Aggregation').get('Location'), 'g');
   assert.equal(maps.get('AndJunction').get('BusinessActor'), 'o');
+});
+
+test('archimate 4 complete relationship profile can require every target cell', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const maps = normalizeRelationshipProfile({
+    BusinessActor: {
+      BusinessActor: '',
+      Role: 'Assignment'
+    },
+    Role: {
+      BusinessActor: '',
+      Role: ''
+    }
+  }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+
+  assert.equal(maps.get('BusinessActor').get('Role'), 'i');
+  assert.equal(maps.get('Role').size, 0);
+
+  assert.throws(() => normalizeRelationshipProfile({
+    BusinessActor: {
+      Role: 'Assignment'
+    },
+    Role: {
+      BusinessActor: '',
+      Role: ''
+    }
+  }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  }), /missing target element: BusinessActor -> BusinessActor/);
+});
+
+test('archimate 4 row-array profiles keep blank complete sources', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const maps = normalizeRelationshipProfile([
+    { source: 'BusinessActor', target: 'BusinessActor', relationships: '' },
+    { source: 'BusinessActor', target: 'Role', relationships: 'Assignment' },
+    { source: 'Role', target: 'BusinessActor', relationships: '' },
+    { source: 'Role', target: 'Role', relationships: '' }
+  ], validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+
+  assert.equal(maps.has('Role'), true);
+  assert.equal(maps.get('Role').size, 0);
 });
 
 test('archimate 4 complete relationship profile requires relationship concept sources', async () => {

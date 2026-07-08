@@ -1,0 +1,18 @@
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+pages: 207
+page 155: hits=Appendix B, Source, Target
+page 156: hits=Appendix B
+page 157: hits=Appendix B, Target
+page 158: hits=Appendix B
+page 159: hits=Appendix B
+page 160: hits=Appendix B, relationship tables
+page 161: hits=Appendix B, relationship tables
+page 162: hits=Appendix B, relationship tables
+page 163: hits=Appendix B, relationship tables
+page 164: hits=Appendix B, relationship tables
+page 165: hits=Appendix B, relationship tables
+page 166: hits=Appendix B, relationship tables
+page 167: hits=Appendix B, Source, Target, Relationships Between
+page 170: hits=Relationships Between
+derived-fact: Appendix B is organized as relationship applicability tables keyed by source and target concept categories.
+derived-fact: A complete external Appendix B profile must preserve explicit source-target cell coverage so a missing cell is not silently treated as a disallowed relationship.

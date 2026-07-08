@@ -208,6 +208,8 @@ External profile contract:
 - The default public loader requires source coverage for every ArchiMate 4 concept accepted by the
   external profile contract; sources with no outgoing relationships must still be represented with an
   empty target map.
+- The default public loader also requires complete target-cell coverage for each source. A cell with no
+  allowed relationship must be explicitly present as empty data so accidental omissions are caught.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

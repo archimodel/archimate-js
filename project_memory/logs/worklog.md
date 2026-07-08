@@ -191,3 +191,15 @@
 - Docs: README and `docs/archimate4/*` now state that external profiles are validated against the full accepted ArchiMate 4 concept set.
 - Verification: initial direct-module test import failed under Node's JSON import rules in `project_memory/runlogs/20260708-110-relationship-profile-concept-types-npm-test-language.txt`; the test was corrected to loader execution plus source guards. `npm run test:language` passed with 53 tests in `project_memory/runlogs/20260708-111-relationship-profile-concept-types-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-115-relationship-profile-concept-types-final-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-116-relationship-profile-concept-types-final-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-117-relationship-profile-concept-types-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-118-relationship-profile-concept-types-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 19
+
+- Goal: make complete external Appendix B relationship profiles detect missing source-target cells instead of silently treating omitted cells as disallowed relationships.
+- Source check: C260 PDF Appendix B pages were scanned for derived source/target table facts in `project_memory/runlogs/20260708-121-relationship-profile-complete-targets-source-check.txt`.
+- Implemented: `normalizeRelationshipProfile()` accepts `requireCompleteTargets` and validates every accepted source-target concept cell when enabled.
+- Implemented: `setArchimate4RelationshipProfile()` enables `requireCompleteTargets` by default for the official replacement profile path.
+- Implemented: blank row-array cells now preserve their source maps, so a complete profile can represent sources with no allowed outgoing relationships.
+- Tests: added complete target-cell coverage checks for object and row-array profile shapes.
+- Docs: README and `docs/archimate4/*` now document explicit empty cells for complete external profiles.
+- Verification: `npm run test:language` passed with 55 tests in `project_memory/runlogs/20260708-124-relationship-profile-complete-targets-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-122-relationship-profile-complete-targets-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-123-relationship-profile-complete-targets-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-125-relationship-profile-complete-targets-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-126-relationship-profile-complete-targets-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

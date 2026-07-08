@@ -86,6 +86,9 @@
   replacing the active relationship map.
 - Complete external profiles must include source rows for relationship connectors and relationship
   types, not only element types, so C260 Appendix B.6 relationship-concept rules can be supplied.
+- The default replacement path also requires every source-target cell to be present. Empty cells may
+  use an empty string, null, or an empty relationship array, but omitted cells fail validation so table
+  transcription gaps are not silently treated as disallowed relationships.
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
   so an external Appendix B profile affects editing constraints as well as menu display.
 
