@@ -759,3 +759,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-161-profile-coverage-report-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-profile-coverage-report-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 64
+
+- Goal: tighten C260 Chapter 13 viewpoint support by validating custom viewpoint allowed element and relationship type lists against the active language profile.
+- Source check: `project_memory/runlogs/20260709-168-c260-viewpoint-type-validation-source-check.txt` records a C260 PDF keyword pass and a non-verbatim implementation fact for viewpoint purpose/content and allowed type metadata.
+- Red test: `project_memory/runlogs/20260709-169-viewpoint-type-validation-red-test.txt` failed because viewpoint validation did not receive the active profile and did not validate `allowedElementTypes` or `allowedRelationshipTypes`.
+- Implemented: `mergeViewpoints()` now calls `validateViewpoint(viewpoint, profile)` after custom elements, connectors, and relationships have been merged.
+- Implemented: custom viewpoints reject `allowedElementTypes` not found in the active profile concepts and `allowedRelationshipTypes` not found in the active profile relationships; array entries may be strings or objects with a `type` field.
+- Docs: README and `docs/archimate4` now state that custom viewpoint purpose/content and allowed type names are profile-validated.
+- Verification: `npm run test:language` passed with 115 tests in `project_memory/runlogs/20260709-171-viewpoint-type-validation-test-language-pass.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-172-viewpoint-type-validation-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-173-viewpoint-type-validation-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-174-viewpoint-type-validation-git-diff-check.txt`.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-176-viewpoint-type-validation-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-177-viewpoint-type-validation-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-175-viewpoint-type-validation-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-viewpoint-type-validation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

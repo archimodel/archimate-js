@@ -108,6 +108,8 @@ Supported mechanism:
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
   host tooling. Supported purpose values are `Designing`, `Deciding`, and `Informing`; supported
   content values are `Details`, `Coherence`, and `Overview`.
+- Custom viewpoint definitions must validate allowed element and relationship types against the active
+  language profile, including implementation-defined specialized concepts and relationships.
 
 The MEFF 4.0 XSD is still required before claiming official ArchiMate 4 exchange conformance for this
 serialization surface.

@@ -81,7 +81,7 @@ const modeler = new Modeler({
 
 * ArchiMate 4 support uses versioned language profiles.
 * Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.
-* Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`.
+* Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.
 * Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.
 * 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.
 * 3.x Physical concepts are retained as ArchiMate 4 Technology Domain concepts while preserving `Physical` as original-domain metadata.

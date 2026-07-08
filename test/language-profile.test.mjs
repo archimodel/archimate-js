@@ -451,11 +451,19 @@ test('archimate 4 shape metadata preserves domain terminology', async () => {
 test('language profile customization supports viewpoint definitions', async () => {
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
 
   assert.match(languageIndex, /VIEWPOINT_PURPOSES/);
   assert.match(languageIndex, /VIEWPOINT_CONTENT_TYPES/);
   assert.match(languageIndex, /mergeViewpoints\(profile, customProfile\)/);
-  assert.match(languageIndex, /validateViewpoint\(viewpoint\)/);
+  assert.match(languageIndex, /validateViewpoint\(viewpoint, profile\)/);
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint/);
+  assert.match(languageIndex, /validateViewpointTypeList\(viewpoint\.allowedElementTypes/);
+  assert.match(languageIndex, /validateViewpointTypeList\(viewpoint\.allowedRelationshipTypes/);
+  assert.match(languageIndex, /hasProfileConcept\(type, profile\)/);
+  assert.match(languageIndex, /hasProfileRelationship\(type, profile\)/);
+  assert.match(languageIndex, /Custom ArchiMate viewpoint ' \+ fieldName \+ ' entries require type/);
+  assert.match(languageIndex, /Unsupported ArchiMate viewpoint ' \+ fieldName \+ ': ' \+ type/);
   assert.match(readme, /viewpoints/);
+  assert.match(sources, /allowed element and relationship types against the active profile/);
 });

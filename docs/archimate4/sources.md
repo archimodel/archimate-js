@@ -135,6 +135,8 @@
   allowed relationship types, and modeling notes.
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
   host tooling, with purpose/content token validation.
+- Custom viewpoint definitions validate allowed element and relationship types against the active profile,
+  including custom specialized concepts and relationships already merged into that profile.
 - Example viewpoints remain informative and are not embedded as normative data.
 
 ## Appendix E Migration Correction

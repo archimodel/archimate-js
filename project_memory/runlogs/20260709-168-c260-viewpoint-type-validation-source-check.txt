@@ -1,0 +1,70 @@
+C260 viewpoint implementation source check
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+page=1; matched=Viewpoint, purpose, content
+page=3; matched=content
+page=5; matched=purpose, content
+page=6; matched=Viewpoint, content
+page=10; matched=Viewpoint
+page=11; matched=Viewpoint
+page=12; matched=Viewpoint
+page=16; matched=Viewpoint, purpose
+page=17; matched=purpose
+page=22; matched=Viewpoint
+page=23; matched=Viewpoint, purpose
+page=25; matched=Viewpoint, purpose, content
+page=30; matched=content
+page=31; matched=Viewpoint
+page=36; matched=content
+page=37; matched=Viewpoint, content
+page=39; matched=purpose
+page=47; matched=content
+page=48; matched=purpose
+page=84; matched=purpose
+page=88; matched=purpose
+page=110; matched=purpose
+page=117; matched=purpose
+page=126; matched=Viewpoint
+page=127; matched=Viewpoint, purpose
+page=128; matched=Viewpoint, purpose, content
+page=129; matched=Viewpoint, purpose, content
+page=130; matched=Viewpoint, purpose, content
+page=131; matched=Viewpoint
+page=132; matched=purpose
+page=139; matched=purpose
+page=140; matched=purpose
+page=146; matched=allowed relationship, Allowed Relationship, purpose
+page=158; matched=allowed relationship, Allowed Relationship
+page=160; matched=allowed relationship, Allowed Relationship
+page=168; matched=Viewpoint
+page=169; matched=Viewpoint, content
+page=170; matched=Viewpoint, content
+page=171; matched=Viewpoint, purpose
+page=172; matched=Viewpoint, purpose
+page=173; matched=Viewpoint
+page=174; matched=Viewpoint, purpose
+page=175; matched=Viewpoint, purpose
+page=176; matched=Viewpoint, purpose
+page=177; matched=Viewpoint, purpose
+page=178; matched=Viewpoint, purpose
+page=179; matched=Viewpoint, purpose
+page=180; matched=Viewpoint, purpose
+page=181; matched=Viewpoint
+page=182; matched=Viewpoint, purpose
+page=183; matched=Viewpoint, purpose
+page=184; matched=Viewpoint, purpose
+page=185; matched=Viewpoint, purpose
+page=186; matched=Viewpoint, purpose
+page=187; matched=Viewpoint, purpose
+page=188; matched=Viewpoint, purpose
+page=189; matched=Viewpoint, purpose
+page=190; matched=Viewpoint, purpose
+page=191; matched=Viewpoint, purpose
+page=192; matched=Viewpoint
+page=193; matched=Viewpoint
+page=196; matched=Viewpoint
+page=197; matched=allowed relationship, Allowed Relationship
+page=198; matched=Viewpoint
+page=204; matched=Viewpoint
+page=205; matched=Viewpoint
+page=206; matched=Viewpoint
+Derived non-verbatim implementation fact: viewpoint definitions have purpose/content metadata and may constrain allowed element and relationship types. Custom viewpoint definitions should reject unsupported purpose/content tokens and reject allowed element or relationship type names absent from the active ArchiMate profile.
