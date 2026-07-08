@@ -128,6 +128,11 @@
   `project_memory/runlogs/20260709-390-c260-appendix-a-material-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_MATERIAL` Artifact alias with a
   locally-authored hexagonal path.
+- A local C260 Appendix A rendered visual check for `Facility` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-401-c260-appendix-a-facility-render.txt` and
+  `project_memory/runlogs/20260709-402-c260-appendix-a-facility-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_FACILITY` Node alias with a
+  locally-authored factory-shaped path.
 
 ## Language Customization Mechanism
 

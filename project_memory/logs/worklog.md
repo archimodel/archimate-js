@@ -1027,3 +1027,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-398-material-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-material-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 83
+
+- Goal: replace the ArchiMate 4 `Facility` renderer pictogram fallback with a C260 Appendix A-derived factory-shaped path.
+- Source evidence: `project_memory/runlogs/20260709-401-c260-appendix-a-facility-render.txt` and `project_memory/runlogs/20260709-402-c260-appendix-a-facility-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-403-facility-pictogram-red-test.txt` failed because `PICTO_FACILITY` was still aliased to `PICTO_NODE`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_FACILITY` factory-shaped path and removes the Node alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Facility renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-404-facility-pictogram-test.txt`; `npm run test:language` passed with 141 tests in `project_memory/runlogs/20260709-405-facility-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-406-facility-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-407-facility-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-408-facility-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-409-facility-pictogram-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-410-facility-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-facility-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

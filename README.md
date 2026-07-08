@@ -104,6 +104,7 @@ const modeler = new Modeler({
 * The ArchiMate 4 `Location` renderer pictogram uses a dedicated locally-authored pin path instead of the legacy generic object pictogram.
 * The ArchiMate 4 `Distribution Network` renderer pictogram uses a dedicated locally-authored bidirectional arrow path instead of the Communication Network node-link pictogram.
 * The ArchiMate 4 `Material` renderer pictogram uses a dedicated locally-authored hexagon path instead of the Artifact document pictogram.
+* The ArchiMate 4 `Facility` renderer pictogram uses a dedicated locally-authored factory path instead of the Node cube pictogram.
 * In ArchiMate 4 mode, Motivation elements render with clipped/chamfered body corners from the Appendix A notation summary while ArchiMate 3.x keeps the existing rectangle body behavior.
 * In ArchiMate 4 mode, `Grouping` renders with a dashed, unfilled outline to match the Appendix A notation boundary while exact Appendix A vector artwork remains externally source-dependent.
 * ArchiMate 4 `Grouping`, `Location`, and `Plateau` can aggregate relationship concepts, including relationships and junctions.

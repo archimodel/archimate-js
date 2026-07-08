@@ -1,0 +1,15 @@
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (6.2369ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (1.627ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (2.5712ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (1.3026ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (1.1688ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (0.8995ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (0.8372ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.5845
