@@ -1,0 +1,27 @@
+pdf_exists=True
+page=69 relationship_role_lines
+Aggregation Represents that an element combines one or → aggregates
+more other concepts. ← aggregated in
+Composition Represents that an element combines one or → composed of
+more other concepts, where the existence of ← composed in
+Assignment Represents the allocation of responsibility, → assigned to
+performance of behavior, storage, or execution. ← has assigned
+Realization Represents that an element plays a critical role → realizes
+in the creation, achievement, sustenance, or ← realized by
+Serving Represents that an element provides its → serves
+functionality to another element. ← served by
+Access Represents the ability of behavior and active → accesses
+structure elements to observe or act upon ← accessed by
+Influence Represents that an element affects the → influences
+implementation or achievement of some ← influenced by
+page=70 relationship_role_lines
+Association Represents an unspecified relationship, or one associated with
+that is not represented by another ArchiMate → associated to
+relationship. ← associated from
+Triggering Represents a temporal or causal relationship → triggers
+between elements. ← triggered by
+Flow Represents transfer from one element to → flows to
+another. ← flows from
+Specialization Represents that an element is a particular kind → specializes
+of another element. ← specialized by
+derived_fact: extracted table lines provide direct/reverse relationship role label evidence without copying the full relationship matrix.

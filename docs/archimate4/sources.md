@@ -153,6 +153,14 @@
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
   so an external Appendix B profile affects editing constraints as well as menu display.
 
+## Relationship Role Label Guard
+
+- C260 lists direct and reverse role names for each core relationship type.
+- `lib/features/popup-menu/ConnectionOptions.js` now uses those role names as user-facing popup
+  labels instead of raw relationship type names.
+- Menu entries keep the underlying relationship type in `relationshipType` and `target.type`, so
+  replacement and persistence still operate on the standard relationship type value.
+
 ## Junction Multiplicity Guard
 
 - C260 requires relationship-end multiplicity to be omitted when a relationship end is connected to a

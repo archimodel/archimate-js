@@ -1,0 +1,22 @@
+ README.md                                    |   1 +
+ docs/archimate4/official-specification.md    |   2 +
+ docs/archimate4/sources.md                   |   8 +
+ lib/features/popup-menu/ConnectionOptions.js | 329 +++++++--------------------
+ project_memory/audit/audit_registry.json     |   2 +-
+ test/relationship-rules.test.mjs             |  35 +++
+ 6 files changed, 134 insertions(+), 243 deletions(-)
+README.md:93:* Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
+docs/archimate4\sources.md:156:## Relationship Role Label Guard
+lib/features/popup-menu/ConnectionOptions.js:26:  createMenuEntry(RELATIONSHIP_COMPOSITION, groupDirect, 'Composed of', 'composition-connect', 'archimate-relation-composition'),
+lib/features/popup-menu/ConnectionOptions.js:40:  createMenuEntry(RELATIONSHIP_COMPOSITION, groupReverse, 'Composed in', 'composition-connect-reverse', 'archimate-relation-composition', true),
+lib/features/popup-menu/ConnectionOptions.js:41:  createMenuEntry(RELATIONSHIP_AGGREGATION, groupReverse, 'Aggregated in', 'aggregation-connect-reverse', 'archimate-relation-aggregation', true),
+lib/features/popup-menu/ConnectionOptions.js:42:  createMenuEntry(RELATIONSHIP_ASSIGNMENT, groupReverse, 'Has assigned', 'assignement-connect-reverse', 'archimate-relation-assignment', true),
+lib/features/popup-menu/ConnectionOptions.js:50:  createMenuEntry(RELATIONSHIP_SPECIALIZATION, groupReverse, 'Specialized by', 'specialization-connect-reverse', 'archimate-relation-specialization', true)
+lib/features/popup-menu/ConnectionOptions.js:67:      relationshipType: relationshipType,
+test\relationship-rules.test.mjs:83:    'Composed of',
+test\relationship-rules.test.mjs:84:    'Composed in',
+test\relationship-rules.test.mjs:86:    'Aggregated in',
+test\relationship-rules.test.mjs:88:    'Has assigned',
+test\relationship-rules.test.mjs:104:    'Specialized by'
+test\relationship-rules.test.mjs:109:  assert.match(source, /relationshipType: relationshipType/);
+eslint_connection_options_exit=0

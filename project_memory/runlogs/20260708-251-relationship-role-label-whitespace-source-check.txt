@@ -1,0 +1,8 @@
+pdf_exists=True pages=207
+normalized_label=Assigned from pages=none
+normalized_label=Associated from pages=70:1
+normalized_label=Aggregated by pages=46:1
+normalized_label=Specialization of pages=10:1,52:1,65:1,100:1,114:1,134:10,135:3,136:1,137:1,138:2,139:1,140:1,141:2,142:2,143:1,154:2,200:7
+normalized_label=Composed of pages=52:1,69:1,112:1
+normalized_label=Flows from pages=70:1
+derived_fact: C260-extracted role labels are used for menu display when extraction finds them; pre-existing role-label comments supply the complete direct/reverse role-label set already present in source.

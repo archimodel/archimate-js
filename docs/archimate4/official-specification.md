@@ -162,6 +162,8 @@ Implementation note:
   domain.
 - Named junctions keep their `AND` or `OR` marker inside the connector and render the optional
   modeler-supplied name below the connector.
+- Relationship popup labels use the C260 direct/reverse relationship role names while retaining the
+  underlying relationship type for replacement and persistence.
 - Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
   and negative modifier actions in the popup.

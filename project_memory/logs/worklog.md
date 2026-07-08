@@ -366,3 +366,15 @@
 - Verification: fix check passed in `project_memory/runlogs/20260708-237-junction-name-fix-check.txt`; `npm run test:language` passed with 73 tests in `project_memory/runlogs/20260708-238-junction-name-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-239-junction-name-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-240-junction-name-git-diff-check.txt`; repo-wide lint remains the expected legacy failure with 4710 errors in `project_memory/runlogs/20260708-241-junction-name-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-junction-name-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 36
+
+- Goal: use C260 direct/reverse relationship role names as popup menu labels while preserving relationship type values for editing.
+- Observation: `project_memory/runlogs/20260708-244-relationship-role-label-gap-check.txt` showed `ConnectionOptions.js` kept role labels only as comments and rendered raw relationship type names; the file also had 243 single-file ESLint errors.
+- Source correction: `project_memory/runlogs/20260708-254-relationship-role-label-table-line-check.txt` showed the C260 reverse labels for Composition, Aggregation, Assignment, and Specialization are `Composed in`, `Aggregated in`, `Has assigned`, and `Specialized by`, not the older source comments.
+- Implemented: `lib/features/popup-menu/ConnectionOptions.js` now creates direct/reverse menu entries from executable C260 role labels and keeps `relationshipType` plus `target.type` as the standard relationship type.
+- Implemented: menu entries are cloned per call before applying menu group names, and the touched file now passes ESLint.
+- Tests/docs: `test/relationship-rules.test.mjs`, README, `docs/archimate4/*`, and `project_memory/audit/audit_registry.json` now guard relationship role labels and include `ConnectionOptions.js` in the ArchiMate 4 lint gate.
+- Verification: fix check passed in `project_memory/runlogs/20260708-245-relationship-role-label-fix-check.txt`; `npm run test:language` passed with 74 tests in `project_memory/runlogs/20260708-246-relationship-role-label-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-247-relationship-role-label-eslint-changed-js.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-248-relationship-role-label-eslint-archimate4-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-249-relationship-role-label-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-250-relationship-role-label-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-relationship-role-label-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

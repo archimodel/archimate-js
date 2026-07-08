@@ -1,0 +1,7 @@
+pdf_exists=True
+page=69 assigned_line_hits
+Assignment Represents the allocation of responsibility, → assigned to
+performance of behavior, storage, or execution. ← has assigned
+page=70 assigned_line_hits
+chain assignment — aggregation — realization — serving).
+derived_fact: extracted C260 page text exposes the Assignment direct role label, while the reverse Assignment display label remains sourced from the pre-existing ConnectionOptions role-label comment.

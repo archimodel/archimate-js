@@ -1,0 +1,43 @@
+## codex/archimate-4-support
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/features/popup-menu/ConnectionOptions.js
+ M project_memory/audit/audit_registry.json
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/relationship-rules.test.mjs
+?? project_memory/audit/reports/20260708-relationship-role-label-audit.md
+?? project_memory/runlogs/20260708-244-relationship-role-label-gap-check.txt
+?? project_memory/runlogs/20260708-245-relationship-role-label-fix-check.txt
+?? project_memory/runlogs/20260708-246-relationship-role-label-npm-test-language.txt
+?? project_memory/runlogs/20260708-247-relationship-role-label-eslint-changed-js.txt
+?? project_memory/runlogs/20260708-248-relationship-role-label-eslint-archimate4-gate.txt
+?? project_memory/runlogs/20260708-249-relationship-role-label-git-diff-check.txt
+?? project_memory/runlogs/20260708-250-relationship-role-label-repo-lint-legacy.txt
+?? project_memory/runlogs/20260708-251-relationship-role-label-whitespace-source-check.txt
+?? project_memory/runlogs/20260708-252-relationship-role-label-pdfplumber-source-check.txt
+?? project_memory/runlogs/20260708-253-relationship-role-label-assignment-line-check.txt
+?? project_memory/runlogs/20260708-254-relationship-role-label-table-line-check.txt
+aria_state_json=valid
+ README.md                                    |   1 +
+ docs/archimate4/official-specification.md    |   2 +
+ docs/archimate4/sources.md                   |   8 +
+ lib/features/popup-menu/ConnectionOptions.js | 329 +++++++--------------------
+ project_memory/audit/audit_registry.json     |   2 +-
+ project_memory/logs/worklog.md               |  12 +
+ project_memory/state/aria_state.json         |  21 +-
+ test/relationship-rules.test.mjs             |  39 ++++
+ 8 files changed, 162 insertions(+), 252 deletions(-)
+docs/archimate4/sources.md:156:## Relationship Role Label Guard
+docs/archimate4/sources.md:159:- `lib/features/popup-menu/ConnectionOptions.js` now uses those role names as user-facing popup
+project_memory/audit/audit_registry.json:28:      "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/moddle/index.js lib/moddle/templateModel.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/util/ModelUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/MultiplicityUtil.js lib/util/ColorUtil.js test/*.test.mjs",
+project_memory/audit/reports/20260708-relationship-role-label-audit.md:11:- Cleaned `lib/features/popup-menu/ConnectionOptions.js` so the file itself now passes ESLint.
+project_memory/logs/worklog.md:373:- Observation: `project_memory/runlogs/20260708-244-relationship-role-label-gap-check.txt` showed `ConnectionOptions.js` kept role labels only as comments and rendered raw relationship type names; the file also had 243 single-file ESLint errors.
+project_memory/logs/worklog.md:375:- Implemented: `lib/features/popup-menu/ConnectionOptions.js` now creates direct/reverse menu entries from executable C260 role labels and keeps `relationshipType` plus `target.type` as the standard relationship type.
+project_memory/logs/worklog.md:377:- Tests/docs: `test/relationship-rules.test.mjs`, README, `docs/archimate4/*`, and `project_memory/audit/audit_registry.json` now guard relationship role labels and include `ConnectionOptions.js` in the ArchiMate 4 lint gate.
+project_memory/logs/worklog.md:379:- Audit: `project_memory/audit/reports/20260708-relationship-role-label-audit.md`.
+project_memory/state/aria_state.json:4:  "stage": "relationship_role_label_verified",
+project_memory/state/aria_state.json:51:      "relationship_role_label_rendering"
+project_memory/state/aria_state.json:91:      "check_relationship_role_label_rendering"
+project_memory/state/aria_state.json:96:    "audit_report_path": "project_memory/audit/reports/20260708-relationship-role-label-audit.md",

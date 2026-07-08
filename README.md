@@ -90,6 +90,7 @@ const modeler = new Modeler({
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
+* Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
 * Influence relationship modifiers are preserved and rendered; the popup includes quick actions for positive and negative influence.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.

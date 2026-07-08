@@ -1,0 +1,300 @@
+source: C260 local PDF relationship-role label check
+pdf_exists=True pages=207
+label=Composed of pages=52:1,69:1,112:1
+label=Part of pages=5:1,25:1,28:1,41:1,52:1,54:1,55:1,56:5,58:1,62:13,63:5,65:4,67:1,81:1,96:1,99:1,102:1,104:2,109:1,110:1,112:1,113:1,116:1,118:1,122:1,125:2,127:1,132:1,139:1,147:1,148:1,149:1,152:1,168:2,199:1,200:1
+label=Aggregates pages=35:1,41:1,45:1,52:2,56:2,69:1,99:1,100:1,104:1,105:1,123:1,151:1,154:1,155:1
+label=Aggregated by pages=46:1
+label=Assigned to pages=32:1,37:1,38:1,40:5,42:1,43:1,44:1,54:3,56:3,69:1,82:1,84:1,88:1,89:1,94:1,95:4,96:2,103:1,104:1,109:2,110:1,111:5,113:2,114:1,115:1,119:1,124:1,135:1,151:1,154:2,155:2,174:1,187:1
+label=Assigned from pages=none
+label=Realizes pages=45:1,55:7,56:2,57:1,60:1,69:1,71:1,87:1,90:2,112:1,114:1,118:2,119:1,123:1,125:1,173:1
+label=Realized by pages=41:3,55:3,56:2,69:1,78:2,79:7,86:2,87:2,88:1,89:1,98:2,105:1,110:1,114:2,118:3,119:2,125:3,141:1,170:1,179:1
+label=Serves pages=39:1,58:2,62:1,69:1,86:1,104:1
+label=Served by pages=31:1,62:1,63:1,69:1,90:1
+label=Accesses pages=59:1,62:2,63:1,69:1,119:1,154:2,155:2
+label=Accessed by pages=35:1,69:1,103:1,108:1,109:1,113:1,115:1,123:1
+label=Influences pages=60:2,62:2,69:1
+label=Influenced by pages=60:1,69:1
+label=Associated to pages=70:1,81:1
+label=Associated from pages=70:1
+label=Triggers pages=44:1,45:2,68:2,70:1,119:1,123:4,151:3
+label=Triggered by pages=43:1,44:1,63:1,70:1
+label=Flows to pages=70:1
+label=Flows from pages=70:1
+label=Specializes pages=70:1
+label=Specialization of pages=10:1,52:1,65:1,100:1,114:1,134:10,135:3,136:1,137:1,138:2,139:1,140:1,141:2,142:1,143:1,154:2,200:6
+derived_fact: C260 lists direct and reverse role names for the core relationship types.
+implementation_gap: ConnectionOptions keeps those role labels only as comments and renders raw relationship type names instead.
+code: current relationship labels and comments
+30:        label: RELATIONSHIP_COMPOSITION, //'Composed of',
+39:        label: RELATIONSHIP_AGGREGATION, //'Aggregates',
+48:        label: RELATIONSHIP_ASSIGNMENT, //'Assigned to',
+57:        label: RELATIONSHIP_REALIZATION, //'Realizes',
+66:        label: RELATIONSHIP_SERVING, //'Serves',
+75:        label: RELATIONSHIP_ACCESS, //'Accesses',
+84:        label: RELATIONSHIP_INFLUENCE, //'Influences',
+93:        label: RELATIONSHIP_ASSOCIATION, //'Associated to',
+102:        label: RELATIONSHIP_TRIGGERING, //'Triggers',
+111:        label: RELATIONSHIP_FLOW, //'Flows to',
+120:        label: RELATIONSHIP_SPECIALIZATION, //'Specializes',
+132:      label: RELATIONSHIP_COMPOSITION, //'Part of',
+142:      label: RELATIONSHIP_AGGREGATION, //'Aggregated by',
+152:      label: RELATIONSHIP_ASSIGNMENT, //'Assigned from',
+162:      label: RELATIONSHIP_REALIZATION, //'Realized by',
+172:      label: RELATIONSHIP_SERVING, //'Served by',
+182:      label: RELATIONSHIP_ACCESS, //'Accessed by',
+192:      label: RELATIONSHIP_INFLUENCE, //'Influenced by',
+202:      label: RELATIONSHIP_ASSOCIATION, //'Associated from',
+212:      label: RELATIONSHIP_TRIGGERING, //'Triggered by',
+222:      label: RELATIONSHIP_FLOW, //'Flows from',
+232:      label: RELATIONSHIP_SPECIALIZATION, //'Specialization of',
+lint: current single-file baseline
+
+D:\github\archimate-js\lib\features\popup-menu\ConnectionOptions.js
+    1:56  error  Trailing spaces not allowed                                                   no-trailing-spaces
+    2:79  error  Trailing spaces not allowed                                                   no-trailing-spaces
+    3:70  error  Trailing spaces not allowed                                                   no-trailing-spaces
+    4:85  error  Strings must use singlequote                                                  quotes
+    6:7   error  's' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+    7:1   error  Expected indentation of 6 spaces but found 4                                  indent
+    7:5   error  'c' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+    8:1   error  Expected indentation of 6 spaces but found 4                                  indent
+    8:5   error  'g' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+    9:1   error  Expected indentation of 6 spaces but found 4                                  indent
+    9:5   error  'i' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   10:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   10:5   error  'r' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   11:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   11:5   error  'v' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   12:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   12:5   error  'a' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   13:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   13:5   error  'n' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   14:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   14:5   error  't' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   15:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   15:5   error  'f' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   16:1   error  Expected indentation of 6 spaces but found 4                                  indent
+   16:5   error  'o' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   19:1   error  Expected indentation of 8 spaces but found 10                                 indent
+   20:1   error  Expected indentation of 8 spaces but found 10                                 indent
+   21:1   error  Expected indentation of 6 spaces but found 8                                  indent
+   23:1   error  Expected indentation of 8 spaces but found 10                                 indent
+   24:1   error  Expected indentation of 8 spaces but found 10                                 indent
+   28:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   29:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   30:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   30:42  error  Expected space or tab after '//' in comment                                   spaced-comment
+   31:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   32:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   33:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   34:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   35:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   36:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   37:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   38:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   39:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   39:42  error  Expected space or tab after '//' in comment                                   spaced-comment
+   40:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   41:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   42:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   43:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   44:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   45:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   46:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   47:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   48:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   48:41  error  Expected space or tab after '//' in comment                                   spaced-comment
+   49:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   50:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   51:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   52:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   53:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   54:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   55:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   56:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   57:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   57:42  error  Expected space or tab after '//' in comment                                   spaced-comment
+   58:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   59:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   60:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   61:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   62:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   63:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   64:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   65:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   66:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   66:38  error  Expected space or tab after '//' in comment                                   spaced-comment
+   67:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   68:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   69:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   70:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   71:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   72:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   73:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   74:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   75:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   75:37  error  Expected space or tab after '//' in comment                                   spaced-comment
+   76:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   77:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   78:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   79:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   80:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   81:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   82:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   83:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   84:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   84:40  error  Expected space or tab after '//' in comment                                   spaced-comment
+   85:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   86:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   87:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   88:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   89:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   90:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   91:1   error  Expected indentation of 2 spaces but found 4                                  indent
+   92:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   93:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   93:42  error  Expected space or tab after '//' in comment                                   spaced-comment
+   94:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   95:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   96:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   97:1   error  Expected indentation of 6 spaces but found 10                                 indent
+   98:1   error  Expected indentation of 4 spaces but found 8                                  indent
+   99:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  100:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  101:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  102:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  102:41  error  Expected space or tab after '//' in comment                                   spaced-comment
+  103:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  104:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  105:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  106:1   error  Expected indentation of 6 spaces but found 10                                 indent
+  107:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  108:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  109:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  110:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  111:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  111:35  error  Expected space or tab after '//' in comment                                   spaced-comment
+  112:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  113:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  114:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  115:1   error  Expected indentation of 6 spaces but found 10                                 indent
+  116:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  117:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  118:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  119:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  120:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  120:45  error  Expected space or tab after '//' in comment                                   spaced-comment
+  121:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  122:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  123:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  124:1   error  Expected indentation of 6 spaces but found 10                                 indent
+  125:1   error  Expected indentation of 4 spaces but found 8                                  indent
+  126:1   error  Expected indentation of 2 spaces but found 4                                  indent
+  131:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  132:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  132:40  error  Expected space or tab after '//' in comment                                   spaced-comment
+  133:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  134:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  135:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  136:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  137:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  138:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  141:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  142:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  142:40  error  Expected space or tab after '//' in comment                                   spaced-comment
+  143:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  144:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  145:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  146:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  147:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  148:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  151:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  152:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  152:39  error  Expected space or tab after '//' in comment                                   spaced-comment
+  153:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  154:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  155:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  156:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  157:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  158:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  161:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  162:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  162:40  error  Expected space or tab after '//' in comment                                   spaced-comment
+  163:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  164:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  165:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  166:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  167:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  168:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  171:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  172:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  172:36  error  Expected space or tab after '//' in comment                                   spaced-comment
+  173:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  174:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  175:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  176:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  177:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  178:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  181:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  182:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  182:35  error  Expected space or tab after '//' in comment                                   spaced-comment
+  183:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  184:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  185:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  186:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  187:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  188:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  191:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  192:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  192:38  error  Expected space or tab after '//' in comment                                   spaced-comment
+  193:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  194:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  195:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  196:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  197:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  198:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  201:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  202:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  202:40  error  Expected space or tab after '//' in comment                                   spaced-comment
+  203:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  204:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  205:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  206:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  207:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  208:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  211:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  212:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  212:39  error  Expected space or tab after '//' in comment                                   spaced-comment
+  213:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  214:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  215:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  216:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  217:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  218:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  221:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  222:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  222:33  error  Expected space or tab after '//' in comment                                   spaced-comment
+  223:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  224:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  225:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  226:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  227:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  228:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  231:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  232:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  232:43  error  Expected space or tab after '//' in comment                                   spaced-comment
+  233:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  234:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  235:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  236:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  237:1   error  Expected indentation of 6 spaces but found 8                                  indent
+  238:1   error  Expected indentation of 4 spaces but found 6                                  indent
+  245:20  error  Missing semicolon                                                             semi
+  252:33  error  Trailing spaces not allowed                                                   no-trailing-spaces
+  252:33  error  Missing semicolon                                                             semi
+  257:1   error  Trailing spaces not allowed                                                   no-trailing-spaces
+
+✖ 243 problems (243 errors, 0 warnings)
+  232 errors and 0 warnings potentially fixable with the `--fix` option.
+
+eslint_exit=1

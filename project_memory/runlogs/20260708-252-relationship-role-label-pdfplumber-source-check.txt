@@ -1,0 +1,8 @@
+pdf_exists=True
+pages=207
+pdfplumber_label=Assigned from pages=none
+pdfplumber_label=Assigned to pages=32:1,37:1,38:1,40:5,42:1,43:1,44:1,54:3,56:3,69:1,82:1,84:1,88:1,89:1,94:1,95:4,96:2,103:1,104:1,109:2,110:1,111:5,113:2,114:1,115:1,119:1,124:1,135:1,151:1,154:2,155:2,174:1,187:1
+pdfplumber_label=Associated from pages=70:1
+pdfplumber_label=Aggregated by pages=46:1
+pdfplumber_label=Specialization of pages=10:1,52:1,65:1,100:1,114:1,134:10,135:3,136:1,137:1,138:2,139:1,140:1,141:2,142:2,143:1,154:2,200:7
+derived_fact: independent extraction confirms the role-label strings it can recover; missing extraction hits are not used as proof against existing source comments.

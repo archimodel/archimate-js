@@ -76,6 +76,45 @@ test('connection popup includes ArchiMate 4 relationship-concept aggregation hel
   assert.match(source, /return aggregationType !== excludedRelationType \? \[ aggregationType \] : \[\]/);
 });
 
+test('connection popup labels relationships with C260 role names', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionOptions.js', import.meta.url), 'utf8');
+
+  for (const label of [
+    'Composed of',
+    'Composed in',
+    'Aggregates',
+    'Aggregated in',
+    'Assigned to',
+    'Has assigned',
+    'Realizes',
+    'Realized by',
+    'Serves',
+    'Served by',
+    'Accesses',
+    'Accessed by',
+    'Influences',
+    'Influenced by',
+    'Associated to',
+    'Associated from',
+    'Triggers',
+    'Triggered by',
+    'Flows to',
+    'Flows from',
+    'Specializes',
+    'Specialized by'
+  ]) {
+    assert.equal(source.includes(`'${label}'`), true, `${label} role label must be present`);
+  }
+
+  assert.match(source, /relationshipType: relationshipType/);
+  assert.match(source, /cloneRelationshipMenu\(menu, menuName\)/);
+  assert.doesNotMatch(source, /label:\s*RELATIONSHIP_/);
+  assert.equal(source.includes("'Part of'"), false);
+  assert.equal(source.includes("'Aggregated by'"), false);
+  assert.equal(source.includes("'Assigned from'"), false);
+  assert.equal(source.includes("'Specialization of'"), false);
+});
+
 test('connection popup exposes influence modifier actions', async () => {
   const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
 
