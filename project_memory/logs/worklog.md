@@ -1064,3 +1064,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-439-work-package-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-440-work-package-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-work-package-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 86
+
+- Goal: replace the ArchiMate 4 `Deliverable` renderer pictogram fallback with a C260 Appendix A-derived wavy-bottom document path.
+- Source evidence: `project_memory/runlogs/20260709-442-c260-appendix-a-deliverable-render.txt` and `project_memory/runlogs/20260709-443-c260-appendix-a-deliverable-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-444-deliverable-pictogram-red-test.txt` failed because `PICTO_DELIVERABLE` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_DELIVERABLE` wavy-bottom document path, removes the generic object alias, and keeps the legacy misspelled `PICTO_DELIVRABLE` alias pointed at the corrected path.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Deliverable renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-445-deliverable-pictogram-test.txt`; `npm run test:language` passed with 144 tests in `project_memory/runlogs/20260709-446-deliverable-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-447-deliverable-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-448-deliverable-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-449-deliverable-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-450-deliverable-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-451-deliverable-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-452-deliverable-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-453-deliverable-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-deliverable-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -143,6 +143,12 @@
   `project_memory/runlogs/20260709-428-c260-appendix-a-work-package-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_WORK_PACKAGE` Process alias with a
   locally-authored loop-arrow path.
+- A local C260 Appendix A rendered visual check for `Deliverable` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-442-c260-appendix-a-deliverable-render.txt` and
+  `project_memory/runlogs/20260709-443-c260-appendix-a-deliverable-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_DELIVERABLE` generic object alias
+  with a locally-authored wavy-bottom document path while retaining the legacy `PICTO_DELIVRABLE`
+  alias as compatibility.
 
 ## Language Customization Mechanism
 
