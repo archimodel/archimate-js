@@ -156,3 +156,19 @@ test('renderer uses a dedicated ArchiMate 4 Requirement parallelogram pictogram 
   assert.doesNotMatch(pathMap, /'PICTO_REQUIREMENT': 'PICTO_OBJECT'/);
   assert.match(pathMap, /m 4 4 l 12 0 l -3 9/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Value oval pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_VALUE': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_VALUE': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 8 4 c 5 0 8 2 8 5/);
+});
+
+test('renderer uses a dedicated ArchiMate 4 Meaning thought-cloud pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_MEANING': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_MEANING': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 3 14 a 1 1 90 0 0 2 0/);
+});

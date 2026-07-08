@@ -108,6 +108,8 @@ const modeler = new Modeler({
 * The ArchiMate 4 `Outcome` renderer pictogram uses a dedicated locally-authored target-arrow path instead of the generic object pictogram.
 * The ArchiMate 4 `Principle` renderer pictogram uses a dedicated locally-authored exclamation path instead of the generic object pictogram.
 * The ArchiMate 4 `Requirement` renderer pictogram uses a dedicated locally-authored parallelogram path instead of the generic object pictogram.
+* The ArchiMate 4 `Value` renderer pictogram uses a dedicated locally-authored oval path instead of the generic object pictogram.
+* The ArchiMate 4 `Meaning` renderer pictogram uses a dedicated locally-authored thought-cloud path instead of the generic object pictogram.
 * The ArchiMate 4 `Location` renderer pictogram uses a dedicated locally-authored pin path instead of the legacy generic object pictogram.
 * The ArchiMate 4 `Distribution Network` renderer pictogram uses a dedicated locally-authored bidirectional arrow path instead of the Communication Network node-link pictogram.
 * The ArchiMate 4 `Material` renderer pictogram uses a dedicated locally-authored hexagon path instead of the Artifact document pictogram.

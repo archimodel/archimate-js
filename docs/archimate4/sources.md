@@ -128,6 +128,11 @@
   `project_memory/runlogs/20260709-541-c260-appendix-a-requirement-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_REQUIREMENT` generic object alias
   with a locally-authored parallelogram path.
+- A local C260 Appendix A rendered visual check for `Meaning` and `Value` pictogram notation is
+  recorded in `project_memory/runlogs/20260709-554-c260-appendix-a-meaning-value-render.txt` and
+  `project_memory/runlogs/20260709-555-c260-appendix-a-meaning-value-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_MEANING` and `PICTO_VALUE` generic
+  object aliases with locally-authored thought-cloud and oval paths.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

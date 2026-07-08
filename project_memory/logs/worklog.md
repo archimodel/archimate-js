@@ -1181,3 +1181,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-552-requirement-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-553-requirement-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-requirement-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 95
+
+- Goal: replace the ArchiMate 4 `Meaning` and `Value` renderer pictogram fallbacks with C260 Appendix A-derived thought-cloud and oval paths.
+- Source evidence: `project_memory/runlogs/20260709-554-c260-appendix-a-meaning-value-render.txt` and `project_memory/runlogs/20260709-555-c260-appendix-a-meaning-value-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-556-meaning-value-pictogram-red-test.txt` failed because `PICTO_MEANING` and `PICTO_VALUE` were still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines locally-authored `PICTO_MEANING` thought-cloud and `PICTO_VALUE` oval paths and removes both generic object aliases.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Meaning and Value renderer pictogram boundary.
+- Verification: focused renderer notation test passed with 20 tests in `project_memory/runlogs/20260709-557-meaning-value-pictogram-test.txt`; `npm run test:language` passed with 154 tests in `project_memory/runlogs/20260709-558-meaning-value-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-559-meaning-value-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-560-meaning-value-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-561-meaning-value-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-562-meaning-value-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-563-meaning-value-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-566-meaning-value-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-567-meaning-value-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-meaning-value-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
