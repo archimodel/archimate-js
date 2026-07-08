@@ -5,6 +5,10 @@ import {
   canApplyRelationshipMultiplicity,
   isRelationshipConnectedToJunction
 } from '../lib/util/JunctionUtil.js';
+import {
+  isValidRelationshipMultiplicity,
+  normalizeRelationshipMultiplicity
+} from '../lib/util/MultiplicityUtil.js';
 
 test('relationship descriptor contains multiplicity attributes', async () => {
   const descriptor = await readFile(new URL('../lib/moddle/resources/archimate4.json', import.meta.url), 'utf8');
@@ -16,16 +20,18 @@ test('relationship descriptor contains multiplicity attributes', async () => {
 test('element factory carries multiplicity from relationship refs', async () => {
   const source = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
 
-  assert.match(source, /sourceMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef\.sourceMultiplicity/);
-  assert.match(source, /targetMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef\.targetMultiplicity/);
+  assert.match(source, /canApplyRelationshipMultiplicity\(attrs\)/);
+  assert.match(source, /normalizeRelationshipMultiplicity\(relationshipRef\.sourceMultiplicity\)/);
+  assert.match(source, /normalizeRelationshipMultiplicity\(relationshipRef\.targetMultiplicity\)/);
 });
 
 test('connection updater persists relationship multiplicity fields', async () => {
   const source = await readFile(new URL('../lib/features/modeling/ConnectionUpdater.js', import.meta.url), 'utf8');
 
   assert.match(source, /delete relationship\.sourceMultiplicity/);
-  assert.match(source, /canApplyRelationshipMultiplicity\(connection\) && connection\.sourceMultiplicity/);
-  assert.match(source, /canApplyRelationshipMultiplicity\(connection\) && connection\.targetMultiplicity/);
+  assert.match(source, /canApplyRelationshipMultiplicity\(connection\)/);
+  assert.match(source, /normalizeRelationshipMultiplicity\(connection\.sourceMultiplicity\)/);
+  assert.match(source, /normalizeRelationshipMultiplicity\(connection\.targetMultiplicity\)/);
 });
 
 test('relationship replacement preserves editable multiplicity properties', async () => {
@@ -56,7 +62,23 @@ test('renderer displays relationship end multiplicities', async () => {
 
   assert.match(source, /connection\.sourceMultiplicity/);
   assert.match(source, /connection\.targetMultiplicity/);
-  assert.match(source, /renderLabel\(parentGfx, connection\.sourceMultiplicity/);
+  assert.match(source, /renderLabel\(parentGfx, sourceMultiplicity/);
+});
+
+test('relationship multiplicity notation follows the C260-derived subset', () => {
+  assert.equal(isValidRelationshipMultiplicity('1'), true);
+  assert.equal(isValidRelationshipMultiplicity('*'), true);
+  assert.equal(isValidRelationshipMultiplicity('0..1'), true);
+  assert.equal(isValidRelationshipMultiplicity('2..5'), true);
+  assert.equal(normalizeRelationshipMultiplicity(' 2..5 '), '2..5');
+
+  assert.equal(isValidRelationshipMultiplicity('0'), false);
+  assert.equal(isValidRelationshipMultiplicity('1..1'), false);
+  assert.equal(isValidRelationshipMultiplicity('1..*'), false);
+  assert.equal(isValidRelationshipMultiplicity('0..*'), false);
+  assert.equal(isValidRelationshipMultiplicity('-1..1'), false);
+  assert.equal(isValidRelationshipMultiplicity('00..1'), false);
+  assert.equal(normalizeRelationshipMultiplicity('abc'), '');
 });
 
 test('junction-connected relationships cannot carry multiplicity', () => {
@@ -92,6 +114,6 @@ test('multiplicity is suppressed across import, replacement, and rendering for j
   assert.match(elementFactory, /canApplyRelationshipMultiplicity\(attrs\)/);
   assert.match(replaceHandler, /delete relationship\.sourceMultiplicity/);
   assert.match(replaceHandler, /delete connection\.sourceMultiplicity/);
-  assert.match(renderer, /canRenderMultiplicity && connection\.sourceMultiplicity/);
-  assert.match(renderer, /canRenderMultiplicity && connection\.targetMultiplicity/);
+  assert.match(renderer, /canRenderMultiplicity && normalizeRelationshipMultiplicity\(connection\.sourceMultiplicity\)/);
+  assert.match(renderer, /canRenderMultiplicity && normalizeRelationshipMultiplicity\(connection\.targetMultiplicity\)/);
 });

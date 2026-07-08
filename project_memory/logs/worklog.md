@@ -67,3 +67,14 @@
 - Maintenance: included `lib/BaseViewer.js` in the changed-file lint gate and fixed legacy BaseViewer lint issues touched by this gate, including the undefined `getDefaultLayer` reference in `saveSVG`.
 - Verification: `npm run test:language` passed with 30 tests in `project_memory/runlogs/20260708-053-relationship-profile-option-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-052-relationship-profile-option-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-054-relationship-profile-option-git-diff-check.txt`.
 - Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.
+
+## 2026-07-08 loop 8
+
+- Goal: enforce the C260-derived relationship-end multiplicity notation subset across all non-UI input paths.
+- Implemented: added `lib/util/MultiplicityUtil.js` to validate and normalize positive integer, `*`, and finite `n..m` multiplicity values.
+- Implemented: import hydration, relationship persistence, relationship replacement, and rendering now normalize multiplicity values before keeping or displaying them.
+- Implemented: invalid or unconfirmed values such as `0`, `1..1`, `1..*`, `0..*`, negative ranges, and non-numeric text are ignored.
+- Tests: added direct multiplicity notation coverage to `test/multiplicity.test.mjs` and updated source guards to require the new normalization path.
+- Docs: updated README and `docs/archimate4/*` with the implemented notation guard and the remaining MEFF 4.0/XSD dependency.
+- Verification: `npm run test:language` passed with 31 tests in `project_memory/runlogs/20260708-055-multiplicity-validator-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-056-multiplicity-validator-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-057-multiplicity-validator-git-diff-check.txt`; final post-log `git diff --check` passed in `project_memory/runlogs/20260708-058-multiplicity-validator-final-git-diff-check.txt`.
+- Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.

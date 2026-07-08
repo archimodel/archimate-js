@@ -71,6 +71,15 @@
 - Multiplicity editing, persistence, import hydration, and rendering now call that guard before keeping
   or displaying source/target multiplicity values.
 
+## Multiplicity Notation Guard
+
+- C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite
+  `n..m` range where both bounds are non-negative integers and `m > n`.
+- `lib/util/MultiplicityUtil.js` centralizes validation and normalization for import hydration,
+  persistence, relationship replacement, and rendering.
+- `1..*` and other infinite range forms remain rejected until MEFF 4.0 or another normative source
+  confirms they are valid exchange values.
+
 ## XML Exchange Decision
 
 - `archimateVersion: "3.2"` continues to write the current 3.x namespace.
