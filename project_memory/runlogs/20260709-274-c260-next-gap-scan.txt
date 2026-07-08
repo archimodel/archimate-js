@@ -1,0 +1,10 @@
+[chapter3-nesting-colors] pages=37-38
+  page 37: access=1, read=1
+  page 38: nesting=4, color=5, notational=2, cue=2, access=1
+[chapter5-dependency-options] pages=57-62
+  page 57: access=2, association=1, influence=1, serving=3
+  page 58: access=4, read=1, serving=6
+  page 59: nesting=2, access=10, read=3, write=2, influence=4
+  page 60: access=1, read=1, influence=15
+  page 61: access=1, directed=2, association=7, influence=5
+  page 62: access=5, directed=2, association=4, influence=4, serving=1

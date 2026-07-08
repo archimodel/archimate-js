@@ -275,6 +275,11 @@
 - Popup active-state, renderer marker logic, relationshipRef replacement, and connection update
   persistence now prefer the explicit property and fall back to `typeOption` only when the explicit
   property is absent.
+- A focused C260 Chapter 5 Access keyword scan is recorded in
+  `project_memory/runlogs/20260709-277-c260-access-type-source-scan.txt`.
+- The Access popup now exposes explicit actions for the supported local `accessType` values:
+  `None`, `Read`, `Write`, and `ReadWrite`. This makes the unspecified Access notation selectable
+  directly instead of requiring users to toggle another Access option off.
 
 ## Junction Multiplicity Guard
 

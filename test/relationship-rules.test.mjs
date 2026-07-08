@@ -143,6 +143,25 @@ test('connection popup exposes influence modifier actions', async () => {
   assert.match(source, /modifier: entry\.active \? '' : entry\.options\.modifier/);
 });
 
+test('connection popup exposes explicit Access type actions', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  for (const entryId of [
+    'set-access-type-none',
+    'set-access-type-read',
+    'set-access-type-write',
+    'set-access-type-readwrite'
+  ]) {
+    assert.equal(source.includes(`id: '${entryId}'`), true, `${entryId} must be present`);
+  }
+
+  assert.match(source, /RELATIONSHIP_ACCESS_NONE/);
+  assert.match(source, /var isNone = !accessType \|\| accessType === RELATIONSHIP_ACCESS_NONE/);
+  assert.match(source, /title: translate\('None'\)/);
+  assert.match(source, /accessType: RELATIONSHIP_ACCESS_NONE/);
+  assert.match(source, /active: isNone/);
+});
+
 test('connection popup exposes ArchiMate 4 custom influence modifier input', async () => {
   const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
 

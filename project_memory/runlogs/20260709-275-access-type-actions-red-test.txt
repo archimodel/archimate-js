@@ -1,0 +1,58 @@
+(node:4736) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (6.9091ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (2.3886ms)
+✔ connection rules evaluate relationships through the active language profile (0.7433ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (0.8347ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (0.9704ms)
+✔ connection popup labels relationships with C260 role names (1.036ms)
+✔ connection popup exposes influence modifier actions (0.7583ms)
+✖ connection popup exposes explicit Access type actions (1.3853ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (1.5425ms)
+✔ renderer displays influence modifier labels (0.9939ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (1.8262ms)
+✔ renderer preserves optional junction names outside the marker (1.6602ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.1915ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.1482ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.3187ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2052ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.2977ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.3602ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.1285ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.3608ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (3.1958ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.4305ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.4002ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (1.4979ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.1851ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1143ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.0949ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 26
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 112.2858
+
+✖ failing tests:
+
+test at test\relationship-rules.test.mjs:146:1
+✖ connection popup exposes explicit Access type actions (1.3853ms)
+  AssertionError [ERR_ASSERTION]: set-access-type-none must be present
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:155:12)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

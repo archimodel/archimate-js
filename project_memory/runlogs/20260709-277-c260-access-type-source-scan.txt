@@ -1,0 +1,8 @@
+C260 access option non-verbatim scan
+pdf_exists=True pages=207
+page 57: Access=1, access=2, direction=4
+page 58: Access=2, access=4, read=1
+page 59: Access=3, access=10, read=3, write=2, direction=4
+page 60: Access=1, access=1, read=1, unspecified=1
+page 61: Access=1, access=1, unspecified=1, directed=2
+page 62: Access=1, access=5, direction=1, directed=2

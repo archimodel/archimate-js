@@ -222,6 +222,9 @@ Implementation note:
 - Relationship option attributes are preserved separately from the relationship type. Imported and
   edited `Access`, `Association`, and `Influence` relationships use explicit `accessType`,
   `isDirected`, and `modifier` properties while retaining legacy `typeOption` compatibility.
+- Access relationship editing must expose every supported access type as an explicit action:
+  unspecified/`None`, `Read`, `Write`, and `ReadWrite`. `None` is a first-class popup action, not only
+  a side effect of toggling a selected marker off.
 - Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
   and negative modifier actions plus a custom modifier input in the ArchiMate 4 popup. Empty custom
@@ -422,6 +425,9 @@ Implemented relationship rule wiring:
 - Influence relationship modifiers are rendered from `modifier` or `typeOption`, and the ArchiMate 4
   popup can set common positive or negative influence values or a custom modeler-defined sign/strength
   value.
+- Access relationship options are rendered from `accessType` or legacy `typeOption`, and the popup
+  now presents explicit `None`, `Read`, `Write`, and `ReadWrite` actions while preserving the same
+  relationship type value.
 - `deriveRelationshipType()` and `deriveRelationship()` implement C260-derived DR1-DR8 valid
   derivations for host tooling. `deriveRelationshipChain()` folds ordered in-line valid derivation
   chains. `derivePotentialRelationship()` implements PDR1-PDR12 as explicit potential candidates.

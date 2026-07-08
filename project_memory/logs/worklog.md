@@ -893,3 +893,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-271-derivation-restrictions-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-derivation-restrictions-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 73
+
+- Goal: make Access relationship option editing explicit for every supported local `accessType` value, including the unspecified/`None` notation.
+- Source scan: `project_memory/runlogs/20260709-274-c260-next-gap-scan.txt` identified Chapter 5 relationship option terms; `project_memory/runlogs/20260709-277-c260-access-type-source-scan.txt` records a focused non-verbatim Access/read/write/unspecified scan.
+- Red test: `project_memory/runlogs/20260709-275-access-type-actions-red-test.txt` failed because the connection popup did not expose `set-access-type-none`.
+- Implemented: `lib/features/popup-menu/ConnectionMenuProvider.js` now exposes `set-access-type-none`, `set-access-type-read`, `set-access-type-write`, and `set-access-type-readwrite`.
+- Implemented: missing `accessType` and explicit `None` are treated as the active `None` option; existing Read, Write, and ReadWrite marker behavior and persistence remain unchanged.
+- Tests/docs: `test/relationship-rules.test.mjs`, README, and `docs/archimate4` now guard and describe the explicit Access type actions without embedding C260 prose or Appendix B table data.
+- Verification: focused relationship tests passed in `project_memory/runlogs/20260709-276-access-type-actions-relationship-rules-test.txt`; `npm run test:language` passed with 131 tests in `project_memory/runlogs/20260709-278-access-type-actions-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-279-access-type-actions-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-280-access-type-actions-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-281-access-type-actions-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-282-access-type-actions-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-283-access-type-actions-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-284-access-type-actions-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-285-access-type-actions-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
+- Audit: `project_memory/audit/reports/20260709-access-type-actions-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
