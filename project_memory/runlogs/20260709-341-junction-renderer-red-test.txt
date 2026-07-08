@@ -1,0 +1,440 @@
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (5.1216ms)
+✖ renderer draws ArchiMate 4 junction connectors as dot and ring markers (3.0504ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.0783
+
+✖ failing tests:
+
+test at test\renderer-notation.test.mjs:17:1
+✖ renderer draws ArchiMate 4 junction connectors as dot and ring markers (3.0504ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function getJunctionCircleAttrs\(shape, elementType\)/. Input:
+
+  "import inherits from 'inherits-browser';\n" +
+    '\n' +
+    'import {\n' +
+    '  isObject,\n' +
+    '  assign\n' +
+    "} from 'min-dash';\n" +
+    '\n' +
+    'import {\n' +
+    '  query as domQuery\n' +
+    "} from 'min-dom';\n" +
+    '\n' +
+    'import {\n' +
+    '  append as svgAppend,\n' +
+    '  attr as svgAttr,\n' +
+    '  create as svgCreate,\n' +
+    '  classes as svgClasses\n' +
+    "} from 'tiny-svg';\n" +
+    '\n' +
+    "import BaseRenderer from 'diagram-js/lib/draw/BaseRenderer';\n" +
+    '\n' +
+    'import {\n' +
+    '  getLabel\n' +
+    "} from '../features/label-editing/LabelUtil';\n" +
+    '\n' +
+    'import {\n' +
+    '  is,\n' +
+    '  isAny,\n' +
+    '  getPictoRef,\n' +
+    '  getFigureRef,\n' +
+    '  NOTE,\n' +
+    "} from '../util/ModelUtil';\n" +
+    "import { canApplyRelationshipMultiplicity } from '../util/JunctionUtil';\n" +
+    "import { normalizeRelationshipMultiplicity } from '../util/MultiplicityUtil';\n" +
+    '\n' +
+    "import { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, OTHER_GROUPING, RELATIONSHIP_JUNCTION_AND, RELATIONSHIP_JUNCTION_OR } from '../metamodel/Concept';\n" +
+    "import { getBaseRelationshipTypeForProfile } from '../metamodel/languages';\n" +
+    '\n' +
+    'import {\n' +
+    '  getRectPath,\n' +
+    '  BORDER_ASPECT_MAP,\n' +
+    "} from './ArchimateRendererUtil';\n" +
+    '\n' +
+    "import Ids from 'ids';\n" +
+    '\n' +
+    'var RENDERER_IDS = new Ids();\n' +
+    '\n' +
+    "import { logger } from '../util/Logger';\n" +
+    "import { createLine } from 'diagram-js/lib/util/RenderUtil';\n" +
+    "import { RELATIONSHIP_ACCESS_READ, RELATIONSHIP_ACCESS_READWRITE, RELATIONSHIP_ACCESS_WRITE, RELATIONSHIP_INFLUENCE } from '../metamodel/Concept';\n" +
+    '\n' +
+    "export const DEFAULT_NOTE_COLOR_RGBA = { r: '255', g: '255', b: '255', a: '100' };\n" +
+    '\n' +
+    'const DEFAULT_STROKE_WIDTH = 1,\n' +
+    "      DEFAULT_STROKE_COLOR = 'black',\n" +
+    "      DEFAULT_FILL_COLOR = 'grey',\n" +
+    "      DEFAULT_TEXT_COLOR = 'black';\n" +
+    '\n' +
+    'export default function ArchimateRenderer(\n' +
+    '    config, eventBus, styles, pathMap,\n' +
+    '    canvas, textRenderer, languageProfile, priority) {\n' +
+    '\n' +
+    '  BaseRenderer.call(this, eventBus, priority);\n' +
+    '\n' +
+    '  var computeStyle = styles.computeStyle;\n' +
+    '  var profile = languageProfile && languageProfile.get();\n' +
+    '  this._languageProfile = languageProfile;\n' +
+    '\n' +
+    '  // markers //////////\n' +
+    '\n' +
+    '  var markers = {};\n' +
+    '\n' +
+    '  var rendererId = RENDERER_IDS.next();\n' +
+    '\n' +
+    '  function marker(type, color) {\n' +
+    "    var id = type + '-' + color + '-' + rendererId;\n" +
+    '\n' +
+    '    if (!markers[id]) {\n' +
+    '      createMarker(id, type, color);\n' +
+    '    }\n' +
+    '\n' +
+    "    return 'url(#' + id + ')';\n" +
+    '  }\n' +
+    '\n' +
+    '  function addMarker(id, options) {\n' +
+    '    var attrs = assign({\n' +
+    '      strokeWidth: DEFAULT_STROKE_WIDTH,\n' +
+    "      strokeLinecap: 'round',\n" +
+    "      strokeDasharray: 'none'\n" +
+    '    }, options.attrs);\n' +
+    '\n' +
+    '    var ref = options.ref || { x: 0, y: 0 };\n' +
+    '\n' +
+    '    var scale = options.scale || 1;\n' +
+    '\n' +
+    '    // fix for safari / chrome / firefox bug not correctly\n' +
+    '    // resetting stroke dash array\n' +
+    "    if (attrs.strokeDasharray === 'none') {\n" +
+    '      attrs.strokeDasharray = [ 10000, 1 ];\n' +
+    '    }\n' +
+    '\n' +
+    "    var marker = svgCreate('marker');\n" +
+    '\n' +
+    '    svgAttr(options.element, attrs);\n' +
+    '\n' +
+    '    svgAppend(marker, options.element);\n' +
+    '\n' +
+    '    svgAttr(marker, {\n' +
+    '      id: id,\n' +
+    "      viewBox: '0 0 20 20',\n" +
+    '      refX: ref.x,\n' +
+    '      refY: ref.y,\n' +
+    '      markerWidth: 20 * scale,\n' +
+    '      markerHeight: 20 * scale,\n' +
+    "      orient: 'auto'\n" +
+    '    });\n' +
+    '\n' +
+    "    var defs = domQuery('defs', canvas._svg);\n" +
+    '\n' +
+    '    if (!defs) {\n' +
+    "      defs = svgCreate('defs');\n" +
+    '      svgAppend(canvas._svg, defs);\n' +
+    '    }\n' +
+    '\n' +
+    '    svgAppend(defs, marker);\n' +
+    '\n' +
+    '    markers[id] = marker;\n' +
+    '  }\n' +
+    '\n' +
+    '  function createMarker(id, type, color) {\n' +
+    '\n' +
+    "    if (type === 'diamond-filled-start') {\n" +
+    "      var associationStart = svgCreate('path');\n" +
+    "      svgAttr(associationStart, { d: 'M 10 5 L 0 10 L 10 15 L 20 10 Z' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: associationStart,\n' +
+    '        attrs: {\n' +
+    '          fill: color,\n' +
+    '          stroke: color,\n' +
+    '          strokeWidth: 1.5\n' +
+    '        },\n' +
+    '        ref: { x: -1, y: 10 },\n' +
+    '        scale: 0.9\n' +
+    '      });\n' +
+    "    } else if (type === 'diamond-blank-start') {\n" +
+    "      var associationBlankStart = svgCreate('path');\n" +
+    "      svgAttr(associationBlankStart, { d: 'M 10 5 L 0 10 L 10 15 L 20 10 Z' }); // M 11 5 L 1 10 L 11 15 L 21 10 Z\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: associationBlankStart,\n' +
+    '        attrs: {\n' +
+    "          fill: 'white',\n" +
+    '          stroke: color,\n' +
+    '          strokeWidth: 1.5\n' +
+    '        },\n' +
+    '        ref: { x: -1, y: 10 },\n' +
+    '        scale: 0.9\n' +
+    '      });\n' +
+    "    } else if (type === 'opened-start') {\n" +
+    "      var associationOpenedStart = svgCreate('path');\n" +
+    "      svgAttr(associationOpenedStart, { d: 'M 11 5 L 1 10 L 11 15' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: associationOpenedStart,\n' +
+    '        attrs: {\n' +
+    "          fill: 'none',\n" +
+    '          stroke: color,\n' +
+    '          strokeWidth: 1.5\n' +
+    '        },\n' +
+    '        ref: { x: 0, y: 10 },\n' +
+    '        scale: 0.9\n' +
+    '      });\n' +
+    "    } else if (type === 'opened-end') {\n" +
+    "      var openedEnd = svgCreate('path');\n" +
+    "      svgAttr(openedEnd, { d: 'M 1 5 L 11 10 L 1 15' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: openedEnd,\n' +
+    '        attrs: {\n' +
+    "          fill: 'none',\n" +
+    '          stroke: color,\n' +
+    '          strokeWidth: 1.5\n' +
+    '        },\n' +
+    '        ref: { x: 12, y: 10 },\n' +
+    '        scale: 0.9\n' +
+    '      });\n' +
+    "    } else if (type === 'half-opened-end') {\n" +
+    "      var halfOpenedEnd = svgCreate('path');\n" +
+    "      svgAttr(halfOpenedEnd, { d: 'M 1 5 L 11 10' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: halfOpenedEnd,\n' +
+    '        attrs: {\n' +
+    "          fill: 'none',\n" +
+    '          stroke: color,\n' +
+    '          strokeWidth: 1.5\n' +
+    '        },\n' +
+    '        ref: { x: 12, y: 10 },\n' +
+    '        scale: 0.9\n' +
+    '      });\n' +
+    "    } else if (type === 'closed-filled-end') {\n" +
+    "      var closedFilledEnd = svgCreate('path');\n" +
+    "      svgAttr(closedFilledEnd, { d: 'M 1 5 L 11 10 L 1 15 Z' }); // larger arrowhead { d: 'M 1 3 L 11 10 L 1 17' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: closedFilledEnd,\n' +
+    '        attrs: {\n' +
+    '          fill: color,\n' +
+    "          stroke: 'none'\n" +
+    '        },\n' +
+    '        ref: { x: 11, y: 10 },\n' +
+    '        scale: 1\n' +
+    '      });\n' +
+    "    } else if (type === 'closed-blank-end') {\n" +
+    "      var closedBlankEnd = svgCreate('path');\n" +
+    "      svgAttr(closedBlankEnd, { d: 'M 1 5 L 11 10 L 1 15 Z' });\n" +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: closedBlankEnd,\n' +
+    '        attrs: {\n' +
+    "          fill: 'white',\n" +
+    '          stroke: color,\n' +
+    '        },\n' +
+    '        ref: { x: 11, y: 10 },\n' +
+    '        scale: 1\n' +
+    '      });\n' +
+    "    } else if (type === 'dot-start') {\n" +
+    "      var dotEnd = svgCreate('circle');\n" +
+    '      svgAttr(dotEnd, { cx: 3, cy: 3, r: 3 });\n' +
+    '\n' +
+    '      addMarker(id, {\n' +
+    '        element: dotEnd,\n' +
+    '        attrs: {\n' +
+    '          fill: color,\n' +
+    "          stroke: 'none'\n" +
+    '        },\n' +
+    '        ref: { x: 0, y: 3 },\n' +
+    '        scale: 1\n' +
+    '      });\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function drawRect(parentGfx, width, height, r, offset, attrs) {\n' +
+    '\n' +
+    '    if (isObject(offset)) {\n' +
+    '      attrs = offset;\n' +
+    '      offset = 0;\n' +
+    '    }\n' +
+    '\n' +
+    '    offset = offset || 0;\n' +
+    '\n' +
+    '    attrs = computeStyle(attrs, {\n' +
+    '      stroke: DEFAULT_STROKE_COLOR,\n' +
+    '      strokeWidth: DEFAULT_STROKE_WIDTH,\n' +
+    '      fill: DEFAULT_FILL_COLOR\n' +
+    '    });\n' +
+    '\n' +
+    "    if (attrs.fill === 'none') {\n" +
+    '      delete attrs.fillOpacity;\n' +
+    '    }\n' +
+    '\n' +
+    "    var rect = svgCreate('rect');\n" +
+    '    svgAttr(rect, {\n' +
+    '      x: offset,\n' +
+    '      y: offset,\n' +
+    '      width: width - offset * 2,\n' +
+    '      height: height - offset * 2,\n' +
+    '      rx: r,\n' +
+    '      ry: r\n' +
+    '    });\n' +
+    '    svgAttr(rect, attrs);\n' +
+    '\n' +
+    '    svgAppend(parentGfx, rect);\n' +
+    '\n' +
+    '    return rect;\n' +
+    '  }\n' +
+    '\n' +
+    '  function drawCircle(parentGfx, width, height, offset, attrs) {\n' +
+    '\n' +
+    '    if (isObject(offset)) {\n' +
+    '      attrs = offset;\n' +
+    '      offset = 0;\n' +
+    '    }\n' +
+    '\n' +
+    '    offset = offset || 0;\n' +
+    '\n' +
+    '    attrs = computeStyle(attrs, {\n' +
+    '      stroke: DEFAULT_STROKE_COLOR,\n' +
+    '      strokeWidth: DEFAULT_STROKE_WIDTH,\n' +
+    '      fill: DEFAULT_FILL_COLOR\n' +
+    '    });\n' +
+    '\n' +
+    "    if (attrs.fill === 'none') {\n" +
+    '      delete attrs.fillOpacity;\n' +
+    '    }\n' +
+    '\n' +
+    '    var cx = width / 2,\n' +
+    '        cy = height / 2;\n' +
+    '\n' +
+    "    var circle = svgCreate('circle');\n" +
+    '    svgAttr(circle, {\n' +
+    '      cx: cx,\n' +
+    '      cy: cy,\n' +
+    '      r: Math.round((width + height) / 4 - offset)\n' +
+    '    });\n' +
+    '    svgAttr(circle, attrs);\n' +
+    '\n' +
+    '    svgAppend(parentGfx, circle);\n' +
+    '\n' +
+    '    return circle;\n' +
+    '  }\n' +
+    '\n' +
+    '  function drawLine(p, waypoints, attrs) {\n' +
+    '\n' +
+    "    var newAttrs = computeStyle(attrs, [ 'no-fill' ], {\n" +
+    '      stroke: DEFAULT_STROKE_COLOR,\n' +
+    '      strokeWidth: DEFAULT_STROKE_WIDTH,\n' +
+    '      fill: DEFAULT_FILL_COLOR\n' +
+    '    });\n' +
+    '\n' +
+    '    var line = createLine(waypoints, newAttrs);\n' +
+    '\n' +
+    '    svgAppend(p, line);\n' +
+    '\n' +
+    '    return line;\n' +
+    '  }\n' +
+    '\n' +
+    '  function drawPath(parentGfx, d, attrs) {\n' +
+    "    attrs = computeStyle(attrs, [ 'no-fill' ], {\n" +
+    '      strokeWidth: DEFAULT_STROKE_WIDTH,\n' +
+    '      stroke: DEFAULT_STROKE_COLOR\n' +
+    '    });\n' +
+    '\n' +
+    "    var path = svgCreate('path');\n" +
+    '    svgAttr(path, { d: d });\n' +
+    '    svgAttr(path, attrs);\n' +
+    '\n' +
+    '    svgAppend(parentGfx, path);\n' +
+    '\n' +
+    '    return path;\n' +
+    '  }\n' +
+    '\n' +
+    '\n' +
+    '  function renderLabel(parentGfx, label, options) {\n' +
+    '\n' +
+    '    options = assign({\n' +
+    '      size: {\n' +
+    '        width: 100\n' +
+    '      }\n' +
+    '    }, options);\n' +
+    '\n' +
+    "    var text = textRenderer.createText(label || '', options);\n" +
+    '\n' +
+    "    svgClasses(text).add('djs-label');\n" +
+    '\n' +
+    '    svgAppend(parentGfx, text);\n' +
+    '\n' +
+    '    return text;\n' +
+    '  }\n' +
+    '\n' +
+    '  function renderEmbeddedLabel(parentGfx, element, align, fontWeight, fontSize) {\n' +
+    '    return renderLabel(parentGfx, getLabel(element), {\n' +
+    '      box: element, // newBox,\n' +
+    '      align: align,\n' +
+    '      padding: 5,\n' +
+    '      style: {\n' +
+    '        fill: DEFAULT_TEXT_COLOR,\n' +
+    '\n' +
+    '        // fontSize: fontSize // || DEFAULT_TEXT_SIZE\n' +
+    "        fontWeight: fontWeight == 'bold' ? '700' : '500'\n" +
+    '      },\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function renderExternalLabel(parentGfx, element) {\n' +
+    '\n' +
+    '    var box = {\n' +
+    '      width: 90,\n' +
+    '      height: 30,\n' +
+    '      x: element.width / 2 + element.x,\n' +
+    '      y: element.height / 2 + element.y\n' +
+    '    };\n' +
+    '\n' +
+    '    return renderLabel(parentGfx, getLabel(element), {\n' +
+    '      box: box,\n' +
+    '      fitBox: true,\n' +
+    '      style: assign(\n' +
+    '        {},\n' +
+    '        textRenderer.getExternalStyle(),\n' +
+    '        {\n' +
+    '          fill: DEFAULT_TEXT_COLOR\n' +
+    '        }\n' +
+    '      )\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function renderArchimateConnection(parentGfx, connection, attrs) {\n' +
+    '    attrs = assign({\n' +
+    '      stroke: connection.style && connection.style.lineColor || DEFAULT_STROKE_COLOR,\n' +
+    "      strokeLinecap: 'none', // 'round',\n" +
+    "      strokeLinejoin: 'round',\n" +
+    "      fill: 'none'\n" +
+    '    }, attrs);\n' +
+    '\n' +
+    '    var line = drawLine(parentGfx, connection.waypoints, attrs);\n' +
+    '    var waypoints = connection.waypoints || [];\n' +
+    '    var canRenderMultiplicity = canApplyRelationshipMultiplicity(connection);\n' +
+    '    var sourceMultiplicity = canRenderMultiplicity && normalizeRelationshipMultiplicity(connection.sourceMultiplicity);\n' +
+    '    var targetMultiplicity = canRenderMultiplicity && normalizeRelationshipMultiplicity(connection.targetMultiplicity);\n' +
+    '    var modifier = getInfluenceModifier(connection);\n' +
+    '\n' +
+    '    if (sourceMultiplicity && waypoints.length'... 12178 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/renderer-notation.test.mjs:20:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import inherits from 'inherits-browser';\n\nimport {\n  isObject,\n  assign\n} from 'min-dash';\n\nimport {\n  query as domQuery\n} from 'min-dom';\n\nimport {\n  append as svgAppend,\n  attr as svgAttr,\n  create as svgCreate,\n  classes as svgClasses\n} from 'tiny-svg';\n\nimport BaseRenderer from 'diagram-js/lib/draw/BaseRenderer';\n\nimport {\n  getLabel\n} from '../features/label-editing/LabelUtil';\n\nimport {\n  is,\n  isAny,\n  getPictoRef,\n  getFigureRef,\n  NOTE,\n} from '../util/ModelUtil';\nimport { canApplyRelationshipMultiplicity } from '../util/JunctionUtil';\nimport { normalizeRelationshipMultiplicity } from '../util/MultiplicityUtil';\n\nimport { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, OTHER_GROUPING, RELATIONSHIP_JUNCTION_AND, RELATIONSHIP_JUNCTION_OR } from '../metamodel/Concept';\nimport { getBaseRelationshipTypeForProfile } from '../metamodel/languages';\n\nimport {\n  getRectPath,\n  BORDER_ASPECT_MAP,\n} from './ArchimateRendererUtil';\n\nimport Ids from 'ids';\n\nvar RENDERER_IDS = new Ids();\n\nimport { logger } from '../util/Logger';\nimport { createLine } from 'diagram-js/lib/util/RenderUtil';\nimport { RELATIONSHIP_ACCESS_READ, RELATIONSHIP_ACCESS_READWRITE, RELATIONSHIP_ACCESS_WRITE, RELATIONSHIP_INFLUENCE } from '../metamodel/Concept';\n\nexport const DEFAULT_NOTE_COLOR_RGBA = { r: '255', g: '255', b: '255', a: '100' };\n\nconst DEFAULT_STROKE_WIDTH = 1,\n      DEFAULT_STROKE_COLOR = 'black',\n      DEFAULT_FILL_COLOR = 'grey',\n      DEFAULT_TEXT_COLOR = 'black';\n\nexport default function ArchimateRenderer(\n    config, eventBus, styles, pathMap,\n    canvas, textRenderer, languageProfile, priority) {\n\n  BaseRenderer.call(this, eventBus, priority);\n\n  var computeStyle = styles.computeStyle;\n  var profile = languageProfile && languageProfile.get();\n  this._languageProfile = languageProfile;\n\n  // markers //////////\n\n  var markers = {};\n\n  var rendererId = RENDERER_IDS.next();\n\n  function marker(type, color) {\n    var id = type + '-' + color + '-' + rendererId;\n\n    if (!markers[id]) {\n      createMarker(id, type, color);\n    }\n\n    return 'url(#' + id + ')';\n  }\n\n  function addMarker(id, options) {\n    var attrs = assign({\n      strokeWidth: DEFAULT_STROKE_WIDTH,\n      strokeLinecap: 'round',\n      strokeDasharray: 'none'\n    }, options.attrs);\n\n    var ref = options.ref || { x: 0, y: 0 };\n\n    var scale = options.scale || 1;\n\n    // fix for safari / chrome / firefox bug not correctly\n    // resetting stroke dash array\n    if (attrs.strokeDasharray === 'none') {\n      attrs.strokeDasharray = [ 10000, 1 ];\n    }\n\n    var marker = svgCreate('marker');\n\n    svgAttr(options.element, attrs);\n\n    svgAppend(marker, options.element);\n\n    svgAttr(marker, {\n      id: id,\n      viewBox: '0 0 20 20',\n      refX: ref.x,\n      refY: ref.y,\n      markerWidth: 20 * scale,\n      markerHeight: 20 * scale,\n      orient: 'auto'\n    });\n\n    var defs = domQuery('defs', canvas._svg);\n\n    if (!defs) {\n      defs = svgCreate('defs');\n      svgAppend(canvas._svg, defs);\n    }\n\n    svgAppend(defs, marker);\n\n    markers[id] = marker;\n  }\n\n  function createMarker(id, type, color) {\n\n    if (type === 'diamond-filled-start') {\n      var associationStart = svgCreate('path');\n      svgAttr(associationStart, { d: 'M 10 5 L 0 10 L 10 15 L 20 10 Z' });\n\n      addMarker(id, {\n        element: associationStart,\n        attrs: {\n          fill: color,\n          stroke: color,\n          strokeWidth: 1.5\n        },\n        ref: { x: -1, y: 10 },\n        scale: 0.9\n      });\n    } else if (type === 'diamond-blank-start') {\n      var associationBlankStart = svgCreate('path');\n      svgAttr(associationBlankStart, { d: 'M 10 5 L 0 10 L 10 15 L 20 10 Z' }); // M 11 5 L 1 10 L 11 15 L 21 10 Z\n\n      addMarker(id, {\n        element: associationBlankStart,\n        attrs: {\n          fill: 'white',\n          stroke: color,\n          strokeWidth: 1.5\n        },\n        ref: { x: -1, y: 10 },\n        scale: 0.9\n      });\n    } else if (type === 'opened-start') {\n      var associationOpenedStart = svgCreate('path');\n      svgAttr(associationOpenedStart, { d: 'M 11 5 L 1 10 L 11 15' });\n\n      addMarker(id, {\n        element: associationOpenedStart,\n        attrs: {\n          fill: 'none',\n          stroke: color,\n          strokeWidth: 1.5\n        },\n        ref: { x: 0, y: 10 },\n        scale: 0.9\n      });\n    } else if (type === 'opened-end') {\n      var openedEnd = svgCreate('path');\n      svgAttr(openedEnd, { d: 'M 1 5 L 11 10 L 1 15' });\n\n      addMarker(id, {\n        element: openedEnd,\n        attrs: {\n          fill: 'none',\n          stroke: color,\n          strokeWidth: 1.5\n        },\n        ref: { x: 12, y: 10 },\n        scale: 0.9\n      });\n    } else if (type === 'half-opened-end') {\n      var halfOpenedEnd = svgCreate('path');\n      svgAttr(halfOpenedEnd, { d: 'M 1 5 L 11 10' });\n\n      addMarker(id, {\n        element: halfOpenedEnd,\n        attrs: {\n          fill: 'none',\n          stroke: color,\n          strokeWidth: 1.5\n        },\n        ref: { x: 12, y: 10 },\n        scale: 0.9\n      });\n    } else if (type === 'closed-filled-end') {\n      var closedFilledEnd = svgCreate('path');\n      svgAttr(closedFilledEnd, { d: 'M 1 5 L 11 10 L 1 15 Z' }); // larger arrowhead { d: 'M 1 3 L 11 10 L 1 17' });\n\n      addMarker(id, {\n        element: closedFilledEnd,\n        attrs: {\n          fill: color,\n          stroke: 'none'\n        },\n        ref: { x: 11, y: 10 },\n        scale: 1\n      });\n    } else if (type === 'closed-blank-end') {\n      var closedBlankEnd = svgCreate('path');\n      svgAttr(closedBlankEnd, { d: 'M 1 5 L 11 10 L 1 15 Z' });\n\n      addMarker(id, {\n        element: closedBlankEnd,\n        attrs: {\n          fill: 'white',\n          stroke: color,\n        },\n        ref: { x: 11, y: 10 },\n        scale: 1\n      });\n    } else if (type === 'dot-start') {\n      var dotEnd = svgCreate('circle');\n      svgAttr(dotEnd, { cx: 3, cy: 3, r: 3 });\n\n      addMarker(id, {\n        element: dotEnd,\n        attrs: {\n          fill: color,\n          stroke: 'none'\n        },\n        ref: { x: 0, y: 3 },\n        scale: 1\n      });\n    }\n  }\n\n  function drawRect(parentGfx, width, height, r, offset, attrs) {\n\n    if (isObject(offset)) {\n      attrs = offset;\n      offset = 0;\n    }\n\n    offset = offset || 0;\n\n    attrs = computeStyle(attrs, {\n      stroke: DEFAULT_STROKE_COLOR,\n      strokeWidth: DEFAULT_STROKE_WIDTH,\n      fill: DEFAULT_FILL_COLOR\n    });\n\n    if (attrs.fill === 'none') {\n      delete attrs.fillOpacity;\n    }\n\n    var rect = svgCreate('rect');\n    svgAttr(rect, {\n      x: offset,\n      y: offset,\n      width: width - offset * 2,\n      height: height - offset * 2,\n      rx: r,\n      ry: r\n    });\n    svgAttr(rect, attrs);\n\n    svgAppend(parentGfx, rect);\n\n    return rect;\n  }\n\n  function drawCircle(parentGfx, width, height, offset, attrs) {\n\n    if (isObject(offset)) {\n      attrs = offset;\n      offset = 0;\n    }\n\n    offset = offset || 0;\n\n    attrs = computeStyle(attrs, {\n      stroke: DEFAULT_STROKE_COLOR,\n      strokeWidth: DEFAULT_STROKE_WIDTH,\n      fill: DEFAULT_FILL_COLOR\n    });\n\n    if (attrs.fill === 'none') {\n      delete attrs.fillOpacity;\n    }\n\n    var cx = width / 2,\n        cy = height / 2;\n\n    var circle = svgCreate('circle');\n    svgAttr(circle, {\n      cx: cx,\n      cy: cy,\n      r: Math.round((width + height) / 4 - offset)\n    });\n    svgAttr(circle, attrs);\n\n    svgAppend(parentGfx, circle);\n\n    return circle;\n  }\n\n  function drawLine(p, waypoints, attrs) {\n\n    var newAttrs = computeStyle(attrs, [ 'no-fill' ], {\n      stroke: DEFAULT_STROKE_COLOR,\n      strokeWidth: DEFAULT_STROKE_WIDTH,\n      fill: DEFAULT_FILL_COLOR\n    });\n\n    var line = createLine(waypoints, newAttrs);\n\n    svgAppend(p, line);\n\n    return line;\n  }\n\n  function drawPath(parentGfx, d, attrs) {\n    attrs = computeStyle(attrs, [ 'no-fill' ], {\n      strokeWidth: DEFAULT_STROKE_WIDTH,\n      stroke: DEFAULT_STROKE_COLOR\n    });\n\n    var path = svgCreate('path');\n    svgAttr(path, { d: d });\n    svgAttr(path, attrs);\n\n    svgAppend(parentGfx, path);\n\n    return path;\n  }\n\n\n  function renderLabel(parentGfx, label, options) {\n\n    options = assign({\n      size: {\n        width: 100\n      }\n    }, options);\n\n    var text = textRenderer.createText(label || '', options);\n\n    svgClasses(text).add('djs-label');\n\n    svgAppend(parentGfx, text);\n\n    return text;\n  }\n\n  function renderEmbeddedLabel(parentGfx, element, align, fontWeight, fontSize) {\n    return renderLabel(parentGfx, getLabel(element), {\n      box: element, // newBox,\n      align: align,\n      padding: 5,\n      style: {\n        fill: DEFAULT_TEXT_COLOR,\n\n        // fontSize: fontSize // || DEFAULT_TEXT_SIZE\n        fontWeight: fontWeight == 'bold' ? '700' : '500'\n      },\n    });\n  }\n\n  function renderExternalLabel(parentGfx, element) {\n\n    var box = {\n      width: 90,\n      height: 30,\n      x: element.width / 2 + element.x,\n      y: element.height / 2 + element.y\n    };\n\n    return renderLabel(parentGfx, getLabel(element), {\n      box: box,\n      fitBox: true,\n      style: assign(\n        {},\n        textRenderer.getExternalStyle(),\n        {\n          fill: DEFAULT_TEXT_COLOR\n        }\n      )\n    });\n  }\n\n  function renderArchimateConnection(parentGfx, connection, attrs) {\n    attrs = assign({\n      stroke: connection.style && connection.style.lineColor || DEFAULT_STROKE_COLOR,\n      strokeLinecap: 'none', // 'round',\n      strokeLinejoin: 'round',\n      fill: 'none'\n    }, attrs);\n\n    var line = drawLine(parentGfx, connection.waypoints, attrs);\n    var waypoints = connection.waypoints || [];\n    var canRenderMultiplicity = canApplyRelationshipMultiplicity(connection);\n    var sourceMultiplicity = canRenderMultiplicity && normalizeRelationshipMultiplicity(connection.sourceMultiplicity);\n    var targetMultiplicity = canRenderMultiplicity && normalizeRelationshipMultiplicity(connection.targetMultiplicity);\n    var modifier = getInfluenceModifier(connection);\n\n    if (sourceMultiplicity && waypoints.length"... 12178 more characters,
+    expected: /function getJunctionCircleAttrs\(shape, elementType\)/,
+    operator: 'match',
+    diff: 'simple'
+  }

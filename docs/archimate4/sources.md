@@ -102,6 +102,11 @@
   `project_memory/runlogs/20260709-327-c260-appendix-a-grouping-visual-check.txt`. The derived
   renderer requirement is limited to a dashed, unfilled ArchiMate 4 `Grouping` outline; exact Appendix
   A vector artwork remains source/rights dependent.
+- A local C260 Appendix A page scan and rendered visual check for junction notation are recorded in
+  `project_memory/runlogs/20260709-338-c260-appendix-a-junction-page-scan.txt` and
+  `project_memory/runlogs/20260709-340-c260-appendix-a-junction-visual-check.txt`. The derived
+  renderer requirement is limited to ArchiMate 4 `AndJunction` as a filled dot and `OrJunction` as an
+  unfilled ring while preserving ArchiMate 3.x text marker rendering.
 
 ## Language Customization Mechanism
 
@@ -315,8 +320,10 @@
 
 - C260 allows a modeler-visible name on a junction when that helps clarify the relationship grouping
   or choice semantics.
-- `lib/draw/ArchimateRenderer.js` keeps the `AND` / `OR` marker as the connector marker and renders
-  a separate optional junction name below the connector.
+- `lib/draw/ArchimateRenderer.js` renders ArchiMate 4 junction connector markers as a filled dot for
+  `AndJunction` and an unfilled ring for `OrJunction`, while preserving the legacy ArchiMate 3.x
+  `AND` / `OR` text marker.
+- A separate optional junction name still renders below the connector.
 - Default marker text and official type names are suppressed as external labels so unnamed junctions
   do not duplicate `AND`, `OR`, `And Junction`, or `Or Junction`.
 

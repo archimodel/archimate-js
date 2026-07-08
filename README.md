@@ -98,7 +98,7 @@ const modeler = new Modeler({
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * `getArchimate4RelationshipProfileCoverageReport()` lists missing Appendix B source rows and source-target cells for the active profile, allowing hosts to verify licensed profile transcription without committing the table.
-* Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
+* In ArchiMate 4 mode, junction connectors render as the Appendix A dot/ring markers, and an optional modeler-supplied name renders below the connector; ArchiMate 3.x keeps the legacy `AND`/`OR` text marker.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.
 * In ArchiMate 4 mode, `Grouping` renders with a dashed, unfilled outline to match the Appendix A notation boundary while exact Appendix A vector artwork remains externally source-dependent.

@@ -964,3 +964,16 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-335-grouping-renderer-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-grouping-renderer-notation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 78
+
+- Goal: align the ArchiMate 4 `AndJunction` and `OrJunction` renderer markers with the C260 Appendix A notation while preserving ArchiMate 3.x behavior.
+- Source evidence: `project_memory/runlogs/20260709-338-c260-appendix-a-junction-page-scan.txt`, `project_memory/runlogs/20260709-339-c260-appendix-a-junction-render.txt`, and `project_memory/runlogs/20260709-340-c260-appendix-a-junction-visual-check.txt` record the non-verbatim Appendix A page and visual check.
+- Red test: `project_memory/runlogs/20260709-341-junction-renderer-red-test.txt` failed because `ArchimateRenderer` had no ArchiMate 4-specific junction marker handling.
+- Implemented: `lib/draw/ArchimateRenderer.js` now renders ArchiMate 4 `AndJunction` as a filled dot and `OrJunction` as an unfilled ring.
+- Preserved: ArchiMate 3.x keeps the legacy `AND` / `OR` text marker, and optional modeler-supplied junction names still render below the connector.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Junction renderer notation boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-342-junction-renderer-test.txt`; `npm run test:language` passed with 136 tests in `project_memory/runlogs/20260709-343-junction-renderer-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-344-junction-renderer-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-345-junction-renderer-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-346-junction-renderer-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-347-junction-renderer-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-348-junction-renderer-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-junction-renderer-notation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -226,8 +226,9 @@ Implementation note:
 - Relationship connectors are not part of the ArchiMate 4 domain catalog. Runtime metadata uses
   `paletteGroup` and `colorGroup` for editor grouping and color fallback instead of assigning a
   domain.
-- Named junctions keep their `AND` or `OR` marker inside the connector and render the optional
-  modeler-supplied name below the connector.
+- In ArchiMate 4 mode, `AndJunction` renders as a filled dot and `OrJunction` renders as an unfilled
+  ring. ArchiMate 3.x keeps the legacy `AND` or `OR` text marker, and an optional
+  modeler-supplied junction name renders below the connector.
 - Relationship popup labels use the C260 direct/reverse relationship role names while retaining the
   underlying relationship type for replacement and persistence.
 - Relationship option attributes are preserved separately from the relationship type. Imported and

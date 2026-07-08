@@ -1,0 +1,37 @@
+C260 Appendix A junction notation non-verbatim page scan
+pdf_exists=True pages=207
+page 1: Relationships and Junctions=1, Junctions=1
+page 7: Relationships and Junctions=1, Junctions=1
+page 8: Relationships and Junctions=1, Junctions=2
+page 10: Relationships and Junctions=1, Junctions=1
+page 11: A.3. Relationships=1, Relationships and Junctions=1, Junctions=1
+page 15: Relationships and Junctions=1, Junctions=1
+page 50: Relationships and Junctions=2, Junctions=2
+page 51: Relationships and Junctions=1, Junctions=2
+page 52: Relationships and Junctions=1, Junctions=1
+page 53: Relationships and Junctions=1, Junctions=1
+page 54: Relationships and Junctions=1, Junctions=1
+page 55: Relationships and Junctions=1, And-Junction=1, Junctions=1
+page 56: Relationships and Junctions=1, Junctions=1
+page 57: Relationships and Junctions=1, Junctions=1
+page 58: Relationships and Junctions=1, Junctions=1
+page 59: Relationships and Junctions=1, Junctions=1
+page 60: Relationships and Junctions=1, Junctions=1
+page 61: Relationships and Junctions=1, Junctions=1
+page 62: Relationships and Junctions=1, Junctions=1
+page 63: Relationships and Junctions=1, Junctions=1
+page 64: Relationships and Junctions=1, Junctions=1
+page 65: Relationships and Junctions=1, Junctions=1
+page 66: Relationships and Junctions=1, And-Junction=1, Or-Junction=1, Junctions=7
+page 67: Relationships and Junctions=1, And-Junction=2, Junctions=4
+page 68: Relationships and Junctions=1, Or-Junction=2, Junctions=1
+page 69: Relationships and Junctions=5, Junctions=5
+page 70: Relationships and Junctions=1, Junctions=2
+page 71: Relationships and Junctions=1, Junctions=1
+page 88: Junctions=1
+page 125: Relationships and Junctions=1, Junctions=1
+page 143: Relationships and Junctions=3, Or-Junction=1, Junctions=3
+page 145: A.3. Relationships=1, Relationships and Junctions=1, Junctions=1
+page 167: Junctions=2
+page 194: Junctions=1
+page 205: Junctions=1
