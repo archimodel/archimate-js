@@ -1,0 +1,26 @@
+## git diff --check
+no output
+exit code: 0
+
+## state json parse
+state json ok
+exit code: 0
+
+## git status --short --branch
+## codex/archimate-4-support
+M  README.md
+M  docs/archimate4/official-specification.md
+M  docs/archimate4/sources.md
+M  lib/metamodel/languages/relationship-profile-loader.js
+A  project_memory/audit/reports/20260708-appendix-b-matrix-profile-audit.md
+M  project_memory/logs/worklog.md
+A  project_memory/runlogs/20260708-175-appendix-b-matrix-profile-gap-check.txt
+A  project_memory/runlogs/20260708-176-appendix-b-matrix-profile-fix-check.txt
+A  project_memory/runlogs/20260708-177-appendix-b-matrix-profile-npm-test-language.txt
+A  project_memory/runlogs/20260708-178-appendix-b-matrix-profile-eslint-changed-js.txt
+A  project_memory/runlogs/20260708-179-appendix-b-matrix-profile-git-diff-check.txt
+A  project_memory/runlogs/20260708-180-appendix-b-matrix-profile-repo-lint-legacy.txt
+A  project_memory/runlogs/20260708-181-appendix-b-matrix-profile-final-state-check.txt
+MM project_memory/state/aria_state.json
+M  test/relationship-rules.test.mjs
+exit code: 0

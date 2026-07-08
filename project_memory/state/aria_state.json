@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 25,
-  "stage": "archimate4_domain_metadata_preserved",
+  "loop_id": 26,
+  "stage": "appendix_b_matrix_profile_loader_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 5122,
+    "diff_size": 5117,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -37,7 +37,8 @@
       "viewpoint_mechanism_metadata",
       "archimate4_pictoref_guard",
       "archimate4_deliverable_pictoref_spelling",
-      "archimate4_domain_terminology_metadata"
+      "archimate4_domain_terminology_metadata",
+      "appendix_b_matrix_profile_loader"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -66,12 +67,13 @@
       "check_viewpoint_mechanism_metadata",
       "check_archimate4_pictoref_guard",
       "check_archimate4_deliverable_pictoref_spelling",
-      "check_archimate4_domain_terminology_metadata"
+      "check_archimate4_domain_terminology_metadata",
+      "check_appendix_b_matrix_profile_loader"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-174-domain-terminology-final-state-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-domain-terminology-metadata-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-181-appendix-b-matrix-profile-final-state-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-appendix-b-matrix-profile-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -100,10 +102,11 @@
     "ArchiMate viewpoint mechanism support preserves viewpoint metadata and model-defined viewpoint definitions while example viewpoints remain informative and MEFF 4.0 exchange conformance awaits the official XSD.",
     "Every ArchiMate 4 profile pictoRef now resolves to a renderer PathMap entry; several entries remain explicit aliases until exact Appendix A vector artwork redistribution is confirmed.",
     "The ArchiMate 4 Deliverable profile now uses PICTO_DELIVERABLE while the misspelled PICTO_DELIVRABLE key remains only as a legacy compatibility alias.",
-    "ArchiMate 4 shapes now preserve profile domain metadata directly while retaining the legacy layer field as a compatibility alias."
+    "ArchiMate 4 shapes now preserve profile domain metadata directly while retaining the legacy layer field as a compatibility alias.",
+    "Host-supplied licensed Appendix B relationship profile data can now be provided as a header-row matrix array while preserving complete source-target cell validation."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T17:34:05+09:00"
+    "updated_at": "2026-07-08T17:39:31+09:00"
   }
 }

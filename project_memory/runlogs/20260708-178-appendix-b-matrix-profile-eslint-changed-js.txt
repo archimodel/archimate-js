@@ -1,0 +1,3 @@
+npx eslint lib\metamodel\languages\relationship-profile-loader.js test\relationship-rules.test.mjs
+exit code: 0
+stdout/stderr: no output

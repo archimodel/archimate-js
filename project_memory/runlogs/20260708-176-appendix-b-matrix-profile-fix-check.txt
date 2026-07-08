@@ -1,0 +1,4 @@
+matrix profile accepted: true
+BusinessActor -> Role: i
+Role -> BusinessActor: o
+Role self relationship present: false

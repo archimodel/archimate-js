@@ -1,0 +1,2 @@
+matrix profile accepted: false
+error: ArchiMate 4 relationship profile rows must be objects

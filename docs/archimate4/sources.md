@@ -129,6 +129,8 @@
 - The profile can be supplied as a parsed object or a JSON string loaded by the host application; this
   keeps file-system access outside the browser-oriented package while still supporting licensed local
   artifacts.
+- The profile can also be supplied as row objects or a header-row matrix array, allowing a licensed
+  Appendix B table to be transformed by the host without committing the table itself.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 - Complete external profiles must include source rows for relationship connectors and relationship

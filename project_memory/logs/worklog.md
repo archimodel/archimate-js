@@ -267,3 +267,13 @@
 - Docs: `docs/archimate4/*` and `CHANGELOG.md` now record domain metadata preservation.
 - Verification: `npm run test:language` passed with 63 tests in `project_memory/runlogs/20260708-169-domain-terminology-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-170-domain-terminology-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-171-domain-terminology-git-diff-check.txt`; fix check passed in `project_memory/runlogs/20260708-172-domain-terminology-fix-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-173-domain-terminology-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-174-domain-terminology-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 26
+
+- Goal: make the external Appendix B profile path accept a header-row matrix array so a licensed relationship table can be supplied without committing it.
+- Observation: initial check rejected matrix rows because relationship profile arrays only accepted row objects; see `project_memory/runlogs/20260708-175-appendix-b-matrix-profile-gap-check.txt`.
+- Implemented: `relationship-profile-loader.js` now normalizes direct matrix arrays or `{ matrix }` profiles into the existing row-object source-target cell contract.
+- Implemented: empty matrix cells count as present source-target cells for complete target validation while still representing disallowed relationships.
+- Docs: README and `docs/archimate4/*` now document matrix input for host-supplied licensed Appendix B data.
+- Verification: fix check passed in `project_memory/runlogs/20260708-176-appendix-b-matrix-profile-fix-check.txt`; `npm run test:language` passed with 64 tests in `project_memory/runlogs/20260708-177-appendix-b-matrix-profile-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-178-appendix-b-matrix-profile-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-179-appendix-b-matrix-profile-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-180-appendix-b-matrix-profile-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-181-appendix-b-matrix-profile-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.

@@ -135,6 +135,27 @@ test('archimate 4 relationship profile loader accepts row arrays', () => {
   assert.equal(maps.get('Role').get('BusinessActor'), 'o');
 });
 
+test('archimate 4 relationship profile loader accepts matrix arrays', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const maps = normalizeRelationshipProfile({
+    matrix: [
+      [ 'source', 'BusinessActor', 'Role' ],
+      [ 'BusinessActor', '', 'Assignment' ],
+      [ 'Role', 'Association', '' ]
+    ]
+  }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+
+  assert.equal(maps.get('BusinessActor').get('Role'), 'i');
+  assert.equal(maps.get('Role').get('BusinessActor'), 'o');
+  assert.equal(maps.get('Role').has('Role'), false);
+});
+
 test('archimate 4 relationship profile accepts relationship concepts and junctions', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const validTypes = new Set(getArchimate4RelationshipProfileConceptTypes(profile));

@@ -241,8 +241,8 @@ Required implementation direction:
 
 External profile contract:
 
-- Accepted shapes are a nested object, a `Map` of source-to-target maps, row arrays, or a JSON string
-  containing one of those structures.
+- Accepted shapes are a nested object, a `Map` of source-to-target maps, row arrays, header-row matrix
+  arrays, or a JSON string containing one of those structures.
 - Source and target concept types must be members of the C260-derived concept set: the 42-element
   catalog, the exposed relationship connectors, or the ArchiMate relationship types.
 - Relationship values may use the local one-letter codes (`s`, `c`, `g`, `i`, `r`, `v`, `a`, `n`, `t`,
