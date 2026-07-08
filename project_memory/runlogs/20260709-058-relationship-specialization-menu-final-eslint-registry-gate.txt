@@ -1,0 +1,1 @@
+PASS registry ESLint gate completed with no output.

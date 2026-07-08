@@ -624,3 +624,20 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-044-relationship-specialization-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-relationship-specialization-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 56
+
+- Goal: close the editor/runtime gap left after adding custom relationship specialization validation: specialized relationships must be selectable and must behave like their base relationship.
+- Source check: `project_memory/runlogs/20260709-049-c260-relationship-specialization-menu-source-scan.txt` rechecked the local C260 PDF and recorded Chapter 14 relationship/junction specialization signals without copying licensed prose.
+- Red check: `project_memory/runlogs/20260709-047-relationship-specialization-menu-test-language.txt` failed because an existing source test still expected the old fixed `cloneRelationshipMenu(menu, menuName)` signature after the implementation became profile-aware.
+- Implemented: `getRelationshipsAllowed()` now expands each allowed base relationship into custom relationship specializations from the active language profile.
+- Implemented: connection popup menu generation now accepts a profile, resolves custom relationship metadata, and builds menu entries for specialized relationships using profile labels and base relationship icons when needed.
+- Implemented: Access, Association, and Influence header actions preserve `element.type`, so toggling an option does not collapse a custom relationship back to the base standard type.
+- Implemented: ElementFactory, ConnectionUpdater, ReplaceRelationshipRefHandler, and ArchimateRenderer resolve custom relationship types to their standard base relationship for option hydration, persistence, modifier rendering, and line notation fallback.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` now record editor menu expansion and base behavior inheritance for custom relationship specializations.
+- Verification: `npm run test:language` passed with 95 tests in `project_memory/runlogs/20260709-053-relationship-specialization-menu-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-054-relationship-specialization-menu-eslint-changed.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-055-relationship-specialization-menu-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-056-relationship-specialization-menu-git-diff-check.txt`.
+- Final checks: `npm run test:language` passed with 95 tests in `project_memory/runlogs/20260709-057-relationship-specialization-menu-final-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-058-relationship-specialization-menu-final-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-059-relationship-specialization-menu-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-060-relationship-specialization-menu-final-git-diff-check.txt`.
+- Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-062-relationship-specialization-menu-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-063-relationship-specialization-menu-final-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-061-relationship-specialization-menu-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-relationship-specialization-menu-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

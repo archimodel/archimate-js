@@ -407,6 +407,36 @@ test('language profile customization supports relationship specializations', asy
   assert.match(junctionUtil, /getBaseRelationshipTypeForProfile\(type, profile\)/);
 });
 
+test('relationship specializations are available in editor menus and inherit base behavior', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const relationshipUtil = await readFile(new URL('../lib/util/RelationshipUtil.js', import.meta.url), 'utf8');
+  const connectionOptions = await readFile(new URL('../lib/features/popup-menu/ConnectionOptions.js', import.meta.url), 'utf8');
+  const connectionMenuProvider = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+  const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const connectionUpdater = await readFile(new URL('../lib/features/modeling/ConnectionUpdater.js', import.meta.url), 'utf8');
+  const replaceRelationshipRefHandler = await readFile(new URL('../lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js', import.meta.url), 'utf8');
+  const renderer = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
+
+  assert.match(languageIndex, /export function getSpecializedRelationshipTypesForProfile/);
+  assert.match(relationshipUtil, /getSpecializedRelationshipTypesForProfile\(relationship, profile\)/);
+  assert.match(relationshipUtil, /addAllowedRelationship\(relationshipsAllowed, specializedType, excludedRelationType\)/);
+  assert.match(connectionMenuProvider, /getRelationshipsMenu\(relationshipsAllowed, true, directSubTitle, profile\)/);
+  assert.match(connectionMenuProvider, /getBaseRelationshipTypeForProfile\(element\.type, profile\)/);
+  assert.match(connectionMenuProvider, /type: element\.type/);
+  assert.match(connectionOptions, /getProfileRelationship\(relationshipType, profile\)/);
+  assert.match(connectionOptions, /getBaseRelationshipTypeForProfile\(relationshipType, profile\)/);
+  assert.match(connectionOptions, /relationshipDefinition\.typeName/);
+  assert.match(connectionOptions, /kebab\(relationshipType\) \+ '-connect'/);
+  assert.match(elementFactory, /setAttrsRelationshipRef\(connectionAttrs, archimateConnection\.relationshipRef, profile\)/);
+  assert.match(elementFactory, /baseRelationshipType === 'Access'/);
+  assert.match(connectionUpdater, /'languageProfile'/);
+  assert.match(connectionUpdater, /isRelationshipBaseType\(connection\.type, RELATIONSHIP_ACCESS, profile\)/);
+  assert.match(replaceRelationshipRefHandler, /'languageProfile'/);
+  assert.match(replaceRelationshipRefHandler, /isRelationshipBaseType\(type, RELATIONSHIP_INFLUENCE, profile\)/);
+  assert.match(renderer, /getBaseRelationshipTypeForProfile\(type, profile\)/);
+  assert.match(renderer, /h = this\.handlers\[baseType\]/);
+});
+
 test('archimate 4 shape metadata preserves domain terminology', async () => {
   const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
   const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');

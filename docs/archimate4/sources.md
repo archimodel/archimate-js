@@ -94,6 +94,9 @@
 - A refreshed local C260 Chapter 14 scan is recorded in
   `project_memory/runlogs/20260709-032-c260-customization-specialization-scan.txt`; it records a
   derived source signal for Specializations of Relationships and Junctions without copying the table.
+- A follow-up local C260 Chapter 14 keyword scan is recorded in
+  `project_memory/runlogs/20260709-049-c260-relationship-specialization-menu-source-scan.txt`; it
+  confirms the same relationship/junction specialization signal used for editor menu behavior.
 - The implementation-defined customization path is `archimateLanguageProfile` on viewer/modeler
   options, or direct use of `createLanguageProfile(version, customization)`.
 - Custom profiles may add or override domains, retain custom attribute definitions, and add specialized
@@ -104,6 +107,9 @@
   relationship. Relationship validation resolves the custom relationship to that base type before
   consulting the active relationship profile, so Appendix B data does not need to be duplicated for
   every relationship specialization.
+- Editor relationship menus now expand an allowed base relationship into any custom relationship
+  specializations present in the active language profile, and the renderer/modeling handlers resolve
+  those custom relationships back to the base relationship for line notation and editable options.
 - This implements language customization without changing the 42-element standard catalog or embedding
   the licensed Appendix B matrix.
 

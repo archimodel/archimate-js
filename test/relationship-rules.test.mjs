@@ -118,7 +118,9 @@ test('connection popup labels relationships with C260 role names', async () => {
   }
 
   assert.match(source, /relationshipType: relationshipType/);
-  assert.match(source, /cloneRelationshipMenu\(menu, menuName\)/);
+  assert.match(source, /cloneRelationshipMenu\(\s*menu,\s*menuName,\s*relationshipType,\s*relationshipDefinition,\s*direct\s*\)/);
+  assert.match(source, /relationshipDefinition\.directLabel/);
+  assert.match(source, /relationshipDefinition\.reverseLabel/);
   assert.doesNotMatch(source, /label:\s*RELATIONSHIP_/);
   assert.equal(source.includes("'Part of'"), false);
   assert.equal(source.includes("'Aggregated by'"), false);

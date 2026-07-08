@@ -85,6 +85,12 @@ Runtime behavior:
 - Relationship validation resolves custom specialized relationships to their standard base
   relationship, so a `MaterialFlow` specializing `Flow` is allowed wherever the active relationship
   profile allows `Flow`.
+- Relationship option menus include specialized relationships whenever their standard base
+  relationship is allowed by the active relationship profile. Menu labels may come from
+  `directLabel`, `reverseLabel`, `label`, or `typeName` on the custom relationship metadata.
+- Specialized relationships inherit base relationship rendering and editable option behavior. For
+  example, an `Influence` specialization can render a modifier, an `Access` specialization can retain
+  access direction, and an `Association` specialization can retain directed association state.
 - This does not embed Appendix B relationship table data; external Appendix B profiles remain the
   authoritative path for exact standard relationship rules.
 
