@@ -1077,3 +1077,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-452-deliverable-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-453-deliverable-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-deliverable-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 87
+
+- Goal: replace the ArchiMate 4 `Plateau` renderer pictogram fallback with a C260 Appendix A-derived stacked horizontal bars path.
+- Source evidence: `project_memory/runlogs/20260709-455-c260-appendix-a-plateau-render.txt` and `project_memory/runlogs/20260709-456-c260-appendix-a-plateau-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-457-plateau-pictogram-red-test.txt` failed because `PICTO_PLATEAU` was still aliased to `PICTO_PRODUCT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_PLATEAU` stacked horizontal bars path and removes the Product alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Plateau renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-458-plateau-pictogram-test.txt`; `npm run test:language` passed with 145 tests in `project_memory/runlogs/20260709-459-plateau-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-460-plateau-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-461-plateau-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-462-plateau-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-463-plateau-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-464-plateau-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-465-plateau-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-466-plateau-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-plateau-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

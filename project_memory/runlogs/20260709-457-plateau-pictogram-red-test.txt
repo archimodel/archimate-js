@@ -1,0 +1,345 @@
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (6.7255ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (1.3592ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (3.1727ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (1.1814ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (1.019ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (1.1149ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (0.9974ms)
+✔ renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path (1.1453ms)
+✔ renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path (1.3214ms)
+✔ renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram path (1.2192ms)
+✖ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (2.5314ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 10
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 101.4729
+
+✖ failing tests:
+
+test at test\renderer-notation.test.mjs:96:1
+✖ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (2.5314ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /'PICTO_PLATEAU': \{/. Input:
+
+  '// eslint-disable-next-line import/no-unresolved\n' +
+    "import { evaluate } from 'mathjs/number';\n" +
+    '\n' +
+    '/**\n' +
+    ' * Map containing SVG paths needed by Renderer.\n' +
+    ' */\n' +
+    'export default function PathMap() {\n' +
+    '\n' +
+    '  /**\n' +
+    '   * Contains a map of path elements\n' +
+    '   *\n' +
+    '   * <h1>Path definition</h1>\n' +
+    '   * A parameterized path is defined like this:\n' +
+    '   * <pre>\n' +
+    "   * 'GATEWAY_PARALLEL': {\n" +
+    "   *   d: 'm {mx},{my} {e.x0},0 0,{e.x1} {e.x1},0 0,{e.y0} -{e.x1},0 0,{e.y1} ' +\n" +
+    "          '-{e.x0},0 0,-{e.y1} -{e.x1},0 0,-{e.y0} {e.x1},0 z',\n" +
+    '   *   height: 17.5,\n' +
+    '   *   width:  17.5,\n' +
+    '   *   heightElements: [2.5, 7.5],\n' +
+    '   *   widthElements: [2.5, 7.5]\n' +
+    '   * }\n' +
+    '   * </pre>\n' +
+    "   * <p>It's important to specify a correct <b>height and width</b> for the path as the scaling\n" +
+    '   * is based on the ratio between the specified height and width in this object and the\n' +
+    '   * height and width that is set as scale target (/!\\ x,y coordinates will be scaled with\n' +
+    '   * individual ratios).</p>\n' +
+    "   * <p>The '<b>heightElements</b>' and '<b>widthElements</b>' array must contain the values that will be scaled.\n" +
+    '   * The scaling is based on the computed ratios.\n' +
+    "   * Coordinates on the y axis should be in the <b>heightElement</b>'s array, they will be scaled using\n" +
+    '   * the computed ratio coefficient.\n' +
+    "   * In the parameterized path the scaled values can be accessed through the 'e' object in {} brackets.\n" +
+    '   *   <ul>\n' +
+    '   *    <li>The values for the y axis can be accessed in the path string using {e.y0}, {e.y1}, ....</li>\n' +
+    '   *    <li>The values for the x axis can be accessed in the path string using {e.x0}, {e.x1}, ....</li>\n' +
+    '   *   </ul>\n' +
+    '   *   The numbers x0, x1 respectively y0, y1, ... map to the corresponding array index.\n' +
+    '   * </p>\n' +
+    '   */\n' +
+    '  this.pathMap = {\n' +
+    '\n' +
+    "    'PICTO_ACTOR': {\n" +
+    "      d: 'm {mx},{my} m 5.5 9.5 h 8 m -4 3.5 l 4 5 m -4 -5 l -4 5 m 4 -11.5 v 6.5 m 0 -12.5 a 0.5 0.5 90 0 0 0 6 a 0.5 0.5 90 0 0 0 -6 z',\n" +
+    '      height: 18,\n' +
+    '      width: 8,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_ROLE': {\n" +
+    "      d: 'm {mx},{my} m 5 4.5 l 8 0 a 1 1 90 0 1 0 9 l -8 0 a 1 1 90 0 1 0 -9 m 8 9 a 0.5 0.5 90 0 1 0 -9',\n" +
+    '      height: 9,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_CONTRACT': {\n" +
+    "      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 15 0 m -15 5 l 15 0',\n" +
+    '      height: 13,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_REPRESENTATION': {\n" +
+    "      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 11.5 c -7.5 -5 -7.5 5 -15 0 z m 0 4 l 15 0',\n" +
+    '      height: 13,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_PRODUCT': {\n" +
+    "      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 8 0 m 0 -4 l 0 4',\n" +
+    '      height: 13,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_COMPONENT': {\n" +
+    "      d: 'm {mx},{my} m 4.5 4.5 l 0 -3 l 12 0 l 0 15 l -12 0 l 0 -3 m -3 -3 l 6 0 l 0 3 l -6 0 z m 3 0 l 0 -3 m -3 -3 l 6 0 l 0 3 l -6 0 z',\n" +
+    '      height: 15,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_COLLABORATION': {\n" +
+    "      d:'m {mx},{my} m 0.5 9 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 17 0 a 1 1 90 0 0 -11 0 a 1 1 90 0 0 11 0',\n" +
+    '      height: 11,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_EVENT': {\n" +
+    "      d:'m {mx},{my} m 0.5 3.5 l 12 0 c 6.5 0 6.5 11 0 11 l -12 0 l 3.5 -5.5 z',\n" +
+    '      height: 11,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_FUNCTION': {\n" +
+    "      d:'m {mx},{my} m 9 2 l -6.5 5.5 l 0 8.5 l 6.5 -5.5 l 6.5 5.5 l 0 -8.5 z',\n" +
+    '      height: 14,\n' +
+    '      width: 13,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_PROCESS': {\n" +
+    "      d: 'm {mx},{my} m 0.5 6.5 l 9 0 l 0 -4 l 8 6.5 l -8 6.5 l 0 -4 l -9 0 z',\n" +
+    '      height: 13,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_INTERFACE': {\n" +
+    "      d:'m {mx},{my} m 7.5 9.5 h -7 m 17 0 a 5 5 90 0 0 -10 0 a 5 5 90 0 0 10 0 z',\n" +
+    '      height: 10,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_SERVICE': {\n" +
+    "      d:'m {mx},{my} m 5 4.5 l 8 0 a 1 1 90 0 1 0 9 l -8 0 a 1 1 90 0 1 0 -9',\n" +
+    '      height: 9,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_INTERACTION': {\n" +
+    "      d:'m {mx},{my} m 10.5 2 q 6 0 6 7 q 0 7 -6 7 z m -3 14 q -6 0 -6 -7 q 0 -7 6 -7 z',\n" +
+    '      height: 14,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_OBJECT': {\n" +
+    "      d:'m {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 15 0',\n" +
+    '      height: 13,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_LOCATION': {\n" +
+    "      d:'m {mx},{my} m 8.5 17.5 c -4 -4 -4 -9 0 -13 a 1 1 90 0 1 7 0 c 4 4 4 9 0 13 l -3.5 3.5 z m 0 -10 a 1 1 90 0 0 7 0 a 1 1 90 0 0 -7 0',\n" +
+    '      height: 18,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_CAPABILITY': {\n" +
+    "      d:'m {mx},{my} m 16.5 1.5 l -5 0 l 0 5 l -5 0 l 0 5 l -5 0 l 0 5 l 15 0 z m -10 10 l 10 0 m -5 -5 l 0 10 m -5 -5 l 0 5 m 5 -10 l 5 0',\n" +
+    '      height: 15,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_RESOURCE': {\n" +
+    "      d:'m {mx},{my} m 15.5 7 l 0 -2 l -1.5 -1.5 l -12 0 l -1.5 1.5 l 0 8 l 1.5 1.5 l 12 0 l 1.5 -1.5 l 0 -2 l 1.5 0 l 0.5 -0.5 l 0 -3 l -0.5 -0.5 z m -8 -2 l 0 8 m -4 -8 l 0 8 m 2 0 l 0 -8 m 10 2 l 0 4',\n" +
+    '      height: 11,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_VALUE_STREAM': {\n" +
+    "      d:'m {mx},{my} m 17 9 l -5 -6.5 l -11 0 l 5 6.5 l -5 6.5 l 11 0 z',\n" +
+    '      height: 13,\n' +
+    '      width: 16,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_COURSE_OF_ACTION': {\n" +
+    "      d:'m {mx},{my} m 6.5 6 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 2.5 0 a 1 1 90 0 0 6 0 a 1 1 90 0 0 -6 0 m 2.5 0.5 a 1 1 90 0 0 1 0 a 1 1 90 0 0 0 -1 a 1 1 90 0 0 -1 0 a 1 1 90 0 0 0 1 m -3.5 3.5 l -0.5 4 l -3.5 -3.5 z m -2.5 1.5 q -3.5 2.5 -2.5 6 l 1 0 q -1 -3.5 2.5 -5 m -0.5 -1.5 l 1 0 l 0 1',\n" +
+    '      height: 15,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_ARTIFACT': {\n" +
+    "      d:'m {mx},{my} m 3.5 1.5 l 6 0 l 5 5 l 0 10 l -11 0 l 0 -15 m 11 5 l -5 0 l 0 -5',\n" +
+    '      height: 15,\n' +
+    '      width: 11,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_MATERIAL': {\n" +
+    "      d:'m {mx},{my} m 8.5 1.5 l 7 4 l 0 8 l -7 4 l -7 -4 l 0 -8 z m -2 5 l 2 -2 l 2 2 m -5 6 l 2 2 l 5 -5',\n" +
+    '      height: 16,\n' +
+    '      width: 14,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_NODE': {\n" +
+    "      d:'m {mx},{my} m 1.5 5.5 l 11 0 l 0 11 l -11 0 l 0 -11 l 4 -4 l 11 0 l 0 11 l -4 4 m 0 -11 l 4 -4',\n" +
+    '      height: 15,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_SYSTEM_SOFTWARE': {\n" +
+    "      d:'m {mx},{my} m 2.5 10 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 7.29 -7.5 a 5.5 5.5 90 0 0 -4.544 2.7392 a 5.5 5.5 90 0 1 8.254 4.7608 a 5.5 5.5 90 0 1 -0.7353 2.7473 a 5.5 5.5 90 0 0 2.7353 -4.7473 a 5.5 5.5 90 0 0 -5.71 -5.5',\n" +
+    '      height: 13,\n' +
+    '      width: 13,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_PATH': {\n" +
+    "      d:'m {mx},{my} m 6 3.5 l -5 5.1 m 0 -0.2 l 5 5.099 m 6 -10 l 5 5.101 m 0 -0.2 l -5 5.099 m -9 -5 l 3 0 m 1.5 0 l 3 0 m 1.5 0 l 3 0', // m 6 3.5 l -5 5 m 0 0 l 5 5 m 6 -10 l 5 5 m 0 0 l -5 5 m -9 -5 l 3 0 m 1.5 0 l 3 0 m 1.5 0 l 3 0',\n" +
+    '      height: 10,\n' +
+    '      width: 16,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_COMMUNICATION_NETWORK': {\n" +
+    "      d:'m {mx},{my} m 1 13.5 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 2 -9 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 14 0 a 1 1 90 0 0 -5 0 a 1 1 90 0 0 5 0 m -7 9 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m -2 -9 l 4 0 m -6 9 l 4 0 m -6.5 -2.5 l 2 -4 m 7 4 l 2 -4',\n" +
+    '      height: 13,\n' +
+    '      width: 13,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_DISTRIBUTION_NETWORK': {\n" +
+    "      d:'m {mx},{my} m 1.5 9 l 4 -4 m -4 4 l 4 4 m -4 -4 l 15 0 m -4 -4 l 4 4 l -4 4',\n" +
+    '      height: 8,\n' +
+    '      width: 16,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_DEVICE': {\n" +
+    "      d:'m {mx},{my} m 5 11.5 l -3.5 4 l 15 0 l -3.5 -4 m -11.5 -2 l 0 -5 a 2 2 90 0 1 2 -2 l 11 0 a 2 2 90 0 1 2 2 l 0 5 a 2 2 90 0 1 -2 2 l -11 0 a 2 2 90 0 1 -2 -2',\n" +
+    '      height: 13,\n' +
+    '      width: 13,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_EQUIPMENT': {\n" +
+    "      d:'m {mx},{my} m 7.5 10 a 1 1 90 0 0 8 0 a 1 1 90 0 0 -8 0 m 4 -6 l 0 2 m 0 8 l 0 2 m -6 -6 l 2 0 m 8 0 l 2 0 m -10.5 -3.5 l 1.5 1.5 m 7 -1.5 l -1.5 1.5 m -5.5 5.5 l -1.5 1.5 m 7 -1.5 l 1.5 1.5 m -3.5 -3.5 a 1 1 90 0 0 3 0 a 1 1 90 0 0 -3 0 m 8 -7 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 2.5 -3 l 0 1.5 m 0 4.5 l 0 1.5 m -3 -3 l 1.5 0 m 4.5 0 l 1.5 0',\n" +
+    '      height: 17,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_FACILITY': {\n" +
+    "      d:'m {mx},{my} m 1.5 16.5 l 0 -7 l 4 3 l 0 -3 l 4 3 l 0 -3 l 4 3 l 0 4 z m 2.5 0 l 0 -3 m 3 3 l 0 -3 m 3 3 l 0 -3',\n" +
+    '      height: 15,\n' +
+    '      width: 14,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_WORK_PACKAGE': {\n" +
+    "      d:'m {mx},{my} m 4 7 a 1 1 90 1 0 8 0 a 1 1 90 1 0 -8 0 m 8 0 l 5 5 m 0 0 l -4 0 m 4 0 l 0 -4',\n" +
+    '      height: 15,\n' +
+    '      width: 17,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_DELIVERABLE': {\n" +
+    "      d:'m {mx},{my} m 1.5 4 l 0 9 c 4 3 8 -3 14 0 l 0 -9 l -3 0 l 0 -2 m 3 2 l -3 -2',\n" +
+    '      height: 15,\n' +
+    '      width: 15,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_JUNCTION_AND': {\n" +
+    "      d:'m {mx},{my} m 8 1.5 a 1 1 90 0 0 0 13 a 1 1 90 0 0 0 -13 m -4 6.5 l 8 0 m -4 -4 l 0 8',\n" +
+    '      height: 16,\n' +
+    '      width: 16,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'PICTO_JUNCTION_OR': {\n" +
+    "      d:'m {mx},{my} m 8 1.5 a 1 1 90 0 0 0 13 a 1 1 90 0 0 0 -13 m -4 4 l 4 6 l 4 -6',\n" +
+    '      height: 16,\n' +
+    '      width: 16,\n' +
+    '      heightElements: [],\n' +
+    '      widthElements: []\n' +
+    '    },\n' +
+    '\n' +
+    "    'FIGURE_OBJECT': {\n" +
+    "      d: 'm {mx},{my} ' +\n" +
+    "         'l 0,{e.y0} "... 6214 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/renderer-notation.test.mjs:99:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "// eslint-disable-next-line import/no-unresolved\nimport { evaluate } from 'mathjs/number';\n\n/**\n * Map containing SVG paths needed by Renderer.\n */\nexport default function PathMap() {\n\n  /**\n   * Contains a map of path elements\n   *\n   * <h1>Path definition</h1>\n   * A parameterized path is defined like this:\n   * <pre>\n   * 'GATEWAY_PARALLEL': {\n   *   d: 'm {mx},{my} {e.x0},0 0,{e.x1} {e.x1},0 0,{e.y0} -{e.x1},0 0,{e.y1} ' +\n          '-{e.x0},0 0,-{e.y1} -{e.x1},0 0,-{e.y0} {e.x1},0 z',\n   *   height: 17.5,\n   *   width:  17.5,\n   *   heightElements: [2.5, 7.5],\n   *   widthElements: [2.5, 7.5]\n   * }\n   * </pre>\n   * <p>It's important to specify a correct <b>height and width</b> for the path as the scaling\n   * is based on the ratio between the specified height and width in this object and the\n   * height and width that is set as scale target (/!\\ x,y coordinates will be scaled with\n   * individual ratios).</p>\n   * <p>The '<b>heightElements</b>' and '<b>widthElements</b>' array must contain the values that will be scaled.\n   * The scaling is based on the computed ratios.\n   * Coordinates on the y axis should be in the <b>heightElement</b>'s array, they will be scaled using\n   * the computed ratio coefficient.\n   * In the parameterized path the scaled values can be accessed through the 'e' object in {} brackets.\n   *   <ul>\n   *    <li>The values for the y axis can be accessed in the path string using {e.y0}, {e.y1}, ....</li>\n   *    <li>The values for the x axis can be accessed in the path string using {e.x0}, {e.x1}, ....</li>\n   *   </ul>\n   *   The numbers x0, x1 respectively y0, y1, ... map to the corresponding array index.\n   * </p>\n   */\n  this.pathMap = {\n\n    'PICTO_ACTOR': {\n      d: 'm {mx},{my} m 5.5 9.5 h 8 m -4 3.5 l 4 5 m -4 -5 l -4 5 m 4 -11.5 v 6.5 m 0 -12.5 a 0.5 0.5 90 0 0 0 6 a 0.5 0.5 90 0 0 0 -6 z',\n      height: 18,\n      width: 8,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_ROLE': {\n      d: 'm {mx},{my} m 5 4.5 l 8 0 a 1 1 90 0 1 0 9 l -8 0 a 1 1 90 0 1 0 -9 m 8 9 a 0.5 0.5 90 0 1 0 -9',\n      height: 9,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_CONTRACT': {\n      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 15 0 m -15 5 l 15 0',\n      height: 13,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_REPRESENTATION': {\n      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 11.5 c -7.5 -5 -7.5 5 -15 0 z m 0 4 l 15 0',\n      height: 13,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_PRODUCT': {\n      d: 'm {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 8 0 m 0 -4 l 0 4',\n      height: 13,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_COMPONENT': {\n      d: 'm {mx},{my} m 4.5 4.5 l 0 -3 l 12 0 l 0 15 l -12 0 l 0 -3 m -3 -3 l 6 0 l 0 3 l -6 0 z m 3 0 l 0 -3 m -3 -3 l 6 0 l 0 3 l -6 0 z',\n      height: 15,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_COLLABORATION': {\n      d:'m {mx},{my} m 0.5 9 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 17 0 a 1 1 90 0 0 -11 0 a 1 1 90 0 0 11 0',\n      height: 11,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_EVENT': {\n      d:'m {mx},{my} m 0.5 3.5 l 12 0 c 6.5 0 6.5 11 0 11 l -12 0 l 3.5 -5.5 z',\n      height: 11,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_FUNCTION': {\n      d:'m {mx},{my} m 9 2 l -6.5 5.5 l 0 8.5 l 6.5 -5.5 l 6.5 5.5 l 0 -8.5 z',\n      height: 14,\n      width: 13,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_PROCESS': {\n      d: 'm {mx},{my} m 0.5 6.5 l 9 0 l 0 -4 l 8 6.5 l -8 6.5 l 0 -4 l -9 0 z',\n      height: 13,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_INTERFACE': {\n      d:'m {mx},{my} m 7.5 9.5 h -7 m 17 0 a 5 5 90 0 0 -10 0 a 5 5 90 0 0 10 0 z',\n      height: 10,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_SERVICE': {\n      d:'m {mx},{my} m 5 4.5 l 8 0 a 1 1 90 0 1 0 9 l -8 0 a 1 1 90 0 1 0 -9',\n      height: 9,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_INTERACTION': {\n      d:'m {mx},{my} m 10.5 2 q 6 0 6 7 q 0 7 -6 7 z m -3 14 q -6 0 -6 -7 q 0 -7 6 -7 z',\n      height: 14,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_OBJECT': {\n      d:'m {mx},{my} m 1.5 2.5 l 15 0 l 0 13 l -15 0 z m 0 4 l 15 0',\n      height: 13,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_LOCATION': {\n      d:'m {mx},{my} m 8.5 17.5 c -4 -4 -4 -9 0 -13 a 1 1 90 0 1 7 0 c 4 4 4 9 0 13 l -3.5 3.5 z m 0 -10 a 1 1 90 0 0 7 0 a 1 1 90 0 0 -7 0',\n      height: 18,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_CAPABILITY': {\n      d:'m {mx},{my} m 16.5 1.5 l -5 0 l 0 5 l -5 0 l 0 5 l -5 0 l 0 5 l 15 0 z m -10 10 l 10 0 m -5 -5 l 0 10 m -5 -5 l 0 5 m 5 -10 l 5 0',\n      height: 15,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_RESOURCE': {\n      d:'m {mx},{my} m 15.5 7 l 0 -2 l -1.5 -1.5 l -12 0 l -1.5 1.5 l 0 8 l 1.5 1.5 l 12 0 l 1.5 -1.5 l 0 -2 l 1.5 0 l 0.5 -0.5 l 0 -3 l -0.5 -0.5 z m -8 -2 l 0 8 m -4 -8 l 0 8 m 2 0 l 0 -8 m 10 2 l 0 4',\n      height: 11,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_VALUE_STREAM': {\n      d:'m {mx},{my} m 17 9 l -5 -6.5 l -11 0 l 5 6.5 l -5 6.5 l 11 0 z',\n      height: 13,\n      width: 16,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_COURSE_OF_ACTION': {\n      d:'m {mx},{my} m 6.5 6 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 2.5 0 a 1 1 90 0 0 6 0 a 1 1 90 0 0 -6 0 m 2.5 0.5 a 1 1 90 0 0 1 0 a 1 1 90 0 0 0 -1 a 1 1 90 0 0 -1 0 a 1 1 90 0 0 0 1 m -3.5 3.5 l -0.5 4 l -3.5 -3.5 z m -2.5 1.5 q -3.5 2.5 -2.5 6 l 1 0 q -1 -3.5 2.5 -5 m -0.5 -1.5 l 1 0 l 0 1',\n      height: 15,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_ARTIFACT': {\n      d:'m {mx},{my} m 3.5 1.5 l 6 0 l 5 5 l 0 10 l -11 0 l 0 -15 m 11 5 l -5 0 l 0 -5',\n      height: 15,\n      width: 11,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_MATERIAL': {\n      d:'m {mx},{my} m 8.5 1.5 l 7 4 l 0 8 l -7 4 l -7 -4 l 0 -8 z m -2 5 l 2 -2 l 2 2 m -5 6 l 2 2 l 5 -5',\n      height: 16,\n      width: 14,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_NODE': {\n      d:'m {mx},{my} m 1.5 5.5 l 11 0 l 0 11 l -11 0 l 0 -11 l 4 -4 l 11 0 l 0 11 l -4 4 m 0 -11 l 4 -4',\n      height: 15,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_SYSTEM_SOFTWARE': {\n      d:'m {mx},{my} m 2.5 10 a 1 1 90 0 0 11 0 a 1 1 90 0 0 -11 0 m 7.29 -7.5 a 5.5 5.5 90 0 0 -4.544 2.7392 a 5.5 5.5 90 0 1 8.254 4.7608 a 5.5 5.5 90 0 1 -0.7353 2.7473 a 5.5 5.5 90 0 0 2.7353 -4.7473 a 5.5 5.5 90 0 0 -5.71 -5.5',\n      height: 13,\n      width: 13,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_PATH': {\n      d:'m {mx},{my} m 6 3.5 l -5 5.1 m 0 -0.2 l 5 5.099 m 6 -10 l 5 5.101 m 0 -0.2 l -5 5.099 m -9 -5 l 3 0 m 1.5 0 l 3 0 m 1.5 0 l 3 0', // m 6 3.5 l -5 5 m 0 0 l 5 5 m 6 -10 l 5 5 m 0 0 l -5 5 m -9 -5 l 3 0 m 1.5 0 l 3 0 m 1.5 0 l 3 0',\n      height: 10,\n      width: 16,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_COMMUNICATION_NETWORK': {\n      d:'m {mx},{my} m 1 13.5 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 2 -9 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 14 0 a 1 1 90 0 0 -5 0 a 1 1 90 0 0 5 0 m -7 9 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m -2 -9 l 4 0 m -6 9 l 4 0 m -6.5 -2.5 l 2 -4 m 7 4 l 2 -4',\n      height: 13,\n      width: 13,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_DISTRIBUTION_NETWORK': {\n      d:'m {mx},{my} m 1.5 9 l 4 -4 m -4 4 l 4 4 m -4 -4 l 15 0 m -4 -4 l 4 4 l -4 4',\n      height: 8,\n      width: 16,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_DEVICE': {\n      d:'m {mx},{my} m 5 11.5 l -3.5 4 l 15 0 l -3.5 -4 m -11.5 -2 l 0 -5 a 2 2 90 0 1 2 -2 l 11 0 a 2 2 90 0 1 2 2 l 0 5 a 2 2 90 0 1 -2 2 l -11 0 a 2 2 90 0 1 -2 -2',\n      height: 13,\n      width: 13,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_EQUIPMENT': {\n      d:'m {mx},{my} m 7.5 10 a 1 1 90 0 0 8 0 a 1 1 90 0 0 -8 0 m 4 -6 l 0 2 m 0 8 l 0 2 m -6 -6 l 2 0 m 8 0 l 2 0 m -10.5 -3.5 l 1.5 1.5 m 7 -1.5 l -1.5 1.5 m -5.5 5.5 l -1.5 1.5 m 7 -1.5 l 1.5 1.5 m -3.5 -3.5 a 1 1 90 0 0 3 0 a 1 1 90 0 0 -3 0 m 8 -7 a 1 1 90 0 0 5 0 a 1 1 90 0 0 -5 0 m 2.5 -3 l 0 1.5 m 0 4.5 l 0 1.5 m -3 -3 l 1.5 0 m 4.5 0 l 1.5 0',\n      height: 17,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_FACILITY': {\n      d:'m {mx},{my} m 1.5 16.5 l 0 -7 l 4 3 l 0 -3 l 4 3 l 0 -3 l 4 3 l 0 4 z m 2.5 0 l 0 -3 m 3 3 l 0 -3 m 3 3 l 0 -3',\n      height: 15,\n      width: 14,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_WORK_PACKAGE': {\n      d:'m {mx},{my} m 4 7 a 1 1 90 1 0 8 0 a 1 1 90 1 0 -8 0 m 8 0 l 5 5 m 0 0 l -4 0 m 4 0 l 0 -4',\n      height: 15,\n      width: 17,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_DELIVERABLE': {\n      d:'m {mx},{my} m 1.5 4 l 0 9 c 4 3 8 -3 14 0 l 0 -9 l -3 0 l 0 -2 m 3 2 l -3 -2',\n      height: 15,\n      width: 15,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_JUNCTION_AND': {\n      d:'m {mx},{my} m 8 1.5 a 1 1 90 0 0 0 13 a 1 1 90 0 0 0 -13 m -4 6.5 l 8 0 m -4 -4 l 0 8',\n      height: 16,\n      width: 16,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'PICTO_JUNCTION_OR': {\n      d:'m {mx},{my} m 8 1.5 a 1 1 90 0 0 0 13 a 1 1 90 0 0 0 -13 m -4 4 l 4 6 l 4 -6',\n      height: 16,\n      width: 16,\n      heightElements: [],\n      widthElements: []\n    },\n\n    'FIGURE_OBJECT': {\n      d: 'm {mx},{my} ' +\n         'l 0,{e.y0} "... 6214 more characters,
+    expected: /'PICTO_PLATEAU': \{/,
+    operator: 'match',
+    diff: 'simple'
+  }

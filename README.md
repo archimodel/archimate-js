@@ -108,6 +108,7 @@ const modeler = new Modeler({
 * The ArchiMate 4 `Equipment` renderer pictogram uses a dedicated locally-authored gear path instead of the Device monitor pictogram.
 * The ArchiMate 4 `Work Package` renderer pictogram uses a dedicated locally-authored loop-arrow path instead of the Process horizontal arrow pictogram.
 * The ArchiMate 4 `Deliverable` renderer pictogram uses a dedicated locally-authored wavy-bottom document path instead of the generic object pictogram.
+* The ArchiMate 4 `Plateau` renderer pictogram uses a dedicated locally-authored stacked-bars path instead of the Product folder pictogram.
 * In ArchiMate 4 mode, Motivation elements render with clipped/chamfered body corners from the Appendix A notation summary while ArchiMate 3.x keeps the existing rectangle body behavior.
 * In ArchiMate 4 mode, `Grouping` renders with a dashed, unfilled outline to match the Appendix A notation boundary while exact Appendix A vector artwork remains externally source-dependent.
 * ArchiMate 4 `Grouping`, `Location`, and `Plateau` can aggregate relationship concepts, including relationships and junctions.

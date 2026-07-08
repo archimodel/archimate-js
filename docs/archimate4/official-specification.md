@@ -203,6 +203,8 @@ Implementation notes:
   horizontal arrow pictogram fallback.
 - `Deliverable` must use a wavy-bottom document renderer pictogram in ArchiMate 4 mode, not the
   generic object pictogram fallback.
+- `Plateau` must use a stacked-bars renderer pictogram in ArchiMate 4 mode, not the `Product`
+  folder pictogram fallback.
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.

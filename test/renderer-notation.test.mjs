@@ -92,3 +92,11 @@ test('renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram pa
   assert.doesNotMatch(pathMap, /'PICTO_DELIVERABLE': 'PICTO_OBJECT'/);
   assert.match(pathMap, /m 1\.5 4 l 0 9 c 4 3 8 -3 14 0/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_PLATEAU': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_PLATEAU': 'PICTO_PRODUCT'/);
+  assert.match(pathMap, /m 4 4 l 9 0 m -11 5 l 9 0 m -11 5 l 9 0/);
+});

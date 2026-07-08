@@ -149,6 +149,11 @@
   renderer requirement is limited to replacing the local `PICTO_DELIVERABLE` generic object alias
   with a locally-authored wavy-bottom document path while retaining the legacy `PICTO_DELIVRABLE`
   alias as compatibility.
+- A local C260 Appendix A rendered visual check for `Plateau` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-455-c260-appendix-a-plateau-render.txt` and
+  `project_memory/runlogs/20260709-456-c260-appendix-a-plateau-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_PLATEAU` Product alias with a
+  locally-authored stacked horizontal bars path.
 
 ## Language Customization Mechanism
 
