@@ -1,0 +1,228 @@
+✖ attachment behavior persists visual nesting without duplicate view nodes (5.7461ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.2765
+
+✖ failing tests:
+
+test at test\view-nesting.test.mjs:5:1
+✖ attachment behavior persists visual nesting without duplicate view nodes (5.7461ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /function addNodeToParent\(parentBusinessObject, node\)/. Input:
+
+  "import inherits from 'inherits-browser';\n" +
+    '\n' +
+    "import CommandInterceptor from 'diagram-js/lib/command/CommandInterceptor';\n" +
+    "import { getMid } from 'diagram-js/lib/layout/LayoutUtil';\n" +
+    "import { logger } from '../../../util/Logger';\n" +
+    "import { NOTE, is, isAny } from '../../../util/ModelUtil';\n" +
+    "import { getExistingRelationships } from '../../../util/RelationshipUtil';\n" +
+    "import { ARCHIMATE_NODE, ARCHIMATE_VIEW } from '../../../metamodel/Concept';\n" +
+    "import { remove as collectionRemove } from 'diagram-js/lib/util/Collections';\n" +
+    '\n' +
+    '\n' +
+    '// create nested elements relationship if needed\n' +
+    'export default function AttachmentBehavior(injector, canvas, modeling) {\n' +
+    '\n' +
+    '  injector.invoke(CommandInterceptor, this);\n' +
+    '\n' +
+    '  this._modeling = modeling;\n' +
+    '  this._canvas = canvas;\n' +
+    '\n' +
+    '  var self = this;\n' +
+    '\n' +
+    '  function updateNodes(event) {\n' +
+    "    logger.log('updateAttachment(event)');\n" +
+    '    logger.log(event);\n' +
+    '\n' +
+    '    var shape = event.context.shape,\n' +
+    '      newHost = event.context.newHost,\n' +
+    '      oldHost = event.context.oldHost;\n' +
+    '\n' +
+    '    if (!isAny(shape.businessObject, [ARCHIMATE_NODE])) {\n' +
+    '      return;\n' +
+    '    }\n' +
+    '\n' +
+    '    self.updateNodes(shape, newHost, oldHost);\n' +
+    '  }\n' +
+    '\n' +
+    '  function reverteUpdateNodes(event) {\n' +
+    "    logger.log('revertUpdateAttachment(event)');\n" +
+    '    logger.log(event);\n' +
+    '\n' +
+    '    var shape = event.context.shape,\n' +
+    '      newHost = event.context.oldHost,\n' +
+    '      oldHost = event.context.newHost;\n' +
+    '\n' +
+    '\n' +
+    '    if (!isAny(shape.businessObject, [ARCHIMATE_NODE])) {\n' +
+    '      return;\n' +
+    '    }\n' +
+    '\n' +
+    '    self.updateNodes(shape, newHost, oldHost);\n' +
+    '  }\n' +
+    '\n' +
+    '  function updateConnections(event) {\n' +
+    "    logger.log('updateConnections(event)');\n" +
+    '    logger.log(event);\n' +
+    '\n' +
+    '    var shape = event.context.shape,\n' +
+    '      newHost = event.context.newHost,\n' +
+    '      oldHost = event.context.oldHost;\n' +
+    '\n' +
+    '    self.updateConnections(shape, newHost, oldHost);\n' +
+    '  }\n' +
+    '\n' +
+    "  this.executed([ 'element.updateAttachment' ], updateNodes);\n" +
+    '\n' +
+    "  this.reverted([ 'element.updateAttachment' ], reverteUpdateNodes);\n" +
+    '\n' +
+    "  this.postExecuted([ 'element.updateAttachment' ], updateConnections);\n" +
+    '\n' +
+    '}\n' +
+    '\n' +
+    'inherits(AttachmentBehavior, CommandInterceptor);\n' +
+    '\n' +
+    'AttachmentBehavior.$inject = [\n' +
+    "  'injector',\n" +
+    "  'canvas',\n" +
+    "  'modeling'\n" +
+    ']; \n' +
+    '\n' +
+    '// implementation //////////////////////\n' +
+    '\n' +
+    'AttachmentBehavior.prototype.updateNodes = function(shape, newHost, oldHost) {\n' +
+    '\n' +
+    '  shape.businessObject.$parent = shape.host && shape.host.businessObject;\n' +
+    '\n' +
+    '  if (oldHost && is(oldHost.businessObject, ARCHIMATE_NODE )) {\n' +
+    '    // delete from oldHost.businessObject.nodes array the node of the current shape (shape.businessObject)\n' +
+    '    collectionRemove(oldHost.businessObject.nodes, shape.businessObject);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (oldHost && is(oldHost.businessObject, ARCHIMATE_VIEW)) {\n' +
+    '    // delete from oldHost.businessObject.nodes array the node of the current shape (shape.businessObject)\n' +
+    '    collectionRemove(oldHost.businessObject.viewElements, shape.businessObject);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (newHost && is(newHost.businessObject, ARCHIMATE_NODE )) {\n' +
+    '      if (!newHost.businessObject.nodes) {\n' +
+    '        newHost.businessObject.nodes = [];\n' +
+    '      }\n' +
+    '    newHost.businessObject.nodes.push(shape.businessObject);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (newHost && is(newHost.businessObject, ARCHIMATE_VIEW)) {\n' +
+    '    if (!newHost.businessObject.viewElements) {\n' +
+    '      newHost.businessObject.viewElements = [];\n' +
+    '    }\n' +
+    '    newHost.businessObject.viewElements.push(shape.businessObject);\n' +
+    '  }\n' +
+    '\n' +
+    '}\n' +
+    '\n' +
+    'AttachmentBehavior.prototype.updateConnections = function(shape, newHost, oldHost) {\n' +
+    '\n' +
+    '  var modeling = this._modeling,\n' +
+    '    canvas = this._canvas;\n' +
+    '\n' +
+    '  if (!oldHost || !newHost) {\n' +
+    '    return;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (shape.type !== NOTE) { \n' +
+    '    var relationshipsNode = canvas._rootElement.modelRef.relationshipsNode;\n' +
+    '\n' +
+    '    var allRelationships = [];\n' +
+    '    // chek if there is nested relationship from shape to oldHost and create connection\n' +
+    '    var existingRelationships = getExistingRelationships(shape, oldHost, relationshipsNode);\n' +
+    '    for (const relationship of existingRelationships) {\n' +
+    '      allRelationships.push( {relationshipRef: relationship, source: shape, target: oldHost});\n' +
+    '    }\n' +
+    '\n' +
+    '    // chek if there is nested relationship from oldHost to shape\n' +
+    '    var existingRelationships = getExistingRelationships(oldHost, shape, relationshipsNode);\n' +
+    '    for (const relationship of existingRelationships) {\n' +
+    '      allRelationships.push( {relationshipRef: relationship, source: oldHost, target: shape});\n' +
+    '    }\n' +
+    '\n' +
+    '    // create all connections\n' +
+    '    createConnections(modeling, allRelationships);\n' +
+    '\n' +
+    '  }\n' +
+    '  // check if there is connection between shape to newHost and delete connection\n' +
+    '  // keep relationship in relationshsipsNode\n' +
+    '\n' +
+    '  var removeConnections = [];\n' +
+    '  for (const connection of shape.incoming) {\n' +
+    '    logger.log(connection);\n' +
+    '    if (connection.source.id === newHost.id) {\n' +
+    "      logger.log('delete incoming connection from newHost to shape');\n" +
+    '      removeConnections.push(connection);\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  for (const connection of shape.outgoing) {\n' +
+    '    logger.log(connection);\n' +
+    '    if (connection.target.id === newHost.id) {\n' +
+    "      logger.log('delete outgoing connection from shape to newHost');\n" +
+    '      removeConnections.push(connection);\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  modeling.removeElements(removeConnections);\n' +
+    '\n' +
+    '};\n' +
+    '\n' +
+    '\n' +
+    'function addStep(point, step) {\n' +
+    '  return {\n' +
+    '    x: point.x + step,\n' +
+    '    y: point.y + step\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'function createConnections(modeling, allRelationships) {\n' +
+    '\n' +
+    '  if (allRelationships.length !== 0) {\n' +
+    '    // if true, render all connections between source and target\n' +
+    '    var step = 10,\n' +
+    '      newStep = 0;\n' +
+    '\n' +
+    '    for (const relationship of allRelationships) {\n' +
+    '\n' +
+    '      var source = relationship.source,\n' +
+    '        target = relationship.target;\n' +
+    '\n' +
+    '      var hints = {\n' +
+    '        connectionStart: addStep(getMid(source), newStep),\n' +
+    '        connectionEnd: addStep(getMid(target), newStep)\n' +
+    '      };\n' +
+    '\n' +
+    '      newStep = newStep + step;\n' +
+    '\n' +
+    '      var attrs = {\n' +
+    '        type: relationship.relationshipRef.type,\n' +
+    '        relationshipRef: relationship.relationshipRef\n' +
+    '      };\n' +
+    '\n' +
+    '      modeling.createConnection(source, target, attrs, source.parent, hints);\n' +
+    '\n' +
+    '    }\n' +
+    '  }\n' +
+    '}\n'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/view-nesting.test.mjs:8:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import inherits from 'inherits-browser';\n\nimport CommandInterceptor from 'diagram-js/lib/command/CommandInterceptor';\nimport { getMid } from 'diagram-js/lib/layout/LayoutUtil';\nimport { logger } from '../../../util/Logger';\nimport { NOTE, is, isAny } from '../../../util/ModelUtil';\nimport { getExistingRelationships } from '../../../util/RelationshipUtil';\nimport { ARCHIMATE_NODE, ARCHIMATE_VIEW } from '../../../metamodel/Concept';\nimport { remove as collectionRemove } from 'diagram-js/lib/util/Collections';\n\n\n// create nested elements relationship if needed\nexport default function AttachmentBehavior(injector, canvas, modeling) {\n\n  injector.invoke(CommandInterceptor, this);\n\n  this._modeling = modeling;\n  this._canvas = canvas;\n\n  var self = this;\n\n  function updateNodes(event) {\n    logger.log('updateAttachment(event)');\n    logger.log(event);\n\n    var shape = event.context.shape,\n      newHost = event.context.newHost,\n      oldHost = event.context.oldHost;\n\n    if (!isAny(shape.businessObject, [ARCHIMATE_NODE])) {\n      return;\n    }\n\n    self.updateNodes(shape, newHost, oldHost);\n  }\n\n  function reverteUpdateNodes(event) {\n    logger.log('revertUpdateAttachment(event)');\n    logger.log(event);\n\n    var shape = event.context.shape,\n      newHost = event.context.oldHost,\n      oldHost = event.context.newHost;\n\n\n    if (!isAny(shape.businessObject, [ARCHIMATE_NODE])) {\n      return;\n    }\n\n    self.updateNodes(shape, newHost, oldHost);\n  }\n\n  function updateConnections(event) {\n    logger.log('updateConnections(event)');\n    logger.log(event);\n\n    var shape = event.context.shape,\n      newHost = event.context.newHost,\n      oldHost = event.context.oldHost;\n\n    self.updateConnections(shape, newHost, oldHost);\n  }\n\n  this.executed([ 'element.updateAttachment' ], updateNodes);\n\n  this.reverted([ 'element.updateAttachment' ], reverteUpdateNodes);\n\n  this.postExecuted([ 'element.updateAttachment' ], updateConnections);\n\n}\n\ninherits(AttachmentBehavior, CommandInterceptor);\n\nAttachmentBehavior.$inject = [\n  'injector',\n  'canvas',\n  'modeling'\n]; \n\n// implementation //////////////////////\n\nAttachmentBehavior.prototype.updateNodes = function(shape, newHost, oldHost) {\n\n  shape.businessObject.$parent = shape.host && shape.host.businessObject;\n\n  if (oldHost && is(oldHost.businessObject, ARCHIMATE_NODE )) {\n    // delete from oldHost.businessObject.nodes array the node of the current shape (shape.businessObject)\n    collectionRemove(oldHost.businessObject.nodes, shape.businessObject);\n  }\n\n  if (oldHost && is(oldHost.businessObject, ARCHIMATE_VIEW)) {\n    // delete from oldHost.businessObject.nodes array the node of the current shape (shape.businessObject)\n    collectionRemove(oldHost.businessObject.viewElements, shape.businessObject);\n  }\n\n  if (newHost && is(newHost.businessObject, ARCHIMATE_NODE )) {\n      if (!newHost.businessObject.nodes) {\n        newHost.businessObject.nodes = [];\n      }\n    newHost.businessObject.nodes.push(shape.businessObject);\n  }\n\n  if (newHost && is(newHost.businessObject, ARCHIMATE_VIEW)) {\n    if (!newHost.businessObject.viewElements) {\n      newHost.businessObject.viewElements = [];\n    }\n    newHost.businessObject.viewElements.push(shape.businessObject);\n  }\n\n}\n\nAttachmentBehavior.prototype.updateConnections = function(shape, newHost, oldHost) {\n\n  var modeling = this._modeling,\n    canvas = this._canvas;\n\n  if (!oldHost || !newHost) {\n    return;\n  }\n\n  if (shape.type !== NOTE) { \n    var relationshipsNode = canvas._rootElement.modelRef.relationshipsNode;\n\n    var allRelationships = [];\n    // chek if there is nested relationship from shape to oldHost and create connection\n    var existingRelationships = getExistingRelationships(shape, oldHost, relationshipsNode);\n    for (const relationship of existingRelationships) {\n      allRelationships.push( {relationshipRef: relationship, source: shape, target: oldHost});\n    }\n\n    // chek if there is nested relationship from oldHost to shape\n    var existingRelationships = getExistingRelationships(oldHost, shape, relationshipsNode);\n    for (const relationship of existingRelationships) {\n      allRelationships.push( {relationshipRef: relationship, source: oldHost, target: shape});\n    }\n\n    // create all connections\n    createConnections(modeling, allRelationships);\n\n  }\n  // check if there is connection between shape to newHost and delete connection\n  // keep relationship in relationshsipsNode\n\n  var removeConnections = [];\n  for (const connection of shape.incoming) {\n    logger.log(connection);\n    if (connection.source.id === newHost.id) {\n      logger.log('delete incoming connection from newHost to shape');\n      removeConnections.push(connection);\n    }\n  }\n\n  for (const connection of shape.outgoing) {\n    logger.log(connection);\n    if (connection.target.id === newHost.id) {\n      logger.log('delete outgoing connection from shape to newHost');\n      removeConnections.push(connection);\n    }\n  }\n\n  modeling.removeElements(removeConnections);\n\n};\n\n\nfunction addStep(point, step) {\n  return {\n    x: point.x + step,\n    y: point.y + step\n  }\n}\n\nfunction createConnections(modeling, allRelationships) {\n\n  if (allRelationships.length !== 0) {\n    // if true, render all connections between source and target\n    var step = 10,\n      newStep = 0;\n\n    for (const relationship of allRelationships) {\n\n      var source = relationship.source,\n        target = relationship.target;\n\n      var hints = {\n        connectionStart: addStep(getMid(source), newStep),\n        connectionEnd: addStep(getMid(target), newStep)\n      };\n\n      newStep = newStep + step;\n\n      var attrs = {\n        type: relationship.relationshipRef.type,\n        relationshipRef: relationship.relationshipRef\n      };\n\n      modeling.createConnection(source, target, attrs, source.parent, hints);\n\n    }\n  }\n}\n",
+    expected: /function addNodeToParent\(parentBusinessObject, node\)/,
+    operator: 'match',
+    diff: 'simple'
+  }

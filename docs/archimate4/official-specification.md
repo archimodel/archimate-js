@@ -138,10 +138,11 @@ serialization surface.
 
 ## View Nesting
 
-C260 allows visual nesting as a notation technique. The importer must preserve nested `Node` view
-elements as diagram parent-child shapes so the visual containment survives model loading. The nested
-notation remains visual; relationship semantics are still handled by explicit relationships and the
-active relationship profile.
+C260 allows visual nesting as a notation technique. The importer and editor must preserve nested
+`Node` view elements as diagram parent-child shapes and as `Node.nodes` children in the view model, so
+the visual containment survives model loading and later save operations. The nested notation remains
+visual; relationship semantics are still handled by explicit relationships and the active relationship
+profile.
 
 ## Model Organization Tree
 

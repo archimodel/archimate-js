@@ -1,0 +1,25 @@
+
+D:\github\archimate-js\lib\features\modeling\behavior\AttachmentBehavior.js
+   27:1   error  Expected indentation of 8 spaces but found 6   indent
+   28:1   error  Expected indentation of 8 spaces but found 6   indent
+   42:1   error  Expected indentation of 8 spaces but found 6   indent
+   43:1   error  Expected indentation of 8 spaces but found 6   indent
+   58:1   error  Expected indentation of 8 spaces but found 6   indent
+   59:1   error  Expected indentation of 8 spaces but found 6   indent
+  101:1   error  Expected indentation of 6 spaces but found 4   indent
+  107:29  error  Trailing spaces not allowed                    no-trailing-spaces
+  111:5   error  Expected line before comment                   lines-around-comment
+  114:29  error  There should be no space after this paren      space-in-parens
+  114:30  error  A space is required after '{'                  object-curly-spacing
+  114:92  error  A space is required before '}'                 object-curly-spacing
+  118:9   error  'existingRelationships' is already defined     no-redeclare
+  120:29  error  There should be no space after this paren      space-in-parens
+  120:30  error  A space is required after '{'                  object-curly-spacing
+  120:92  error  A space is required before '}'                 object-curly-spacing
+  127:3   error  Expected line before comment                   lines-around-comment
+  204:5   error  Expected line before comment                   lines-around-comment
+  206:1   error  Expected indentation of 8 spaces but found 6   indent
+  211:1   error  Expected indentation of 10 spaces but found 8  indent
+
+✖ 20 problems (20 errors, 0 warnings)
+  19 errors and 0 warnings potentially fixable with the `--fix` option.

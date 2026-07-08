@@ -172,9 +172,14 @@
 
 - A local C260 Chapter 3.7 nesting keyword scan is recorded in
   `project_memory/runlogs/20260709-297-c260-nesting-notation-source-scan.txt`.
+- A follow-up local C260 Chapter 3.7 visual nesting persistence scan is recorded in
+  `project_memory/runlogs/20260709-311-c260-nesting-persistence-source-scan.txt`.
 - Imported nested `Node` view elements are now added under their parent diagram shape instead of being
   added to the root and marked with `host`. This preserves the visual nesting notation while keeping
   relationship semantics explicit.
+- Edited nested `Node` view elements are stored once in the active parent container: root view
+  `viewElements` for root-level nodes or parent `Node.nodes` for nested nodes. The editor updates the
+  view node `$parent` to match that serialization parent and avoids duplicate entries.
 
 ## Model Organization Tree
 

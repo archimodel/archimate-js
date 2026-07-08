@@ -936,3 +936,18 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-309-nested-node-import-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-310-nested-node-import-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-nested-node-import-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 76
+
+- Goal: preserve C260-derived visual nesting notation during editor attachment updates and later XML save.
+- Source scan: `project_memory/runlogs/20260709-311-c260-nesting-persistence-source-scan.txt` records a non-verbatim C260 Chapter 3.7 visual nesting/notation scan.
+- Red test: `project_memory/runlogs/20260709-312-view-nesting-attachment-red-test.txt` failed because `AttachmentBehavior` directly pushed nodes into parent arrays, lacked duplicate checks, and set `$parent` from `shape.host`.
+- Implemented: `lib/features/modeling/behavior/AttachmentBehavior.js` now removes the moved `Node` view element from the old parent collection and adds it once to the active parent collection.
+- Implemented: root-level nodes persist under `View.viewElements`; nested nodes persist under parent `Node.nodes`; the view node `$parent` is set to the same parent business object used for serialization.
+- Tests/docs: `test/view-nesting.test.mjs`, README, and `docs/archimate4` now guard and describe import plus editing preservation for view node nesting.
+- Audit registry: scoped ESLint now includes `lib/features/modeling/behavior/AttachmentBehavior.js`.
+- Verification: focused test passed in `project_memory/runlogs/20260709-313-view-nesting-attachment-test.txt` and again after lint cleanup in `project_memory/runlogs/20260709-316-view-nesting-attachment-test-after-lint-fix.txt`; focused ESLint passed in `project_memory/runlogs/20260709-317-view-nesting-attachment-eslint-pass.txt`; `npm run test:language` passed with 134 tests in `project_memory/runlogs/20260709-318-view-nesting-attachment-test-language.txt`; updated registry scoped ESLint passed in `project_memory/runlogs/20260709-319-view-nesting-attachment-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-320-view-nesting-attachment-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-321-view-nesting-attachment-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-322-view-nesting-attachment-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-323-view-nesting-attachment-repo-lint-legacy.txt` with 4383 existing errors after the touched attachment file cleanup.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-324-view-nesting-attachment-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-325-view-nesting-attachment-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-view-nesting-attachment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

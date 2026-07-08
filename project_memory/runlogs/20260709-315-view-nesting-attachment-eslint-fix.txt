@@ -1,0 +1,5 @@
+
+D:\github\archimate-js\lib\features\modeling\behavior\AttachmentBehavior.js
+  119:9  error  'existingRelationships' is already defined  no-redeclare
+
+✖ 1 problem (1 error, 0 warnings)
