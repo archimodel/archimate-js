@@ -103,6 +103,7 @@ const modeler = new Modeler({
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.
 * The ArchiMate 4 `Stakeholder` renderer pictogram uses a dedicated locally-authored cylinder path instead of the actor/person pictogram.
 * The ArchiMate 4 `Driver` renderer pictogram uses a dedicated locally-authored wheel path instead of the generic object pictogram.
+* The ArchiMate 4 `Assessment` renderer pictogram uses a dedicated locally-authored magnifying-glass path instead of the generic object pictogram.
 * The ArchiMate 4 `Location` renderer pictogram uses a dedicated locally-authored pin path instead of the legacy generic object pictogram.
 * The ArchiMate 4 `Distribution Network` renderer pictogram uses a dedicated locally-authored bidirectional arrow path instead of the Communication Network node-link pictogram.
 * The ArchiMate 4 `Material` renderer pictogram uses a dedicated locally-authored hexagon path instead of the Artifact document pictogram.

@@ -103,6 +103,11 @@
   `project_memory/runlogs/20260709-481-c260-appendix-a-driver-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_DRIVER` generic object alias with a
   locally-authored wheel/spoke path.
+- A local C260 Appendix A rendered visual check for `Assessment` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-492-c260-appendix-a-assessment-render.txt` and
+  `project_memory/runlogs/20260709-493-c260-appendix-a-assessment-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_ASSESSMENT` generic object alias with
+  a locally-authored magnifying-glass path.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

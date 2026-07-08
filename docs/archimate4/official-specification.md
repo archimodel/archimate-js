@@ -193,6 +193,8 @@ Implementation notes:
   Business Actor or actor/person pictogram fallback.
 - `Driver` must use a wheel-shaped renderer pictogram in ArchiMate 4 mode, not the generic object
   pictogram fallback.
+- `Assessment` must use a magnifying-glass renderer pictogram in ArchiMate 4 mode, not the generic
+  object pictogram fallback.
 - `Location` must use a location-pin renderer pictogram in ArchiMate 4 mode, not the legacy generic
   object pictogram fallback.
 - `DistributionNetwork` must use a bidirectional-arrow renderer pictogram in ArchiMate 4 mode, not

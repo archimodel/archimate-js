@@ -1116,3 +1116,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-490-driver-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-491-driver-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-driver-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 90
+
+- Goal: replace the ArchiMate 4 `Assessment` renderer pictogram fallback with a C260 Appendix A-derived magnifying-glass path.
+- Source evidence: `project_memory/runlogs/20260709-492-c260-appendix-a-assessment-render.txt` and `project_memory/runlogs/20260709-493-c260-appendix-a-assessment-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-494-assessment-pictogram-red-test.txt` failed because `PICTO_ASSESSMENT` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_ASSESSMENT` magnifying-glass path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Assessment renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-495-assessment-pictogram-test.txt`; `npm run test:language` passed with 148 tests in `project_memory/runlogs/20260709-496-assessment-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-497-assessment-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-498-assessment-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-499-assessment-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-500-assessment-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-501-assessment-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-502-assessment-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-503-assessment-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-assessment-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
