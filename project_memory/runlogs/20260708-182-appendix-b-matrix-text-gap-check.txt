@@ -1,0 +1,2 @@
+matrix text accepted: false
+error: Unknown ArchiMate 4 source element: matrixText

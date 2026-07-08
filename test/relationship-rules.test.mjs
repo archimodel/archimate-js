@@ -156,6 +156,31 @@ test('archimate 4 relationship profile loader accepts matrix arrays', () => {
   assert.equal(maps.get('Role').has('Role'), false);
 });
 
+test('archimate 4 relationship profile loader accepts matrix text', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const tsvMaps = normalizeRelationshipProfile({
+    matrixText: 'source\tBusinessActor\tRole\nBusinessActor\t\tAssignment\nRole\tAssociation\t'
+  }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+  const csvMaps = normalizeRelationshipProfile({
+    matrixText: 'source,BusinessActor,Role\nBusinessActor,,Assignment\nRole,Association,""',
+    matrixDelimiter: ','
+  }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+
+  assert.equal(tsvMaps.get('BusinessActor').get('Role'), 'i');
+  assert.equal(tsvMaps.get('Role').get('BusinessActor'), 'o');
+  assert.equal(csvMaps.get('BusinessActor').get('Role'), 'i');
+  assert.equal(csvMaps.get('Role').get('BusinessActor'), 'o');
+});
+
 test('archimate 4 relationship profile accepts relationship concepts and junctions', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const validTypes = new Set(getArchimate4RelationshipProfileConceptTypes(profile));

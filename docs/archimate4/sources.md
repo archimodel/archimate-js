@@ -131,6 +131,8 @@
   artifacts.
 - The profile can also be supplied as row objects or a header-row matrix array, allowing a licensed
   Appendix B table to be transformed by the host without committing the table itself.
+- For spreadsheet exports, a host can pass `{ matrixText, matrixDelimiter }` with CSV/TSV content; the
+  parser keeps complete source-target cell validation and does not store the licensed table in this repository.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 - Complete external profiles must include source rows for relationship connectors and relationship
