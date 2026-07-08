@@ -61,6 +61,14 @@
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 
+## Junction Multiplicity Guard
+
+- C260 requires relationship-end multiplicity to be omitted when a relationship end is connected to a
+  junction.
+- `lib/util/JunctionUtil.js` centralizes the `AndJunction` / `OrJunction` detection used by the editor.
+- Multiplicity editing, persistence, import hydration, and rendering now call that guard before keeping
+  or displaying source/target multiplicity values.
+
 ## XML Exchange Decision
 
 - `archimateVersion: "3.2"` continues to write the current 3.x namespace.

@@ -223,8 +223,14 @@ The relationship rules remain a fallback:
 
 - Replace compatibility-derived maps with an official Appendix B profile or external licensed data
   loader.
-- Enforce the no-multiplicity-on-junction-ends rule.
 - Confirm XML serialization details after MEFF 4.0 XSD is available.
+
+Implemented multiplicity guard:
+
+- Relationship-end multiplicity is suppressed for connections whose source or target is `AndJunction`
+  or `OrJunction`.
+- The guard applies during popup-menu editing, relationship replacement, model persistence, import
+  attribute hydration, and rendering.
 
 ## Source Trace
 

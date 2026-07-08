@@ -1,0 +1,437 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (6.4175ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.7583ms)
+✔ junction implementation uses official xsd element names as model types (5.5075ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (5.8045ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.6111ms)
+✔ archimate 4 profile exposes Common Domain (1.5108ms)
+✔ archimate 4 profile matches the C260 element catalog (3.783ms)
+✔ migration table covers retired public ArchiMate 4 concepts (6.1915ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (1.8835ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (1.1085ms)
+✔ migration utility preserves specialization information (1.8851ms)
+(node:39944) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (6.074ms)
+✖ element factory carries multiplicity from relationship refs (3.7126ms)
+✔ connection updater persists relationship multiplicity fields (2.5868ms)
+✔ relationship replacement preserves editable multiplicity properties (1.2994ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (1.0338ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (0.7304ms)
+✔ renderer displays relationship end multiplicities (0.9212ms)
+✔ junction-connected relationships cannot carry multiplicity (0.2899ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (3.32ms)
+(node:49612) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (6.2976ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (1.8841ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.0974ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2738ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.4992ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1578ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.2719ms)
+✔ archimate 3 fixture keeps current namespace (5.8879ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.3939ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.8153ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 29
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.3973
+
+✖ failing tests:
+
+test at test\multiplicity.test.mjs:16:1
+✖ element factory carries multiplicity from relationship refs (3.7126ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /sourceMultiplicity: relationshipRef && relationshipRef\.sourceMultiplicity/. Input:
+  
+  'import {\n' +
+    '  assign\n' +
+    "} from 'min-dash';\n" +
+    '\n' +
+    "import inherits from 'inherits-browser';\n" +
+    '\n' +
+    'import {\n' +
+    '  getLayerType,\n' +
+    '  getAspectType,\n' +
+    '  getTypeName,\n' +
+    '  NOTE,\n' +
+    '  NODE_ELEMENT,\n' +
+    '  CONNECTION_RELATIONSHIP,\n' +
+    '  CONNECTION_LINE\n' +
+    "} from '../../util/ModelUtil';\n" +
+    "import { canApplyRelationshipMultiplicity } from '../../util/JunctionUtil';\n" +
+    '\n' +
+    "import BaseElementFactory from 'diagram-js/lib/core/ElementFactory';\n" +
+    '\n' +
+    "import { serializeStyle } from './cmd/UpdateStyleHandler';\n" +
+    '\n' +
+    'import {\n' +
+    '  DEFAULT_LABEL_SIZE\n' +
+    "} from '../../util/LabelUtil';\n" +
+    '\n' +
+    "import { logger } from '../../util/Logger';\n" +
+    '\n' +
+    "import { DEFAULT_NOTE_COLOR, BLACK_SHADOW, COLOR_LAYER_MAP, DEFAULT_CONNECTION_COLOR } from '../../util/ColorUtil';\n" +
+    "import { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, RELATIONSHIP_JUNCTION_AND, RELATIONSHIP_JUNCTION_OR } from '../../metamodel/Concept';\n" +
+    '\n' +
+    '/**\n' +
+    ' * An Archimate elements factory for diagram-js shapes\n' +
+    ' *\n' +
+    ' * This function get informations from PaletteProvider or ArchimateImporter\n' +
+    ' * in order to create a shape, a connection or a root element to display on canvas.\n' +
+    ' * The final rendering is done by ArchimateRenderer in order draw the element.\n' +
+    ' *\n' +
+    ' * elementType (String) can be : root, shape or label\n' +
+    ' * attrs contains :\n' +
+    ' * => called from ArchimateImporter\n' +
+    ' *   - businessObject (Archimate element description from XML Archimate model => Moddle)\n' +
+    ' *   - bounds of the shape (height, width, x, y)\n' +
+    ' *   - hidden\n' +
+    ' *   - isFrame (boolean)\n' +
+    ' *   - type of the element to draw and passed to ArchimateRenderer (ex. BusinessActor)\n' +
+    ' *\n' +
+    ' *   => called from PaletteProvider\n' +
+    ' *    - only type property\n' +
+    " *    In this case, 'create' function calls ArchimateFactory create function in order\n" +
+    ' *    to get back two Moddle objects for elementRef and viewElement\n' +
+    ' *\n' +
+    ' * At the end, basecreate (inherits from BaseElementFactory) is calling with elementType and attrs.\n' +
+    ' * This function callback drawShape function in ArchimateRenderer.\n' +
+    ' *\n' +
+    ' */\n' +
+    'export default function ElementFactory(archimateFactory, moddle, translate, languageProfile) {\n' +
+    '  BaseElementFactory.call(this);\n' +
+    '\n' +
+    '  this._archimateFactory = archimateFactory;\n' +
+    '  this._moddle = moddle;\n' +
+    '  this._translate = translate;\n' +
+    '  this._languageProfile = languageProfile;\n' +
+    '}\n' +
+    '\n' +
+    'inherits(ElementFactory, BaseElementFactory);\n' +
+    '\n' +
+    'ElementFactory.$inject = [\n' +
+    "  'archimateFactory',\n" +
+    "  'moddle',\n" +
+    "  'translate',\n" +
+    "  'languageProfile'\n" +
+    '];\n' +
+    '\n' +
+    'ElementFactory.prototype.baseCreate = BaseElementFactory.prototype.create;\n' +
+    '\n' +
+    '\n' +
+    '/*\n' +
+    '\n' +
+    '*/\n' +
+    'ElementFactory.prototype.create = function(elementType, attrs) {\n' +
+    '\n' +
+    "  logger.log('create(elementType, attrs)');\n" +
+    '  logger.log({ elementType, ...attrs });\n' +
+    '\n' +
+    '  // no special magic for labels,\n' +
+    '  // we assume their businessObjects have already been created\n' +
+    '  // and wired via attrs\n' +
+    "  if (elementType === 'label') {\n" +
+    "    logger.log('create label element');\n" +
+    "    return this.baseCreate(elementType, assign({ type: 'label' }, DEFAULT_LABEL_SIZE, attrs));\n" +
+    '  }\n' +
+    '\n' +
+    "  if (elementType === 'connection') {\n" +
+    '    return this.createConnection(attrs);\n' +
+    '  }\n' +
+    '};\n' +
+    '\n' +
+    'ElementFactory.prototype.createRoot = function(attrs) {\n' +
+    '\n' +
+    "  logger.log('create root element');\n" +
+    '\n' +
+    '  var view = attrs.businessObject;\n' +
+    '\n' +
+    '  attrs = assign({\n' +
+    '    id: view.id,\n' +
+    "    type: 'root'\n" +
+    '  }, attrs);\n' +
+    '\n' +
+    "  return this.baseCreate('root', attrs);\n" +
+    '};\n' +
+    '\n' +
+    'ElementFactory.prototype.createConnection = function(attrs) {\n' +
+    "  logger.log('create connection element');\n" +
+    '  logger.log(attrs);\n' +
+    '\n' +
+    '  var translate = this._translate;\n' +
+    '\n' +
+    '  // get the Archimate Connection element attached to the archimate view\n' +
+    '  var archimateConnection = attrs.businessObject,\n' +
+    '      type = attrs.type;\n' +
+    '\n' +
+    '  if (!type) {\n' +
+    "    throw new Error(translate('no relationship type specified'));\n" +
+    '\n' +
+    "    // attrs.type = 'Association';\n" +
+    '  }\n' +
+    '\n' +
+    '  // init connection attributes with args\n' +
+    '  var connectionAttrs = {\n' +
+    '    type: type,\n' +
+    '    source: attrs.source,\n' +
+    '    target: attrs.target,\n' +
+    '    waypoints: attrs.waypoints\n' +
+    '  };\n' +
+    '\n' +
+    '  var style = {};\n' +
+    '\n' +
+    '  if (archimateConnection) {\n' +
+    '\n' +
+    '    // get all attrs needed for rendering from archimateConnection generated by importer\n' +
+    '    logger.log(archimateConnection);\n' +
+    '\n' +
+    '    // get style\n' +
+    '    if (archimateConnection.style) {\n' +
+    '      style = serializeStyle(archimateConnection.style);\n' +
+    '    }\n' +
+    '\n' +
+    '    assign(connectionAttrs, {\n' +
+    '      businessObject: archimateConnection,\n' +
+    '      text: archimateConnection.label,\n' +
+    '      id: archimateConnection.id,\n' +
+    '      style: style\n' +
+    '    });\n' +
+    '\n' +
+    '    // get attrs from relationshipRef\n' +
+    '    setAttrsRelationshipRef(connectionAttrs, archimateConnection.relationshipRef);\n' +
+    '\n' +
+    '  } else {\n' +
+    '\n' +
+    '    // this is a new connection to draw on canvas, create core businessObject\n' +
+    '    // other attrs (eg. relationshipRef) will be set in CreateElementBehavior\n' +
+    '    // based on attrs directly set on connection element\n' +
+    '\n' +
+    "    if (type === 'Line') {\n" +
+    '      archimateConnection = this._archimateFactory.create(ARCHIMATE_CONNECTION, { type: CONNECTION_LINE });\n' +
+    '      assign(style, {\n' +
+    '        lineColor: BLACK_SHADOW,\n' +
+    '        lineWidth: 1\n' +
+    '      });\n' +
+    '\n' +
+    '    } else {\n' +
+    '      archimateConnection = this._archimateFactory.create(ARCHIMATE_CONNECTION, { type: CONNECTION_RELATIONSHIP });\n' +
+    '      assign(style, {\n' +
+    '        lineColor: DEFAULT_CONNECTION_COLOR,\n' +
+    '        lineWidth: 1\n' +
+    '      });\n' +
+    '\n' +
+    '      assign(connectionAttrs, {\n' +
+    "        name: '',\n" +
+    '      });\n' +
+    '\n' +
+    '    }\n' +
+    '\n' +
+    '    // this is a special case when a neeested connection need to be\n' +
+    '    // create after moving shape\n' +
+    '    if (attrs.relationshipRef) {\n' +
+    '      archimateConnection.relationshipRef = attrs.relationshipRef;\n' +
+    '      setAttrsRelationshipRef(connectionAttrs, attrs.relationshipRef);\n' +
+    '    }\n' +
+    '\n' +
+    '    assign(connectionAttrs, {\n' +
+    '      businessObject: archimateConnection,\n' +
+    '      id: archimateConnection.id,\n' +
+    '      style: style,\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    "  logger.log('call baseCreate for getting a connection element with attrs:');\n" +
+    '  logger.log(connectionAttrs);\n' +
+    '\n' +
+    "  var newConnection = this.baseCreate('connection', connectionAttrs);\n" +
+    '\n' +
+    '  logger.log(newConnection);\n' +
+    '\n' +
+    '  return newConnection;\n' +
+    '\n' +
+    '};\n' +
+    '\n' +
+    'ElementFactory.prototype.createShape = function(attrs) {\n' +
+    "  logger.log('create shape element');\n" +
+    '\n' +
+    '  var translate = this._translate;\n' +
+    '  var profile = this._languageProfile && this._languageProfile.get();\n' +
+    '\n' +
+    '  attrs = attrs || {};\n' +
+    '\n' +
+    '  if (!attrs.type) {\n' +
+    "    throw new Error(translate('no base element type specified'));\n" +
+    '  }\n' +
+    '\n' +
+    '  // get the Archimate Node element attached to the archimate view\n' +
+    '  var archimateNode = attrs.businessObject;\n' +
+    '\n' +
+    '  var style = {};\n' +
+    '\n' +
+    '  if (archimateNode) {\n' +
+    '\n' +
+    '    // get all attrs needed for rendering from archimateNode generated by importer\n' +
+    '    logger.log(archimateNode);\n' +
+    '\n' +
+    '    if (attrs.type !== NOTE) {\n' +
+    '      attrs = assign({\n' +
+    '        name: archimateNode.elementRef && archimateNode.elementRef.name,\n' +
+    '        layer: getLayerType(attrs.type, profile),\n' +
+    '        aspect: getAspectType(attrs.type, profile),\n' +
+    '      }, attrs);\n' +
+    '    }\n' +
+    '\n' +
+    '    // get style\n' +
+    '    if (archimateNode.style) {\n' +
+    '      style = serializeStyle(archimateNode.style);\n' +
+    '    }\n' +
+    '\n' +
+    '    attrs = assign({\n' +
+    '      style: style,\n' +
+    '      text: archimateNode.label,\n' +
+    '      id: archimateNode.id\n' +
+    '    }, attrs);\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '  } else {\n' +
+    '\n' +
+    '    // this is a new shape to draw on canvas, create core businessObject\n' +
+    '    // if no business Object, rendering shape is not call\n' +
+    '    // other attrs (eg. elementRef) will be set in CreateElementBehavior\n' +
+    '    // based on attrs directly set on shape element\n' +
+    '\n' +
+    '    if (attrs.type === NOTE) {\n' +
+    "      archimateNode = this._archimateFactory.create(ARCHIMATE_NODE, { type: NOTE, label: '' });\n" +
+    '\n' +
+    '      // set default style for Note\n' +
+    '      assign(style, {\n' +
+    '        fillColor: DEFAULT_NOTE_COLOR,\n' +
+    '        lineColor: BLACK_SHADOW,\n' +
+    "        textAlignment: 'left',\n" +
+    "        textPosition: 'top'\n" +
+    '      });\n' +
+    '\n' +
+    '      attrs = assign({\n' +
+    "        text: '',\n" +
+    '      }, attrs);\n' +
+    '\n' +
+    '    } else {\n' +
+    '\n' +
+    '      archimateNode = this._archimateFactory.create(ARCHIMATE_NODE, { type: NODE_ELEMENT });\n' +
+    '\n' +
+    '      var layer = getLayerType(attrs.type, profile);\n' +
+    '\n' +
+    '      // set default style for Archimate Element\n' +
+    '      assign(style, {\n' +
+    '        fillColor: COLOR_LAYER_MAP.get(layer),\n' +
+    '        lineColor: BLACK_SHADOW,\n' +
+    "        textAlignment: 'center',\n" +
+    "        textPosition: 'middle'\n" +
+    '      });\n' +
+    '\n' +
+    '      attrs = assign({\n' +
+    '        name: getTypeName(attrs.type, profile),\n' +
+    '        layer: layer,\n' +
+    '        aspect: getAspectType(attrs.type, profile),\n' +
+    '      }, attrs);\n' +
+    '\n' +
+    '    }\n' +
+    '\n' +
+    '    var size = this._getDefaultSize(attrs.type);\n' +
+    '\n' +
+    '    attrs = assign({\n' +
+    '      style: style,\n' +
+    '      businessObject: archimateNode,\n' +
+    '      id: archimateNode && archimateNode.id,\n' +
+    "    }, size, attrs); // => size's values are overided if attrs contains width and height properties (eg. when attrs object comes from ArchimateFactory)\n" +
+    '  }\n' +
+    '\n' +
+    "  logger.log('call baseCreate with :');\n" +
+    '  logger.log({ attrs });\n' +
+    '\n' +
+    "  var newShape = this.baseCreate('shape', attrs);\n" +
+    '\n' +
+    '  logger.log(newShape);\n' +
+    '\n' +
+    '  return newShape;\n' +
+    '};\n' +
+    '\n' +
+    '/*\n' +
+    "    if (is(elementRef, 'archimate:Group')) {\n" +
+    '      attrs = assign({\n' +
+    '        isFrame: true\n' +
+    '      }, attrs);\n' +
+    '    }\n' +
+    '*/\n' +
+    '\n' +
+    'ElementFactory.prototype._getDefaultSize = function(elementType) {\n' +
+    "  if (elementType === 'archimate:Group') {\n" +
+    '    return { width: 300, height: 300 };\n' +
+    '  }\n' +
+    '\n' +
+    '  if (elementType === NOTE) {\n' +
+    '\n' +
+    '    // return { width: 150, height: 80 };\n' +
+    '  }\n' +
+    '\n' +
+    '  if (elementType === RELATIONSHIP_JUNCTION_AND || elementType === RELATIONSHIP_JUNCTION_OR) {\n' +
+    '    return { width: 40, height: 40 };\n' +
+    '  }\n' +
+    '\n' +
+    '  return { width: 120, height: 55 };\n' +
+    '};\n' +
+    '\n' +
+    '// helpers //////////////////////\n' +
+    '\n' +
+    '// setting attrs from relationshipRef\n' +
+    'function setAttrsRelationshipRef(attrs, relationshipRef) {\n' +
+    '  var canApplyMultiplicity = canApplyRelationshipMultiplicity(attrs);\n' +
+    '\n' +
+    '  assign(attrs, {\n' +
+    '    name: relationshipRef && relationshipRef.name,\n' +
+    '    sourceMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef.sourceMultiplicity,\n' +
+    '    targetMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef.targetMultiplicity,\n' +
+    '  });\n' +
+    '\n' +
+    "  if (attrs.type === 'Access') {\n" +
+    '    assign(attrs, {\n' +
+    '      typeOption: relationshipRef && relationshipRef.accessType\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    "  if (attrs.type === 'Association') {\n" +
+    '    assign(attrs, {\n' +
+    '      typeOption: relationshipRef && relationshipRef.isDirected\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    "  if (attrs.type === 'Influence') {\n" +
+    '    assign(attrs, {\n' +
+    '      typeOption: relationshipRef && relationshipRef.modifier\n' +
+    '    });\n' +
+    '  }\n' +
+    '}\n'
+  
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/multiplicity.test.mjs:19:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import {\n  assign\n} from 'min-dash';\n\nimport inherits from 'inherits-browser';\n\nimport {\n  getLayerType,\n  getAspectType,\n  getTypeName,\n  NOTE,\n  NODE_ELEMENT,\n  CONNECTION_RELATIONSHIP,\n  CONNECTION_LINE\n} from '../../util/ModelUtil';\nimport { canApplyRelationshipMultiplicity } from '../../util/JunctionUtil';\n\nimport BaseElementFactory from 'diagram-js/lib/core/ElementFactory';\n\nimport { serializeStyle } from './cmd/UpdateStyleHandler';\n\nimport {\n  DEFAULT_LABEL_SIZE\n} from '../../util/LabelUtil';\n\nimport { logger } from '../../util/Logger';\n\nimport { DEFAULT_NOTE_COLOR, BLACK_SHADOW, COLOR_LAYER_MAP, DEFAULT_CONNECTION_COLOR } from '../../util/ColorUtil';\nimport { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, RELATIONSHIP_JUNCTION_AND, RELATIONSHIP_JUNCTION_OR } from '../../metamodel/Concept';\n\n/**\n * An Archimate elements factory for diagram-js shapes\n *\n * This function get informations from PaletteProvider or ArchimateImporter\n * in order to create a shape, a connection or a root element to display on canvas.\n * The final rendering is done by ArchimateRenderer in order draw the element.\n *\n * elementType (String) can be : root, shape or label\n * attrs contains :\n * => called from ArchimateImporter\n *   - businessObject (Archimate element description from XML Archimate model => Moddle)\n *   - bounds of the shape (height, width, x, y)\n *   - hidden\n *   - isFrame (boolean)\n *   - type of the element to draw and passed to ArchimateRenderer (ex. BusinessActor)\n *\n *   => called from PaletteProvider\n *    - only type property\n *    In this case, 'create' function calls ArchimateFactory create function in order\n *    to get back two Moddle objects for elementRef and viewElement\n *\n * At the end, basecreate (inherits from BaseElementFactory) is calling with elementType and attrs.\n * This function callback drawShape function in ArchimateRenderer.\n *\n */\nexport default function ElementFactory(archimateFactory, moddle, translate, languageProfile) {\n  BaseElementFactory.call(this);\n\n  this._archimateFactory = archimateFactory;\n  this._moddle = moddle;\n  this._translate = translate;\n  this._languageProfile = languageProfile;\n}\n\ninherits(ElementFactory, BaseElementFactory);\n\nElementFactory.$inject = [\n  'archimateFactory',\n  'moddle',\n  'translate',\n  'languageProfile'\n];\n\nElementFactory.prototype.baseCreate = BaseElementFactory.prototype.create;\n\n\n/*\n\n*/\nElementFactory.prototype.create = function(elementType, attrs) {\n\n  logger.log('create(elementType, attrs)');\n  logger.log({ elementType, ...attrs });\n\n  // no special magic for labels,\n  // we assume their businessObjects have already been created\n  // and wired via attrs\n  if (elementType === 'label') {\n    logger.log('create label element');\n    return this.baseCreate(elementType, assign({ type: 'label' }, DEFAULT_LABEL_SIZE, attrs));\n  }\n\n  if (elementType === 'connection') {\n    return this.createConnection(attrs);\n  }\n};\n\nElementFactory.prototype.createRoot = function(attrs) {\n\n  logger.log('create root element');\n\n  var view = attrs.businessObject;\n\n  attrs = assign({\n    id: view.id,\n    type: 'root'\n  }, attrs);\n\n  return this.baseCreate('root', attrs);\n};\n\nElementFactory.prototype.createConnection = function(attrs) {\n  logger.log('create connection element');\n  logger.log(attrs);\n\n  var translate = this._translate;\n\n  // get the Archimate Connection element attached to the archimate view\n  var archimateConnection = attrs.businessObject,\n      type = attrs.type;\n\n  if (!type) {\n    throw new Error(translate('no relationship type specified'));\n\n    // attrs.type = 'Association';\n  }\n\n  // init connection attributes with args\n  var connectionAttrs = {\n    type: type,\n    source: attrs.source,\n    target: attrs.target,\n    waypoints: attrs.waypoints\n  };\n\n  var style = {};\n\n  if (archimateConnection) {\n\n    // get all attrs needed for rendering from archimateConnection generated by importer\n    logger.log(archimateConnection);\n\n    // get style\n    if (archimateConnection.style) {\n      style = serializeStyle(archimateConnection.style);\n    }\n\n    assign(connectionAttrs, {\n      businessObject: archimateConnection,\n      text: archimateConnection.label,\n      id: archimateConnection.id,\n      style: style\n    });\n\n    // get attrs from relationshipRef\n    setAttrsRelationshipRef(connectionAttrs, archimateConnection.relationshipRef);\n\n  } else {\n\n    // this is a new connection to draw on canvas, create core businessObject\n    // other attrs (eg. relationshipRef) will be set in CreateElementBehavior\n    // based on attrs directly set on connection element\n\n    if (type === 'Line') {\n      archimateConnection = this._archimateFactory.create(ARCHIMATE_CONNECTION, { type: CONNECTION_LINE });\n      assign(style, {\n        lineColor: BLACK_SHADOW,\n        lineWidth: 1\n      });\n\n    } else {\n      archimateConnection = this._archimateFactory.create(ARCHIMATE_CONNECTION, { type: CONNECTION_RELATIONSHIP });\n      assign(style, {\n        lineColor: DEFAULT_CONNECTION_COLOR,\n        lineWidth: 1\n      });\n\n      assign(connectionAttrs, {\n        name: '',\n      });\n\n    }\n\n    // this is a special case when a neeested connection need to be\n    // create after moving shape\n    if (attrs.relationshipRef) {\n      archimateConnection.relationshipRef = attrs.relationshipRef;\n      setAttrsRelationshipRef(connectionAttrs, attrs.relationshipRef);\n    }\n\n    assign(connectionAttrs, {\n      businessObject: archimateConnection,\n      id: archimateConnection.id,\n      style: style,\n    });\n  }\n\n  logger.log('call baseCreate for getting a connection element with attrs:');\n  logger.log(connectionAttrs);\n\n  var newConnection = this.baseCreate('connection', connectionAttrs);\n\n  logger.log(newConnection);\n\n  return newConnection;\n\n};\n\nElementFactory.prototype.createShape = function(attrs) {\n  logger.log('create shape element');\n\n  var translate = this._translate;\n  var profile = this._languageProfile && this._languageProfile.get();\n\n  attrs = attrs || {};\n\n  if (!attrs.type) {\n    throw new Error(translate('no base element type specified'));\n  }\n\n  // get the Archimate Node element attached to the archimate view\n  var archimateNode = attrs.businessObject;\n\n  var style = {};\n\n  if (archimateNode) {\n\n    // get all attrs needed for rendering from archimateNode generated by importer\n    logger.log(archimateNode);\n\n    if (attrs.type !== NOTE) {\n      attrs = assign({\n        name: archimateNode.elementRef && archimateNode.elementRef.name,\n        layer: getLayerType(attrs.type, profile),\n        aspect: getAspectType(attrs.type, profile),\n      }, attrs);\n    }\n\n    // get style\n    if (archimateNode.style) {\n      style = serializeStyle(archimateNode.style);\n    }\n\n    attrs = assign({\n      style: style,\n      text: archimateNode.label,\n      id: archimateNode.id\n    }, attrs);\n\n\n\n  } else {\n\n    // this is a new shape to draw on canvas, create core businessObject\n    // if no business Object, rendering shape is not call\n    // other attrs (eg. elementRef) will be set in CreateElementBehavior\n    // based on attrs directly set on shape element\n\n    if (attrs.type === NOTE) {\n      archimateNode = this._archimateFactory.create(ARCHIMATE_NODE, { type: NOTE, label: '' });\n\n      // set default style for Note\n      assign(style, {\n        fillColor: DEFAULT_NOTE_COLOR,\n        lineColor: BLACK_SHADOW,\n        textAlignment: 'left',\n        textPosition: 'top'\n      });\n\n      attrs = assign({\n        text: '',\n      }, attrs);\n\n    } else {\n\n      archimateNode = this._archimateFactory.create(ARCHIMATE_NODE, { type: NODE_ELEMENT });\n\n      var layer = getLayerType(attrs.type, profile);\n\n      // set default style for Archimate Element\n      assign(style, {\n        fillColor: COLOR_LAYER_MAP.get(layer),\n        lineColor: BLACK_SHADOW,\n        textAlignment: 'center',\n        textPosition: 'middle'\n      });\n\n      attrs = assign({\n        name: getTypeName(attrs.type, profile),\n        layer: layer,\n        aspect: getAspectType(attrs.type, profile),\n      }, attrs);\n\n    }\n\n    var size = this._getDefaultSize(attrs.type);\n\n    attrs = assign({\n      style: style,\n      businessObject: archimateNode,\n      id: archimateNode && archimateNode.id,\n    }, size, attrs); // => size's values are overided if attrs contains width and height properties (eg. when attrs object comes from ArchimateFactory)\n  }\n\n  logger.log('call baseCreate with :');\n  logger.log({ attrs });\n\n  var newShape = this.baseCreate('shape', attrs);\n\n  logger.log(newShape);\n\n  return newShape;\n};\n\n/*\n    if (is(elementRef, 'archimate:Group')) {\n      attrs = assign({\n        isFrame: true\n      }, attrs);\n    }\n*/\n\nElementFactory.prototype._getDefaultSize = function(elementType) {\n  if (elementType === 'archimate:Group') {\n    return { width: 300, height: 300 };\n  }\n\n  if (elementType === NOTE) {\n\n    // return { width: 150, height: 80 };\n  }\n\n  if (elementType === RELATIONSHIP_JUNCTION_AND || elementType === RELATIONSHIP_JUNCTION_OR) {\n    return { width: 40, height: 40 };\n  }\n\n  return { width: 120, height: 55 };\n};\n\n// helpers //////////////////////\n\n// setting attrs from relationshipRef\nfunction setAttrsRelationshipRef(attrs, relationshipRef) {\n  var canApplyMultiplicity = canApplyRelationshipMultiplicity(attrs);\n\n  assign(attrs, {\n    name: relationshipRef && relationshipRef.name,\n    sourceMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef.sourceMultiplicity,\n    targetMultiplicity: canApplyMultiplicity && relationshipRef && relationshipRef.targetMultiplicity,\n  });\n\n  if (attrs.type === 'Access') {\n    assign(attrs, {\n      typeOption: relationshipRef && relationshipRef.accessType\n    });\n  }\n\n  if (attrs.type === 'Association') {\n    assign(attrs, {\n      typeOption: relationshipRef && relationshipRef.isDirected\n    });\n  }\n\n  if (attrs.type === 'Influence') {\n    assign(attrs, {\n      typeOption: relationshipRef && relationshipRef.modifier\n    });\n  }\n}\n",
+    expected: /sourceMultiplicity: relationshipRef && relationshipRef\.sourceMultiplicity/,
+    operator: 'match',
+    diff: 'simple'
+  }
