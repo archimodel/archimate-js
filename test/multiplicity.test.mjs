@@ -71,6 +71,8 @@ test('renderer displays relationship end multiplicities', async () => {
 test('relationship multiplicity notation follows the C260-derived subset', () => {
   assert.equal(isValidRelationshipMultiplicity('1'), true);
   assert.equal(isValidRelationshipMultiplicity('*'), true);
+  assert.equal(isValidRelationshipMultiplicity('0..*'), true);
+  assert.equal(normalizeRelationshipMultiplicity('0..*'), '*');
   assert.equal(isValidRelationshipMultiplicity('0..1'), true);
   assert.equal(isValidRelationshipMultiplicity('2..5'), true);
   assert.equal(normalizeRelationshipMultiplicity(' 2..5 '), '2..5');
@@ -78,7 +80,7 @@ test('relationship multiplicity notation follows the C260-derived subset', () =>
   assert.equal(isValidRelationshipMultiplicity('0'), false);
   assert.equal(isValidRelationshipMultiplicity('1..1'), false);
   assert.equal(isValidRelationshipMultiplicity('1..*'), false);
-  assert.equal(isValidRelationshipMultiplicity('0..*'), false);
+  assert.equal(isValidRelationshipMultiplicity('2..*'), false);
   assert.equal(isValidRelationshipMultiplicity('-1..1'), false);
   assert.equal(isValidRelationshipMultiplicity('00..1'), false);
   assert.equal(normalizeRelationshipMultiplicity('abc'), '');

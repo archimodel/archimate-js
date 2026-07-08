@@ -181,6 +181,7 @@ Implementation requirements:
 - Store multiplicity separately for the source end and target end.
 - Render multiplicity labels near the relationship ends.
 - Reject or ignore multiplicity on any end connected to a junction.
+- Normalize `0..*` to canonical `*` because C260 defines `*` as the zero-to-unbounded end.
 - Reject or ignore multiplicity strings outside the allowed notation above.
 - Do not assume `1..*` is valid unless MEFF 4.0 or another normative source confirms it.
 
@@ -324,9 +325,9 @@ Implemented multiplicity guard:
 - Relationship-end multiplicity is suppressed for connections whose source or target is `AndJunction`
   or `OrJunction`.
 - Relationship-end multiplicity is normalized to the C260-derived notation subset: positive integer,
-  `*`, or finite `n..m` ranges where `m > n`.
-- Values outside that subset, including `1..*`, are ignored until a normative source confirms an
-  expanded notation.
+  `*`, `0..*` canonicalized to `*`, or finite `n..m` ranges where `m > n`.
+- Values outside that subset, including `1..*` and other non-zero unbounded ranges, are ignored until
+  a normative source confirms an expanded notation.
 - The guard applies during popup-menu editing, relationship replacement, model persistence, import
   attribute hydration, and rendering.
 

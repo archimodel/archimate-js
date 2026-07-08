@@ -337,3 +337,12 @@
 - Docs: README and `docs/archimate4/*` now document external-profile-driven relationship migration validation.
 - Verification: fix check passed in `project_memory/runlogs/20260708-216-migration-relationship-validation-fix-check.txt`; `npm run test:language` passed with 70 tests in `project_memory/runlogs/20260708-217-migration-relationship-validation-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-218-migration-relationship-validation-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-219-migration-relationship-validation-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-220-migration-relationship-validation-repo-lint-legacy.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 33
+
+- Goal: align relationship-end multiplicity normalization with the C260 zero-to-unbounded notation.
+- Observation: `project_memory/runlogs/20260708-222-multiplicity-zero-star-gap-check.txt` recorded the local C260 page hit and showed `0..*` was dropped by the current normalizer.
+- Implemented: `normalizeRelationshipMultiplicity('0..*')` now canonicalizes to `*`, while non-zero unbounded ranges such as `1..*` and `2..*` remain rejected.
+- Docs: README and `docs/archimate4/*` now document `0..*` as an input alias normalized to `*`.
+- Verification: fix check passed in `project_memory/runlogs/20260708-223-multiplicity-zero-star-fix-check.txt`; `npm run test:language` passed with 70 tests in `project_memory/runlogs/20260708-224-multiplicity-zero-star-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-225-multiplicity-zero-star-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-226-multiplicity-zero-star-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-227-multiplicity-zero-star-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-228-multiplicity-zero-star-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

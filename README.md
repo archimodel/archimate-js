@@ -90,6 +90,6 @@ const modeler = new Modeler({
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
-* Relationship multiplicity is supported on relationship ends with positive integer, `*`, or finite `n..m` notation, except where an end is connected to a junction.
+* Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.

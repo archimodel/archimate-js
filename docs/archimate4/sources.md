@@ -201,10 +201,12 @@
 
 - C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite
   `n..m` range where both bounds are non-negative integers and `m > n`.
+- C260 describes `*` as the zero-to-unbounded end; this implementation accepts `0..*` as an input
+  alias and normalizes it to the canonical `*` value.
 - `lib/util/MultiplicityUtil.js` centralizes validation and normalization for import hydration,
   persistence, relationship replacement, and rendering.
-- `1..*` and other infinite range forms remain rejected until MEFF 4.0 or another normative source
-  confirms they are valid exchange values.
+- `1..*` and other non-zero unbounded range forms remain rejected until MEFF 4.0 or another normative
+  source confirms they are valid exchange values.
 
 ## XML Exchange Decision
 
