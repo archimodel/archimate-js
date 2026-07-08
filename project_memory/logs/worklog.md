@@ -727,3 +727,22 @@
 - Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-137-potential-derivation-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-138-potential-derivation-post-record-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-potential-derivation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 62
+
+- Goal: close the C260 Appendix B valid derivation chain gap by adding a host-callable helper for ordered in-line relationship chains.
+- Source check: `project_memory/runlogs/20260709-139-c260-chain-derivation-source-scan.txt` confirmed that C260 describes structural chains, structural/dependency chains, and triggering discovery through combined rules without copying licensed prose.
+- Source summary: `project_memory/runlogs/20260709-144-c260-chain-derivation-implementation-summary.txt` records the non-verbatim implementation facts used for this loop.
+- Red test: `project_memory/runlogs/20260709-140-chain-derivation-red-test.txt` failed because `deriveRelationshipChain()` was not exported or implemented.
+- Implemented: `deriveRelationshipChain()` folds ordered in-line valid derivation chains by repeatedly applying the existing pair derivation rules.
+- Implemented: chain candidates preserve all original relationship ids in `derivedFrom` and pairwise rule labels in `derivationRules`.
+- Boundary: the helper is not a generic graph search and does not implicitly apply opposite-direction or potential derivation rules.
+- Public API: exported `deriveRelationshipChain()` from `index.js`.
+- Tests: `test/derived-relationships.test.mjs` now covers structural weakest chains, dependency transfer through structural chains, triggering chains, and rejection of incomplete chains.
+- Verification: `npm run test:language` passed with 114 tests in `project_memory/runlogs/20260709-141-chain-derivation-test-language.txt`; scoped ESLint passed in `project_memory/runlogs/20260709-142-chain-derivation-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-143-chain-derivation-git-diff-check.txt`.
+- Final checks: `npm run test:language` passed again with 114 tests in `project_memory/runlogs/20260709-145-chain-derivation-final-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-146-chain-derivation-final-eslint-registry-gate.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-147-chain-derivation-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-148-chain-derivation-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-149-chain-derivation-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-150-chain-derivation-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-151-chain-derivation-final-final-git-diff-check.txt`.
+- Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-152-chain-derivation-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-153-chain-derivation-post-record-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-chain-derivation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

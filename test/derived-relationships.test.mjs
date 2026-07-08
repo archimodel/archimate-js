@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   derivePotentialRelationship,
   deriveRelationship,
+  deriveRelationshipChain,
   deriveRelationshipType,
   getDependencyRelationshipStrength,
   getStructuralRelationshipStrength,
@@ -543,4 +544,131 @@ test('potential derived relationship applies PDR12 grouping rule only when allow
     derivedFrom: [ 'pdr-12-aggregation', 'pdr-12-assignment' ],
     derivationRule: 'potential-grouping-aggregation'
   });
+});
+
+test('derived relationship chain collapses structural chains to the weakest relationship', () => {
+  const a = { id: 'a' };
+  const b = { id: 'b' };
+  const c = { id: 'c' };
+  const d = { id: 'd' };
+
+  assert.deepEqual(deriveRelationshipChain([
+    {
+      id: 'chain-1',
+      type: 'Composition',
+      source: a,
+      target: b
+    },
+    {
+      id: 'chain-2',
+      type: 'Aggregation',
+      source: b,
+      target: c
+    },
+    {
+      id: 'chain-3',
+      type: 'Realization',
+      source: c,
+      target: d
+    }
+  ]), {
+    type: 'Realization',
+    source: a,
+    target: d,
+    derived: true,
+    derivedFrom: [ 'chain-1', 'chain-2', 'chain-3' ],
+    derivationRule: 'structural-weakest',
+    derivationRules: [ 'structural-weakest', 'structural-weakest' ]
+  });
+});
+
+test('derived relationship chain transfers dependency and triggering through structural chains', () => {
+  const a = { id: 'a' };
+  const b = { id: 'b' };
+  const c = { id: 'c' };
+  const d = { id: 'd' };
+
+  assert.deepEqual(deriveRelationshipChain([
+    {
+      id: 'dep-1',
+      type: 'Composition',
+      source: a,
+      target: b
+    },
+    {
+      id: 'dep-2',
+      type: 'Aggregation',
+      source: b,
+      target: c
+    },
+    {
+      id: 'dep-3',
+      type: 'Serving',
+      source: c,
+      target: d
+    }
+  ]), {
+    type: 'Serving',
+    source: a,
+    target: d,
+    derived: true,
+    derivedFrom: [ 'dep-1', 'dep-2', 'dep-3' ],
+    derivationRule: 'structural-dependency',
+    derivationRules: [ 'structural-weakest', 'structural-dependency' ]
+  });
+
+  assert.deepEqual(deriveRelationshipChain([
+    {
+      id: 'trg-1',
+      type: 'Triggering',
+      source: a,
+      target: b
+    },
+    {
+      id: 'trg-2',
+      type: 'Composition',
+      source: b,
+      target: c
+    },
+    {
+      id: 'trg-3',
+      type: 'Triggering',
+      source: c,
+      target: d
+    }
+  ]), {
+    type: 'Triggering',
+    source: a,
+    target: d,
+    derived: true,
+    derivedFrom: [ 'trg-1', 'trg-2', 'trg-3' ],
+    derivationRule: 'triggering-transitivity',
+    derivationRules: [ 'triggering-structural', 'triggering-transitivity' ]
+  });
+});
+
+test('derived relationship chain rejects incomplete chains', () => {
+  assert.equal(deriveRelationshipChain([]), null);
+  assert.equal(deriveRelationshipChain([
+    {
+      id: 'single',
+      type: 'Composition',
+      source: { id: 'a' },
+      target: { id: 'b' }
+    }
+  ]), null);
+  assert.equal(deriveRelationshipChain([
+    {
+      id: 'broken-1',
+      type: 'Composition',
+      source: { id: 'a' },
+      target: { id: 'b' }
+    },
+    {
+      id: 'broken-2',
+      type: 'Serving',
+      source: { id: 'x' },
+      target: { id: 'c' }
+    }
+  ]), null);
 });

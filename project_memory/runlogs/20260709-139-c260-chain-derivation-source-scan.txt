@@ -1,0 +1,49 @@
+pages=207
+--- page 148 ---
+Informally, this means that if two structural relationships are “in line” (the target of one relation joins
+at the source of the other relation) they can be replaced by the weakest of the two. Transitively
+applying this property allows us to replace a “chain” of structural relationships that are in line (with
+intermediate model elements) by the weakest structural relationship in the chain.
+“Payment Service” (from the chain assignment – aggregation – realization).
+Example B-3: Derivation from a Chain of Structural Relationships
+B.2.3. Valid Derivations for Dependency Relationships
+Part of the language definition is an abstraction rule that states that a structural relationship and a
+dependency relationship that join at an intermediate element under certain conditions can be
+combined and replaced by the dependency relationship. This rule is split into two parts for both the
+source and target side of the dependency.
+DR 3: Derivation Between Structural and Dependency Relationships
+If two relationships p(a,b) : S and q(b,c) : T exist, with S being a structural relationship and T being
+a dependency relationship, then a relationship r(a,c) : T can be derived.
+Example B-4: Derivation from a Dependency and a Structural Relationship in Line
+--- page 149 ---
+DR 4: Derivation Between Opposing Structural and Dependency Relationships
+If two relationships p(a,b) : S and q(c,b) : T exist, with S being a structural relationship and T being
+a dependency relationship, then a relationship r(c,a) : T can be derived.
+Example B-5: Derivation from a Dependency and a Structural Relationship in the Opposite Direction
+These rules may be combined with the derivation rule for structural relations (DR2), allowing to
+replace a “chain” of structural relationships and a dependency relationship (with intermediate model
+elements) by the dependency relationship in the chain, given that the chain does satisfy the restrictions
+for structural and dependency relationships. Informally, this means that the beginning and/or
+endpoint of a dependency relationship can be transferred “backwards” in a chain of elements
+connected by structural relationships.
+B.2.4. Valid Derivations for Dynamic Relationships
+Part of the language definition is an abstraction rule that states that a structural relationship and a
+dynamic relationship that join at an intermediate element under certain conditions can be combined
+and replaced by the dynamic relationship. This rule is split into a generic rule and rules specific for
+flow and triggering.
+For the two dynamic relationships, the following rules apply.
+DR 5: Derivation Between Structural and Dynamic Relationships
+If two relationships p(a,b) : S and q(b,c) : T exist, with S being a structural relationship and T being
+a dynamic relationship, then a relationship r(a,c) : T can be derived.
+Example B-6: Derivation from a Dynamic and a Structural Relationship in Line
+DR 6: Derivation Between Structural and Flow Relationships
+If two relationships p(a,b) : S and q(c,b) : T exist, with S being a structural relationship and T being
+--- page 151 ---
+Moreover, triggering relationships are transitive, as expressed in the next rule.
+DR 8: Derivation Between Triggering Relationships
+If two relationships p(a,b) : S and q(b,c) : S exist, with S being Triggering, then a relationship r(a,c) :
+Example B-10: Derivation from Triggering Relationships
+This rule may be combined with the rules for deriving dynamic relations and structural relationships,
+thus allowing discovery of triggering relations. Example B-11 shows how the “Sales Department” is
+Example B-11: Derivation from Triggering and Structural Relationships
+EXIT_CODE=0

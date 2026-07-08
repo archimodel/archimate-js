@@ -1,0 +1,9 @@
+C260 Appendix B chain derivation implementation summary
+Source scan: project_memory/runlogs/20260709-139-c260-chain-derivation-source-scan.txt
+Implemented scope: valid in-line derivation chains only.
+Fact: structural relationship chains can be transitively collapsed to the weakest structural relationship across the outer endpoints.
+Fact: valid dependency and dynamic derivation rules can combine with structural chain derivation when each intermediate pair is derivable.
+Fact: Triggering transitivity can combine with structural/dynamic derivation to discover Triggering across a chain.
+Boundary: chain derivation is not automatic model mutation; it returns a candidate and preserves the original relationship ids and pairwise derivation rule labels.
+Boundary: opposite-direction pair rules and potential derivation rules remain explicit pair/candidate helpers rather than generic graph search.
+EXIT_CODE=0

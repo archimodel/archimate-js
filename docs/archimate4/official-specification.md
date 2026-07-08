@@ -193,10 +193,11 @@ Implementation note:
   two-step structural chain, using the order Realization, Assignment, Aggregation, Composition from
   weakest to strongest. DR3-DR8 cover the valid dependency and dynamic derivations that can be
   derived without embedding the full Appendix B matrix, including same-target opposite-direction
-  derivations for dependency relationships and Flow. PDR1-PDR12 are exposed through
-  `derivePotentialRelationship()` as `potential: true` candidates; PDR12 requires an external
-  relationship validator before a candidate is returned. The utilities return candidates and do not
-  automatically mutate the model.
+  derivations for dependency relationships and Flow. `deriveRelationshipChain()` applies the valid
+  in-line rules transitively over ordered relationship chains and preserves the source relationship ids
+  plus pairwise rule labels. PDR1-PDR12 are exposed through `derivePotentialRelationship()` as
+  `potential: true` candidates; PDR12 requires an external relationship validator before a candidate
+  is returned. The utilities return candidates and do not automatically mutate the model.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
   constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for
@@ -374,8 +375,9 @@ Implemented relationship rule wiring:
   popup can set common positive or negative influence values or a custom modeler-defined sign/strength
   value.
 - `deriveRelationshipType()` and `deriveRelationship()` implement C260-derived DR1-DR8 valid
-  derivations for host tooling. `derivePotentialRelationship()` implements PDR1-PDR12 as explicit
-  potential candidates. Automatic model mutation remains out of the core editor.
+  derivations for host tooling. `deriveRelationshipChain()` folds ordered in-line valid derivation
+  chains. `derivePotentialRelationship()` implements PDR1-PDR12 as explicit potential candidates.
+  Automatic model mutation remains out of the core editor.
 
 Implemented multiplicity guard:
 

@@ -19,6 +19,7 @@ export {
 
 export {
   deriveRelationship,
+  deriveRelationshipChain,
   deriveRelationshipType,
   derivePotentialRelationship,
   getDependencyRelationshipStrength,

@@ -304,6 +304,11 @@
   plus dependency, structural plus dynamic, Triggering plus structural, and Triggering transitivity.
   The object-level helper also handles the C260 same-target opposite-direction cases for dependency
   relationships and Flow.
+- `deriveRelationshipChain()` applies the valid in-line rules transitively across ordered chains. It
+  collapses structural chains to the weakest relationship, can transfer dependency/dynamic
+  relationships through structural chains, and records the original relationship ids plus pairwise
+  derivation rule labels. It is not a graph search and does not apply opposite-direction or potential
+  rules implicitly.
 - PDR1-PDR12 potential derivations are implemented by `derivePotentialRelationship()` as explicit
   `potential: true` candidates. They cover specialization transfer, structural/dependency source-side
   transfer, dependency weakest derivation, Flow/Triggering potential derivation, and the Grouping
@@ -319,6 +324,10 @@
   `project_memory/runlogs/20260709-123-c260-dependency-strength-source-scan.txt`, and the
   non-verbatim implementation summary
   `project_memory/runlogs/20260709-129-c260-potential-derivation-implementation-summary.txt`.
+- Source evidence for chain derivation is recorded in
+  `project_memory/runlogs/20260709-139-c260-chain-derivation-source-scan.txt`, with the
+  non-verbatim implementation summary in
+  `project_memory/runlogs/20260709-144-c260-chain-derivation-implementation-summary.txt`.
 
 ## Influence Modifier Guard
 
