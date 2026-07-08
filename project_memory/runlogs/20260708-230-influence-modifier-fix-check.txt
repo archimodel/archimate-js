@@ -1,0 +1,10 @@
+command=rg influence modifier fixed implementation check
+test\relationship-rules.test.mjs:84:  assert.match(source, /set-influence-modifier-positive/);
+test\relationship-rules.test.mjs:85:  assert.match(source, /set-influence-modifier-negative/);
+test\relationship-rules.test.mjs:95:  assert.doesNotMatch(source, /TODO vbo add modifier management/);
+lib\features\popup-menu\ConnectionMenuProvider.js:247:      id: 'set-influence-modifier-positive',
+lib\features\popup-menu\ConnectionMenuProvider.js:258:      id: 'set-influence-modifier-negative',
+lib\draw\ArchimateRenderer.js:403:    var modifier = getInfluenceModifier(connection);
+lib\draw\ArchimateRenderer.js:432:      renderLabel(parentGfx, modifier, {
+lib\draw\ArchimateRenderer.js:450:  function getInfluenceModifier(connection) {
+exit_code=0

@@ -76,6 +76,25 @@ test('connection popup includes ArchiMate 4 relationship-concept aggregation hel
   assert.match(source, /return aggregationType !== excludedRelationType \? \[ aggregationType \] : \[\]/);
 });
 
+test('connection popup exposes influence modifier actions', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  assert.match(source, /RELATIONSHIP_INFLUENCE/);
+  assert.match(source, /_getInfluenceModifier/);
+  assert.match(source, /set-influence-modifier-positive/);
+  assert.match(source, /set-influence-modifier-negative/);
+  assert.match(source, /modifier: entry\.active \? '' : entry\.options\.modifier/);
+});
+
+test('renderer displays influence modifier labels', async () => {
+  const source = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
+
+  assert.match(source, /RELATIONSHIP_INFLUENCE/);
+  assert.match(source, /getInfluenceModifier\(connection\)/);
+  assert.match(source, /renderLabel\(parentGfx, modifier/);
+  assert.doesNotMatch(source, /TODO vbo add modifier management/);
+});
+
 test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {
   const validTypes = new Set([
     'BusinessActor',

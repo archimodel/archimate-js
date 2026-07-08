@@ -1,0 +1,13 @@
+command=python pypdf derived influence modifier source scan
+pdf=C:/Users/syska/Downloads/978940181474E.pdf
+derived_source_facts=C260 Chapter 5 describes Influence as able to carry modeler-defined sign and/or strength attribute values; examples include positive and negative contribution signs; default sign/strength can be unspecified.
+term_pages.Influence_Relationship=7,55,57,59,60,61,62,84,181,197,205
+term_pages.positive=60,61,68,75,79,81,89
+term_pages.negative=60,61,68,75,79,81,89
+term_pages.plusplus=60
+term_pages.minusminus=60
+exit_code=0
+
+command=rg influence modifier implementation gap
+lib\draw\ArchimateRenderer.js:640:      // TODO vbo add modifier management
+exit_code=0

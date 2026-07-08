@@ -1,0 +1,3 @@
+command=npx eslint lib\draw\ArchimateRenderer.js lib\features\popup-menu\ConnectionMenuProvider.js test\relationship-rules.test.mjs
+(no output)
+exit_code=0

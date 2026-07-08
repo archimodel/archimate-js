@@ -346,3 +346,13 @@
 - Docs: README and `docs/archimate4/*` now document `0..*` as an input alias normalized to `*`.
 - Verification: fix check passed in `project_memory/runlogs/20260708-223-multiplicity-zero-star-fix-check.txt`; `npm run test:language` passed with 70 tests in `project_memory/runlogs/20260708-224-multiplicity-zero-star-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-225-multiplicity-zero-star-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-226-multiplicity-zero-star-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-227-multiplicity-zero-star-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-228-multiplicity-zero-star-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 34
+
+- Goal: render and edit C260-derived Influence relationship modifier values.
+- Observation: `project_memory/runlogs/20260708-229-influence-modifier-gap-check.txt` recorded the local C260 Influence modifier source check and showed the renderer still had a modifier TODO with no popup modifier actions.
+- Implemented: Influence relationships now render modifier text from `modifier` or `typeOption` near the relationship midpoint.
+- Implemented: the connection popup now includes positive and negative Influence modifier quick actions while preserving arbitrary host-supplied modifier values through relationship properties.
+- Docs: README and `docs/archimate4/*` now document the Influence modifier guard.
+- Verification: fix check passed in `project_memory/runlogs/20260708-230-influence-modifier-fix-check.txt`; `npm run test:language` passed with 72 tests in `project_memory/runlogs/20260708-231-influence-modifier-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-232-influence-modifier-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-233-influence-modifier-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-234-influence-modifier-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-235-influence-modifier-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

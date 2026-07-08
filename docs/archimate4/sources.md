@@ -197,6 +197,14 @@
 - The ArchiMate 3 descriptor is intentionally unchanged and remains constrained to `BaseElement` for
   relationships and `Node` for diagram connections.
 
+## Influence Modifier Guard
+
+- C260 describes Influence as able to carry modeler-defined sign and/or strength values, with the
+  default being unspecified.
+- The local descriptor and relationship replacement path already preserve `modifier`; the renderer now
+  displays it for Influence relationships, and the popup provides positive and negative quick actions
+  without restricting host-supplied arbitrary modifier values.
+
 ## Multiplicity Notation Guard
 
 - C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite
