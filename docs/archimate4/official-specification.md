@@ -258,6 +258,9 @@ External profile contract:
 - `getArchimate4RelationshipProfileStatus()` must expose whether the active relationship profile is
   still the compatibility fallback or an external profile loaded with complete source and target-cell
   validation.
+- Profile status must report the actual explicit `targetCellCount` as well as
+  `expectedTargetCellCount`, so hosts can distinguish a complete Appendix B table with blank cells
+  from a sparse profile that only contains allowed relationships.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

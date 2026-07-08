@@ -307,3 +307,13 @@
 - Decision: keep ArchiMate 4 XML export marked experimental and keep MEFF 4.0 namespace, schema location, Junction serialization, and multiplicity attribute names as source-dependent open items.
 - Verification: `npm run test:language` passed with 65 tests in `project_memory/runlogs/20260708-198-meff4-xsd-official-recheck-npm-test-language.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-199-meff4-xsd-official-recheck-git-diff-check.txt`; final state check is recorded in `project_memory/runlogs/20260708-200-meff4-xsd-official-recheck-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 30
+
+- Goal: make ArchiMate 4 relationship profile status report actual explicit source-target cell coverage for host-supplied Appendix B profiles.
+- Observation: the gap check in `project_memory/runlogs/20260708-201-relationship-profile-status-coverage-gap-check.txt` showed `completeTargetCoverage` was option-derived and `targetCellCount` was absent.
+- Implemented: `relationship-profile-loader.js` now exposes coverage stats that count explicit target cells, including blank/disallowed cells in matrix input.
+- Implemented: `getArchimate4RelationshipProfileStatus()` now reports actual `targetCellCount`, `completeSourceCoverage`, and `completeTargetCoverage` from parsed profile coverage.
+- Docs: README and `docs/archimate4/*` now document actual target-cell coverage status metadata.
+- Verification: fix check passed in `project_memory/runlogs/20260708-202-relationship-profile-status-coverage-fix-check.txt`; `npm run test:language` passed with 66 tests in `project_memory/runlogs/20260708-203-relationship-profile-status-coverage-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-204-relationship-profile-status-coverage-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-205-relationship-profile-status-coverage-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-206-relationship-profile-status-coverage-repo-lint-legacy.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

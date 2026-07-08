@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "loop_id": 29,
-  "stage": "meff4_xsd_official_recheck_recorded",
+  "loop_id": 30,
+  "stage": "relationship_profile_status_coverage_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
     "target_branch": "main"
   },
   "change_context": {
-    "change_type": "documentation",
-    "diff_size": 212,
+    "change_type": "bugfix",
+    "diff_size": 162,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -41,7 +41,8 @@
       "appendix_b_matrix_profile_loader",
       "appendix_b_matrix_text_profile_loader",
       "relationship_connector_metadata_boundary",
-      "meff4_xsd_official_recheck"
+      "meff4_xsd_official_recheck",
+      "relationship_profile_status_actual_coverage"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -74,12 +75,13 @@
       "check_appendix_b_matrix_profile_loader",
       "check_appendix_b_matrix_text_profile_loader",
       "check_relationship_connector_metadata_boundary",
-      "check_meff4_xsd_official_recheck"
+      "check_meff4_xsd_official_recheck",
+      "check_relationship_profile_status_actual_coverage"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-200-meff4-xsd-official-recheck-final-state-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-meff4-xsd-recheck-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-207-relationship-profile-status-coverage-final-state-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-relationship-profile-status-coverage-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -112,10 +114,11 @@
     "Host-supplied licensed Appendix B relationship profile data can now be provided as a header-row matrix array while preserving complete source-target cell validation.",
     "Host-supplied licensed Appendix B relationship profile data can now be provided as CSV/TSV matrixText while preserving complete source-target cell validation.",
     "ArchiMate 4 relationship connectors use editor palette/color grouping metadata rather than ArchiMate domain metadata.",
-    "The official The Open Group XSD directory currently exposes 3.1 resources but no discovered ArchiMate 4.0 XSD links."
+    "The official The Open Group XSD directory currently exposes 3.1 resources but no discovered ArchiMate 4.0 XSD links.",
+    "ArchiMate 4 relationship profile status now reports actual explicit target-cell coverage rather than the requested validation option alone."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T17:53:09+09:00"
+    "updated_at": "2026-07-08T17:59:29+09:00"
   }
 }

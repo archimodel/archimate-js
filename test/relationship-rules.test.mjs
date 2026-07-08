@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
+  getRelationshipProfileCoverageStats,
   getRelationshipProfileStats,
   normalizeRelationshipProfile,
   parseRelationshipProfile
@@ -39,10 +40,13 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(loaderSource, /assertCompleteTargetCoverage/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
   assert.match(source, /RELATIONSHIP_PROFILE_OPTIONS/);
+  assert.match(source, /getRelationshipProfileCoverageStats/);
+  assert.match(source, /targetCellCount/);
   assert.match(source, /conceptCount/);
   assert.match(source, /expectedTargetCellCount/);
   assert.match(source, /completeSourceCoverage/);
   assert.match(source, /completeTargetCoverage/);
+  assert.doesNotMatch(source, /completeTargetCoverage:\s*RELATIONSHIP_PROFILE_OPTIONS\.requireCompleteTargets/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
@@ -154,6 +158,39 @@ test('archimate 4 relationship profile loader accepts matrix arrays', () => {
   assert.equal(maps.get('BusinessActor').get('Role'), 'i');
   assert.equal(maps.get('Role').get('BusinessActor'), 'o');
   assert.equal(maps.get('Role').has('Role'), false);
+});
+
+test('archimate 4 relationship profile coverage stats count explicit target cells', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const completeStats = getRelationshipProfileCoverageStats({
+    matrix: [
+      [ 'source', 'BusinessActor', 'Role' ],
+      [ 'BusinessActor', '', 'Assignment' ],
+      [ 'Role', 'Association', '' ]
+    ]
+  }, validTypes);
+  const partialStats = getRelationshipProfileCoverageStats({
+    BusinessActor: {
+      Role: 'Assignment'
+    },
+    Role: {}
+  }, validTypes);
+
+  assert.deepEqual(completeStats, {
+    sourceCount: 2,
+    targetCellCount: 4,
+    expectedSourceCount: 2,
+    expectedTargetCellCount: 4,
+    completeSourceCoverage: true,
+    completeTargetCoverage: true
+  });
+  assert.equal(partialStats.sourceCount, 2);
+  assert.equal(partialStats.targetCellCount, 1);
+  assert.equal(partialStats.completeSourceCoverage, true);
+  assert.equal(partialStats.completeTargetCoverage, false);
 });
 
 test('archimate 4 relationship profile loader accepts matrix text', () => {

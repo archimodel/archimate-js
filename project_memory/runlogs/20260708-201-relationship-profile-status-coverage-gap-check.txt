@@ -1,0 +1,3 @@
+completeTargetCoverage option-only expression: true
+status exposes actual targetCellCount: false
+expected: completeTargetCoverage derives from actual targetCellCount and expectedTargetCellCount
