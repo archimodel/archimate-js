@@ -132,6 +132,11 @@
   transient JavaScript fields.
 - Migration also stores `archimate-js:originalArchiMate3Domain` for retired, merged, or moved concepts
   when the source domain is important to preserving the ArchiMate 3.x modeling intent.
+- ArchiMate 3.x Physical concepts `DistributionNetwork`, `Equipment`, `Facility`, and `Material`
+  now have a direct migration guard: they remain same-named ArchiMate 4 Technology Domain concepts
+  while storing `Physical` as `archimate-js:originalArchiMate3Domain`, without creating a
+  specialization profile. The behavior check is recorded in
+  `project_memory/runlogs/20260708-311-physical-domain-migration-gap-check.txt`.
 - Relationship migration validation remains external-profile driven: hosts can pass an Appendix B-aware
   `isRelationshipAllowed` validator into `migrateArchimate3ModelTo4()` to warn on migrated relationships
   that are no longer valid and replace them with `Association` by default.

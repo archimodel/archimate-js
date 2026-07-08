@@ -1,0 +1,87 @@
+(node:64412) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "migratedElements": [
+    {
+      "type": "DistributionNetwork",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "type": "Equipment",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "type": "Facility",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "type": "Material",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "elementId": "physical-0",
+      "originalType": "DistributionNetwork",
+      "replacementType": "DistributionNetwork",
+      "message": "DistributionNetwork is modeled in the Technology Domain for ArchiMate 4 fallback support.",
+      "originalDomain": "Physical"
+    },
+    {
+      "elementId": "physical-1",
+      "originalType": "Equipment",
+      "replacementType": "Equipment",
+      "message": "Equipment is modeled in the Technology Domain for ArchiMate 4 fallback support.",
+      "originalDomain": "Physical"
+    },
+    {
+      "elementId": "physical-2",
+      "originalType": "Facility",
+      "replacementType": "Facility",
+      "message": "Facility is modeled in the Technology Domain for ArchiMate 4 fallback support.",
+      "originalDomain": "Physical"
+    },
+    {
+      "elementId": "physical-3",
+      "originalType": "Material",
+      "replacementType": "Material",
+      "message": "Material is modeled in the Technology Domain for ArchiMate 4 fallback support.",
+      "originalDomain": "Physical"
+    }
+  ],
+  "checks": {
+    "propertyDefinitions": true,
+    "sameNamedTypes": true,
+    "originalDomains": true,
+    "noSpecialization": true,
+    "propertyValues": true,
+    "warnings": true
+  },
+  "pass": true
+}

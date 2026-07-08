@@ -84,6 +84,7 @@ const modeler = new Modeler({
 * Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`.
 * Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.
 * 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.
+* 3.x Physical concepts are retained as ArchiMate 4 Technology Domain concepts while preserving `Physical` as original-domain metadata.
 * Migration also stores preserved specialization and original-domain metadata in model properties for exchange-friendly retention.
 * 3.x to 4.0 migration warnings include alternative replacement types for ambiguous C260 Appendix E rows.
 * 3.x to 4.0 migration can validate migrated relationships with a host-supplied Appendix B relationship validator and warn or replace invalid relationship types.

@@ -225,6 +225,9 @@ Replacement guidance:
 - Business, application, and technology collaborations -> `Collaboration`.
 - Migration metadata should preserve the original ArchiMate 3.x domain for merged or moved concepts
   so the old modeling intent remains available after replacement with a common-domain concept.
+- ArchiMate 3.x Physical elements `DistributionNetwork`, `Equipment`, `Facility`, and `Material`
+  are modeled as Technology Domain elements in ArchiMate 4; migration should preserve `Physical` as
+  the original ArchiMate 3.x domain without inventing a specialization.
 
 Do not migrate:
 

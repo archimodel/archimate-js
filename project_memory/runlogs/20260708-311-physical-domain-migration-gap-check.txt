@@ -1,0 +1,119 @@
+(node:3052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "archimate4HasPhysicalDomain": false,
+  "profileDomains": [
+    "Common",
+    "Motivation",
+    "Strategy",
+    "Business",
+    "Application",
+    "Technology",
+    "Implementation and Migration"
+  ],
+  "migrationRows": {
+    "DistributionNetwork": {
+      "replacement": "DistributionNetwork",
+      "originalDomain": "Physical",
+      "preserveSpecialization": false,
+      "warning": "DistributionNetwork is modeled in the Technology Domain for ArchiMate 4 fallback support."
+    },
+    "Equipment": {
+      "replacement": "Equipment",
+      "originalDomain": "Physical",
+      "preserveSpecialization": false,
+      "warning": "Equipment is modeled in the Technology Domain for ArchiMate 4 fallback support."
+    },
+    "Facility": {
+      "replacement": "Facility",
+      "originalDomain": "Physical",
+      "preserveSpecialization": false,
+      "warning": "Facility is modeled in the Technology Domain for ArchiMate 4 fallback support."
+    },
+    "Material": {
+      "replacement": "Material",
+      "originalDomain": "Physical",
+      "preserveSpecialization": false,
+      "warning": "Material is modeled in the Technology Domain for ArchiMate 4 fallback support."
+    }
+  },
+  "migratedElements": [
+    {
+      "id": "physical-0",
+      "type": "DistributionNetwork",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "id": "physical-1",
+      "type": "Equipment",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "id": "physical-2",
+      "type": "Facility",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    },
+    {
+      "id": "physical-3",
+      "type": "Material",
+      "originalArchiMate3Domain": "Physical",
+      "propertyValues": [
+        {
+          "name": "archimate-js:originalArchiMate3Domain",
+          "value": "Physical"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "originalType": "DistributionNetwork",
+      "replacementType": "DistributionNetwork",
+      "originalDomain": "Physical"
+    },
+    {
+      "originalType": "Equipment",
+      "replacementType": "Equipment",
+      "originalDomain": "Physical"
+    },
+    {
+      "originalType": "Facility",
+      "replacementType": "Facility",
+      "originalDomain": "Physical"
+    },
+    {
+      "originalType": "Material",
+      "replacementType": "Material",
+      "originalDomain": "Physical"
+    }
+  ],
+  "propertyDefinitionNames": [
+    "archimate-js:originalArchiMate3Domain"
+  ],
+  "expectedPropertyNames": {
+    "originalDomain": "archimate-js:originalArchiMate3Domain",
+    "originalType": "archimate-js:originalArchiMate3Type",
+    "specialization": "archimate-js:specialization"
+  },
+  "gap": "The behavior exists but test/migration.test.mjs does not directly assert physical-domain moved concept metadata."
+}

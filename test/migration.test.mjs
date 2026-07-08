@@ -155,6 +155,39 @@ test('migration utility stores original domain for merged behavior concepts', ()
   assert.equal(result.warnings[1].originalDomain, 'Technology');
 });
 
+test('migration utility preserves original physical domain for technology-domain concepts', () => {
+  const physicalTypes = [ 'DistributionNetwork', 'Equipment', 'Facility', 'Material' ];
+  const model = {
+    elementsNode: {
+      baseElements: physicalTypes.map((type, index) => ({ id: 'physical-' + index, type }))
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model);
+
+  assert.deepEqual(
+    model.propertyDefinitionsNode.propertyDefinitions.map((definition) => definition.name),
+    [ ORIGINAL_ARCHIMATE3_DOMAIN_PROPERTY ]
+  );
+
+  physicalTypes.forEach((type, index) => {
+    const element = model.elementsNode.baseElements[index];
+    const warning = result.warnings[index];
+    const properties = element.propertiesNode.properties;
+
+    assert.equal(element.type, type);
+    assert.equal(element.originalArchiMate3Domain, 'Physical');
+    assert.equal(element.originalArchiMate3Type, undefined);
+    assert.equal(element.specialization, undefined);
+    assert.equal(properties.length, 1);
+    assert.equal(properties[0].propertyDefinitionRef.name, ORIGINAL_ARCHIMATE3_DOMAIN_PROPERTY);
+    assert.equal(properties[0].value, 'Physical');
+    assert.equal(warning.originalType, type);
+    assert.equal(warning.replacementType, type);
+    assert.equal(warning.originalDomain, 'Physical');
+  });
+});
+
 test('migration utility can replace invalid relationships with an external profile validator', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'BusinessRole' };
