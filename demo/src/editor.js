@@ -1,23 +1,27 @@
 import Modeler from '../../lib/Modeler';
 import {
-  EMPTY_ARCHIMATE4_XML,
+  applyDemoProfileToDocument,
+  getDemoProfile,
   seedSampleCanvas,
   setStatus
 } from './sample-canvas';
 
+const demoProfile = getDemoProfile();
 const modeler = new Modeler({
   container: document.querySelector('#canvas'),
-  archimateVersion: '4.0',
+  archimateVersion: demoProfile.version,
   keyboard: {
     bindTo: document
   }
 });
 
+applyDemoProfileToDocument(demoProfile, 'Editor');
+window.archimateDemoProfile = demoProfile;
 window.archimateModeler = modeler;
 
 async function loadSample() {
-  await modeler.importXML(EMPTY_ARCHIMATE4_XML);
-  seedSampleCanvas(modeler);
+  await modeler.importXML(demoProfile.emptyXml);
+  seedSampleCanvas(modeler, demoProfile.version);
   setStatus('ready');
 }
 

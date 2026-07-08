@@ -201,16 +201,28 @@ test('archimate 4 Common Domain palette uses Common visual assets', async () => 
   assert.doesNotMatch(css, /\.archimate-common-path \{\nbackground-image: url\("\.\/icons\/technology_path\.svg"\)/);
 });
 
-test('demo sample exposes ArchiMate 4 Common Domain concepts', async () => {
+test('demo sample switches concepts by selected ArchiMate profile', async () => {
   const sample = await readFile(new URL('../demo/src/sample-canvas.js', import.meta.url), 'utf8');
+  const archimate3Block = sample.match(/\[DEMO_ARCHIMATE3_VERSION\]: \{([\s\S]*?)\n {2}\},\n {2}\[DEMO_ARCHIMATE4_VERSION\]/)[1];
+  const archimate4Block = sample.match(/\[DEMO_ARCHIMATE4_VERSION\]: \{([\s\S]*?)\n {2}\}\n\};/)[1];
 
-  assert.match(sample, /type: 'Role'/);
-  assert.match(sample, /type: 'Service'/);
-  assert.match(sample, /type: 'Path'/);
-  assert.match(sample, /type: 'Grouping'/);
-  assert.doesNotMatch(sample, /type: 'BusinessRole'/);
-  assert.doesNotMatch(sample, /type: 'BusinessService'/);
-  assert.doesNotMatch(sample, /type: 'TechnologyPath'/);
+  assert.match(sample, /getDemoProfile/);
+  assert.match(sample, /normalizeArchimateVersion/);
+
+  assert.match(archimate3Block, /type: 'BusinessRole'/);
+  assert.match(archimate3Block, /type: 'BusinessService'/);
+  assert.match(archimate3Block, /type: 'BusinessObject'/);
+  assert.doesNotMatch(archimate3Block, /type: 'Role'/);
+  assert.doesNotMatch(archimate3Block, /type: 'Service'/);
+  assert.doesNotMatch(archimate3Block, /type: 'Equipment'/);
+
+  assert.match(archimate4Block, /type: 'Role'/);
+  assert.match(archimate4Block, /type: 'Service'/);
+  assert.match(archimate4Block, /type: 'Path'/);
+  assert.match(archimate4Block, /type: 'Grouping'/);
+  assert.match(archimate4Block, /type: 'Equipment'/);
+  assert.doesNotMatch(archimate4Block, /type: 'BusinessRole'/);
+  assert.doesNotMatch(archimate4Block, /type: 'BusinessService'/);
 });
 
 test('archimate 4 profile pictogram refs are defined for renderer path map', async () => {
@@ -259,6 +271,37 @@ test('archimate font exposes Fontello glyphs for every ArchiMate 4 element', asy
 
   assert.equal(glyphs.get('element-role').code, 0xe819);
   assert.equal(glyphs.get('element-plateau').code, 0xe842);
+});
+
+test('archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const paletteProvider = await readFile(new URL('../lib/features/palette/PaletteProvider.js', import.meta.url), 'utf8');
+  const fontCss = await readFile(new URL('../archimate-font/lib/css/archimate-font.css', import.meta.url), 'utf8');
+
+  assert.match(paletteProvider, /className: value\.className/);
+  assert.doesNotMatch(paletteProvider, /archimate-profile-4-icon/);
+  assert.doesNotMatch(paletteProvider, /archimate-element-' \+ kebab\(value\.type\)/);
+  assert.doesNotMatch(paletteProvider, /archimate-relation-and-junction/);
+  assert.doesNotMatch(paletteProvider, /archimate-relation-or-junction/);
+
+  for (const element of profile.elements) {
+    assert.match(fontCss, new RegExp(`\\.archimate-element-${kebab(element.type)}:before`));
+  }
+});
+
+test('active profile rejects concepts and relationships outside the selected version', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const importer = await readFile(new URL('../lib/import/Importer.js', import.meta.url), 'utf8');
+
+  assert.match(languageIndex, /export function hasProfileConcept/);
+  assert.match(languageIndex, /export function hasProfileRelationship/);
+  assert.match(elementFactory, /assertConceptAvailable\(attrs\.type, profile, translate\)/);
+  assert.match(elementFactory, /assertRelationshipAvailable\(type, profile, translate\)/);
+  assert.match(elementFactory, /ArchiMate concept \{type\} is not available in ArchiMate \{version\}/);
+  assert.match(elementFactory, /ArchiMate relationship \{type\} is not available in ArchiMate \{version\}/);
+  assert.match(importer, /throw createImportError\(e, viewElement\)/);
+  assert.match(importer, /throw createImportError\(e, connectionElement\)/);
 });
 
 test('renderer uses active language profile pictogram refs', async () => {

@@ -1,0 +1,33 @@
+{
+  "result": "pass",
+  "trigger": "User reported the ArchiMate 4 palette rendered malformed icons after Fontello glyph classes were injected directly into diagram-js palette cells.",
+  "fix": "Removed Fontello glyph classes from palette entries and kept the profile-specific semantic SVG background-image classes.",
+  "browser_check": {
+    "url": "http://127.0.0.1:4174/demo/editor.html?version=4.0",
+    "status": "ready",
+    "version": "ArchiMate 4.0",
+    "totalEntries": 47,
+    "fontelloPaletteClassCount": 0,
+    "roleClassName": "entry archimate-common-role",
+    "roleBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_role.svg\")",
+    "roleBeforeContent": "none",
+    "roleWidth": "22px",
+    "roleHeight": "22px",
+    "serviceClassName": "entry archimate-common-service",
+    "serviceBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_service.svg\")",
+    "equipmentClassName": "entry archimate-technology-equipment",
+    "equipmentBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/business_object.svg\")"
+  },
+  "archimate3_check": {
+    "url": "http://127.0.0.1:4174/demo/editor.html?version=3.2",
+    "status": "ready",
+    "version": "ArchiMate 3.x",
+    "fontelloPaletteClassCount": 0,
+    "roleVisible": false,
+    "businessRoleClassName": "entry archimate-business-role",
+    "businessRoleBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/business_role.svg\")",
+    "businessRoleBeforeContent": "none",
+    "businessRoleWidth": "22px",
+    "businessRoleHeight": "22px"
+  }
+}

@@ -1,0 +1,9 @@
+Command:
+npx eslint lib\metamodel\languages\index.js lib\features\modeling\ElementFactory.js lib\features\palette\PaletteProvider.js lib\import\Importer.js demo\src\sample-canvas.js demo\src\editor.js demo\src\viewer.js test\language-profile.test.mjs
+
+Result:
+PASS
+
+Summary:
+- Changed JavaScript/test files pass the project ESLint gate.
+- lib/import/Importer.js was also eslint --fix formatted after the initial changed-file lint surfaced existing style issues in the touched file.

@@ -1,0 +1,10 @@
+Command:
+npm run demo:build
+
+Result:
+PASS
+
+Summary:
+- webpack compiled demo/dist/editor.bundle.js and demo/dist/viewer.bundle.js successfully.
+- Generated editor.bundle.js: 3.88 MiB.
+- Generated viewer.bundle.js: 3.42 MiB.

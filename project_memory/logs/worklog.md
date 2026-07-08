@@ -558,3 +558,18 @@
 - Final checks: `npm run test:language` passed with 88 tests in `project_memory/runlogs/20260708-430-fontello-archimate4-elements-final-test-language.txt`; test-file ESLint passed in `project_memory/runlogs/20260708-431-fontello-archimate4-elements-eslint-test-file.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-432-fontello-archimate4-elements-final-git-diff-check.txt`; state JSON parsed in `project_memory/runlogs/20260708-433-fontello-archimate4-elements-state-json-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-fontello-archimate4-elements-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution remains unconfirmed; these font icons are derived from existing local renderer pictogram paths rather than copied official artwork.
+
+## 2026-07-08 loop 52
+
+- Goal: make the Viewer/Editor demos and validation behavior depend on whether ArchiMate 3.x or 4.0 is selected.
+- Observation: the palette item list was already profile-driven, but ArchiMate 4 entries still carried legacy SVG background images; `Importer` also logged element import failures without surfacing them to the caller.
+- Implemented: demo pages now support `?version=3.2` and `?version=4.0`, update sidebar metadata and cross-links, and seed profile-specific samples.
+- Implemented: ArchiMate 4 palette entries retain profile-specific semantic classes such as `archimate-common-role` and render with fixed-size SVG background images, while ArchiMate 3.x palette entries retain the existing SVG icons.
+- Correction: direct injection of Fontello glyph classes into diagram-js palette cells was removed after browser verification showed the glyphs overflowed and distorted inside the 22px palette boxes; Fontello glyphs remain available in `archimate-font` for the font demo and downstream consumers.
+- Implemented: `ElementFactory` rejects unavailable element and relationship types through the active language profile; `Importer` now propagates invalid element/connection import errors instead of swallowing them.
+- Tests: `test/language-profile.test.mjs` now guards profile-selected demo samples, keeps Fontello glyph classes out of diagram-js palette cells, and checks active-profile rejection paths.
+- Verification: `npm run demo:build` passed in `project_memory/runlogs/20260708-437-profile-versioned-demo-build.txt`; `npm run test:language` passed with 90 tests in `project_memory/runlogs/20260708-434-profile-versioned-demo-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-435-profile-versioned-demo-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-436-profile-versioned-demo-git-diff-check.txt`.
+- Browser verification: 4.0 editor smoke confirmed `archimate-common-role` using `common_role.svg`, no injected Fontello palette classes, and 22px palette sizing; 3.x editor smoke confirmed Business Role using the existing SVG icon in `project_memory/runlogs/20260708-438-profile-versioned-demo-browser-smoke.json` and `project_memory/runlogs/20260708-441-profile-versioned-palette-visual-fix.json`.
+- Error verification: browser smoke confirmed 3.x rejects `Role`, 4.0 rejects `BusinessRole`, and viewer import propagates an invalid profile concept error in `project_memory/runlogs/20260708-439-profile-boundary-error-browser-smoke.json`.
+- Audit: `project_memory/audit/reports/20260708-profile-versioned-demo-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, and MEFF 4.0 XSD remain external-source dependent.

@@ -1,0 +1,10 @@
+Command:
+npm run test:language
+
+Result:
+PASS
+
+Summary:
+- 90 node:test cases passed.
+- Added coverage for profile-selected demo samples, ArchiMate 4 Fontello palette classes, and active-profile concept/relationship rejection source paths.
+- Existing MODULE_TYPELESS_PACKAGE_JSON warnings remain unchanged.

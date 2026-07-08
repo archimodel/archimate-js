@@ -37,6 +37,7 @@ body {
 }
 
 .demo-nav a,
+.demo-version-switch a,
 .demo-button {
   border: 1px solid #c8d0d9;
   border-radius: 4px;
@@ -48,10 +49,22 @@ body {
 }
 
 .demo-nav a[aria-current="page"],
+.demo-version-switch a[aria-current="true"],
 .demo-button:hover,
-.demo-nav a:hover {
+.demo-nav a:hover,
+.demo-version-switch a:hover {
   background: #e9f1ff;
   border-color: #8cb8ff;
+}
+
+.demo-version-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.demo-version-switch a {
+  min-width: 32px;
+  text-align: center;
 }
 
 .demo-actions {

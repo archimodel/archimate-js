@@ -14,10 +14,14 @@
       <header class="demo-topbar">
         <div class="demo-title">archimate-js Viewer Demo</div>
         <nav class="demo-nav" aria-label="Demo navigation">
-          <a href="./viewer.html" aria-current="page">Viewer</a>
-          <a href="./editor.html">Editor</a>
+          <a id="viewer-link" href="./viewer.html?version=4.0" aria-current="page">Viewer</a>
+          <a id="editor-link" href="./editor.html?version=4.0">Editor</a>
           <a href="../archimate-font/lib/demo.html">Font</a>
         </nav>
+        <div class="demo-version-switch" aria-label="ArchiMate version">
+          <a id="version-3-link" href="./viewer.html?version=3.2">3.x</a>
+          <a id="version-4-link" href="./viewer.html?version=4.0">4.0</a>
+        </div>
         <div id="status" class="demo-status">loading</div>
       </header>
       <main class="demo-main">
@@ -25,13 +29,15 @@
           <h2>Sample</h2>
           <dl>
             <dt>Mode</dt>
-            <dd>Viewer</dd>
+            <dd id="profile-mode">Viewer</dd>
             <dt>Version</dt>
-            <dd>ArchiMate 4.0</dd>
+            <dd id="profile-version">ArchiMate 4.0</dd>
             <dt>Profile</dt>
-            <dd>Standard</dd>
+            <dd id="profile-summary">ArchiMate 4.0 profile</dd>
             <dt>Canvas</dt>
-            <dd>Read-only</dd>
+            <dd id="editing-summary">Read-only display validation</dd>
+            <dt>Palette</dt>
+            <dd id="palette-summary">4.0 palette</dd>
           </dl>
         </aside>
         <section class="demo-canvas" aria-label="ArchiMate viewer canvas">

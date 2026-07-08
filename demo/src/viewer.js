@@ -1,20 +1,24 @@
 import Viewer from '../../lib/Viewer';
 import {
-  EMPTY_ARCHIMATE4_XML,
+  applyDemoProfileToDocument,
+  getDemoProfile,
   seedSampleCanvas,
   setStatus
 } from './sample-canvas';
 
 async function boot() {
+  const demoProfile = getDemoProfile();
   const viewer = new Viewer({
     container: document.querySelector('#canvas'),
-    archimateVersion: '4.0'
+    archimateVersion: demoProfile.version
   });
 
+  applyDemoProfileToDocument(demoProfile, 'Viewer');
+  window.archimateDemoProfile = demoProfile;
   window.archimateViewer = viewer;
 
-  await viewer.importXML(EMPTY_ARCHIMATE4_XML);
-  seedSampleCanvas(viewer);
+  await viewer.importXML(demoProfile.emptyXml);
+  seedSampleCanvas(viewer, demoProfile.version);
   setStatus('ready');
 }
 

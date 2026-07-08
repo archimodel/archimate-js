@@ -1,0 +1,17 @@
+Commands:
+- npm run test:language
+- npx eslint index.js lib\BaseViewer.js lib\core\index.js lib\core\languageProfile.js lib\metamodel\languages\index.js lib\metamodel\languages\archimate3-relationships.js lib\metamodel\languages\archimate4-relationships.js lib\metamodel\languages\relationship-profile-loader.js lib\metamodel\languages\retired-concepts.js lib\migration\archimate3-to-4.js lib\moddle\index.js lib\moddle\templateModel.js lib\features\palette\PaletteProvider.js lib\features\modeling\ElementFactory.js lib\features\modeling\ConnectionUpdater.js lib\features\modeling\cmd\ReplaceRelationshipRefHandler.js lib\features\popup-menu\ConnectionMenuProvider.js lib\features\popup-menu\ConnectionOptions.js lib\features\rules\ArchimateRules.js lib\draw\PathMap.js lib\draw\ArchimateRenderer.js lib\util\ModelUtil.js lib\util\RelationshipUtil.js lib\util\JunctionUtil.js lib\util\MultiplicityUtil.js lib\util\ColorUtil.js test\*.test.mjs
+- npm run demo:build
+- git diff --check
+- node -e "JSON.parse(require('fs').readFileSync('project_memory/state/aria_state.json','utf8')); console.log('state json ok')"
+
+Result:
+PASS
+
+Summary:
+- `npm run test:language` passed with 90 tests.
+- ArchiMate 4 implementation ESLint gate passed.
+- webpack demo build passed.
+- `git diff --check` passed.
+- `project_memory/state/aria_state.json` parsed successfully.
+- After the palette visual fix, the same final gate set passed again; `project_memory/runlogs/20260708-441-profile-versioned-palette-visual-fix.json` records that ArchiMate 4 palette cells no longer contain Fontello glyph classes and render `common_role.svg` / `common_service.svg` as fixed-size SVG background images.

@@ -1,0 +1,32 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html",
+      "version": "ArchiMate 4.0",
+      "status": "ready",
+      "fontelloPaletteClassCount": 0,
+      "roleClassName": "entry archimate-common-role",
+      "roleBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_role.svg\")",
+      "roleBeforeContent": "none",
+      "businessRoleVisible": false
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=3.2",
+      "version": "ArchiMate 3.x",
+      "status": "ready",
+      "fontelloPaletteClassCount": 0,
+      "businessRoleClassName": "entry archimate-business-role",
+      "businessRoleBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/business_role.svg\")",
+      "roleVisible": false,
+      "equipmentVisible": false
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=4.0",
+      "version": "ArchiMate 4.0",
+      "status": "ready",
+      "roleClassName": "entry archimate-common-role",
+      "roleBackgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_role.svg\")"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=3.2",
+      "action": "window.archimateModeler.get('elementFactory').createShape({ type: 'Role' })",
+      "error": "ArchiMate concept Role is not available in ArchiMate 3.2"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=4.0",
+      "action": "window.archimateModeler.get('elementFactory').createShape({ type: 'BusinessRole' })",
+      "error": "ArchiMate concept BusinessRole is not available in ArchiMate 4.0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/viewer.html?version=3.2",
+      "action": "window.archimateViewer.importXML(minimal XML containing a Role view node)",
+      "error": "failed to import <archimate:Node id=\"n1\" />: ArchiMate concept undefined:Role is not available in ArchiMate 3.2"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Command:
+git diff --check
+
+Result:
+PASS
+
+Summary:
+- No whitespace errors were reported.
