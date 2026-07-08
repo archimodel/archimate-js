@@ -1,0 +1,141 @@
+
+D:\github\archimate-js\CHANGELOG.md
+  1:1  error  Parsing error: Topic reference is used, but the pipelineOperator plugin was not passed a "proposal": "hack" or "smart" option.
+
+> 1 | # Changelog
+    | ^
+  2 | All notable changes to this project will be documented in this file.
+  3 | 
+  4 | The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+
+D:\github\archimate-js\assets\palette-icons.css
+  0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
+
+D:\github\archimate-js\docs\archimate4\sources.md
+  1:1  error  Parsing error: Topic reference is used, but the pipelineOperator plugin was not passed a "proposal": "hack" or "smart" option.
+
+> 1 | # ArchiMate 4 Source Ledger
+    | ^
+  2 | 
+  3 | ## Required Sources
+  4 |
+
+D:\github\archimate-js\lib\metamodel\Concept.js
+    2:1   error  Expected indentation of 6 spaces but found 4  indent
+    3:1   error  Expected indentation of 6 spaces but found 4  indent
+    4:1   error  Expected indentation of 6 spaces but found 4  indent
+    5:1   error  Expected indentation of 6 spaces but found 4  indent
+    6:1   error  Expected indentation of 6 spaces but found 4  indent
+    7:1   error  Expected indentation of 6 spaces but found 4  indent
+    8:1   error  Expected indentation of 6 spaces but found 4  indent
+    9:1   error  Expected indentation of 6 spaces but found 4  indent
+   10:1   error  Expected indentation of 6 spaces but found 4  indent
+   13:1   error  Expected indentation of 6 spaces but found 4  indent
+   14:1   error  Expected indentation of 6 spaces but found 4  indent
+   15:1   error  Expected indentation of 6 spaces but found 4  indent
+   18:1   error  Expected indentation of 6 spaces but found 4  indent
+   19:1   error  Expected indentation of 6 spaces but found 4  indent
+   20:1   error  Expected indentation of 6 spaces but found 4  indent
+   21:1   error  Expected indentation of 6 spaces but found 4  indent
+   22:1   error  Expected indentation of 6 spaces but found 4  indent
+   23:1   error  Expected indentation of 6 spaces but found 4  indent
+   24:1   error  Expected indentation of 6 spaces but found 4  indent
+   25:1   error  Expected indentation of 6 spaces but found 4  indent
+   26:1   error  Expected indentation of 6 spaces but found 4  indent
+   27:1   error  Expected indentation of 6 spaces but found 4  indent
+   28:1   error  Expected indentation of 6 spaces but found 4  indent
+   29:1   error  Expected indentation of 6 spaces but found 4  indent
+   32:1   error  Expected indentation of 6 spaces but found 4  indent
+   33:1   error  Expected indentation of 6 spaces but found 4  indent
+   34:1   error  Expected indentation of 6 spaces but found 4  indent
+   35:1   error  Expected indentation of 6 spaces but found 4  indent
+   36:1   error  Expected indentation of 6 spaces but found 4  indent
+   37:1   error  Expected indentation of 6 spaces but found 4  indent
+   38:1   error  Expected indentation of 6 spaces but found 4  indent
+   39:1   error  Expected indentation of 6 spaces but found 4  indent
+   42:1   error  Expected indentation of 6 spaces but found 4  indent
+   43:1   error  Expected indentation of 6 spaces but found 4  indent
+   44:1   error  Expected indentation of 6 spaces but found 4  indent
+   45:1   error  Expected indentation of 6 spaces but found 4  indent
+   46:1   error  Expected indentation of 6 spaces but found 4  indent
+   47:1   error  Expected indentation of 6 spaces but found 4  indent
+   48:1   error  Expected indentation of 6 spaces but found 4  indent
+   49:1   error  Expected indentation of 6 spaces but found 4  indent
+   50:1   error  Expected indentation of 6 spaces but found 4  indent
+   51:1   error  Expected indentation of 6 spaces but found 4  indent
+   52:1   error  Expected indentation of 6 spaces but found 4  indent
+   53:1   error  Expected indentation of 6 spaces but found 4  indent
+   56:1   error  Expected indentation of 6 spaces but found 4  indent
+   57:1   error  Expected indentation of 6 spaces but found 4  indent
+   58:1   error  Expected indentation of 6 spaces but found 4  indent
+   61:1   error  Expected indentation of 6 spaces but found 4  indent
+   62:1   error  Expected indentation of 6 spaces but found 4  indent
+   63:1   error  Expected indentation of 6 spaces but found 4  indent
+   64:1   error  Expected indentation of 6 spaces but found 4  indent
+   65:1   error  Expected indentation of 6 spaces but found 4  indent
+   66:1   error  Expected indentation of 6 spaces but found 4  indent
+   67:1   error  Expected indentation of 6 spaces but found 4  indent
+   70:1   error  Expected indentation of 6 spaces but found 4  indent
+   71:1   error  Expected indentation of 6 spaces but found 4  indent
+   72:1   error  Expected indentation of 6 spaces but found 4  indent
+   73:1   error  Expected indentation of 6 spaces but found 4  indent
+   76:1   error  Expected indentation of 6 spaces but found 4  indent
+   77:1   error  Expected indentation of 6 spaces but found 4  indent
+   78:1   error  Expected indentation of 6 spaces but found 4  indent
+   81:1   error  Expected indentation of 6 spaces but found 4  indent
+   82:1   error  Expected indentation of 6 spaces but found 4  indent
+   83:1   error  Expected indentation of 6 spaces but found 4  indent
+   84:1   error  Expected indentation of 6 spaces but found 4  indent
+   85:1   error  Expected indentation of 6 spaces but found 4  indent
+   86:1   error  Expected indentation of 6 spaces but found 4  indent
+   87:1   error  Expected indentation of 6 spaces but found 4  indent
+   88:1   error  Expected indentation of 6 spaces but found 4  indent
+   89:1   error  Expected indentation of 6 spaces but found 4  indent
+   90:1   error  Expected indentation of 6 spaces but found 4  indent
+   91:1   error  Expected indentation of 6 spaces but found 4  indent
+   92:1   error  Expected indentation of 6 spaces but found 4  indent
+   95:1   error  Expected indentation of 6 spaces but found 4  indent
+   96:1   error  Expected indentation of 6 spaces but found 4  indent
+   97:1   error  Expected indentation of 6 spaces but found 4  indent
+   98:1   error  Expected indentation of 6 spaces but found 4  indent
+  101:1   error  Expected indentation of 6 spaces but found 4  indent
+  102:1   error  Expected indentation of 6 spaces but found 4  indent
+  103:1   error  Expected indentation of 6 spaces but found 4  indent
+  106:1   error  Expected indentation of 6 spaces but found 4  indent
+  107:1   error  Expected indentation of 6 spaces but found 4  indent
+  108:1   error  Expected indentation of 6 spaces but found 4  indent
+  109:1   error  Expected indentation of 6 spaces but found 4  indent
+  110:1   error  Expected indentation of 6 spaces but found 4  indent
+  111:1   error  Expected indentation of 6 spaces but found 4  indent
+  112:1   error  Expected indentation of 6 spaces but found 4  indent
+  113:1   error  Expected indentation of 6 spaces but found 4  indent
+  116:1   error  Expected indentation of 6 spaces but found 4  indent
+  117:1   error  Expected indentation of 6 spaces but found 4  indent
+  118:1   error  Expected indentation of 6 spaces but found 4  indent
+  121:1   error  Expected indentation of 6 spaces but found 4  indent
+  122:1   error  Expected indentation of 6 spaces but found 4  indent
+  123:1   error  Expected indentation of 6 spaces but found 4  indent
+  124:1   error  Expected indentation of 6 spaces but found 4  indent
+  125:1   error  Expected indentation of 6 spaces but found 4  indent
+  126:1   error  Expected indentation of 6 spaces but found 4  indent
+  127:1   error  Expected indentation of 6 spaces but found 4  indent
+  128:1   error  Expected indentation of 6 spaces but found 4  indent
+  129:1   error  Expected indentation of 6 spaces but found 4  indent
+  130:1   error  Expected indentation of 6 spaces but found 4  indent
+  131:1   error  Expected indentation of 6 spaces but found 4  indent
+  132:1   error  Expected indentation of 6 spaces but found 4  indent
+  132:61  error  Trailing spaces not allowed                   no-trailing-spaces
+  133:1   error  Expected indentation of 6 spaces but found 4  indent
+  134:1   error  Expected indentation of 6 spaces but found 4  indent
+  135:1   error  Expected indentation of 6 spaces but found 4  indent
+  136:1   error  Expected indentation of 6 spaces but found 4  indent
+
+D:\github\archimate-js\lib\metamodel\languages\archimate3-profile.json
+  0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
+
+D:\github\archimate-js\test\fixtures\archimate3-element-type-enum.json
+  0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
+
+✖ 113 problems (110 errors, 3 warnings)
+  108 errors and 0 warnings potentially fixable with the `--fix` option.
+

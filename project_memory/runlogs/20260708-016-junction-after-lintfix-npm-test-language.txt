@@ -1,0 +1,30 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (7.847ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.6338ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (5.0502ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.5746ms)
+✔ archimate 4 profile exposes Common Domain (1.442ms)
+✔ migration table covers retired public ArchiMate 4 concepts (5.9462ms)
+✔ migration utility preserves specialization information (2.1986ms)
+✔ relationship descriptor contains multiplicity attributes (5.9952ms)
+✔ element factory carries multiplicity from relationship refs (1.2998ms)
+✔ connection updater persists relationship multiplicity fields (1.5036ms)
+✔ relationship replacement preserves editable multiplicity properties (2.5902ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (1.0342ms)
+✔ renderer displays relationship end multiplicities (1.2ms)
+✔ archimate 4 relationship profile has no retired source or target concepts (6.5269ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (1.9216ms)
+✔ archimate 3 fixture keeps current namespace (4.8956ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.0951ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.2989ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.0487

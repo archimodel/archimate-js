@@ -784,6 +784,22 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
+.archimate-other-and-junction,
+.archimate-other-or-junction {
+background-image: url("./icons/group.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-other-and-junction:hover,
+.archimate-other-or-junction:hover {
+background-color: lightgrey;
+}
+
 .ajs-image {
 background-image: url("./icons/image.svg");
 background-repeat: no-repeat;

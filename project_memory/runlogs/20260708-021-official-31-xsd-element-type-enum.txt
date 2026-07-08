@@ -1,0 +1,5 @@
+uri=https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd
+status=200
+elementTypeEnumCount=62
+hasAndJunction=True
+hasOrJunction=True

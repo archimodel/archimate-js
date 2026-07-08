@@ -74,7 +74,9 @@
     { "type": "Gap", "domain": "Implementation & Migration", "aspect": "Active structure", "typeName": "Gap", "className": "archimate-imp-mig-gap", "pictoRef": "PICTO_GAP", "palette": false },
     { "type": "Plateau", "domain": "Implementation & Migration", "aspect": "Active structure", "typeName": "Plateau", "className": "archimate-imp-mig-plateau", "pictoRef": "PICTO_PLATEAU", "palette": false },
     { "type": "Location", "domain": "Other", "aspect": "Active structure", "typeName": "Location", "className": "archimate-other-location", "pictoRef": "PICTO_LOCATION", "palette": false },
-    { "type": "Grouping", "domain": "Other", "aspect": "Active structure", "typeName": "Grouping", "className": "archimate-other-grouping", "pictoRef": "PICTO_GROUPING", "palette": false }
+    { "type": "Grouping", "domain": "Other", "aspect": "Active structure", "typeName": "Grouping", "className": "archimate-other-grouping", "pictoRef": "PICTO_GROUPING", "palette": false },
+    { "type": "AndJunction", "domain": "Other", "aspect": "Active structure", "typeName": "And Junction", "className": "archimate-other-and-junction", "pictoRef": "PICTO_JUNCTION_AND" },
+    { "type": "OrJunction", "domain": "Other", "aspect": "Active structure", "typeName": "Or Junction", "className": "archimate-other-or-junction", "pictoRef": "PICTO_JUNCTION_OR" }
   ],
   "relationships": [ "Composition", "Aggregation", "Assignment", "Realization", "Association", "Influence", "Access", "Serving", "Triggering", "Flow", "Specialization" ]
 }

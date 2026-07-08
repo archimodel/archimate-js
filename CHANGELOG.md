@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: preserved existing ArchiMate 3.x behavior as the default.
 * `CORE`: added ArchiMate 3.x to 4.0 migration warnings for retired and merged concepts.
 * `FEAT`: added relationship multiplicity storage and rendering for ArchiMate 4.0.
+* `CORE`: aligned the ArchiMate 3 profile with the official 3.1 `ElementTypeEnum`, including `AndJunction` and `OrJunction`.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 
 ## 0.0.4

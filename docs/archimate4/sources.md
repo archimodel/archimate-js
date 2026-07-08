@@ -31,6 +31,13 @@
 - `archimateVersion: "4.0"` writes an internal ArchiMate 4 namespace and source/target multiplicity attributes.
 - 4.0 XML export is marked experimental until the corresponding ArchiMate 4 Model Exchange File Format XSD is confirmed.
 
+## ArchiMate 3.1 XSD Verification
+
+- `https://www.opengroup.org/xsd/archimate/` publishes ArchiMate 3.1/3.2 exchange resources.
+- `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd` exposes `ElementTypeEnum` with 62 values.
+- The local ArchiMate 3 profile is tested against that enum via `test/fixtures/archimate3-element-type-enum.json`.
+- `AndJunction` and `OrJunction` are modeled with their official XSD type values, not display labels with spaces.
+
 ## Verification Notes
 
 - Baseline `npm test` failed before implementation because no `test` script existed.

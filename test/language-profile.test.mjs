@@ -19,6 +19,8 @@ test('archimate 3 profile keeps retired 3.x concepts for compatibility', async (
   assert.equal(types.has('Contract'), true);
   assert.equal(types.has('Gap'), true);
   assert.equal(types.has('Representation'), true);
+  assert.equal(types.has('AndJunction'), true);
+  assert.equal(types.has('OrJunction'), true);
 });
 
 test('archimate 4 profile removes retired 3.x concepts', async () => {
