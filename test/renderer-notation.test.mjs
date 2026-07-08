@@ -108,3 +108,11 @@ test('renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path'
   assert.doesNotMatch(pathMap, /'PICTO_STAKEHOLDER': 'PICTO_ACTOR'/);
   assert.match(pathMap, /m 2 5 a 1 1 90 0 0 0 8/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Driver wheel pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_DRIVER': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_DRIVER': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 9 2\.5 l 0 3 m 0 7 l 0 3/);
+});

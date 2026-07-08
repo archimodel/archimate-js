@@ -98,6 +98,11 @@
   renderer requirement is limited to replacing the local `PICTO_STAKEHOLDER` actor/person alias with
   a locally-authored horizontal cylinder path while retaining the legacy `PICTO_STAKHOLDER` alias as
   compatibility.
+- A local C260 Appendix A rendered visual check for `Driver` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-480-c260-appendix-a-driver-render.txt` and
+  `project_memory/runlogs/20260709-481-c260-appendix-a-driver-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_DRIVER` generic object alias with a
+  locally-authored wheel/spoke path.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

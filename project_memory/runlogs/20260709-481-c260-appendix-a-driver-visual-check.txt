@@ -1,0 +1,5 @@
+C260 Appendix A Driver pictogram visual check
+pdf_page=145
+rendered_png=tmp/pdfs/c260-page-145-driver-145.png
+observation=A.2 Motivation, Strategy, Implementation and Migration Elements shows Driver with a wheel-like circular pictogram with spokes, not the generic object/document pictogram.
+implementation_boundary=Do not embed or redistribute Appendix A artwork; replace the local renderer alias with a locally-authored wheel/spoke path for PICTO_DRIVER.

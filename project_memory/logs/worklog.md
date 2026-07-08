@@ -1103,3 +1103,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-478-stakeholder-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-479-stakeholder-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-stakeholder-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 89
+
+- Goal: replace the ArchiMate 4 `Driver` renderer pictogram fallback with a C260 Appendix A-derived wheel/spoke path.
+- Source evidence: `project_memory/runlogs/20260709-480-c260-appendix-a-driver-render.txt` and `project_memory/runlogs/20260709-481-c260-appendix-a-driver-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-482-driver-pictogram-red-test.txt` failed because `PICTO_DRIVER` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_DRIVER` wheel/spoke path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Driver renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-483-driver-pictogram-test.txt`; `npm run test:language` passed with 147 tests in `project_memory/runlogs/20260709-484-driver-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-485-driver-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-486-driver-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-487-driver-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-488-driver-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-489-driver-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-490-driver-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-491-driver-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-driver-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
