@@ -191,6 +191,8 @@ Implementation notes:
 - `Grouping` and `Location` are Common Domain composite elements.
 - `Location` must use a location-pin renderer pictogram in ArchiMate 4 mode, not the legacy generic
   object pictogram fallback.
+- `DistributionNetwork` must use a bidirectional-arrow renderer pictogram in ArchiMate 4 mode, not
+  the `CommunicationNetwork` node-link pictogram fallback.
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.

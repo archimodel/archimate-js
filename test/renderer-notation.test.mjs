@@ -44,3 +44,11 @@ test('renderer uses a dedicated ArchiMate 4 Location pin pictogram path', async 
   assert.doesNotMatch(pathMap, /'PICTO_LOCATION': 'PICTO_OBJECT'/);
   assert.match(pathMap, /c -4 -4 -4 -9 0 -13/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_DISTRIBUTION_NETWORK': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_DISTRIBUTION_NETWORK': 'PICTO_COMMUNICATION_NETWORK'/);
+  assert.match(pathMap, /m 1\.5 9 l 4 -4 m -4 4 l 4 4/);
+});

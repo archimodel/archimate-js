@@ -1003,3 +1003,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-373-location-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-location-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 81
+
+- Goal: replace the ArchiMate 4 `Distribution Network` renderer pictogram fallback with a C260 Appendix A-derived bidirectional-arrow path.
+- Source evidence: `project_memory/runlogs/20260709-377-c260-appendix-a-distribution-network-render.txt` and `project_memory/runlogs/20260709-378-c260-appendix-a-distribution-network-visual-check.txt` record the Appendix A page render and non-verbatim visual check. `project_memory/runlogs/20260709-376-c260-appendix-a-distribution-network-render.txt` records the initial Poppler wrapper path failure before rerunning the Poppler binary directly.
+- Red test: `project_memory/runlogs/20260709-379-distribution-network-pictogram-red-test.txt` failed because `PICTO_DISTRIBUTION_NETWORK` was still aliased to `PICTO_COMMUNICATION_NETWORK`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_DISTRIBUTION_NETWORK` bidirectional-arrow path and removes the Communication Network alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Distribution Network renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-380-distribution-network-pictogram-test.txt`; `npm run test:language` passed with 139 tests in `project_memory/runlogs/20260709-381-distribution-network-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-382-distribution-network-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-383-distribution-network-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-384-distribution-network-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-385-distribution-network-pictogram-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-386-distribution-network-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-distribution-network-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

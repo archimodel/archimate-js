@@ -117,6 +117,12 @@
   `project_memory/runlogs/20260709-365-c260-appendix-a-location-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_LOCATION` generic object alias with a
   locally-authored location-pin path.
+- A local C260 Appendix A rendered visual check for `Distribution Network` pictogram notation is
+  recorded in `project_memory/runlogs/20260709-377-c260-appendix-a-distribution-network-render.txt`
+  and `project_memory/runlogs/20260709-378-c260-appendix-a-distribution-network-visual-check.txt`.
+  The derived renderer requirement is limited to replacing the local
+  `PICTO_DISTRIBUTION_NETWORK` Communication Network alias with a locally-authored bidirectional-arrow
+  path.
 
 ## Language Customization Mechanism
 
