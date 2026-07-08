@@ -39,6 +39,8 @@ five required clauses represented as `shall` entries and the example viewpoint c
 `may` entry. `getArchimate4ImplementationStatus()` must surface that map with summary counts so
 formal support, implementation-defined support, optional support, and external blockers are not
 collapsed into one ambiguous "supported" flag.
+The status must also expose exact requirement identity fields (`expectedIds`, `actualIds`,
+`missingIds`, and `extraIds`) so a count-preserving but wrong shall/may map cannot appear complete.
 
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
 local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B

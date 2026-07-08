@@ -47,6 +47,8 @@
 - C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
   metadata so required, optional, implemented, and externally blocked support can be audited without
   treating fallback data as final conformance.
+- `getArchimate4ImplementationStatus().conformanceRequirements` reports expected, actual, missing,
+  and extra requirement ids for the C260-derived shall/may requirement map.
 - `getArchimate4ImplementationStatus()` also exposes source coverage metadata so local source
   evidence, externally supplied normative data, and missing companion sources are distinguishable.
 

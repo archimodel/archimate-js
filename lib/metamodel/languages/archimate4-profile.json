@@ -82,6 +82,22 @@
       "legacyCompatibilityAliases": [ "PICTO_DELIVRABLE", "PICTO_STAKHOLDER" ],
       "exactAppendixAVectorsConfirmed": false
     },
+    "requirementCatalog": {
+      "status": "implemented-with-external-blockers",
+      "expectedCount": 6,
+      "expectedShallCount": 5,
+      "expectedMayCount": 1,
+      "expectedShallIds": [
+        "language-structure",
+        "standard-iconography",
+        "viewpoint-mechanism",
+        "language-customization",
+        "appendix-b-relationships"
+      ],
+      "expectedMayIds": [
+        "example-viewpoints"
+      ]
+    },
     "requirements": [
       {
         "id": "language-structure",

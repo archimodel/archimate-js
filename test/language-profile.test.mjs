@@ -694,12 +694,33 @@ test('archimate 4 implementation plan records current execution boundary', async
 test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
   const requirements = profile.conformance.requirements;
+  const requirementCatalog = profile.conformance.requirementCatalog;
   const byId = new Map(requirements.map((requirement) => [ requirement.id, requirement ]));
+  const actualShallIds = requirements
+    .filter((requirement) => requirement.level === 'shall')
+    .map((requirement) => requirement.id);
+  const actualMayIds = requirements
+    .filter((requirement) => requirement.level === 'may')
+    .map((requirement) => requirement.id);
 
   assert.equal(requirements.filter((requirement) => requirement.level === 'shall').length, 5);
   assert.equal(requirements.filter((requirement) => requirement.level === 'may').length, 1);
+  assert.equal(requirementCatalog.status, 'implemented-with-external-blockers');
+  assert.equal(requirementCatalog.expectedShallCount, 5);
+  assert.equal(requirementCatalog.expectedMayCount, 1);
+  assert.deepEqual(requirementCatalog.expectedShallIds, [
+    'language-structure',
+    'standard-iconography',
+    'viewpoint-mechanism',
+    'language-customization',
+    'appendix-b-relationships'
+  ]);
+  assert.deepEqual(requirementCatalog.expectedMayIds, [ 'example-viewpoints' ]);
+  assert.deepEqual(actualShallIds, requirementCatalog.expectedShallIds);
+  assert.deepEqual(actualMayIds, requirementCatalog.expectedMayIds);
   assert.equal(byId.get('language-structure').status, 'implemented');
   assert.equal(byId.get('standard-iconography').status, 'local-renderer-coverage');
   assert.equal(byId.get('standard-iconography').externalBlocker, 'exactAppendixAArtworkRights');
@@ -712,7 +733,11 @@ test('archimate 4 conformance requirements are tracked per C260 shall and may cl
   assert.equal(byId.get('example-viewpoints').status, 'not-bundled-informative');
 
   assert.match(languageIndex, /var conformanceRequirements = summarizeConformanceRequirements/);
+  assert.match(languageIndex, /conformance\.requirementCatalog/);
   assert.match(languageIndex, /conformanceRequirements: conformanceRequirements/);
   assert.match(languageIndex, /function summarizeConformanceRequirements/);
+  assert.match(languageIndex, /missingIds/);
+  assert.match(languageIndex, /extraIds/);
+  assert.match(readme, /conformanceRequirements\.(expectedIds|missingIds|extraIds)/);
   assert.match(sources, /C260 conformance requirements are represented per shall\/may clause/);
 });

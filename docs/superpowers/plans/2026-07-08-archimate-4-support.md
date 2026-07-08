@@ -41,9 +41,10 @@ Implemented and verified on the current branch:
 Current machine-readable status is exposed by `getArchimate4ImplementationStatus()`. The element
 catalog status reports `expectedTypes`, `actualTypes`, `missingTypes`, and `extraTypes` for exact
 C260 type-coverage auditing. Relationship connector status reports the same exact fields for
-`AndJunction` and `OrJunction` outside the 42-element catalog. The iconography status reports
-`profilePictogramCoverage: dedicated-local-paths`, `genericObjectAliasCount: 0`, and only the legacy
-misspelled compatibility aliases `PICTO_DELIVRABLE` / `PICTO_STAKHOLDER`.
+`AndJunction` and `OrJunction` outside the 42-element catalog. Conformance requirement status reports
+`expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the C260-derived shall/may map. The
+iconography status reports `profilePictogramCoverage: dedicated-local-paths`, `genericObjectAliasCount:
+0`, and only the legacy misspelled compatibility aliases `PICTO_DELIVRABLE` / `PICTO_STAKHOLDER`.
 
 Current unresolved items are external-source dependent rather than implementation omissions:
 
