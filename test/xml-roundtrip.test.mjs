@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { Moddle } from 'moddle';
+import { Reader } from 'moddle-xml';
 
 async function readDescriptor(path) {
   const descriptor = await readFile(new URL(path, import.meta.url), 'utf8');
@@ -14,6 +16,14 @@ function findType(descriptor, name) {
 
 function findProperty(type, name) {
   return type.properties.find((property) => property.name === name);
+}
+
+async function readModel(path, xml) {
+  const descriptor = await readDescriptor(path);
+  const model = new Moddle({ archimate: descriptor });
+  const reader = new Reader({ model, lax: true });
+
+  return reader.fromXML(xml, reader.handler('archimate:Model'));
 }
 
 test('archimate 3 fixture keeps current namespace', async () => {
@@ -51,6 +61,54 @@ test('archimate 4 descriptor allows connections to relationship view elements', 
   assert.equal(findProperty(connection, 'target').type, 'ViewElement');
 });
 
+test('archimate 4 descriptor stores viewpoint definitions and view references', async () => {
+  const descriptor = await readDescriptor('../lib/moddle/resources/archimate4.json');
+  const views = findType(descriptor, 'Views');
+  const view = findType(descriptor, 'View');
+  const viewpoint = findType(descriptor, 'Viewpoint');
+
+  assert.equal(findProperty(views, 'viewpointsNode').type, 'Viewpoints');
+  assert.equal(findProperty(view, 'viewpoint').isAttr, true);
+  assert.equal(findProperty(view, 'viewpointRef').type, 'Viewpoint');
+  assert.equal(findProperty(view, 'viewpointRef').isReference, true);
+  assert.equal(findProperty(viewpoint, 'viewpointPurpose').type, 'String');
+  assert.equal(findProperty(viewpoint, 'viewpointContent').type, 'String');
+  assert.equal(findProperty(viewpoint, 'allowedElementTypes').type, 'AllowedElementType');
+  assert.equal(findProperty(viewpoint, 'allowedRelationshipTypes').type, 'AllowedRelationshipType');
+});
+
+test('archimate 4 viewpoint references resolve through moddle xml', async () => {
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<archimate:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.opengroup.org/xsd/archimate/4.0/">
+  <archimate:Views>
+    <archimate:Viewpoints>
+      <archimate:Viewpoint id="vp-1">
+        <name>Risk Summary</name>
+        <archimate:viewpointPurpose>Deciding</archimate:viewpointPurpose>
+        <archimate:viewpointContent>Overview</archimate:viewpointContent>
+        <archimate:allowedElementType type="BusinessActor" />
+        <archimate:allowedRelationshipType type="Association" />
+      </archimate:Viewpoint>
+    </archimate:Viewpoints>
+    <archimate:Diagrams>
+      <archimate:View id="view-1" viewpointRef="vp-1">
+        <name>View</name>
+      </archimate:View>
+    </archimate:Diagrams>
+  </archimate:Views>
+</archimate:Model>`;
+
+  const result = await readModel('../lib/moddle/resources/archimate4.json', xml);
+  const views = result.rootElement.views;
+  const viewpoint = views.viewpointsNode.viewpoints[0];
+  const view = views.diagrams.viewsList[0];
+
+  assert.equal(viewpoint.id, 'vp-1');
+  assert.equal(viewpoint.viewpointPurpose, 'Deciding');
+  assert.equal(viewpoint.allowedElementTypes[0].type, 'BusinessActor');
+  assert.equal(view.viewpointRef.id, 'vp-1');
+});
+
 test('archimate 3 descriptor keeps existing endpoint constraints', async () => {
   const descriptor = await readDescriptor('../lib/moddle/resources/archimate3.json');
   const relationship = findType(descriptor, 'Relationship');
@@ -60,4 +118,14 @@ test('archimate 3 descriptor keeps existing endpoint constraints', async () => {
   assert.equal(findProperty(relationship, 'target').type, 'BaseElement');
   assert.equal(findProperty(connection, 'source').type, 'Node');
   assert.equal(findProperty(connection, 'target').type, 'Node');
+});
+
+test('archimate 3 descriptor also preserves optional viewpoint metadata', async () => {
+  const descriptor = await readDescriptor('../lib/moddle/resources/archimate3.json');
+  const views = findType(descriptor, 'Views');
+  const view = findType(descriptor, 'View');
+
+  assert.equal(findProperty(views, 'viewpointsNode').type, 'Viewpoints');
+  assert.equal(findProperty(view, 'viewpoint').isAttr, true);
+  assert.equal(findProperty(view, 'viewpointRef').type, 'Viewpoint');
 });

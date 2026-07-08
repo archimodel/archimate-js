@@ -66,6 +66,18 @@
 - This implements language customization without changing the 42-element standard catalog or embedding
   the licensed Appendix B matrix.
 
+## Viewpoint Mechanism
+
+- A local C260 Chapter 13 keyword scan and official 3.1 View XSD check are summarized in
+  `project_memory/runlogs/20260708-142-viewpoint-mechanism-source-check.txt`.
+- The implementation preserves viewpoint metadata in the local moddle descriptors: `View.viewpoint`,
+  `View.viewpointRef`, and a model-level `Views.viewpointsNode` container.
+- Viewpoint definitions can carry concerns, stakeholders, purpose, content, allowed element types,
+  allowed relationship types, and modeling notes.
+- `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
+  host tooling, with purpose/content token validation.
+- Example viewpoints remain informative and are not embedded as normative data.
+
 ## Appendix E Migration Correction
 
 - C260 Appendix E guidance is reflected in `lib/metamodel/languages/retired-concepts.js`.

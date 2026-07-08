@@ -1,0 +1,84 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (8.0828ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.7126ms)
+✔ junction implementation uses official xsd element names as model types (5.3784ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (9.178ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.8247ms)
+✔ archimate 4 profile exposes Common Domain (2.9407ms)
+✔ archimate 4 profile matches the C260 element catalog (3.0504ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (1.5637ms)
+✔ profile-aware metadata and palette include relationship junction connectors (2.5048ms)
+✔ language profile customization supports C260 specialization profiles (4.3692ms)
+✔ language profile customization supports viewpoint definitions (3.1245ms)
+(node:65852) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migration table covers retired public ArchiMate 4 concepts (8.6907ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (1.6948ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (2.4071ms)
+✔ migration utility preserves specialization information (1.4475ms)
+✔ migration table records C260-derived ambiguous replacement candidates (1.0238ms)
+✔ migration utility reports alternative replacement types for ambiguous C260 rows (0.5846ms)
+✔ migration utility stores specialization profile metadata as model properties (0.203ms)
+✔ migration utility can skip specialization profile metadata (0.1526ms)
+(node:67848) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (10.1529ms)
+✔ element factory carries multiplicity from relationship refs (1.5011ms)
+✔ connection updater persists relationship multiplicity fields (1.3335ms)
+✔ relationship replacement preserves editable multiplicity properties (1.1986ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (1.1581ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (1.0739ms)
+✔ renderer displays relationship end multiplicities (1.6127ms)
+✔ relationship multiplicity notation follows the C260-derived subset (0.5882ms)
+✔ junction-connected relationships cannot carry multiplicity (0.5654ms)
+✔ archimate 4 grouping and location aggregate relationship concepts (0.4647ms)
+✔ junction relationship candidates follow existing relationship type (1.5444ms)
+✔ junction endpoint chain allows candidates only when direct endpoints allow the same relationship (0.3516ms)
+✔ junction endpoint chain rejects candidates when direct endpoints disallow the same relationship (0.6219ms)
+✔ junction endpoint chain validates outgoing candidates against incoming endpoints (0.6291ms)
+✔ junction relationship candidates prefer relationshipRef type over generic connection type (0.2627ms)
+✔ junction relationship candidates reject mixed existing relationship types (0.1549ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (7.7766ms)
+(node:12040) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (9.5419ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.5894ms)
+✔ connection rules evaluate relationships through the active language profile (1.1603ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (1.0924ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.685ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.301ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.5326ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.3571ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (3.7352ms)
+✔ archimate 4 complete relationship profile can require every target cell (1.2123ms)
+✔ archimate 4 row-array profiles keep blank complete sources (1.1706ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (3.7387ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.4124ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.3151ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.2224ms)
+✔ archimate 3 fixture keeps current namespace (7.644ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.7364ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.3661ms)
+✔ archimate 4 descriptor allows relationships between relationship concepts (1.8792ms)
+✔ archimate 4 descriptor allows connections to relationship view elements (1.2207ms)
+✔ archimate 4 descriptor stores viewpoint definitions and view references (0.9618ms)
+✔ archimate 4 viewpoint references resolve through moddle xml (8.8797ms)
+✔ archimate 3 descriptor keeps existing endpoint constraints (1.2807ms)
+✔ archimate 3 descriptor also preserves optional viewpoint metadata (1.696ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 60
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 212.9499

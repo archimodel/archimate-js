@@ -118,3 +118,15 @@ test('language profile customization supports C260 specialization profiles', asy
   assert.match(elementFactory, /getDomainColor\(layer, profile\)/);
   assert.match(packageEntrypoint, /createLanguageProfile/);
 });
+
+test('language profile customization supports viewpoint definitions', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+
+  assert.match(languageIndex, /VIEWPOINT_PURPOSES/);
+  assert.match(languageIndex, /VIEWPOINT_CONTENT_TYPES/);
+  assert.match(languageIndex, /mergeViewpoints\(profile, customProfile\)/);
+  assert.match(languageIndex, /validateViewpoint\(viewpoint\)/);
+  assert.match(languageIndex, /Unsupported ArchiMate viewpoint/);
+  assert.match(readme, /viewpoints/);
+});

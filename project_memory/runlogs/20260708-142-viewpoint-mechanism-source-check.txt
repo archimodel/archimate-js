@@ -1,0 +1,25 @@
+Derived source check for ArchiMate viewpoint mechanism.
+Date: 2026-07-08
+Sources:
+- C:/Users/syska/Downloads/978940181474E.pdf
+- https://www.opengroup.org/xsd/archimate/3.1/archimate3_View.xsd
+
+3.1 View XSD fetch status: ok, bytes=13570
+ViewType viewpoint attribute: True
+ViewType viewpointRef attribute: True
+viewpoints container: True
+viewpoint definitions: True
+viewpointPurpose metadata: True
+viewpointContent metadata: True
+allowedElementType metadata: True
+allowedRelationshipType metadata: True
+modelingNote metadata: True
+derived purpose tokens: Deciding, Designing, Informing
+derived content tokens: Coherence, Details, Overview
+PDF scan status: ok, pages=207
+PDF term pages: viewpoint mechanism: count=11 pages=1, 10, 23, 37, 126, 127, 128, 129, 130, 193, 206
+PDF term pages: architecture view: count=14 pages=1, 6, 10, 16, 25, 47, 126, 127, 128, 129, 130, 131, 144, 204
+PDF term pages: viewpoint: count=48 pages=1, 6, 10, 11, 12, 16, 22, 23, 25, 31, 37, 126, 127, 128, 129, 130, 131, 168, 169, 170...
+PDF term pages: stakeholder: count=58 pages=8, 10, 11, 16, 22, 26, 28, 29, 31, 37, 72, 74, 75, 76, 77, 80, 81, 82, 83, 84...
+PDF term pages: concern: count=40 pages=10, 22, 25, 26, 31, 74, 75, 81, 85, 126, 127, 128, 129, 130, 131, 146, 168, 170, 171, 172...
+Derived facts only: C260 conformance and Chapter 13 include the viewpoint mechanism, views, viewpoints, stakeholders, concerns, purpose, content, and viewpoint notation topics. No normative prose is recorded in this runlog.

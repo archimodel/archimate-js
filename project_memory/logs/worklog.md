@@ -223,3 +223,14 @@
 - Docs: README and `docs/archimate4/*` now document the implementation-defined customization contract and MEFF/XSD boundary.
 - Verification: `npm run test:language` passed with 56 tests in `project_memory/runlogs/20260708-137-language-customization-profile-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-138-language-customization-profile-final-eslint-changed-js.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-140-language-customization-profile-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-141-language-customization-profile-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 22
+
+- Goal: add C260 Chapter 13 viewpoint mechanism metadata support without embedding informative example viewpoint definitions as normative data.
+- Source check: local C260 PDF keyword scan and official 3.1 View XSD checks recorded only derived facts in `project_memory/runlogs/20260708-142-viewpoint-mechanism-source-check.txt`.
+- Implemented: ArchiMate 3 and ArchiMate 4 moddle descriptors now preserve `View.viewpoint`, `View.viewpointRef`, and a model-level viewpoint definition container with concerns, stakeholders, purpose, content, allowed element/relationship types, and modeling notes.
+- Implemented: `archimateLanguageProfile.viewpoints` accepts implementation-defined viewpoint definitions, and purpose/content tokens are validated against the official 3.1 XSD-derived token sets.
+- Tests: descriptor coverage was extended, and an actual `moddle-xml` test now verifies that `viewpointRef` resolves to a model-defined viewpoint.
+- Docs: README and `docs/archimate4/*` now describe the supported viewpoint mechanism and the MEFF 4.0 XSD boundary.
+- Verification: `npm run test:language` passed with 60 tests in `project_memory/runlogs/20260708-143-viewpoint-mechanism-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-144-viewpoint-mechanism-eslint-changed-js.txt`; descriptor JSON parse passed in `project_memory/runlogs/20260708-145-viewpoint-mechanism-descriptor-json-parse.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-146-viewpoint-mechanism-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-147-viewpoint-mechanism-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-148-viewpoint-mechanism-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

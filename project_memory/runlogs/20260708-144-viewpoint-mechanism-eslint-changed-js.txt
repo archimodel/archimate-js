@@ -1,0 +1,3 @@
+npx eslint lib\metamodel\languages\index.js test\language-profile.test.mjs test\xml-roundtrip.test.mjs
+exit code: 0
+stdout/stderr: no output

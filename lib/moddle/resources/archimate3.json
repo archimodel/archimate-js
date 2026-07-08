@@ -161,8 +161,118 @@
     { "name": "Views",
       "properties": [
         {
+          "name": "viewpointsNode",
+          "type": "Viewpoints"
+        },
+        {
           "name": "diagrams",
           "type": "Diagrams"
+        }
+      ]
+    },
+    { "name": "Viewpoints",
+      "properties": [
+        {
+          "name": "viewpoints",
+          "type": "Viewpoint",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "Viewpoint",
+      "superClass": ["BaseObject"],
+      "properties": [
+        {
+          "name": "concerns",
+          "type": "Concern",
+          "isMany": true
+        },
+        {
+          "name": "viewpointPurpose",
+          "type": "String"
+        },
+        {
+          "name": "viewpointContent",
+          "type": "String"
+        },
+        {
+          "name": "allowedElementTypes",
+          "type": "AllowedElementType",
+          "isMany": true
+        },
+        {
+          "name": "allowedRelationshipTypes",
+          "type": "AllowedRelationshipType",
+          "isMany": true
+        },
+        {
+          "name": "modelingNotes",
+          "type": "ModelingNote",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "Concern",
+      "properties": [
+        {
+          "name": "label",
+          "type": "String"
+        },
+        {
+          "name": "documentation",
+          "type": "String"
+        },
+        {
+          "name": "stakeholdersNode",
+          "type": "Stakeholders"
+        }
+      ]
+    },
+    { "name": "Stakeholders",
+      "properties": [
+        {
+          "name": "stakeholders",
+          "type": "Stakeholder",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "Stakeholder",
+      "properties": [
+        {
+          "name": "label",
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "AllowedElementType",
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "AllowedRelationshipType",
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "ModelingNote",
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "documentation",
+          "type": "String"
         }
       ]
     },
@@ -193,6 +303,17 @@
           "name": "viewElements",
           "type": "ViewElement",
           "isMany": true
+        },
+        {
+          "name": "viewpoint",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "viewpointRef",
+          "type": "Viewpoint",
+          "isReference": true,
+          "isAttr": true
         }
       ]
     },

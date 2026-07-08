@@ -76,6 +76,24 @@ Runtime behavior:
 - This does not embed Appendix B relationship table data; external Appendix B profiles remain the
   authoritative path for exact standard relationship rules.
 
+## Viewpoint Mechanism
+
+C260 requires support for the viewpoint mechanism. Example viewpoints are informative, so this
+repository does not embed a fixed list of example viewpoint definitions as normative data.
+
+Supported mechanism:
+
+- `View` can retain a built-in viewpoint name in `viewpoint`.
+- `View` can retain a reference to a model-defined viewpoint definition in `viewpointRef`.
+- `Views` can retain a `Viewpoints` container with viewpoint definitions, concerns, stakeholders,
+  purpose, content, allowed element types, allowed relationship types, and modeling notes.
+- `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
+  host tooling. Supported purpose values are `Designing`, `Deciding`, and `Informing`; supported
+  content values are `Details`, `Coherence`, and `Overview`.
+
+The MEFF 4.0 XSD is still required before claiming official ArchiMate 4 exchange conformance for this
+serialization surface.
+
 ## Element Catalog
 
 The official ArchiMate 4 element count is 42. The implementation profile must match this count for
