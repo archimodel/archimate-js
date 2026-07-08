@@ -48,10 +48,18 @@ test('connection rules evaluate relationships through the active language profil
   assert.match(source, /ArchimateRules\.\$inject = \[ 'eventBus', 'languageProfile' \]/);
   assert.match(source, /this\._languageProfile = languageProfile/);
   assert.match(source, /var profile = this\._languageProfile && this\._languageProfile\.get\(\)/);
+  assert.match(source, /getRelationshipConceptAggregationType\(source, target, profile\)/);
   assert.match(source, /canConnect\(source, target, connection, profile\)/);
   assert.match(source, /isRelationshipConnectedToJunction\(\{ source: source, target: target \}\)/);
   assert.match(source, /isJunctionRelationshipTypeAllowed\(source, target, connection\.type, connection, isRelationshipAllowed, profile\)/);
   assert.match(source, /isRelationshipAllowed\(source\.type, target\.type, connection\.type, profile\)/);
+});
+
+test('connection popup includes ArchiMate 4 relationship-concept aggregation helper', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  assert.match(source, /getRelationshipConceptAggregationType\(source, target, profile\)/);
+  assert.match(source, /return aggregationType !== excludedRelationType \? \[ aggregationType \] : \[\]/);
 });
 
 test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {

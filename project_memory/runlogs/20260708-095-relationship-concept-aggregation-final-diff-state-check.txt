@@ -1,0 +1,7 @@
+commands:
+- git diff --check
+- node -e "JSON.parse(require('fs').readFileSync('project_memory/state/aria_state.json','utf8')); console.log('state json ok')"
+exit_code: 0
+output:
+- git diff --check: none
+- state json ok

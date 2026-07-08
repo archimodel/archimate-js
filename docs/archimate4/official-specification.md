@@ -104,7 +104,8 @@ Junction requirements:
   between the endpoint concepts.
 - Junctions may represent and-semantics or or-semantics. The modeler may name a junction to make
   inclusive/exclusive choice intent clearer.
-- A junction may be aggregated in a `Plateau`, `Grouping`, or `Location`.
+- `Grouping` and `Location` may aggregate relationship concepts, including relationships and
+  junctions.
 - Multiplicity must not be applied to a relationship end connected to a junction.
 
 Implementation note:
@@ -267,6 +268,13 @@ Implemented migration guard:
   `Function` as an alternative replacement type.
 - `ImplementationEvent` migration preserves the original type as specialization metadata when
   migrating to `Event`.
+
+Implemented relationship-concept aggregation guard:
+
+- In ArchiMate 4 mode, `Grouping` and `Location` can create or keep `Aggregation` relationships to
+  relationship concepts, including relationship connections and `AndJunction` / `OrJunction`.
+- The helper is intentionally narrower than the full Appendix B.6 table because the complete
+  relationship table is still supplied externally.
 
 ## Source Trace
 

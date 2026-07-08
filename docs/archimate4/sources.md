@@ -106,6 +106,16 @@
 - The endpoint check improves conformance when an external Appendix B profile is loaded, while the
   default fallback remains compatibility-derived until official data can be supplied.
 
+## Relationship Concept Aggregation Guard
+
+- C260 Appendix B.6 covers additional relationship rules for grouping, location, plateau,
+  relationships, and junctions.
+- The currently implemented derived rule is intentionally narrow: in ArchiMate 4 mode, `Grouping` and
+  `Location` may create or keep an `Aggregation` relationship to relationship concepts, including
+  relationship connections and `AndJunction` / `OrJunction`.
+- `Plateau` and the rest of the Appendix B.6 table still depend on the external Appendix B profile path
+  rather than a committed verbatim table.
+
 ## Multiplicity Notation Guard
 
 - C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite

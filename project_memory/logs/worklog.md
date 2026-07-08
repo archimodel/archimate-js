@@ -145,3 +145,16 @@
 - Docs: README and `docs/archimate4/*` now document the Appendix E migration correction.
 - Verification: `npm run test:language` passed with 44 tests in `project_memory/runlogs/20260708-086-migration-appendix-e-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-087-migration-appendix-e-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-088-migration-appendix-e-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-090-migration-appendix-e-final-diff-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 15
+
+- Goal: implement a narrow C260 Appendix B.6 relationship-concept aggregation rule without embedding the Appendix B table.
+- Source check: pypdf/pdfplumber checks of C260 pages 167-170 recorded only derived facts in `project_memory/runlogs/20260708-094-appendix-b6-relationship-concept-aggregation-source-check.txt`.
+- Implemented: `JunctionUtil` now exposes a profile-gated ArchiMate 4 helper that allows `Grouping` and `Location` to aggregate relationship concepts, including relationship connections and `AndJunction` / `OrJunction`.
+- Implemented: `ArchimateRules` uses the helper during connection create and reconnect validation.
+- Implemented: `ConnectionMenuProvider` uses the helper when computing relationship type choices.
+- Guardrail: `Plateau` and the rest of Appendix B.6 remain external profile/table-driven; the helper deliberately does not generalize the full table.
+- Tests: added direct helper coverage and source guards for the rules/menu integration.
+- Docs: README and `docs/archimate4/*` now describe the implemented narrow B.6 guard and remove the earlier over-broad Plateau aggregation wording.
+- Verification: `npm run test:language` passed with 46 tests in `project_memory/runlogs/20260708-091-relationship-concept-aggregation-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-092-relationship-concept-aggregation-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-093-relationship-concept-aggregation-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-095-relationship-concept-aggregation-final-diff-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

@@ -1,0 +1,8 @@
+command: Python pypdf keyword scan of C:\Users\syska\Downloads\978940181474E.pdf pages 167-170
+exit_code: 0
+derived_facts:
+- C260 Appendix B.6 covers Grouping, Plateau, and relationships between relationships.
+- Grouping and Location may aggregate concepts, including relationships and junctions.
+- The implementation keeps this as a narrow ArchiMate 4 helper rule instead of embedding Appendix B tables.
+- Plateau and the rest of Appendix B.6 remain table/profile-driven and are not generalized by this helper.
+note: no verbatim C260 table or paragraph text is stored in this runlog.

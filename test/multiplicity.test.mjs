@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import {
   canApplyRelationshipMultiplicity,
   getJunctionRelationshipTypeCandidates,
+  getRelationshipConceptAggregationType,
   isJunctionRelationshipTypeAllowed,
   isRelationshipConnectedToJunction
 } from '../lib/util/JunctionUtil.js';
@@ -106,6 +107,51 @@ test('junction-connected relationships cannot carry multiplicity', () => {
   assert.equal(isRelationshipConnectedToJunction(importedJunctionConnection), true);
   assert.equal(canApplyRelationshipMultiplicity(directJunctionConnection), false);
   assert.equal(canApplyRelationshipMultiplicity(importedJunctionConnection), false);
+});
+
+test('archimate 4 grouping and location aggregate relationship concepts', () => {
+  const archimate4Profile = { version: '4.0' };
+  const archimate3Profile = { version: '3.2' };
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'Grouping' },
+    { type: 'Serving' },
+    archimate4Profile
+  ), 'Aggregation');
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'Location' },
+    {
+      businessObject: {
+        relationshipRef: { type: 'Flow' }
+      }
+    },
+    archimate4Profile
+  ), 'Aggregation');
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'Grouping' },
+    { type: 'Serving' },
+    archimate3Profile
+  ), null);
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'BusinessActor' },
+    { type: 'Serving' },
+    archimate4Profile
+  ), null);
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'Grouping' },
+    { type: 'BusinessActor' },
+    archimate4Profile
+  ), null);
+
+  assert.equal(getRelationshipConceptAggregationType(
+    { type: 'Plateau' },
+    { type: 'AndJunction' },
+    archimate4Profile
+  ), null);
 });
 
 test('junction relationship candidates follow existing relationship type', () => {

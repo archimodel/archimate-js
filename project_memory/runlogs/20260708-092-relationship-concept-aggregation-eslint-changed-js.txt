@@ -1,0 +1,3 @@
+command: npx eslint lib\util\JunctionUtil.js lib\features\rules\ArchimateRules.js lib\features\popup-menu\ConnectionMenuProvider.js test\multiplicity.test.mjs test\relationship-rules.test.mjs
+exit_code: 0
+output: none
