@@ -1,0 +1,6 @@
+
+D:\github\archimate-js\lib\import\Importer.js
+  117:1  error  Expected indentation of 8 spaces but found 7  indent
+
+✖ 1 problem (1 error, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.

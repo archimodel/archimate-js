@@ -168,6 +168,14 @@
   including custom specialized concepts and relationships already merged into that profile.
 - Example viewpoints remain informative and are not embedded as normative data.
 
+## View Nesting Notation
+
+- A local C260 Chapter 3.7 nesting keyword scan is recorded in
+  `project_memory/runlogs/20260709-297-c260-nesting-notation-source-scan.txt`.
+- Imported nested `Node` view elements are now added under their parent diagram shape instead of being
+  added to the root and marked with `host`. This preserves the visual nesting notation while keeping
+  relationship semantics explicit.
+
 ## Model Organization Tree
 
 - A public ArchiMate 3.1 Model/View XSD organization check is recorded in

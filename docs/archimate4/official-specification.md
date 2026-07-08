@@ -136,6 +136,13 @@ Supported mechanism:
 The MEFF 4.0 XSD is still required before claiming official ArchiMate 4 exchange conformance for this
 serialization surface.
 
+## View Nesting
+
+C260 allows visual nesting as a notation technique. The importer must preserve nested `Node` view
+elements as diagram parent-child shapes so the visual containment survives model loading. The nested
+notation remains visual; relationship semantics are still handled by explicit relationships and the
+active relationship profile.
+
 ## Model Organization Tree
 
 C260 references model organization support as part of model structuring. Until the MEFF 4.0 XSD is

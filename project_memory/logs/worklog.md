@@ -921,3 +921,18 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-295-association-direction-actions-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-296-association-direction-actions-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
 - Audit: `project_memory/audit/reports/20260709-association-direction-actions-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 75
+
+- Goal: preserve C260-derived visual nesting notation when importing nested `Node` view elements.
+- Source scan: `project_memory/runlogs/20260709-297-c260-nesting-notation-source-scan.txt` records a non-verbatim C260 Chapter 3.7 nesting/visual notation scan.
+- Red test: `project_memory/runlogs/20260709-298-nested-node-import-red-test.txt` failed because nested view nodes were added to the root and linked to parents with `shape.host`.
+- Implemented: `lib/import/Importer.js` now recurses with the current parent shape and adds each nested view node under that parent shape.
+- Implemented: the obsolete root-shape recursion and `shape.host` assignment path was removed, so imported diagram containment reflects the nested view `Node` structure.
+- Tests/docs: `test/importer.test.mjs`, README, and `docs/archimate4` now guard and describe view nesting import preservation without treating visual nesting as relationship semantics.
+- Audit registry: scoped ESLint now includes `lib/import/Importer.js`.
+- Verification: focused importer test passed in `project_memory/runlogs/20260709-299-nested-node-import-test.txt`; `npm run test:language` passed with 133 tests in `project_memory/runlogs/20260709-300-nested-node-import-test-language.txt`; focused Importer/test ESLint passed in `project_memory/runlogs/20260709-302-nested-node-import-eslint-importer-pass.txt`; updated registry scoped ESLint passed in `project_memory/runlogs/20260709-308-nested-node-import-eslint-registry-updated.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-303-nested-node-import-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-304-nested-node-import-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-305-nested-node-import-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-307-nested-node-import-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-309-nested-node-import-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-310-nested-node-import-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-nested-node-import-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -1,0 +1,198 @@
+✖ importer preserves nested view nodes as diagram parent-child shapes (7.1887ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.9399
+
+✖ failing tests:
+
+test at test\importer.test.mjs:5:1
+✖ importer preserves nested view nodes as diagram parent-child shapes (7.1887ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /shape\.host = parentShape/. Input:
+
+  'import {\n' +
+    '  elementToString\n' +
+    "} from './Util';\n" +
+    '\n' +
+    "import { logger } from '../util/Logger';\n" +
+    "import { is } from '../util/ModelUtil';\n" +
+    "import { ARCHIMATE_CONNECTION } from '../metamodel/Concept';\n" +
+    '\n' +
+    '/**\n' +
+    ' * The displayGraphicalView result.\n' +
+    ' *\n' +
+    ' * @typedef {Object} importArchimateDiagramResult\n' +
+    ' *\n' +
+    ' * @property {Array<string>} warnings\n' +
+    ' */\n' +
+    '\n' +
+    '/**\n' +
+    '* The displayGraphicalView error.\n' +
+    '*\n' +
+    '* @typedef {Error} importArchimateDiagramError\n' +
+    '*\n' +
+    '* @property {Array<string>} warnings\n' +
+    '*/\n' +
+    '\n' +
+    '/**\n' +
+    ' * Import the definitions into a BaseViewer (inherits from diagram-js).\n' +
+    ' *\n' +
+    ' * Errors and warnings are reported through the specified callback.\n' +
+    ' *\n' +
+    ' * @param  {BaseViewer} baseViewer\n' +
+    ' * @param  {ModdleElement<Model>} model\n' +
+    ' * @param  {ModdleElement<View>} [view] the archimate view to be rendered (if not provided, the first one will be rendered)\n' +
+    ' *\n' +
+    ' * Returns {Promise<importArchimateDiagramResult, importArchimateDiagramError>}\n' +
+    ' */\n' +
+    'export function displayGraphicalView(baseViewer, model, view) {\n' +
+    '\n' +
+    '  var ArchimateImporter,\n' +
+    '      eventBus,\n' +
+    '      translate;\n' +
+    '\n' +
+    '  var error,\n' +
+    '      warnings = [];\n' +
+    '\n' +
+    '  function renderViewElements(model, viewId) {\n' +
+    '\n' +
+    "    logger.log('renderViewElements(model, viewId)');\n" +
+    '    logger.log({ model, viewId });\n' +
+    '\n' +
+    '    // get all views from the model\n' +
+    '    var viewsList = model.views.diagrams.viewsList,\n' +
+    '        view;\n' +
+    '\n' +
+    '    // verify that model has view(s)\n' +
+    '    if (viewId && viewsList.indexOf(viewId) === -1) {\n' +
+    "      throw new Error(translate('can\\'t find this view { viewId } in model'));\n" +
+    '    }\n' +
+    '\n' +
+    '    // select the first view of the model if viewId parameter is undefined\n' +
+    '    if (!viewId && viewsList && viewsList.length) {\n' +
+    '      view = viewsList[0];\n' +
+    '    }\n' +
+    '\n' +
+    '    // no view -> nothing to display\n' +
+    '    if (!view) {\n' +
+    "      throw new Error(translate('no view to display'));\n" +
+    '    }\n' +
+    '\n' +
+    "    logger.log('found a view to display:');\n" +
+    '    logger.log(view);\n' +
+    '\n' +
+    '    var rootShape = ArchimateImporter.addRoot(view, model);\n' +
+    '\n' +
+    '    if (view.viewElements) {\n' +
+    '      var tempered = [];\n' +
+    '\n' +
+    '      for (const viewElement of view.viewElements) {\n' +
+    '        if (is(viewElement, ARCHIMATE_CONNECTION)) {\n' +
+    '          tempered.push(viewElement);\n' +
+    '\n' +
+    '        } else {\n' +
+    '          try {\n' +
+    "            logger.log('viewElement');\n" +
+    '            logger.log(viewElement);\n' +
+    '\n' +
+    '            exploreNodeTree(viewElement, rootShape, rootShape);\n' +
+    '\n' +
+    '\n' +
+    '          } catch (e) {\n' +
+    '            throw createImportError(e, viewElement);\n' +
+    '          }\n' +
+    '        }\n' +
+    '      }\n' +
+    '\n' +
+    '      for (const connectionElement of tempered) {\n' +
+    '        try {\n' +
+    '\n' +
+    "          logger.log('connectionElement');\n" +
+    '          logger.log(connectionElement);\n' +
+    '\n' +
+    '          ArchimateImporter.addConnection(connectionElement);\n' +
+    '\n' +
+    '        } catch (e) {\n' +
+    '          throw createImportError(e, connectionElement);\n' +
+    '        }\n' +
+    '      }\n' +
+    '\n' +
+    '    }\n' +
+    '\n' +
+    '    /* function exploreNodeTree(viewElement, parentShape) {\n' +
+    '\n' +
+    '      var shape = ArchimateImporter.addElement(viewElement, parentShape);\n' +
+    '\n' +
+    '      if (viewElement.nodes) {\n' +
+    '        for (const node of viewElement.nodes) {\n' +
+    '          exploreNodeTree(node, shape);\n' +
+    '       }\n' +
+    '      }\n' +
+    '    }*/\n' +
+    '\n' +
+    '    function exploreNodeTree(viewElement, parentShape, rootShape) {\n' +
+    '\n' +
+    '      var shape = ArchimateImporter.addElement(viewElement, rootShape);\n' +
+    '      shape.host = parentShape;\n' +
+    '\n' +
+    '      if (viewElement.nodes) {\n' +
+    '        for (const node of viewElement.nodes) {\n' +
+    '          exploreNodeTree(node, shape, rootShape);\n' +
+    '        }\n' +
+    '      }\n' +
+    '    }\n' +
+    '\n' +
+    '\n' +
+    '  }\n' +
+    '\n' +
+    '  return new Promise(function(resolve, reject) {\n' +
+    '    try {\n' +
+    '\n' +
+    '      // init ArchimateImporter, eventBus and translate from baseViewer\n' +
+    "      ArchimateImporter = baseViewer.get('ArchimateImporter');\n" +
+    "      eventBus = baseViewer.get('eventBus');\n" +
+    "      translate = baseViewer.get('translate');\n" +
+    '\n' +
+    "      // eventBus.fire('import.render.start', { definitions: definitions });\n" +
+    "      eventBus.fire('import.render.start', { model: model });\n" +
+    '\n' +
+    '      // render(model, view);\n' +
+    '      renderViewElements(model, view);\n' +
+    '\n' +
+    "      eventBus.fire('import.render.complete', {\n" +
+    '        error: error,\n' +
+    '        warnings: warnings\n' +
+    '      });\n' +
+    '\n' +
+    '      return resolve({ warnings: warnings });\n' +
+    '    } catch (e) {\n' +
+    '      return reject(e);\n' +
+    '    }\n' +
+    '  });\n' +
+    '}\n' +
+    '\n' +
+    'function createImportError(error, element) {\n' +
+    "  var message = 'failed to import ' + elementToString(element) + ': ' + error.message;\n" +
+    '  var importError = new Error(message);\n' +
+    '\n' +
+    '  importError.warnings = (error.warnings || []).concat([ message ]);\n' +
+    '  importError.error = error;\n' +
+    '\n' +
+    '  return importError;\n' +
+    '}\n' +
+    '\n'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/importer.test.mjs:11:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import {\n  elementToString\n} from './Util';\n\nimport { logger } from '../util/Logger';\nimport { is } from '../util/ModelUtil';\nimport { ARCHIMATE_CONNECTION } from '../metamodel/Concept';\n\n/**\n * The displayGraphicalView result.\n *\n * @typedef {Object} importArchimateDiagramResult\n *\n * @property {Array<string>} warnings\n */\n\n/**\n* The displayGraphicalView error.\n*\n* @typedef {Error} importArchimateDiagramError\n*\n* @property {Array<string>} warnings\n*/\n\n/**\n * Import the definitions into a BaseViewer (inherits from diagram-js).\n *\n * Errors and warnings are reported through the specified callback.\n *\n * @param  {BaseViewer} baseViewer\n * @param  {ModdleElement<Model>} model\n * @param  {ModdleElement<View>} [view] the archimate view to be rendered (if not provided, the first one will be rendered)\n *\n * Returns {Promise<importArchimateDiagramResult, importArchimateDiagramError>}\n */\nexport function displayGraphicalView(baseViewer, model, view) {\n\n  var ArchimateImporter,\n      eventBus,\n      translate;\n\n  var error,\n      warnings = [];\n\n  function renderViewElements(model, viewId) {\n\n    logger.log('renderViewElements(model, viewId)');\n    logger.log({ model, viewId });\n\n    // get all views from the model\n    var viewsList = model.views.diagrams.viewsList,\n        view;\n\n    // verify that model has view(s)\n    if (viewId && viewsList.indexOf(viewId) === -1) {\n      throw new Error(translate('can\\'t find this view { viewId } in model'));\n    }\n\n    // select the first view of the model if viewId parameter is undefined\n    if (!viewId && viewsList && viewsList.length) {\n      view = viewsList[0];\n    }\n\n    // no view -> nothing to display\n    if (!view) {\n      throw new Error(translate('no view to display'));\n    }\n\n    logger.log('found a view to display:');\n    logger.log(view);\n\n    var rootShape = ArchimateImporter.addRoot(view, model);\n\n    if (view.viewElements) {\n      var tempered = [];\n\n      for (const viewElement of view.viewElements) {\n        if (is(viewElement, ARCHIMATE_CONNECTION)) {\n          tempered.push(viewElement);\n\n        } else {\n          try {\n            logger.log('viewElement');\n            logger.log(viewElement);\n\n            exploreNodeTree(viewElement, rootShape, rootShape);\n\n\n          } catch (e) {\n            throw createImportError(e, viewElement);\n          }\n        }\n      }\n\n      for (const connectionElement of tempered) {\n        try {\n\n          logger.log('connectionElement');\n          logger.log(connectionElement);\n\n          ArchimateImporter.addConnection(connectionElement);\n\n        } catch (e) {\n          throw createImportError(e, connectionElement);\n        }\n      }\n\n    }\n\n    /* function exploreNodeTree(viewElement, parentShape) {\n\n      var shape = ArchimateImporter.addElement(viewElement, parentShape);\n\n      if (viewElement.nodes) {\n        for (const node of viewElement.nodes) {\n          exploreNodeTree(node, shape);\n       }\n      }\n    }*/\n\n    function exploreNodeTree(viewElement, parentShape, rootShape) {\n\n      var shape = ArchimateImporter.addElement(viewElement, rootShape);\n      shape.host = parentShape;\n\n      if (viewElement.nodes) {\n        for (const node of viewElement.nodes) {\n          exploreNodeTree(node, shape, rootShape);\n        }\n      }\n    }\n\n\n  }\n\n  return new Promise(function(resolve, reject) {\n    try {\n\n      // init ArchimateImporter, eventBus and translate from baseViewer\n      ArchimateImporter = baseViewer.get('ArchimateImporter');\n      eventBus = baseViewer.get('eventBus');\n      translate = baseViewer.get('translate');\n\n      // eventBus.fire('import.render.start', { definitions: definitions });\n      eventBus.fire('import.render.start', { model: model });\n\n      // render(model, view);\n      renderViewElements(model, view);\n\n      eventBus.fire('import.render.complete', {\n        error: error,\n        warnings: warnings\n      });\n\n      return resolve({ warnings: warnings });\n    } catch (e) {\n      return reject(e);\n    }\n  });\n}\n\nfunction createImportError(error, element) {\n  var message = 'failed to import ' + elementToString(element) + ': ' + error.message;\n  var importError = new Error(message);\n\n  importError.warnings = (error.warnings || []).concat([ message ]);\n  importError.error = error;\n\n  return importError;\n}\n\n",
+    expected: /shape\.host = parentShape/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }

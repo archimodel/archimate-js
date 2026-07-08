@@ -87,6 +87,7 @@ const modeler = new Modeler({
 * Profile attribute values can be normalized and validated for the implementation-supported types `String`, `Integer`, `Real`, `Boolean`, `Currency`, `Date`, `URL`, `Time`, and `Structure`.
 * Profile attribute value helpers store values as reusable model `PropertyDefinition` entries named `archimate-js:profileAttribute:<concept>:<name>` plus per-concept `Properties`, preserving typed values without adding non-standard element fields.
 * Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.
+* View node nesting is preserved during import by adding nested `Node` view elements under their parent diagram shape.
 * Model organization trees can be retained through `organizationsNode`, with nested `Organization` entries and optional references back to model concepts.
 * Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.
 * 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.

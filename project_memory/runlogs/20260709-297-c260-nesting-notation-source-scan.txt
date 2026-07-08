@@ -1,0 +1,4 @@
+C260 nesting notation non-verbatim scan
+pdf_exists=True pages=207
+page 37: visual=1, notation=14, relationship=2
+page 38: nesting=4, nest=4, visual=1, notation=5, relationship=2, color=5, cue=2
