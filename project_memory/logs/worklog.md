@@ -864,3 +864,19 @@
 - Final record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-242-profile-attribute-property-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-243-profile-attribute-property-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
 - Audit: `project_memory/audit/reports/20260709-profile-attribute-property-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 71
+
+- Goal: close a moddle descriptor completeness gap for model organization trees while preserving the current ArchiMate 3.x descriptor behavior.
+- Source scan: `project_memory/runlogs/20260709-246-c260-gap-scan.txt` identified organization/folder support as an implementation gap candidate; `project_memory/runlogs/20260709-247-official-xsd-organization-source-check.txt` records non-verbatim public 3.1 schema identifiers for nested organization items and identifier references.
+- Red test: `project_memory/runlogs/20260709-248-organization-descriptor-red-test.txt` failed because `Model.organizationsNode` referenced the undefined `Organizations` type and organization-tree parsing had no target descriptor type.
+- Implemented: `lib/moddle/resources/archimate.json`, `archimate3.json`, and `archimate4.json` now define `Organizations` and recursive `Organization` descriptor types.
+- Implemented: `Organization` can carry inherited name/documentation data, nested organization entries, and an optional `identifierRef` reference to a model concept.
+- Tests: `test/xml-roundtrip.test.mjs` now verifies that all descriptor complex-type references resolve and that ArchiMate 4 organization trees resolve through moddle XML.
+- Docs: README and `docs/archimate4` now describe organization tree retention and keep the exact ArchiMate 4 XML element-name boundary tied to the unavailable MEFF 4.0 XSD.
+- Verification: `npm run test:language` passed with 126 tests in `project_memory/runlogs/20260709-250-organization-descriptor-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-251-organization-descriptor-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-252-organization-descriptor-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-253-organization-descriptor-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-255-organization-descriptor-git-diff-check-pass.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-256-organization-descriptor-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: descriptor/state/audit JSON parsed in `project_memory/runlogs/20260709-257-organization-descriptor-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-258-organization-descriptor-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
+- Post-record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-259-organization-descriptor-post-record-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-260-organization-descriptor-post-record-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
+- Audit: `project_memory/audit/reports/20260709-organization-descriptor-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

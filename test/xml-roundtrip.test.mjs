@@ -18,6 +18,22 @@ function findProperty(type, name) {
   return type.properties.find((property) => property.name === name);
 }
 
+function getDescriptorTypeReferences(descriptor) {
+  const primitiveTypes = new Set([ 'String', 'Boolean', 'Integer', 'Real' ]);
+  const typeNames = new Set(descriptor.types.map((type) => type.name));
+  const references = [];
+
+  for (const type of descriptor.types) {
+    for (const property of type.properties || []) {
+      if (property.type && !primitiveTypes.has(property.type) && !typeNames.has(property.type)) {
+        references.push(type.name + '.' + property.name + ' -> ' + property.type);
+      }
+    }
+  }
+
+  return references;
+}
+
 async function readModel(path, xml) {
   const descriptor = await readDescriptor(path);
   const model = new Moddle({ archimate: descriptor });
@@ -75,6 +91,56 @@ test('archimate 4 descriptor stores viewpoint definitions and view references', 
   assert.equal(findProperty(viewpoint, 'viewpointContent').type, 'String');
   assert.equal(findProperty(viewpoint, 'allowedElementTypes').type, 'AllowedElementType');
   assert.equal(findProperty(viewpoint, 'allowedRelationshipTypes').type, 'AllowedRelationshipType');
+});
+
+test('archimate descriptors resolve every declared complex type reference', async () => {
+  for (const descriptorPath of [
+    '../lib/moddle/resources/archimate.json',
+    '../lib/moddle/resources/archimate3.json',
+    '../lib/moddle/resources/archimate4.json'
+  ]) {
+    const descriptor = await readDescriptor(descriptorPath);
+
+    assert.deepEqual(getDescriptorTypeReferences(descriptor), [], descriptorPath);
+  }
+});
+
+test('archimate 4 descriptor stores organization trees', async () => {
+  const descriptor = await readDescriptor('../lib/moddle/resources/archimate4.json');
+  const model = findType(descriptor, 'Model');
+  const organizations = findType(descriptor, 'Organizations');
+  const organization = findType(descriptor, 'Organization');
+
+  assert.equal(findProperty(model, 'organizationsNode').type, 'Organizations');
+  assert.equal(findProperty(organizations, 'organizations').type, 'Organization');
+  assert.equal(findProperty(organization, 'organizations').type, 'Organization');
+  assert.equal(findProperty(organization, 'identifierRef').isReference, true);
+});
+
+test('archimate 4 organization trees resolve through moddle xml', async () => {
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<archimate:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.opengroup.org/xsd/archimate/4.0/">
+  <archimate:Elements>
+    <archimate:BaseElement id="role-1" xsi:type="archimate:BaseElement">
+      <name>Role</name>
+    </archimate:BaseElement>
+  </archimate:Elements>
+  <archimate:Organizations>
+    <archimate:Organization id="organization-1" identifierRef="role-1">
+      <name>Actors</name>
+      <archimate:Organization id="organization-2">
+        <name>Nested</name>
+      </archimate:Organization>
+    </archimate:Organization>
+  </archimate:Organizations>
+</archimate:Model>`;
+
+  const result = await readModel('../lib/moddle/resources/archimate4.json', xml);
+  const rootOrganization = result.rootElement.organizationsNode.organizations[0];
+
+  assert.equal(rootOrganization.id, 'organization-1');
+  assert.equal(rootOrganization.identifierRef.id, 'role-1');
+  assert.equal(rootOrganization.organizations[0].id, 'organization-2');
 });
 
 test('archimate 4 viewpoint references resolve through moddle xml', async () => {

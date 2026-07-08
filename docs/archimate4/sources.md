@@ -168,6 +168,17 @@
   including custom specialized concepts and relationships already merged into that profile.
 - Example viewpoints remain informative and are not embedded as normative data.
 
+## Model Organization Tree
+
+- A public ArchiMate 3.1 Model/View XSD organization check is recorded in
+  `project_memory/runlogs/20260709-247-official-xsd-organization-source-check.txt`; it records only
+  schema identifiers and derived facts.
+- The local current, 3.x, and 4.0 moddle descriptors now resolve the existing
+  `Model.organizationsNode` reference to concrete `Organizations` and `Organization` types.
+- Organization entries can be nested and can optionally reference a model concept through
+  `identifierRef`. The ArchiMate 4 XML surface remains experimental until the MEFF 4.0 XSD confirms
+  exact element names.
+
 ## Appendix E Migration Correction
 
 - C260 Appendix E guidance is reflected in `lib/metamodel/languages/retired-concepts.js`.

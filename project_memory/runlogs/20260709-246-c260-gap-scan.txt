@@ -1,0 +1,19 @@
+C260 gap scan
+source=C:\Users\syska\Downloads\978940181474E.pdf
+note=non-verbatim scan; no table of contents or normative prose copied
+pages=207
+keyword_signals=
+- Specializations of Relationships: present around Chapter 14 pages.
+- Specialization profile: present around Chapter 14 pages.
+- Viewpoint mechanism: present around Chapter 13 and Appendix C pages.
+- Organizations / Organization: present in multiple model-structure and example contexts.
+- Property / profile attribute: present around definition, business-object, and customization contexts.
+- Multiplicity: present in relationships chapter and Appendix A context.
+- Valid derivation / potential derivation: present in relationship-derivation and Appendix B contexts.
+- Access / directed / modifier: present in relationship-option contexts.
+derived_gap_candidates=
+- Recheck viewpoint details because purpose/content and modeling-note constraints are implementation-defined but testable.
+- Recheck organization tree support because the local descriptors referenced Organizations while tests only covered viewpoint containers.
+- Recheck specialization/profile attribute support for duplicate identity and profile-value persistence edge cases.
+selected_gap=
+- organization tree support, because it is testable through descriptor completeness and local moddle XML parsing without embedding Appendix B tables or relying on the unavailable MEFF 4.0 XSD.

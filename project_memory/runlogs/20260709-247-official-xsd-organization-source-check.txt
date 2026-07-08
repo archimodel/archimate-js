@@ -1,0 +1,17 @@
+official ArchiMate 3.1 organization source check
+source=https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd
+status=200
+note=non-verbatim derived source log; schema identifiers only
+observed_identifiers=
+- Model contains an optional organizations element typed as OrganizationsType.
+- OrganizationsType contains one or more item elements typed as OrganizationType.
+- OrganizationType can contain nested item elements typed as OrganizationType.
+- OrganizationType carries optional identifier and optional identifierRef attributes.
+- The model schema declares a uniqueness constraint over organization item identifiers.
+source=https://www.opengroup.org/xsd/archimate/3.1/archimate3_View.xsd
+status=200
+observed_identifiers=
+- ViewpointEnum includes an Organization viewpoint token, separate from model organizations.
+derived_gap=
+- Local moddle descriptors referenced Organizations but did not define Organizations/Organization item types.
+- ArchiMate 4 MEFF XSD is still unavailable, so the 4.0 descriptor should use the same conservative structure already published for 3.1 while retaining experimental XML status.

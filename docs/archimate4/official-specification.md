@@ -136,6 +136,20 @@ Supported mechanism:
 The MEFF 4.0 XSD is still required before claiming official ArchiMate 4 exchange conformance for this
 serialization surface.
 
+## Model Organization Tree
+
+C260 references model organization support as part of model structuring. Until the MEFF 4.0 XSD is
+available, this repository uses the public ArchiMate 3.1 model schema structure as the conservative
+exchange reference for local descriptor support.
+
+Implemented support:
+
+- `Model.organizationsNode` resolves to a concrete `Organizations` descriptor type in the current,
+  3.x, and 4.0 moddle descriptors.
+- `Organizations` can contain repeated `Organization` entries.
+- `Organization` can carry a name, documentation, nested organizations, and an optional
+  `identifierRef` reference to a model concept.
+
 ## Element Catalog
 
 The official ArchiMate 4 element count is 42. The implementation profile must match this count for

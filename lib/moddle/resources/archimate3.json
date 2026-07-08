@@ -112,6 +112,31 @@
         }
       ]
     },
+    { "name": "Organizations",
+      "properties": [
+        {
+          "name": "organizations",
+          "isMany": true,
+          "type": "Organization"
+        }
+      ]
+    },
+    { "name": "Organization",
+      "superClass": ["BaseObject"],
+      "properties": [
+        {
+          "name": "identifierRef",
+          "isReference": true,
+          "type": "Concept",
+          "isAttr": true
+        },
+        {
+          "name": "organizations",
+          "isMany": true,
+          "type": "Organization"
+        }
+      ]
+    },
     { "name": "PropertyDefinitions",
       "properties": [
         {

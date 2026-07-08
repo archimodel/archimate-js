@@ -1,0 +1,2 @@
+lib/moddle/resources/archimate.json:443: trailing whitespace.
++
