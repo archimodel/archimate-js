@@ -179,12 +179,23 @@ conformance.
 
 Required implementation direction:
 
-- Create a dedicated official ArchiMate 4 relationship profile from Appendix B, or load it from a
-  user-supplied licensed profile artifact.
+- Load a dedicated official ArchiMate 4 relationship profile from Appendix B through
+  `setArchimate4RelationshipProfile(profile)`, or replace the fallback with derived non-verbatim data
+  after redistribution rights are confirmed.
 - Do not commit a verbatim copy of the licensed Appendix B tables unless redistribution rights are
   explicitly confirmed.
 - Keep tests focused on derived facts: no retired elements in source/target sets, interfaces preserved,
   junction restrictions, and matrix replacement point behavior.
+
+External profile contract:
+
+- Accepted shapes are a nested object, a `Map` of source-to-target maps, or row arrays.
+- Source and target element types must be members of the C260-derived 42-element catalog.
+- Relationship values may use the local one-letter codes (`s`, `c`, `g`, `i`, `r`, `v`, `a`, `n`, `t`,
+  `f`, `o`) or relationship names.
+- The default public loader requires source coverage for every ArchiMate 4 element; sources with no
+  outgoing relationships must still be represented with an empty target map.
+- Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements
 

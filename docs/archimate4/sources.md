@@ -19,7 +19,9 @@
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
 - Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.
-- Because redistribution rights for Appendix B relationship tables are not confirmed, `lib/metamodel/languages/archimate4-relationships.js` remains the replacement point for a user-supplied official relationship profile or derived non-verbatim implementation data.
+- Because redistribution rights for Appendix B relationship tables are not confirmed, this repository
+  does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement
+  point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
 
 ## Current Public Release Notes Captured
 
@@ -48,11 +50,32 @@
 - Domain-specific `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` are preserved
   as ArchiMate 4 elements and are not migrated to a generic interface.
 
+## Appendix B Relationship Profile Loading
+
+- The default ArchiMate 4 relationship rules remain compatibility-derived from the existing 3.x maps
+  until a licensed Appendix B profile artifact is supplied.
+- `lib/metamodel/languages/relationship-profile-loader.js` validates external relationship profiles
+  against the C260-derived 42-element catalog and the 11 supported relationship types.
+- The public entrypoint exports `setArchimate4RelationshipProfile(profile)` and
+  `getArchimate4RelationshipProfileStatus()`.
+- The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
+  replacing the active relationship map.
+
 ## XML Exchange Decision
 
 - `archimateVersion: "3.2"` continues to write the current 3.x namespace.
 - `archimateVersion: "4.0"` writes an internal ArchiMate 4 namespace and source/target multiplicity attributes.
 - 4.0 XML export is marked experimental until the corresponding ArchiMate 4 Model Exchange File Format XSD is confirmed.
+
+## Current XSD Directory Check
+
+- Checked `https://www.opengroup.org/xsd/archimate/` on 2026-07-08.
+- The directory returned links for ArchiMate 3.1 model/view/diagram schemas, examples, and related
+  pages.
+- `https://www.opengroup.org/xsd/archimate/4.0/` returned 404.
+- `https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd` returned 404.
+- `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd` returned 200 and remains the
+  public XSD reference currently covered by local tests.
 
 ## ArchiMate 3.1 XSD Verification
 

@@ -1,0 +1,8 @@
+
+Url                                                              StatusCode ContentType
+---                                                              ---------- -----------
+https://www.opengroup.org/xsd/archimate/                                200 {text/html; charset=UTF-8}
+https://www.opengroup.org/xsd/archimate/4.0/                            404 
+https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd        404 
+https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd        200 {text/xml}
+

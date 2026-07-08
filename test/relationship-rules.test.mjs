@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import {
+  getRelationshipProfileStats,
+  normalizeRelationshipProfile
+} from '../lib/metamodel/languages/relationship-profile-loader.js';
 
 async function readJson(path) {
   const text = await readFile(new URL(path, import.meta.url), 'utf8');
@@ -19,8 +23,89 @@ test('archimate 4 relationship profile has no retired source or target concepts'
 
 test('archimate 4 relationship fallback is compatibility-derived and replaceable', async () => {
   const source = await readFile(new URL('../lib/metamodel/languages/archimate4-relationships.js', import.meta.url), 'utf8');
+  const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
 
   assert.match(source, /buildFallbackRelationships/);
-  assert.match(source, /setArchimate4RelationshipMapForTests/);
+  assert.match(source, /setArchimate4RelationshipProfile/);
+  assert.match(source, /normalizeRelationshipProfile/);
+  assert.match(source, /getArchimate4RelationshipProfileStatus/);
   assert.match(source, /toArchimate4Type/);
+  assert.match(entrypoint, /setArchimate4RelationshipProfile/);
+  assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
+});
+
+test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role',
+    'Service'
+  ]);
+  const maps = normalizeRelationshipProfile({
+    sources: {
+      BusinessActor: {
+        Role: [ 'Assignment', 'Serving', 'i' ],
+        Service: 'v'
+      },
+      Role: {},
+      Service: {}
+    }
+  }, validTypes, { requireComplete: true });
+
+  assert.equal(maps.get('BusinessActor').get('Role'), 'iv');
+  assert.equal(maps.get('BusinessActor').get('Service'), 'v');
+  assert.deepEqual(getRelationshipProfileStats(maps), {
+    sourceCount: 3,
+    relationshipCount: 2
+  });
+});
+
+test('archimate 4 relationship profile loader accepts row arrays', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const maps = normalizeRelationshipProfile([
+    { source: 'BusinessActor', target: 'Role', relationships: 'Assignment Specialization' },
+    { sourceType: 'Role', targetType: 'BusinessActor', allowed: 'o' }
+  ], validTypes, { requireComplete: false });
+
+  assert.equal(maps.get('BusinessActor').get('Role'), 'is');
+  assert.equal(maps.get('Role').get('BusinessActor'), 'o');
+});
+
+test('archimate 4 relationship profile loader rejects retired or generic element types', () => {
+  const validTypes = new Set([
+    'BusinessInterface',
+    'Role'
+  ]);
+
+  assert.throws(() => normalizeRelationshipProfile({
+    Interface: { Role: 'Assignment' }
+  }, validTypes), /Unknown ArchiMate 4 source element: Interface/);
+
+  assert.throws(() => normalizeRelationshipProfile({
+    BusinessInterface: { BusinessInteraction: 'Serving' }
+  }, validTypes), /Unknown ArchiMate 4 target element: BusinessInteraction/);
+});
+
+test('archimate 4 relationship profile loader rejects unknown relationship codes', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+
+  assert.throws(() => normalizeRelationshipProfile({
+    BusinessActor: { Role: 'x' }
+  }, validTypes), /Unsupported ArchiMate 4 relationship code "x"/);
+});
+
+test('archimate 4 relationship profile loader can require complete source coverage', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+
+  assert.throws(() => normalizeRelationshipProfile({
+    BusinessActor: { Role: 'Assignment' }
+  }, validTypes, { requireComplete: true }), /missing source element: Role/);
 });
