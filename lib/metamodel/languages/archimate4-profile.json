@@ -53,6 +53,16 @@
         "Plateau"
       ]
     },
+    "relationshipConnectors": {
+      "status": "implemented-experimental-exchange",
+      "expectedCount": 2,
+      "expectedTypes": [
+        "AndJunction",
+        "OrJunction"
+      ],
+      "catalogBoundary": "outside-element-catalog",
+      "meff4Representation": "external-source-required"
+    },
     "relationshipMatrix": {
       "status": "external-profile-required",
       "reason": "Appendix B table data is normative and is not embedded without redistribution rights.",

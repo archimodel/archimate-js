@@ -476,6 +476,9 @@ In particular:
 - `getArchimate4ImplementationStatus().elementCatalog` must expose `expectedTypes`, `actualTypes`,
   `missingTypes`, and `extraTypes` so exact C260 catalog drift is visible even if the element count is
   still 42.
+- `getArchimate4ImplementationStatus().relationshipConnectors` must expose `expectedTypes`,
+  `actualTypes`, `missingTypes`, and `extraTypes` for `AndJunction` and `OrJunction` outside the
+  42-element catalog while MEFF 4.0 connector serialization remains source-dependent.
 
 The relationship rules remain a fallback:
 

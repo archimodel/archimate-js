@@ -39,6 +39,8 @@
 - `getArchimate4ImplementationStatus().elementCatalog` reports expected, actual, missing, and extra
   type lists for the C260-derived 42-element catalog, so hosts can audit exact type coverage rather
   than only the element count.
+- `getArchimate4ImplementationStatus().relationshipConnectors` reports expected, actual, missing, and
+  extra type lists for `AndJunction` and `OrJunction` outside the element catalog.
 - `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including
   `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing
   companion source ids while external sources remain unresolved.
@@ -84,6 +86,8 @@
 - `AndJunction` and `OrJunction` are exposed as ArchiMate 4 relationship connector metadata outside
   the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
   naming remains unresolved.
+- The connector metadata is also recorded as a two-type status catalog so missing or extra junction
+  connector types are visible in `getArchimate4ImplementationStatus()`.
 - Relationship connector metadata deliberately uses editor-oriented `paletteGroup` and `colorGroup`
   values rather than adding a non-standard ArchiMate domain.
 

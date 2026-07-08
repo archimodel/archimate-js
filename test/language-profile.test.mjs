@@ -104,8 +104,16 @@ test('archimate 4 exposes relationship junction connectors outside the element c
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const elements = new Set(profile.elements.map((element) => element.type));
   const connectors = new Map(profile.connectors.map((connector) => [ connector.type, connector ]));
+  const connectorTypes = profile.connectors.map((connector) => connector.type);
+  const expectedConnectorTypes = profile.conformance.relationshipConnectors.expectedTypes;
 
   assert.equal(profile.elements.length, 42);
+  assert.equal(profile.conformance.relationshipConnectors.status, 'implemented-experimental-exchange');
+  assert.equal(profile.conformance.relationshipConnectors.expectedCount, 2);
+  assert.deepEqual(profile.conformance.relationshipConnectors.expectedTypes, [ 'AndJunction', 'OrJunction' ]);
+  assert.deepEqual(connectorTypes, expectedConnectorTypes);
+  assert.deepEqual(expectedConnectorTypes.filter((type) => !connectors.has(type)), []);
+  assert.deepEqual(connectorTypes.filter((type) => !expectedConnectorTypes.includes(type)), []);
   assert.equal(elements.has('AndJunction'), false);
   assert.equal(elements.has('OrJunction'), false);
   assert.equal(connectors.get('AndJunction').typeName, 'And Junction');
@@ -515,6 +523,10 @@ test('archimate 4 implementation status is machine-readable and preserves extern
 
   assert.match(languageIndex, /export function getArchimate4ImplementationStatus/);
   assert.match(languageIndex, /function summarizeElementCatalog/);
+  assert.match(languageIndex, /function summarizeRelationshipConnectorCatalog/);
+  assert.match(languageIndex, /relationshipConnectors: summarizeRelationshipConnectorCatalog/);
+  assert.match(languageIndex, /types: summary\.actualTypes/);
+  assert.match(languageIndex, /function summarizeTypeCatalog/);
   assert.match(languageIndex, /actualTypes/);
   assert.match(languageIndex, /missingTypes/);
   assert.match(languageIndex, /extraTypes/);
@@ -527,6 +539,7 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(entrypoint, /getArchimate4ImplementationStatus/);
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
   assert.match(readme, /elementCatalog\.(expectedTypes|missingTypes|extraTypes)/);
+  assert.match(readme, /relationshipConnectors\.(expectedTypes|missingTypes|extraTypes)/);
   assert.match(officialSpec, /expectedTypes/);
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
