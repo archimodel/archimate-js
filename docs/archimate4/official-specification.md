@@ -241,6 +241,9 @@ Implemented relationship rule wiring:
   the same relationship type when the junction already has an established relationship type.
 - If a junction already has conflicting relationship types, no further junction relationship type is
   offered until the model is corrected.
+- When a candidate relationship is connected to a junction and the opposite side already has a
+  non-junction endpoint, the editor checks whether the same relationship type is valid directly
+  between those endpoint concepts through the active relationship profile.
 
 Implemented multiplicity guard:
 

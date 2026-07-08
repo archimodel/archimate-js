@@ -125,6 +125,111 @@ test('junction relationship candidates follow existing relationship type', () =>
   assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Flow'), false);
 });
 
+test('junction endpoint chain allows candidates only when direct endpoints allow the same relationship', () => {
+  const profile = { version: '4.0' };
+  const endpointAllowed = (sourceType, targetType, relationshipType, activeProfile) => {
+    assert.equal(activeProfile, profile);
+
+    return sourceType === 'BusinessActor' &&
+      targetType === 'Role' &&
+      relationshipType === 'Assignment';
+  };
+  const target = { type: 'Role' };
+  const junction = {
+    type: 'AndJunction',
+    incoming: [],
+    outgoing: [
+      {
+        type: 'Relationship',
+        target: target,
+        businessObject: {
+          relationshipRef: { type: 'Assignment' }
+        }
+      }
+    ]
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    { type: 'BusinessActor' },
+    junction,
+    null,
+    endpointAllowed,
+    profile
+  ), [ 'Assignment' ]);
+  assert.equal(isJunctionRelationshipTypeAllowed(
+    { type: 'BusinessActor' },
+    junction,
+    'Assignment',
+    null,
+    endpointAllowed,
+    profile
+  ), true);
+});
+
+test('junction endpoint chain rejects candidates when direct endpoints disallow the same relationship', () => {
+  const endpointAllowed = (sourceType, targetType, relationshipType) => {
+    return sourceType === 'BusinessActor' &&
+      targetType === 'Role' &&
+      relationshipType === 'Assignment';
+  };
+  const junction = {
+    type: 'AndJunction',
+    incoming: [],
+    outgoing: [
+      {
+        type: 'Relationship',
+        target: { type: 'Role' },
+        businessObject: {
+          relationshipRef: { type: 'Composition' }
+        }
+      }
+    ]
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    { type: 'BusinessActor' },
+    junction,
+    null,
+    endpointAllowed
+  ), []);
+  assert.equal(isJunctionRelationshipTypeAllowed(
+    { type: 'BusinessActor' },
+    junction,
+    'Composition',
+    null,
+    endpointAllowed
+  ), false);
+});
+
+test('junction endpoint chain validates outgoing candidates against incoming endpoints', () => {
+  const endpointAllowed = (sourceType, targetType, relationshipType) => {
+    return sourceType === 'BusinessActor' &&
+      targetType === 'Role' &&
+      relationshipType === 'Assignment';
+  };
+  const source = { type: 'BusinessActor' };
+  const junction = {
+    type: 'AndJunction',
+    incoming: [
+      {
+        type: 'Relationship',
+        source: source,
+        businessObject: {
+          relationshipRef: { type: 'Assignment' }
+        }
+      }
+    ],
+    outgoing: []
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    junction,
+    { type: 'Role' },
+    null,
+    endpointAllowed
+  ), [ 'Assignment' ]);
+});
+
 test('junction relationship candidates prefer relationshipRef type over generic connection type', () => {
   const junction = {
     type: 'AndJunction',

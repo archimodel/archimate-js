@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `FEAT`: added relationship multiplicity storage and rendering for ArchiMate 4.0.
 * `CORE`: aligned the ArchiMate 3 profile with the official 3.1 `ElementTypeEnum`, including `AndJunction` and `OrJunction`.
 * `CORE`: aligned the ArchiMate 4 profile with the C260 42-element catalog, preserving domain-specific interfaces.
-* `CORE`: added ArchiMate 4 junction relationship type consistency guards for popup choices and reconnect validation.
+* `CORE`: added ArchiMate 4 junction relationship type and endpoint-chain guards for popup choices and reconnect validation.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 
 ## 0.0.4

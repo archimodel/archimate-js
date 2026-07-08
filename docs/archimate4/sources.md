@@ -85,6 +85,11 @@
   the existing type attached to the junction.
 - Existing diagram connections use `relationshipRef.type` before generic diagram connection type values,
   so imported connections are evaluated by their actual ArchiMate relationship type.
+- Junction endpoint-chain validity is now checked through the active relationship profile: incoming
+  candidates are compared against outgoing endpoints and outgoing candidates against incoming endpoints
+  using the same relationship type.
+- The endpoint check improves conformance when an external Appendix B profile is loaded, while the
+  default fallback remains compatibility-derived until official data can be supplied.
 
 ## Multiplicity Notation Guard
 

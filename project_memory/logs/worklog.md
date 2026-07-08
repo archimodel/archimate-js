@@ -114,3 +114,12 @@
 - Tests: added direct helper coverage for single-type, generic-connection, and mixed-type junction cases, plus source guards for reconnect validation.
 - Verification: `npm run test:language` passed with 37 tests in `project_memory/runlogs/20260708-075-junction-relationship-type-guard-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-076-junction-relationship-type-guard-final-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-077-junction-relationship-type-guard-git-diff-check.txt`.
 - Remaining open issues: direct endpoint validity through a junction still needs Appendix B relationship data or an external profile; MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 12
+
+- Goal: enforce Junction endpoint-chain validity through the active relationship profile without embedding Appendix B table data.
+- Implemented: `JunctionUtil` now checks direct endpoint validity for candidate relationships attached to a junction when the opposite side already has non-junction endpoints.
+- Implemented: popup relationship choices and reconnect validation pass `isRelationshipAllowed(..., profile)` into the junction guard, so external Appendix B profiles influence endpoint-chain validation.
+- Tests: added helper coverage for incoming candidates, outgoing candidates, endpoint-valid chains, endpoint-invalid chains, and active profile propagation.
+- Verification: `npm run test:language` passed with 40 tests in `project_memory/runlogs/20260708-078-junction-endpoint-chain-guard-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-079-junction-endpoint-chain-guard-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-080-junction-endpoint-chain-guard-git-diff-check.txt`.
+- Remaining open issues: final relationship truth still depends on official Appendix B data or an externally supplied profile; MEFF 4.0 XSD details remain external-source dependent.
