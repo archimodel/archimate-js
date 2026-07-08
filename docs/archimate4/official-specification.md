@@ -305,6 +305,9 @@ Latest official XSD recheck:
 - The current recheck is recorded in
   `project_memory/runlogs/20260708-330-official-xsd-directory-recheck.txt`. Keep XML export
   experimental until this changes or a supplied official XSD is available.
+- On 2026-07-08T20:15:00+09:00, the same official directory was rechecked and again listed only the
+  3.1 Model, Diagram, and View XSD links. The refreshed runlog is
+  `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt`.
 
 ## Implementation Status And Remaining Gaps
 
@@ -369,6 +372,9 @@ Implemented migration guard:
   `Realization` relationships, with an explicit relationship warning.
 - `Realization` between `Service` concepts that came from different ArchiMate 3 domains is preserved
   but reported with `Specialization` and `Aggregation` as model-dependent alternatives.
+- Migration coverage is checked dynamically against the current profiles: every ArchiMate 3 profile
+  element type absent from the ArchiMate 4 element/connector catalog must have an explicit migration
+  row, and every default or alternative replacement must resolve to an ArchiMate 4 profile type.
 - Migrated relationship types can be checked through an externally supplied Appendix B-aware validator.
   Invalid relationships are warned and, by default, replaced with `Association`.
 

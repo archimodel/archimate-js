@@ -1,0 +1,35 @@
+source: local licensed ArchiMate 4 Specification C260 PDF
+pdf_pages: 207
+purpose: display-name signal check only; no normative prose or tables copied
+Business Role: hits=1 pages=135
+Business Collaboration: hits=0 pages=
+Application Collaboration: hits=0 pages=
+Technology Collaboration: hits=0 pages=
+Business Service: hits=2 pages=123,136
+Application Service: hits=2 pages=123,136
+Technology Service: hits=1 pages=136
+Business Process: hits=5 pages=17,20,37,136,201
+Application Process: hits=1 pages=136
+Technology Process: hits=1 pages=136
+Business Function: hits=1 pages=137
+Application Function: hits=1 pages=137
+Technology Function: hits=1 pages=137
+Business Event: hits=1 pages=137
+Application Event: hits=1 pages=137
+Technology Event: hits=1 pages=137
+Business Interaction: hits=1 pages=136
+Application Interaction: hits=0 pages=
+Technology Interaction: hits=0 pages=
+Constraint: hits=2 pages=140,200
+Contract: hits=2 pages=138,200
+Representation: hits=2 pages=139,200
+Implementation Event: hits=0 pages=
+Gap: hits=2 pages=142,200
+Path: hits=8 pages=7,41,49,173,174,177,181,200
+Role: hits=15 pages=7,39,40,48,56,69,70,135,171,175,176,178,180,189,191
+Collaboration: hits=14 pages=7,29,40,48,134,135,171,173,175,176,177,178,179,180
+Service: hits=30 pages=7,11,21,35,42,49,54,55,56,57,58,63,79,100,104,110
+Process: hits=32 pages=7,11,17,20,35,37,42,43,44,45,49,54,55,56,57,63
+Function: hits=13 pages=7,43,44,49,137,142,173,175,176,177,178,179,180
+Event: hits=14 pages=7,44,49,137,173,175,176,177,178,179,180,181,189,191
+derived_check: migration coverage should be based on profile catalog difference and explicit migration rows, not text snippets copied from Appendix E

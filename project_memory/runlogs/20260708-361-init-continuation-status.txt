@@ -1,0 +1,25 @@
+=== ARIA INIT continuation ===
+
+Name                           Value
+----                           -----
+PSVersion                      7.6.3
+PSEdition                      Core
+GitCommitId                    7.6.3
+OS                             Microsoft Windows 10.0.26200
+Platform                       Win32NT
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSRemotingProtocolVersion      2.4
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+
+git version 2.52.0.windows.1
+## codex/archimate-4-support
+?? .codex-runlogs/editor-demo-final.png
+?? .codex-runlogs/editor-demo.png
+?? .codex-runlogs/screen-server-err.log
+?? .codex-runlogs/screen-server-out.log
+?? .codex-runlogs/viewer-demo-final.png
+?? .codex-runlogs/viewer-demo.png
+root=D:/github/archimate-js
+branch=codex/archimate-4-support

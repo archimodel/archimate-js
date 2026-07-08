@@ -153,6 +153,13 @@
 - Relationship migration validation remains external-profile driven: hosts can pass an Appendix B-aware
   `isRelationshipAllowed` validator into `migrateArchimate3ModelTo4()` to warn on migrated relationships
   that are no longer valid and replace them with `Association` by default.
+- A C260 Appendix E display-name signal check is recorded in
+  `project_memory/runlogs/20260708-365-migration-coverage-source-check-display-names.txt`.
+- `test/migration.test.mjs` now computes the set of ArchiMate 3 profile element types that are absent
+  from the ArchiMate 4 element/connector catalog and requires every such type to have an explicit
+  migration row. The current derived set contains 24 types and all are covered.
+- The same test also asserts every default or alternative migration replacement resolves to an
+  ArchiMate 4 profile type, preventing migration rows from pointing at removed or misspelled concepts.
 - `test/migration.test.mjs` directly exercises the migration utility so replacement and warning data
   are verified, not only present in source text.
 
@@ -305,6 +312,10 @@
 - `https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd` returned 404.
 - `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd` returned 200 and remains the
   public XSD reference currently covered by local tests.
+- Refreshed again on 2026-07-08T20:15:00+09:00 in
+  `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt`; the official directory
+  returned 200 and listed 3.1 Model, Diagram, and View XSD links, with no discovered `archimate4` or
+  `4.0` XSD signal.
 
 ## ArchiMate 3.1 XSD Verification
 

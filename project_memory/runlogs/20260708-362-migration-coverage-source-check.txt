@@ -1,0 +1,29 @@
+source: local licensed ArchiMate 4 Specification C260 PDF
+pdf_pages: 207
+purpose: derived signal check only; no normative prose or tables copied
+BusinessRole: hits=0 pages=
+BusinessCollaboration: hits=0 pages=
+ApplicationCollaboration: hits=0 pages=
+TechnologyCollaboration: hits=0 pages=
+BusinessService: hits=0 pages=
+ApplicationService: hits=0 pages=
+TechnologyService: hits=0 pages=
+BusinessProcess: hits=0 pages=
+ApplicationProcess: hits=0 pages=
+TechnologyProcess: hits=0 pages=
+BusinessFunction: hits=0 pages=
+ApplicationFunction: hits=0 pages=
+TechnologyFunction: hits=0 pages=
+BusinessEvent: hits=0 pages=
+ApplicationEvent: hits=0 pages=
+TechnologyEvent: hits=0 pages=
+BusinessInteraction: hits=0 pages=
+ApplicationInteraction: hits=0 pages=
+TechnologyInteraction: hits=0 pages=
+Constraint: hits=2 pages=140,200
+Contract: hits=2 pages=138,200
+Representation: hits=2 pages=139,200
+ImplementationEvent: hits=0 pages=
+Gap: hits=2 pages=142,200
+Path: hits=8 pages=7,41,49,173,174,177,181,200
+derived_check: every ArchiMate 3 profile type absent from the ArchiMate 4 catalog should have an explicit migration row unless it remains a valid 4.0 element or connector

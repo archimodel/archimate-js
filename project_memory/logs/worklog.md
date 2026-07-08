@@ -508,3 +508,16 @@
 - Verification: `npm run test:language` passed with 83 tests in `project_memory/runlogs/20260708-356-service-realization-migration-npm-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-357-service-realization-migration-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-358-service-realization-migration-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-service-realization-migration-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 48
+
+- Goal: add a regression guard that proves ArchiMate 3 to 4 migration coverage from the current profile catalogs.
+- Observation: `project_memory/runlogs/20260708-366-migration-coverage-gap-check.txt` computed 24 ArchiMate 3 profile element types that are absent from the ArchiMate 4 element/connector catalog, and every type already had a migration row.
+- Source check: `project_memory/runlogs/20260708-365-migration-coverage-source-check-display-names.txt` records a local licensed C260 display-name signal check without storing normative prose or tables.
+- XSD check: `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt` rechecked the official XSD directory at 2026-07-08T20:15:00+09:00 and found 3.1 XSD links only, with no discovered ArchiMate 4 XSD signal.
+- Implemented: `test/migration.test.mjs` now dynamically compares the ArchiMate 3 profile against the ArchiMate 4 element/connector catalog and fails if any removed or merged 3.x type lacks an explicit migration row.
+- Implemented: the same test fails if any default or alternative migration replacement points to a type absent from the ArchiMate 4 profile.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` now record the migration coverage guard and refreshed XSD evidence.
+- Verification: `npm run test:language` passed with 85 tests in `project_memory/runlogs/20260708-371-migration-coverage-final-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-372-migration-coverage-final-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-373-migration-coverage-final-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4431 errors in `project_memory/runlogs/20260708-374-migration-coverage-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-migration-coverage-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

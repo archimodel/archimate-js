@@ -10,6 +10,12 @@ import {
 } from '../lib/migration/archimate3-to-4.js';
 import { ARCHIMATE_3_TO_4_MIGRATIONS } from '../lib/metamodel/languages/retired-concepts.js';
 
+async function readJson(path) {
+  const text = await readFile(new URL(path, import.meta.url), 'utf8');
+
+  return JSON.parse(text);
+}
+
 test('migration table covers retired public ArchiMate 4 concepts', async () => {
   const source = await readFile(new URL('../lib/metamodel/languages/retired-concepts.js', import.meta.url), 'utf8');
 
@@ -24,6 +30,47 @@ test('migration table covers retired public ArchiMate 4 concepts', async () => {
     'ImplementationEvent'
   ]) {
     assert.equal(source.includes("[ '" + type + "'"), true, `${type} needs a migration action`);
+  }
+});
+
+test('migration table covers every ArchiMate 3 profile type absent from the ArchiMate 4 catalog', async () => {
+  const archimate3Profile = await readJson('../lib/metamodel/languages/archimate3-profile.json');
+  const archimate4Profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const archimate4Types = new Set([
+    ...archimate4Profile.elements.map((element) => element.type),
+    ...(archimate4Profile.connectors || []).map((connector) => connector.type)
+  ]);
+  const missingFromArchimate4Catalog = archimate3Profile.elements
+    .map((element) => element.type)
+    .filter((type) => !archimate4Types.has(type));
+  const uncoveredMigrationTypes = missingFromArchimate4Catalog
+    .filter((type) => !ARCHIMATE_3_TO_4_MIGRATIONS.has(type));
+
+  assert.equal(missingFromArchimate4Catalog.length, 24);
+  assert.deepEqual(uncoveredMigrationTypes, []);
+});
+
+test('migration table replacements resolve to ArchiMate 4 profile types', async () => {
+  const archimate4Profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const archimate4Types = new Set([
+    ...archimate4Profile.elements.map((element) => element.type),
+    ...(archimate4Profile.connectors || []).map((connector) => connector.type)
+  ]);
+
+  for (const [ originalType, migration ] of ARCHIMATE_3_TO_4_MIGRATIONS) {
+    assert.equal(
+      archimate4Types.has(migration.replacement),
+      true,
+      `${originalType} replacement ${migration.replacement} must exist in ArchiMate 4 profile`
+    );
+
+    for (const alternative of migration.alternativeReplacements || []) {
+      assert.equal(
+        archimate4Types.has(alternative),
+        true,
+        `${originalType} alternative replacement ${alternative} must exist in ArchiMate 4 profile`
+      );
+    }
   }
 });
 
