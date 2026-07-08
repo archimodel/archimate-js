@@ -1254,3 +1254,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-624-appendix-b-source-coverage-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-625-appendix-b-source-coverage-final-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-appendix-b-source-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 101
+
+- Goal: make W262 companion paper availability auditable without confusing it with missing C260 implementation evidence.
+- Source check: `project_memory/runlogs/20260709-626-w262-local-source-search.txt` records a recursive filename search under `C:\Users\syska\Downloads` and `C:\Users\syska\.codex\attachments`; no W262 or ArchiMate 4 motivation PDF candidates were found, and the publication page returned HTTP 200.
+- Red test: `project_memory/runlogs/20260709-627-w262-source-coverage-red-test.txt` failed because `sourceCoverage.w262` did not expose publication status or local-search evidence.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records W262 publication status, latest local search timestamp, search runlog path, scoped search roots/patterns, and an empty matched-file list.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and describe the W262 source-coverage evidence.
+- Verification: focused source-coverage test passed in `project_memory/runlogs/20260709-628-w262-source-coverage-test.txt`; `npm run test:language` passed with 157 tests in `project_memory/runlogs/20260709-629-w262-source-coverage-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-630-w262-source-coverage-eslint-registry.txt`; JSON check passed in `project_memory/runlogs/20260709-631-w262-source-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-632-w262-source-coverage-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-633-w262-source-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-634-w262-source-coverage-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-635-w262-source-coverage-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-636-w262-source-coverage-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-w262-source-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

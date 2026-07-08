@@ -75,7 +75,22 @@
         "status": "external-download-required",
         "url": "https://publications.opengroup.org/w262",
         "localSourcePresent": false,
-        "companion": true
+        "companion": true,
+        "publicationPageStatusCode": 200,
+        "lastLocalSearchAt": "2026-07-09T08:10:22+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-626-w262-local-source-search.txt",
+        "localSearchRoots": [
+          "C:\\Users\\syska\\Downloads",
+          "C:\\Users\\syska\\.codex\\attachments"
+        ],
+        "localSearchPatterns": [
+          "*W262*.pdf",
+          "*w262*.pdf",
+          "*Motivation*ArchiMate*.pdf",
+          "*ArchiMate*Motivation*.pdf",
+          "*Changes*ArchiMate*.pdf"
+        ],
+        "localSearchMatchedFiles": []
       },
       "launchTranscript": {
         "status": "local-transcript-reviewed",

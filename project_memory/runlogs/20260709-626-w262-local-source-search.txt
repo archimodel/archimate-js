@@ -1,0 +1,9 @@
+checkedAt=2026-07-09T08:10:22+09:00
+scope=Downloads and .codex attachments, recursive file-name search
+patterns=*W262*.pdf, *w262*.pdf, *Motivation*ArchiMate*.pdf, *ArchiMate*Motivation*.pdf, *Changes*ArchiMate*.pdf
+root=C:\Users\syska\Downloads
+status=no-matches
+root=C:\Users\syska\.codex\attachments
+status=no-matches
+publicationPageStatus=200
+publicationPageFinalUri=

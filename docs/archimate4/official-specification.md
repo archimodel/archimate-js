@@ -13,7 +13,9 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
 - W262 companion paper status: The Open Group publication page for W262 is reachable and lists a free
   PDF download that requires login; the PDF is not yet present locally. The page check is recorded in
-  `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`.
+  `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`. The current local
+  Downloads/attachments search is recorded in
+  `project_memory/runlogs/20260709-626-w262-local-source-search.txt` and found no matching W262 PDF.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
 - Appendix B source status is split deliberately: the licensed local C260 source has been reviewed,

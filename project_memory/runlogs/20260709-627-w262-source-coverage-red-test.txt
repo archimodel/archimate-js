@@ -1,0 +1,208 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs --test-name-pattern source coverage
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (7.7692ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.768ms)
+✔ junction implementation uses official xsd element names as model types (4.1709ms)
+(node:34556) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/DerivedRelationshipUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ derived relationship DR1 applies specialization transitivity (2.7386ms)
+✔ derived relationship DR2 returns the weakest structural relationship (0.3462ms)
+✔ derived relationship preserves source and target across a relationship chain (1.6635ms)
+✔ derived relationship rejects non-chain endpoints (0.3174ms)
+✔ derived relationship resolves custom relationship specializations to base types (0.3307ms)
+✔ derived relationship DR3 to DR8 derive dependency and dynamic relationships (0.4035ms)
+✔ derived relationship applies inline structural dependency and dynamic rules (0.3654ms)
+✔ derived relationship applies opposing structural dependency and flow rules (0.4076ms)
+✔ derived relationship applies triggering in-line rules (1.2828ms)
+✔ potential derived relationship exposes dependency strength order (0.3833ms)
+✔ potential derived relationship applies PDR1 to PDR4 specialization rules (0.6447ms)
+✔ potential derived relationship applies PDR5 to PDR7 dependency rules (0.2031ms)
+✔ potential derived relationship applies PDR8 to PDR11 dynamic rules (0.2076ms)
+✔ potential derived relationship applies PDR12 grouping rule only when allowed (0.4064ms)
+✔ derived relationship chain collapses structural chains to the weakest relationship (0.2512ms)
+✔ derived relationship chain transfers dependency and triggering through structural chains (0.207ms)
+✔ derived relationship chain rejects incomplete chains (0.1189ms)
+✔ derived relationships apply C260 Appendix B.4 source and target restrictions when profile metadata is present (0.5396ms)
+✔ derived relationships apply C260 Appendix B.4 third-element restrictions when profile metadata is present (0.2117ms)
+✔ derived relationships apply C260 Appendix B.4 relationship-domain restrictions when profile metadata is present (0.1854ms)
+✔ potential derived relationships apply C260 Appendix B.4 restrictions when profile metadata is present (0.1352ms)
+✔ importer preserves nested view nodes as diagram parent-child shapes (6.0203ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (9.364ms)
+✔ archimate 4 profile removes retired 3.x concepts (0.8914ms)
+✔ archimate 4 profile exposes Common Domain (0.721ms)
+✔ archimate 4 profile matches the C260 element catalog (2.4852ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (0.8492ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (0.6328ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (1.3488ms)
+✔ profile-aware metadata and palette include relationship junction connectors (2.0511ms)
+✔ archimate 4 palette exposes every standard element (2.5766ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (7.0378ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (8.7146ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.812ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.5945ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (1.6669ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (37.4208ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (1.6163ms)
+✔ active profile rejects concepts and relationships outside the selected version (2.8276ms)
+✔ renderer uses active language profile pictogram refs (1.1505ms)
+✔ language profile customization supports C260 specialization profiles (2.7479ms)
+✔ language profile customization validates C260 profile attribute definitions (1.6438ms)
+✔ language profile customization supports relationship specializations (2.1445ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (3.0902ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.518ms)
+✔ language profile customization supports viewpoint definitions (2.6325ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (2.8778ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (1.8368ms)
+✖ archimate 4 implementation status exposes source coverage boundaries (2.6482ms)
+✔ archimate 4 implementation plan records current execution boundary (1.9373ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (2.1118ms)
+(node:79312) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migration table covers retired public ArchiMate 4 concepts (6.6103ms)
+✔ migration table covers every ArchiMate 3 profile type absent from the ArchiMate 4 catalog (2.6601ms)
+✔ migration table replacements resolve to ArchiMate 4 profile types (1.0487ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (0.9267ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (0.8971ms)
+✔ migration utility preserves specialization information (0.9968ms)
+✔ migration table records C260-derived ambiguous replacement candidates (0.2873ms)
+✔ migration table records original domains for merged common-domain concepts (0.103ms)
+✔ migration utility reports alternative replacement types for ambiguous C260 rows (0.6189ms)
+✔ migration utility stores specialization profile metadata as model properties (0.2558ms)
+✔ migration utility stores original domain for merged behavior concepts (0.2482ms)
+✔ migration utility preserves original physical domain for technology-domain concepts (0.2565ms)
+✔ migration utility converts Path aggregation to technology internal active structure into reversed realization (0.2844ms)
+✔ migration utility applies Path aggregation correction to technology collaborations only (0.1292ms)
+✔ migration utility warns for cross-domain service realization alternatives (0.1897ms)
+✔ migration utility does not warn for same-domain service realization or disabled service warnings (0.1903ms)
+✔ migration utility can replace invalid relationships with an external profile validator (0.2575ms)
+✔ migration utility can warn without replacing invalid relationships (0.149ms)
+✔ migration utility can skip specialization profile metadata (0.0846ms)
+(node:72656) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (6.6471ms)
+✔ element factory carries multiplicity from relationship refs (1.0858ms)
+✔ connection updater persists relationship multiplicity fields (0.9301ms)
+✔ relationship replacement preserves editable multiplicity properties (0.8554ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (0.9283ms)
+✔ connection popup validates custom ArchiMate 4 multiplicity input (1.2137ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (1.0984ms)
+✔ renderer displays relationship end multiplicities (0.9987ms)
+✔ relationship multiplicity notation follows the C260-derived subset (0.8093ms)
+✔ junction-connected relationships cannot carry multiplicity (0.4373ms)
+✔ archimate 4 grouping, location and plateau aggregate relationship concepts (0.2906ms)
+✔ junction relationship candidates follow existing relationship type (1.1973ms)
+✔ junction endpoint chain allows candidates only when direct endpoints allow the same relationship (0.2968ms)
+✔ junction endpoint chain rejects candidates when direct endpoints disallow the same relationship (0.1877ms)
+✔ junction endpoint chain validates outgoing candidates against incoming endpoints (0.2643ms)
+✔ junction relationship candidates prefer relationshipRef type over generic connection type (0.1656ms)
+✔ junction relationship candidates reject mixed existing relationship types (0.1631ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (6.1032ms)
+(node:73144) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/ProfileAttributeUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ profile attribute values normalize implementation-supported C260 basic types (4.7688ms)
+✔ profile attribute values reject values outside their declared type (0.5856ms)
+✔ profile attribute values can be stored as model properties (2.6756ms)
+✔ structured profile attribute values are stored as JSON property values (0.3519ms)
+(node:80868) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (12.7471ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (5.4935ms)
+✔ connection rules evaluate relationships through the active language profile (1.6227ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (1.9446ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (2.7035ms)
+✔ connection popup labels relationships with C260 role names (2.0253ms)
+✔ connection popup exposes influence modifier actions (1.4098ms)
+✔ connection popup exposes explicit Access type actions (3.3438ms)
+✔ connection popup exposes explicit Association direction actions (3.0105ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (1.809ms)
+✔ renderer displays influence modifier labels (1.2019ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (4.1279ms)
+✔ renderer preserves optional junction names outside the marker (3.0008ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (2.8623ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.279ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.9933ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.9012ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.6889ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.5874ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.184ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.5293ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (5.2675ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.5223ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.503ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (3.1864ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.7155ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.2654ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.2632ms)
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (13.5838ms)
+✔ renderer uses a dedicated ArchiMate 4 Grouping dashed-rectangle pictogram path (2.1298ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (1.9273ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (3.6372ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (1.7412ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (1.6061ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (1.9046ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (2.0118ms)
+✔ renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path (2.0273ms)
+✔ renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path (1.7121ms)
+✔ renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram path (1.9914ms)
+✔ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (2.9172ms)
+✔ renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path (1.899ms)
+✔ renderer uses a dedicated ArchiMate 4 Driver wheel pictogram path (2.7979ms)
+✔ renderer uses a dedicated ArchiMate 4 Assessment magnifying-glass pictogram path (3.8021ms)
+✔ renderer uses a dedicated ArchiMate 4 Goal target pictogram path (4.6263ms)
+✔ renderer uses a dedicated ArchiMate 4 Outcome target-arrow pictogram path (1.7262ms)
+✔ renderer uses a dedicated ArchiMate 4 Principle exclamation pictogram path (1.8187ms)
+✔ renderer uses a dedicated ArchiMate 4 Requirement parallelogram pictogram path (1.6579ms)
+✔ renderer uses a dedicated ArchiMate 4 Value oval pictogram path (2.3453ms)
+✔ renderer uses a dedicated ArchiMate 4 Meaning thought-cloud pictogram path (1.3071ms)
+✔ attachment behavior persists visual nesting without duplicate view nodes (7.7841ms)
+✔ archimate 3 fixture keeps current namespace (13.265ms)
+✔ archimate 4 fixture uses archimate 4 namespace (2.0785ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (2.0676ms)
+✔ archimate 4 descriptor allows relationships between relationship concepts (3.0657ms)
+✔ archimate 4 descriptor allows connections to relationship view elements (2.0904ms)
+✔ archimate 4 descriptor stores viewpoint definitions and view references (2.4902ms)
+✔ archimate descriptors resolve every declared complex type reference (7.6424ms)
+✔ archimate 4 descriptor stores organization trees (2.0683ms)
+✔ archimate 4 organization trees resolve through moddle xml (14.2839ms)
+✔ archimate 4 viewpoint references resolve through moddle xml (7.4795ms)
+✔ archimate 3 descriptor keeps existing endpoint constraints (2.3195ms)
+✔ archimate 3 descriptor also preserves optional viewpoint metadata (1.3597ms)
+ℹ tests 157
+ℹ suites 0
+ℹ pass 156
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 999.4384
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:545:1
+✖ archimate 4 implementation status exposes source coverage boundaries (2.6482ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  undefined !== 200
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:555:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

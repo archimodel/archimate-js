@@ -552,6 +552,14 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.w262.status, 'external-download-required');
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
+  assert.equal(sourceCoverage.w262.publicationPageStatusCode, 200);
+  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T08:10:22+09:00');
+  assert.equal(sourceCoverage.w262.lastLocalSearchRunlogPath, 'project_memory/runlogs/20260709-626-w262-local-source-search.txt');
+  assert.deepEqual(sourceCoverage.w262.localSearchRoots, [
+    'C:\\Users\\syska\\Downloads',
+    'C:\\Users\\syska\\.codex\\attachments'
+  ]);
+  assert.deepEqual(sourceCoverage.w262.localSearchMatchedFiles, []);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.status, 'external-profile-required');
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localC260SourceReviewed, true);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localSourceMeaning, 'redistributable Appendix B profile artifact');
@@ -586,6 +594,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(languageIndex, /sourceCoverage: summarizeSourceCoverage/);
   assert.match(languageIndex, /missingCompanionSources/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
+  assert.match(sources, /20260709-626-w262-local-source-search/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
 });
