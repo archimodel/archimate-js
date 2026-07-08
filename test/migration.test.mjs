@@ -260,6 +260,83 @@ test('migration utility applies Path aggregation correction to technology collab
   assert.equal(businessRelationship.target, businessCollaboration);
 });
 
+test('migration utility warns for cross-domain service realization alternatives', () => {
+  const businessService = { id: 'business-service-1', type: 'BusinessService' };
+  const applicationService = { id: 'application-service-1', type: 'ApplicationService' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Realization',
+    source: businessService,
+    target: applicationService
+  };
+  const model = {
+    elementsNode: {
+      baseElements: [ businessService, applicationService ]
+    },
+    relationshipsNode: {
+      relationships: [ relationship ]
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model);
+  const relationshipWarning = result.warnings.find((warning) => warning.relationshipId === 'relationship-1');
+
+  assert.equal(businessService.type, 'Service');
+  assert.equal(applicationService.type, 'Service');
+  assert.equal(relationship.type, 'Realization');
+  assert.equal(relationship.source, businessService);
+  assert.equal(relationship.target, applicationService);
+  assert.equal(relationshipWarning.originalType, 'Realization');
+  assert.equal(relationshipWarning.replacementType, 'Realization');
+  assert.deepEqual(relationshipWarning.alternativeReplacementTypes, [ 'Specialization', 'Aggregation' ]);
+  assert.equal(relationshipWarning.sourceOriginalDomain, 'Business');
+  assert.equal(relationshipWarning.targetOriginalDomain, 'Application');
+  assert.match(relationshipWarning.message, /model-dependent/);
+});
+
+test('migration utility does not warn for same-domain service realization or disabled service warnings', () => {
+  const sameDomainRelationship = {
+    id: 'relationship-same-domain',
+    type: 'Realization',
+    source: { id: 'business-service-1', type: 'BusinessService' },
+    target: { id: 'business-service-2', type: 'BusinessService' }
+  };
+  const disabledRelationship = {
+    id: 'relationship-disabled',
+    type: 'Realization',
+    source: { id: 'application-service-1', type: 'ApplicationService' },
+    target: { id: 'technology-service-1', type: 'TechnologyService' }
+  };
+
+  const sameDomainResult = migrateArchimate3ModelTo4({
+    elementsNode: {
+      baseElements: [ sameDomainRelationship.source, sameDomainRelationship.target ]
+    },
+    relationshipsNode: {
+      relationships: [ sameDomainRelationship ]
+    }
+  });
+  const disabledResult = migrateArchimate3ModelTo4({
+    elementsNode: {
+      baseElements: [ disabledRelationship.source, disabledRelationship.target ]
+    },
+    relationshipsNode: {
+      relationships: [ disabledRelationship ]
+    }
+  }, {
+    warnServiceRealizationAlternatives: false
+  });
+
+  assert.equal(
+    sameDomainResult.warnings.some((warning) => warning.relationshipId === 'relationship-same-domain'),
+    false
+  );
+  assert.equal(
+    disabledResult.warnings.some((warning) => warning.relationshipId === 'relationship-disabled'),
+    false
+  );
+});
+
 test('migration utility can replace invalid relationships with an external profile validator', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'BusinessRole' };

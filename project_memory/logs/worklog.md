@@ -496,3 +496,15 @@
 - Verification: `npm run test:language` passed with 81 tests in `project_memory/runlogs/20260708-350-path-aggregation-migration-npm-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-351-path-aggregation-migration-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-352-path-aggregation-migration-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-path-aggregation-migration-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 47
+
+- Goal: implement a C260 Appendix E-derived warning for cross-domain service `Realization` migration.
+- Observation: `docs/archimate4/official-specification.md` recorded that `Realization` between services of different former layers may need `Specialization` or `Aggregation` depending on modeling intent, but the migration utility preserved such relationships silently.
+- Source check: `project_memory/runlogs/20260708-355-service-realization-migration-source-check.txt` found the Appendix E vicinity signals for `Service`, `Realization`, `Specialization`, and `Aggregation` without storing verbatim C260 text.
+- Implemented: `migrateArchimate3ModelTo4()` now detects `Realization` between `Service` concepts that originated from different ArchiMate 3 domains and records a model-dependent warning with `Specialization` and `Aggregation` alternatives.
+- Implemented: the relationship is preserved by default because the replacement choice depends on model intent; host tooling can suppress this warning path with `warnServiceRealizationAlternatives: false`.
+- Tests/docs: `test/migration.test.mjs` covers cross-domain warning behavior, same-domain non-warning behavior, and the suppression option; `docs/archimate4/*` records the implemented guard.
+- Verification: `npm run test:language` passed with 83 tests in `project_memory/runlogs/20260708-356-service-realization-migration-npm-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-357-service-realization-migration-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-358-service-realization-migration-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260708-service-realization-migration-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

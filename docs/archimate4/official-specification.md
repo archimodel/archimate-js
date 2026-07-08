@@ -367,6 +367,8 @@ Implemented migration guard:
   through the existing exchange-format extension mechanism.
 - `Path` to technology-internal-active-structure `Aggregation` relationships are migrated to reversed
   `Realization` relationships, with an explicit relationship warning.
+- `Realization` between `Service` concepts that came from different ArchiMate 3 domains is preserved
+  but reported with `Specialization` and `Aggregation` as model-dependent alternatives.
 - Migrated relationship types can be checked through an externally supplied Appendix B-aware validator.
   Invalid relationships are warned and, by default, replaced with `Association`.
 

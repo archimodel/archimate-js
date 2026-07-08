@@ -145,6 +145,11 @@
 - `migrateArchimate3ModelTo4()` now converts `Path` to technology-internal-active-structure
   `Aggregation` relationships into reversed `Realization` relationships and records an explicit
   relationship migration warning.
+- A local C260 Appendix E vicinity keyword check for cross-domain service `Realization` relationships
+  is recorded in `project_memory/runlogs/20260708-355-service-realization-migration-source-check.txt`.
+- `migrateArchimate3ModelTo4()` now warns when `Realization` remains between `Service` concepts that
+  came from different ArchiMate 3 domains, preserving the relationship while reporting
+  `Specialization` and `Aggregation` as model-dependent alternatives.
 - Relationship migration validation remains external-profile driven: hosts can pass an Appendix B-aware
   `isRelationshipAllowed` validator into `migrateArchimate3ModelTo4()` to warn on migrated relationships
   that are no longer valid and replace them with `Association` by default.

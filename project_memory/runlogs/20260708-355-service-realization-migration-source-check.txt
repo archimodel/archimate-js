@@ -1,0 +1,14 @@
+{
+  "command": "pdfplumber keyword scan of local C260 PDF Appendix E vicinity; output stores derived facts only",
+  "pdf": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "searched_pdf_page_indexes": "190-206",
+  "pages_with_all_required_signals": [
+    195,
+    200
+  ],
+  "derived_facts": [
+    "Appendix E vicinity contains the Service, Realization, Specialization, and Aggregation signals needed for the service realization migration warning.",
+    "The implementation should not silently imply a single replacement for former cross-domain Service Realization relationships; it should preserve the relationship and warn that Specialization or Aggregation may be more precise depending on model intent."
+  ],
+  "copyright_note": "No verbatim C260 prose or table text is stored."
+}
