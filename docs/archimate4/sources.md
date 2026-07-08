@@ -291,15 +291,24 @@
 
 - A local C260 Appendix B derivation keyword scan is recorded in
   `project_memory/runlogs/20260709-088-c260-derived-relationship-source-scan.txt`.
+  The DR heading scan for this pass is recorded in
+  `project_memory/runlogs/20260709-106-c260-derived-rule-headings-scan.txt`, with the
+  non-verbatim implementation summary in
+  `project_memory/runlogs/20260709-111-c260-derived-relationship-dr3-dr8-summary.txt`.
 - DR1 specialization transitivity is implemented by `deriveRelationshipType()` and
   `deriveRelationship()`: a two-step `Specialization` chain derives a `Specialization` relationship.
 - DR2 structural derivation is implemented for the C260 strength order Realization, Assignment,
   Aggregation, Composition. A two-step structural chain derives the weakest relationship type in
   that pair.
+- DR3-DR8 valid derivations are implemented for dependency and dynamic relationships: structural
+  plus dependency, structural plus dynamic, Triggering plus structural, and Triggering transitivity.
+  The object-level helper also handles the C260 same-target opposite-direction cases for dependency
+  relationships and Flow.
 - Custom relationship specializations supplied through a language profile resolve to their standard
-  base relationship before applying DR1 or DR2.
+  base relationship before applying the derivation rules.
 - This utility returns derivation candidates for host tooling. It does not embed the full Appendix B
-  relationship table and does not automatically mutate a model.
+  relationship table, does not implement the potential derivation rules, and does not automatically
+  mutate a model.
 
 ## Influence Modifier Guard
 

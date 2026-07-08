@@ -22,5 +22,7 @@ export {
   deriveRelationshipType,
   getStructuralRelationshipStrength,
   getWeakestStructuralRelationshipType,
+  isDependencyRelationshipType,
+  isDynamicRelationshipType,
   isStructuralRelationshipType
 } from './lib/util/DerivedRelationshipUtil';

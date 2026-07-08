@@ -1,0 +1,28 @@
+pages=207
+page=147: DR 1: Transitivity of Specialization
+page=147: DR 2: Derivation Between Structural Relationships
+page=148: DR 3: Derivation Between Structural and Dependency Relationships
+page=149: DR 4: Derivation Between Opposing Structural and Dependency Relationships
+page=149: DR 5: Derivation Between Structural and Dynamic Relationships
+page=149: DR 6: Derivation Between Structural and Flow Relationships
+page=150: DR 7: Derivation Between Structural and Triggering Relationships
+page=151: DR 8: Derivation Between Triggering Relationships
+page=152: DR 1: Derivation with Specialization and Other Relationships
+page=153: DR 2: Derivation with Specialization and Other Relationships
+page=153: DR 3: Potential Derivation Between Specialization and Any Other Relationship
+page=154: DR 4: Potential Derivation Between Specialization and Any Other Relationship
+page=155: DR 5: Potential Derivation Between Structural and Dependency Relationships
+page=156: DR 6: Potential Derivation Between Structural and Dependency Relationships
+page=156: DR 7: Potential Derivation Between Dependency Relationships
+page=157: DR 8: Potential Derivation Between Structural and Dynamic Relationships
+page=157: DR 9: Potential Derivation Between Structural and Dynamic Relationships
+page=157: DR 10: Potential Derivation Between Flow Relationships
+page=158: DR 11: Potential Derivation Between Triggering and Structural Relationships
+page=158: DR 12: Potential Derivation with Elements Aggregated in a Grouping Element
+keyword=Derivation Rules: pages=[11, 51, 84, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 199]
+keyword=Specialization: pages=[8, 10, 11, 33, 37, 39, 51, 52, 65, 66, 70, 87, 94, 98, 100, 105, 108, 113, 114, 132, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143]
+keyword=Structural: pages=[7, 11, 27, 32, 35, 40, 50, 51, 52, 53, 54, 55, 56, 57, 62, 63, 65, 69, 102, 108, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156]
+keyword=Dependency: pages=[7, 11, 27, 32, 50, 52, 57, 58, 59, 60, 61, 62, 63, 65, 69, 126, 148, 149, 152, 153, 154, 155, 156, 157, 195, 197, 204]
+keyword=Dynamic: pages=[7, 8, 11, 27, 32, 35, 50, 57, 63, 64, 65, 70, 132, 149, 150, 151, 152, 153, 154, 157, 197, 204]
+keyword=Weakest: pages=[147, 148, 156]
+EXIT_CODE=0

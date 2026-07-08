@@ -690,3 +690,21 @@
 - Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-104-derived-relationship-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-105-derived-relationship-final-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-derived-relationship-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 60
+
+- Goal: continue the C260 Appendix B derived relationship work by implementing the valid dependency and dynamic derivation rules DR3 through DR8 without embedding potential derivation rules or the full relationship matrix.
+- Source check: `project_memory/runlogs/20260709-106-c260-derived-rule-headings-scan.txt` extracted DR headings and pages from the local C260 PDF; `project_memory/runlogs/20260709-111-c260-derived-relationship-dr3-dr8-summary.txt` records the non-verbatim implementation facts used for this loop.
+- Red test: `project_memory/runlogs/20260709-107-derived-relationship-dr3-dr8-red-test.txt` failed because dependency/dynamic classification and DR3-DR8 helpers were not exported or implemented.
+- Implemented: `DerivedRelationshipUtil` now classifies dependency relationships (`Serving`, `Access`, `Influence`, `Association`) and dynamic relationships (`Flow`, `Triggering`) with custom relationship specialization resolution.
+- Implemented: `deriveRelationshipType()` now covers DR3-DR8 valid derivation type candidates in addition to DR1 and DR2.
+- Implemented: `deriveRelationship()` now handles in-line structural-to-dependency, structural-to-dynamic, Triggering-to-structural, and Triggering transitivity chains, plus same-target opposite-direction dependency and Flow derivations.
+- Public API: exported `isDependencyRelationshipType()` and `isDynamicRelationshipType()` from `index.js`.
+- Tests: `test/derived-relationships.test.mjs` now covers DR3-DR8 type candidates, in-line object derivations, opposite-target derivations, and Triggering derivations.
+- Verification: `npm run test:language` passed with 106 tests in `project_memory/runlogs/20260709-108-derived-relationship-dr3-dr8-test-language.txt`; scoped ESLint passed in `project_memory/runlogs/20260709-109-derived-relationship-dr3-dr8-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-110-derived-relationship-dr3-dr8-git-diff-check.txt`.
+- Final checks: `npm run test:language` passed again with 106 tests in `project_memory/runlogs/20260709-112-derived-relationship-dr3-dr8-final-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-113-derived-relationship-dr3-dr8-final-eslint-registry-gate.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-114-derived-relationship-dr3-dr8-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-115-derived-relationship-dr3-dr8-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-116-derived-relationship-dr3-dr8-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-117-derived-relationship-dr3-dr8-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-118-derived-relationship-dr3-dr8-final-final-git-diff-check.txt`.
+- Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-119-derived-relationship-dr3-dr8-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-120-derived-relationship-dr3-dr8-post-record-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-derived-relationship-dr3-dr8-audit.md`.
+- Remaining open issues: potential derivation rules, exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

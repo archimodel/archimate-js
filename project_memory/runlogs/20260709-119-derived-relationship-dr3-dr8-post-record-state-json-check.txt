@@ -1,0 +1,2 @@
+state json parse ok
+EXIT_CODE=0

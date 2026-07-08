@@ -1,0 +1,11 @@
+C260 Appendix B derived relationship implementation summary
+Source heading scan: project_memory/runlogs/20260709-106-c260-derived-rule-headings-scan.txt
+Implemented scope: valid derivations DR3 through DR8 from the Dependency and Dynamic relationship sections.
+DR3 fact: an in-line structural relationship followed by a dependency relationship derives the dependency relationship between the outer endpoints.
+DR4 fact: a structural relationship and a dependency relationship sharing the same target derives the dependency relationship in the reverse outer-endpoint direction.
+DR5 fact: an in-line structural relationship followed by a dynamic relationship derives the dynamic relationship between the outer endpoints.
+DR6 fact: a structural relationship and a Flow relationship sharing the same target derives Flow in the reverse outer-endpoint direction.
+DR7 fact: an in-line Triggering relationship followed by a structural relationship derives Triggering between the outer endpoints.
+DR8 fact: an in-line Triggering relationship followed by Triggering derives Triggering between the outer endpoints.
+Boundary: potential derivation rules on pages 152-158 and the full Appendix B relationship matrix remain external-profile driven and are not embedded here.
+EXIT_CODE=0
