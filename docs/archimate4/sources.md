@@ -69,6 +69,13 @@
 - The ArchiMate 4 `Deliverable` profile entry uses the correctly spelled `PICTO_DELIVERABLE`
   reference. The older misspelled `PICTO_DELIVRABLE` key remains in `PathMap` only as a legacy
   compatibility alias for existing 3.x profile metadata.
+- A local C260 term check is recorded in
+  `project_memory/runlogs/20260708-283-archimate4-standard-spelling-gap-check.txt`.
+- The ArchiMate 4 `Stakeholder` profile entry uses the correctly spelled `PICTO_STAKEHOLDER`
+  reference. The older misspelled `PICTO_STAKHOLDER` key remains in `PathMap` only as a legacy
+  compatibility alias for existing 3.x profile metadata.
+- The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
+  capitalization captured from C260.
 
 ## Language Customization Mechanism
 

@@ -129,6 +129,7 @@ Implementation notes:
   elements and must not be migrated to a generic `Interface`.
 - `Path` is a Common Domain active structure element.
 - `Grouping` and `Location` are Common Domain composite elements.
+- Standard display labels preserve source casing, including `Course of Action`.
 
 ## Relationships And Junctions
 

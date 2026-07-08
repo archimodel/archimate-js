@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "loopId": true,
+    "stage": true,
+    "overlay": true,
+    "check": true,
+    "runlogExists": true,
+    "auditExists": true,
+    "result": true,
+    "openIssuesCount": true,
+    "profileStakeholder": true,
+    "profileCourseOfAction": true
+  },
+  "status": "## codex/archimate-4-support\n M docs/archimate4/official-specification.md\n M docs/archimate4/sources.md\n M lib/draw/PathMap.js\n M lib/metamodel/languages/archimate4-profile.json\n M project_memory/logs/worklog.md\n M project_memory/state/aria_state.json\n M test/language-profile.test.mjs\n?? project_memory/audit/reports/20260708-standard-spelling-metadata-audit.md\n?? project_memory/runlogs/20260708-283-archimate4-standard-spelling-gap-check.txt\n?? project_memory/runlogs/20260708-284-archimate4-standard-spelling-fix-check.txt\n?? project_memory/runlogs/20260708-285-archimate4-standard-spelling-npm-test-language.txt\n?? project_memory/runlogs/20260708-286-archimate4-standard-spelling-eslint-gate.txt\n?? project_memory/runlogs/20260708-287-archimate4-standard-spelling-git-diff-check.txt\n?? project_memory/runlogs/20260708-288-archimate4-standard-spelling-repo-lint-legacy.txt\n?? project_memory/runlogs/20260708-290-archimate4-standard-spelling-final-git-diff-check.txt\n?? project_memory/runlogs/20260708-291-archimate4-standard-spelling-final-state-check.txt",
+  "shortstat": "7 files changed, 48 insertions(+), 11 deletions(-)",
+  "pass": true
+}

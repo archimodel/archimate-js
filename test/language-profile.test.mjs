@@ -103,6 +103,19 @@ test('archimate 4 deliverable pictogram ref uses standard spelling', async () =>
   assert.equal(deliverable.pictoRef, 'PICTO_DELIVERABLE');
 });
 
+test('archimate 4 profile uses standard Stakeholder and Course of Action spelling', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+  const elements = new Map(profile.elements.map((element) => [ element.type, element ]));
+
+  assert.equal(elements.get('Stakeholder').typeName, 'Stakeholder');
+  assert.equal(elements.get('Stakeholder').pictoRef, 'PICTO_STAKEHOLDER');
+  assert.equal(elements.get('CourseOfAction').typeName, 'Course of Action');
+  assert.equal(profile.elements.some((element) => element.typeName === 'Course Of Action'), false);
+  assert.equal(pathMap.includes("'PICTO_STAKEHOLDER'"), true);
+  assert.equal(pathMap.includes("'PICTO_STAKHOLDER'"), true);
+});
+
 test('profile-aware metadata and palette include relationship junction connectors', async () => {
   const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
   const colorUtil = await readFile(new URL('../lib/util/ColorUtil.js', import.meta.url), 'utf8');

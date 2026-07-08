@@ -1,0 +1,8 @@
+{
+  "stakeholderPictoRef": "PICTO_STAKEHOLDER",
+  "courseOfActionTypeName": "Course of Action",
+  "hasWrongCourseOfActionLabel": false,
+  "hasCorrectStakeholderPathKey": true,
+  "hasLegacyStakeholderPathKey": true,
+  "pass": true
+}

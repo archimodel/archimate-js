@@ -405,3 +405,15 @@
 - Verification: fix check passed in `project_memory/runlogs/20260708-276-common-composite-palette-fix-check.txt`; `npm run test:language` passed with 76 tests in `project_memory/runlogs/20260708-277-common-composite-palette-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-278-common-composite-palette-eslint-archimate4-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-279-common-composite-palette-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-280-common-composite-palette-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-common-composite-palette-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 39
+
+- Goal: align ArchiMate 4 profile metadata with C260 standard spelling for `Stakeholder` and `Course of Action`.
+- Observation: `project_memory/runlogs/20260708-283-archimate4-standard-spelling-gap-check.txt` showed local C260 text extraction finds `Stakeholder` and `Course of Action`, while `Stakholder` and `Course Of Action` were not found.
+- Observation: the same gap check showed the ArchiMate 4 profile still used `PICTO_STAKHOLDER` for `Stakeholder` and `Course Of Action` as the `CourseOfAction` display label.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now uses `PICTO_STAKEHOLDER` and `Course of Action` for ArchiMate 4 metadata.
+- Implemented: `lib/draw/PathMap.js` defines the correctly spelled `PICTO_STAKEHOLDER` alias and retains the older `PICTO_STAKHOLDER` alias for ArchiMate 3.x compatibility.
+- Tests/docs: `test/language-profile.test.mjs` now guards the standard spelling and legacy alias; `docs/archimate4/*` records the source check and derived requirement.
+- Verification: fix check passed in `project_memory/runlogs/20260708-284-archimate4-standard-spelling-fix-check.txt`; `npm run test:language` passed with 77 tests in `project_memory/runlogs/20260708-285-archimate4-standard-spelling-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-286-archimate4-standard-spelling-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-287-archimate4-standard-spelling-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-288-archimate4-standard-spelling-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-standard-spelling-metadata-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

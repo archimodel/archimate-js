@@ -1,0 +1,67 @@
+{
+  "pdf": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "pdf_pages": 207,
+  "term_hits": {
+    "Stakeholder": [
+      8,
+      10,
+      11,
+      16,
+      28,
+      74,
+      75,
+      76,
+      83,
+      84,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      171,
+      172,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191
+    ],
+    "Stakholder": [],
+    "Course of Action": [
+      9,
+      89,
+      90,
+      92,
+      141
+    ],
+    "Course Of Action": []
+  },
+  "profile_facts": {
+    "Stakeholder.pictoRef": "PICTO_STAKHOLDER",
+    "CourseOfAction.typeName": "Course Of Action"
+  },
+  "pathmap_facts": {
+    "has_PICTO_STAKEHOLDER": false,
+    "has_PICTO_STAKHOLDER": true,
+    "has_PICTO_DELIVERABLE": true,
+    "has_PICTO_DELIVRABLE": true
+  },
+  "derived_conclusion": [
+    "C260 text extraction finds the standard spelling Stakeholder and not Stakholder.",
+    "C260 text extraction finds Course of Action and not Course Of Action.",
+    "The ArchiMate 4 profile currently preserves a casing typo in CourseOfAction.typeName and a misspelled Stakeholder pictogram key."
+  ]
+}
