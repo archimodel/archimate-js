@@ -31,6 +31,9 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /buildFallbackRelationships/);
   assert.match(source, /setArchimate4RelationshipProfile/);
   assert.match(source, /normalizeRelationshipProfile/);
+  assert.match(source, /VALID_ARCHIMATE4_CONCEPT_TYPES/);
+  assert.match(source, /archimate4Profile\.connectors/);
+  assert.match(source, /archimate4Profile\.relationships/);
   assert.match(loaderSource, /parseRelationshipProfile/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
   assert.match(source, /toArchimate4Type/);
@@ -125,6 +128,43 @@ test('archimate 4 relationship profile loader accepts row arrays', () => {
   assert.equal(maps.get('Role').get('BusinessActor'), 'o');
 });
 
+test('archimate 4 relationship profile accepts relationship concepts and junctions', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const validTypes = new Set(getArchimate4RelationshipProfileConceptTypes(profile));
+
+  const maps = normalizeRelationshipProfile({
+    Grouping: {
+      Aggregation: 'Aggregation',
+      AndJunction: 'Aggregation'
+    },
+    Aggregation: {
+      Location: 'Aggregation'
+    },
+    AndJunction: {
+      BusinessActor: 'Association'
+    }
+  }, validTypes, { requireComplete: false });
+
+  assert.equal(maps.get('Grouping').get('Aggregation'), 'g');
+  assert.equal(maps.get('Grouping').get('AndJunction'), 'g');
+  assert.equal(maps.get('Aggregation').get('Location'), 'g');
+  assert.equal(maps.get('AndJunction').get('BusinessActor'), 'o');
+});
+
+test('archimate 4 complete relationship profile requires relationship concept sources', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const validTypes = new Set(getArchimate4RelationshipProfileConceptTypes(profile));
+  const sources = {};
+
+  for (const concept of profile.elements.map((element) => element.type)) {
+    sources[concept] = {};
+  }
+
+  assert.throws(() => normalizeRelationshipProfile({ sources }, validTypes, {
+    requireComplete: true
+  }), /missing source element: AndJunction/);
+});
+
 test('archimate 4 relationship profile loader rejects retired or generic element types', () => {
   const validTypes = new Set([
     'BusinessInterface',
@@ -161,3 +201,10 @@ test('archimate 4 relationship profile loader can require complete source covera
     BusinessActor: { Role: 'Assignment' }
   }, validTypes, { requireComplete: true }), /missing source element: Role/);
 });
+
+function getArchimate4RelationshipProfileConceptTypes(profile) {
+  return profile.elements.map((element) => element.type).concat(
+    profile.connectors.map((connector) => connector.type),
+    profile.relationships
+  );
+}

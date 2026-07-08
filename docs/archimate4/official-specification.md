@@ -201,11 +201,13 @@ External profile contract:
 
 - Accepted shapes are a nested object, a `Map` of source-to-target maps, row arrays, or a JSON string
   containing one of those structures.
-- Source and target element types must be members of the C260-derived 42-element catalog.
+- Source and target concept types must be members of the C260-derived concept set: the 42-element
+  catalog, the exposed relationship connectors, or the ArchiMate relationship types.
 - Relationship values may use the local one-letter codes (`s`, `c`, `g`, `i`, `r`, `v`, `a`, `n`, `t`,
   `f`, `o`) or relationship names.
-- The default public loader requires source coverage for every ArchiMate 4 element; sources with no
-  outgoing relationships must still be represented with an empty target map.
+- The default public loader requires source coverage for every ArchiMate 4 concept accepted by the
+  external profile contract; sources with no outgoing relationships must still be represented with an
+  empty target map.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

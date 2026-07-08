@@ -73,7 +73,8 @@
 - The default ArchiMate 4 relationship rules remain compatibility-derived from the existing 3.x maps
   until a licensed Appendix B profile artifact is supplied.
 - `lib/metamodel/languages/relationship-profile-loader.js` validates external relationship profiles
-  against the C260-derived 42-element catalog and the 11 supported relationship types.
+  against the C260-derived concept set: the 42-element catalog, `AndJunction` / `OrJunction`
+  relationship connectors, and the 11 supported relationship types.
 - The public entrypoint exports `setArchimate4RelationshipProfile(profile)` and
   `getArchimate4RelationshipProfileStatus()`.
 - `Modeler` and `Viewer` construction also accepts `archimate4RelationshipProfile` when
@@ -83,6 +84,8 @@
   artifacts.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
+- Complete external profiles must include source rows for relationship connectors and relationship
+  types, not only element types, so C260 Appendix B.6 relationship-concept rules can be supplied.
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
   so an external Appendix B profile affects editing constraints as well as menu display.
 

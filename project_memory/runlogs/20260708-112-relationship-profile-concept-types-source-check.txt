@@ -1,0 +1,10 @@
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+pages: 207
+page 160: hits=Plateau
+page 167: hits=Grouping, Location, Plateau, Junction
+page 170: hits=Grouping, Junction
+page 171: hits=Location
+page 173: hits=Grouping, Location
+page 174: hits=Location
+derived-fact: Appendix B.6 is the source area for additional relationship rules involving relationship concepts and junction-related concepts.
+derived-fact: external ArchiMate 4 relationship profiles must be able to use element concepts, relationship concepts, and junction connector concepts as source/target keys.
