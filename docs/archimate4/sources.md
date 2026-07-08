@@ -58,6 +58,8 @@
   against the C260-derived 42-element catalog and the 11 supported relationship types.
 - The public entrypoint exports `setArchimate4RelationshipProfile(profile)` and
   `getArchimate4RelationshipProfileStatus()`.
+- `Modeler` and `Viewer` construction also accepts `archimate4RelationshipProfile` when
+  `archimateVersion` is `4.0`, so licensed Appendix B data can be supplied at startup.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 

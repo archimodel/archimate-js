@@ -1,0 +1,2 @@
+command: npx eslint changed ArchiMate 4 files
+exit_code: 0

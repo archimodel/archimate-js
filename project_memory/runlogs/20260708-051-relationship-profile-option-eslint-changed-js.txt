@@ -1,0 +1,28 @@
+command: npx eslint changed ArchiMate 4 files
+
+D:\github\archimate-js\lib\BaseViewer.js
+   29:24  error  Strings must use singlequote                                                          quotes
+  106:3   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  119:12  error  'ParseCompleteEvent' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  132:69  error  Missing semicolon                                                                     semi
+  172:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  173:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  174:5   error  Expected space or tab after '/*' in comment                                           spaced-comment
+  188:12  error  A space is required after '{'                                                         object-curly-spacing
+  188:41  error  A space is required before '}'                                                        object-curly-spacing
+  287:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  290:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  367:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  370:1   error  Trailing spaces not allowed                                                           no-trailing-spaces
+  371:20  error  A space is required before '}'                                                        object-curly-spacing
+  427:49  error  Multiple spaces found before '// => nothing ...'                                      no-multi-spaces
+  432:37  error  Multiple spaces found before '// => nothing ...'                                      no-multi-spaces
+  488:25  error  'getDefaultLayer' is not defined                                                      no-undef
+  595:5   error  Expected line before comment                                                          lines-around-comment
+  599:1   error  Expected indentation of 2 spaces but found 0                                          indent
+  745:1   error  Expected indentation of 2 spaces but found 0                                          indent
+
+✖ 20 problems (20 errors, 0 warnings)
+  18 errors and 0 warnings potentially fixable with the `--fix` option.
+
+exit_code: 1

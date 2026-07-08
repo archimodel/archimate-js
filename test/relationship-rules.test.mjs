@@ -24,6 +24,7 @@ test('archimate 4 relationship profile has no retired source or target concepts'
 test('archimate 4 relationship fallback is compatibility-derived and replaceable', async () => {
   const source = await readFile(new URL('../lib/metamodel/languages/archimate4-relationships.js', import.meta.url), 'utf8');
   const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
+  const baseViewer = await readFile(new URL('../lib/BaseViewer.js', import.meta.url), 'utf8');
 
   assert.match(source, /buildFallbackRelationships/);
   assert.match(source, /setArchimate4RelationshipProfile/);
@@ -32,6 +33,9 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
+  assert.match(baseViewer, /archimate4RelationshipProfile/);
+  assert.match(baseViewer, /normalizeArchimateVersion\(options\.archimateVersion\) !== '4\.0'/);
+  assert.match(baseViewer, /setArchimate4RelationshipProfile\(/);
 });
 
 test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {

@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "loop_id": 6,
-  "stage": "junction_multiplicity_guard_verified",
+  "loop_id": 7,
+  "stage": "relationship_profile_option_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
     "target_branch": "main"
   },
   "change_context": {
-    "change_type": "bugfix",
-    "diff_size": 132,
+    "change_type": "feature",
+    "diff_size": 85,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -18,7 +18,8 @@
       "licensed_source_derivation",
       "c260_profile_conformance",
       "appendix_b_external_profile_loader",
-      "junction_multiplicity_guard"
+      "junction_multiplicity_guard",
+      "appendix_b_constructor_profile_option"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -28,12 +29,13 @@
       "check_no_generic_interface_element",
       "check_relationship_profile_loader_rejects_unknown_elements",
       "check_relationship_profile_loader_requires_complete_source_coverage",
-      "check_no_multiplicity_on_junction_ends"
+      "check_no_multiplicity_on_junction_ends",
+      "check_constructor_relationship_profile_loader"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-047-junction-multiplicity-npm-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-junction-multiplicity-guard-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-053-relationship-profile-option-final-npm-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-relationship-profile-option-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -42,10 +44,11 @@
   ],
   "assumptions": [
     "C260 can be used as a local source for derived implementation requirements, but copied normative prose and Appendix B tables should not be committed without explicit redistribution rights.",
-    "The external relationship profile loader can validate the licensed artifact once it is supplied."
+    "The external relationship profile loader can validate the licensed artifact once it is supplied.",
+    "A licensed Appendix B relationship profile can now be supplied directly in Modeler or Viewer construction options."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T15:25:46+09:00"
+    "updated_at": "2026-07-08T15:32:10+09:00"
   }
 }

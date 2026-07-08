@@ -180,8 +180,9 @@ conformance.
 Required implementation direction:
 
 - Load a dedicated official ArchiMate 4 relationship profile from Appendix B through
-  `setArchimate4RelationshipProfile(profile)`, or replace the fallback with derived non-verbatim data
-  after redistribution rights are confirmed.
+  `setArchimate4RelationshipProfile(profile)` or the `archimate4RelationshipProfile` constructor
+  option, or replace the fallback with derived non-verbatim data after redistribution rights are
+  confirmed.
 - Do not commit a verbatim copy of the licensed Appendix B tables unless redistribution rights are
   explicitly confirmed.
 - Keep tests focused on derived facts: no retired elements in source/target sets, interfaces preserved,
