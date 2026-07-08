@@ -186,7 +186,8 @@ Implementation note:
   `isDirected`, and `modifier` properties while retaining legacy `typeOption` compatibility.
 - Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
-  and negative modifier actions in the popup.
+  and negative modifier actions plus a custom modifier input in the ArchiMate 4 popup. Empty custom
+  input clears the modifier.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
   constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for
@@ -360,9 +361,9 @@ Implemented relationship rule wiring:
 - When a candidate relationship is connected to a junction and the opposite side already has a
   non-junction endpoint, the editor checks whether the same relationship type is valid directly
   between those endpoint concepts through the active relationship profile.
-- Influence relationship modifiers are rendered from `modifier` or `typeOption`, and the popup can
-  set common positive or negative influence values while retaining arbitrary modeler-defined values
-  supplied through relationship properties.
+- Influence relationship modifiers are rendered from `modifier` or `typeOption`, and the ArchiMate 4
+  popup can set common positive or negative influence values or a custom modeler-defined sign/strength
+  value.
 
 Implemented multiplicity guard:
 

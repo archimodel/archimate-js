@@ -289,11 +289,15 @@
 
 ## Influence Modifier Guard
 
+- A local C260 Influence keyword scan is recorded in
+  `project_memory/runlogs/20260709-076-c260-influence-modifier-source-scan.txt`.
 - C260 describes Influence as able to carry modeler-defined sign and/or strength values, with the
   default being unspecified.
 - The local descriptor and relationship replacement path already preserve `modifier`; the renderer now
-  displays it for Influence relationships, and the popup provides positive and negative quick actions
-  without restricting host-supplied arbitrary modifier values.
+  displays it for Influence relationships.
+- The ArchiMate 4 popup provides positive and negative quick actions plus a custom modifier input.
+  Empty custom input clears the modifier, and arbitrary trimmed values are retained for modeler-defined
+  sign or strength notation.
 
 ## Multiplicity Notation Guard
 

@@ -1,0 +1,10 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+Influence: count=22 pages=7,55,57,59,60,61,62,69,74,75,79,84,89,92,140,146,156,159,181,196,197,205
+modifier: count=0 pages=
+strength: count=8 pages=60,74,75,86,147,156,182,202
+positive: count=7 pages=60,61,68,75,79,81,89
+negative: count=7 pages=60,61,68,75,79,81,89
+influence+modifier-strength-sign candidates=60,61,74,75,79,89,156
+derived_note=Use keyword location only; no C260 prose copied into this log.
+EXIT_CODE=0

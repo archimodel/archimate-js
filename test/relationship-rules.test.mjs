@@ -138,6 +138,18 @@ test('connection popup exposes influence modifier actions', async () => {
   assert.match(source, /modifier: entry\.active \? '' : entry\.options\.modifier/);
 });
 
+test('connection popup exposes ArchiMate 4 custom influence modifier input', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  assert.match(source, /set-influence-modifier-custom/);
+  assert.match(source, /profile && profile\.version === '4\.0'/);
+  assert.match(source, /readInfluenceModifierValue/);
+  assert.match(source, /window\.prompt/);
+  assert.match(source, /Use a sign or strength value/);
+  assert.match(source, /modifier: value/);
+  assert.match(source, /return String\(value\)\.trim\(\)/);
+});
+
 test('renderer displays influence modifier labels', async () => {
   const source = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
 

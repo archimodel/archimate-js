@@ -656,3 +656,18 @@
 - Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-074-multiplicity-custom-input-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-075-multiplicity-custom-input-final-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-multiplicity-custom-input-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 58
+
+- Goal: continue C260-based ArchiMate 4 alignment by closing the Influence modifier editor gap: arbitrary modifier values were preserved and rendered, but the popup UI only offered fixed `+` and `-` quick actions.
+- Source check: `project_memory/runlogs/20260709-076-c260-influence-modifier-source-scan.txt` scanned the local C260 PDF for Influence, strength, positive, and negative keyword signals without copying licensed prose.
+- Implemented: the ArchiMate 4 Influence popup now exposes a custom modifier input in addition to the existing positive and negative quick actions.
+- Implemented: custom modifier input trims arbitrary modeler-defined sign or strength values; empty input clears the modifier; cancel leaves the relationship unchanged.
+- Guardrail: the custom modifier action is gated to ArchiMate 4 mode so existing ArchiMate 3.x positive/negative quick-action behavior remains unchanged.
+- Docs: `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, `README.md`, and `CHANGELOG.md` now record custom Influence modifier editing.
+- Verification: `npm run test:language` passed with 97 tests in `project_memory/runlogs/20260709-077-influence-custom-modifier-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-078-influence-custom-modifier-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-079-influence-custom-modifier-git-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-080-influence-custom-modifier-demo-build.txt`.
+- Final checks: `npm run test:language` passed with 97 tests in `project_memory/runlogs/20260709-081-influence-custom-modifier-final-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-082-influence-custom-modifier-final-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-083-influence-custom-modifier-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-084-influence-custom-modifier-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-085-influence-custom-modifier-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-086-influence-custom-modifier-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-087-influence-custom-modifier-final-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-influence-custom-modifier-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
