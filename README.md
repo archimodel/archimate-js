@@ -38,7 +38,7 @@ The supplied profile may be an object, a JSON string, a row array, a header-row 
 
 Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation. The status includes `targetCellCount`, `expectedTargetCellCount`, `missingSourceCount`, and `missingTargetCellCount` so hosts can audit that blank Appendix B cells were explicitly supplied rather than omitted. Use `getArchimate4RelationshipProfileCoverageReport()` when the host needs the specific missing source types or source-target cells.
 
-Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, source coverage status, and the external blockers that must be resolved before official conformance can be claimed.
+Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, source coverage status, conformance readiness, and the external blockers that must be resolved before official conformance can be claimed.
 
 The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
 
@@ -134,6 +134,7 @@ const modeler = new Modeler({
 * Influence relationship modifiers are preserved and rendered; the ArchiMate 4 popup includes quick actions for positive/negative influence and a custom sign/strength modifier input.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value, and the ArchiMate 4 relationship popup can edit custom source/target multiplicity values.
 * `getArchimate4ImplementationStatus()` exposes machine-readable status for implemented, experimental, optional, source-coverage, and external-source-dependent ArchiMate 4 areas.
+* Implementation status includes `conformanceReadiness.officialConformanceClaimable`; it remains `false` while official Appendix B, MEFF 4.0 XSD, or exact Appendix A artwork-rights blockers remain.
 * Implementation status includes source coverage for the local C260 PDF, local launch transcript, W262 companion paper availability, Appendix B relationship matrix, MEFF 4.0 XSD, and Appendix A artwork-rights boundary.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.

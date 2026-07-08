@@ -1267,3 +1267,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-635-w262-source-coverage-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-636-w262-source-coverage-final-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-w262-source-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 102
+
+- Goal: make the ArchiMate 4 official-conformance claim boundary machine-auditable from `getArchimate4ImplementationStatus()`.
+- Red tests: `project_memory/runlogs/20260709-637-conformance-readiness-red-test.txt` showed that runtime importing the JSON-backed language index is unsuitable under the current Node import-attributes setup; `project_memory/runlogs/20260709-638-conformance-readiness-red-test.txt` then failed because `profile.conformance.readiness` did not exist.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `conformance.readiness` with `officialConformanceClaimable: false`, the external blocker ids, and required-before-claim actions for Appendix B, MEFF 4.0 XSD, and Appendix A artwork rights.
+- Implemented: `lib/metamodel/languages/index.js` now returns `conformanceReadiness` from `getArchimate4ImplementationStatus()`, including official claimability, reason, blocker ids, implemented/external-blocked shall counts, missing required source ids, and missing companion source ids.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and describe the conformance-readiness boundary so implemented local coverage is not mistaken for an official conformance claim.
+- Verification: focused readiness test passed with 158 tests in `project_memory/runlogs/20260709-639-conformance-readiness-test.txt`; `npm run test:language` passed with 158 tests in `project_memory/runlogs/20260709-640-conformance-readiness-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-641-conformance-readiness-eslint-registry.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-643-conformance-readiness-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-644-conformance-readiness-demo-build.txt`; JSON parse recheck passed in `project_memory/runlogs/20260709-646-conformance-readiness-json-recheck.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-645-conformance-readiness-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-647-conformance-readiness-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-648-conformance-readiness-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-conformance-readiness-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

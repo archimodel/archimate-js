@@ -36,6 +36,9 @@
   profile artifact present", not "licensed C260 source reviewed".
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
+- `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including
+  `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing
+  companion source ids while external sources remain unresolved.
 - C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
   metadata so required, optional, implemented, and externally blocked support can be audited without
   treating fallback data as final conformance.

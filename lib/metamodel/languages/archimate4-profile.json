@@ -64,6 +64,20 @@
         "optional": true
       }
     ],
+    "readiness": {
+      "officialConformanceClaimable": false,
+      "reason": "external-blockers-remain",
+      "blockers": [
+        "officialAppendixBRelationshipMatrix",
+        "officialMeff4Xsd",
+        "exactAppendixAArtworkRights"
+      ],
+      "requiredBeforeClaim": [
+        "Load an official or redistributable Appendix B relationship profile",
+        "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+        "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
+      ]
+    },
     "sourceCoverage": {
       "c260": {
         "document": "C260",

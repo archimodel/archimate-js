@@ -43,6 +43,8 @@ collapsed into one ambiguous "supported" flag.
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
 local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B
 relationship matrix, the MEFF 4.0 XSD, and Appendix A artwork-rights boundary visible to host tools.
+It must also expose `conformanceReadiness.officialConformanceClaimable` so host tools cannot mistake
+implemented local coverage for a complete official conformance claim while external blockers remain.
 
 ## Language Structure
 
@@ -469,8 +471,8 @@ In particular:
   as ArchiMate 4 elements.
 - `getArchimate4ImplementationStatus()` must report the implemented catalog, active relationship
   profile status, experimental exchange-format boundary, icon coverage boundary, generic object alias
-  count, and external blockers so callers do not mistake compatibility fallback support for complete
-  official conformance.
+  count, conformance readiness, and external blockers so callers do not mistake compatibility fallback
+  support for complete official conformance.
 
 The relationship rules remain a fallback:
 

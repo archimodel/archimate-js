@@ -511,7 +511,8 @@ test('archimate 4 implementation status is machine-readable and preserves extern
 
   assert.match(languageIndex, /export function getArchimate4ImplementationStatus/);
   assert.match(languageIndex, /relationshipProfile: getArchimate4RelationshipProfileStatus\(\)/);
-  assert.match(languageIndex, /externalBlockers: \[/);
+  assert.match(languageIndex, /var externalBlockers = \[/);
+  assert.match(languageIndex, /externalBlockers: externalBlockers/);
   assert.match(languageIndex, /officialAppendixBRelationshipMatrix/);
   assert.match(languageIndex, /officialMeff4Xsd/);
   assert.match(languageIndex, /exactAppendixAArtworkRights/);
@@ -591,12 +592,55 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     404
   );
 
-  assert.match(languageIndex, /sourceCoverage: summarizeSourceCoverage/);
+  assert.match(languageIndex, /var sourceCoverage = summarizeSourceCoverage/);
+  assert.match(languageIndex, /sourceCoverage: sourceCoverage/);
   assert.match(languageIndex, /missingCompanionSources/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
   assert.match(sources, /20260709-626-w262-local-source-search/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
+});
+
+test('archimate 4 implementation status exposes official conformance readiness', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const readiness = profile.conformance.readiness;
+
+  assert.equal(readiness.officialConformanceClaimable, false);
+  assert.equal(readiness.reason, 'external-blockers-remain');
+  assert.deepEqual(readiness.blockers, [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ]);
+  assert.deepEqual(readiness.requiredBeforeClaim, [
+    'Load an official or redistributable Appendix B relationship profile',
+    'Confirm the official MEFF 4.0 XSD namespace and serialization details',
+    'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
+  ]);
+
+  assert.match(languageIndex, /conformanceReadiness: summarizeConformanceReadiness/);
+  assert.match(languageIndex, /officialConformanceClaimable/);
+  assert.match(languageIndex, /implementedShallCount/);
+  assert.match(languageIndex, /externalBlockedShallCount/);
+  assert.match(languageIndex, /missingRequiredSources/);
+  assert.match(languageIndex, /missingCompanionSources/);
+  assert.match(languageIndex, /external-blockers-remain/);
+  assert.match(readme, /conformanceReadiness\.officialConformanceClaimable/);
+  assert.match(sources, /officialConformanceClaimable: false/);
+  assert.match(officialSpec, /conformanceReadiness\.officialConformanceClaimable/);
+
+  assert.equal(profile.conformance.requirements.filter((requirement) => requirement.level === 'shall' && requirement.status === 'implemented').length, 3);
+  assert.equal(profile.conformance.requirements.filter((requirement) => requirement.level === 'shall' && requirement.externalBlocker).length, 2);
+  assert.deepEqual(Object.keys(profile.conformance.sourceCoverage).filter((key) => profile.conformance.sourceCoverage[key].required && profile.conformance.sourceCoverage[key].localSourcePresent === false), [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.deepEqual(Object.keys(profile.conformance.sourceCoverage).filter((key) => profile.conformance.sourceCoverage[key].companion && profile.conformance.sourceCoverage[key].localSourcePresent === false), [ 'w262' ]);
 });
 
 test('archimate 4 implementation plan records current execution boundary', async () => {
@@ -639,7 +683,8 @@ test('archimate 4 conformance requirements are tracked per C260 shall and may cl
   assert.equal(byId.get('example-viewpoints').level, 'may');
   assert.equal(byId.get('example-viewpoints').status, 'not-bundled-informative');
 
-  assert.match(languageIndex, /conformanceRequirements: summarizeConformanceRequirements/);
+  assert.match(languageIndex, /var conformanceRequirements = summarizeConformanceRequirements/);
+  assert.match(languageIndex, /conformanceRequirements: conformanceRequirements/);
   assert.match(languageIndex, /function summarizeConformanceRequirements/);
   assert.match(sources, /C260 conformance requirements are represented per shall\/may clause/);
 });
