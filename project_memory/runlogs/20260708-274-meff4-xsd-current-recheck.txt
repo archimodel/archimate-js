@@ -1,0 +1,19 @@
+timestamp=2026-07-08T19:00:00.1825103+09:00
+url=https://www.opengroup.org/xsd/archimate/ status=200 length=3056
+directory_link_count=14
+directory_link=3.1/
+directory_link=3.1/archimate3_Model.xsd
+directory_link=3.1/archimate3_View.xsd
+directory_link=3.1/archimate3_Diagram.xsd
+directory_link=3.1/html-model/
+directory_link=3.1/html-view/
+directory_link=3.1/html-diagram/
+directory_link=3.1/examples/
+directory_link=3.1/examples/_Snippets
+directory_link=http://www.opengroup.org/subjectareas/enterprise/archimate/model-exchange-file-format
+directory_mentions_archimate4_or_4_0=false
+url=https://www.opengroup.org/xsd/archimate/4.0/ status=404 error=Response status code does not indicate success: 404 (Not Found).
+url=https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd status=404 error=Response status code does not indicate success: 404 (Not Found).
+url=https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd status=404 error=Response status code does not indicate success: 404 (Not Found).
+url=https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd status=200 length=49107
+MEFF4_XSD_CURRENT_RECHECK_EXIT=0

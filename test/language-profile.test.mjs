@@ -116,6 +116,22 @@ test('profile-aware metadata and palette include relationship junction connector
   assert.match(paletteProvider, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
 });
 
+test('archimate 4 palette exposes every standard element', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const css = await readFile(new URL('../assets/palette-icons.css', import.meta.url), 'utf8');
+
+  assert.equal(profile.elements.length, 42);
+
+  for (const element of profile.elements) {
+    assert.notEqual(element.palette, false, `${element.type} must be available in the ArchiMate 4 palette`);
+    assert.equal(
+      css.includes('.' + element.className),
+      true,
+      `${element.type} palette class ${element.className} must have an icon rule`
+    );
+  }
+});
+
 test('archimate 4 profile pictogram refs are defined for renderer path map', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');

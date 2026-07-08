@@ -1,0 +1,13 @@
+COMMAND: node common composite palette gap check
+Grouping.domain=Common
+Grouping.aspect=Composite
+Grouping.palette=false
+Grouping.className=archimate-common-grouping
+Grouping.cssClassPresent=false
+Location.domain=Common
+Location.aspect=Composite
+Location.palette=false
+Location.className=archimate-common-location
+Location.cssClassPresent=false
+archimate4_hidden_palette_elements=Grouping,Location
+COMMON_COMPOSITE_PALETTE_GAP_CHECK_EXIT=0

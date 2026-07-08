@@ -1,0 +1,12 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+pdf_pages=207
+term_pages[multiplicity]=8,68,69,200
+term_pages[0..*]=68
+term_pages[1..*]=
+term_pages[2..*]=
+term_pages[n..m]=68
+term_pages[n..*]=
+term_pages[relationship end]=
+candidate_pages=8,68,69,200
+verbatim_text_stored=false
+MULTIPLICITY_UNBOUNDED_RANGE_SOURCE_CHECK_EXIT=0

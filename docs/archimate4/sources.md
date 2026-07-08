@@ -89,6 +89,8 @@
 - 4.0 shape creation now keeps `domain` metadata from the active language profile while retaining the
   existing `layer` property as a compatibility alias for renderer and extension code that still reads it.
 - Domain colors are resolved from `domain` first when available, then the legacy `layer` value.
+- The ArchiMate 4 palette exposes all 42 standard elements. `Grouping` and `Location` are Common
+  composite elements and are no longer hidden by the legacy 3.x palette exclusion flag.
 
 ## Viewpoint Mechanism
 

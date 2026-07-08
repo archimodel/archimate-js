@@ -1,0 +1,15 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+checked_pdf_pages=167-170
+term_present[Appendix B.6]=False
+term_present[Grouping]=True
+term_present[Location]=True
+term_present[Plateau]=True
+term_present[relationship]=True
+term_present[Junction]=True
+term_present[Aggregation]=False
+derived_fact_1=Appendix B.6 covers relationship rules involving relationship concepts.
+derived_fact_2=The page window contains Grouping, Location, Plateau, relationship, and Junction terms.
+derived_fact_3=This text extraction alone is insufficient to add Plateau to the narrow aggregation helper.
+implementation_decision=No Plateau helper change was made in this loop.
+verbatim_table_stored=false
+APPENDIX_B6_PLATEAU_SOURCE_CHECK_EXIT=0

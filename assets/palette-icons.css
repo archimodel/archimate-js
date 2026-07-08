@@ -694,6 +694,22 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
+.archimate-common-grouping,
+.archimate-common-location {
+background-image: url("./icons/group.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-grouping:hover,
+.archimate-common-location:hover {
+background-color: lightgrey;
+}
+
 /* ARCHIMATE 4 FALLBACK ALIASES */
 
 .archimate-motivation-stakeholder,

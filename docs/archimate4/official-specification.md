@@ -72,6 +72,8 @@ Runtime behavior:
 - Palette and element metadata are read from the active customized profile.
 - Shape metadata preserves the active profile `domain` for ArchiMate 4 concepts while retaining the
   legacy `layer` property as a compatibility alias.
+- The ArchiMate 4 palette exposes every standard element in the 42-element catalog, including Common
+  composite elements `Grouping` and `Location`.
 - Default element color uses custom domain colors when supplied.
 - Relationship validation resolves custom specialized concepts to their standard base concept, so a
   `RiskEvent` specializing `Event` inherits the base `Event` relationship constraints.

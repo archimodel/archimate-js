@@ -1,0 +1,2 @@
+COMMAND: npx eslint ArchiMate 4 gate files
+ESLINT_ARCHIMATE4_GATE_EXIT=0

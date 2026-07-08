@@ -1,0 +1,10 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+checked_pdf_pages=167-170
+plateau_row_count=1
+plateau_row_1_pdf_page=167
+plateau_row_1_non_empty_cell_count=6
+plateau_row_1_relationship_codes=
+derived_fact=Plateau row was found, but the simple table extraction did not recover an isolated relationship code.
+implementation_decision=Do not add Plateau to the narrow aggregation helper from this weak extraction alone.
+verbatim_table_stored=false
+APPENDIX_B6_PLATEAU_TABLE_CODE_CHECK_EXIT=0

@@ -393,3 +393,15 @@
 - Finalization: state trace passed in `project_memory/runlogs/20260708-264-relationship-option-hydration-final-state-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260708-265-relationship-option-hydration-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-relationship-option-hydration-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 38
+
+- Goal: expose every standard ArchiMate 4 element in the palette, including Common composite `Grouping` and `Location`.
+- Observation: `project_memory/runlogs/20260708-275-common-composite-palette-gap-check.txt` showed `Grouping` and `Location` were the only ArchiMate 4 elements with `palette: false`, and their Common Domain palette CSS classes were missing.
+- Source checks: MEFF 4.0 XSD remains unavailable in `project_memory/runlogs/20260708-274-meff4-xsd-current-recheck.txt`; C260 PDF did not justify widening multiplicity notation to non-zero unbounded forms in `project_memory/runlogs/20260708-273-multiplicity-unbounded-range-source-check.txt`.
+- Implemented: removed the legacy 3.x palette exclusion flag from ArchiMate 4 `Grouping` and `Location` while leaving ArchiMate 3.x profile behavior unchanged.
+- Implemented: added `archimate-common-grouping` and `archimate-common-location` palette icon CSS aliases.
+- Tests/docs: `test/language-profile.test.mjs`, README, and `docs/archimate4/*` now guard that all 42 standard ArchiMate 4 elements remain palette-visible.
+- Verification: fix check passed in `project_memory/runlogs/20260708-276-common-composite-palette-fix-check.txt`; `npm run test:language` passed with 76 tests in `project_memory/runlogs/20260708-277-common-composite-palette-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-278-common-composite-palette-eslint-archimate4-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-279-common-composite-palette-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-280-common-composite-palette-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-common-composite-palette-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

@@ -1,0 +1,12 @@
+COMMAND: node common composite palette fix check
+archimate4_element_count=42
+archimate4_hidden_palette_elements=
+Grouping.domain=Common
+Grouping.aspect=Composite
+Grouping.palette=undefined
+Grouping.cssClassPresent=true
+Location.domain=Common
+Location.aspect=Composite
+Location.palette=undefined
+Location.cssClassPresent=true
+COMMON_COMPOSITE_PALETTE_FIX_CHECK_EXIT=0
