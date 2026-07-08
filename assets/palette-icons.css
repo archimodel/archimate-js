@@ -735,13 +735,76 @@ background-image: url("./icons/common_location.svg");
 .archimate-imp-mig-work-package,
 .archimate-imp-mig-deliverable,
 .archimate-imp-mig-plateau {
-background-image: url("./icons/business_object.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
 width: 22px !important;
 height: 22px !important;
+}
+
+.archimate-motivation-stakeholder {
+background-image: url("./icons/motivation_stakeholder.svg");
+}
+
+.archimate-motivation-driver {
+background-image: url("./icons/motivation_driver.svg");
+}
+
+.archimate-motivation-assessment {
+background-image: url("./icons/motivation_assessment.svg");
+}
+
+.archimate-motivation-goal {
+background-image: url("./icons/motivation_goal.svg");
+}
+
+.archimate-motivation-outcome {
+background-image: url("./icons/motivation_outcome.svg");
+}
+
+.archimate-motivation-principle {
+background-image: url("./icons/motivation_principle.svg");
+}
+
+.archimate-motivation-requirement {
+background-image: url("./icons/motivation_requirement.svg");
+}
+
+.archimate-motivation-meaning {
+background-image: url("./icons/motivation_meaning.svg");
+}
+
+.archimate-motivation-value {
+background-image: url("./icons/motivation_value.svg");
+}
+
+.archimate-technology-distribution-network {
+background-image: url("./icons/technology_distribution_network.svg");
+}
+
+.archimate-technology-equipment {
+background-image: url("./icons/technology_equipment.svg");
+}
+
+.archimate-technology-facility {
+background-image: url("./icons/technology_facility.svg");
+}
+
+.archimate-technology-material {
+background-image: url("./icons/technology_material.svg");
+}
+
+.archimate-imp-mig-work-package {
+background-image: url("./icons/imp_mig_work_package.svg");
+}
+
+.archimate-imp-mig-deliverable {
+background-image: url("./icons/imp_mig_deliverable.svg");
+}
+
+.archimate-imp-mig-plateau {
+background-image: url("./icons/imp_mig_plateau.svg");
 }
 
 .archimate-motivation-stakeholder:hover,
@@ -795,13 +858,20 @@ background-color: lightgrey;
 
 .archimate-other-and-junction,
 .archimate-other-or-junction {
-background-image: url("./icons/group.svg");
 background-repeat: no-repeat;
 background-size: 18px 18px;
 background-position: center;
 margin: 4px 0px 0px 4px;
 width: 22px !important;
 height: 22px !important;
+}
+
+.archimate-other-and-junction {
+background-image: url("./icons/other_and_junction.svg");
+}
+
+.archimate-other-or-junction {
+background-image: url("./icons/other_or_junction.svg");
 }
 
 .archimate-other-and-junction:hover,

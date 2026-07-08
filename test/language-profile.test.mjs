@@ -201,6 +201,57 @@ test('archimate 4 Common Domain palette uses Common visual assets', async () => 
   assert.doesNotMatch(css, /\.archimate-common-path \{\nbackground-image: url\("\.\/icons\/technology_path\.svg"\)/);
 });
 
+test('profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons', async () => {
+  const css = await readFile(new URL('../assets/palette-icons.css', import.meta.url), 'utf8');
+  const archimate4Icons = new Map([
+    [ 'archimate-motivation-stakeholder', 'motivation_stakeholder.svg' ],
+    [ 'archimate-motivation-driver', 'motivation_driver.svg' ],
+    [ 'archimate-motivation-assessment', 'motivation_assessment.svg' ],
+    [ 'archimate-motivation-goal', 'motivation_goal.svg' ],
+    [ 'archimate-motivation-outcome', 'motivation_outcome.svg' ],
+    [ 'archimate-motivation-principle', 'motivation_principle.svg' ],
+    [ 'archimate-motivation-requirement', 'motivation_requirement.svg' ],
+    [ 'archimate-motivation-meaning', 'motivation_meaning.svg' ],
+    [ 'archimate-motivation-value', 'motivation_value.svg' ],
+    [ 'archimate-technology-distribution-network', 'technology_distribution_network.svg' ],
+    [ 'archimate-technology-equipment', 'technology_equipment.svg' ],
+    [ 'archimate-technology-facility', 'technology_facility.svg' ],
+    [ 'archimate-technology-material', 'technology_material.svg' ],
+    [ 'archimate-imp-mig-work-package', 'imp_mig_work_package.svg' ],
+    [ 'archimate-imp-mig-deliverable', 'imp_mig_deliverable.svg' ],
+    [ 'archimate-imp-mig-plateau', 'imp_mig_plateau.svg' ],
+    [ 'archimate-other-and-junction', 'other_and_junction.svg' ],
+    [ 'archimate-other-or-junction', 'other_or_junction.svg' ]
+  ]);
+
+  assert.match(css, /\.archimate-business-role \{\nbackground-image: url\("\.\/icons\/business_role\.svg"\)/);
+  assert.match(css, /\.archimate-business-object \{\nbackground-image: url\("\.\/icons\/business_object\.svg"\)/);
+
+  for (const [ className, iconName ] of archimate4Icons) {
+    const icon = await readFile(new URL('../assets/icons/' + iconName, import.meta.url), 'utf8');
+
+    assert.equal(
+      css.includes(`.${className} {\nbackground-image: url("./icons/${iconName}")`),
+      true,
+      `${className} must use ${iconName}`
+    );
+    assert.doesNotMatch(
+      css,
+      new RegExp(`\\.${className} \\{\\nbackground-image: url\\("\\./icons/business_object\\.svg"\\)`)
+    );
+    assert.match(icon, /<svg /, `${iconName} must be a local SVG asset`);
+  }
+});
+
+test('context pad explains that relationship creation starts by dragging to a target element', async () => {
+  const contextPadProvider = await readFile(new URL('../lib/features/context-pad/ContextPadProvider.js', import.meta.url), 'utf8');
+
+  assert.match(contextPadProvider, /title: translate\('Drag to another element to create a relationship'\)/);
+  assert.match(contextPadProvider, /title: translate\('Drag to another element to connect the note'\)/);
+  assert.doesNotMatch(contextPadProvider, /title: translate\('Create Relation'\)/);
+  assert.doesNotMatch(contextPadProvider, /title: translate\('Connect Note'\)/);
+});
+
 test('demo sample switches concepts by selected ArchiMate profile', async () => {
   const sample = await readFile(new URL('../demo/src/sample-canvas.js', import.meta.url), 'utf8');
   const archimate3Block = sample.match(/\[DEMO_ARCHIMATE3_VERSION\]: \{([\s\S]*?)\n {2}\},\n {2}\[DEMO_ARCHIMATE4_VERSION\]/)[1];

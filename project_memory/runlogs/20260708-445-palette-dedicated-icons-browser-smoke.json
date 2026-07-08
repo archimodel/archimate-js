@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "four": {
+    "version": "4.0",
+    "entries": 47,
+    "icons": {
+      ".djs-palette .entry.archimate-motivation-stakeholder": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/motivation_stakeholder.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-technology-distribution-network": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/technology_distribution_network.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-imp-mig-work-package": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/imp_mig_work_package.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-other-and-junction": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/other_and_junction.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-common-role": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/common_role.svg\")",
+        "width": "22px",
+        "height": "22px"
+      }
+    },
+    "screenshotPath": "project_memory/runlogs/20260708-448-palette-4-icons-crop.png"
+  },
+  "three": {
+    "version": "3.2",
+    "entries": 44,
+    "icons": {
+      ".djs-palette .entry.archimate-business-role": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/business_role.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-business-object": {
+        "backgroundImage": "url(\"http://127.0.0.1:4174/assets/icons/business_object.svg\")",
+        "width": "22px",
+        "height": "22px"
+      },
+      ".djs-palette .entry.archimate-common-role": null,
+      ".djs-palette .entry.archimate-motivation-stakeholder": null
+    },
+    "screenshotPath": "project_memory/runlogs/20260708-449-palette-3-icons-crop.png"
+  }
+}

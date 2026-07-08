@@ -1,0 +1,49 @@
+
+D:\github\archimate-js\lib\features\context-pad\ContextPadProvider.js
+    4:3   error  'keys' is defined but never used. Allowed unused vars must match /^_/u                     no-unused-vars
+    5:3   error  'forEach' is defined but never used. Allowed unused vars must match /^_/u                  no-unused-vars
+   12:10  error  'is' is defined but never used. Allowed unused vars must match /^_/u                       no-unused-vars
+   12:69  error  'VIEW' is defined but never used. Allowed unused vars must match /^_/u                     no-unused-vars
+   14:24  error  Strings must use singlequote                                                               quotes
+   17:7   error  'colorImageSvg' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   19:7   error  'nestedImageSvg' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   25:1   error  Expected indentation of 4 spaces but found 2                                               indent
+   26:1   error  Expected indentation of 4 spaces but found 2                                               indent
+   27:1   error  Expected indentation of 4 spaces but found 2                                               indent
+   28:1   error  Expected indentation of 4 spaces but found 2                                               indent
+   47:3   error  Expected space or tab after '/*' in comment                                                spaced-comment
+   56:36  error  Missing semicolon                                                                          semi
+  107:18  error  'contextPad' is assigned a value but never used. Allowed unused vars must match /^_/u      no-unused-vars
+  108:13  error  'rules' is assigned a value but never used. Allowed unused vars must match /^_/u           no-unused-vars
+  116:14  error  'canvas' is assigned a value but never used. Allowed unused vars must match /^_/u          no-unused-vars
+  117:1   error  Trailing spaces not allowed                                                                no-trailing-spaces
+  128:12  error  'setColor' is defined but never used. Allowed unused vars must match /^_/u                 no-unused-vars
+  137:59  error  Strings must use singlequote                                                               quotes
+  145:6   error  Missing semicolon                                                                          semi
+  203:31  error  Expected space or tab after '//' in comment                                                spaced-comment
+  247:7   error  Expected line before comment                                                               lines-around-comment
+  266:7   error  Expected line before comment                                                               lines-around-comment
+  296:12  error  'createAddJunction' is defined but never used. Allowed unused vars must match /^_/u        no-unused-vars
+  313:3   error  Expected space or tab after '/*' in comment                                                spaced-comment
+  321:68  error  Trailing spaces not allowed                                                                no-trailing-spaces
+  339:49  error  Trailing spaces not allowed                                                                no-trailing-spaces
+  356:54  error  Expected space or tab after '//' in comment                                                spaced-comment
+  367:5   error  Expected line before comment                                                               lines-around-comment
+  384:5   error  Expected line before comment                                                               lines-around-comment
+  418:2   error  Missing semicolon                                                                          semi
+  426:17  error  'translate' is assigned a value but never used. Allowed unused vars must match /^_/u       no-unused-vars
+  441:1   error  Expected indentation of 4 spaces but found 6                                               indent
+  441:7   error  Expected line before comment                                                               lines-around-comment
+  441:7   error  Expected space or tab after '//' in comment                                                spaced-comment
+  442:1   error  Expected indentation of 4 spaces but found 6                                               indent
+  443:1   error  Expected indentation of 4 spaces but found 6                                               indent
+  444:1   error  Expected indentation of 4 spaces but found 6                                               indent
+  446:2   error  Missing semicolon                                                                          semi
+  448:64  error  Unexpected space before function parentheses                                               space-before-function-paren
+  448:90  error  Trailing spaces not allowed                                                                no-trailing-spaces
+  472:2   error  Missing semicolon                                                                          semi
+  497:1   error  Expected space or tab after '/*' in comment                                                spaced-comment
+  517:10  error  'getColor' is defined but never used. Allowed unused vars must match /^_/u                 no-unused-vars
+
+✖ 44 problems (44 errors, 0 warnings)
+  31 errors and 0 warnings potentially fixable with the `--fix` option.

@@ -573,3 +573,15 @@
 - Error verification: browser smoke confirmed 3.x rejects `Role`, 4.0 rejects `BusinessRole`, and viewer import propagates an invalid profile concept error in `project_memory/runlogs/20260708-439-profile-boundary-error-browser-smoke.json`.
 - Audit: `project_memory/audit/reports/20260708-profile-versioned-demo-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-08 loop 53
+
+- Goal: answer and fix the user-observed palette behavior: `editor.html?version=3.2` should keep the original 3.x icons, `editor.html?version=4.0` should not show many repeated fallback icons, and the relationship arrow context-pad action should be clearer.
+- Observation: `assets/palette-icons.css` mapped the missing ArchiMate 4 Motivation, Technology, Implementation and Migration, and junction fallback classes to shared assets (`business_object.svg` or `group.svg`), which made the 4.0 palette visually repetitive. 3.2 was already using the original `business_*` assets.
+- Implemented: added 18 local SVG palette assets for the missing 4.0 fallback classes and changed `assets/palette-icons.css` so those classes use distinct SVGs. The 3.x `archimate-business-role` and `archimate-business-object` rules were left unchanged.
+- Implemented: changed the context-pad relationship and note-connection titles to say that the action is started by dragging to another element.
+- Tests: `test/language-profile.test.mjs` now verifies 3.x icon preservation, 4.0 fallback icon separation, local SVG presence, and the context-pad drag tooltip text.
+- Verification: `npm run demo:build` passed in `project_memory/runlogs/20260708-442-palette-dedicated-icons-demo-build.txt`; `npm run test:language` passed with 92 tests in `project_memory/runlogs/20260708-443-palette-dedicated-icons-test-language.txt`; browser smoke passed in `project_memory/runlogs/20260708-445-palette-dedicated-icons-browser-smoke.json`; screenshots were saved to `project_memory/runlogs/20260708-448-palette-4-icons-crop.png` and `project_memory/runlogs/20260708-449-palette-3-icons-crop.png`; `git diff --check` passed in `project_memory/runlogs/20260708-450-palette-dedicated-icons-git-diff-check.txt`; registry ESLint gate passed in `project_memory/runlogs/20260708-451-palette-dedicated-icons-eslint-registry-gate.txt`.
+- Known lint status: direct lint of `lib/features/context-pad/ContextPadProvider.js` still fails on pre-existing unused imports and formatting backlog, recorded in `project_memory/runlogs/20260708-444-palette-dedicated-icons-eslint-changed.txt`; repo-wide lint remains the known legacy failure, recorded in `project_memory/runlogs/20260708-452-palette-dedicated-icons-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-palette-dedicated-icons-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution remains unconfirmed, so these new SVGs are local visual cues rather than copied official standard artwork; official Appendix B relationship data and MEFF 4.0 XSD remain external-source dependent.
