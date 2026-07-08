@@ -365,6 +365,8 @@ Implemented migration guard:
 - Migrated specialization metadata is stored both as direct runtime fields and as model `Properties`
   backed by `PropertyDefinition` entries, preserving the original ArchiMate 3 type and original domain
   through the existing exchange-format extension mechanism.
+- `Path` to technology-internal-active-structure `Aggregation` relationships are migrated to reversed
+  `Realization` relationships, with an explicit relationship warning.
 - Migrated relationship types can be checked through an externally supplied Appendix B-aware validator.
   Invalid relationships are warned and, by default, replaced with `Association`.
 

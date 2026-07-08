@@ -484,3 +484,15 @@
 - Verification: final build passed in `project_memory/runlogs/20260708-347-demo-final-build.txt`; `npm run test:language` passed with 79 tests in `project_memory/runlogs/20260708-340-demo-language-tests-after-test-fix.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-345-demo-eslint-changed-js-after-fix.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-346-demo-git-diff-check-after-eslint-fix.txt`; final Puppeteer smoke passed in `project_memory/runlogs/20260708-348-demo-final-puppeteer-smoke.txt`.
 - Audit: `project_memory/audit/reports/20260708-viewer-editor-demo-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 46
+
+- Goal: implement the C260 Appendix E-derived migration correction for `Path` aggregation relationships.
+- Observation: `docs/archimate4/official-specification.md` already recorded the derived requirement that `Aggregation` from `Path` to a technology internal active structure element should become a reversed `Realization`, but `lib/migration/archimate3-to-4.js` only handled element migrations plus external-profile invalid-relationship replacement.
+- Source check: `project_memory/runlogs/20260708-349-path-aggregation-migration-source-check.txt` found the Appendix E vicinity signals for `Path`, `Aggregation`, `Realization`, and technology internal active structure without storing verbatim C260 text.
+- Implemented: `migrateArchimate3ModelTo4()` now corrects `Path` -> technology-internal-active-structure `Aggregation` relationships into reversed `Realization` relationships before external Appendix B validation.
+- Implemented: migration warnings now record the original relationship type, replacement type, endpoint types, and `reversed: true` for this correction.
+- Tests/docs: `test/migration.test.mjs` covers the direct `Path` -> `Node` case, a `TechnologyCollaboration` case after element migration to `Collaboration`, and a non-technology `BusinessCollaboration` case that must not be corrected; `docs/archimate4/*` records the implemented guard.
+- Verification: `npm run test:language` passed with 81 tests in `project_memory/runlogs/20260708-350-path-aggregation-migration-npm-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-351-path-aggregation-migration-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-352-path-aggregation-migration-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260708-path-aggregation-migration-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

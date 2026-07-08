@@ -140,6 +140,11 @@
   while storing `Physical` as `archimate-js:originalArchiMate3Domain`, without creating a
   specialization profile. The behavior check is recorded in
   `project_memory/runlogs/20260708-311-physical-domain-migration-gap-check.txt`.
+- A local C260 Appendix E vicinity keyword check for the Path aggregation relationship correction is
+  recorded in `project_memory/runlogs/20260708-349-path-aggregation-migration-source-check.txt`.
+- `migrateArchimate3ModelTo4()` now converts `Path` to technology-internal-active-structure
+  `Aggregation` relationships into reversed `Realization` relationships and records an explicit
+  relationship migration warning.
 - Relationship migration validation remains external-profile driven: hosts can pass an Appendix B-aware
   `isRelationshipAllowed` validator into `migrateArchimate3ModelTo4()` to warn on migrated relationships
   that are no longer valid and replace them with `Association` by default.

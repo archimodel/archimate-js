@@ -188,6 +188,78 @@ test('migration utility preserves original physical domain for technology-domain
   });
 });
 
+test('migration utility converts Path aggregation to technology internal active structure into reversed realization', () => {
+  const path = { id: 'path-1', type: 'Path' };
+  const node = { id: 'node-1', type: 'Node' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Aggregation',
+    source: path,
+    target: node
+  };
+  const model = {
+    elementsNode: {
+      baseElements: [ path, node ]
+    },
+    relationshipsNode: {
+      relationships: [ relationship ]
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model);
+  const relationshipWarning = result.warnings.find((warning) => warning.relationshipId === 'relationship-1');
+
+  assert.equal(relationship.type, 'Realization');
+  assert.equal(relationship.source, node);
+  assert.equal(relationship.target, path);
+  assert.equal(relationshipWarning.originalType, 'Aggregation');
+  assert.equal(relationshipWarning.replacementType, 'Realization');
+  assert.equal(relationshipWarning.sourceType, 'Path');
+  assert.equal(relationshipWarning.targetType, 'Node');
+  assert.equal(relationshipWarning.reversed, true);
+  assert.match(relationshipWarning.message, /reversed Realization/);
+});
+
+test('migration utility applies Path aggregation correction to technology collaborations only', () => {
+  const path = { id: 'path-1', type: 'Path' };
+  const technologyCollaboration = { id: 'technology-collaboration-1', type: 'TechnologyCollaboration' };
+  const businessCollaboration = { id: 'business-collaboration-1', type: 'BusinessCollaboration' };
+  const technologyRelationship = {
+    id: 'relationship-technology',
+    type: 'Aggregation',
+    source: path,
+    target: technologyCollaboration
+  };
+  const businessRelationship = {
+    id: 'relationship-business',
+    type: 'Aggregation',
+    source: path,
+    target: businessCollaboration
+  };
+  const model = {
+    elementsNode: {
+      baseElements: [ path, technologyCollaboration, businessCollaboration ]
+    },
+    relationshipsNode: {
+      relationships: [ technologyRelationship, businessRelationship ]
+    }
+  };
+
+  migrateArchimate3ModelTo4(model);
+
+  assert.equal(technologyCollaboration.type, 'Collaboration');
+  assert.equal(technologyCollaboration.originalArchiMate3Domain, 'Technology');
+  assert.equal(technologyRelationship.type, 'Realization');
+  assert.equal(technologyRelationship.source, technologyCollaboration);
+  assert.equal(technologyRelationship.target, path);
+
+  assert.equal(businessCollaboration.type, 'Collaboration');
+  assert.equal(businessCollaboration.originalArchiMate3Domain, 'Business');
+  assert.equal(businessRelationship.type, 'Aggregation');
+  assert.equal(businessRelationship.source, path);
+  assert.equal(businessRelationship.target, businessCollaboration);
+});
+
 test('migration utility can replace invalid relationships with an external profile validator', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'BusinessRole' };
