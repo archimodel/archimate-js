@@ -158,3 +158,15 @@
 - Docs: README and `docs/archimate4/*` now describe the implemented narrow B.6 guard and remove the earlier over-broad Plateau aggregation wording.
 - Verification: `npm run test:language` passed with 46 tests in `project_memory/runlogs/20260708-091-relationship-concept-aggregation-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-092-relationship-concept-aggregation-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-093-relationship-concept-aggregation-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-095-relationship-concept-aggregation-final-diff-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 16
+
+- Goal: persist ArchiMate 3.x specialization/profile migration intent through model properties, not only transient JavaScript fields.
+- Source check: C260 specialization-profile pages and the supplied transcript were checked for derived facts; official 3.1 Model XSD was checked for `PropertyDefinitions` and confirmed `Specialization` appears as a relationship type, not a `BaseElement` attribute. See `project_memory/runlogs/20260708-101-specialization-profile-properties-source-check.txt`.
+- Implemented: `migrateArchimate3ModelTo4()` now creates stable `PropertyDefinition` entries for `archimate-js:originalArchiMate3Type` and `archimate-js:specialization`.
+- Implemented: migrated elements receive `Properties` entries pointing to those definitions, preserving the original 3.x type and specialization profile name in an exchange-friendly structure.
+- Implemented: repeated migration calls update existing properties rather than duplicating them.
+- Tests: added direct coverage for property definition creation, element property values, idempotency, and `preserveSpecializations: false`.
+- Docs: README and `docs/archimate4/*` now state that migration specialization metadata is retained in model properties.
+- Verification: `npm run test:language` passed with 48 tests in `project_memory/runlogs/20260708-098-specialization-profile-properties-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-099-specialization-profile-properties-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-100-specialization-profile-properties-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-102-specialization-profile-properties-final-diff-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

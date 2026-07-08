@@ -41,6 +41,7 @@ The supplied profile may be an object or a JSON string loaded by the host applic
 * ArchiMate 4 support uses versioned language profiles.
 * Retired 3.x concepts are hidden from the 4.0 palette.
 * 3.x to 4.0 migration preserves original type information when the replacement would otherwise lose modeling intent.
+* Migration also stores preserved specialization metadata in model properties for exchange-friendly retention.
 * 3.x to 4.0 migration warnings include alternative replacement types for ambiguous C260 Appendix E rows.
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.

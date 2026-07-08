@@ -1,0 +1,26 @@
+--- line 1202
+1198: <xs:extension base="RelationshipType" />
+1199: </xs:complexContent>
+1200: </xs:complexType>
+1201:
+1202: <xs:complexType name="Specialization">
+1203: <xs:complexContent>
+1204: <xs:extension base="RelationshipType" />
+1205: </xs:complexContent>
+1206: </xs:complexType>
+1207:
+1208: <xs:complexType name="Association">
+1209: <xs:complexContent>
+1210: <xs:extension base="RelationshipType">
+--- line 1335
+1331: <xs:enumeration value="Access" />
+1332: <xs:enumeration value="Influence" />
+1333: <xs:enumeration value="Triggering" />
+1334: <xs:enumeration value="Flow" />
+1335: <xs:enumeration value="Specialization" />
+1336: <xs:enumeration value="Association" />
+1337: </xs:restriction>
+1338: </xs:simpleType>
+1339:
+1340: </xs:schema>
+1341:

@@ -268,6 +268,9 @@ Implemented migration guard:
   `Function` as an alternative replacement type.
 - `ImplementationEvent` migration preserves the original type as specialization metadata when
   migrating to `Event`.
+- Migrated specialization metadata is stored both as direct runtime fields and as model `Properties`
+  backed by `PropertyDefinition` entries, preserving the original ArchiMate 3 type through the existing
+  exchange-format extension mechanism.
 
 Implemented relationship-concept aggregation guard:
 

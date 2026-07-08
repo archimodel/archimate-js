@@ -1,0 +1,12 @@
+commands:
+- Python pypdf keyword scan of C:\Users\syska\Downloads\978940181474E.pdf pages 132-135 and 197-200
+- Invoke-WebRequest https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd
+exit_code: 0
+derived_facts:
+- C260 includes specialization profile guidance for language customization.
+- The supplied launch transcript states retired concepts can be preserved as specialization profiles.
+- The official 3.1 Model XSD exposes PropertyDefinitions and Properties as generic extension data.
+- The official 3.1 Model XSD uses Specialization as a relationship type, not as a BaseElement specialization attribute.
+decision:
+- Store migrated original ArchiMate 3 type and specialization profile name in model Properties, while retaining direct runtime fields for local consumers.
+note: no verbatim C260 table or paragraph text is stored in this runlog.

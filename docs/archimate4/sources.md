@@ -62,6 +62,9 @@
 - Business, application, and technology interactions default to `Process` while warning that `Function`
   may be more precise.
 - `ImplementationEvent` now preserves specialization information when migrating to `Event`.
+- Migration now stores the original ArchiMate 3 type and specialization profile name in model
+  `Properties`, using reusable `PropertyDefinition` entries, so the information is not limited to
+  transient JavaScript fields.
 - `test/migration.test.mjs` directly exercises the migration utility so replacement and warning data
   are verified, not only present in source text.
 

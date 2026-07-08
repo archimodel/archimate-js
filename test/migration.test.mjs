@@ -2,7 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-import { migrateArchimate3ModelTo4 } from '../lib/migration/archimate3-to-4.js';
+import {
+  migrateArchimate3ModelTo4,
+  ORIGINAL_ARCHIMATE3_TYPE_PROPERTY,
+  SPECIALIZATION_PROPERTY
+} from '../lib/migration/archimate3-to-4.js';
 import { ARCHIMATE_3_TO_4_MIGRATIONS } from '../lib/metamodel/languages/retired-concepts.js';
 
 test('migration table covers retired public ArchiMate 4 concepts', async () => {
@@ -85,4 +89,48 @@ test('migration utility reports alternative replacement types for ambiguous C260
 
   assert.equal(model.elementsNode.baseElements[1].type, 'Event');
   assert.equal(model.elementsNode.baseElements[1].specialization, 'ImplementationEvent');
+});
+
+test('migration utility stores specialization profile metadata as model properties', () => {
+  const model = {
+    elementsNode: {
+      baseElements: [
+        { id: 'contract-1', type: 'Contract' }
+      ]
+    }
+  };
+
+  migrateArchimate3ModelTo4(model);
+  migrateArchimate3ModelTo4(model);
+
+  const definitions = model.propertyDefinitionsNode.propertyDefinitions;
+  const definitionNames = definitions.map((definition) => definition.name);
+  const properties = model.elementsNode.baseElements[0].propertiesNode.properties;
+
+  assert.equal(model.elementsNode.baseElements[0].type, 'BusinessObject');
+  assert.deepEqual(definitionNames, [
+    ORIGINAL_ARCHIMATE3_TYPE_PROPERTY,
+    SPECIALIZATION_PROPERTY
+  ]);
+  assert.deepEqual(properties.map((property) => property.value), [
+    'Contract',
+    'Contract'
+  ]);
+  assert.equal(properties.length, 2);
+});
+
+test('migration utility can skip specialization profile metadata', () => {
+  const model = {
+    elementsNode: {
+      baseElements: [
+        { id: 'contract-1', type: 'Contract' }
+      ]
+    }
+  };
+
+  migrateArchimate3ModelTo4(model, { preserveSpecializations: false });
+
+  assert.equal(model.elementsNode.baseElements[0].type, 'BusinessObject');
+  assert.equal(model.elementsNode.baseElements[0].propertiesNode, undefined);
+  assert.equal(model.propertyDefinitionsNode, undefined);
 });
