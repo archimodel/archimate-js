@@ -226,6 +226,9 @@ Relationship migration guidance:
   realization from the active structure element to `Path`.
 - Realization between services of different former layers may be replaced by specialization or
   aggregation depending on modeling intent.
+- Because the Appendix B matrix is not embedded in this repository, relationship migration validation
+  is driven by a host-supplied relationship validator. When supplied, it checks the migrated endpoint
+  types and can replace invalid relationships with `Association` while recording a warning.
 
 ## Relationship Matrix Requirement
 
@@ -340,6 +343,8 @@ Implemented migration guard:
 - Migrated specialization metadata is stored both as direct runtime fields and as model `Properties`
   backed by `PropertyDefinition` entries, preserving the original ArchiMate 3 type and original domain
   through the existing exchange-format extension mechanism.
+- Migrated relationship types can be checked through an externally supplied Appendix B-aware validator.
+  Invalid relationships are warned and, by default, replaced with `Association`.
 
 Implemented relationship-concept aggregation guard:
 

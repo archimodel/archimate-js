@@ -1,0 +1,26 @@
+command=git diff --check
+(no output)
+exit_code=0
+
+command=Get-Content -Raw project_memory\state\aria_state.json | ConvertFrom-Json
+state json parsed successfully
+exit_code=0
+
+command=git status --short --branch
+## codex/archimate-4-support
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/migration/archimate3-to-4.js
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/migration.test.mjs
+?? project_memory/audit/reports/20260708-migration-relationship-validation-audit.md
+?? project_memory/runlogs/20260708-215-migration-relationship-validation-gap-check.txt
+?? project_memory/runlogs/20260708-216-migration-relationship-validation-fix-check.txt
+?? project_memory/runlogs/20260708-217-migration-relationship-validation-npm-test-language.txt
+?? project_memory/runlogs/20260708-218-migration-relationship-validation-eslint-changed-js.txt
+?? project_memory/runlogs/20260708-219-migration-relationship-validation-git-diff-check.txt
+?? project_memory/runlogs/20260708-220-migration-relationship-validation-repo-lint-legacy.txt
+?? project_memory/runlogs/20260708-221-migration-relationship-validation-final-state-check.txt
+exit_code=0

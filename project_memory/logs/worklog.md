@@ -327,3 +327,13 @@
 - Docs: README and `docs/archimate4/*` now state that migration preserves original domain metadata.
 - Verification: fix check passed in `project_memory/runlogs/20260708-209-migration-original-domain-fix-check.txt`; `npm run test:language` passed with 68 tests in `project_memory/runlogs/20260708-210-migration-original-domain-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-211-migration-original-domain-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-212-migration-original-domain-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-213-migration-original-domain-repo-lint-legacy.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 32
+
+- Goal: let 3.x to 4.0 migration validate migrated relationship types against a host-supplied Appendix B-aware validator.
+- Observation: the gap check in `project_memory/runlogs/20260708-215-migration-relationship-validation-gap-check.txt` showed a `Composition` relationship remained after `BusinessRole` was migrated to `Role`, with no relationship-level warning.
+- Implemented: `migrateArchimate3ModelTo4()` now accepts `isRelationshipAllowed`, `relationshipProfile`, `invalidRelationshipReplacement`, and `replaceInvalidRelationships` options.
+- Implemented: when a migrated relationship is disallowed by the supplied validator, migration records source/target/relationship details and replaces the relationship with `Association` by default.
+- Docs: README and `docs/archimate4/*` now document external-profile-driven relationship migration validation.
+- Verification: fix check passed in `project_memory/runlogs/20260708-216-migration-relationship-validation-fix-check.txt`; `npm run test:language` passed with 70 tests in `project_memory/runlogs/20260708-217-migration-relationship-validation-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-218-migration-relationship-validation-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-219-migration-relationship-validation-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-220-migration-relationship-validation-repo-lint-legacy.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

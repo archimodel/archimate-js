@@ -116,6 +116,9 @@
   transient JavaScript fields.
 - Migration also stores `archimate-js:originalArchiMate3Domain` for retired, merged, or moved concepts
   when the source domain is important to preserving the ArchiMate 3.x modeling intent.
+- Relationship migration validation remains external-profile driven: hosts can pass an Appendix B-aware
+  `isRelationshipAllowed` validator into `migrateArchimate3ModelTo4()` to warn on migrated relationships
+  that are no longer valid and replace them with `Association` by default.
 - `test/migration.test.mjs` directly exercises the migration utility so replacement and warning data
   are verified, not only present in source text.
 

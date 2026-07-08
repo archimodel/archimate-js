@@ -155,6 +155,78 @@ test('migration utility stores original domain for merged behavior concepts', ()
   assert.equal(result.warnings[1].originalDomain, 'Technology');
 });
 
+test('migration utility can replace invalid relationships with an external profile validator', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'BusinessRole' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Composition',
+    source: actor,
+    target: role
+  };
+  const profile = { version: '4.0' };
+  const calls = [];
+  const model = {
+    elementsNode: {
+      baseElements: [ actor, role ]
+    },
+    relationshipsNode: {
+      relationships: [ relationship ]
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model, {
+    relationshipProfile: profile,
+    isRelationshipAllowed(sourceType, targetType, relationshipType, activeProfile) {
+      calls.push({ sourceType, targetType, relationshipType, activeProfile });
+
+      return false;
+    }
+  });
+  const relationshipWarning = result.warnings.find((warning) => warning.relationshipId === 'relationship-1');
+
+  assert.deepEqual(calls, [
+    {
+      sourceType: 'BusinessActor',
+      targetType: 'Role',
+      relationshipType: 'Composition',
+      activeProfile: profile
+    }
+  ]);
+  assert.equal(relationship.type, 'Association');
+  assert.equal(relationshipWarning.originalType, 'Composition');
+  assert.equal(relationshipWarning.replacementType, 'Association');
+  assert.equal(relationshipWarning.sourceType, 'BusinessActor');
+  assert.equal(relationshipWarning.targetType, 'Role');
+  assert.match(relationshipWarning.message, /replaced with Association/);
+});
+
+test('migration utility can warn without replacing invalid relationships', () => {
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Composition',
+    source: { id: 'source-1', type: 'BusinessActor' },
+    target: { id: 'target-1', type: 'Role' }
+  };
+  const model = {
+    relationshipsNode: {
+      relationships: [ relationship ]
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model, {
+    replaceInvalidRelationships: false,
+    isRelationshipAllowed() {
+      return false;
+    }
+  });
+  const relationshipWarning = result.warnings.find((warning) => warning.relationshipId === 'relationship-1');
+
+  assert.equal(relationship.type, 'Composition');
+  assert.equal(relationshipWarning.replacementType, 'Association');
+  assert.match(relationshipWarning.message, /recommended replacement is Association/);
+});
+
 test('migration utility can skip specialization profile metadata', () => {
   const model = {
     elementsNode: {

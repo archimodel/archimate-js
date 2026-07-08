@@ -86,6 +86,7 @@ const modeler = new Modeler({
 * 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.
 * Migration also stores preserved specialization and original-domain metadata in model properties for exchange-friendly retention.
 * 3.x to 4.0 migration warnings include alternative replacement types for ambiguous C260 Appendix E rows.
+* 3.x to 4.0 migration can validate migrated relationships with a host-supplied Appendix B relationship validator and warn or replace invalid relationship types.
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
