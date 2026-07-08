@@ -41,13 +41,13 @@ Additional domains:
 
 - Motivation
 - Strategy
-- Implementation & Migration
+- Implementation and Migration
 
 Aspects remain:
 
-- Active structure
+- Active Structure
 - Behavior
-- Passive structure
+- Passive Structure
 - Composite
 - Motivation
 
@@ -105,22 +105,22 @@ language elements, excluding relationship types.
 
 | Domain | Aspect | Element Types |
 | --- | --- | --- |
-| Common | Active structure | `Role`, `Collaboration`, `Path` |
+| Common | Active Structure | `Role`, `Collaboration`, `Path` |
 | Common | Behavior | `Service`, `Process`, `Function`, `Event` |
 | Common | Composite | `Grouping`, `Location` |
 | Motivation | Motivation | `Stakeholder`, `Driver`, `Assessment`, `Goal`, `Outcome`, `Principle`, `Requirement`, `Meaning`, `Value` |
-| Strategy | Active structure | `Resource` |
+| Strategy | Active Structure | `Resource` |
 | Strategy | Behavior | `Capability`, `ValueStream`, `CourseOfAction` |
-| Business | Active structure | `BusinessActor`, `BusinessInterface` |
-| Business | Passive structure | `BusinessObject` |
+| Business | Active Structure | `BusinessActor`, `BusinessInterface` |
+| Business | Passive Structure | `BusinessObject` |
 | Business | Composite | `Product` |
-| Application | Active structure | `ApplicationComponent`, `ApplicationInterface` |
-| Application | Passive structure | `DataObject` |
-| Technology | Active structure | `Node`, `TechnologyInterface`, `Device`, `SystemSoftware`, `Equipment`, `Facility`, `CommunicationNetwork`, `DistributionNetwork` |
-| Technology | Passive structure | `Artifact`, `Material` |
-| Implementation & Migration | Behavior | `WorkPackage` |
-| Implementation & Migration | Passive structure | `Deliverable` |
-| Implementation & Migration | Composite | `Plateau` |
+| Application | Active Structure | `ApplicationComponent`, `ApplicationInterface` |
+| Application | Passive Structure | `DataObject` |
+| Technology | Active Structure | `Node`, `TechnologyInterface`, `Device`, `SystemSoftware`, `Equipment`, `Facility`, `CommunicationNetwork`, `DistributionNetwork` |
+| Technology | Passive Structure | `Artifact`, `Material` |
+| Implementation and Migration | Behavior | `WorkPackage` |
+| Implementation and Migration | Passive Structure | `Deliverable` |
+| Implementation and Migration | Composite | `Plateau` |
 
 Implementation notes:
 

@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "loopId": true,
+    "stage": true,
+    "overlay": true,
+    "check": true,
+    "runlogExists": true,
+    "auditExists": true,
+    "result": true,
+    "openIssuesCount": true,
+    "domainsMatchCatalog": true,
+    "aspectsMatchCatalog": true,
+    "noLegacyProfileLabels": true,
+    "colorFallback": true
+  },
+  "status": "## codex/archimate-4-support\n M docs/archimate4/official-specification.md\n M docs/archimate4/sources.md\n M lib/metamodel/languages/archimate4-profile.json\n M lib/util/ColorUtil.js\n M project_memory/logs/worklog.md\n M project_memory/state/aria_state.json\n M test/fixtures/archimate4-c260-element-catalog.json\n M test/language-profile.test.mjs\n?? project_memory/audit/reports/20260708-domain-aspect-label-audit.md\n?? project_memory/runlogs/20260708-301-archimate4-domain-aspect-label-source-check.txt\n?? project_memory/runlogs/20260708-302-archimate4-domain-aspect-label-fix-check.txt\n?? project_memory/runlogs/20260708-303-archimate4-domain-aspect-label-npm-test-language.txt\n?? project_memory/runlogs/20260708-304-archimate4-domain-aspect-label-eslint-gate.txt\n?? project_memory/runlogs/20260708-305-archimate4-domain-aspect-label-git-diff-check.txt\n?? project_memory/runlogs/20260708-306-archimate4-domain-aspect-label-repo-lint-legacy.txt\n?? project_memory/runlogs/20260708-308-archimate4-domain-aspect-label-final-git-diff-check.txt\n?? project_memory/runlogs/20260708-309-archimate4-domain-aspect-label-final-state-check.txt",
+  "shortstat": "8 files changed, 112 insertions(+), 70 deletions(-)",
+  "pass": true
+}

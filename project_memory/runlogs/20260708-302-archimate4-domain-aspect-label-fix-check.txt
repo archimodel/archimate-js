@@ -1,0 +1,39 @@
+{
+  "profileDomains": [
+    "Common",
+    "Motivation",
+    "Strategy",
+    "Business",
+    "Application",
+    "Technology",
+    "Implementation and Migration"
+  ],
+  "catalogDomains": [
+    "Common",
+    "Motivation",
+    "Strategy",
+    "Business",
+    "Application",
+    "Technology",
+    "Implementation and Migration"
+  ],
+  "profileAspects": [
+    "Active Structure",
+    "Behavior",
+    "Composite",
+    "Motivation",
+    "Passive Structure"
+  ],
+  "catalogAspects": [
+    "Active Structure",
+    "Behavior",
+    "Composite",
+    "Motivation",
+    "Passive Structure"
+  ],
+  "legacyDomainElements": [],
+  "legacyAspectElements": [],
+  "classificationMismatches": [],
+  "colorFallbackHasStandardDomain": true,
+  "pass": true
+}

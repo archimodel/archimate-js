@@ -70,6 +70,11 @@ test('archimate 4 profile matches the C260 element catalog', async () => {
 
   const elements = new Map(profile.elements.map((element) => [ element.type, element ]));
 
+  assert.deepEqual(profile.domains.map((domain) => domain.name), officialCatalog.domains);
+  assert.deepEqual(
+    Array.from(new Set(profile.elements.map((element) => element.aspect))).sort(),
+    officialCatalog.aspects.slice().sort()
+  );
   assert.equal(Object.keys(officialCatalog.displayNames).length, officialCatalog.elements.length);
 
   for (const [ type, classification ] of Object.entries(officialCatalog.classifications)) {

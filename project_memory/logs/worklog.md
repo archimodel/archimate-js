@@ -429,3 +429,15 @@
 - Verification: fix check passed in `project_memory/runlogs/20260708-293-archimate4-display-name-catalog-fix-check.txt`; `npm run test:language` passed with 77 tests in `project_memory/runlogs/20260708-294-archimate4-display-name-catalog-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-295-archimate4-display-name-catalog-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-296-archimate4-display-name-catalog-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-297-archimate4-display-name-catalog-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-display-name-catalog-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 41
+
+- Goal: align ArchiMate 4 domain and aspect labels with C260-derived wording while preserving 3.x compatibility labels.
+- Observation: `project_memory/runlogs/20260708-301-archimate4-domain-aspect-label-source-check.txt` found C260 text hits for `Implementation and Migration Domain`, `Active Structure`, and `Passive Structure`; `Implementation & Migration Domain` and `Physical Domain` were not found.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now uses `Implementation and Migration`, `Active Structure`, and `Passive Structure` for ArchiMate 4 metadata.
+- Implemented: `test/fixtures/archimate4-c260-element-catalog.json` now records the C260-derived domain list and aspect list, and classification rows use the same label forms.
+- Implemented: `lib/util/ColorUtil.js` adds a fallback color alias for `Implementation and Migration` while leaving the existing 3.x `Implementation & Migration` fallback unchanged.
+- Tests/docs: `test/language-profile.test.mjs` now asserts ArchiMate 4 domain and aspect labels against the C260-derived fixture; `docs/archimate4/*` records the source check and label decision.
+- Verification: fix check passed in `project_memory/runlogs/20260708-302-archimate4-domain-aspect-label-fix-check.txt`; `npm run test:language` passed with 77 tests in `project_memory/runlogs/20260708-303-archimate4-domain-aspect-label-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-304-archimate4-domain-aspect-label-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-305-archimate4-domain-aspect-label-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-306-archimate4-domain-aspect-label-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-domain-aspect-label-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

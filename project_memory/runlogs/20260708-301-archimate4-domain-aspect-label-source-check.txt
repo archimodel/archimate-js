@@ -1,0 +1,243 @@
+{
+  "pdf": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "pdfPages": 207,
+  "termHits": {
+    "Common Domain": {
+      "count": 23,
+      "firstPages": [
+        1,
+        7,
+        10,
+        15,
+        26,
+        30,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    "Motivation Domain": {
+      "count": 18,
+      "firstPages": [
+        1,
+        8,
+        15,
+        31,
+        38,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    "Strategy Domain": {
+      "count": 14,
+      "firstPages": [
+        1,
+        8,
+        15,
+        31,
+        38,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    "Business Domain": {
+      "count": 26,
+      "firstPages": [
+        1,
+        9,
+        10,
+        15,
+        26,
+        30,
+        31,
+        32,
+        38,
+        43,
+        45,
+        85
+      ]
+    },
+    "Application Domain": {
+      "count": 22,
+      "firstPages": [
+        1,
+        9,
+        10,
+        15,
+        26,
+        30,
+        31,
+        32,
+        38,
+        102,
+        103,
+        104
+      ]
+    },
+    "Technology Domain": {
+      "count": 29,
+      "firstPages": [
+        1,
+        9,
+        10,
+        15,
+        22,
+        26,
+        30,
+        31,
+        32,
+        37,
+        38,
+        85
+      ]
+    },
+    "Implementation and Migration Domain": {
+      "count": 9,
+      "firstPages": [
+        10,
+        16,
+        31,
+        38,
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    "Implementation & Migration Domain": {
+      "count": 0,
+      "firstPages": []
+    },
+    "Implementation and Migration": {
+      "count": 22,
+      "firstPages": [
+        10,
+        11,
+        12,
+        16,
+        25,
+        31,
+        38,
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    "Implementation & Migration": {
+      "count": 1,
+      "firstPages": [
+        25
+      ]
+    },
+    "Active structure": {
+      "count": 3,
+      "firstPages": [
+        33,
+        34,
+        35
+      ]
+    },
+    "Active Structure": {
+      "count": 22,
+      "firstPages": [
+        7,
+        9,
+        32,
+        34,
+        36,
+        39,
+        40,
+        48,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    "Passive structure": {
+      "count": 1,
+      "firstPages": [
+        35
+      ]
+    },
+    "Passive Structure": {
+      "count": 16,
+      "firstPages": [
+        7,
+        9,
+        10,
+        32,
+        35,
+        94,
+        97,
+        98,
+        104,
+        105,
+        106,
+        113
+      ]
+    },
+    "Behavior": {
+      "count": 19,
+      "firstPages": [
+        7,
+        8,
+        32,
+        33,
+        34,
+        35,
+        36,
+        41,
+        42,
+        43,
+        44,
+        49
+      ]
+    },
+    "Composite": {
+      "count": 12,
+      "firstPages": [
+        6,
+        7,
+        9,
+        10,
+        26,
+        45,
+        46,
+        47,
+        49,
+        99,
+        100,
+        142
+      ]
+    },
+    "Technology and Physical": {
+      "count": 0,
+      "firstPages": []
+    },
+    "Physical Domain": {
+      "count": 0,
+      "firstPages": []
+    }
+  },
+  "derivedConclusion": [
+    "This check only records casing and wording signals from C260 text extraction; it does not copy normative prose.",
+    "Use the result to decide whether domain/aspect label metadata requires a code change or only a guard note."
+  ]
+}
