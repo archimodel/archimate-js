@@ -133,6 +133,11 @@
   `project_memory/runlogs/20260709-402-c260-appendix-a-facility-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_FACILITY` Node alias with a
   locally-authored factory-shaped path.
+- A local C260 Appendix A rendered visual check for `Equipment` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-413-c260-appendix-a-equipment-render.txt` and
+  `project_memory/runlogs/20260709-414-c260-appendix-a-equipment-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_EQUIPMENT` Device alias with a
+  locally-authored gear-shaped path.
 
 ## Language Customization Mechanism
 

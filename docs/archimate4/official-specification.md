@@ -197,6 +197,8 @@ Implementation notes:
   document pictogram fallback.
 - `Facility` must use a factory-shaped renderer pictogram in ArchiMate 4 mode, not the `Node`
   cube pictogram fallback.
+- `Equipment` must use a gear-shaped renderer pictogram in ArchiMate 4 mode, not the `Device`
+  monitor pictogram fallback.
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.

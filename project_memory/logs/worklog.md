@@ -1039,3 +1039,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-410-facility-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-facility-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 84
+
+- Goal: replace the ArchiMate 4 `Equipment` renderer pictogram fallback with a C260 Appendix A-derived gear-shaped path.
+- Source evidence: `project_memory/runlogs/20260709-413-c260-appendix-a-equipment-render.txt` and `project_memory/runlogs/20260709-414-c260-appendix-a-equipment-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-415-equipment-pictogram-red-test.txt` failed because `PICTO_EQUIPMENT` was still aliased to `PICTO_DEVICE`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_EQUIPMENT` gear-shaped path and removes the Device alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Equipment renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-416-equipment-pictogram-test.txt`; `npm run test:language` passed with 142 tests in `project_memory/runlogs/20260709-417-equipment-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-418-equipment-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-419-equipment-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-420-equipment-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-421-equipment-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-422-equipment-pictogram-repo-lint.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-equipment-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
