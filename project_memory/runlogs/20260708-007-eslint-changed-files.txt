@@ -1,0 +1,568 @@
+
+D:\github\archimate-js\lib\draw\ArchimateRenderer.js
+   37:3   error  'COLOR_LAYER_MAP' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   45:24  error  Strings must use singlequote                                                       quotes
+   49:40  error  A space is required after '{'                                                      object-curly-spacing
+   49:79  error  A space is required before '}'                                                     object-curly-spacing
+   52:1   error  Expected indentation of 6 spaces but found 2                                       indent
+   53:1   error  Expected indentation of 6 spaces but found 2                                       indent
+   54:1   error  Expected indentation of 6 spaces but found 2                                       indent
+  142:11  error  'associationStart' is already defined                                              no-redeclare
+  143:76  error  Expected space or tab after '//' in comment                                        spaced-comment
+  156:11  error  'associationStart' is already defined                                              no-redeclare
+  184:11  error  'openedEnd' is already defined                                                     no-redeclare
+  239:12  error  'drawCircle' is defined but never used. Allowed unused vars must match /^_/u       no-unused-vars
+  355:9   error  'newBox' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  358:21  error  Expected space or tab after '//' in comment                                        spaced-comment
+  363:9   error  Expected line before comment                                                       lines-around-comment
+  393:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  394:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  394:34  error  Expected space or tab after '//' in comment                                        spaced-comment
+  395:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  396:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  397:1   error  Expected indentation of 4 spaces but found 8                                       indent
+  432:17  error  Irregular whitespace not allowed                                                   no-irregular-whitespace
+  435:1   error  Expected indentation of 8 spaces but found 6                                       indent
+  445:1   error  Expected indentation of 8 spaces but found 6                                       indent
+  457:48  error  Multiple spaces found before '//((shape.widt...'                                   no-multi-spaces
+  457:50  error  Expected space or tab after '//' in comment                                        spaced-comment
+  458:33  error  Expected space or tab after '//' in comment                                        spaced-comment
+  478:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  489:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  495:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  497:1   error  Expected indentation of 12 spaces but found 8                                      indent
+  498:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  500:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  521:1   error  Expected indentation of 10 spaces but found 6                                      indent
+  530:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  536:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  536:40  error  Expected space or tab after '//' in comment                                        spaced-comment
+  537:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  538:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  546:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  547:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  549:65  error  Trailing spaces not allowed                                                        no-trailing-spaces
+  554:64  error  Trailing spaces not allowed                                                        no-trailing-spaces
+  565:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  566:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  574:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  575:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  576:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  595:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  596:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  604:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  605:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  606:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  614:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  615:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  616:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  620:1   error  Trailing spaces not allowed                                                        no-trailing-spaces
+  627:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  628:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  629:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  637:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  638:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  646:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  647:1   error  Expected indentation of 6 spaces but found 10                                      indent
+  655:1   error  Expected indentation of 8 spaces but found 12                                      indent
+  656:1   error  Expected indentation of 6 spaces but found 10                                      indent
+
+D:\github\archimate-js\lib\draw\PathMap.js
+    1:26  error  Unable to resolve path to module 'mathjs/number'  import/no-unresolved
+   56:1   error  Trailing spaces not allowed                       no-trailing-spaces
+  239:19  error  Expected space or tab after '//' in comment       spaced-comment
+  240:18  error  Multiple spaces found before '//65'               no-multi-spaces
+  240:20  error  Expected space or tab after '//' in comment       spaced-comment
+  250:29  error  Trailing spaces not allowed                       no-trailing-spaces
+  385:1   error  Expected indentation of 4 spaces but found 6      indent
+  386:1   error  Expected indentation of 6 spaces but found 10     indent
+  387:1   error  Expected indentation of 4 spaces but found 6      indent
+  388:1   error  Expected indentation of 6 spaces but found 10     indent
+  389:1   error  Expected indentation of 8 spaces but found 14     indent
+  390:1   error  Expected indentation of 6 spaces but found 10     indent
+  391:11  error  Expected line before comment                      lines-around-comment
+  393:1   error  Expected indentation of 6 spaces but found 10     indent
+  393:48  error  Trailing spaces not allowed                       no-trailing-spaces
+  394:1   error  Expected indentation of 4 spaces but found 6      indent
+
+D:\github\archimate-js\lib\features\modeling\ConnectionUpdater.js
+    9:24  error  Strings must use singlequote                                                              quotes
+   10:97  error  'ARCHIMATE_VIEW_ELEMENT' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   13:45  error  Trailing spaces not allowed                                                               no-trailing-spaces
+   55:1   error  Expected indentation of 4 spaces but found 6                                              indent
+   61:36  error  Missing semicolon                                                                         semi
+   67:36  error  Missing semicolon                                                                         semi
+   81:31  error  Missing semicolon                                                                         semi
+   87:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+   94:35  error  There should be no space after this paren                                                 space-in-parens
+   94:36  error  A space is required after '{'                                                             object-curly-spacing
+   94:59  error  A space is required before '}'                                                            object-curly-spacing
+   99:29  error  Missing semicolon                                                                         semi
+  108:70  error  Trailing spaces not allowed                                                               no-trailing-spaces
+  109:80  error  Trailing spaces not allowed                                                               no-trailing-spaces
+  110:50  error  Trailing spaces not allowed                                                               no-trailing-spaces
+  114:20  error  Strings must use singlequote                                                              quotes
+  115:39  error  A space is required after '{'                                                             object-curly-spacing
+  115:66  error  A space is required before '}'                                                            object-curly-spacing
+  128:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  129:1   error  Expected indentation of 4 spaces but found 6                                              indent
+  137:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  138:1   error  Expected indentation of 4 spaces but found 6                                              indent
+  151:32  error  Missing semicolon                                                                         semi
+  158:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  166:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  167:5   error  Expected line before comment                                                              lines-around-comment
+  167:5   error  Expected space or tab after '//' in comment                                               spaced-comment
+  188:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  190:1   error  Expected indentation of 2 spaces but found 3                                              indent
+  192:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  195:27  error  Unexpected space before function parentheses                                              space-before-function-paren
+  197:1   error  Expected indentation of 2 spaces but found 3                                              indent
+  198:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  199:1   error  Expected indentation of 2 spaces but found 3                                              indent
+  221:43  error  Missing semicolon                                                                         semi
+  225:2   error  Missing semicolon                                                                         semi
+  238:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  256:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  260:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  261:1   error  Expected indentation of 4 spaces but found 6                                              indent
+  262:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  263:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  265:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  266:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  268:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  269:1   error  Expected indentation of 4 spaces but found 6                                              indent
+  270:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  271:1   error  Expected indentation of 4 spaces but found 6                                              indent
+  272:1   error  Expected indentation of 2 spaces but found 4                                              indent
+  280:2   error  Missing semicolon                                                                         semi
+  284:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  289:1   error  Expected indentation of 6 spaces but found 2                                              indent
+  290:1   error  Expected indentation of 6 spaces but found 2                                              indent
+  291:1   error  Expected indentation of 6 spaces but found 2                                              indent
+  292:1   error  Expected indentation of 6 spaces but found 2                                              indent
+  294:58  error  Trailing spaces not allowed                                                               no-trailing-spaces
+  303:70  error  A space is required after '{'                                                             object-curly-spacing
+  303:92  error  A space is required before '}'                                                            object-curly-spacing
+  331:1   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  334:6   error  Trailing spaces not allowed                                                               no-trailing-spaces
+  378:1   error  Expected indentation of 6 spaces but found 4                                              indent
+  384:2   error  Missing semicolon                                                                         semi
+
+D:\github\archimate-js\lib\features\modeling\ElementFactory.js
+   26:24  error  Strings must use singlequote                                                        quotes
+   28:10  error  'toHex' is defined but never used. Allowed unused vars must match /^_/u             no-unused-vars
+   29:10  error  'BLACK_RGBA' is defined but never used. Allowed unused vars must match /^_/u        no-unused-vars
+   29:22  error  'LINEWIDTH_NORMAL' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   30:10  error  'FONTNAME_DEFAULT' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   30:28  error  'FONTSIZE_DEFAULT' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   35:3   error  Trailing spaces not allowed                                                         no-trailing-spaces
+   36:76  error  Trailing spaces not allowed                                                         no-trailing-spaces
+   39:3   error  Trailing spaces not allowed                                                         no-trailing-spaces
+   48:3   error  Trailing spaces not allowed                                                         no-trailing-spaces
+   50:27  error  Trailing spaces not allowed                                                         no-trailing-spaces
+   51:86  error  Trailing spaces not allowed                                                         no-trailing-spaces
+   52:68  error  Trailing spaces not allowed                                                         no-trailing-spaces
+   53:3   error  Trailing spaces not allowed                                                         no-trailing-spaces
+   56:3   error  Trailing spaces not allowed                                                         no-trailing-spaces
+   85:14  error  A space is required after '{'                                                       object-curly-spacing
+   85:36  error  A space is required before '}'                                                      object-curly-spacing
+   98:2   error  Missing semicolon                                                                   semi
+  112:2   error  Missing semicolon                                                                   semi
+  122:1   error  Expected indentation of 6 spaces but found 4                                        indent
+  126:5   error  Expected line before comment                                                        lines-around-comment
+  135:4   error  Missing semicolon                                                                   semi
+  140:5   error  Expected line before comment                                                        lines-around-comment
+  159:5   error  Expected line before comment                                                        lines-around-comment
+  172:1   error  Expected indentation of 6 spaces but found 7                                        indent
+  183:68  error  Trailing spaces not allowed                                                         no-trailing-spaces
+  186:66  error  Missing semicolon                                                                   semi
+  187:70  error  Missing semicolon                                                                   semi
+  206:2   error  Missing semicolon                                                                   semi
+  224:1   error  Trailing spaces not allowed                                                         no-trailing-spaces
+  226:5   error  Expected line before comment                                                        lines-around-comment
+  229:5   error  Expected space(s) after "if"                                                        keyword-spacing
+  251:5   error  Expected line before comment                                                        lines-around-comment
+  252:58  error  Trailing spaces not allowed                                                         no-trailing-spaces
+  272:1   error  Trailing spaces not allowed                                                         no-trailing-spaces
+  284:1   error  Trailing spaces not allowed                                                         no-trailing-spaces
+  299:21  error  Multiple spaces found before '// => size's v...'                                    no-multi-spaces
+  303:14  error  A space is required after '{'                                                       object-curly-spacing
+  303:20  error  A space is required before '}'                                                      object-curly-spacing
+  310:2   error  Missing semicolon                                                                   semi
+  326:5   error  Expected line before comment                                                        lines-around-comment
+  371:10  error  'applyAttributes' is defined but never used. Allowed unused vars must match /^_/u   no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\cmd\ReplaceRelationshipRefHandler.js
+    1:174  error  Strings must use singlequote                  quotes
+    2:24   error  Strings must use singlequote                  quotes
+    3:45   error  Strings must use singlequote                  quotes
+    5:93   error  Expected space or tab after '//' in comment   spaced-comment
+   21:1    error  Expected indentation of 6 spaces but found 4  indent
+   22:1    error  Expected indentation of 6 spaces but found 4  indent
+   23:1    error  Expected indentation of 6 spaces but found 4  indent
+   24:1    error  Expected indentation of 6 spaces but found 4  indent
+   25:1    error  Expected indentation of 6 spaces but found 4  indent
+   28:1    error  Expected indentation of 6 spaces but found 4  indent
+   29:1    error  Expected indentation of 6 spaces but found 4  indent
+   47:1    error  Expected indentation of 6 spaces but found 8  indent
+   47:78   error  A space is required after '{'                 object-curly-spacing
+   47:100  error  A space is required before '}'                object-curly-spacing
+   48:1    error  Expected indentation of 6 spaces but found 8  indent
+   49:1    error  Expected indentation of 6 spaces but found 8  indent
+   50:1    error  Expected indentation of 6 spaces but found 8  indent
+   59:8    error  Trailing spaces not allowed                   no-trailing-spaces
+   60:1    error  Trailing spaces not allowed                   no-trailing-spaces
+   82:1    error  Trailing spaces not allowed                   no-trailing-spaces
+  150:1    error  Trailing spaces not allowed                   no-trailing-spaces
+  152:1    error  Trailing spaces not allowed                   no-trailing-spaces
+  155:1    error  Trailing spaces not allowed                   no-trailing-spaces
+
+D:\github\archimate-js\lib\features\palette\PaletteProvider.js
+   44:1   error  Expected indentation of 6 spaces but found 4   indent
+   45:1   error  Expected indentation of 6 spaces but found 4   indent
+   46:1   error  Expected indentation of 6 spaces but found 4   indent
+   47:1   error  Expected indentation of 6 spaces but found 4   indent
+   48:1   error  Expected indentation of 6 spaces but found 4   indent
+   49:1   error  Expected indentation of 6 spaces but found 4   indent
+   50:1   error  Expected indentation of 6 spaces but found 4   indent
+   51:1   error  Trailing spaces not allowed                    no-trailing-spaces
+   54:5   error  Expected line before comment                   lines-around-comment
+   54:5   error  Expected space or tab after '//' in comment    spaced-comment
+   85:1   error  Trailing spaces not allowed                    no-trailing-spaces
+   86:69  error  A space is required after '{'                  object-curly-spacing
+   86:82  error  A space is required before '}'                 object-curly-spacing
+   87:1   error  Trailing spaces not allowed                    no-trailing-spaces
+   89:1   error  Expected indentation of 8 spaces but found 10  indent
+   89:11  error  Expected line before comment                   lines-around-comment
+   89:11  error  Expected space or tab after '//' in comment    spaced-comment
+   90:1   error  Expected indentation of 8 spaces but found 10  indent
+   91:1   error  Expected indentation of 8 spaces but found 10  indent
+   92:1   error  Expected indentation of 8 spaces but found 10  indent
+   99:41  error  A space is required after '{'                  object-curly-spacing
+   99:62  error  A space is required before '}'                 object-curly-spacing
+  106:1   error  Expected indentation of 2 spaces but found 0   indent
+  139:5   error  Expected line before comment                   lines-around-comment
+  139:5   error  Expected space or tab after '/*' in comment    spaced-comment
+  143:16  error  Trailing spaces not allowed                    no-trailing-spaces
+  175:1   error  Expected line before comment                   lines-around-comment
+  175:1   error  Expected indentation of 2 spaces but found 0   indent
+  189:3   error  Expected space or tab after '//' in comment    spaced-comment
+
+D:\github\archimate-js\lib\features\popup-menu\ConnectionMenuProvider.js
+   65:1   error  Expected indentation of 6 spaces but found 2  indent
+   66:1   error  Expected indentation of 6 spaces but found 2  indent
+  137:39  error  Trailing spaces not allowed                   no-trailing-spaces
+  163:3   error  Expected space or tab after '//' in comment   spaced-comment
+  164:3   error  Expected space or tab after '//' in comment   spaced-comment
+  170:5   error  Expected line before comment                  lines-around-comment
+  170:5   error  Expected space or tab after '//' in comment   spaced-comment
+  255:12  error  Trailing spaces not allowed                   no-trailing-spaces
+  310:4   error  Missing semicolon                             semi
+  313:16  error  A space is required after '{'                 object-curly-spacing
+  313:36  error  A space is required before '}'                object-curly-spacing
+  326:8   error  Trailing spaces not allowed                   no-trailing-spaces
+  359:6   error  Missing semicolon                             semi
+  362:63  error  There should be no space before this paren    space-in-parens
+  367:1   error  Expected indentation of 2 spaces but found 0  indent
+  382:6   error  Missing semicolon                             semi
+  394:2   error  Missing semicolon                             semi
+
+D:\github\archimate-js\lib\metamodel\languages\archimate4-relationships.js
+  20:18  error  'Map' is not defined  no-undef
+  21:24  error  'Set' is not defined  no-undef
+  50:21  error  'Map' is not defined  no-undef
+
+D:\github\archimate-js\lib\metamodel\languages\index.js
+  8:22  error  'Map' is not defined  no-undef
+
+D:\github\archimate-js\lib\metamodel\languages\retired-concepts.js
+  1:48  error  'Map' is not defined  no-undef
+
+D:\github\archimate-js\lib\util\ColorUtil.js
+   6:55  error  Trailing spaces not allowed                   no-trailing-spaces
+   7:33  error  Trailing spaces not allowed                   no-trailing-spaces
+  12:1   error  Expected indentation of 6 spaces but found 2  indent
+  13:1   error  Expected indentation of 6 spaces but found 2  indent
+  13:64  error  Trailing spaces not allowed                   no-trailing-spaces
+  14:1   error  Expected indentation of 6 spaces but found 2  indent
+  14:67  error  Trailing spaces not allowed                   no-trailing-spaces
+  15:1   error  Expected indentation of 6 spaces but found 2  indent
+  15:66  error  Trailing spaces not allowed                   no-trailing-spaces
+  16:1   error  Expected indentation of 6 spaces but found 2  indent
+  16:64  error  Trailing spaces not allowed                   no-trailing-spaces
+  17:1   error  Expected indentation of 6 spaces but found 2  indent
+  17:62  error  Trailing spaces not allowed                   no-trailing-spaces
+  18:1   error  Expected indentation of 6 spaces but found 2  indent
+  18:66  error  Trailing spaces not allowed                   no-trailing-spaces
+  20:36  error  'Map' is not defined                          no-undef
+  29:3   error  Missing semicolon                             semi
+  32:1   error  Expected indentation of 6 spaces but found 2  indent
+  33:1   error  Expected indentation of 6 spaces but found 2  indent
+  36:87  error  There should be no space before this paren    space-in-parens
+  42:12  error  A space is required after '{'                 object-curly-spacing
+  42:67  error  A space is required before '}'                object-curly-spacing
+  44:17  error  Missing semicolon                             semi
+
+D:\github\archimate-js\lib\util\ModelUtil.js
+    5:21   error  Strings must use singlequote                                              quotes
+    6:21   error  Strings must use singlequote                                              quotes
+    7:21   error  Strings must use singlequote                                              quotes
+    8:21   error  Strings must use singlequote                                              quotes
+    9:21   error  Strings must use singlequote                                              quotes
+   10:21   error  Strings must use singlequote                                              quotes
+   11:21   error  Strings must use singlequote                                              quotes
+   12:21   error  Strings must use singlequote                                              quotes
+   13:21   error  Strings must use singlequote                                              quotes
+   14:21   error  Strings must use singlequote                                              quotes
+   15:10   error  'logger' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   18:1    error  Expected indentation of 6 spaces but found 2                              indent
+   19:1    error  Expected indentation of 6 spaces but found 2                              indent
+   20:1    error  Expected indentation of 6 spaces but found 2                              indent
+   21:1    error  Expected indentation of 6 spaces but found 2                              indent
+   23:45   error  'Map' is not defined                                                      no-undef
+   24:28   error  A space is required after '{'                                             object-curly-spacing
+   24:220  error  A space is required before '}'                                            object-curly-spacing
+   25:33   error  A space is required after '{'                                             object-curly-spacing
+   25:240  error  A space is required before '}'                                            object-curly-spacing
+   26:32   error  A space is required after '{'                                             object-curly-spacing
+   26:236  error  A space is required before '}'                                            object-curly-spacing
+   27:33   error  A space is required after '{'                                             object-curly-spacing
+   27:240  error  A space is required before '}'                                            object-curly-spacing
+   28:33   error  A space is required after '{'                                             object-curly-spacing
+   28:240  error  A space is required before '}'                                            object-curly-spacing
+   29:26   error  A space is required after '{'                                             object-curly-spacing
+   29:209  error  A space is required before '}'                                            object-curly-spacing
+   30:31   error  A space is required after '{'                                             object-curly-spacing
+   30:232  error  A space is required before '}'                                            object-curly-spacing
+   31:34   error  A space is required after '{'                                             object-curly-spacing
+   31:243  error  A space is required before '}'                                            object-curly-spacing
+   32:33   error  A space is required after '{'                                             object-curly-spacing
+   32:239  error  A space is required before '}'                                            object-curly-spacing
+   33:33   error  A space is required after '{'                                             object-curly-spacing
+   33:240  error  A space is required before '}'                                            object-curly-spacing
+   34:29   error  A space is required after '{'                                             object-curly-spacing
+   34:224  error  A space is required before '}'                                            object-curly-spacing
+   35:36   error  A space is required after '{'                                             object-curly-spacing
+   35:247  error  A space is required before '}'                                            object-curly-spacing
+   36:32   error  A space is required after '{'                                             object-curly-spacing
+   36:233  error  A space is required before '}'                                            object-curly-spacing
+   38:1    error  Trailing spaces not allowed                                               no-trailing-spaces
+   39:41   error  'Map' is not defined                                                      no-undef
+   40:236  error  A space is required before '}'                                            object-curly-spacing
+   41:248  error  A space is required before '}'                                            object-curly-spacing
+   42:258  error  A space is required before '}'                                            object-curly-spacing
+   43:278  error  A space is required before '}'                                            object-curly-spacing
+   46:41   error  'Map' is not defined                                                      no-undef
+   47:230  error  A space is required before '}'                                            object-curly-spacing
+   48:225  error  A space is required before '}'                                            object-curly-spacing
+   49:270  error  A space is required before '}'                                            object-curly-spacing
+   50:250  error  A space is required before '}'                                            object-curly-spacing
+   51:242  error  A space is required before '}'                                            object-curly-spacing
+   52:247  error  A space is required before '}'                                            object-curly-spacing
+   53:262  error  A space is required before '}'                                            object-curly-spacing
+   54:232  error  A space is required before '}'                                            object-curly-spacing
+   55:242  error  A space is required before '}'                                            object-curly-spacing
+   56:236  error  A space is required before '}'                                            object-curly-spacing
+   57:237  error  A space is required before '}'                                            object-curly-spacing
+   58:267  error  A space is required before '}'                                            object-curly-spacing
+   59:232  error  A space is required before '}'                                            object-curly-spacing
+   62:44   error  'Map' is not defined                                                      no-undef
+   63:265  error  A space is required before '}'                                            object-curly-spacing
+   64:285  error  A space is required before '}'                                            object-curly-spacing
+   65:265  error  A space is required before '}'                                            object-curly-spacing
+   66:262  error  A space is required before '}'                                            object-curly-spacing
+   67:277  error  A space is required before '}'                                            object-curly-spacing
+   68:257  error  A space is required before '}'                                            object-curly-spacing
+   69:247  error  A space is required before '}'                                            object-curly-spacing
+   70:257  error  A space is required before '}'                                            object-curly-spacing
+   71:259  error  A space is required before '}'                                            object-curly-spacing
+   74:43   error  'Map' is not defined                                                      no-undef
+   75:224  error  A space is required before '}'                                            object-curly-spacing
+   76:234  error  A space is required before '}'                                            object-curly-spacing
+   77:279  error  A space is required before '}'                                            object-curly-spacing
+   78:280  error  A space is required before '}'                                            object-curly-spacing
+   79:260  error  A space is required before '}'                                            object-curly-spacing
+   80:224  error  A space is required before '}'                                            object-curly-spacing
+   81:309  error  A space is required before '}'                                            object-curly-spacing
+   82:257  error  A space is required before '}'                                            object-curly-spacing
+   83:252  error  A space is required before '}'                                            object-curly-spacing
+   84:272  error  A space is required before '}'                                            object-curly-spacing
+   85:242  error  A space is required before '}'                                            object-curly-spacing
+   86:252  error  A space is required before '}'                                            object-curly-spacing
+   87:245  error  A space is required before '}'                                            object-curly-spacing
+   90:41   error  'Map' is not defined                                                      no-undef
+   91:296  error  A space is required before '}'                                            object-curly-spacing
+   92:241  error  A space is required before '}'                                            object-curly-spacing
+   93:236  error  A space is required before '}'                                            object-curly-spacing
+   94:236  error  A space is required before '}'                                            object-curly-spacing
+   97:43   error  'Map' is not defined                                                      no-undef
+   98:259  error  A space is required before '}'                                            object-curly-spacing
+   99:259  error  A space is required before '}'                                            object-curly-spacing
+  100:239  error  A space is required before '}'                                            object-curly-spacing
+  101:229  error  A space is required before '}'                                            object-curly-spacing
+  102:244  error  A space is required before '}'                                            object-curly-spacing
+  103:244  error  A space is required before '}'                                            object-curly-spacing
+  104:255  error  A space is required before '}'                                            object-curly-spacing
+  105:264  error  A space is required before '}'                                            object-curly-spacing
+  106:263  error  A space is required before '}'                                            object-curly-spacing
+  107:234  error  A space is required before '}'                                            object-curly-spacing
+  110:40   error  'Map' is not defined                                                      no-undef
+  111:245  error  A space is required before '}'                                            object-curly-spacing
+  112:207  error  A space is required before '}'                                            object-curly-spacing
+  113:279  error  A space is required before '}'                                            object-curly-spacing
+  114:227  error  A space is required before '}'                                            object-curly-spacing
+  115:254  error  A space is required before '}'                                            object-curly-spacing
+  118:38   error  'Map' is not defined                                                      no-undef
+  119:224  error  A space is required before '}'                                            object-curly-spacing
+  120:224  error  A space is required before '}'                                            object-curly-spacing
+  123:32   error  'Map' is not defined                                                      no-undef
+  124:111  error  A space is required before '}'                                            object-curly-spacing
+  125:86   error  A space is required before '}'                                            object-curly-spacing
+  128:37   error  'Map' is not defined                                                      no-undef
+  142:14   error  'Map' is not defined                                                      no-undef
+  200:3    error  Expected line before comment                                              lines-around-comment
+  215:31   error  Trailing spaces not allowed                                               no-trailing-spaces
+  221:1    error  Expected indentation of 0 spaces but found 1                              indent
+  226:1    error  Expected indentation of 2 spaces but found 4                              indent
+  236:1    error  Expected indentation of 0 spaces but found 1                              indent
+  240:1    error  Expected indentation of 2 spaces but found 4                              indent
+
+D:\github\archimate-js\lib\util\RelationshipUtil.js
+    1:94   error  Trailing spaces not allowed                                                    no-trailing-spaces
+    2:1    error  Expected indentation of 2 spaces but found 4                                   indent
+    2:81   error  Trailing spaces not allowed                                                    no-trailing-spaces
+    3:1    error  Expected indentation of 2 spaces but found 4                                   indent
+    3:72   error  Trailing spaces not allowed                                                    no-trailing-spaces
+    4:1    error  Expected indentation of 2 spaces but found 4                                   indent
+    4:87   error  Strings must use singlequote                                                   quotes
+    4:110  error  Trailing spaces not allowed                                                    no-trailing-spaces
+    6:34   error  'getTypeName' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+    6:53   error  Strings must use singlequote                                                   quotes
+    7:46   error  Strings must use singlequote                                                   quotes
+    8:10   error  'logger' is defined but never used. Allowed unused vars must match /^_/u       no-unused-vars
+    8:24   error  Strings must use singlequote                                                   quotes
+   10:7    error  's' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   11:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   11:5    error  'c' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   12:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   12:5    error  'g' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   13:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   13:5    error  'i' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   14:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   14:5    error  'r' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   15:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   15:5    error  'v' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   16:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   16:5    error  'a' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   17:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   17:5    error  'n' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   18:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   18:5    error  't' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   19:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   19:5    error  'f' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   20:1    error  Expected indentation of 6 spaces but found 4                                   indent
+   20:5    error  'o' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   22:21   error  A space is required after '{'                                                  object-curly-spacing
+   23:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   24:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   25:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   26:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   27:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   28:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   29:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   30:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   31:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   32:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   36:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   37:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   37:5    error  Expected line before comment                                                   lines-around-comment
+   38:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   39:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   40:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   41:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   42:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   43:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   44:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   45:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   46:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   47:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   48:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   49:1    error  Expected indentation of 8 spaces but found 12                                  indent
+   49:13   error  Expected line before comment                                                   lines-around-comment
+   50:1    error  Expected indentation of 8 spaces but found 12                                  indent
+   51:1    error  Expected indentation of 8 spaces but found 12                                  indent
+   52:1    error  Expected indentation of 10 spaces but found 16                                 indent
+   53:1    error  Expected indentation of 8 spaces but found 12                                  indent
+   53:14   error  Trailing spaces not allowed                                                    no-trailing-spaces
+   54:1    error  Expected indentation of 6 spaces but found 8                                   indent
+   55:1    error  Expected indentation of 4 spaces but found 6                                   indent
+   56:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   57:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   79:1    error  Trailing spaces not allowed                                                    no-trailing-spaces
+   82:1    error  Expected indentation of 2 spaces but found 4                                   indent
+   83:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   84:1    error  Expected indentation of 6 spaces but found 10                                  indent
+   85:1    error  Expected indentation of 6 spaces but found 10                                  indent
+   86:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   87:1    error  Expected indentation of 6 spaces but found 10                                  indent
+   88:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   89:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   90:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   91:1    error  Expected indentation of 6 spaces but found 10                                  indent
+   92:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   94:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   95:1    error  Expected indentation of 4 spaces but found 8                                   indent
+   96:1    error  Expected indentation of 6 spaces but found 12                                  indent
+   96:13   error  Expected line before comment                                                   lines-around-comment
+   97:1    error  Expected indentation of 6 spaces but found 12                                  indent
+   98:1    error  Expected indentation of 6 spaces but found 12                                  indent
+   99:1    error  Expected indentation of 8 spaces but found 16                                  indent
+  100:1    error  Expected indentation of 6 spaces but found 12                                  indent
+  101:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  102:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  103:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  108:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  109:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  109:9    error  Expected line before comment                                                   lines-around-comment
+  109:9    error  Expected space or tab after '//' in comment                                    spaced-comment
+  110:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  111:1    error  Expected indentation of 6 spaces but found 12                                  indent
+  111:13   error  Expected line before comment                                                   lines-around-comment
+  111:13   error  Expected space or tab after '//' in comment                                    spaced-comment
+  112:1    error  Expected indentation of 6 spaces but found 12                                  indent
+  113:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  113:12   error  Trailing spaces not allowed                                                    no-trailing-spaces
+  114:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  116:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  117:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  119:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  120:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  121:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  122:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  123:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  124:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  125:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  126:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  127:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  128:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  129:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  130:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  132:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  133:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  134:1    error  Expected indentation of 4 spaces but found 8                                   indent
+  135:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  137:1    error  Expected indentation of 2 spaces but found 4                                   indent
+  144:1    error  Trailing spaces not allowed                                                    no-trailing-spaces
+
+D:\github\archimate-js\test\language-profile.test.mjs
+  12:21  error  'Set' is not defined  no-undef
+  26:21  error  'Set' is not defined  no-undef
+  46:23  error  'Set' is not defined  no-undef
+
+D:\github\archimate-js\test\relationship-rules.test.mjs
+  12:23  error  'Set' is not defined  no-undef
+  13:24  error  'Set' is not defined  no-undef
+
+✖ 535 problems (535 errors, 0 warnings)
+  483 errors and 0 warnings potentially fixable with the `--fix` option.

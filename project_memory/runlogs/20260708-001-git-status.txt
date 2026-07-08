@@ -1,0 +1,6 @@
+## codex/archimate-4-support
+?? docs/
+?? project_memory/
+D:/github/archimate-js
+codex/archimate-4-support
+9c73897140199e0071dafcc6cd5e513ffb2dfc2a

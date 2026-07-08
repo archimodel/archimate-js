@@ -1,0 +1,4 @@
+v24.12.0
+11.10.1
+node_modules=missing
+package-lock=missing

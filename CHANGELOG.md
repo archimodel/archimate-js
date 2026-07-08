@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+* `FEAT`: added versioned ArchiMate language profiles with opt-in ArchiMate 4.0 support.
+* `CORE`: preserved existing ArchiMate 3.x behavior as the default.
+* `CORE`: added ArchiMate 3.x to 4.0 migration warnings for retired and merged concepts.
+* `FEAT`: added relationship multiplicity storage and rendering for ArchiMate 4.0.
+* `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
+
 ## 0.0.4
 
 * `FEAT`: text properties supported

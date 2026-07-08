@@ -594,6 +594,166 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
+/* ARCHIMATE 4 COMMON DOMAIN */
+
+.archimate-common-role {
+background-image: url("./icons/business_role.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-role:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-collaboration {
+background-image: url("./icons/business_collaboration.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-collaboration:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-interface {
+background-image: url("./icons/business_interface.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-interface:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-service {
+background-image: url("./icons/business_service.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-service:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-process {
+background-image: url("./icons/business_process.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-process:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-function {
+background-image: url("./icons/business_function.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-function:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-event {
+background-image: url("./icons/business_event.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-event:hover {
+background-color: lightgrey;
+}
+
+.archimate-common-path {
+background-image: url("./icons/technology_path.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-common-path:hover {
+background-color: lightgrey;
+}
+
+/* ARCHIMATE 4 FALLBACK ALIASES */
+
+.archimate-motivation-stakeholder,
+.archimate-motivation-driver,
+.archimate-motivation-assessment,
+.archimate-motivation-goal,
+.archimate-motivation-outcome,
+.archimate-motivation-principle,
+.archimate-motivation-requirement,
+.archimate-motivation-meaning,
+.archimate-motivation-value,
+.archimate-technology-distribution-network,
+.archimate-technology-equipment,
+.archimate-technology-facility,
+.archimate-technology-material,
+.archimate-imp-mig-work-package,
+.archimate-imp-mig-deliverable,
+.archimate-imp-mig-plateau {
+background-image: url("./icons/business_object.svg");
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: center;
+margin: 4px 0px 0px 4px;
+width: 22px !important;
+height: 22px !important;
+}
+
+.archimate-motivation-stakeholder:hover,
+.archimate-motivation-driver:hover,
+.archimate-motivation-assessment:hover,
+.archimate-motivation-goal:hover,
+.archimate-motivation-outcome:hover,
+.archimate-motivation-principle:hover,
+.archimate-motivation-requirement:hover,
+.archimate-motivation-meaning:hover,
+.archimate-motivation-value:hover,
+.archimate-technology-distribution-network:hover,
+.archimate-technology-equipment:hover,
+.archimate-technology-facility:hover,
+.archimate-technology-material:hover,
+.archimate-imp-mig-work-package:hover,
+.archimate-imp-mig-deliverable:hover,
+.archimate-imp-mig-plateau:hover {
+background-color: lightgrey;
+}
+
 /* OTHER */
 
 .archimate-menu-tool-note {

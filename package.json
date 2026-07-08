@@ -14,7 +14,9 @@
   ],
   "scripts": {
     "all": "run-s lint test",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "npm run test:language",
+    "test:language": "node --test test/*.test.mjs"
   },
   "repository": {
     "type": "git",

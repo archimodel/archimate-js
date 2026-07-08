@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "loop_id": 1,
+  "stage": "final_verification",
+  "repo": {
+    "root": "D:/github/archimate-js",
+    "branch": "codex/archimate-4-support",
+    "target_branch": "main"
+  },
+  "change_context": {
+    "change_type": "feature",
+    "diff_size": 40,
+    "touches_dependency_manifest": true
+  },
+  "ckogate": {
+    "profile_id": "standard_pr",
+    "overlays": [],
+    "applied_checks": [
+      "check_build_passes",
+      "check_functionality_correctness",
+      "check_static_analysis_clean",
+      "check_design_trace_link_present"
+    ]
+  },
+  "last_run": {
+    "runlog_path": "project_memory/runlogs/20260708-013-post-diffcheck-npm-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-final-audit.md",
+    "result": "pass_with_legacy_lint_exception"
+  },
+  "open_issues": [],
+  "assumptions": [
+    "C260 licensed text is not available in this workspace; embedded ArchiMate 4 support will be based on public release notes and compatibility-derived behavior, with official conformance documented as dependent on licensed source/XSD confirmation."
+  ],
+  "timestamps": {
+    "created_at": "2026-07-08T00:00:00+09:00",
+    "updated_at": "2026-07-08T00:00:00+09:00"
+  }
+}

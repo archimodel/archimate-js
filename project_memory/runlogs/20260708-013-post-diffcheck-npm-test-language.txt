@@ -1,0 +1,28 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (5.1189ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.3248ms)
+✔ archimate 4 profile exposes Common Domain (1.3802ms)
+✔ migration table covers retired public ArchiMate 4 concepts (5.004ms)
+✔ migration utility preserves specialization information (1.422ms)
+✔ relationship descriptor contains multiplicity attributes (5.8258ms)
+✔ element factory carries multiplicity from relationship refs (1.5531ms)
+✔ connection updater persists relationship multiplicity fields (1.2035ms)
+✔ relationship replacement preserves editable multiplicity properties (2.2609ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (0.8096ms)
+✔ renderer displays relationship end multiplicities (0.9065ms)
+✔ archimate 4 relationship profile has no retired source or target concepts (4.8843ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (1.3939ms)
+✔ archimate 3 fixture keeps current namespace (6.0727ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.3329ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.3899ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.8907

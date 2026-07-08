@@ -1,0 +1,417 @@
+{ "name": "archimate3_model",
+  "uri": "http://www.opengroup.org/xsd/archimate/3.0/",
+  "prefix": "archimate",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types":[
+    { "name": "Concept",
+      "isAbstract": true,
+      "superClass": ["BaseObject"],
+      "properties": [
+        {
+          "name": "xsi:type",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "BaseElement",
+      "superClass": ["Concept"]
+    },
+    { "name": "BaseObject",
+      "isAbstract": true,
+      "superClass": ["IdObject"],
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "documentation",
+          "type": "String"
+        },
+        {
+          "name": "propertiesNode",
+          "type": "Properties"
+        }
+      ]
+    },
+    { "name": "Relationship",
+      "superClass": ["Concept"],
+      "properties": [
+        {
+          "name": "source",
+          "isReference": true,
+          "type": "BaseElement",
+          "isAttr": true
+        },
+        {
+          "name": "target",
+          "isReference": true,
+          "type": "BaseElement",
+          "isAttr": true
+        },
+        {
+          "name": "isDirected",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "accessType",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "Elements",
+      "properties": [
+        {
+          "name": "baseElements",
+          "isMany": true,
+          "type": "BaseElement"
+        }
+      ]
+    },
+    { "name": "Relationships",
+    "properties": [
+      {
+        "name": "relationships",
+        "isMany": true,
+        "type": "Relationship"
+      }
+    ]
+  },
+    { "name": "Model",
+      "superClass": ["BaseObject"],
+      "properties": [
+        {
+          "name": "elementsNode",
+          "type": "Elements"
+        },
+        {
+          "name": "views",
+          "type": "Views"
+        },
+        {
+          "name": "relationshipsNode",
+          "type": "Relationships"
+        },
+        {
+          "name": "propertyDefinitionsNode",
+          "type": "PropertyDefinitions"
+        },
+        {
+          "name": "organizationsNode",
+          "type": "Organizations"
+        }
+      ]
+    },
+    { "name": "PropertyDefinitions",
+      "properties": [
+        {
+          "name": "propertyDefinitions",
+          "isMany": true,
+          "type": "PropertyDefinition"
+        }
+      ]
+    },
+    { "name": "PropertyDefinition",
+      "superClass": ["IdObject"],
+      "properties": [
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "Property",
+      "properties":[
+        {
+          "name": "propertyDefinitionRef",
+          "type": "PropertyDefinition",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "value",
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "Properties",
+      "properties": [
+        {
+          "name": "properties",
+          "type": "Property",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "Views",
+      "properties": [
+        {
+          "name": "diagrams",
+          "type": "Diagrams"
+        }
+      ]
+    },
+    { "name": "Diagrams",
+      "properties": [
+        {
+          "name": "viewsList",
+          "type": "View",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "IdObject",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "id",
+          "isAttr": true,
+          "isId": true,
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "View",
+      "superClass": ["BaseObject"],
+      "properties": [
+        {
+          "name": "viewElements",
+          "type": "ViewElement",
+          "isMany": true
+        }
+      ]
+    },
+    { "name": "ViewElement",
+      "isAbstract": true,
+      "superClass": ["IdObject"],
+      "properties": [
+        {
+          "name": "xsi:type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "style",
+          "type": "Style"
+        },
+        {
+          "name": "label",
+          "type": "String"
+        }
+      ]
+    },
+    { "name": "Node",
+      "superClass": ["ViewElement"],
+      "properties": [
+        {
+          "name": "nodes",
+          "type": "Node",
+          "isMany": true
+        },
+        {
+          "name": "elementRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "BaseElement"
+        },
+        {
+          "name": "x",
+          "type": "Real",
+          "default": "0",
+          "isAttr": true
+        },
+        {
+          "name": "y",
+          "type": "Real",
+          "default": "0",
+          "isAttr": true
+        },
+        {
+          "name": "w",
+          "type": "Real",
+          "isAttr": true
+        },
+        {
+          "name": "h",
+          "type": "Real",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "Connection",
+      "superClass": ["ViewElement"],
+      "properties": [
+        {
+          "name": "relationshipRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "Relationship"
+        },
+        {
+          "name": "source",
+          "type": "Node",
+          "isReference": true,
+          "isAttr": true
+        },
+        {
+          "name": "target",
+          "type": "Node",
+          "isReference": true,
+          "isAttr": true
+        },
+        {
+          "name": "waypointsNode",
+          "type": "Waypoints"
+        }
+      ]
+    },
+    { "name": "Style",
+      "properties": [
+        {
+          "name": "lineWidth",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "textAlign",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "font",
+          "type": "Font"
+        },
+        {
+          "name": "fillColor",
+          "type": "FillColor"
+        },
+        {
+          "name": "lineColor",
+          "type": "LineColor"
+        }
+      ]
+    },
+    { "name": "Font",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "size",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "style",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "color",
+          "type": "Color"
+        }
+      ]
+    },
+    { "name": "Color",
+      "properties": [
+        {
+          "name": "r",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "g",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "b",
+          "type": "Integer",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "FillColor",
+      "superClass": ["Color"],
+      "properties": [
+        {
+          "name": "a",
+          "type": "Integer",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "LineColor",
+      "superClass": ["Color"],
+      "properties": [
+        {
+          "name": "a",
+          "type": "Integer",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "Waypoints",
+      "properties": [
+        {
+          "name": "waypoints",
+          "isMany": true,
+          "type": "Waypoint"
+        }
+      ]
+    },
+    { "name": "Waypoint",
+      "superClass": ["Point"],
+      "properties": [
+        {
+          "name": "original",
+          "type": "Point"
+        }
+      ]
+    },
+    { "name": "Point",
+      "properties": [
+        {
+          "name": "x",
+          "type": "Integer",
+          "isAttr": true
+        },
+        {
+          "name": "y",
+          "type": "Integer",
+          "isAttr": true
+        }
+      ]
+    },
+    { "name": "Group",
+      "superClass": ["BaseElement"]
+    },
+    { "name": "Image",
+      "superClass": ["BaseElement"],
+      "properties": [
+        {
+          "name": "source",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,9 @@
     "browser": true
   },
   "globals": {
+    "Map": true,
     "Promise": true,
-    "Sentry": true
+    "Sentry": true,
+    "Set": true
   }
 }
