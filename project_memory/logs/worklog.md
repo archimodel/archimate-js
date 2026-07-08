@@ -907,3 +907,17 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-284-access-type-actions-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-285-access-type-actions-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
 - Audit: `project_memory/audit/reports/20260709-access-type-actions-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 74
+
+- Goal: make Association relationship direction editing explicit for both undirected and directed notation.
+- Source scan: `project_memory/runlogs/20260709-286-c260-association-direction-source-scan.txt` records a focused non-verbatim C260 Chapter 5 Association/directed/undirected scan.
+- Red test: `project_memory/runlogs/20260709-287-association-direction-actions-red-test.txt` failed because the connection popup did not expose `set-association-undirected`.
+- Implemented: `lib/features/popup-menu/ConnectionMenuProvider.js` now exposes `set-association-undirected` and `set-association-directed` while keeping the underlying relationship type as `Association`.
+- Implemented: directed state continues to persist through `isDirected`, with the existing renderer and legacy `typeOption` fallback unchanged.
+- Tests/docs: `test/relationship-rules.test.mjs`, README, and `docs/archimate4` now guard and describe the explicit Association direction actions without embedding C260 prose or Appendix B table data.
+- Verification: focused relationship tests passed in `project_memory/runlogs/20260709-288-association-direction-actions-relationship-rules-test.txt`; `npm run test:language` passed with 132 tests in `project_memory/runlogs/20260709-289-association-direction-actions-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-290-association-direction-actions-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-291-association-direction-actions-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-292-association-direction-actions-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-293-association-direction-actions-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-294-association-direction-actions-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-295-association-direction-actions-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-296-association-direction-actions-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
+- Audit: `project_memory/audit/reports/20260709-association-direction-actions-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

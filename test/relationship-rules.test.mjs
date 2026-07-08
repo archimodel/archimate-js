@@ -162,6 +162,25 @@ test('connection popup exposes explicit Access type actions', async () => {
   assert.match(source, /active: isNone/);
 });
 
+test('connection popup exposes explicit Association direction actions', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  for (const entryId of [
+    'set-association-undirected',
+    'set-association-directed'
+  ]) {
+    assert.equal(source.includes(`id: '${entryId}'`), true, `${entryId} must be present`);
+  }
+
+  assert.match(source, /function setAssociationDirection\(event, entry\)/);
+  assert.match(source, /isDirected: entry\.options\.isDirected/);
+  assert.match(source, /var isDirected = getRelationshipFlagValue\(element, 'isDirected'\),/);
+  assert.match(source, /isUndirected = !isDirected/);
+  assert.match(source, /title: translate\('Undirected'\)/);
+  assert.match(source, /title: translate\('Directed'\)/);
+  assert.match(source, /active: isUndirected/);
+});
+
 test('connection popup exposes ArchiMate 4 custom influence modifier input', async () => {
   const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
 

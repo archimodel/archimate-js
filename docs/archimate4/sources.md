@@ -280,6 +280,10 @@
 - The Access popup now exposes explicit actions for the supported local `accessType` values:
   `None`, `Read`, `Write`, and `ReadWrite`. This makes the unspecified Access notation selectable
   directly instead of requiring users to toggle another Access option off.
+- A focused C260 Chapter 5 Association/direction keyword scan is recorded in
+  `project_memory/runlogs/20260709-286-c260-association-direction-source-scan.txt`.
+- The Association popup now exposes explicit undirected and directed actions backed by `isDirected`,
+  while retaining the same relationship type value and legacy `typeOption` compatibility.
 
 ## Junction Multiplicity Guard
 

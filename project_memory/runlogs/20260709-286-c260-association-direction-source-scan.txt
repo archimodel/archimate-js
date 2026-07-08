@@ -1,0 +1,8 @@
+C260 association direction non-verbatim scan
+pdf_exists=True pages=207
+page 57: association=1, direction=4
+page 58: no tracked terms
+page 59: direction=4
+page 60: no tracked terms
+page 61: Association=2, association=7, directed=2, undirected=1
+page 62: Association=1, association=4, directed=2, direction=1
