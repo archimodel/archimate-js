@@ -104,10 +104,15 @@
 - A follow-up local C260 Chapter 14 keyword scan is recorded in
   `project_memory/runlogs/20260709-049-c260-relationship-specialization-menu-source-scan.txt`; it
   confirms the same relationship/junction specialization signal used for editor menu behavior.
+- A local C260 Chapter 14 profile attribute scan is recorded in
+  `project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt`; it confirms that
+  profile attributes are typed and assigned to model concepts.
 - The implementation-defined customization path is `archimateLanguageProfile` on viewer/modeler
   options, or direct use of `createLanguageProfile(version, customization)`.
 - Custom profiles may add or override domains, retain custom attribute definitions, and add specialized
   elements, connectors, or relationships.
+- Profile attributes are validated as C260 typed attributes: each entry must name an active element,
+  connector, or relationship concept and use an implementation-supported attribute type.
 - New custom concepts must declare `specializes`; relationship validation resolves specialized source
   and target concepts to their standard base concept before consulting the active relationship profile.
 - New custom relationship objects may declare `specializes` to point to a standard ArchiMate

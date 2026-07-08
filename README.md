@@ -40,7 +40,7 @@ Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active rel
 
 Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage, C260 conformance requirement status, and the external blockers that must be resolved before official conformance can be claimed.
 
-Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept:
+Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept. Profile attributes require a supported ArchiMate concept and typed value definition.
 
 ```js
 const modeler = new Modeler({
@@ -83,6 +83,7 @@ const modeler = new Modeler({
 
 * ArchiMate 4 support uses versioned language profiles.
 * Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.
+* Profile attributes require `concept`, `name`, and `type`; the concept must resolve to an active element, connector, or relationship in the customized profile.
 * Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.
 * Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.
 * 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.

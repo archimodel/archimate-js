@@ -69,7 +69,9 @@ viewer/modeler configuration and by `createLanguageProfile(version, customizatio
 Supported customization data:
 
 - Additional or overridden domain metadata, including color.
-- Additional concept attributes retained on the active language profile for host tooling.
+- Additional concept attributes retained on the active language profile for host tooling. Profile
+  attributes must declare `concept`, `name`, and `type`; the concept must resolve to an active
+  element, connector, or relationship in the customized profile.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
 - Specialized relationship metadata. New custom relationship objects may declare `specializes` and

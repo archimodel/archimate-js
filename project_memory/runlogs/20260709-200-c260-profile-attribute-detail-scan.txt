@@ -1,0 +1,23 @@
+--- page 132 ---
+numerical, etc.) to the model concepts. Every concept in an ArchiMate model can have attributes
+A profile is a data structure which can be defined separately from the ArchiMate language but can be
+the assignment of a profile to a model concept is necessary. Profiles are specified as sets of typed
+attributes. Each of these attributes may have a default value that can be changed by the user.
+--- page 133 ---
+Two types of profiles can be distinguished:
+1. Predefined profiles: These are profiles that have a predefined attribute structure and can be
+Examples of such profiles are sets of attributes for ArchiMate concepts that have to be specified in
+2. User-defined profiles: Through a profile definition language, the user is able to define new profiles,
+thus extending the definition of ArchiMate concepts with supplementary attribute sets
+At least the following basic data types are allowed for these attributes:
+• String
+• Boolean
+• Date
+Table 14-1 shows possible profiles with input attributes needed for certain types of cost and
+--- page 134 ---
+Table 14-1: Profile Examples
+Serving Profile Service Structure
+Profile Element
+Profile
+Service time Time Capacity Integer
+attributes may also be predefined, as described in the previous section.

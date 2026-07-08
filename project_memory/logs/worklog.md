@@ -803,3 +803,18 @@
 - Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-197-conformance-requirements-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-198-conformance-requirements-post-record-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-conformance-requirements-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 67
+
+- Goal: tighten the C260 Chapter 14 language customization profile mechanism by validating typed profile attributes against the active language profile.
+- Source check: `project_memory/runlogs/20260709-199-c260-language-customization-scan.txt` located Chapter 14 customization/profile/specialization signals; `project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt` recorded that profile attributes are typed and assigned to model concepts.
+- Red test attempt: `project_memory/runlogs/20260709-201-profile-attribute-validation-red-test.txt` failed early because a direct test import hit Node JSON import-attribute behavior. The test was converted to the existing source-level contract style used by this suite.
+- Red test: `project_memory/runlogs/20260709-202-profile-attribute-validation-red-test.txt` failed because profile attribute validation markers and documentation were missing.
+- Implemented: `PROFILE_ATTRIBUTE_TYPES` now defines implementation-supported profile attribute types for `archimateLanguageProfile.attributes`.
+- Implemented: `mergeAttributes()` now validates each profile attribute object, requiring `concept`, `name`, and `type`; the target concept must resolve to an active element, connector, or relationship, and the attribute type must be supported.
+- Docs: README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now describe the profile attribute contract.
+- Verification: `npm run test:language` passed with 118 tests in `project_memory/runlogs/20260709-203-profile-attribute-validation-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-204-profile-attribute-validation-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-205-profile-attribute-validation-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-206-profile-attribute-validation-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-207-profile-attribute-validation-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-208-profile-attribute-validation-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-209-profile-attribute-validation-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-validation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

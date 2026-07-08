@@ -1,0 +1,233 @@
+pages=207
+--- page 8 ---
+5.4.1. Specialization Relationship. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+--- page 10 ---
+14. Language Customization Mechanisms. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111
+14.1. Adding Attributes to ArchiMate Concepts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111
+14.2. Specialization of Concepts. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
+14.2.1. Examples of Specializations of Common Domain Elements (Informative) . . . . . . . . . . . . . . 114
+14.2.2. Examples of Specializations of Business Domain Elements (Informative). . . . . . . . . . . . . . . 117
+14.2.3. Examples of Specializations of Application Domain Elements (Informative). . . . . . . . . . . . 117
+14.2.4. Examples of Specializations of Technology Domain Elements (Informative). . . . . . . . . . . . 118
+14.2.5. Examples of Specializations of Motivation Elements (Informative) . . . . . . . . . . . . . . . . . . . . 119
+14.2.6. Examples of Specializations of Strategy Elements (Informative). . . . . . . . . . . . . . . . . . . . . . . 120
+14.2.7. Examples of Specializations of Implementation and Migration Elements (Informative). . 121
+14.2.8. Examples of Specializations of Composite Elements (Informative). . . . . . . . . . . . . . . . . . . . . 121
+14.2.9. Examples of Specializations of Relationships and Junctions (Informative). . . . . . . . . . . . . . 122
+--- page 11 ---
+B.2.1. Valid Derivations for Specialization Relationships . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 126
+B.3.1. Potential Derivation for Specialization Relationships. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131
+--- page 16 ---
+• Chapter 14, Language Customization Mechanisms, describes how to customize the ArchiMate
+--- page 17 ---
+Practitioner Body of Knowledge, DPBoK, Eagle AI Assistant and logo, EMMM, FHIM Profile Builder,
+--- page 23 ---
+4. Shall support the language customization mechanisms as specified in Chapter 14 in an
+implementation-defined manner
+--- page 33 ---
+chapter is therefore the generic way in which the specializations of these elements (i.e., the elements of
+--- page 37 ---
+metamodel-level specializations of the application component element, as described in Chapter 14 (see
+components of the TOGAF Content Metamodel, which can be defined as specializations of the node
+--- page 39 ---
+element in the language can have aggregation and specialization relationships to
+--- page 51 ---
+relationships between elements in a model. Aggregation and specialization relationships are always
+--- page 52 ---
+The composition relationship is a specialization of the aggregation relationship that expresses an
+--- page 60 ---
+Attributes can be used to indicate the sign and/or strength of the influence. The choice of possible
+attribute values is left to the modeler; e.g., {++, +, 0, -, --} or [0..10]. By default, the influence relationship
+--- page 65 ---
+5.4.1. Specialization Relationship
+The specialization relationship represents that an element is a particular kind of another element.
+The specialization relationship has been inspired by the generalization relationship in UML class
+A specialization relationship is always allowed between two elements of the same type.
+Figure 5-12: Specialization Notation
+Alternatively, a specialization relationship can be expressed by nesting the specialized element inside
+Example 5-13 illustrates the use of the specialization relationship for a process. In this case, the
+“Take Out Travel Insurance” and “Take Out Luggage Insurance” processes are a specialization of
+--- page 66 ---
+Example 5-13: Specialization
+The semantics of the specialization relationship are that the whole of the generic element is specialized
+--- page 68 ---
+All relationships can have on each end (except when connected to a junction) an attribute specifying
+how many instances are allowed at that end. The notation for this attribute can be:
+--- page 70 ---
+Specialization Represents that an element is a particular kind → specializes
+--- page 87 ---
+model such so-called capability increments, the specialization relationship can be used to denote that a
+--- page 94 ---
+“Passive Structure Element” are abstract elements; only their specializations (as defined in the
+--- page 98 ---
+specialization, or aggregation relationships with other business objects. A business object may be
+--- page 100 ---
+and “Appeal”. An “Auto Insurance” product is a specialization of the generic “Insurance”
+--- page 105 ---
+realized by an artifact. A data object may have association, specialization, or aggregation relationships
+“Travel Insurance Quotation” are two specializations of the “Online Insurance Quotation” data
+--- page 108 ---
+can have aggregation and specialization relationships with elements of the same type.
+--- page 113 ---
+services). A technology passive structure elements may have association, specialization, or aggregation
+--- page 114 ---
+An artifact represents a “physical” element in the IT world. Artifact is a specialization of technology
+specializations of the artifact element.
+--- page 131 ---
+concern(s) being framed. The architect may use the profile mechanism described in Section 14.1 to
+create representations based on attributes of elements and relationships; for example, to create color-
+--- page 132 ---
+Chapter 14. Language Customization Mechanisms 14.1. Adding Attributes to ArchiMate Concepts
+Chapter 14. Language Customization
+14.1. Adding Attributes to ArchiMate Concepts
+numerical, etc.) to the model concepts. Every concept in an ArchiMate model can have attributes
+by means of a “profiling” specialization mechanism (see also [Eertink et al., 1999]).
+A profile is a data structure which can be defined separately from the ArchiMate language but can be
+the assignment of a profile to a model concept is necessary. Profiles are specified as sets of typed
+attributes. Each of these attributes may have a default value that can be changed by the user.
+--- page 133 ---
+14.1. Adding Attributes to ArchiMate Concepts Chapter 14. Language Customization Mechanisms
+Two types of profiles can be distinguished:
+1. Predefined profiles: These are profiles that have a predefined attribute structure and can be
+Examples of such profiles are sets of attributes for ArchiMate concepts that have to be specified in
+2. User-defined profiles: Through a profile definition language, the user is able to define new profiles,
+thus extending the definition of ArchiMate concepts with supplementary attribute sets
+At least the following basic data types are allowed for these attributes:
+Table 14-1 shows possible profiles with input attributes needed for certain types of cost and
+--- page 134 ---
+Chapter 14. Language Customization Mechanisms 14.2. Specialization of Concepts
+Table 14-1: Profile Examples
+Serving Profile Service Structure
+Profile Element
+Profile
+14.2. Specialization of Concepts
+The specification of the ArchiMate language metamodel uses the notion of specialization to define that
+some concept is a special version of another. This tree of specializations has the abstract concept
+“Concept” at the root, and “Element” is a specialization of that. The leaves of this tree are the concrete
+concepts used by modelers in actual models. (Note that this specialization of concepts at the language
+definition level is not to be confused with the specialization relationship used at the model level, where
+you can model that an individual model element represents a specialization of another model element;
+e.g., “Car Insurance” being a specialization of “Insurance”.) This metamodel-level specialization is not
+However, the ArchiMate Specification does support the specialization of its concrete concepts (i.e., the
+--- page 135 ---
+14.2. Specialization of Concepts Chapter 14. Language Customization Mechanisms
+Specialization of concepts provides extra flexibility as it allows organizations or individual users to
+Specialization of concepts is done by using the profile mechanism described in Section 14.1. The name
+of the profile is the name of the specialization, and it may have other attributes if relevant to the
+specialization. The specialized concept is modeled by assigning such a profile to the general concept.
+The profile may also define a specific notation to denote the specialization. The default is the guillemet
+notation of UML for stereotypes (“«specialization name»”). Other options include specific icons, colors,
+fonts, or symbols. Note that multiple specialization profiles may be assigned to the same generalized
+concept; in the default notation, these are shown as a comma-separated list (“«specialization 1,
+specialization 2»”).
+14.2.1. Examples of Specializations of Common Domain Elements (Informative)
+Table 14-2 shows examples of specializations of Common Domain elements.
+Table 14-2: Example Specializations of Common Domain Elements
+--- page 136 ---
+Chapter 14. Language Customization Mechanisms 14.2. Specialization of Concepts
+--- page 137 ---
+14.2. Specialization of Concepts Chapter 14. Language Customization Mechanisms
+--- page 138 ---
+Chapter 14. Language Customization Mechanisms 14.2. Specialization of Concepts
+14.2.2. Examples of Specializations of Business Domain Elements (Informative)
+Table 14-3 shows examples of specializations of Business Domain concepts.
+Table 14-3: Example Specialization of Business Domain Elements
+14.2.3. Examples of Specializations of Application Domain Elements (Informative)
+Table 14-4 shows examples of specializations of Application Domain elements.
+Table 14-4: Example Specializations of Application Domain Elements
+--- page 139 ---
+14.2. Specialization of Concepts Chapter 14. Language Customization Mechanisms
+14.2.4. Examples of Specializations of Technology Domain Elements (Informative)
+Table 14-5 shows examples of specializations of Technology Domain elements.
+Table 14-5: Example Specializations of Technology Domain Elements
+--- page 140 ---
+Chapter 14. Language Customization Mechanisms 14.2. Specialization of Concepts
+14.2.5. Examples of Specializations of Motivation Elements (Informative)
+Table 14-6 shows examples of specializations of motivation elements.
+Table 14-6: Example Specializations of Motivation Elements
+Example 14-1 illustrates the use of specializations of Business Domain and Motivation elements
+--- page 141 ---
+14.2. Specialization of Concepts Chapter 14. Language Customization Mechanisms
+Example 14-1: Specializations of Business Domain and Motivation Elements
+14.2.6. Examples of Specializations of Strategy Elements (Informative)
+Table 14-7 shows examples of specializations of strategy elements.
+Table 14-7: Example Specializations of Strategy Elements
+Capability Capability Increment A specialization of a capability realized by a specific
+--- page 142 ---
+Chapter 14. Language Customization Mechanisms 14.2. Specialization of Concepts
+14.2.7. Examples of Specializations of Implementation and Migration Elements
+Table 14-8 shows examples of specializations of implementation and migration elements.
+Table 14-8: Example Specializations of Implementation and Migration Elements
+14.2.8. Examples of Specializations of Composite Elements (Informative)
+Table 14-9 shows examples of specializations of compound elements. In addition to the specialization
+Table 14-9: Example Specializations of Composite Elements
+--- page 143 ---
+14.2. Specialization of Concepts Chapter 14. Language Customization Mechanisms
+14.2.9. Examples of Specializations of Relationships and Junctions (Informative)
+Table 14-10 shows examples of specializations of relationships and junctions.
+Table 14-10: Example Specializations of Relationships and Junctions
+--- page 147 ---
+B.2.1. Valid Derivations for Specialization Relationships
+DR 1: Transitivity of Specialization
+If two relationships p(a,b) : S and q(b,c) : S exist, with S being Specialization, then a relationship r
+Example B-1: Transitivity of Specialization
+--- page 152 ---
+B.3.1. Potential Derivation for Specialization Relationships
+The first two rules apply in the case where the target of a specialization relationship is the source or
+target of any other relationship. In this case, the source of the specialization could have the same
+PDR 1: Derivation with Specialization and Other Relationships
+If two relationships p(a,b) : S and q(b,c) : T exist, with S being Specialization and T being a
+--- page 153 ---
+Example B-13: Potential Derivation from a Specialization and Another Relationship in Line
+PDR 2: Derivation with Specialization and Other Relationships
+If two relationships p(a,b) : S and q(c,b) : T exist, with S being Specialization and T being a
+Example B-14: Potential Derivation from a Specialization and Another Relationship in the Opposite Direction
+The next two rules apply in the case where the source of a specialization relationship is joining the
+source or target of any other relationship. In this case, the target of the specialization could have the
+PDR 3: Potential Derivation Between Specialization and Any Other Relationship
+If two relationships p(a,b) : S and q(a,c) : T exist, with S being Specialization and T being a
+--- page 154 ---
+Example B-15: Potential Derivation from Another Relationship and a Specialization in the Opposite Direction
+PDR 4: Potential Derivation Between Specialization and Any Other Relationship
+If two relationships p(a,b) : S and q(c,a) : T exist, with S being Specialization and T being a
+Example B-16: Potential Derivation from Another Relationship and a Specialization in Line
+an “IT Project Team”, as a specialization of “Project Team”, assigned to an “IT Project”, as a
+specialization of “Project”. A “Project Team” aggregates a “Project Manager”, a “Project” accesses
+--- page 155 ---
+Example B-17: Specializations Used in Potential Derivations
+--- page 170 ---
+viewpoints, refer to Chapter 14 of Enterprise Architecture at Work: Modeling, Communication, and
+--- page 181 ---
+Chapter 14 of Enterprise Architecture at Work: Modeling, Communication, and Analysis [Lankhorst et
+--- page 185 ---
+of viewpoints, refer to Chapter 14 of Enterprise Architecture at Work: Modeling, Communication, and
+--- page 188 ---
+goal and use of viewpoints, refer to Chapter 14 of Enterprise Architecture at Work: Modeling,
+--- page 195 ---
+well. The ArchiMate association, aggregation, specialization, and realization relationships have a direct
+--- page 197 ---
+• Added events (with a time attribute) at all layers in the ArchiMate core language as well as to the
+--- page 200 ---
+• Constraint can be replaced by a (specialization of) requirement
+• Contract can be replaced by a (specialization of) business object
+• Gap can be replaced by a (specialization of) assessment or deliverable
+• Representation can be replaced by a (specialization of) data object, artifact, or material
+• Business, application, and technology interactions can be replaced by a (specialization of) function
+• Other business, application, and technology behavior elements can be replaced by (a specialization
+• Implementation event can be replaced by a (specialization of) event
+concerns a realization between services of different layers, this may be replaced by a specialization
+--- page 204 ---
+Active Structure Aspect, 11 compound element specialization, 121
+Application Domain specialization, 117 core element, 5
+attribute, 5, 111 dynamic relationships, 29, 42
+Business Domain specialization, 117 ERD, 16
+Common Domain specialization, 114
+--- page 205 ---
+implementation element specialization, 121 passive structure element, 14
+junctions, 122 profile, 111
+logical application components, 16 relationship specialization, 122
+motivation element specialization, 119, 121
+nesting, 17 specialization relationship, 44
+--- page 206 ---
+strategy element specialization, 120
+Technology Domain specialization, 118
