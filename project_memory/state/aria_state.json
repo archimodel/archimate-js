@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 76,
-  "stage": "view_nesting_attachment_verified",
+  "loop_id": 77,
+  "stage": "grouping_renderer_notation_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 140,
+    "diff_size": 57,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -94,7 +94,8 @@
       "access_type_explicit_action_guard",
       "association_direction_explicit_action_guard",
       "view_nesting_import_guard",
-      "view_nesting_attachment_guard"
+      "view_nesting_attachment_guard",
+      "grouping_renderer_notation_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -199,12 +200,13 @@
       "check_access_type_explicit_actions",
       "check_association_direction_explicit_actions",
       "check_nested_view_node_import",
-      "check_view_nesting_attachment_persistence"
+      "check_view_nesting_attachment_persistence",
+      "check_grouping_renderer_notation"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-318-view-nesting-attachment-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-view-nesting-attachment-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-330-grouping-renderer-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-grouping-renderer-notation-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -289,10 +291,11 @@
     "Access relationship popup actions now expose None, Read, Write, and ReadWrite explicitly while preserving the same accessType persistence path.",
     "Association relationship popup actions now expose undirected and directed notation explicitly while preserving the same isDirected persistence path.",
     "Imported nested Node view elements now preserve diagram parent-child containment instead of being added to the root with host metadata.",
-    "Edited nested Node view elements now persist once in the active serialization parent: root viewElements for root-level nodes or parent Node.nodes for nested nodes."
+    "Edited nested Node view elements now persist once in the active serialization parent: root viewElements for root-level nodes or parent Node.nodes for nested nodes.",
+    "ArchiMate 4 Grouping renders with a dashed, unfilled outline while ArchiMate 3.x Grouping rendering remains unchanged; exact Appendix A vector artwork remains external-source dependent."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T03:45:07+09:00"
+    "updated_at": "2026-07-09T03:55:13+09:00"
   }
 }

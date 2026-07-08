@@ -97,6 +97,11 @@
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4
   spelling-corrected `pictoRef` entries and implementation-defined specialized concepts do not fall
   back to the legacy 3.x `ModelUtil` metadata.
+- A local C260 Appendix A page scan and rendered visual check for `Grouping` notation are recorded in
+  `project_memory/runlogs/20260709-326-c260-appendix-a-grouping-page-scan.txt` and
+  `project_memory/runlogs/20260709-327-c260-appendix-a-grouping-visual-check.txt`. The derived
+  renderer requirement is limited to a dashed, unfilled ArchiMate 4 `Grouping` outline; exact Appendix
+  A vector artwork remains source/rights dependent.
 
 ## Language Customization Mechanism
 

@@ -101,6 +101,7 @@ const modeler = new Modeler({
 * Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.
+* In ArchiMate 4 mode, `Grouping` renders with a dashed, unfilled outline to match the Appendix A notation boundary while exact Appendix A vector artwork remains externally source-dependent.
 * ArchiMate 4 `Grouping`, `Location`, and `Plateau` can aggregate relationship concepts, including relationships and junctions.
 * `deriveRelationship()` and `deriveRelationshipType()` expose C260-derived DR1-DR8 valid relationship derivations for host tooling, including specialization transitivity, weakest structural derivation, dependency/dynamic derivation, Flow opposite-direction derivation, and Triggering transitivity.
 * `deriveRelationship()` and `derivePotentialRelationship()` apply C260 Appendix B.4 derivation restrictions when an ArchiMate 4 profile with endpoint domain/aspect metadata is supplied.

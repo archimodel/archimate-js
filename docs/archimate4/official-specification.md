@@ -189,6 +189,9 @@ Implementation notes:
   elements and must not be migrated to a generic `Interface`.
 - `Path` is a Common Domain active structure element.
 - `Grouping` and `Location` are Common Domain composite elements.
+- In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
+  3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
+  until the source and redistribution boundary is resolved.
 - Standard display labels preserve source casing, including `Course of Action`.
 
 ## Relationships And Junctions

@@ -951,3 +951,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-324-view-nesting-attachment-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-325-view-nesting-attachment-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-view-nesting-attachment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 77
+
+- Goal: align the ArchiMate 4 `Grouping` renderer outline with the C260 Appendix A notation while preserving ArchiMate 3.x behavior.
+- Source evidence: `project_memory/runlogs/20260709-326-c260-appendix-a-grouping-page-scan.txt` and `project_memory/runlogs/20260709-327-c260-appendix-a-grouping-visual-check.txt` record the non-verbatim Appendix A page and visual check.
+- Red test: `project_memory/runlogs/20260709-328-grouping-renderer-red-test.txt` failed because `ArchimateRenderer` had no ArchiMate 4-specific `Grouping` outline handling.
+- Implemented: `lib/draw/ArchimateRenderer.js` now gates `Grouping` outline behavior on ArchiMate 4 profiles, rendering it as a dashed, unfilled rectangle while keeping ArchiMate 3.x rendering unchanged.
+- Implemented: ArchiMate 4 `Grouping` pictogram fill now remains visible against the unfilled outline.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the renderer notation boundary without embedding Appendix A vector artwork.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-329-grouping-renderer-test.txt`; `npm run test:language` passed in `project_memory/runlogs/20260709-330-grouping-renderer-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-331-grouping-renderer-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-332-grouping-renderer-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-333-grouping-renderer-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-334-grouping-renderer-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-335-grouping-renderer-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-grouping-renderer-notation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
