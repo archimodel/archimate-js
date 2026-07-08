@@ -112,6 +112,11 @@
   `project_memory/runlogs/20260709-352-c260-appendix-a-motivation-visual-check.txt`. The derived
   renderer requirement is limited to ArchiMate 4 Motivation elements using clipped/chamfered body
   corners while preserving ArchiMate 3.x rectangle body rendering.
+- A local C260 Appendix A rendered visual check for `Location` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-364-c260-appendix-a-location-render.txt` and
+  `project_memory/runlogs/20260709-365-c260-appendix-a-location-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_LOCATION` generic object alias with a
+  locally-authored location-pin path.
 
 ## Language Customization Mechanism
 

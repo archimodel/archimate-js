@@ -36,3 +36,11 @@ test('renderer draws ArchiMate 4 Motivation elements with chamfered bodies', asy
   assert.match(rendererSource, /drawRect\(parentGfx, shape\.width, shape\.height, borderRadius, attrs\)/);
   assert.match(utilSource, /export function getChamferedRectPath\(shape, chamfer\)/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Location pin pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_LOCATION': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_LOCATION': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /c -4 -4 -4 -9 0 -13/);
+});

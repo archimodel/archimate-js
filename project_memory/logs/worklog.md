@@ -991,3 +991,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-360-motivation-renderer-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-motivation-renderer-notation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 80
+
+- Goal: replace the ArchiMate 4 `Location` renderer pictogram fallback with a C260 Appendix A-derived location-pin path.
+- Source evidence: `project_memory/runlogs/20260709-364-c260-appendix-a-location-render.txt` and `project_memory/runlogs/20260709-365-c260-appendix-a-location-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-366-location-pictogram-red-test.txt` failed because `PICTO_LOCATION` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_LOCATION` pin-shaped path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Location renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-367-location-pictogram-test.txt`; `npm run test:language` passed with 138 tests in `project_memory/runlogs/20260709-368-location-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-369-location-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-370-location-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-371-location-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-372-location-pictogram-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-373-location-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-location-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
