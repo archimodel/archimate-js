@@ -390,6 +390,23 @@ test('language profile customization supports C260 specialization profiles', asy
   assert.match(packageEntrypoint, /createLanguageProfile/);
 });
 
+test('language profile customization supports relationship specializations', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const relationshipUtil = await readFile(new URL('../lib/util/RelationshipUtil.js', import.meta.url), 'utf8');
+  const junctionUtil = await readFile(new URL('../lib/util/JunctionUtil.js', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+
+  assert.match(sources, /Specializations of Relationships and Junctions/);
+  assert.match(languageIndex, /export function getProfileRelationship/);
+  assert.match(languageIndex, /export function getBaseRelationshipTypeForProfile/);
+  assert.match(languageIndex, /normalizeRelationshipDefinition\(relationship\)/);
+  assert.match(languageIndex, /Custom ArchiMate relationship .* must declare specializes/);
+  assert.match(languageIndex, /specializes unknown relationship/);
+  assert.match(relationshipUtil, /getBaseRelationshipTypeForProfile\(relationshipType, profile\)/);
+  assert.match(relationshipUtil, /relationship === baseRelationshipType/);
+  assert.match(junctionUtil, /getBaseRelationshipTypeForProfile\(type, profile\)/);
+});
+
 test('archimate 4 shape metadata preserves domain terminology', async () => {
   const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
   const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');

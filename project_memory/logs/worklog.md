@@ -605,3 +605,22 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-025-context-pad-drag-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-context-pad-drag-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 55
+
+- Goal: continue C260-based ArchiMate 4 implementation by closing a language customization gap without embedding licensed Appendix B relationship tables.
+- Source check: `project_memory/runlogs/20260709-032-c260-customization-specialization-scan.txt` scanned the local C260 PDF and recorded a derived signal that Chapter 14 includes specializations of relationships and junctions.
+- XSD check: `project_memory/runlogs/20260709-039-official-xsd-directory-recheck.txt` refreshed the official XSD directory; it returned 200 with only 3.1 XSD links while 4.0 directory and Model/Diagram/View candidates returned 404.
+- Red test: `project_memory/runlogs/20260709-033-relationship-specialization-red-test.txt` failed because relationship/junction specialization support and source-ledger trace were not present.
+- Implemented: `createLanguageProfile()` now accepts custom relationship objects and validates that relationship objects declare `specializes` pointing to a known relationship.
+- Implemented: `getBaseRelationshipTypeForProfile()` and `getProfileRelationship()` resolve custom relationship specializations to the standard base relationship.
+- Implemented: relationship validation now checks the base relationship type, so a custom relationship such as a Flow specialization is allowed wherever the active profile allows `Flow`.
+- Implemented: junction relationship type consistency now resolves custom relationship types to their standard base type before checking same-type junction chains.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` now record relationship specialization behavior and the 2026-07-09 XSD recheck.
+- Verification: `npm run test:language` passed with 94 tests in `project_memory/runlogs/20260709-035-relationship-specialization-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-036-relationship-specialization-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-037-relationship-specialization-git-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-038-relationship-specialization-demo-build.txt`.
+- Final checks: `npm run test:language` passed again with 94 tests in `project_memory/runlogs/20260709-040-relationship-specialization-final-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-041-relationship-specialization-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-042-relationship-specialization-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-043-relationship-specialization-final-git-diff-check.txt`.
+- Final record checks: `git diff --check` passed in `project_memory/runlogs/20260709-045-relationship-specialization-final-final-git-diff-check.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-046-relationship-specialization-final-state-json-check.txt`.
+- Pre-commit check: `git diff --cached --check` initially found whitespace only in runlog artifacts; the affected runlogs were mechanically trimmed and re-staged before commit.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-044-relationship-specialization-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-relationship-specialization-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -66,6 +66,8 @@ Supported customization data:
 - Additional concept attributes retained on the active language profile for host tooling.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
+- Specialized relationship metadata. New custom relationship objects may declare `specializes` and
+  point to an existing standard relationship type.
 
 Runtime behavior:
 
@@ -80,6 +82,9 @@ Runtime behavior:
 - Default element color uses custom domain colors when supplied.
 - Relationship validation resolves custom specialized concepts to their standard base concept, so a
   `RiskEvent` specializing `Event` inherits the base `Event` relationship constraints.
+- Relationship validation resolves custom specialized relationships to their standard base
+  relationship, so a `MaterialFlow` specializing `Flow` is allowed wherever the active relationship
+  profile allows `Flow`.
 - This does not embed Appendix B relationship table data; external Appendix B profiles remain the
   authoritative path for exact standard relationship rules.
 
@@ -311,6 +316,9 @@ Latest official XSD recheck:
 - On 2026-07-08T20:15:00+09:00, the same official directory was rechecked and again listed only the
   3.1 Model, Diagram, and View XSD links. The refreshed runlog is
   `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt`.
+- On 2026-07-09, the same official directory was rechecked again and still listed only 3.1 XSD links;
+  tested 4.0 directory and Model/Diagram/View XSD candidate URLs returned 404. The refreshed runlog is
+  `project_memory/runlogs/20260709-039-official-xsd-directory-recheck.txt`.
 
 ## Implementation Status And Remaining Gaps
 

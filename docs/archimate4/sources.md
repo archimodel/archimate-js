@@ -91,12 +91,19 @@
 
 - A local C260 Chapter 14 keyword scan is recorded in
   `project_memory/runlogs/20260708-133-language-customization-source-scan.txt`.
+- A refreshed local C260 Chapter 14 scan is recorded in
+  `project_memory/runlogs/20260709-032-c260-customization-specialization-scan.txt`; it records a
+  derived source signal for Specializations of Relationships and Junctions without copying the table.
 - The implementation-defined customization path is `archimateLanguageProfile` on viewer/modeler
   options, or direct use of `createLanguageProfile(version, customization)`.
 - Custom profiles may add or override domains, retain custom attribute definitions, and add specialized
-  elements or connectors.
+  elements, connectors, or relationships.
 - New custom concepts must declare `specializes`; relationship validation resolves specialized source
   and target concepts to their standard base concept before consulting the active relationship profile.
+- New custom relationship objects may declare `specializes` to point to a standard ArchiMate
+  relationship. Relationship validation resolves the custom relationship to that base type before
+  consulting the active relationship profile, so Appendix B data does not need to be duplicated for
+  every relationship specialization.
 - This implements language customization without changing the 42-element standard catalog or embedding
   the licensed Appendix B matrix.
 
@@ -322,6 +329,10 @@
   `project_memory/runlogs/20260708-363-official-xsd-directory-recheck.txt`; the official directory
   returned 200 and listed 3.1 Model, Diagram, and View XSD links, with no discovered `archimate4` or
   `4.0` XSD signal.
+- Refreshed again on 2026-07-09 in
+  `project_memory/runlogs/20260709-039-official-xsd-directory-recheck.txt`; the official directory
+  returned 200 and still listed only 3.1 XSD links, while tested 4.0 directory and Model/Diagram/View
+  candidates returned 404.
 
 ## ArchiMate 3.1 XSD Verification
 
