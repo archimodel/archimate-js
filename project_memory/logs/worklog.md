@@ -746,3 +746,16 @@
 - Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-152-chain-derivation-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-153-chain-derivation-post-record-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-chain-derivation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 63
+
+- Goal: strengthen the external Appendix B replacement path by exposing exact coverage gaps for host-supplied ArchiMate 4 relationship profiles.
+- Red test: `project_memory/runlogs/20260709-154-profile-coverage-report-red-test.txt` failed because a relationship profile coverage report API did not exist.
+- Implemented: `getRelationshipProfileCoverageReport()` now reports counts plus `missingSourceTypes` and `missingTargetCells`, while `getRelationshipProfileCoverageStats()` preserves the previous count-only shape.
+- Implemented: `getArchimate4RelationshipProfileStatus()` now includes `missingSourceCount` and `missingTargetCellCount`, and `getArchimate4RelationshipProfileCoverageReport()` returns the detailed active-profile gap report through the public entrypoint.
+- Boundary: the API reports transcription coverage for a host-supplied licensed Appendix B profile; it still does not embed the official Appendix B matrix in the repository.
+- Docs: README and `docs/archimate4` now describe the status counts and detailed coverage report.
+- Verification: `npm run test:language` passed with 115 tests in `project_memory/runlogs/20260709-162-profile-coverage-report-final-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-163-profile-coverage-report-final-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-164-profile-coverage-report-final-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-165-profile-coverage-report-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-161-profile-coverage-report-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-profile-coverage-report-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

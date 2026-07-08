@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
+  getRelationshipProfileCoverageReport,
   getRelationshipProfileCoverageStats,
   getRelationshipProfileStats,
   normalizeRelationshipProfile,
@@ -39,9 +40,12 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(loaderSource, /parseRelationshipProfile/);
   assert.match(loaderSource, /assertCompleteTargetCoverage/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
+  assert.match(source, /getArchimate4RelationshipProfileCoverageReport/);
   assert.match(source, /RELATIONSHIP_PROFILE_OPTIONS/);
-  assert.match(source, /getRelationshipProfileCoverageStats/);
+  assert.match(source, /getRelationshipProfileCoverageReport/);
   assert.match(source, /targetCellCount/);
+  assert.match(source, /missingSourceCount/);
+  assert.match(source, /missingTargetCellCount/);
   assert.match(source, /conceptCount/);
   assert.match(source, /expectedTargetCellCount/);
   assert.match(source, /completeSourceCoverage/);
@@ -50,6 +54,7 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
+  assert.match(entrypoint, /getArchimate4RelationshipProfileCoverageReport/);
   assert.match(baseViewer, /archimate4RelationshipProfile/);
   assert.match(baseViewer, /normalizeArchimateVersion\(options\.archimateVersion\) !== '4\.0'/);
   assert.match(baseViewer, /setArchimate4RelationshipProfile\(/);
@@ -310,6 +315,29 @@ test('archimate 4 relationship profile coverage stats count explicit target cell
   assert.equal(partialStats.targetCellCount, 1);
   assert.equal(partialStats.completeSourceCoverage, true);
   assert.equal(partialStats.completeTargetCoverage, false);
+});
+
+test('archimate 4 relationship profile coverage report lists missing sources and target cells', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role'
+  ]);
+  const report = getRelationshipProfileCoverageReport({
+    BusinessActor: {
+      Role: 'Assignment'
+    }
+  }, validTypes);
+
+  assert.deepEqual(report.missingSourceTypes, [ 'Role' ]);
+  assert.deepEqual(report.missingTargetCells, [
+    { source: 'BusinessActor', target: 'BusinessActor' },
+    { source: 'Role', target: 'BusinessActor' },
+    { source: 'Role', target: 'Role' }
+  ]);
+  assert.equal(report.missingSourceCount, 1);
+  assert.equal(report.missingTargetCellCount, 3);
+  assert.equal(report.completeSourceCoverage, false);
+  assert.equal(report.completeTargetCoverage, false);
 });
 
 test('archimate 4 relationship profile loader accepts matrix text', () => {

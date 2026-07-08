@@ -36,7 +36,7 @@ const modeler = new Modeler({
 
 The supplied profile may be an object, a JSON string, a row array, a header-row matrix array, or `{ matrixText }` CSV/TSV text loaded by the host application. It is validated against the ArchiMate 4 concept set, including elements, relationship connectors, and relationship types, before replacing the bundled compatibility fallback. Complete profiles must include every source-target cell, using an empty value for cells with no allowed relationship.
 
-Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation. The status includes `targetCellCount` and `expectedTargetCellCount` so hosts can audit that blank Appendix B cells were explicitly supplied rather than omitted.
+Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation. The status includes `targetCellCount`, `expectedTargetCellCount`, `missingSourceCount`, and `missingTargetCellCount` so hosts can audit that blank Appendix B cells were explicitly supplied rather than omitted. Use `getArchimate4RelationshipProfileCoverageReport()` when the host needs the specific missing source types or source-target cells.
 
 Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept:
 
@@ -90,6 +90,7 @@ const modeler = new Modeler({
 * 3.x to 4.0 migration can validate migrated relationships with a host-supplied Appendix B relationship validator and warn or replace invalid relationship types.
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
+* `getArchimate4RelationshipProfileCoverageReport()` lists missing Appendix B source rows and source-target cells for the active profile, allowing hosts to verify licensed profile transcription without committing the table.
 * Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.

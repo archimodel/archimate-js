@@ -311,6 +311,9 @@ External profile contract:
 - Profile status must report the actual explicit `targetCellCount` as well as
   `expectedTargetCellCount`, so hosts can distinguish a complete Appendix B table with blank cells
   from a sparse profile that only contains allowed relationships.
+- Profile status must also report missing source and target-cell counts. Detailed missing source rows
+  and source-target cells are available through `getArchimate4RelationshipProfileCoverageReport()` so
+  a host can audit a licensed Appendix B transcription without this repository embedding the table.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

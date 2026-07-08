@@ -1,0 +1,16 @@
+
+> archimate-js@0.0.4 demo:build
+> webpack --config demo/webpack.config.cjs
+
+asset editor.bundle.js 3.9 MiB [emitted] (name: editor) 1 related asset
+asset viewer.bundle.js 3.43 MiB [emitted] (name: viewer) 1 related asset
+orphan modules 120 KiB [orphan] 220 modules
+runtime modules 3.83 KiB 17 modules
+modules by path ./node_modules/ 2.09 MiB 643 modules
+modules by path ./lib/ 652 KiB 112 modules
+modules by path ./demo/src/*.js 10 KiB
+  ./demo/src/viewer.js 698 bytes [built] [code generated]
+  ./demo/src/editor.js 1.12 KiB [built] [code generated]
+  ./demo/src/sample-canvas.js 8.22 KiB [built] [code generated]
+crypto (ignored) 15 bytes [optional] [built] [code generated]
+webpack 5.108.4 compiled successfully in 1681 ms

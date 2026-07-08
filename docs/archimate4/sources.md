@@ -205,8 +205,11 @@
   use an empty string, null, or an empty relationship array, but omitted cells fail validation so table
   transcription gaps are not silently treated as disallowed relationships.
 - `getArchimate4RelationshipProfileStatus()` reports the active source, accepted concept count,
-  explicit target-cell count, expected source-target cell count, and actual complete source/target
-  coverage booleans for the loaded profile.
+  explicit target-cell count, expected source-target cell count, missing source/target-cell counts,
+  and actual complete source/target coverage booleans for the loaded profile.
+- `getArchimate4RelationshipProfileCoverageReport()` returns the same coverage metadata plus the
+  specific missing source types and missing source-target cells, allowing hosts to audit licensed
+  Appendix B profile transcription without committing the table.
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
   so an external Appendix B profile affects editing constraints as well as menu display.
 
