@@ -15,6 +15,36 @@ import {
   isStructuralRelationshipType
 } from '../lib/util/DerivedRelationshipUtil.js';
 
+const archimate4RestrictionProfile = {
+  version: '4.0',
+  elements: [
+    { type: 'ApplicationComponent', domain: 'Application', aspect: 'Active Structure' },
+    { type: 'DataObject', domain: 'Application', aspect: 'Passive Structure' },
+    { type: 'Goal', domain: 'Motivation', aspect: 'Motivation' },
+    { type: 'Resource', domain: 'Strategy', aspect: 'Active Structure' },
+    { type: 'WorkPackage', domain: 'Implementation and Migration', aspect: 'Behavior' },
+    { type: 'Grouping', domain: 'Common', aspect: 'Composite' },
+    { type: 'Location', domain: 'Common', aspect: 'Composite' },
+    { type: 'Plateau', domain: 'Implementation and Migration', aspect: 'Composite' }
+  ],
+  connectors: [
+    { type: 'AndJunction', paletteGroup: 'Relationships', aspect: 'Connector' }
+  ],
+  relationships: [
+    'Composition',
+    'Aggregation',
+    'Assignment',
+    'Realization',
+    'Association',
+    'Influence',
+    'Access',
+    'Serving',
+    'Triggering',
+    'Flow',
+    'Specialization'
+  ]
+};
+
 test('derived relationship DR1 applies specialization transitivity', () => {
   assert.equal(deriveRelationshipType('Specialization', 'Specialization'), 'Specialization');
   assert.equal(deriveRelationshipType('Specialization', 'Assignment'), null);
@@ -671,4 +701,176 @@ test('derived relationship chain rejects incomplete chains', () => {
       target: { id: 'c' }
     }
   ]), null);
+});
+
+test('derived relationships apply C260 Appendix B.4 source and target restrictions when profile metadata is present', () => {
+  const source = { id: 'app-source', type: 'ApplicationComponent' };
+  const intermediate = { id: 'app-mid', type: 'ApplicationComponent' };
+  const motivation = { id: 'goal', type: 'Goal' };
+  const passiveSource = { id: 'data-source', type: 'DataObject' };
+  const passiveIntermediate = { id: 'data-mid', type: 'DataObject' };
+  const passiveTarget = { id: 'data-target', type: 'DataObject' };
+
+  assert.equal(deriveRelationship({
+    id: 'restricted-flow-1',
+    type: 'Aggregation',
+    source,
+    target: intermediate
+  }, {
+    id: 'restricted-flow-2',
+    type: 'Flow',
+    source: intermediate,
+    target: motivation
+  }, archimate4RestrictionProfile), null);
+
+  assert.deepEqual(deriveRelationship({
+    id: 'allowed-influence-1',
+    type: 'Aggregation',
+    source,
+    target: intermediate
+  }, {
+    id: 'allowed-influence-2',
+    type: 'Influence',
+    source: intermediate,
+    target: motivation
+  }, archimate4RestrictionProfile), {
+    type: 'Influence',
+    source,
+    target: motivation,
+    derived: true,
+    derivedFrom: [ 'allowed-influence-1', 'allowed-influence-2' ],
+    derivationRule: 'structural-dependency'
+  });
+
+  assert.equal(deriveRelationship({
+    id: 'restricted-passive-1',
+    type: 'Aggregation',
+    source: passiveSource,
+    target: passiveIntermediate
+  }, {
+    id: 'restricted-passive-2',
+    type: 'Assignment',
+    source: passiveIntermediate,
+    target: passiveTarget
+  }, archimate4RestrictionProfile), null);
+
+  assert.equal(deriveRelationship({
+    id: 'restricted-access-1',
+    type: 'Aggregation',
+    source,
+    target: intermediate
+  }, {
+    id: 'restricted-access-2',
+    type: 'Access',
+    source: intermediate,
+    target: { id: 'not-passive', type: 'ApplicationComponent' }
+  }, archimate4RestrictionProfile), null);
+});
+
+test('derived relationships apply C260 Appendix B.4 third-element restrictions when profile metadata is present', () => {
+  const source = { id: 'app-source', type: 'ApplicationComponent' };
+  const strategyJoin = { id: 'resource', type: 'Resource' };
+  const motivation = { id: 'goal', type: 'Goal' };
+  const implementationSource = { id: 'work-package', type: 'WorkPackage' };
+  const coreJoin = { id: 'core-join', type: 'ApplicationComponent' };
+  const groupingJoin = { id: 'grouping-join', type: 'Grouping' };
+
+  assert.equal(deriveRelationship({
+    id: 'restricted-third-1',
+    type: 'Aggregation',
+    source,
+    target: strategyJoin
+  }, {
+    id: 'restricted-third-2',
+    type: 'Influence',
+    source: strategyJoin,
+    target: motivation
+  }, archimate4RestrictionProfile), null);
+
+  assert.equal(deriveRelationship({
+    id: 'allowed-third-1',
+    type: 'Realization',
+    source: implementationSource,
+    target: coreJoin
+  }, {
+    id: 'allowed-third-2',
+    type: 'Realization',
+    source: coreJoin,
+    target: motivation
+  }, archimate4RestrictionProfile).type, 'Realization');
+
+  assert.equal(deriveRelationship({
+    id: 'restricted-grouping-third-1',
+    type: 'Realization',
+    source: implementationSource,
+    target: groupingJoin
+  }, {
+    id: 'restricted-grouping-third-2',
+    type: 'Realization',
+    source: groupingJoin,
+    target: motivation
+  }, archimate4RestrictionProfile), null);
+});
+
+test('derived relationships apply C260 Appendix B.4 relationship-domain restrictions when profile metadata is present', () => {
+  const grouping = { id: 'grouping', type: 'Grouping' };
+  const source = { id: 'app-source', type: 'ApplicationComponent' };
+  const intermediate = { id: 'app-mid', type: 'ApplicationComponent' };
+  const relationshipConcept = { id: 'relationship-concept', type: 'Flow' };
+
+  assert.equal(deriveRelationship({
+    id: 'relationship-target-allowed-1',
+    type: 'Aggregation',
+    source: grouping,
+    target: source
+  }, {
+    id: 'relationship-target-allowed-2',
+    type: 'Aggregation',
+    source,
+    target: relationshipConcept
+  }, archimate4RestrictionProfile).type, 'Aggregation');
+
+  assert.equal(deriveRelationship({
+    id: 'relationship-target-restricted-1',
+    type: 'Aggregation',
+    source,
+    target: intermediate
+  }, {
+    id: 'relationship-target-restricted-2',
+    type: 'Aggregation',
+    source: intermediate,
+    target: relationshipConcept
+  }, archimate4RestrictionProfile), null);
+
+  assert.equal(deriveRelationship({
+    id: 'relationship-source-restricted-1',
+    type: 'Aggregation',
+    source: relationshipConcept,
+    target: intermediate
+  }, {
+    id: 'relationship-source-restricted-2',
+    type: 'Aggregation',
+    source: intermediate,
+    target: source
+  }, archimate4RestrictionProfile), null);
+});
+
+test('potential derived relationships apply C260 Appendix B.4 restrictions when profile metadata is present', () => {
+  const source = { id: 'app-source', type: 'ApplicationComponent' };
+  const intermediate = { id: 'app-mid', type: 'ApplicationComponent' };
+  const motivation = { id: 'goal', type: 'Goal' };
+
+  assert.equal(derivePotentialRelationship({
+    id: 'restricted-potential-1',
+    type: 'Aggregation',
+    source,
+    target: intermediate
+  }, {
+    id: 'restricted-potential-2',
+    type: 'Triggering',
+    source,
+    target: motivation
+  }, {
+    profile: archimate4RestrictionProfile
+  }), null);
 });

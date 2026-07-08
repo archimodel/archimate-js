@@ -102,6 +102,7 @@ const modeler = new Modeler({
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.
 * ArchiMate 4 `Grouping`, `Location`, and `Plateau` can aggregate relationship concepts, including relationships and junctions.
 * `deriveRelationship()` and `deriveRelationshipType()` expose C260-derived DR1-DR8 valid relationship derivations for host tooling, including specialization transitivity, weakest structural derivation, dependency/dynamic derivation, Flow opposite-direction derivation, and Triggering transitivity.
+* `deriveRelationship()` and `derivePotentialRelationship()` apply C260 Appendix B.4 derivation restrictions when an ArchiMate 4 profile with endpoint domain/aspect metadata is supplied.
 * `deriveRelationshipChain()` folds ordered in-line valid derivation chains and records the original relationship ids plus pairwise rule labels.
 * `derivePotentialRelationship()` exposes C260-derived PDR1-PDR12 as explicit `potential: true` candidates. PDR12 requires an external relationship validator because it depends on whether the derived endpoint pair is allowed by the active metamodel/profile.
 * Imported and edited Access, Association, and Influence relationship options use explicit `accessType`, `isDirected`, and `modifier` properties while retaining `typeOption` compatibility.

@@ -1,0 +1,148 @@
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+pages: 207
+metadata-title: ArchiMate 4 Specification
+outline[0] p1: Cover
+outline[0] p4: Title
+outline[0] p5: Copyright
+outline[0] p6: Table of Contents
+outline[0] p14: Preface
+outline[1] p14: The Open Group
+outline[1] p14: This Document
+outline[0] p17: Trademarks
+outline[0] p18: Acknowledgements
+outline[0] p20: Referenced Documents
+outline[0] p22: 1. Introduction
+outline[1] p22: 1.1. Objective
+outline[1] p22: 1.2. Overview
+outline[1] p23: 1.3. Conformance
+outline[1] p23: 1.4. Normative References
+outline[1] p23: 1.5. Terminology
+outline[1] p24: 1.6. Future Directions
+outline[0] p25: 2. Definitions
+outline[1] p25: 2.1. ArchiMate Core Language
+outline[1] p25: 2.2. ArchiMate Full Language
+outline[1] p25: 2.3. Architecture Domain
+outline[1] p25: 2.4. Architecture View
+outline[1] p25: 2.5. Architecture Viewpoint
+outline[1] p26: 2.6. Aspect
+outline[1] p26: 2.7. Attribute
+outline[1] p26: 2.8. Composite Element
+outline[1] p26: 2.9. Concept
+outline[1] p26: 2.10. Conformance
+outline[1] p26: 2.11. Conforming Implementation
+outline[1] p26: 2.12. Core Element
+outline[1] p27: 2.13. Domain
+outline[1] p27: 2.14. Element
+outline[1] p27: 2.15. Model
+outline[1] p27: 2.16. Relationship
+outline[0] p28: 3. Language Structure
+outline[1] p28: 3.1. Language Design Considerations
+outline[1] p30: 3.2. The ArchiMate Language
+outline[1] p32: 3.3. Top-Level Language Structure
+outline[1] p33: 3.4. Structure and Behavior Elements
+outline[1] p36: 3.5. Abstraction in the ArchiMate Language
+outline[1] p37: 3.6. Concepts and Their Notation
+outline[1] p38: 3.7. Use of Nesting
+outline[1] p38: 3.8. Use of Colors and Notational Cues
+outline[0] p39: 4. Common Domain
+outline[1] p39: 4.1. Active Structure Elements
+outline[1] p41: 4.2. Behavior Elements
+outline[1] p45: 4.3. Composite Elements
+outline[1] p48: 4.4. Summary of Common Domain Elements
+outline[0] p50: 5. Relationships and Junctions
+outline[1] p51: 5.1. Structural Relationships
+outline[1] p57: 5.2. Dependency Relationships
+outline[1] p63: 5.3. Dynamic Relationships
+outline[1] p65: 5.4. Other Relationships
+outline[1] p66: 5.5. Junctions
+outline[1] p68: 5.6. Multiplicity
+outline[1] p69: 5.7. Summary of Relationships and Junctions.
+outline[1] p70: 5.8. Derivation of Relationships
+outline[0] p72: 6. Motivation Domain
+outline[1] p72: 6.1. Motivation Elements
+outline[1] p73: 6.2. Motivation Elements Metamodel
+outline[1] p74: 6.3. Stakeholder, Driver, and Assessment
+outline[1] p76: 6.4. Goal, Outcome, Principle, and Requirement
+outline[1] p80: 6.5. Meaning and Value
+outline[1] p83: 6.6. Summary of Motivation Elements
+outline[1] p84: 6.7. Relationships with Other Domains
+outline[0] p85: 7. Strategy Domain
+outline[1] p85: 7.1. Strategy Elements Metamodel
+outline[1] p86: 7.2. Structure Elements
+outline[1] p86: 7.3. Behavior Elements
+outline[1] p89: 7.4. Examples
+outline[1] p92: 7.5. Summary of Strategy Elements
+outline[1] p92: 7.6. Relationships with Other Domains
+outline[0] p94: 8. Business Domain
+outline[1] p94: 8.1. Business Structure Metamodel
+outline[1] p94: 8.2. Active Structure Elements
+outline[1] p97: 8.3. Passive Structure Elements
+outline[1] p99: 8.4. Composite Elements
+outline[1] p101: 8.5. Summary of Business Domain Elements
+outline[0] p102: 9. Application Domain
+outline[1] p102: 9.1. Application Structure Metamodel
+outline[1] p102: 9.2. Active Structure Elements
+outline[1] p104: 9.3. Passive Structure Elements
+outline[1] p106: 9.4. Summary of Application Domain Elements
+outline[0] p107: 10. Technology Domain
+outline[1] p107: 10.1. Technology Metamodel
+outline[1] p108: 10.2. Active Structure Elements
+outline[1] p113: 10.3. Passive Structure Elements
+outline[1] p116: 10.4. Example
+outline[1] p116: 10.5. Summary of Technology Domain Elements
+outline[0] p118: 11. Relationships Between Core Domains
+outline[1] p119: 11.1. Example
+outline[0] p121: 12. Implementation and Migration Domain
+outline[1] p121: 12.1. Implementation and Migration Elements Metamodel
+outline[1] p121: 12.2. Implementation and Migration Elements
+outline[1] p124: 12.3. Summary of Implementation and Migration Elements
+outline[1] p124: 12.4. Relationships with Domains
+outline[0] p126: 13. Stakeholders, Architecture Views, and Viewpoints
+outline[1] p126: 13.1. Introduction
+outline[1] p126: 13.2. Stakeholders and Concerns
+outline[1] p127: 13.3. Architecture Views and Viewpoints
+outline[1] p128: 13.4. Viewpoint Mechanism
+outline[1] p131: 13.5. Example Viewpoints
+outline[0] p132: 14. Language Customization Mechanisms
+outline[1] p132: 14.1. Adding Attributes to ArchiMate Concepts
+outline[1] p134: 14.2. Specialization of Concepts
+outline[0] p144: Appendix A: Summary of Language Notation
+outline[1] p144: A.1. Core Elements
+outline[1] p145: A.2. Motivation, Strategy, Implementation and Migration Elements
+outline[1] p145: A.3. Relationships and Junctions
+outline[0] p146: Appendix B: Relationships (Normative)
+outline[1] p146: B.1. Specification of Derivation Rules
+outline[1] p147: B.2. Derivation Rules for Valid Relationships
+outline[1] p151: B.3. Derivation Rules for Potential Relationships
+outline[1] p158: B.4. Restrictions on Applying Derivation Rules
+outline[1] p160: B.5. Relationship Tables
+outline[1] p167: B.6. Grouping, Plateau, and Relationships Between Relationships
+outline[0] p168: Appendix C: Example Viewpoints
+outline[1] p168: C.1. Basic Viewpoints in the ArchiMate Language
+outline[1] p181: C.2. Motivation Viewpoints
+outline[1] p185: C.3. Strategy Viewpoints
+outline[1] p188: C.4. Implementation and Migration Viewpoints
+outline[0] p192: Appendix D: Relationship to Other Standards, Specifications, and Guidance Documents
+outline[1] p192: D.1. The TOGAF Standard
+outline[1] p193: D.2. The BIZBOK Guide
+outline[1] p194: D.3. Other Modeling Languages
+outline[1] p194: D.4. BPMN
+outline[1] p195: D.5. UML
+outline[1] p196: D.6. BMM
+outline[0] p197: Appendix E: Changes from Version 2.1 to This Document
+outline[1] p197: E.1. Changes from Version 2.1 to Version 3.0.1
+outline[1] p198: E.2. Changes from Version 3.0.1 to Version 3.1
+outline[1] p199: E.3. Changes from Version 3.1 to Version 3.2
+outline[1] p199: E.4. Changes from Version 3.2 to This Document
+outline[0] p201: Appendix F: Acronyms
+outline[0] p204: Index
+term[value-related-terms] hits=69 pages=8,12,20,87,88,90,91,92,184,185,186,187,193,198,206
+term[properties] hits=11 pages=71,76,78,79,112,134,182,198
+term[access-options] hits=11 pages=7,57,58,59,62,119,204
+term[association-directed] hits=15 pages=7,57,61,62,125,167,198,199,204
+term[viewpoint] hits=916 pages=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20...(+187 pages)
+term[organization] hits=97 pages=1,11,15,19,22,28,30,33,37,40,41,42,43,44,52,74,75,76,77,78...(+28 pages)
+term[derivation] hits=157 pages=8,11,51,59,62,70,71,84,92,146,147,148,149,150,151,152,153,154,155,156...(+11 pages)
+term[profiles] hits=20 pages=10,16,22,23,132,133,134,135,136,137,138,139,140,141,142,143,205
+term[implementation-migration] hits=122 pages=10,11,12,16,22,25,31,32,38,45,80,86,104,118,121,122,123,124,125,129...(+21 pages)
+term[exchange] hits=6 pages=20,22,133,203

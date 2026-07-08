@@ -1,0 +1,28 @@
+page 158
+  restriction: 3
+  meaningless: 0
+  junction: 0
+  derived relationship: 0
+  potential: 5
+  specialization: 0
+  transitive: 0
+  view: 0
+  omit: 0
+  valid: 0
+  label: PDR 11: Potential Derivation Between Triggering and Structural Relationships
+  label: Example B-24: Potential Derivation from a Triggering and Structural Relationship
+  label: PDR 12: Potential Derivation with Elements Aggregated in a Grouping Element
+  label: Example B-25: Potential Derivation with Grouping Element
+  label: B.4. Restrictions on Applying Derivation Rules
+page 159
+  restriction: 1
+  meaningless: 0
+  junction: 0
+  derived relationship: 0
+  potential: 0
+  specialization: 0
+  transitive: 0
+  view: 0
+  omit: 0
+  valid: 0
+  label: B.4. Restrictions on Applying Derivation Rules Appendix B: Relationships (Normative)

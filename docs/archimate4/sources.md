@@ -359,10 +359,16 @@
   transfer, dependency weakest derivation, Flow/Triggering potential derivation, and the Grouping
   aggregation rule. PDR12 requires an external `isRelationshipAllowed()` validator because C260
   conditions it on whether the metamodel allows the derived endpoint pair.
+- C260 Appendix B.4 derivation restrictions are applied when an ArchiMate 4 profile is supplied. The
+  implementation classifies endpoint types from profile domain/aspect metadata, treats relationship
+  types and relationship connectors as the Relationships domain, and rejects restricted derived and
+  potential candidates rather than treating every DR/PDR table match as allowed.
 - Custom relationship specializations supplied through a language profile resolve to their standard
   base relationship before applying the derivation rules.
 - This utility returns derivation candidates for host tooling. It does not embed the full Appendix B
   relationship table and does not automatically mutate a model.
+- Source evidence for the restriction guard is recorded in
+  `project_memory/runlogs/20260709-264-c260-derivation-restrictions-scan.txt`.
 - Source evidence for the potential rules is recorded in
   `project_memory/runlogs/20260709-121-c260-potential-derivation-source-scan.txt`,
   `project_memory/runlogs/20260709-122-c260-potential-derivation-detail-scan.txt`,

@@ -236,6 +236,10 @@ Implementation note:
   plus pairwise rule labels. PDR1-PDR12 are exposed through `derivePotentialRelationship()` as
   `potential: true` candidates; PDR12 requires an external relationship validator before a candidate
   is returned. The utilities return candidates and do not automatically mutate the model.
+- When an ArchiMate 4 profile with endpoint domain and aspect metadata is supplied, derivation
+  candidates are filtered through the C260 Appendix B.4 restrictions. The guard covers cross-domain
+  Motivation, Strategy, Core, Implementation and Migration, Relationship-domain endpoints, passive
+  structure endpoints, Access targets, Influence targets, and the joined third-element restrictions.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
   constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for
@@ -421,7 +425,9 @@ Implemented relationship rule wiring:
 - `deriveRelationshipType()` and `deriveRelationship()` implement C260-derived DR1-DR8 valid
   derivations for host tooling. `deriveRelationshipChain()` folds ordered in-line valid derivation
   chains. `derivePotentialRelationship()` implements PDR1-PDR12 as explicit potential candidates.
-  Automatic model mutation remains out of the core editor.
+  With an ArchiMate 4 profile, derived and potential candidates are rejected when C260 Appendix B.4
+  forbids the derived source, target, relationship type, or joined third element. Automatic model
+  mutation remains out of the core editor.
 
 Implemented multiplicity guard:
 

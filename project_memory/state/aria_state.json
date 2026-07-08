@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 71,
-  "stage": "organization_descriptor_verified",
+  "loop_id": 72,
+  "stage": "derivation_restrictions_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 167,
+    "diff_size": 606,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -89,7 +89,8 @@
       "source_coverage_status",
       "profile_attribute_value_validation",
       "profile_attribute_property_persistence",
-      "organization_descriptor"
+      "organization_descriptor",
+      "derivation_restriction_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -189,12 +190,13 @@
       "check_archimate4_source_coverage_status",
       "check_profile_attribute_value_validation",
       "check_profile_attribute_property_persistence",
-      "check_archimate_organization_descriptor"
+      "check_archimate_organization_descriptor",
+      "check_derivation_restrictions"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-260-organization-descriptor-post-record-git-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-organization-descriptor-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-266-derivation-restrictions-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-derivation-restrictions-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -274,10 +276,11 @@
     "getArchimate4ImplementationStatus() now exposes ArchiMate 4 source coverage so local C260/transcript evidence, W262 availability, Appendix B, MEFF 4.0 XSD, and Appendix A artwork-rights boundaries remain machine-auditable.",
     "Implementation-defined ArchiMate profile attributes now have host-callable value normalization and validation helpers for the supported C260-derived basic type set.",
     "Implementation-defined ArchiMate profile attribute values can now be stored and read through model PropertyDefinition and per-concept Properties helpers without adding non-standard element fields.",
-    "Model organization tree descriptors now resolve through Organizations and recursive Organization types in the current, ArchiMate 3.x, and ArchiMate 4 moddle descriptors; exact 4.0 XML element naming remains MEFF 4.0 XSD-dependent."
+    "Model organization tree descriptors now resolve through Organizations and recursive Organization types in the current, ArchiMate 3.x, and ArchiMate 4 moddle descriptors; exact 4.0 XML element naming remains MEFF 4.0 XSD-dependent.",
+    "Derived and potential relationship helper candidates now apply the C260 Appendix B.4 restrictions when an ArchiMate 4 profile supplies endpoint domain and aspect metadata."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T03:25:00+09:00"
+    "updated_at": "2026-07-09T03:19:33+09:00"
   }
 }

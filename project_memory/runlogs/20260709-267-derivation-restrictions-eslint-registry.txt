@@ -1,0 +1,1 @@
+registry scoped ESLint exited 0 with no output.

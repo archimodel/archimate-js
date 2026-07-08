@@ -880,3 +880,16 @@
 - Post-record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-259-organization-descriptor-post-record-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-260-organization-descriptor-post-record-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
 - Audit: `project_memory/audit/reports/20260709-organization-descriptor-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 72
+
+- Goal: implement the C260 Appendix B.4 restrictions that constrain DR/PDR derived relationship candidates after the rule tables produce a candidate.
+- Source scan: `project_memory/runlogs/20260709-263-c260-outline-gap-scan.txt` identified B.4 as a derivation-related gap candidate; `project_memory/runlogs/20260709-264-c260-derivation-restrictions-scan.txt` records non-verbatim page and keyword signals for the restriction section.
+- Red test: `project_memory/runlogs/20260709-265-derivation-restrictions-red-test.txt` failed as expected because `deriveRelationship()` and `derivePotentialRelationship()` returned candidates that the B.4 restriction tests expected to reject.
+- Implemented: `lib/util/DerivedRelationshipUtil.js` now applies a profile-aware restriction filter when an ArchiMate 4 profile with endpoint domain/aspect metadata is supplied.
+- Implemented: the guard classifies Common/Business/Application/Technology as Core, relationship types/connectors as Relationships, and passive structure from profile aspect metadata; it rejects source-target, third-element, Relationship-domain, Access, Influence, and passive-structure restricted candidates.
+- Tests: `test/derived-relationships.test.mjs` now covers source-target restrictions, joined third-element restrictions, Relationship-domain restrictions, and potential relationship restriction filtering.
+- Verification: `npm run test:language` passed with 130 tests in `project_memory/runlogs/20260709-266-derivation-restrictions-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-267-derivation-restrictions-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-268-derivation-restrictions-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-269-derivation-restrictions-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-270-derivation-restrictions-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-271-derivation-restrictions-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-derivation-restrictions-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
