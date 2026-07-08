@@ -123,3 +123,13 @@
 - Tests: added helper coverage for incoming candidates, outgoing candidates, endpoint-valid chains, endpoint-invalid chains, and active profile propagation.
 - Verification: `npm run test:language` passed with 40 tests in `project_memory/runlogs/20260708-078-junction-endpoint-chain-guard-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-079-junction-endpoint-chain-guard-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-080-junction-endpoint-chain-guard-git-diff-check.txt`.
 - Remaining open issues: final relationship truth still depends on official Appendix B data or an externally supplied profile; MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 13
+
+- Goal: improve the externally supplied Appendix B relationship profile path without embedding licensed C260 table data.
+- Source check: refreshed the official XSD directory snapshot in `project_memory/runlogs/20260708-081-archimate-xsd-directory-current.html`; candidate MEFF 4.0 XSD paths still returned 404 in `project_memory/runlogs/20260708-084-archimate-xsd-current-head-check.txt`.
+- Implemented: `normalizeRelationshipProfile()` now accepts a JSON string profile, parses it, then runs the existing element and relationship-code validation path.
+- Implemented: invalid JSON relationship profile text now fails with a clear ArchiMate 4 relationship profile parse error.
+- Docs: README and `docs/archimate4/*` now state that host applications may pass a parsed object or JSON string.
+- Verification: `npm run test:language` passed with 42 tests in `project_memory/runlogs/20260708-082-relationship-profile-json-string-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-083-relationship-profile-json-string-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-085-relationship-profile-json-string-git-diff-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

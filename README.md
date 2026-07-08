@@ -34,7 +34,7 @@ const modeler = new Modeler({
 });
 ```
 
-The supplied profile is validated against the ArchiMate 4 element catalog before replacing the bundled compatibility fallback.
+The supplied profile may be an object or a JSON string loaded by the host application. It is validated against the ArchiMate 4 element catalog before replacing the bundled compatibility fallback.
 
 ## ArchiMate 4 Notes
 

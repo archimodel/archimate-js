@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   getRelationshipProfileStats,
-  normalizeRelationshipProfile
+  normalizeRelationshipProfile,
+  parseRelationshipProfile
 } from '../lib/metamodel/languages/relationship-profile-loader.js';
 
 async function readJson(path) {
@@ -23,12 +24,14 @@ test('archimate 4 relationship profile has no retired source or target concepts'
 
 test('archimate 4 relationship fallback is compatibility-derived and replaceable', async () => {
   const source = await readFile(new URL('../lib/metamodel/languages/archimate4-relationships.js', import.meta.url), 'utf8');
+  const loaderSource = await readFile(new URL('../lib/metamodel/languages/relationship-profile-loader.js', import.meta.url), 'utf8');
   const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
   const baseViewer = await readFile(new URL('../lib/BaseViewer.js', import.meta.url), 'utf8');
 
   assert.match(source, /buildFallbackRelationships/);
   assert.match(source, /setArchimate4RelationshipProfile/);
   assert.match(source, /normalizeRelationshipProfile/);
+  assert.match(loaderSource, /parseRelationshipProfile/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
@@ -74,6 +77,30 @@ test('archimate 4 relationship profile loader accepts object maps with names and
     sourceCount: 3,
     relationshipCount: 2
   });
+});
+
+test('archimate 4 relationship profile loader accepts JSON string profiles', () => {
+  const validTypes = new Set([
+    'BusinessActor',
+    'Role',
+    'Service'
+  ]);
+  const profileText = JSON.stringify({
+    sources: {
+      BusinessActor: {
+        Role: [ 'Assignment' ]
+      },
+      Role: {},
+      Service: {}
+    }
+  });
+  const maps = normalizeRelationshipProfile(profileText, validTypes, { requireComplete: true });
+
+  assert.equal(maps.get('BusinessActor').get('Role'), 'i');
+});
+
+test('archimate 4 relationship profile loader reports invalid JSON strings clearly', () => {
+  assert.throws(() => parseRelationshipProfile('{bad json'), /relationship profile JSON could not be parsed/);
 });
 
 test('archimate 4 relationship profile loader accepts row arrays', () => {

@@ -63,6 +63,9 @@
   `getArchimate4RelationshipProfileStatus()`.
 - `Modeler` and `Viewer` construction also accepts `archimate4RelationshipProfile` when
   `archimateVersion` is `4.0`, so licensed Appendix B data can be supplied at startup.
+- The profile can be supplied as a parsed object or a JSON string loaded by the host application; this
+  keeps file-system access outside the browser-oriented package while still supporting licensed local
+  artifacts.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
@@ -108,11 +111,13 @@
 
 ## Current XSD Directory Check
 
-- Checked `https://www.opengroup.org/xsd/archimate/` on 2026-07-08.
+- Checked `https://www.opengroup.org/xsd/archimate/` on 2026-07-08, then refreshed the check during
+  loop 13.
 - The directory returned links for ArchiMate 3.1 model/view/diagram schemas, examples, and related
   pages.
 - `https://www.opengroup.org/xsd/archimate/4.0/` returned 404.
 - `https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd` returned 404.
+- `https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd` returned 404.
 - `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd` returned 200 and remains the
   public XSD reference currently covered by local tests.
 

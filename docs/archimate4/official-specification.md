@@ -193,7 +193,8 @@ Required implementation direction:
 
 External profile contract:
 
-- Accepted shapes are a nested object, a `Map` of source-to-target maps, or row arrays.
+- Accepted shapes are a nested object, a `Map` of source-to-target maps, row arrays, or a JSON string
+  containing one of those structures.
 - Source and target element types must be members of the C260-derived 42-element catalog.
 - Relationship values may use the local one-letter codes (`s`, `c`, `g`, `i`, `r`, `v`, `a`, `n`, `t`,
   `f`, `o`) or relationship names.
