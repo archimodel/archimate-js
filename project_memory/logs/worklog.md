@@ -1242,3 +1242,15 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-614-meff4-xsd-evidence-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-615-meff4-xsd-evidence-final-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-meff4-xsd-evidence-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 100
+
+- Goal: make the Appendix B source-coverage boundary precise and machine-auditable without embedding the licensed relationship table.
+- Red test: `project_memory/runlogs/20260709-616-appendix-b-source-coverage-red-test.txt` failed because `sourceCoverage.appendixBRelationshipMatrix` did not distinguish reviewed C260 source evidence from the absent redistributable profile artifact.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records that C260 was reviewed locally, no redistributable Appendix B profile artifact is present, and the external relationship profile loader plus status and coverage report APIs are implemented.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and describe that distinction.
+- Verification: focused source-coverage test passed in `project_memory/runlogs/20260709-617-appendix-b-source-coverage-test.txt`; `npm run test:language` passed with 157 tests in `project_memory/runlogs/20260709-618-appendix-b-source-coverage-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-619-appendix-b-source-coverage-eslint-registry.txt`; JSON check passed in `project_memory/runlogs/20260709-620-appendix-b-source-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-621-appendix-b-source-coverage-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-622-appendix-b-source-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-623-appendix-b-source-coverage-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-624-appendix-b-source-coverage-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-625-appendix-b-source-coverage-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-appendix-b-source-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

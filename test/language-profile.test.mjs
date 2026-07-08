@@ -552,6 +552,20 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.w262.status, 'external-download-required');
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.status, 'external-profile-required');
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.localC260SourceReviewed, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.localSourceMeaning, 'redistributable Appendix B profile artifact');
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.redistributableProfilePresent, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.externalProfileLoaderImplemented, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.coverageReportImplemented, true);
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.relationshipProfileStatusApi,
+    'getArchimate4RelationshipProfileStatus'
+  );
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.relationshipProfileCoverageApi,
+    'getArchimate4RelationshipProfileCoverageReport'
+  );
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
@@ -572,6 +586,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(languageIndex, /sourceCoverage: summarizeSourceCoverage/);
   assert.match(languageIndex, /missingCompanionSources/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
+  assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
 });
 

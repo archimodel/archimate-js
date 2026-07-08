@@ -16,6 +16,9 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
   `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
+- Appendix B source status is split deliberately: the licensed local C260 source has been reviewed,
+  the external relationship profile loader and coverage report APIs are implemented, and no
+  redistributable Appendix B profile artifact is committed.
 
 ## Conformance Requirements For This Repository
 
@@ -377,6 +380,12 @@ Relationship migration guidance:
 Appendix B is normative for allowed relationships. The current compatibility-derived relationship
 fallback in `lib/metamodel/languages/archimate4-relationships.js` is insufficient for final ArchiMate 4
 conformance.
+
+`archimate4-profile.json` records the current Appendix B source-coverage boundary. The local C260
+source has been reviewed for implementation needs, but `localSourcePresent: false` means the
+redistributable Appendix B relationship profile artifact is absent. The implemented code path is the
+external profile loader plus `getArchimate4RelationshipProfileStatus()` and
+`getArchimate4RelationshipProfileCoverageReport()`.
 
 Required implementation direction:
 

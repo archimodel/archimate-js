@@ -11,7 +11,10 @@
     },
     "relationshipMatrix": {
       "status": "external-profile-required",
-      "reason": "Appendix B table data is normative and is not embedded without redistribution rights."
+      "reason": "Appendix B table data is normative and is not embedded without redistribution rights.",
+      "redistributableProfilePresent": false,
+      "externalProfileLoaderImplemented": true,
+      "coverageReportImplemented": true
     },
     "exchangeFormat": {
       "status": "experimental",
@@ -81,6 +84,14 @@
       "appendixBRelationshipMatrix": {
         "status": "external-profile-required",
         "localSourcePresent": false,
+        "localSourceMeaning": "redistributable Appendix B profile artifact",
+        "localC260SourceReviewed": true,
+        "redistributableProfilePresent": false,
+        "externalProfileLoaderImplemented": true,
+        "coverageReportImplemented": true,
+        "relationshipProfileStatusApi": "getArchimate4RelationshipProfileStatus",
+        "relationshipProfileCoverageApi": "getArchimate4RelationshipProfileCoverageReport",
+        "sourceLedgerPath": "docs/archimate4/sources.md",
         "required": true,
         "externalBlocker": "officialAppendixBRelationshipMatrix"
       },

@@ -40,6 +40,8 @@ Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active rel
 
 Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, source coverage status, and the external blockers that must be resolved before official conformance can be claimed.
 
+The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
+
 Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept. Profile attributes require a supported ArchiMate concept and typed value definition. Host tooling can use `getProfileAttributesForConcept()`, `normalizeProfileAttributeValue()`, and `isProfileAttributeValueValid()` to retrieve applicable profile attributes and validate implementation-supported typed values. Profile attribute values can also be stored as model `Properties` through `setProfileAttributePropertyValue()` and read back through `getProfileAttributePropertyValue()`.
 
 ```js

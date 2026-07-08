@@ -26,6 +26,10 @@
 - Because redistribution rights for Appendix B relationship tables are not confirmed, this repository
   does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement
   point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
+- The local C260 source has been reviewed for Appendix B implementation needs, but a redistributable
+  Appendix B profile artifact is still not present in this repository.
+  `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable
+  profile artifact present", not "licensed C260 source reviewed".
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
 - C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
@@ -345,6 +349,9 @@
 
 - The default ArchiMate 4 relationship rules remain compatibility-derived from the existing 3.x maps
   until a licensed Appendix B profile artifact is supplied.
+- `archimate4-profile.json` records this as `sourceCoverage.appendixBRelationshipMatrix`: C260 has
+  been reviewed locally, the external profile loader and coverage report APIs are implemented, and the
+  redistributable Appendix B profile artifact is still not present.
 - `lib/metamodel/languages/relationship-profile-loader.js` validates external relationship profiles
   against the C260-derived concept set: the 42-element catalog, `AndJunction` / `OrJunction`
   relationship connectors, and the 11 supported relationship types.
