@@ -641,3 +641,18 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-061-relationship-specialization-menu-repo-lint-legacy.txt` with 4413 existing errors.
 - Audit: `project_memory/audit/reports/20260709-relationship-specialization-menu-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 57
+
+- Goal: close the ArchiMate 4 relationship-end multiplicity editor gap: storage/rendering accepted the C260-derived notation, but the popup UI only exposed fixed `source 1` and `target *` quick actions.
+- Source check: `project_memory/runlogs/20260709-064-c260-multiplicity-ui-source-scan.txt` rechecked the local C260 PDF and recorded Chapter 5 multiplicity signals without copying licensed prose.
+- Implemented: the ArchiMate 4 relationship popup now exposes custom source and target multiplicity actions in addition to the quick `source 1` and `target *` actions.
+- Implemented: custom multiplicity input uses `isValidRelationshipMultiplicity()` and `normalizeRelationshipMultiplicity()` so positive integers, `*`, `0..*` alias, and finite `n..m` values follow the same guard used by import hydration, replacement, persistence, and rendering.
+- Implemented: empty custom input clears that relationship end multiplicity; invalid input leaves the relationship unchanged.
+- Docs: `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, `README.md`, and `CHANGELOG.md` now record custom multiplicity editing.
+- Verification: `npm run test:language` passed with 96 tests in `project_memory/runlogs/20260709-065-multiplicity-custom-input-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-066-multiplicity-custom-input-eslint-changed.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-067-multiplicity-custom-input-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-068-multiplicity-custom-input-git-diff-check.txt`.
+- Final checks: `npm run test:language` passed with 96 tests in `project_memory/runlogs/20260709-069-multiplicity-custom-input-final-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-070-multiplicity-custom-input-final-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-071-multiplicity-custom-input-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-072-multiplicity-custom-input-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-073-multiplicity-custom-input-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-074-multiplicity-custom-input-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-075-multiplicity-custom-input-final-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-multiplicity-custom-input-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

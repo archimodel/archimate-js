@@ -1,0 +1,10 @@
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+pages: 207
+page 8: multiplicity
+5.3.1. Triggering Relationship . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42 5.3.2. Flow Relationship . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+page 68: multiplicity, n..m
+In Example 5-15, the or-junction is used to denote a choice: process “Assess Request” triggers either “Accept Request” or “Reject Request”. (The usual interpretation of two separate triggering relations, one from “Assess Request” to “Accept Request” and one fr
+page 69: multiplicity
+Example 5-16: Multiplicity 5.7. Summary of Relationships and Junctions Table 5-1 gives an overview of the ArchiMate relationships and junctions with their definitions. Table 5-1: Relationships and Junctions Relationships Definition Notation Role Names Structur
+page 200: multiplicity
+• Business, application and technology collaborations have been merged into a single collaboration element • Business role has been replaced by a generic role element to which any internal active structure element can be assigned • The depiction of the languag

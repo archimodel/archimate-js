@@ -207,6 +207,9 @@ Implementation requirements:
 
 - Store multiplicity separately for the source end and target end.
 - Render multiplicity labels near the relationship ends.
+- The ArchiMate 4 relationship popup must allow editing the full supported notation, not only fixed
+  quick values. Empty input clears the end multiplicity; invalid input leaves the relationship
+  unchanged.
 - Reject or ignore multiplicity on any end connected to a junction.
 - Normalize `0..*` to canonical `*` because C260 defines `*` as the zero-to-unbounded end.
 - Reject or ignore multiplicity strings outside the allowed notation above.
@@ -369,6 +372,8 @@ Implemented multiplicity guard:
   `*`, `0..*` canonicalized to `*`, or finite `n..m` ranges where `m > n`.
 - Values outside that subset, including `1..*` and other non-zero unbounded ranges, are ignored until
   a normative source confirms an expanded notation.
+- The popup exposes source and target custom multiplicity input actions in ArchiMate 4 mode. Those
+  actions use the same central validator as import hydration, replacement, persistence, and rendering.
 - The guard applies during popup-menu editing, relationship replacement, model persistence, import
   attribute hydration, and rendering.
 

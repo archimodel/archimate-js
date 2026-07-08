@@ -50,8 +50,21 @@ test('connection popup exposes ArchiMate 4 multiplicity actions', async () => {
   const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
 
   assert.match(source, /set-source-multiplicity-1/);
+  assert.match(source, /set-source-multiplicity-custom/);
   assert.match(source, /set-target-multiplicity-star/);
+  assert.match(source, /set-target-multiplicity-custom/);
   assert.match(source, /profile\.version !== '4\.0'/);
+});
+
+test('connection popup validates custom ArchiMate 4 multiplicity input', async () => {
+  const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+
+  assert.match(source, /readMultiplicityValue/);
+  assert.match(source, /window\.prompt/);
+  assert.match(source, /isValidRelationshipMultiplicity\(value\)/);
+  assert.match(source, /normalizeRelationshipMultiplicity\(value\)/);
+  assert.match(source, /sourceMultiplicity: value/);
+  assert.match(source, /targetMultiplicity: value/);
 });
 
 test('connection popup hides multiplicity actions on junction-connected relationships', async () => {
