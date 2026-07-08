@@ -123,6 +123,11 @@
   `project_memory/runlogs/20260709-529-c260-appendix-a-principle-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_PRINCIPLE` generic object alias with
   a locally-authored rounded-square exclamation path.
+- A local C260 Appendix A rendered visual check for `Requirement` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-540-c260-appendix-a-requirement-render.txt` and
+  `project_memory/runlogs/20260709-541-c260-appendix-a-requirement-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_REQUIREMENT` generic object alias
+  with a locally-authored parallelogram path.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

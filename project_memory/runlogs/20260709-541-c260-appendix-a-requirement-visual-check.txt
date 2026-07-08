@@ -1,0 +1,6 @@
+C260 Appendix A Requirement pictogram visual check
+
+pdf_page=145
+rendered_png=tmp/pdfs/c260-page-145-requirement-145.png
+observation=A.2 Motivation, Strategy, Implementation and Migration Elements shows Requirement with a slanted quadrilateral/parallelogram pictogram, not the generic object/document pictogram.
+implementation_boundary=Do not embed or redistribute Appendix A artwork; replace the local renderer alias with a locally-authored parallelogram path for PICTO_REQUIREMENT.

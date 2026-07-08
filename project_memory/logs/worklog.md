@@ -1168,3 +1168,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-538-principle-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-539-principle-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-principle-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 94
+
+- Goal: replace the ArchiMate 4 `Requirement` renderer pictogram fallback with a C260 Appendix A-derived parallelogram path.
+- Source evidence: `project_memory/runlogs/20260709-540-c260-appendix-a-requirement-render.txt` and `project_memory/runlogs/20260709-541-c260-appendix-a-requirement-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-542-requirement-pictogram-red-test.txt` failed because `PICTO_REQUIREMENT` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_REQUIREMENT` parallelogram path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Requirement renderer pictogram boundary.
+- Verification: focused renderer notation test passed with 18 tests in `project_memory/runlogs/20260709-543-requirement-pictogram-test.txt`; `npm run test:language` passed with 152 tests in `project_memory/runlogs/20260709-544-requirement-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-545-requirement-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-546-requirement-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-547-requirement-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-548-requirement-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-549-requirement-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-552-requirement-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-553-requirement-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-requirement-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
