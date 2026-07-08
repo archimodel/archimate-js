@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `FEAT`: added ArchiMate 4 popup actions for custom source and target relationship multiplicity values.
 * `FEAT`: added ArchiMate 4 popup input for custom Influence sign/strength modifiers.
 * `FEAT`: added host-callable derived relationship helpers for C260 DR1 through DR8 valid derivations.
+* `FEAT`: added host-callable potential derived relationship helpers for C260 PDR1 through PDR12.
 * `CORE`: aligned the ArchiMate 3 profile with the official 3.1 `ElementTypeEnum`, including `AndJunction` and `OrJunction`.
 * `CORE`: aligned the ArchiMate 4 profile with the C260 42-element catalog, preserving domain-specific interfaces.
 * `CORE`: added ArchiMate 4 junction relationship type and endpoint-chain guards for popup choices and reconnect validation.

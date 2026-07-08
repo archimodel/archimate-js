@@ -20,8 +20,12 @@ export {
 export {
   deriveRelationship,
   deriveRelationshipType,
+  derivePotentialRelationship,
+  getDependencyRelationshipStrength,
   getStructuralRelationshipStrength,
+  getWeakestDependencyRelationshipType,
   getWeakestStructuralRelationshipType,
+  isDerivableRelationshipType,
   isDependencyRelationshipType,
   isDynamicRelationshipType,
   isStructuralRelationshipType

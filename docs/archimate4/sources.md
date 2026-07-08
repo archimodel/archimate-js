@@ -304,11 +304,21 @@
   plus dependency, structural plus dynamic, Triggering plus structural, and Triggering transitivity.
   The object-level helper also handles the C260 same-target opposite-direction cases for dependency
   relationships and Flow.
+- PDR1-PDR12 potential derivations are implemented by `derivePotentialRelationship()` as explicit
+  `potential: true` candidates. They cover specialization transfer, structural/dependency source-side
+  transfer, dependency weakest derivation, Flow/Triggering potential derivation, and the Grouping
+  aggregation rule. PDR12 requires an external `isRelationshipAllowed()` validator because C260
+  conditions it on whether the metamodel allows the derived endpoint pair.
 - Custom relationship specializations supplied through a language profile resolve to their standard
   base relationship before applying the derivation rules.
 - This utility returns derivation candidates for host tooling. It does not embed the full Appendix B
-  relationship table, does not implement the potential derivation rules, and does not automatically
-  mutate a model.
+  relationship table and does not automatically mutate a model.
+- Source evidence for the potential rules is recorded in
+  `project_memory/runlogs/20260709-121-c260-potential-derivation-source-scan.txt`,
+  `project_memory/runlogs/20260709-122-c260-potential-derivation-detail-scan.txt`,
+  `project_memory/runlogs/20260709-123-c260-dependency-strength-source-scan.txt`, and the
+  non-verbatim implementation summary
+  `project_memory/runlogs/20260709-129-c260-potential-derivation-implementation-summary.txt`.
 
 ## Influence Modifier Guard
 

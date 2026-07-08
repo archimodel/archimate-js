@@ -1,0 +1,8 @@
+--- page 156 ---
+The dependency relationships are ordered by “strength”:
+• Association (weakest)
+• Influence
+• Access
+• Serving (strongest)
+then a relationship r(a,c) : U might be derivable, with U being the weakest of S and T.
+EXIT_CODE=0

@@ -1,0 +1,10 @@
+C260 Appendix B potential derivation implementation summary
+Source scans: project_memory/runlogs/20260709-121-c260-potential-derivation-source-scan.txt, project_memory/runlogs/20260709-122-c260-potential-derivation-detail-scan.txt, project_memory/runlogs/20260709-123-c260-dependency-strength-source-scan.txt
+Implemented scope: PDR1 through PDR12 as explicit potential candidates only.
+PDR1-PDR4 fact: specialization plus structural, dependency, or dynamic relationships can produce possible transferred candidates across the specialization endpoints.
+PDR5-PDR6 fact: structural plus dependency relationships joined at the structural source can produce possible dependency candidates at the structural target.
+PDR7 fact: dependency chains can produce the weakest dependency candidate using Association, Influence, Access, Serving from weakest to strongest.
+PDR8-PDR11 fact: Flow, structural, dynamic, and Triggering combinations can produce possible dynamic candidates for the documented endpoint patterns.
+PDR12 fact: Grouping aggregation plus Realization or Assignment can produce a possible candidate only when an external metamodel/relationship validator allows the derived endpoint pair.
+Boundary: potential candidates are never automatic model mutations; hosts must review and apply them explicitly.
+EXIT_CODE=0

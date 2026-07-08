@@ -1,0 +1,9 @@
+--- page 157 ---
+PDR 8: Potential Derivation Between Structural and Dynamic Relationships If two relationships p(a,b) : S and q(b,c) : T exist, with S being Flow and T being a structural relationship, then a relation r(a,c) : S might be derivable.
+PDR 9: Potential Derivation Between Structural and Dynamic Relationships If two relationships p(a,b) : S and q(a,c) : T exist, with S being a structural relationship and T being a dynamic relationship, then a relationship r(b,c) : T might be derivable.
+PDR 10: Potential Derivation Between Flow Relationships If two relationships p(a,b) : S and q(b,c ) : S exist, with S being Flow, then a relationship r(a,c) : S might be derivable.
+--- page 158 ---
+PDR 11: Potential Derivation Between Triggering and Structural Relationships If two relationships p(a,b) : S and q(c,b) : T exist, with S being a Triggering relationship and T being a structural relationship, then a relation r(a,c) : S might be derivable.
+PDR 12: Potential Derivation with Elements Aggregated in a Grouping Element If two relationships p(b,a) : S and q(b,c ) : T exist, with S being Aggregation, b being a Grouping element and T being a Realization or Assignment, then a relationship r(a,c) : T might be derivable, only if the metamodel allows T from a to c.
+--- page 159 ---
+EXIT_CODE=0

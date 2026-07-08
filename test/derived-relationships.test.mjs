@@ -1,10 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  derivePotentialRelationship,
   deriveRelationship,
   deriveRelationshipType,
+  getDependencyRelationshipStrength,
   getStructuralRelationshipStrength,
+  getWeakestDependencyRelationshipType,
   getWeakestStructuralRelationshipType,
+  isDerivableRelationshipType,
   isDependencyRelationshipType,
   isDynamicRelationshipType,
   isStructuralRelationshipType
@@ -241,5 +245,302 @@ test('derived relationship applies triggering in-line rules', () => {
     derived: true,
     derivedFrom: [ 'rel-3', 'rel-4' ],
     derivationRule: 'triggering-transitivity'
+  });
+});
+
+test('potential derived relationship exposes dependency strength order', () => {
+  assert.equal(getDependencyRelationshipStrength('Association'), 0);
+  assert.equal(getDependencyRelationshipStrength('Influence'), 1);
+  assert.equal(getDependencyRelationshipStrength('Access'), 2);
+  assert.equal(getDependencyRelationshipStrength('Serving'), 3);
+  assert.equal(getDependencyRelationshipStrength('Flow'), -1);
+
+  assert.equal(getWeakestDependencyRelationshipType('Serving', 'Access'), 'Access');
+  assert.equal(getWeakestDependencyRelationshipType('Influence', 'Association'), 'Association');
+  assert.equal(getWeakestDependencyRelationshipType('Flow', 'Access'), null);
+
+  assert.equal(isDerivableRelationshipType('Composition'), true);
+  assert.equal(isDerivableRelationshipType('Serving'), true);
+  assert.equal(isDerivableRelationshipType('Flow'), true);
+  assert.equal(isDerivableRelationshipType('Specialization'), false);
+});
+
+test('potential derived relationship applies PDR1 to PDR4 specialization rules', () => {
+  const specialized = { id: 'a' };
+  const general = { id: 'b' };
+  const other = { id: 'c' };
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-1-specialization',
+    type: 'Specialization',
+    source: specialized,
+    target: general
+  }, {
+    id: 'pdr-1-other',
+    type: 'Serving',
+    source: general,
+    target: other
+  }), {
+    type: 'Serving',
+    source: specialized,
+    target: other,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-1-specialization', 'pdr-1-other' ],
+    derivationRule: 'potential-specialization-outgoing'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-2-specialization',
+    type: 'Specialization',
+    source: specialized,
+    target: general
+  }, {
+    id: 'pdr-2-other',
+    type: 'Access',
+    source: other,
+    target: general
+  }), {
+    type: 'Access',
+    source: other,
+    target: specialized,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-2-specialization', 'pdr-2-other' ],
+    derivationRule: 'potential-specialization-incoming'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-3-specialization',
+    type: 'Specialization',
+    source: specialized,
+    target: general
+  }, {
+    id: 'pdr-3-other',
+    type: 'Flow',
+    source: specialized,
+    target: other
+  }), {
+    type: 'Flow',
+    source: general,
+    target: other,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-3-specialization', 'pdr-3-other' ],
+    derivationRule: 'potential-specialization-source-outgoing'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-4-specialization',
+    type: 'Specialization',
+    source: specialized,
+    target: general
+  }, {
+    id: 'pdr-4-other',
+    type: 'Triggering',
+    source: other,
+    target: specialized
+  }), {
+    type: 'Triggering',
+    source: other,
+    target: general,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-4-specialization', 'pdr-4-other' ],
+    derivationRule: 'potential-specialization-source-incoming'
+  });
+});
+
+test('potential derived relationship applies PDR5 to PDR7 dependency rules', () => {
+  const source = { id: 'a' };
+  const structuralTarget = { id: 'b' };
+  const dependencySource = { id: 'c' };
+  const dependencyTarget = { id: 'd' };
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-5-structural',
+    type: 'Composition',
+    source,
+    target: structuralTarget
+  }, {
+    id: 'pdr-5-dependency',
+    type: 'Serving',
+    source: dependencySource,
+    target: source
+  }), {
+    type: 'Serving',
+    source: dependencySource,
+    target: structuralTarget,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-5-structural', 'pdr-5-dependency' ],
+    derivationRule: 'potential-structural-dependency-incoming'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-6-structural',
+    type: 'Aggregation',
+    source,
+    target: structuralTarget
+  }, {
+    id: 'pdr-6-dependency',
+    type: 'Access',
+    source,
+    target: dependencyTarget
+  }), {
+    type: 'Access',
+    source: structuralTarget,
+    target: dependencyTarget,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-6-structural', 'pdr-6-dependency' ],
+    derivationRule: 'potential-structural-dependency-outgoing'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-7-dependency-a',
+    type: 'Serving',
+    source,
+    target: structuralTarget
+  }, {
+    id: 'pdr-7-dependency-b',
+    type: 'Influence',
+    source: structuralTarget,
+    target: dependencyTarget
+  }), {
+    type: 'Influence',
+    source,
+    target: dependencyTarget,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-7-dependency-a', 'pdr-7-dependency-b' ],
+    derivationRule: 'potential-dependency-weakest'
+  });
+});
+
+test('potential derived relationship applies PDR8 to PDR11 dynamic rules', () => {
+  const source = { id: 'a' };
+  const intermediate = { id: 'b' };
+  const target = { id: 'c' };
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-8-flow',
+    type: 'Flow',
+    source,
+    target: intermediate
+  }, {
+    id: 'pdr-8-structural',
+    type: 'Realization',
+    source: intermediate,
+    target
+  }), {
+    type: 'Flow',
+    source,
+    target,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-8-flow', 'pdr-8-structural' ],
+    derivationRule: 'potential-flow-structural'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-9-structural',
+    type: 'Assignment',
+    source,
+    target: intermediate
+  }, {
+    id: 'pdr-9-dynamic',
+    type: 'Triggering',
+    source,
+    target
+  }), {
+    type: 'Triggering',
+    source: intermediate,
+    target,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-9-structural', 'pdr-9-dynamic' ],
+    derivationRule: 'potential-structural-dynamic-outgoing'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-10-flow-a',
+    type: 'Flow',
+    source,
+    target: intermediate
+  }, {
+    id: 'pdr-10-flow-b',
+    type: 'Flow',
+    source: intermediate,
+    target
+  }), {
+    type: 'Flow',
+    source,
+    target,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-10-flow-a', 'pdr-10-flow-b' ],
+    derivationRule: 'potential-flow-transitivity'
+  });
+
+  assert.deepEqual(derivePotentialRelationship({
+    id: 'pdr-11-triggering',
+    type: 'Triggering',
+    source,
+    target: intermediate
+  }, {
+    id: 'pdr-11-structural',
+    type: 'Composition',
+    source: target,
+    target: intermediate
+  }), {
+    type: 'Triggering',
+    source,
+    target,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-11-triggering', 'pdr-11-structural' ],
+    derivationRule: 'potential-triggering-structural-incoming'
+  });
+});
+
+test('potential derived relationship applies PDR12 grouping rule only when allowed', () => {
+  const grouping = { id: 'group', type: 'Grouping' };
+  const part = { id: 'part', type: 'ApplicationComponent' };
+  const target = { id: 'target', type: 'ApplicationService' };
+  const aggregation = {
+    id: 'pdr-12-aggregation',
+    type: 'Aggregation',
+    source: grouping,
+    target: part
+  };
+  const assignment = {
+    id: 'pdr-12-assignment',
+    type: 'Assignment',
+    source: grouping,
+    target
+  };
+
+  assert.equal(derivePotentialRelationship(aggregation, assignment), null);
+  assert.equal(derivePotentialRelationship(aggregation, assignment, {
+    isRelationshipAllowed() {
+      return false;
+    }
+  }), null);
+
+  assert.deepEqual(derivePotentialRelationship(aggregation, assignment, {
+    isRelationshipAllowed(sourceType, targetType, relationshipType) {
+      return sourceType === 'ApplicationComponent' &&
+        targetType === 'ApplicationService' &&
+        relationshipType === 'Assignment';
+    }
+  }), {
+    type: 'Assignment',
+    source: part,
+    target,
+    derived: true,
+    potential: true,
+    derivedFrom: [ 'pdr-12-aggregation', 'pdr-12-assignment' ],
+    derivationRule: 'potential-grouping-aggregation'
   });
 });

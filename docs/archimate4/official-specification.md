@@ -193,7 +193,9 @@ Implementation note:
   two-step structural chain, using the order Realization, Assignment, Aggregation, Composition from
   weakest to strongest. DR3-DR8 cover the valid dependency and dynamic derivations that can be
   derived without embedding the full Appendix B matrix, including same-target opposite-direction
-  derivations for dependency relationships and Flow. The utilities return candidates and do not
+  derivations for dependency relationships and Flow. PDR1-PDR12 are exposed through
+  `derivePotentialRelationship()` as `potential: true` candidates; PDR12 requires an external
+  relationship validator before a candidate is returned. The utilities return candidates and do not
   automatically mutate the model.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
@@ -372,7 +374,8 @@ Implemented relationship rule wiring:
   popup can set common positive or negative influence values or a custom modeler-defined sign/strength
   value.
 - `deriveRelationshipType()` and `deriveRelationship()` implement C260-derived DR1-DR8 valid
-  derivations for host tooling, while keeping automatic model mutation out of the core editor.
+  derivations for host tooling. `derivePotentialRelationship()` implements PDR1-PDR12 as explicit
+  potential candidates. Automatic model mutation remains out of the core editor.
 
 Implemented multiplicity guard:
 

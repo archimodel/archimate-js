@@ -1,0 +1,93 @@
+pages=207
+--- page 152 ---
+The derivation rules for potential relationships, or Potential Derivation Rules (PDRs), are used to
+enrich the metamodel with relationships that otherwise would not be allowed and can be used to
+Example B-12 shows a potential derivation in which some relationships are valuable, and some
+Potential derivation rule PDR 5 allows the red and gray relationships. In this case, the architect
+Example B-12: Examples of Potential Derivation
+B.3.1. Potential Derivation for Specialization Relationships
+inherited by the specialized element. This leads to a number of potential derivations.
+The first two rules apply in the case where the target of a specialization relationship is the source or
+target of any other relationship. In this case, the source of the specialization could have the same
+PDR 1: Derivation with Specialization and Other Relationships
+If two relationships p(a,b) : S and q(b,c ) : T exist, with S being Specialization and T being a
+structural, dependency, or dynamic relationship, then a relationship r(a,c) : T might be derived.
+Appendix B: Relationships (Normative) B.3. Derivation Rules for Potential Relationships
+--- page 153 ---
+Example B-13: Potential Derivation from a Specialization and Another Relationship in Line
+PDR 2: Derivation with Specialization and Other Relationships
+If two relationships p(a,b) : S and q(c,b ) : T exist, with S being Specialization and T being a
+structural, dependency, or dynamic relationship, then a relationship r(c,a): T might be derived.
+Example B-14: Potential Derivation from a Specialization and Another Relationship in the Opposite Direction
+The next two rules apply in the case where the source of a specialization relationship is joining the
+source or target of any other relationship. In this case, the target of the specialization could have the
+same dependency.
+PDR 3: Potential Derivation Between Specialization and Any Other Relationship
+If two relationships p(a,b) : S and q(a,c ) : T exist, with S being Specialization and T being a
+structural, dependency, or dynamic relationship, then a relation r(b,c) : T might be derivable.
+B.3. Derivation Rules for Potential Relationships Appendix B: Relationships (Normative)
+--- page 154 ---
+Example B-15: Potential Derivation from Another Relationship and a Specialization in the Opposite Direction
+PDR 4: Potential Derivation Between Specialization and Any Other Relationship
+If two relationships p(a,b) : S and q(c,a ) : T exist, with S being Specialization and T being a
+structural, dependency, or dynamic relationship, then a relationship r(c,b) : T might be derivable.
+Example B-16: Potential Derivation from Another Relationship and a Specialization in Line
+The potential relationships derived with the rules from this section may vary a lot in likelihood,
+potential derivations usually leads to a lower probability.
+an “IT Project Team”, as a specialization of “Project Team”, assigned to an “IT Project”, as a
+specialization of “Project”. A “Project Team” aggregates a “Project Manager”, a “Project” accesses
+Appendix B: Relationships (Normative) B.3. Derivation Rules for Potential Relationships
+--- page 155 ---
+Example B-17: Specializations Used in Potential Derivations
+In this example, “IT Project Team” aggregates “Project Manager” is a derived relationship that is
+• “IT Project” accesses (reads) “Project Planning” (PDR 1) is almost certainly a derived relationship,
+B.3.2. Potential Derivation for Structural and Dependency Relationships
+The next two rules apply in the case where a structural and dependency relation are joining at the
+source of the structural relation. In this case, the target of the structural relation could have the same
+dependency.
+PDR 5: Potential Derivation Between Structural and Dependency Relationships
+If two relationships p(a,b) : S and q(c,a) : T exist, with S being a structural relationship and T being
+a dependency relationship, then a relationship r(c,b) : T might be derivable.
+B.3. Derivation Rules for Potential Relationships Appendix B: Relationships (Normative)
+--- page 156 ---
+Example B-18: Potential Derivation from a Dependency and a Structural Relationship in Line
+PDR 6: Potential Derivation Between Structural and Dependency Relationships
+If two relationships p(a,b) : S and q(a,c) : T exist, with S being a structural relationship and T being
+a dependency relationship, then a relationship r(b,c) : T might be derivable.
+Example B-19: Potential Derivation from a Dependency and a Structural Relationship in the Opposite Direction
+B.3.3. Potential Derivation for Dependency Relationships
+The next rule applies in the case where two dependency relationships are joining at an intermediate
+The dependency relationships are ordered by “strength”:
+• Association (weakest)
+PDR 7: Potential Derivation Between Dependency Relationships
+If two relationships p(a,b) : S and q(b,c ) : T exist, with S and T being a Dependency Relationship,
+then a relationship r(a,c) : U might be derivable, with U being the weakest of S and T.
+Example B-20: Potential Derivation from Two Dependency Relationships
+Appendix B: Relationships (Normative) B.3. Derivation Rules for Potential Relationships
+--- page 157 ---
+B.3.4. Potential Derivation for Dynamic Relationships
+The next rules apply in the case where a structural and dynamic relation are joining at an
+intermediate element. In this case, the target of the structural relation could have the same
+dependency.
+PDR 8: Potential Derivation Between Structural and Dynamic Relationships
+If two relationships p(a,b) : S and q(b,c) : T exist, with S being Flow and T being a structural
+Example B-21: Potential Derivation from a Dynamic and a Structural Relationship in Line
+PDR 9: Potential Derivation Between Structural and Dynamic Relationships
+If two relationships p(a,b) : S and q(a,c) : T exist, with S being a structural relationship and T being
+a dynamic relationship, then a relationship r(b,c) : T might be derivable.
+Example B-22: Potential Derivation from a Dynamic and a Structural Relationship in the Opposite Direction
+The next rule applies in the case where two flow relationships join at an intermediate element. In this
+case, the flow relations could be replaced by one relation.
+PDR 10: Potential Derivation Between Flow Relationships
+If two relationships p(a,b) : S and q(b,c ) : S exist, with S being Flow, then a relationship r(a,c) : S
+Example B-23: Potential Derivation from Two Flow Relationships
+B.3. Derivation Rules for Potential Relationships Appendix B: Relationships (Normative)
+--- page 158 ---
+PDR 11: Potential Derivation Between Triggering and Structural Relationships
+If two relationships p(a,b) : S and q(c,b) : T exist, with S being a Triggering relationship and T being
+a structural relationship, then a relation r(a,c) : S might be derivable.
+Example B-24: Potential Derivation from a Triggering and Structural Relationship
+B.3.5. Potential Derivation Rule for Grouping
+PDR 12: Potential Derivation with Elements Aggregated in a Grouping Element
+Example B-25: Potential Derivation with Grouping Element
+EXIT_CODE=0

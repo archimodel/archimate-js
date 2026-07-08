@@ -708,3 +708,22 @@
 - Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-119-derived-relationship-dr3-dr8-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-120-derived-relationship-dr3-dr8-post-record-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-derived-relationship-dr3-dr8-audit.md`.
 - Remaining open issues: potential derivation rules, exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 61
+
+- Goal: close the C260 Appendix B potential derivation rule gap by implementing PDR1 through PDR12 as explicit candidate helpers rather than automatic model mutations.
+- Source check: `project_memory/runlogs/20260709-121-c260-potential-derivation-source-scan.txt`, `project_memory/runlogs/20260709-122-c260-potential-derivation-detail-scan.txt`, and `project_memory/runlogs/20260709-123-c260-dependency-strength-source-scan.txt` extracted the PDR endpoint patterns and dependency strength order from the local C260 PDF without committing verbatim tables.
+- Source summary: `project_memory/runlogs/20260709-129-c260-potential-derivation-implementation-summary.txt` records the non-verbatim facts used for implementation.
+- Red test: `project_memory/runlogs/20260709-124-potential-derivation-red-test.txt` failed because `derivePotentialRelationship()` and related dependency strength helpers were not exported or implemented.
+- Implemented: `derivePotentialRelationship()` returns explicit `potential: true` candidates for PDR1 through PDR12 and never mutates the model automatically.
+- Implemented: dependency relationship strength helpers use the C260-derived weakest-to-strongest order Association, Influence, Access, Serving.
+- Implemented: PDR12 requires an external `isRelationshipAllowed(sourceType, targetType, relationshipType, profile)` validator before returning a Grouping-derived Realization or Assignment candidate.
+- Public API: exported `derivePotentialRelationship()`, `getDependencyRelationshipStrength()`, `getWeakestDependencyRelationshipType()`, and `isDerivableRelationshipType()` from `index.js`.
+- Tests: `test/derived-relationships.test.mjs` now covers PDR1-PDR12 endpoint patterns, dependency strength, and the PDR12 validator guard.
+- Verification: `npm run test:language` passed with 111 tests in `project_memory/runlogs/20260709-126-potential-derivation-test-language-pass.txt`; scoped ESLint passed in `project_memory/runlogs/20260709-127-potential-derivation-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-128-potential-derivation-git-diff-check.txt`.
+- Final checks: `npm run test:language` passed again with 111 tests in `project_memory/runlogs/20260709-130-potential-derivation-final-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-131-potential-derivation-final-eslint-registry-gate.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-132-potential-derivation-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-133-potential-derivation-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-134-potential-derivation-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-135-potential-derivation-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-136-potential-derivation-final-final-git-diff-check.txt`.
+- Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-137-potential-derivation-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-138-potential-derivation-post-record-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-potential-derivation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
