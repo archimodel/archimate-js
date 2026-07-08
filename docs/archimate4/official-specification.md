@@ -160,6 +160,8 @@ Implementation note:
 - Relationship connectors are not part of the ArchiMate 4 domain catalog. Runtime metadata uses
   `paletteGroup` and `colorGroup` for editor grouping and color fallback instead of assigning a
   domain.
+- Named junctions keep their `AND` or `OR` marker inside the connector and render the optional
+  modeler-supplied name below the connector.
 - Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
   and negative modifier actions in the popup.

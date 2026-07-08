@@ -89,6 +89,7 @@ const modeler = new Modeler({
 * 3.x to 4.0 migration can validate migrated relationships with a host-supplied Appendix B relationship validator and warn or replace invalid relationship types.
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
+* Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
 * Influence relationship modifiers are preserved and rendered; the popup includes quick actions for positive and negative influence.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.

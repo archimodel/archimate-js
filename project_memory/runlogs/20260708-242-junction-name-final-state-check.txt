@@ -1,0 +1,29 @@
+## codex/archimate-4-support
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/draw/ArchimateRenderer.js
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/relationship-rules.test.mjs
+?? project_memory/audit/reports/20260708-junction-name-audit.md
+?? project_memory/runlogs/20260708-236-junction-name-gap-check.txt
+?? project_memory/runlogs/20260708-237-junction-name-fix-check.txt
+?? project_memory/runlogs/20260708-238-junction-name-npm-test-language.txt
+?? project_memory/runlogs/20260708-239-junction-name-eslint-changed-js.txt
+?? project_memory/runlogs/20260708-240-junction-name-git-diff-check.txt
+?? project_memory/runlogs/20260708-241-junction-name-repo-lint-legacy.txt
+aria_state_json=valid
+ README.md                                 |  1 +
+ docs/archimate4/official-specification.md |  2 ++
+ docs/archimate4/sources.md                |  9 ++++++++
+ lib/draw/ArchimateRenderer.js             | 36 +++++++++++++++++++++++++++++++
+ project_memory/logs/worklog.md            | 10 +++++++++
+ project_memory/state/aria_state.json      | 21 ++++++++++--------
+ test/relationship-rules.test.mjs          | 10 +++++++++
+ 7 files changed, 80 insertions(+), 9 deletions(-)
+project_memory/logs/worklog.md:367:- Audit: `project_memory/audit/reports/20260708-junction-name-audit.md`.
+project_memory/state/aria_state.json:4:  "stage": "junction_name_rendering_verified",
+project_memory/state/aria_state.json:50:      "junction_name_rendering"
+project_memory/state/aria_state.json:89:      "check_junction_name_rendering"
+project_memory/state/aria_state.json:94:    "audit_report_path": "project_memory/audit/reports/20260708-junction-name-audit.md",

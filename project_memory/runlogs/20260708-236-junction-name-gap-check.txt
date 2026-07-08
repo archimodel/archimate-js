@@ -1,0 +1,252 @@
+source: C260 local PDF junction-name check
+pdf_exists=True pages=207
+page=1 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=7 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=8 counts={'junction': 3, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=10 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=11 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=15 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=26 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=32 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=50 counts={'junction': 2, 'and junction': 2, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=51 counts={'junction': 4, 'and junction': 1, 'or junction': 1, 'name': 1} has_name_on_page=True
+page=52 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=53 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=54 counts={'junction': 2, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=55 counts={'junction': 2, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=56 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=57 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=58 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=59 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=60 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=61 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=62 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=63 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=64 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=65 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=66 counts={'junction': 17, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=67 counts={'junction': 13, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=68 counts={'junction': 4, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=69 counts={'junction': 5, 'and junction': 5, 'or junction': 0, 'name': 1} has_name_on_page=True
+page=70 counts={'junction': 3, 'and junction': 1, 'or junction': 0, 'name': 1} has_name_on_page=True
+page=71 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=88 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 1} has_name_on_page=True
+page=125 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=143 counts={'junction': 5, 'and junction': 3, 'or junction': 0, 'name': 1} has_name_on_page=True
+page=145 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=167 counts={'junction': 4, 'and junction': 1, 'or junction': 1, 'name': 0} has_name_on_page=False
+page=170 counts={'junction': 2, 'and junction': 0, 'or junction': 1, 'name': 2} has_name_on_page=True
+page=193 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=194 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=195 counts={'junction': 1, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+page=197 counts={'junction': 1, 'and junction': 1, 'or junction': 0, 'name': 3} has_name_on_page=True
+page=205 counts={'junction': 2, 'and junction': 0, 'or junction': 0, 'name': 0} has_name_on_page=False
+derived_fact: C260 describes AND and OR junctions as relationship connectors, not core elements.
+derived_fact: C260 allows a modeler-visible name on a junction when that helps clarify relationship choice or grouping semantics.
+implementation_gap: current renderer draws the AND/OR marker only; any optional junction label needs a separate visible rendering path.
+code: ArchimateRenderer junction branch scan
+22:  getLabel
+35:import { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, RELATIONSHIP_JUNCTION_AND, RELATIONSHIP_JUNCTION_OR } from '../metamodel/Concept';
+39:  BORDER_ASPECT_MAP,
+50:export const DEFAULT_NOTE_COLOR_RGBA = { r: '255', g: '255', b: '255', a: '100' };
+53:      DEFAULT_STROKE_COLOR = 'black',
+54:      DEFAULT_FILL_COLOR = 'grey',
+55:      DEFAULT_TEXT_COLOR = 'black';
+250:      stroke: DEFAULT_STROKE_COLOR,
+252:      fill: DEFAULT_FILL_COLOR
+281:      stroke: DEFAULT_STROKE_COLOR,
+283:      fill: DEFAULT_FILL_COLOR
+309:      stroke: DEFAULT_STROKE_COLOR,
+311:      fill: DEFAULT_FILL_COLOR
+324:      stroke: DEFAULT_STROKE_COLOR
+337:  function renderLabel(parentGfx, label, options) {
+355:    return renderLabel(parentGfx, getLabel(element), {
+360:        fill: DEFAULT_TEXT_COLOR,
+377:    return renderLabel(parentGfx, getLabel(element), {
+384:          fill: DEFAULT_TEXT_COLOR
+392:      stroke: connection.style && connection.style.lineColor || DEFAULT_STROKE_COLOR,
+406:      renderLabel(parentGfx, sourceMultiplicity, {
+413:        style: { fill: DEFAULT_TEXT_COLOR }
+419:      renderLabel(parentGfx, targetMultiplicity, {
+426:        style: { fill: DEFAULT_TEXT_COLOR }
+432:      renderLabel(parentGfx, modifier, {
+441:          fill: DEFAULT_TEXT_COLOR,
+481:        borderRadius = BORDER_ASPECT_MAP.get(shape.aspect);
+488:    if (elementType === RELATIONSHIP_JUNCTION_AND || elementType === RELATIONSHIP_JUNCTION_OR) {
+490:      renderLabel(parentGfx, elementType === RELATIONSHIP_JUNCTION_AND ? 'AND' : 'OR', {
+499:          fill: DEFAULT_TEXT_COLOR,
+531:      stroke: DEFAULT_STROKE_COLOR
+docs/tests: current junction guards scan
+lib/util/JunctionUtil.js:38:export function isRelationshipJunctionType(type) {
+lib/util/JunctionUtil.js:42:export function isRelationshipJunctionElement(element) {
+lib/util/JunctionUtil.js:46:  return isRelationshipJunctionType(element && element.type) ||
+lib/util/JunctionUtil.js:47:    isRelationshipJunctionType(elementRef && elementRef.type);
+lib/util/JunctionUtil.js:50:export function isRelationshipConnectedToJunction(connection) {
+lib/util/JunctionUtil.js:51:  return isRelationshipJunctionElement(connection && connection.source) ||
+lib/util/JunctionUtil.js:52:    isRelationshipJunctionElement(connection && connection.target);
+lib/util/JunctionUtil.js:60:  return isRelationshipJunctionElement(element) ||
+lib/util/JunctionUtil.js:77:  return !isRelationshipConnectedToJunction(connection);
+lib/util/JunctionUtil.js:80:export function getJunctionRelationshipTypeCandidates(source, target, exceptConnection, relationshipAllowed, profile) {
+lib/util/JunctionUtil.js:81:  var types = getExistingJunctionRelationshipTypes(source, target, exceptConnection);
+lib/util/JunctionUtil.js:92:    return isJunctionEndpointChainAllowed(source, target, relationshipType, exceptConnection, relationshipAllowed, profile);
+lib/util/JunctionUtil.js:96:export function isJunctionRelationshipTypeAllowed(source, target, relationshipType, exceptConnection, relationshipAllowed, profile) {
+lib/util/JunctionUtil.js:97:  if (!isRelationshipJunctionElement(source) && !isRelationshipJunctionElement(target)) {
+lib/util/JunctionUtil.js:105:  var candidates = getJunctionRelationshipTypeCandidates(source, target, exceptConnection, relationshipAllowed, profile);
+lib/util/JunctionUtil.js:110:export function isJunctionEndpointChainAllowed(source, target, relationshipType, exceptConnection, relationshipAllowed, profile) {
+lib/util/JunctionUtil.js:115:  var endpointPairs = getJunctionEndpointPairs(source, target, exceptConnection);
+lib/util/JunctionUtil.js:126:function getExistingJunctionRelationshipTypes(source, target, exceptConnection) {
+lib/util/JunctionUtil.js:127:  var junctions = [];
+lib/util/JunctionUtil.js:129:  if (isRelationshipJunctionElement(source)) {
+lib/util/JunctionUtil.js:130:    junctions.push(source);
+lib/util/JunctionUtil.js:133:  if (isRelationshipJunctionElement(target) && target !== source) {
+lib/util/JunctionUtil.js:134:    junctions.push(target);
+lib/util/JunctionUtil.js:137:  if (!junctions.length) {
+lib/util/JunctionUtil.js:143:  for (const junction of junctions) {
+lib/util/JunctionUtil.js:144:    var types = getRelationshipTypesConnectedToJunction(junction, exceptConnection);
+lib/util/JunctionUtil.js:162:function getRelationshipTypesConnectedToJunction(junction, exceptConnection) {
+lib/util/JunctionUtil.js:163:  var connections = (junction.incoming || []).concat(junction.outgoing || []),
+lib/util/JunctionUtil.js:181:function getJunctionEndpointPairs(source, target, exceptConnection) {
+lib/util/JunctionUtil.js:184:  if (isRelationshipJunctionElement(target) && !isRelationshipJunctionElement(source)) {
+lib/util/JunctionUtil.js:185:    pairs = pairs.concat(getPairsForIncomingJunctionCandidate(source, target, exceptConnection));
+lib/util/JunctionUtil.js:188:  if (isRelationshipJunctionElement(source) && !isRelationshipJunctionElement(target)) {
+lib/util/JunctionUtil.js:189:    pairs = pairs.concat(getPairsForOutgoingJunctionCandidate(source, target, exceptConnection));
+lib/util/JunctionUtil.js:195:function getPairsForIncomingJunctionCandidate(source, junction, exceptConnection) {
+lib/util/JunctionUtil.js:199:  for (const connection of junction.outgoing || []) {
+lib/util/JunctionUtil.js:206:    if (sourceType && targetType && !isRelationshipJunctionElement(connection.target)) {
+lib/util/JunctionUtil.js:214:function getPairsForOutgoingJunctionCandidate(junction, target, exceptConnection) {
+lib/util/JunctionUtil.js:218:  for (const connection of junction.incoming || []) {
+lib/util/JunctionUtil.js:225:    if (sourceType && targetType && !isRelationshipJunctionElement(connection.source)) {
+test\relationship-rules.test.mjs:67:  assert.match(source, /isRelationshipConnectedToJunction\(\{ source: source, target: target \}\)/);
+test\relationship-rules.test.mjs:68:  assert.match(source, /isJunctionRelationshipTypeAllowed\(source, target, connection\.type, connection, isRelationshipAllowed, profile\)/);
+test\relationship-rules.test.mjs:240:test('archimate 4 relationship profile accepts relationship concepts and junctions', async () => {
+test\relationship-rules.test.mjs:247:      AndJunction: 'Aggregation'
+test\relationship-rules.test.mjs:252:    AndJunction: {
+test\relationship-rules.test.mjs:258:  assert.equal(maps.get('Grouping').get('AndJunction'), 'g');
+test\relationship-rules.test.mjs:260:  assert.equal(maps.get('AndJunction').get('BusinessActor'), 'o');
+test\relationship-rules.test.mjs:329:  }), /missing source element: AndJunction/);
+test\archimate3-xsd-profile.test.mjs:27:test('archimate 3 profile exposes relationship junction connector elements', async () => {
+test\archimate3-xsd-profile.test.mjs:31:  assert.equal(elements.get('AndJunction').typeName, 'And Junction');
+test\archimate3-xsd-profile.test.mjs:32:  assert.equal(elements.get('OrJunction').typeName, 'Or Junction');
+test\archimate3-xsd-profile.test.mjs:33:  assert.notEqual(elements.get('AndJunction').palette, false);
+test\archimate3-xsd-profile.test.mjs:34:  assert.notEqual(elements.get('OrJunction').palette, false);
+test\archimate3-xsd-profile.test.mjs:37:test('junction implementation uses official xsd element names as model types', async () => {
+test\archimate3-xsd-profile.test.mjs:43:  assert.match(conceptSource, /OTHER_AND_JUNCTION = 'AndJunction'/);
+test\archimate3-xsd-profile.test.mjs:44:  assert.match(conceptSource, /OTHER_OR_JUNCTION = 'OrJunction'/);
+test\archimate3-xsd-profile.test.mjs:48:  assert.match(modelUtilSource, /\[CX\.RELATIONSHIP_JUNCTION_AND,[^\n]*typeName: 'And Junction'/);
+test\archimate3-xsd-profile.test.mjs:49:  assert.match(modelUtilSource, /\[CX\.RELATIONSHIP_JUNCTION_OR,[^\n]*typeName: 'Or Junction'/);
+test\language-profile.test.mjs:22:  assert.equal(types.has('AndJunction'), true);
+test\language-profile.test.mjs:23:  assert.equal(types.has('OrJunction'), true);
+test\language-profile.test.mjs:79:test('archimate 4 exposes relationship junction connectors outside the element catalog', async () => {
+test\language-profile.test.mjs:85:  assert.equal(elements.has('AndJunction'), false);
+test\language-profile.test.mjs:86:  assert.equal(elements.has('OrJunction'), false);
+test\language-profile.test.mjs:87:  assert.equal(connectors.get('AndJunction').typeName, 'And Junction');
+test\language-profile.test.mjs:88:  assert.equal(connectors.get('OrJunction').typeName, 'Or Junction');
+test\language-profile.test.mjs:89:  assert.equal(connectors.get('AndJunction').domain, undefined);
+test\language-profile.test.mjs:90:  assert.equal(connectors.get('OrJunction').domain, undefined);
+test\language-profile.test.mjs:91:  assert.equal(connectors.get('AndJunction').paletteGroup, 'Relationships');
+test\language-profile.test.mjs:92:  assert.equal(connectors.get('OrJunction').paletteGroup, 'Relationships');
+test\language-profile.test.mjs:93:  assert.equal(connectors.get('AndJunction').colorGroup, 'Relationships');
+test\language-profile.test.mjs:94:  assert.equal(connectors.get('OrJunction').colorGroup, 'Relationships');
+test\language-profile.test.mjs:95:  assert.notEqual(connectors.get('AndJunction').palette, false);
+test\language-profile.test.mjs:96:  assert.notEqual(connectors.get('OrJunction').palette, false);
+test\language-profile.test.mjs:106:test('profile-aware metadata and palette include relationship junction connectors', async () => {
+test\multiplicity.test.mjs:6:  getJunctionRelationshipTypeCandidates,
+test\multiplicity.test.mjs:8:  isJunctionRelationshipTypeAllowed,
+test\multiplicity.test.mjs:9:  isRelationshipConnectedToJunction
+test\multiplicity.test.mjs:10:} from '../lib/util/JunctionUtil.js';
+test\multiplicity.test.mjs:57:test('connection popup hides multiplicity actions on junction-connected relationships', async () => {
+test\multiplicity.test.mjs:89:test('junction-connected relationships cannot carry multiplicity', () => {
+test\multiplicity.test.mjs:94:  const directJunctionConnection = {
+test\multiplicity.test.mjs:95:    source: { type: 'AndJunction' },
+test\multiplicity.test.mjs:98:  const importedJunctionConnection = {
+test\multiplicity.test.mjs:101:        elementRef: { type: 'OrJunction' }
+test\multiplicity.test.mjs:108:  assert.equal(isRelationshipConnectedToJunction(directJunctionConnection), true);
+test\multiplicity.test.mjs:109:  assert.equal(isRelationshipConnectedToJunction(importedJunctionConnection), true);
+test\multiplicity.test.mjs:110:  assert.equal(canApplyRelationshipMultiplicity(directJunctionConnection), false);
+test\multiplicity.test.mjs:111:  assert.equal(canApplyRelationshipMultiplicity(importedJunctionConnection), false);
+test\multiplicity.test.mjs:154:    { type: 'AndJunction' },
+test\multiplicity.test.mjs:159:test('junction relationship candidates follow existing relationship type', () => {
+test\multiplicity.test.mjs:160:  const junction = {
+test\multiplicity.test.mjs:161:    type: 'AndJunction',
+test\multiplicity.test.mjs:168:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:170:    junction
+test\multiplicity.test.mjs:172:  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Serving'), true);
+test\multiplicity.test.mjs:173:  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Flow'), false);
+test\multiplicity.test.mjs:176:test('junction endpoint chain allows candidates only when direct endpoints allow the same relationship', () => {
+test\multiplicity.test.mjs:186:  const junction = {
+test\multiplicity.test.mjs:187:    type: 'AndJunction',
+test\multiplicity.test.mjs:200:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:202:    junction,
+test\multiplicity.test.mjs:207:  assert.equal(isJunctionRelationshipTypeAllowed(
+test\multiplicity.test.mjs:209:    junction,
+test\multiplicity.test.mjs:217:test('junction endpoint chain rejects candidates when direct endpoints disallow the same relationship', () => {
+test\multiplicity.test.mjs:223:  const junction = {
+test\multiplicity.test.mjs:224:    type: 'AndJunction',
+test\multiplicity.test.mjs:237:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:239:    junction,
+test\multiplicity.test.mjs:243:  assert.equal(isJunctionRelationshipTypeAllowed(
+test\multiplicity.test.mjs:245:    junction,
+test\multiplicity.test.mjs:252:test('junction endpoint chain validates outgoing candidates against incoming endpoints', () => {
+test\multiplicity.test.mjs:259:  const junction = {
+test\multiplicity.test.mjs:260:    type: 'AndJunction',
+test\multiplicity.test.mjs:273:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:274:    junction,
+test\multiplicity.test.mjs:281:test('junction relationship candidates prefer relationshipRef type over generic connection type', () => {
+test\multiplicity.test.mjs:282:  const junction = {
+test\multiplicity.test.mjs:283:    type: 'AndJunction',
+test\multiplicity.test.mjs:295:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:297:    junction
+test\multiplicity.test.mjs:301:test('junction relationship candidates reject mixed existing relationship types', () => {
+test\multiplicity.test.mjs:302:  const junction = {
+test\multiplicity.test.mjs:303:    type: 'OrJunction',
+test\multiplicity.test.mjs:311:  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+test\multiplicity.test.mjs:313:    junction
+test\multiplicity.test.mjs:315:  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Serving'), false);
+test\multiplicity.test.mjs:318:test('multiplicity is suppressed across import, replacement, and rendering for junction ends', async () => {
+test\fixtures\archimate3-element-type-enum.json:65:    "AndJunction",
+test\fixtures\archimate3-element-type-enum.json:66:    "OrJunction"
+README.md:90:* Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
+README.md:91:* Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
+README.md:92:* ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
+README.md:94:* Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.
+docs/archimate4\official-specification.md:131:## Relationships And Junctions
+docs/archimate4\official-specification.md:140:Junction requirements:
+docs/archimate4\official-specification.md:142:- The ArchiMate 4 language defines `Junction` as a connector between relationships, not as a normal
+docs/archimate4\official-specification.md:144:- A junction connects two or more relationships of the same relationship type.
+docs/archimate4\official-specification.md:145:- A chain through a junction is only valid when a direct relationship of the same type would be valid
+docs/archimate4\official-specification.md:147:- Junctions may represent and-semantics or or-semantics. The modeler may name a junction to make
+docs/archimate4\official-specification.md:150:  junctions.
+docs/archimate4\official-specification.md:151:- Multiplicity must not be applied to a relationship end connected to a junction.
+docs/archimate4\official-specification.md:155:- ArchiMate 3.1 MEFF exposes `AndJunction` and `OrJunction` element type values. ArchiMate 4 C260
+docs/archimate4\official-specification.md:156:  describes the modeling concept as `Junction`; the exact MEFF 4.0 exchange representation must be
+docs/archimate4\official-specification.md:158:- The editor exposes `AndJunction` and `OrJunction` as relationship connector metadata outside the
+docs/archimate4\official-specification.md:186:- Reject or ignore multiplicity on any end connected to a junction.
+docs/archimate4\official-specification.md:252:  junction restrictions, and matrix replacement point behavior.
+docs/archimate4\official-specification.md:283:- MEFF 4.0 element type for `Junction` versus `AndJunction` / `OrJunction`.
+docs/archimate4\official-specification.md:303:- `AndJunction` and `OrJunction` must remain available as relationship connectors without being counted
+docs/archimate4\official-specification.md:318:- Popup relationship choices and reconnect validation now restrict junction-connected relationships to
+docs/archimate4\official-specification.md:319:  the same relationship type when the junction already has an established relationship type.
+docs/archimate4\official-specification.md:320:- If a junction already has conflicting relationship types, no further junction relationship type is
+docs/archimate4\official-specification.md:322:- When a candidate relationship is connected to a junction and the opposite side already has a
+docs/archimate4\official-specification.md:323:  non-junction endpoint, the editor checks whether the same relationship type is valid directly
+docs/archimate4\official-specification.md:331:- Relationship-end multiplicity is suppressed for connections whose source or target is `AndJunction`
+docs/archimate4\official-specification.md:332:  or `OrJunction`.
+docs/archimate4\official-specification.md:359:  relationship concepts, including relationship connections and `AndJunction` / `OrJunction`.
+docs/archimate4\official-specification.md:368:- C260 Chapter 5: relationships, junctions, multiplicity.
+docs/archimate4\sources.md:34:- Relationship multiplicity is added on relationship ends, except where connected to junctions.
+docs/archimate4\sources.md:42:- ArchiMate 4 C260 describes `Junction` as a relationship connector concept; the MEFF 4.0 exchange representation is still pending XSD confirmation.
+docs/archimate4\sources.md:52:- `AndJunction` and `OrJunction` are exposed as ArchiMate 4 relationship connector metadata outside
+docs/archimate4\sources.md:53:  the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
+docs/archimate4\sources.md:130:  against the C260-derived concept set: the 42-element catalog, `AndJunction` / `OrJunction`
+docs/archimate4\sources.md:156:## Junction Multiplicity Guard
+docs/archimate4\sources.md:159:  junction.
+docs/archimate4\sources.md:160:- `lib/util/JunctionUtil.js` centralizes the `AndJunction` / `OrJunction` detection used by the editor.
+docs/archimate4\sources.md:164:## Junction Relationship Type Guard
+docs/archimate4\sources.md:166:- C260 requires relationships joined through a junction to use the same relationship type.
+docs/archimate4\sources.md:167:- `lib/util/JunctionUtil.js` now also derives junction relationship type candidates from existing
+docs/archimate4\sources.md:168:  incoming/outgoing junction connections.
+docs/archimate4\sources.md:170:  the existing type attached to the junction.
+docs/archimate4\sources.md:173:- Junction endpoint-chain validity is now checked through the active relationship profile: incoming
+docs/archimate4\sources.md:182:  relationships, and junctions.
+docs/archimate4\sources.md:185:  relationship connections and `AndJunction` / `OrJunction`.
+docs/archimate4\sources.md:250:- `AndJunction` and `OrJunction` are modeled with their official XSD type values, not display labels with spaces.

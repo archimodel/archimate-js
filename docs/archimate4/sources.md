@@ -161,6 +161,15 @@
 - Multiplicity editing, persistence, import hydration, and rendering now call that guard before keeping
   or displaying source/target multiplicity values.
 
+## Junction Name Rendering Guard
+
+- C260 allows a modeler-visible name on a junction when that helps clarify the relationship grouping
+  or choice semantics.
+- `lib/draw/ArchimateRenderer.js` keeps the `AND` / `OR` marker as the connector marker and renders
+  a separate optional junction name below the connector.
+- Default marker text and official type names are suppressed as external labels so unnamed junctions
+  do not duplicate `AND`, `OR`, `And Junction`, or `Or Junction`.
+
 ## Junction Relationship Type Guard
 
 - C260 requires relationships joined through a junction to use the same relationship type.

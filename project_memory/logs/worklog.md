@@ -356,3 +356,13 @@
 - Docs: README and `docs/archimate4/*` now document the Influence modifier guard.
 - Verification: fix check passed in `project_memory/runlogs/20260708-230-influence-modifier-fix-check.txt`; `npm run test:language` passed with 72 tests in `project_memory/runlogs/20260708-231-influence-modifier-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-232-influence-modifier-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-233-influence-modifier-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-234-influence-modifier-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-235-influence-modifier-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 35
+
+- Goal: render optional modeler-supplied Junction names while keeping the `AND` / `OR` marker visible.
+- Observation: `project_memory/runlogs/20260708-236-junction-name-gap-check.txt` records local C260 page hits for junction/name terms and shows the current renderer only drew the `AND` / `OR` marker.
+- Implemented: `lib/draw/ArchimateRenderer.js` now derives a separate junction display label, suppresses default marker/type names, and renders modeler-supplied junction names below the connector.
+- Tests/docs: `test/relationship-rules.test.mjs`, README, and `docs/archimate4/*` now document and guard named junction rendering.
+- Verification: fix check passed in `project_memory/runlogs/20260708-237-junction-name-fix-check.txt`; `npm run test:language` passed with 73 tests in `project_memory/runlogs/20260708-238-junction-name-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-239-junction-name-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-240-junction-name-git-diff-check.txt`; repo-wide lint remains the expected legacy failure with 4710 errors in `project_memory/runlogs/20260708-241-junction-name-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-junction-name-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

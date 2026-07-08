@@ -95,6 +95,16 @@ test('renderer displays influence modifier labels', async () => {
   assert.doesNotMatch(source, /TODO vbo add modifier management/);
 });
 
+test('renderer preserves optional junction names outside the marker', async () => {
+  const source = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
+
+  assert.match(source, /function getJunctionDisplayLabel\(shape, elementType\)/);
+  assert.match(source, /label === 'AND' \|\| label === 'OR'/);
+  assert.match(source, /var junctionLabel = getJunctionDisplayLabel\(shape, elementType\)/);
+  assert.match(source, /renderLabel\(parentGfx, junctionLabel/);
+  assert.match(source, /y: shape\.height \+ 2/);
+});
+
 test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {
   const validTypes = new Set([
     'BusinessActor',

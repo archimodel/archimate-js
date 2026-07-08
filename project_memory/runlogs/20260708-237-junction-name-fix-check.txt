@@ -1,0 +1,17 @@
+ README.md                                 |  1 +
+ docs/archimate4/official-specification.md |  2 ++
+ docs/archimate4/sources.md                |  9 ++++++++
+ lib/draw/ArchimateRenderer.js             | 36 +++++++++++++++++++++++++++++++
+ test/relationship-rules.test.mjs          | 10 +++++++++
+ 5 files changed, 58 insertions(+)
+docs/archimate4\official-specification.md:163:- Named junctions keep their `AND` or `OR` marker inside the connector and render the optional
+docs/archimate4\official-specification.md:164:  modeler-supplied name below the connector.
+README.md:92:* Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
+test\relationship-rules.test.mjs:101:  assert.match(source, /function getJunctionDisplayLabel\(shape, elementType\)/);
+test\relationship-rules.test.mjs:103:  assert.match(source, /var junctionLabel = getJunctionDisplayLabel\(shape, elementType\)/);
+test\relationship-rules.test.mjs:104:  assert.match(source, /renderLabel\(parentGfx, junctionLabel/);
+lib/draw/ArchimateRenderer.js:476:  function getJunctionDisplayLabel(shape, elementType) {
+lib/draw/ArchimateRenderer.js:523:      var junctionLabel = getJunctionDisplayLabel(shape, elementType);
+lib/draw/ArchimateRenderer.js:525:      if (junctionLabel) {
+lib/draw/ArchimateRenderer.js:526:        renderLabel(parentGfx, junctionLabel, {
+docs/archimate4\sources.md:164:## Junction Name Rendering Guard
