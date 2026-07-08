@@ -257,6 +257,17 @@ Implemented multiplicity guard:
 - The guard applies during popup-menu editing, relationship replacement, model persistence, import
   attribute hydration, and rendering.
 
+Implemented migration guard:
+
+- `Representation` migration defaults to `DataObject` and reports `Artifact` and `Material` as
+  alternative replacement types.
+- `Gap` migration defaults to `Assessment` and reports `Deliverable` as an alternative replacement
+  type.
+- Business, application, and technology interaction migrations default to `Process` and report
+  `Function` as an alternative replacement type.
+- `ImplementationEvent` migration preserves the original type as specialization metadata when
+  migrating to `Event`.
+
 ## Source Trace
 
 - C260 Chapter 1: conformance requirements.

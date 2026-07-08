@@ -133,3 +133,15 @@
 - Docs: README and `docs/archimate4/*` now state that host applications may pass a parsed object or JSON string.
 - Verification: `npm run test:language` passed with 42 tests in `project_memory/runlogs/20260708-082-relationship-profile-json-string-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-083-relationship-profile-json-string-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-085-relationship-profile-json-string-git-diff-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 14
+
+- Goal: correct the ArchiMate 3.x to 4.0 migration table against C260 Appendix E derived facts from the supplied PDF.
+- Source check: a pypdf keyword scan of C260 pages 196-200 recorded only derived migration facts in `project_memory/runlogs/20260708-089-appendix-e-migration-source-check.txt`; no long verbatim C260 text was stored.
+- Implemented: `Representation` now migrates to `DataObject` by default and warns that `Artifact` or `Material` may be more precise.
+- Implemented: `Gap` now records `Deliverable` as an alternative replacement, and Business/Application/Technology Interaction rows record `Function` as an alternative to the default `Process`.
+- Implemented: `ImplementationEvent` now preserves specialization metadata when migrating to `Event`.
+- Tests: `test/migration.test.mjs` now directly imports and exercises the migration utility, verifying replacement types and warning alternatives rather than only checking source text.
+- Docs: README and `docs/archimate4/*` now document the Appendix E migration correction.
+- Verification: `npm run test:language` passed with 44 tests in `project_memory/runlogs/20260708-086-migration-appendix-e-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-087-migration-appendix-e-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-088-migration-appendix-e-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-090-migration-appendix-e-final-diff-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

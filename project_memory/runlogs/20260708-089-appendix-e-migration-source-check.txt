@@ -1,0 +1,9 @@
+command: Python pypdf keyword scan of C:\Users\syska\Downloads\978940181474E.pdf pages 196-200
+exit_code: 0
+derived_facts:
+- Appendix E identifies Business/Application/Technology Interaction replacement as Function or Process.
+- Appendix E identifies Gap replacement as Assessment or Deliverable.
+- Appendix E identifies Representation replacement as DataObject, Artifact, or Material.
+- Appendix E identifies ImplementationEvent replacement as Event.
+- Appendix E identifies BusinessRole replacement as Role and the three domain collaborations as Collaboration.
+note: no verbatim C260 table or paragraph text is stored in this runlog.

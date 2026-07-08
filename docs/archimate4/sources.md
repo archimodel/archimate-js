@@ -53,6 +53,18 @@
   the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
   naming remains unresolved.
 
+## Appendix E Migration Correction
+
+- C260 Appendix E guidance is reflected in `lib/metamodel/languages/retired-concepts.js`.
+- `Representation` now migrates to `DataObject` by default while warning that `Artifact` or `Material`
+  may be more precise for a specific model.
+- `Gap` records `Deliverable` as an alternative replacement to the default `Assessment`.
+- Business, application, and technology interactions default to `Process` while warning that `Function`
+  may be more precise.
+- `ImplementationEvent` now preserves specialization information when migrating to `Event`.
+- `test/migration.test.mjs` directly exercises the migration utility so replacement and warning data
+  are verified, not only present in source text.
+
 ## Appendix B Relationship Profile Loading
 
 - The default ArchiMate 4 relationship rules remain compatibility-derived from the existing 3.x maps
