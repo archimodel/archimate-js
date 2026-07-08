@@ -1,0 +1,4 @@
+OK lib/metamodel/languages/archimate4-profile.json
+OK test/fixtures/archimate4-c260-element-catalog.json
+OK project_memory/state/aria_state.json
+OK project_memory/audit/audit_registry.json

@@ -134,6 +134,7 @@ const modeler = new Modeler({
 * Influence relationship modifiers are preserved and rendered; the ArchiMate 4 popup includes quick actions for positive/negative influence and a custom sign/strength modifier input.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value, and the ArchiMate 4 relationship popup can edit custom source/target multiplicity values.
 * `getArchimate4ImplementationStatus()` exposes machine-readable status for implemented, experimental, optional, source-coverage, and external-source-dependent ArchiMate 4 areas.
+* Implementation status includes `elementCatalog.expectedTypes`, `elementCatalog.actualTypes`, `elementCatalog.missingTypes`, and `elementCatalog.extraTypes` so the 42-element C260 catalog is audited by exact type identity, not only by count.
 * Implementation status includes `conformanceReadiness.officialConformanceClaimable`; it remains `false` while official Appendix B, MEFF 4.0 XSD, or exact Appendix A artwork-rights blockers remain.
 * Implementation status includes source coverage for the local C260 PDF, local launch transcript, W262 companion paper availability, Appendix B relationship matrix, MEFF 4.0 XSD, and Appendix A artwork-rights boundary.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.

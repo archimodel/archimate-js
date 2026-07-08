@@ -1280,3 +1280,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-647-conformance-readiness-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-648-conformance-readiness-final-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-conformance-readiness-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 103
+
+- Goal: make the ArchiMate 4 42-element catalog status auditable by exact element identity, not only by element count.
+- Red test: `project_memory/runlogs/20260709-650-element-catalog-status-red-test.txt` failed because `profile.conformance.elementCatalog.expectedTypes` was absent and `getArchimate4ImplementationStatus()` did not expose exact catalog drift fields.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records the C260-derived `elementCatalog.expectedTypes` list for all 42 standard elements.
+- Implemented: `lib/metamodel/languages/index.js` now summarizes `elementCatalog.actualTypes`, `missingTypes`, `extraTypes`, `actualCount`, and `complete`, so a 42-item but wrong-type catalog cannot appear complete.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and describe the exact catalog status boundary.
+- Verification: focused status test passed with 158 tests in `project_memory/runlogs/20260709-651-element-catalog-status-test.txt`; `npm run test:language` passed with 158 tests in `project_memory/runlogs/20260709-652-element-catalog-status-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-653-element-catalog-status-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-654-element-catalog-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-655-element-catalog-status-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-656-element-catalog-status-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-657-element-catalog-status-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-658-element-catalog-status-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-659-element-catalog-status-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-element-catalog-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -473,6 +473,9 @@ In particular:
   profile status, experimental exchange-format boundary, icon coverage boundary, generic object alias
   count, conformance readiness, and external blockers so callers do not mistake compatibility fallback
   support for complete official conformance.
+- `getArchimate4ImplementationStatus().elementCatalog` must expose `expectedTypes`, `actualTypes`,
+  `missingTypes`, and `extraTypes` so exact C260 catalog drift is visible even if the element count is
+  still 42.
 
 The relationship rules remain a fallback:
 

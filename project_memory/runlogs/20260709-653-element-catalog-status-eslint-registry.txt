@@ -1,0 +1,2 @@
+ESLint scoped registry passed
+ESLint scoped registry passed

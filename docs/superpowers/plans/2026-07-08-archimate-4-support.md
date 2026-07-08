@@ -38,10 +38,11 @@ Implemented and verified on the current branch:
   audit reports document the opt-in status, compatibility behavior, verification commands, and
   conformance boundaries.
 
-Current machine-readable status is exposed by `getArchimate4ImplementationStatus()`. As of commit
-`d5fdf90`, the iconography status reports `profilePictogramCoverage: dedicated-local-paths`,
-`genericObjectAliasCount: 0`, and only the legacy misspelled compatibility aliases
-`PICTO_DELIVRABLE` / `PICTO_STAKHOLDER`.
+Current machine-readable status is exposed by `getArchimate4ImplementationStatus()`. The element
+catalog status reports `expectedTypes`, `actualTypes`, `missingTypes`, and `extraTypes` for exact
+C260 type-coverage auditing. The iconography status reports `profilePictogramCoverage:
+dedicated-local-paths`, `genericObjectAliasCount: 0`, and only the legacy misspelled compatibility
+aliases `PICTO_DELIVRABLE` / `PICTO_STAKHOLDER`.
 
 Current unresolved items are external-source dependent rather than implementation omissions:
 

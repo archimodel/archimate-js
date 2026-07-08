@@ -1,0 +1,10 @@
+trimmed 20260709-650-element-catalog-status-red-test.txt
+unchanged 20260709-651-element-catalog-status-test.txt
+unchanged 20260709-652-element-catalog-status-test-language.txt
+unchanged 20260709-653-element-catalog-status-eslint-registry.txt
+unchanged 20260709-654-element-catalog-status-json-check.txt
+unchanged 20260709-655-element-catalog-status-diff-check.txt
+unchanged 20260709-656-element-catalog-status-demo-build.txt
+unchanged 20260709-657-element-catalog-status-repo-lint.txt
+unchanged 20260709-658-element-catalog-status-final-json-check.txt
+unchanged 20260709-659-element-catalog-status-final-diff-check.txt
