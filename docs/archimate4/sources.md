@@ -251,11 +251,14 @@
 
 - C260 Appendix B.6 covers additional relationship rules for grouping, location, plateau,
   relationships, and junctions.
-- The currently implemented derived rule is intentionally narrow: in ArchiMate 4 mode, `Grouping` and
-  `Location` may create or keep an `Aggregation` relationship to relationship concepts, including
-  relationship connections and `AndJunction` / `OrJunction`.
-- `Plateau` and the rest of the Appendix B.6 table still depend on the external Appendix B profile path
-  rather than a committed verbatim table.
+- A local C260 Appendix B.6 keyword co-occurrence check for `Plateau`, `Aggregation`, relationship,
+  and junction context is recorded in
+  `project_memory/runlogs/20260708-379-plateau-relationship-concept-source-check.txt`.
+- The currently implemented derived rule is intentionally narrow: in ArchiMate 4 mode, `Grouping`,
+  `Location`, and `Plateau` may create or keep an `Aggregation` relationship to relationship concepts,
+  including relationship connections and `AndJunction` / `OrJunction`.
+- The rest of the Appendix B.6 table still depends on the external Appendix B profile path rather than
+  a committed verbatim table.
 
 ## Relationship Concept Descriptor Guard
 

@@ -1,0 +1,7 @@
+source: local licensed ArchiMate 4 Specification C260 PDF
+purpose: derived keyword co-occurrence check only; no normative prose or tables copied
+pdf_pages: 207
+page=159 hits=Plateau|Grouping|Location|Aggregation
+page=167 hits=Plateau|Grouping|Location|relationship|junction
+page=190 hits=Plateau|relationship
+derived_check: current implementation records Appendix B.6 relationship-concept aggregation for Grouping/Location; verify whether Plateau can be included in the same narrow derived helper without embedding Appendix B table data

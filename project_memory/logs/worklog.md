@@ -521,3 +521,13 @@
 - Verification: `npm run test:language` passed with 85 tests in `project_memory/runlogs/20260708-371-migration-coverage-final-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-372-migration-coverage-final-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-373-migration-coverage-final-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4431 errors in `project_memory/runlogs/20260708-374-migration-coverage-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-migration-coverage-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 49
+
+- Goal: close the narrow Appendix B.6-derived gap where relationship-concept aggregation supported `Grouping` and `Location` but not `Plateau`.
+- Source check: `project_memory/runlogs/20260708-379-plateau-relationship-concept-source-check.txt` recorded local licensed C260 keyword co-occurrence for `Plateau`, `Aggregation`, relationship, and junction context without copying normative prose or tables.
+- Implemented: `lib/util/JunctionUtil.js` now includes `Plateau` in the ArchiMate 4 relationship-concept aggregators.
+- Tests/docs: `test/multiplicity.test.mjs` now expects `Plateau` to return `Aggregation` for an `AndJunction` target in ArchiMate 4 mode; README and `docs/archimate4/*` record that the narrow helper covers `Grouping`, `Location`, and `Plateau`.
+- Verification: `npm run test:language` passed with 85 tests in `project_memory/runlogs/20260708-384-plateau-relationship-concept-final-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-385-plateau-relationship-concept-final-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-386-plateau-relationship-concept-final-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4431 errors in `project_memory/runlogs/20260708-387-plateau-relationship-concept-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-plateau-relationship-concept-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

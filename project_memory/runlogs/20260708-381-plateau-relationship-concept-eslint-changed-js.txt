@@ -1,0 +1,3 @@
+command: npx eslint lib\util\JunctionUtil.js test\multiplicity.test.mjs
+exit_code: 0
+output: ""

@@ -111,7 +111,7 @@ test('junction-connected relationships cannot carry multiplicity', () => {
   assert.equal(canApplyRelationshipMultiplicity(importedJunctionConnection), false);
 });
 
-test('archimate 4 grouping and location aggregate relationship concepts', () => {
+test('archimate 4 grouping, location and plateau aggregate relationship concepts', () => {
   const archimate4Profile = { version: '4.0' };
   const archimate3Profile = { version: '3.2' };
 
@@ -153,7 +153,7 @@ test('archimate 4 grouping and location aggregate relationship concepts', () => 
     { type: 'Plateau' },
     { type: 'AndJunction' },
     archimate4Profile
-  ), null);
+  ), 'Aggregation');
 });
 
 test('junction relationship candidates follow existing relationship type', () => {

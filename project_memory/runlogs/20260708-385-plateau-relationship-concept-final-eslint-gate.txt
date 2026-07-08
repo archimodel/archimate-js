@@ -1,0 +1,3 @@
+command: ArchiMate 4 changed-file ESLint gate
+exit_code: 0
+output: ""
