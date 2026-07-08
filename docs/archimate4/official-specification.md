@@ -210,6 +210,9 @@ External profile contract:
   empty target map.
 - The default public loader also requires complete target-cell coverage for each source. A cell with no
   allowed relationship must be explicitly present as empty data so accidental omissions are caught.
+- `getArchimate4RelationshipProfileStatus()` must expose whether the active relationship profile is
+  still the compatibility fallback or an external profile loaded with complete source and target-cell
+  validation.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

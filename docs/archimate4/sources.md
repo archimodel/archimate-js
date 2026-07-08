@@ -89,6 +89,9 @@
 - The default replacement path also requires every source-target cell to be present. Empty cells may
   use an empty string, null, or an empty relationship array, but omitted cells fail validation so table
   transcription gaps are not silently treated as disallowed relationships.
+- `getArchimate4RelationshipProfileStatus()` reports the active source, accepted concept count,
+  expected source-target cell count, and whether complete source and target-cell validation was
+  required for the loaded profile.
 - Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
   so an external Appendix B profile affects editing constraints as well as menu display.
 

@@ -1,0 +1,15 @@
+state json ok
+## codex/archimate-4-support
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/metamodel/languages/archimate4-relationships.js
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/relationship-rules.test.mjs
+?? project_memory/audit/reports/20260708-relationship-profile-status-metadata-audit.md
+?? project_memory/runlogs/20260708-128-relationship-profile-status-metadata-npm-test-language.txt
+?? project_memory/runlogs/20260708-129-relationship-profile-status-metadata-eslint-changed-js.txt
+?? project_memory/runlogs/20260708-130-relationship-profile-status-metadata-git-diff-check.txt
+?? project_memory/runlogs/20260708-131-relationship-profile-status-metadata-repo-lint-legacy.txt
+?? project_memory/runlogs/20260708-132-relationship-profile-status-metadata-final-state-check.txt

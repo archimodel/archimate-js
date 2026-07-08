@@ -203,3 +203,12 @@
 - Docs: README and `docs/archimate4/*` now document explicit empty cells for complete external profiles.
 - Verification: `npm run test:language` passed with 55 tests in `project_memory/runlogs/20260708-124-relationship-profile-complete-targets-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-122-relationship-profile-complete-targets-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-123-relationship-profile-complete-targets-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-125-relationship-profile-complete-targets-repo-lint-legacy.txt`; final state check passed in `project_memory/runlogs/20260708-126-relationship-profile-complete-targets-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 20
+
+- Goal: make the active ArchiMate 4 relationship profile completeness status observable to host applications.
+- Implemented: `getArchimate4RelationshipProfileStatus()` now reports concept count, expected complete source-target cell count, load completeness flags, and complete source/target coverage indicators.
+- Tests: `test/relationship-rules.test.mjs` now guards the status metadata surface while keeping direct `archimate4-relationships.js` imports out of Node tests because that module imports JSON without a Node assertion.
+- Docs: README and `docs/archimate4/*` now state that callers can verify fallback vs externally loaded complete profile status.
+- Verification: `npm run test:language` passed with 55 tests in `project_memory/runlogs/20260708-128-relationship-profile-status-metadata-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-129-relationship-profile-status-metadata-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-130-relationship-profile-status-metadata-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-131-relationship-profile-status-metadata-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-132-relationship-profile-status-metadata-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

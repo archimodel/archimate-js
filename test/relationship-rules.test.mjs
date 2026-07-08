@@ -38,6 +38,11 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(loaderSource, /parseRelationshipProfile/);
   assert.match(loaderSource, /assertCompleteTargetCoverage/);
   assert.match(source, /getArchimate4RelationshipProfileStatus/);
+  assert.match(source, /RELATIONSHIP_PROFILE_OPTIONS/);
+  assert.match(source, /conceptCount/);
+  assert.match(source, /expectedTargetCellCount/);
+  assert.match(source, /completeSourceCoverage/);
+  assert.match(source, /completeTargetCoverage/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
