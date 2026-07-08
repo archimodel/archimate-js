@@ -1,0 +1,24 @@
+[
+  {
+    "page": "viewer",
+    "status": "ready",
+    "svgCount": 2,
+    "shapeCount": 5,
+    "connectionCount": 4,
+    "paletteVisible": false,
+    "browserConsoleErrorCount": 0,
+    "errorMessages": [],
+    "screenshot": "D:\\github\\archimate-js\\.codex-runlogs\\viewer-demo.png"
+  },
+  {
+    "page": "editor",
+    "status": "ready",
+    "svgCount": 2,
+    "shapeCount": 5,
+    "connectionCount": 4,
+    "paletteVisible": true,
+    "browserConsoleErrorCount": 0,
+    "errorMessages": [],
+    "screenshot": "D:\\github\\archimate-js\\.codex-runlogs\\editor-demo.png"
+  }
+]

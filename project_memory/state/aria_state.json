@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 44,
-  "stage": "meff4_xsd_current_recheck",
+  "loop_id": 45,
+  "stage": "viewer_editor_demo_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,8 +9,8 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 32,
-    "touches_dependency_manifest": false
+    "diff_size": 262,
+    "touches_dependency_manifest": true
   },
   "ckogate": {
     "profile_id": "standard_pr",
@@ -57,7 +57,9 @@
       "archimate4_domain_aspect_labels",
       "physical_domain_migration_guard",
       "renderer_profile_pictoref_guard",
-      "meff4_xsd_current_recheck"
+      "meff4_xsd_current_recheck",
+      "viewer_editor_demo",
+      "archimate4_aspect_border_metadata"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -106,12 +108,15 @@
       "check_archimate4_domain_aspect_labels",
       "check_physical_domain_migration_guard",
       "check_renderer_profile_pictoref_guard",
-      "check_meff4_xsd_current_recheck"
+      "check_meff4_xsd_current_recheck",
+      "check_viewer_editor_demo_smoke",
+      "check_demo_build_reproducible",
+      "check_archimate4_aspect_border_metadata"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-332-meff4-xsd-current-recheck-git-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-meff4-xsd-current-recheck-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-348-demo-final-puppeteer-smoke.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-viewer-editor-demo-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -160,10 +165,12 @@
     "ArchiMate 4 metadata uses the C260-derived labels Implementation and Migration, Active Structure, and Passive Structure; ArchiMate 3.x compatibility metadata keeps the older local labels.",
     "ArchiMate 3.x Physical concepts DistributionNetwork, Equipment, Facility, and Material migrate as same-named ArchiMate 4 Technology-domain concepts while retaining Physical as original-domain metadata.",
     "ArchimateRenderer now resolves pictograms through the active language profile so ArchiMate 4 spelling-corrected pictoRef values and implementation-defined specialized concepts do not rely on legacy ModelUtil fallback metadata.",
-    "The public The Open Group XSD directory rechecked on 2026-07-08 still lists only ArchiMate 3.1 XSD links, so MEFF 4.0 XML details remain source-dependent."
+    "The public The Open Group XSD directory rechecked on 2026-07-08 still lists only ArchiMate 3.1 XSD links, so MEFF 4.0 XML details remain source-dependent.",
+    "Viewer and Editor demos are source-controlled under demo/ and require npm run demo:build to generate ignored demo/dist bundles.",
+    "ArchiMate 4 C260 aspect labels Active Structure, Passive Structure, Composite, and Motivation require renderer border metadata to avoid invalid SVG rx/ry values."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T19:30:52+09:00"
+    "updated_at": "2026-07-08T19:44:49+09:00"
   }
 }

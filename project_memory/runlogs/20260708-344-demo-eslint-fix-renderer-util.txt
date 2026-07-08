@@ -1,0 +1,5 @@
+
+D:\github\archimate-js\lib\draw\ArchimateRendererUtil.js
+  10:10  error  'getViewElement' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)

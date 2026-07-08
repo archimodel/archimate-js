@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>archimate-js Viewer Demo</title>
+    <link rel="stylesheet" href="../node_modules/diagram-js/assets/diagram-js.css">
+    <link rel="stylesheet" href="../archimate-font/lib/css/archimate-font.css">
+    <link rel="stylesheet" href="../assets/palette-icons.css">
+    <link rel="stylesheet" href="./demo.css">
+  </head>
+  <body>
+    <div class="demo-shell">
+      <header class="demo-topbar">
+        <div class="demo-title">archimate-js Viewer Demo</div>
+        <nav class="demo-nav" aria-label="Demo navigation">
+          <a href="./viewer.html" aria-current="page">Viewer</a>
+          <a href="./editor.html">Editor</a>
+          <a href="../archimate-font/lib/demo.html">Font</a>
+        </nav>
+        <div id="status" class="demo-status">loading</div>
+      </header>
+      <main class="demo-main">
+        <aside class="demo-side">
+          <h2>Sample</h2>
+          <dl>
+            <dt>Mode</dt>
+            <dd>Viewer</dd>
+            <dt>Version</dt>
+            <dd>ArchiMate 4.0</dd>
+            <dt>Profile</dt>
+            <dd>Standard</dd>
+            <dt>Canvas</dt>
+            <dd>Read-only</dd>
+          </dl>
+        </aside>
+        <section class="demo-canvas" aria-label="ArchiMate viewer canvas">
+          <div id="canvas"></div>
+        </section>
+      </main>
+    </div>
+    <script src="./dist/viewer.bundle.js"></script>
+  </body>
+</html>

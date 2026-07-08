@@ -1,0 +1,41 @@
+
+D:\github\archimate-js\lib\draw\ArchimateRendererUtil.js
+   10:10  error  'getViewElement' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+   13:55  error  Trailing spaces not allowed                                                       no-trailing-spaces
+   14:33  error  Trailing spaces not allowed                                                       no-trailing-spaces
+   19:37  error  A space is required after '{'                                                     object-curly-spacing
+   19:76  error  A space is required before '}'                                                    object-curly-spacing
+   20:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   20:26  error  A space is required after '{'                                                     object-curly-spacing
+   20:65  error  A space is required before '}'                                                    object-curly-spacing
+   21:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   21:29  error  A space is required after '{'                                                     object-curly-spacing
+   21:68  error  A space is required before '}'                                                    object-curly-spacing
+   22:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   22:28  error  A space is required after '{'                                                     object-curly-spacing
+   22:67  error  A space is required before '}'                                                    object-curly-spacing
+   23:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   23:26  error  A space is required after '{'                                                     object-curly-spacing
+   23:65  error  A space is required before '}'                                                    object-curly-spacing
+   24:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   24:25  error  A space is required after '{'                                                     object-curly-spacing
+   24:64  error  A space is required before '}'                                                    object-curly-spacing
+   25:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   25:28  error  A space is required after '{'                                                     object-curly-spacing
+   25:67  error  A space is required before '}'                                                    object-curly-spacing
+   35:3   error  Missing semicolon                                                                 semi
+   38:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   50:32  error  A space is required after '{'                                                     object-curly-spacing
+   50:71  error  A space is required before '}'                                                    object-curly-spacing
+   51:34  error  A space is required after '{'                                                     object-curly-spacing
+   51:66  error  A space is required before '}'                                                    object-curly-spacing
+   52:27  error  A space is required after '{'                                                     object-curly-spacing
+   52:60  error  A space is required before '}'                                                    object-curly-spacing
+   55:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   56:1   error  Expected indentation of 6 spaces but found 2                                      indent
+   84:49  error  Trailing spaces not allowed                                                       no-trailing-spaces
+   94:49  error  Trailing spaces not allowed                                                       no-trailing-spaces
+  104:49  error  Trailing spaces not allowed                                                       no-trailing-spaces
+
+✖ 36 problems (36 errors, 0 warnings)
+  35 errors and 0 warnings potentially fixable with the `--fix` option.

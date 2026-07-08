@@ -1,0 +1,20 @@
+[
+  {
+    "page": "viewer",
+    "status": "ready",
+    "shapeCount": 5,
+    "connectionCount": 4,
+    "paletteVisible": false,
+    "errorMessages": [],
+    "screenshot": "D:\\github\\archimate-js\\.codex-runlogs\\viewer-demo-final.png"
+  },
+  {
+    "page": "editor",
+    "status": "ready",
+    "shapeCount": 5,
+    "connectionCount": 4,
+    "paletteVisible": true,
+    "errorMessages": [],
+    "screenshot": "D:\\github\\archimate-js\\.codex-runlogs\\editor-demo-final.png"
+  }
+]

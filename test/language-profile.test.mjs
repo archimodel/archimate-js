@@ -60,6 +60,7 @@ test('archimate 4 profile exposes Common Domain', async () => {
 test('archimate 4 profile matches the C260 element catalog', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const officialCatalog = await readJson('./fixtures/archimate4-c260-element-catalog.json');
+  const rendererUtil = await readFile(new URL('../lib/draw/ArchimateRendererUtil.js', import.meta.url), 'utf8');
 
   assert.equal(officialCatalog.elements.length, 42);
   assert.equal(profile.elements.length, 42);
@@ -75,6 +76,13 @@ test('archimate 4 profile matches the C260 element catalog', async () => {
     Array.from(new Set(profile.elements.map((element) => element.aspect))).sort(),
     officialCatalog.aspects.slice().sort()
   );
+  for (const aspect of officialCatalog.aspects) {
+    if (aspect === 'Behavior') {
+      assert.match(rendererUtil, /ASPECT_BEHAVIOR/);
+    } else {
+      assert.equal(rendererUtil.includes(`'${aspect}'`), true, `${aspect} must have renderer border metadata`);
+    }
+  }
   assert.equal(Object.keys(officialCatalog.displayNames).length, officialCatalog.elements.length);
 
   for (const [ type, classification ] of Object.entries(officialCatalog.classifications)) {

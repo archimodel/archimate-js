@@ -472,3 +472,15 @@
 - Verification: `npm run test:language` passed with 79 tests in `project_memory/runlogs/20260708-331-meff4-xsd-current-recheck-npm-test-language.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-332-meff4-xsd-current-recheck-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-meff4-xsd-current-recheck-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 45
+
+- Goal: provide browser-visible `Viewer` and `Editor` sample demo pages instead of only the font demo.
+- Observation: `project_memory/runlogs/20260708-334-demo-build.txt` showed the repo had `webpack` but not `webpack-cli`, so the demo build script could not run reproducibly until `webpack-cli` was added.
+- Implemented: added `demo/viewer.html`, `demo/editor.html`, `demo/demo.css`, `demo/src/*.js`, and `demo/webpack.config.cjs`; added `npm run demo:build`.
+- Implemented: Viewer demo instantiates `Viewer`; Editor demo instantiates `Modeler`, shows the palette, and exposes Reset Sample / New Model actions.
+- Implemented: sample canvas places 5 ArchiMate 4 concepts and 4 relationships, including an `AndJunction` and a Technology-domain `Equipment` concept.
+- Rendering fix: Puppeteer found SVG `rx` / `ry` warnings for C260 aspect labels; `lib/draw/ArchimateRendererUtil.js` now maps `Active Structure`, `Passive Structure`, `Composite`, and `Motivation` to border metadata, and `test/language-profile.test.mjs` guards that ArchiMate 4 catalog aspects have renderer metadata.
+- Verification: final build passed in `project_memory/runlogs/20260708-347-demo-final-build.txt`; `npm run test:language` passed with 79 tests in `project_memory/runlogs/20260708-340-demo-language-tests-after-test-fix.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-345-demo-eslint-changed-js-after-fix.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-346-demo-git-diff-check-after-eslint-fix.txt`; final Puppeteer smoke passed in `project_memory/runlogs/20260708-348-demo-final-puppeteer-smoke.txt`.
+- Audit: `project_memory/audit/reports/20260708-viewer-editor-demo-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

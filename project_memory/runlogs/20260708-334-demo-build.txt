@@ -1,0 +1,9 @@
+
+> archimate-js@0.0.4 demo:build
+> webpack --config demo/webpack.config.cjs
+
+CLI for webpack must be installed.
+  webpack-cli (https://github.com/webpack/webpack-cli)
+
+We will use "npm" to install the CLI via "npm install -D webpack-cli".
+Do you want to install 'webpack-cli' (yes/no):
