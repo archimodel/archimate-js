@@ -1,0 +1,9 @@
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+Pages: 207
+Metadata /Author: The Open Group
+Metadata /CreationDate: D:20260403101104+02'00'
+Metadata /ModDate: D:20260429150241+02'00'
+Metadata /Title: ArchiMate 4 Specification
+Document number observed in PDF front matter: C260
+Published by The Open Group, April 2026
+Full extracted PDF text was used as a temporary local analysis artifact and removed before commit.

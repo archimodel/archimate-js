@@ -1,0 +1,9 @@
+ArchiMate 4 source fact log
+PDF: C:\Users\syska\Downloads\978940181474E.pdf
+Title: ArchiMate 4 Specification
+Author: The Open Group
+Document: C260, April 2026
+Pages: 207
+Derived spec: docs/archimate4/official-specification.md
+Key implementation facts: official element count is 42; interfaces remain domain-specific; generic Interface is not an ArchiMate 4 element; Junction is a single connector concept in C260; multiplicity is allowed on relationship ends except junction ends.
+Transcript corroborates: domains terminology, 60 to 42 simplification, behavior/role/collaboration generalization, multiplicity as the main new feature.

@@ -5,14 +5,21 @@
 - ArchiMate 4 Specification, The Open Group, Document C260, April 2026.
 - The Motivation for Changes in the ArchiMate 4 Specification, The Open Group White Paper W262, April 2026.
 - The Open Group ArchiMate Model Exchange File Format page and any ArchiMate 4 XSD available under `https://www.opengroup.org/xsd/archimate/`.
+- ArchiMate 4 launch transcript supplied by the user.
 
 ## Source Access Decision
 
-- C260 and W262 are not present in this workspace.
+- C260 is now present locally as `C:\Users\syska\Downloads\978940181474E.pdf` and was reviewed on
+  2026-07-08.
+- The supplied launch transcript is present locally at
+  `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
+- C260 is a licensed copyrighted publication; this repository records a derived implementation
+  specification and source trace, not copied normative prose or verbatim relationship tables.
+- W262 is still not present in this workspace.
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
-- Because the normative C260 relationship matrix and any ArchiMate 4 XSD were not available locally, this implementation embeds a compatibility-derived ArchiMate 4 fallback and documents XML/relationship conformance as experimental until the official source package is supplied.
-- If redistribution is not allowed or a more exact official matrix is required, `lib/metamodel/languages/archimate4-relationships.js` is the replacement point for a user-supplied official relationship profile.
+- Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.
+- Because redistribution rights for Appendix B relationship tables are not confirmed, `lib/metamodel/languages/archimate4-relationships.js` remains the replacement point for a user-supplied official relationship profile or derived non-verbatim implementation data.
 
 ## Current Public Release Notes Captured
 
@@ -24,6 +31,14 @@
 - Path is in the Common Domain.
 - Relationship multiplicity is added on relationship ends, except where connected to junctions.
 - Migration can preserve old ArchiMate 3.x meaning through specialization profiles.
+
+## C260-Derived Implementation Facts
+
+- The official ArchiMate 4 language element catalog contains 42 elements.
+- There is no generic `Interface` element in the ArchiMate 4 element catalog.
+- `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` remain domain-specific elements.
+- ArchiMate 4 C260 describes `Junction` as a relationship connector concept; the MEFF 4.0 exchange representation is still pending XSD confirmation.
+- See `docs/archimate4/official-specification.md` for the derived implementation specification and gap list.
 
 ## XML Exchange Decision
 
