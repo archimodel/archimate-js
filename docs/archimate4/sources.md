@@ -76,6 +76,16 @@
 - Multiplicity editing, persistence, import hydration, and rendering now call that guard before keeping
   or displaying source/target multiplicity values.
 
+## Junction Relationship Type Guard
+
+- C260 requires relationships joined through a junction to use the same relationship type.
+- `lib/util/JunctionUtil.js` now also derives junction relationship type candidates from existing
+  incoming/outgoing junction connections.
+- Popup relationship choices and reconnect validation reject a relationship type that conflicts with
+  the existing type attached to the junction.
+- Existing diagram connections use `relationshipRef.type` before generic diagram connection type values,
+  so imported connections are evaluated by their actual ArchiMate relationship type.
+
 ## Multiplicity Notation Guard
 
 - C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite

@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
   canApplyRelationshipMultiplicity,
+  getJunctionRelationshipTypeCandidates,
+  isJunctionRelationshipTypeAllowed,
   isRelationshipConnectedToJunction
 } from '../lib/util/JunctionUtil.js';
 import {
@@ -104,6 +106,60 @@ test('junction-connected relationships cannot carry multiplicity', () => {
   assert.equal(isRelationshipConnectedToJunction(importedJunctionConnection), true);
   assert.equal(canApplyRelationshipMultiplicity(directJunctionConnection), false);
   assert.equal(canApplyRelationshipMultiplicity(importedJunctionConnection), false);
+});
+
+test('junction relationship candidates follow existing relationship type', () => {
+  const junction = {
+    type: 'AndJunction',
+    incoming: [
+      { type: 'Serving' }
+    ],
+    outgoing: []
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    { type: 'BusinessActor' },
+    junction
+  ), [ 'Serving' ]);
+  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Serving'), true);
+  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Flow'), false);
+});
+
+test('junction relationship candidates prefer relationshipRef type over generic connection type', () => {
+  const junction = {
+    type: 'AndJunction',
+    incoming: [
+      {
+        type: 'Relationship',
+        businessObject: {
+          relationshipRef: { type: 'Assignment' }
+        }
+      }
+    ],
+    outgoing: []
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    { type: 'BusinessActor' },
+    junction
+  ), [ 'Assignment' ]);
+});
+
+test('junction relationship candidates reject mixed existing relationship types', () => {
+  const junction = {
+    type: 'OrJunction',
+    incoming: [
+      { type: 'Serving' },
+      { type: 'Flow' }
+    ],
+    outgoing: []
+  };
+
+  assert.deepEqual(getJunctionRelationshipTypeCandidates(
+    { type: 'BusinessActor' },
+    junction
+  ), []);
+  assert.equal(isJunctionRelationshipTypeAllowed({ type: 'BusinessActor' }, junction, 'Serving'), false);
 });
 
 test('multiplicity is suppressed across import, replacement, and rendering for junction ends', async () => {

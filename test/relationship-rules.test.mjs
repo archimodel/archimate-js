@@ -46,6 +46,8 @@ test('connection rules evaluate relationships through the active language profil
   assert.match(source, /this\._languageProfile = languageProfile/);
   assert.match(source, /var profile = this\._languageProfile && this\._languageProfile\.get\(\)/);
   assert.match(source, /canConnect\(source, target, connection, profile\)/);
+  assert.match(source, /isRelationshipConnectedToJunction\(\{ source: source, target: target \}\)/);
+  assert.match(source, /isJunctionRelationshipTypeAllowed\(source, target, connection\.type, connection\)/);
   assert.match(source, /isRelationshipAllowed\(source\.type, target\.type, connection\.type, profile\)/);
 });
 

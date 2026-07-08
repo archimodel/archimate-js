@@ -237,6 +237,10 @@ Implemented relationship rule wiring:
   language profile.
 - When an external ArchiMate 4 relationship profile is loaded, `connection.reconnect` checks use that
   profile instead of the legacy ArchiMate 3.x relationship map.
+- Popup relationship choices and reconnect validation now restrict junction-connected relationships to
+  the same relationship type when the junction already has an established relationship type.
+- If a junction already has conflicting relationship types, no further junction relationship type is
+  offered until the model is corrected.
 
 Implemented multiplicity guard:
 

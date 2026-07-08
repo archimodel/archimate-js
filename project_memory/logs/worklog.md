@@ -103,3 +103,14 @@
 - Note: `project_memory/runlogs/20260708-068-archimate4-junction-connectors-final-npm-test-language.txt` is a failed intermediary attempt to import `PaletteProvider` directly in Node tests; the attempt was reverted because the existing source uses bundler-style extensionless imports.
 - Final verification: `npm run test:language` passed with 34 tests in `project_memory/runlogs/20260708-069-archimate4-junction-connectors-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-070-archimate4-junction-connectors-final-eslint-changed-js.txt`; final `git diff --check` passed in `project_memory/runlogs/20260708-071-archimate4-junction-connectors-final-git-diff-check.txt`.
 - Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.
+
+## 2026-07-08 loop 11
+
+- Goal: implement the C260-derived rule that relationships joined through a junction must use the same relationship type.
+- Source observation: PDF keyword scan recorded relevant C260 pages for junction and migration terms in `project_memory/runlogs/20260708-072-archimate4-pdf-keyword-pages.txt` without committing normative prose.
+- Implemented: `JunctionUtil` now derives junction relationship type candidates from existing incoming/outgoing relationship connections.
+- Implemented: popup relationship choices and reconnect validation now reject relationship types that conflict with the type already attached to a junction.
+- Implemented: generic diagram connection type values are ignored in favor of `relationshipRef.type` when evaluating imported/existing relationship connections.
+- Tests: added direct helper coverage for single-type, generic-connection, and mixed-type junction cases, plus source guards for reconnect validation.
+- Verification: `npm run test:language` passed with 37 tests in `project_memory/runlogs/20260708-075-junction-relationship-type-guard-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-076-junction-relationship-type-guard-final-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-077-junction-relationship-type-guard-git-diff-check.txt`.
+- Remaining open issues: direct endpoint validity through a junction still needs Appendix B relationship data or an external profile; MEFF 4.0 XSD details remain external-source dependent.
