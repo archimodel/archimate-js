@@ -832,3 +832,18 @@
 - Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-218-source-coverage-status-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-219-source-coverage-status-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-source-coverage-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 69
+
+- Goal: complete the implementation-defined C260 profile attribute path by exposing host-callable value normalization and validation for typed profile attributes.
+- Source check: `project_memory/runlogs/20260709-221-c260-profile-attribute-value-scan.txt` records non-verbatim Chapter 14 signals for typed profile attributes and the observed basic type set.
+- Red test: `project_memory/runlogs/20260709-222-profile-attribute-value-red-test.txt` failed because `ProfileAttributeUtil` and `getProfileAttributesForConcept()` were missing.
+- Implemented: `lib/util/ProfileAttributeUtil.js` now validates and normalizes String, Integer, Real, Boolean, Currency, Date, URL, Time, and Structure values for profile attributes.
+- Implemented: `getProfileAttributesForConcept()` returns profile attributes for a concept or relationship and its specialization lineage; the package entrypoint exports this helper plus `normalizeProfileAttributeValue()` and `isProfileAttributeValueValid()`.
+- Audit registry: scoped ESLint now includes `lib/util/ProfileAttributeUtil.js`.
+- Docs: README and `docs/archimate4` now document profile attribute value normalization and validation as implementation-supported host tooling.
+- Verification: `npm run test:language` passed with 121 tests in `project_memory/runlogs/20260709-223-profile-attribute-value-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-224-profile-attribute-value-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-225-profile-attribute-value-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-226-profile-attribute-value-git-diff-check.txt`; JSON check passed in `project_memory/runlogs/20260709-227-profile-attribute-value-json-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-228-profile-attribute-value-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-229-profile-attribute-value-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-230-profile-attribute-value-final-git-diff-check.txt` and again after record updates in `project_memory/runlogs/20260709-231-profile-attribute-value-post-record-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-value-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

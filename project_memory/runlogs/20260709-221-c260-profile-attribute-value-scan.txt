@@ -1,0 +1,13 @@
+Source: local licensed C260 PDF
+Purpose: confirm non-verbatim implementation facts for profile attribute value validation
+Derived facts only; no normative prose or table text copied.
+Facts:
+- Chapter 14 contains an Adding Attributes section for language customization.
+- Profile attributes are coupled to model concepts through profiles.
+- Attribute definitions carry a type, so host tooling needs a value validator for the implementation-supported type set.
+- Observed basic type signals include String, Integer, Real, Boolean, Currency, Date, URL, Time, and Structure.
+Page signals:
+- PDF page 10: matched Adding Attributes, Structure
+- PDF page 132: matched Adding Attributes, Structure, profiles
+- PDF page 133: matched Adding Attributes, Boolean, Currency, Date, Integer, Real, String, Structure, Time, URL, profiles
+- PDF page 135: matched Structure, assigned to, profiles

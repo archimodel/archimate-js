@@ -79,6 +79,9 @@ Supported customization data:
 - Additional concept attributes retained on the active language profile for host tooling. Profile
   attributes must declare `concept`, `name`, and `type`; the concept must resolve to an active
   element, connector, or relationship in the customized profile.
+  Host tooling can retrieve applicable attributes through `getProfileAttributesForConcept()` and can
+  normalize or validate implementation-supported typed values through `normalizeProfileAttributeValue()`
+  and `isProfileAttributeValueValid()`.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
 - Specialized relationship metadata. New custom relationship objects may declare `specializes` and

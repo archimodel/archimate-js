@@ -392,19 +392,24 @@ test('language profile customization supports C260 specialization profiles', asy
 
 test('language profile customization validates C260 profile attribute definitions', async () => {
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
 
   assert.match(languageIndex, /PROFILE_ATTRIBUTE_TYPES/);
   assert.match(languageIndex, /validateProfileAttribute\(attribute, profile\)/);
+  assert.match(languageIndex, /export function getProfileAttributesForConcept/);
   assert.match(languageIndex, /Custom ArchiMate profile attributes require concept/);
   assert.match(languageIndex, /Custom ArchiMate profile attributes require name/);
   assert.match(languageIndex, /Unsupported ArchiMate profile attribute concept/);
   assert.match(languageIndex, /Unsupported ArchiMate profile attribute type/);
   assert.match(languageIndex, /hasProfileConcept\(attribute\.concept, profile\)/);
   assert.match(languageIndex, /hasProfileRelationship\(attribute\.concept, profile\)/);
+  assert.match(entrypoint, /normalizeProfileAttributeValue/);
+  assert.match(entrypoint, /isProfileAttributeValueValid/);
   assert.match(readme, /Profile attributes require a supported ArchiMate concept and typed value/);
   assert.match(sources, /Profile attributes are validated as C260 typed attributes/);
+  assert.match(sources, /Profile attribute values can be normalized and validated/);
 });
 
 test('language profile customization supports relationship specializations', async () => {
