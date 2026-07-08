@@ -143,6 +143,11 @@
   `project_memory/runlogs/20260709-327-c260-appendix-a-grouping-visual-check.txt`. The derived
   renderer requirement is limited to a dashed, unfilled ArchiMate 4 `Grouping` outline; exact Appendix
   A vector artwork remains source/rights dependent.
+- A local C260 Appendix A rendered visual check for `Grouping` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-568-c260-appendix-a-grouping-pictogram-render.txt` and
+  `project_memory/runlogs/20260709-569-c260-appendix-a-grouping-pictogram-visual-check.txt`. The
+  derived renderer requirement is limited to replacing the local `PICTO_GROUPING` generic object
+  alias with a locally-authored dashed-rectangle line path.
 - A local C260 Appendix A page scan and rendered visual check for junction notation are recorded in
   `project_memory/runlogs/20260709-338-c260-appendix-a-junction-page-scan.txt` and
   `project_memory/runlogs/20260709-340-c260-appendix-a-junction-visual-check.txt`. The derived

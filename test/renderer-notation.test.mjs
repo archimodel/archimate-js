@@ -14,6 +14,14 @@ test('renderer draws ArchiMate 4 Grouping as a dashed unfilled outline', async (
   assert.match(source, /fill: getShapePictogramFill\(shape, elementType\)/);
 });
 
+test('renderer uses a dedicated ArchiMate 4 Grouping dashed-rectangle pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_GROUPING': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_GROUPING': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 2 4 l 4 0 m 2 0 l 4 0/);
+});
+
 test('renderer draws ArchiMate 4 junction connectors as dot and ring markers', async () => {
   const source = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
 

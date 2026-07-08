@@ -1,0 +1,29 @@
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (7.6138ms)
+✔ renderer uses a dedicated ArchiMate 4 Grouping dashed-rectangle pictogram path (1.3536ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (0.9665ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (1.3759ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (1.2013ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (1.3337ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (1.3291ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (0.9197ms)
+✔ renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path (1.0464ms)
+✔ renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path (1.2072ms)
+✔ renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram path (1.1177ms)
+✔ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (0.8508ms)
+✔ renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path (0.8943ms)
+✔ renderer uses a dedicated ArchiMate 4 Driver wheel pictogram path (0.7344ms)
+✔ renderer uses a dedicated ArchiMate 4 Assessment magnifying-glass pictogram path (0.9568ms)
+✔ renderer uses a dedicated ArchiMate 4 Goal target pictogram path (1.9384ms)
+✔ renderer uses a dedicated ArchiMate 4 Outcome target-arrow pictogram path (1.0382ms)
+✔ renderer uses a dedicated ArchiMate 4 Principle exclamation pictogram path (1.1148ms)
+✔ renderer uses a dedicated ArchiMate 4 Requirement parallelogram pictogram path (2.0421ms)
+✔ renderer uses a dedicated ArchiMate 4 Value oval pictogram path (1.3247ms)
+✔ renderer uses a dedicated ArchiMate 4 Meaning thought-cloud pictogram path (0.9022ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.4752
