@@ -1,0 +1,57 @@
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (9.0334ms)
+✔ archimate 4 profile removes retired 3.x concepts (0.8592ms)
+✔ archimate 4 profile exposes Common Domain (0.8389ms)
+✔ archimate 4 profile matches the C260 element catalog (2.3926ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (0.7316ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (0.661ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (0.9698ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.3466ms)
+✔ archimate 4 palette exposes every standard element (1.404ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (5.0859ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (5.9098ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.9498ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.3777ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (1.3493ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (33.1068ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (2.0814ms)
+✔ active profile rejects concepts and relationships outside the selected version (2.049ms)
+✔ renderer uses active language profile pictogram refs (2.0947ms)
+✔ language profile customization supports C260 specialization profiles (2.3912ms)
+✔ language profile customization validates C260 profile attribute definitions (2.2203ms)
+✔ language profile customization supports relationship specializations (1.6217ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (3.2894ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.3705ms)
+✔ language profile customization supports viewpoint definitions (1.1766ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (3.44ms)
+✖ archimate 4 implementation status tracks dedicated local pictogram coverage (2.1824ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (2.2721ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (1.3718ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 27
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.0115
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:522:1
+✖ archimate 4 implementation status tracks dedicated local pictogram coverage (2.1824ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'dedicated-local-paths'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:527:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'dedicated-local-paths',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

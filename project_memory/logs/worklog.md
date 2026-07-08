@@ -1207,3 +1207,15 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-580-grouping-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-581-grouping-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-grouping-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 97
+
+- Goal: make ArchiMate 4 pictogram coverage machine-auditable after replacing all profile generic-object aliases.
+- Red test: `project_memory/runlogs/20260709-582-pictogram-coverage-status-red-test.txt` failed because `archimate4-profile.json` did not expose `profilePictogramCoverage`, `genericObjectAliasCount`, or legacy compatibility alias metadata.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now reports `profilePictogramCoverage: dedicated-local-paths`, `genericObjectAliasCount: 0`, and the two legacy misspelled compatibility aliases; `docs/archimate4` and README now describe this status boundary.
+- Tests/docs: `test/language-profile.test.mjs` now verifies that every non-`PICTO_OBJECT` ArchiMate 4 profile pictogram uses a dedicated `PathMap` entry and that no `PICTO_*` entry aliases to `PICTO_OBJECT`.
+- Verification: focused language-profile test passed with 28 tests in `project_memory/runlogs/20260709-583-pictogram-coverage-status-test.txt`; `npm run test:language` passed with 156 tests in `project_memory/runlogs/20260709-584-pictogram-coverage-status-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-585-pictogram-coverage-status-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-586-pictogram-coverage-status-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-587-pictogram-coverage-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-588-pictogram-coverage-status-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-589-pictogram-coverage-status-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-592-pictogram-coverage-status-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-593-pictogram-coverage-status-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-pictogram-coverage-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -452,8 +452,9 @@ In particular:
 - `AndJunction` and `OrJunction` must remain available as relationship connectors without being counted
   as ArchiMate 4 elements.
 - `getArchimate4ImplementationStatus()` must report the implemented catalog, active relationship
-  profile status, experimental exchange-format boundary, icon coverage boundary, and external blockers
-  so callers do not mistake compatibility fallback support for complete official conformance.
+  profile status, experimental exchange-format boundary, icon coverage boundary, generic object alias
+  count, and external blockers so callers do not mistake compatibility fallback support for complete
+  official conformance.
 
 The relationship rules remain a fallback:
 

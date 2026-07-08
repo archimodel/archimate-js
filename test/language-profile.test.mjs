@@ -519,6 +519,29 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
 });
 
+test('archimate 4 implementation status tracks dedicated local pictogram coverage', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+  const iconography = profile.conformance.iconography;
+
+  assert.equal(iconography.profilePictogramCoverage, 'dedicated-local-paths');
+  assert.equal(iconography.genericObjectAliasCount, 0);
+  assert.deepEqual(iconography.legacyCompatibilityAliases, [ 'PICTO_DELIVRABLE', 'PICTO_STAKHOLDER' ]);
+  assert.doesNotMatch(pathMap, /'PICTO_[A-Z_]+': 'PICTO_OBJECT'/);
+
+  for (const concept of profile.elements.concat(profile.connectors || [])) {
+    if (concept.pictoRef === 'PICTO_OBJECT') {
+      continue;
+    }
+
+    assert.match(
+      pathMap,
+      new RegExp("'" + concept.pictoRef + "': \\{"),
+      `${concept.type} must use a dedicated PathMap entry for ${concept.pictoRef}`
+    );
+  }
+});
+
 test('archimate 4 implementation status exposes source coverage boundaries', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

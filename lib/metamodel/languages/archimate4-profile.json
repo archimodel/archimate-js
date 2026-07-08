@@ -20,6 +20,9 @@
     },
     "iconography": {
       "status": "local-renderer-coverage",
+      "profilePictogramCoverage": "dedicated-local-paths",
+      "genericObjectAliasCount": 0,
+      "legacyCompatibilityAliases": [ "PICTO_DELIVRABLE", "PICTO_STAKHOLDER" ],
       "exactAppendixAVectorsConfirmed": false
     },
     "requirements": [

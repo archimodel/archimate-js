@@ -79,11 +79,15 @@
   `project_memory/runlogs/20260708-155-archimate4-pictoref-source-check.txt`.
 - `lib/draw/PathMap.js` now defines every `pictoRef` used by the ArchiMate 4 profile and relationship
   connector metadata.
-- Some ArchiMate 4 profile pictograms currently use explicit aliases to existing renderer paths rather
-  than embedded C260 vector artwork. This prevents silent fallback to a generic object path while
-  avoiding redistribution of standard artwork before the exact licensing/source decision is resolved.
+- No ArchiMate 4 profile pictogram is currently satisfied through a `PICTO_OBJECT` alias. Concepts
+  whose standard pictogram is the object shape may still reference the direct `PICTO_OBJECT` renderer
+  path, while other profile `pictoRef` values use locally-authored renderer paths.
 - `test/language-profile.test.mjs` verifies that every ArchiMate 4 profile concept has a renderer
-  `PathMap` entry.
+  `PathMap` entry and that non-`PICTO_OBJECT` profile pictograms are dedicated entries rather than
+  generic object aliases.
+- `getArchimate4ImplementationStatus()` exposes `profilePictogramCoverage`,
+  `genericObjectAliasCount`, and legacy compatibility aliases in the iconography status so callers can
+  distinguish local renderer coverage from exact Appendix A vector-artwork confirmation.
 - The ArchiMate 4 `Deliverable` profile entry uses the correctly spelled `PICTO_DELIVERABLE`
   reference. The older misspelled `PICTO_DELIVRABLE` key remains in `PathMap` only as a legacy
   compatibility alias for existing 3.x profile metadata.
