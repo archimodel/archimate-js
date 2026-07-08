@@ -1,0 +1,15 @@
+Error: Evaluation failed: TypeError: Cannot read properties of undefined (reading 'id')
+    at getExistingRelationships (http://127.0.0.1:4174/demo/dist/editor.bundle.js:22888:52)
+    at ConnectionMenuProvider._getExistingRelationships (http://127.0.0.1:4174/demo/dist/editor.bundle.js:12377:117)
+    at ConnectionMenuProvider.getEntries (http://127.0.0.1:4174/demo/dist/editor.bundle.js:12039:18)
+    at http://127.0.0.1:4174/demo/dist/editor.bundle.js:44051:66
+    at forEach (http://127.0.0.1:4174/demo/dist/editor.bundle.js:76438:16)
+    at PopupMenu._getEntries (http://127.0.0.1:4174/demo/dist/editor.bundle.js:44047:52)
+    at PopupMenu._getContext (http://127.0.0.1:4174/demo/dist/editor.bundle.js:43814:24)
+    at PopupMenu.isEmpty (http://127.0.0.1:4174/demo/dist/editor.bundle.js:43990:15)
+    at createSetConnection (http://127.0.0.1:4174/demo/dist/editor.bundle.js:3785:20)
+    at ContextPadProvider.getContextPadEntries (http://127.0.0.1:4174/demo/dist/editor.bundle.js:3921:5)
+    at ExecutionContext._evaluateInternal (D:\github\archimate-js\node_modules\puppeteer\lib\cjs\puppeteer\common\ExecutionContext.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async ExecutionContext.evaluate (D:\github\archimate-js\node_modules\puppeteer\lib\cjs\puppeteer\common\ExecutionContext.js:110:16)
+    at async [stdin]:10:18

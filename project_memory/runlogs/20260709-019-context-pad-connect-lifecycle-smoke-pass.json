@@ -1,0 +1,27 @@
+{
+  "title": "Drag to another element to create a relationship",
+  "source": {
+    "id": "id-eax3mdu30ovtdjxyghq5uawwc",
+    "name": "Customer Role",
+    "type": "Role"
+  },
+  "target": {
+    "id": "id-0fmyjp5bohyhsths0x4cehdut",
+    "name": "Experience App",
+    "type": "ApplicationComponent"
+  },
+  "beforeConnections": 6,
+  "afterConnections": 7,
+  "matchingConnections": [
+    {
+      "id": "id-cr4ixhre2y1i7jdkvz7v71by6",
+      "type": "Relationship",
+      "name": ""
+    }
+  ],
+  "contextPadActions": [
+    "dragstart"
+  ],
+  "popupOpen": true,
+  "pass": true
+}

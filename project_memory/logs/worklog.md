@@ -585,3 +585,23 @@
 - Known lint status: direct lint of `lib/features/context-pad/ContextPadProvider.js` still fails on pre-existing unused imports and formatting backlog, recorded in `project_memory/runlogs/20260708-444-palette-dedicated-icons-eslint-changed.txt`; repo-wide lint remains the known legacy failure, recorded in `project_memory/runlogs/20260708-452-palette-dedicated-icons-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-palette-dedicated-icons-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution remains unconfirmed, so these new SVGs are local visual cues rather than copied official standard artwork; official Appendix B relationship data and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 54
+
+- Goal: verify and fix whether the right-side context-pad relationship arrow works by dragging it to a target element and releasing.
+- Observation: source inspection confirmed the context-pad entries are drag actions (`dragstart: startConnect`) and no longer expose `click: startConnect`.
+- Reproduction: direct Puppeteer mouse movement did not reliably fire the HTML5 `dragstart` event from the diagram-js context pad, so the smoke test triggered the same context-pad `dragstart` entry and then exercised the diagram-js connection drag lifecycle.
+- Root cause 1: ArchiMate 4 active-profile validation rejected the internal diagram-js `Relationship` placeholder used while the user is choosing a final relationship type.
+- Root cause 2: empty demo views could lack `viewElements`, causing connection creation to fail before the popup could be shown.
+- Root cause 3: existing-relationship lookup assumed every source, target, and relationship endpoint was fully hydrated, which is not true during generic connection creation.
+- Implemented: `ElementFactory` allows the internal `Relationship` placeholder while continuing to reject unavailable standard relationship types through the active profile.
+- Implemented: `ConnectionUpdater` initializes missing view element collections before adding or checking a connection.
+- Implemented: `RelationshipUtil.getExistingRelationships` now ignores missing sources, targets, and incomplete endpoint refs instead of throwing.
+- Tests: `test/language-profile.test.mjs` now guards drag-only context-pad actions, internal relationship placeholder allowance, and view element initialization; `test/relationship-rules.test.mjs` guards incomplete relationship endpoint lookup.
+- Browser/lifecycle verification: `project_memory/runlogs/20260709-019-context-pad-connect-lifecycle-smoke-pass.json` confirmed `beforeConnections: 6`, `afterConnections: 7`, `contextPadActions: ["dragstart"]`, and `popupOpen: true` for `Customer Role` to `Experience App`.
+- Verification: `npm run demo:build` passed in `project_memory/runlogs/20260709-017-context-pad-drag-fix5-demo-build.txt`; `npm run test:language` passed with 93 tests in `project_memory/runlogs/20260709-022-context-pad-drag-final-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-023-context-pad-drag-final-eslint-registry-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-024-context-pad-drag-final-git-diff-check.txt`.
+- Post-record checks: `npm run test:language` passed again with 93 tests in `project_memory/runlogs/20260709-026-context-pad-drag-post-record-test-language.txt`; registry ESLint gate passed in `project_memory/runlogs/20260709-027-context-pad-drag-post-record-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-028-context-pad-drag-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-029-context-pad-drag-post-record-git-diff-check.txt`.
+- Final record checks: `git diff --check` passed in `project_memory/runlogs/20260709-030-context-pad-drag-final-final-git-diff-check.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-031-context-pad-drag-final-state-json-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-025-context-pad-drag-repo-lint-legacy.txt` with 4413 existing errors.
+- Audit: `project_memory/audit/reports/20260709-context-pad-drag-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, and MEFF 4.0 XSD remain external-source dependent.

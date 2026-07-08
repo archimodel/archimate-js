@@ -69,6 +69,17 @@ test('connection rules evaluate relationships through the active language profil
   assert.match(source, /isRelationshipAllowed\(source\.type, target\.type, connection\.type, profile\)/);
 });
 
+test('existing relationship lookup ignores incomplete relationship endpoints', async () => {
+  const source = await readFile(new URL('../lib/util/RelationshipUtil.js', import.meta.url), 'utf8');
+
+  assert.match(source, /element\.source && element\.target/);
+  assert.match(source, /if \(!source \|\| !target\) \{\n {4}return \[\];/);
+  assert.match(source, /source\.businessObject\.elementRef && source\.businessObject\.elementRef\.id/);
+  assert.match(source, /source\.businessObject\.relationshipRef && source\.businessObject\.relationshipRef\.id/);
+  assert.match(source, /target\.businessObject\.relationshipRef && target\.businessObject\.relationshipRef\.id/);
+  assert.match(source, /if \(!sourceRefId \|\| !targetRefId\) \{\n {4}return existingRelationships;/);
+});
+
 test('connection popup includes ArchiMate 4 relationship-concept aggregation helper', async () => {
   const source = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
 

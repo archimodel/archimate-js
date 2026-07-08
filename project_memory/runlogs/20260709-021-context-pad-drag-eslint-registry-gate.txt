@@ -1,0 +1,11 @@
+
+D:\github\archimate-js\test\language-profile.test.mjs
+  251:36  error  Spaces are hard to count. Use {10}  no-regex-spaces
+  252:36  error  Spaces are hard to count. Use {10}  no-regex-spaces
+
+D:\github\archimate-js\test\relationship-rules.test.mjs
+  76:24  error  Spaces are hard to count. Use {4}  no-regex-spaces
+  80:24  error  Spaces are hard to count. Use {4}  no-regex-spaces
+
+✖ 4 problems (4 errors, 0 warnings)
+  4 errors and 0 warnings potentially fixable with the `--fix` option.

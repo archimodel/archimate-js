@@ -248,8 +248,11 @@ test('context pad explains that relationship creation starts by dragging to a ta
 
   assert.match(contextPadProvider, /title: translate\('Drag to another element to create a relationship'\)/);
   assert.match(contextPadProvider, /title: translate\('Drag to another element to connect the note'\)/);
+  assert.match(contextPadProvider, /'connect-element': \{[\s\S]*?action: \{\n {10}dragstart: startConnect,\n {8}\}/);
+  assert.match(contextPadProvider, /'connect-note': \{[\s\S]*?action: \{\n {10}dragstart: startConnect,\n {8}\}/);
   assert.doesNotMatch(contextPadProvider, /title: translate\('Create Relation'\)/);
   assert.doesNotMatch(contextPadProvider, /title: translate\('Connect Note'\)/);
+  assert.doesNotMatch(contextPadProvider, /click: startConnect/);
 });
 
 test('demo sample switches concepts by selected ArchiMate profile', async () => {
@@ -343,12 +346,16 @@ test('archimate 4 palette keeps Fontello glyph classes out of diagram-js palette
 test('active profile rejects concepts and relationships outside the selected version', async () => {
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
   const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const connectionUpdater = await readFile(new URL('../lib/features/modeling/ConnectionUpdater.js', import.meta.url), 'utf8');
   const importer = await readFile(new URL('../lib/import/Importer.js', import.meta.url), 'utf8');
 
   assert.match(languageIndex, /export function hasProfileConcept/);
   assert.match(languageIndex, /export function hasProfileRelationship/);
   assert.match(elementFactory, /assertConceptAvailable\(attrs\.type, profile, translate\)/);
   assert.match(elementFactory, /assertRelationshipAvailable\(type, profile, translate\)/);
+  assert.match(elementFactory, /type === CONNECTION_RELATIONSHIP/);
+  assert.match(connectionUpdater, /function getViewElements\(view\)/);
+  assert.match(connectionUpdater, /view\.viewElements = \[\]/);
   assert.match(elementFactory, /ArchiMate concept \{type\} is not available in ArchiMate \{version\}/);
   assert.match(elementFactory, /ArchiMate relationship \{type\} is not available in ArchiMate \{version\}/);
   assert.match(importer, /throw createImportError\(e, viewElement\)/);

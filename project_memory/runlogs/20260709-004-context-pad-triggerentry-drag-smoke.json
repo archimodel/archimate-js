@@ -1,0 +1,101 @@
+{
+  "pass": false,
+  "results": [
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Experience App",
+        "sourceId": "id-3dasoxty1y3k6gtrch5wjvtzl",
+        "targetId": "id-ehurq6upnx9qre68g3nmgnmav",
+        "beforeConnections": 6,
+        "start": {
+          "x": 603,
+          "y": 173
+        },
+        "targetCenter": {
+          "x": 1075,
+          "y": 182
+        },
+        "dragActive": false
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false,
+        "dragActive": false
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Shared Context",
+        "sourceId": "id-6u6bjj00dy094wyebeu8ztbfc",
+        "targetId": "id-cpmq53omkr9p5qrame6r92t8v",
+        "beforeConnections": 6,
+        "start": {
+          "x": 603,
+          "y": 173
+        },
+        "targetCenter": {
+          "x": 775,
+          "y": 350
+        },
+        "dragActive": false
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false,
+        "dragActive": true
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Edge Equipment",
+        "sourceId": "id-8edxvyhp2wfjmtigrwn5pabq8",
+        "targetId": "id-0xk1qlv87rz3z51marz7qk2be",
+        "beforeConnections": 6,
+        "start": {
+          "x": 603,
+          "y": 173
+        },
+        "targetCenter": {
+          "x": 1075,
+          "y": 350
+        },
+        "dragActive": false
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false,
+        "dragActive": true
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Experience Path",
+        "sourceId": "id-dfae7sobi6gz1vznuhytuzvge",
+        "targetId": "id-5kmyohtlcr6j0obnwp6o6cwe6",
+        "beforeConnections": 6,
+        "start": {
+          "x": 603,
+          "y": 173
+        },
+        "targetCenter": {
+          "x": 505,
+          "y": 425
+        },
+        "dragActive": false
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false,
+        "dragActive": true
+      }
+    }
+  ]
+}

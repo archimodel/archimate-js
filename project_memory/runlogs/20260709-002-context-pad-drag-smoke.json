@@ -1,0 +1,43 @@
+{
+  "pass": false,
+  "setup": {
+    "sourceId": "id-0305stphehjl9bprk08dsu4i4",
+    "targetId": "id-4hdhblawsy6cnwgbfsrj79su6",
+    "beforeConnections": 6,
+    "sourceRect": {
+      "left": 425,
+      "top": 139,
+      "width": 160,
+      "height": 86
+    },
+    "targetRect": {
+      "left": 685,
+      "top": 139,
+      "width": 180,
+      "height": 86
+    }
+  },
+  "drag": {
+    "title": "Drag to another element to create a relationship",
+    "start": {
+      "x": 603,
+      "y": 173
+    }
+  },
+  "targetCenter": {
+    "x": 775,
+    "y": 182
+  },
+  "after": {
+    "afterConnections": 6,
+    "newConnections": [
+      {
+        "id": "id-e6nhfsb0atflseqrafnhxd1kt",
+        "type": "Serving",
+        "name": "Serving"
+      }
+    ],
+    "popupOpen": false,
+    "contextPadStillOpen": false
+  }
+}

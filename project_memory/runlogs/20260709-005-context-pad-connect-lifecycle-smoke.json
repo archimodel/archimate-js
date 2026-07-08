@@ -1,0 +1,15 @@
+Error: Evaluation failed: Error: ArchiMate relationship Relationship is not available in ArchiMate 4.0
+    at assertRelationshipAvailable (http://127.0.0.1:4174/demo/dist/editor.bundle.js:7028:9)
+    at ElementFactory.createConnection (http://127.0.0.1:4174/demo/dist/editor.bundle.js:6747:3)
+    at ConnectionPreview.getConnection (http://127.0.0.1:4174/demo/dist/editor.bundle.js:32725:31)
+    at http://127.0.0.1:4174/demo/dist/editor.bundle.js:32614:19
+    at http://127.0.0.1:4174/demo/dist/editor.bundle.js:32788:44
+    at ConnectionPreview.drawPreview (http://127.0.0.1:4174/demo/dist/editor.bundle.js:32619:18)
+    at http://127.0.0.1:4174/demo/dist/editor.bundle.js:32410:23
+    at invokeFunction (http://127.0.0.1:4174/demo/dist/editor.bundle.js:27860:13)
+    at EventBus._invokeListener (http://127.0.0.1:4174/demo/dist/editor.bundle.js:27703:19)
+    at EventBus._invokeListeners (http://127.0.0.1:4174/demo/dist/editor.bundle.js:27677:24)
+    at ExecutionContext._evaluateInternal (D:\github\archimate-js\node_modules\puppeteer\lib\cjs\puppeteer\common\ExecutionContext.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async ExecutionContext.evaluate (D:\github\archimate-js\node_modules\puppeteer\lib\cjs\puppeteer\common\ExecutionContext.js:110:16)
+    at async [stdin]:10:18

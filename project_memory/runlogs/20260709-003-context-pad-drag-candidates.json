@@ -1,0 +1,129 @@
+{
+  "pass": false,
+  "results": [
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Experience App",
+        "sourceId": "id-5ysuqxdv0q4xio0szq5xskjzf",
+        "targetId": "id-070f2fr33gagxk0pptjr9lxlw",
+        "beforeConnections": 6,
+        "targetRect": {
+          "left": 975,
+          "top": 139,
+          "width": 200,
+          "height": 86
+        }
+      },
+      "drag": {
+        "title": "Drag to another element to create a relationship",
+        "start": {
+          "x": 603,
+          "y": 173
+        }
+      },
+      "targetCenter": {
+        "x": 1075,
+        "y": 182
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Shared Context",
+        "sourceId": "id-5eawyhp8qbh45yvtvnzt7pcom",
+        "targetId": "id-740dgqbmyex5evkame48iz58t",
+        "beforeConnections": 6,
+        "targetRect": {
+          "left": 685,
+          "top": 307,
+          "width": 180,
+          "height": 86
+        }
+      },
+      "drag": {
+        "title": "Drag to another element to create a relationship",
+        "start": {
+          "x": 603,
+          "y": 173
+        }
+      },
+      "targetCenter": {
+        "x": 775,
+        "y": 350
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Edge Equipment",
+        "sourceId": "id-78chwzdwahmk101gdl69b41hs",
+        "targetId": "id-ee25pacj6rlxbqt6fypoyt6oq",
+        "beforeConnections": 6,
+        "targetRect": {
+          "left": 975,
+          "top": 307,
+          "width": 200,
+          "height": 86
+        }
+      },
+      "drag": {
+        "title": "Drag to another element to create a relationship",
+        "start": {
+          "x": 603,
+          "y": 173
+        }
+      },
+      "targetCenter": {
+        "x": 1075,
+        "y": 350
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false
+      }
+    },
+    {
+      "pass": false,
+      "setup": {
+        "targetName": "Experience Path",
+        "sourceId": "id-77vh1ogu61owb9812eo6d7kq2",
+        "targetId": "id-6x7znbk2twtenni6exmpecl0c",
+        "beforeConnections": 6,
+        "targetRect": {
+          "left": 425,
+          "top": 382,
+          "width": 160,
+          "height": 86
+        }
+      },
+      "drag": {
+        "title": "Drag to another element to create a relationship",
+        "start": {
+          "x": 603,
+          "y": 173
+        }
+      },
+      "targetCenter": {
+        "x": 505,
+        "y": 425
+      },
+      "after": {
+        "afterConnections": 6,
+        "matchingConnections": [],
+        "popupOpen": false
+      }
+    }
+  ]
+}
