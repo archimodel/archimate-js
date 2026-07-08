@@ -1,0 +1,16 @@
+Official The Open Group ArchiMate XSD directory link scan
+timestamp: 2026-07-08T17:53:09.8267228+09:00
+status: 200 OK
+matching links:
+- 3.1/
+- 3.1/archimate3_Diagram.xsd
+- 3.1/archimate3_Model.xsd
+- 3.1/archimate3_View.xsd
+- 3.1/examples/
+- 3.1/examples/_Snippets
+- 3.1/html-diagram/
+- 3.1/html-model/
+- 3.1/html-view/
+- http://www.opengroup.org/subjectareas/enterprise/archimate/model-exchange-file-format
+has 4.0 link: False
+derived-fact: link names only; no XSD content is copied here.

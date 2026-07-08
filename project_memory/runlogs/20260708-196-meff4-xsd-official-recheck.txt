@@ -1,0 +1,11 @@
+Official The Open Group ArchiMate XSD recheck
+timestamp: 2026-07-08T17:52:52.3073150+09:00
+https://www.opengroup.org/xsd/archimate/ -> 200 OK
+https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd -> 200 OK
+https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd -> 200 OK
+https://www.opengroup.org/xsd/archimate/4.0/ -> 404 Response status code does not indicate success: 404 (Not Found).
+https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd -> 404 Response status code does not indicate success: 404 (Not Found).
+https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd -> 404 Response status code does not indicate success: 404 (Not Found).
+https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd -> 404 Response status code does not indicate success: 404 (Not Found).
+https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd -> 404 Response status code does not indicate success: 404 (Not Found).
+derived-fact: only HTTP status and URL availability are recorded; no XSD content is copied here.

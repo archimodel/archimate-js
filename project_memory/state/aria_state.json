@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "loop_id": 28,
-  "stage": "connector_domain_metadata_verified",
+  "loop_id": 29,
+  "stage": "meff4_xsd_official_recheck_recorded",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
     "target_branch": "main"
   },
   "change_context": {
-    "change_type": "bugfix",
-    "diff_size": 5042,
+    "change_type": "documentation",
+    "diff_size": 212,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -40,7 +40,8 @@
       "archimate4_domain_terminology_metadata",
       "appendix_b_matrix_profile_loader",
       "appendix_b_matrix_text_profile_loader",
-      "relationship_connector_metadata_boundary"
+      "relationship_connector_metadata_boundary",
+      "meff4_xsd_official_recheck"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -72,17 +73,18 @@
       "check_archimate4_domain_terminology_metadata",
       "check_appendix_b_matrix_profile_loader",
       "check_appendix_b_matrix_text_profile_loader",
-      "check_relationship_connector_metadata_boundary"
+      "check_relationship_connector_metadata_boundary",
+      "check_meff4_xsd_official_recheck"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-195-connector-domain-metadata-final-state-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-connector-domain-metadata-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-200-meff4-xsd-official-recheck-final-state-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-meff4-xsd-recheck-audit.md",
     "result": "pass"
   },
   "open_issues": [
     "Official ArchiMate 4 Appendix B relationship rules still require a licensed profile artifact or redistributable non-verbatim derived data.",
-    "MEFF 4.0 namespace, Junction serialization, and multiplicity attribute names still require the official XSD.",
+    "MEFF 4.0 namespace, Junction serialization, and multiplicity attribute names still require the official XSD; the official directory recheck at 2026-07-08T17:53+09:00 listed 3.1 XSDs but no 4.0 XSD links.",
     "Exact C260 Appendix A vector artwork redistribution remains unconfirmed; current renderer entries use existing local paths or explicit aliases."
   ],
   "assumptions": [
@@ -109,10 +111,11 @@
     "ArchiMate 4 shapes now preserve profile domain metadata directly while retaining the legacy layer field as a compatibility alias.",
     "Host-supplied licensed Appendix B relationship profile data can now be provided as a header-row matrix array while preserving complete source-target cell validation.",
     "Host-supplied licensed Appendix B relationship profile data can now be provided as CSV/TSV matrixText while preserving complete source-target cell validation.",
-    "ArchiMate 4 relationship connectors use editor palette/color grouping metadata rather than ArchiMate domain metadata."
+    "ArchiMate 4 relationship connectors use editor palette/color grouping metadata rather than ArchiMate domain metadata.",
+    "The official The Open Group XSD directory currently exposes 3.1 resources but no discovered ArchiMate 4.0 XSD links."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T17:49:48+09:00"
+    "updated_at": "2026-07-08T17:53:09+09:00"
   }
 }

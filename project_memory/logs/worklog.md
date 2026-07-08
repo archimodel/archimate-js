@@ -297,3 +297,13 @@
 - Docs: `docs/archimate4/*` now state that relationship connectors are not added to the ArchiMate domain catalog.
 - Verification: fix check passed in `project_memory/runlogs/20260708-190-connector-domain-metadata-fix-check.txt`; `npm run test:language` passed with 65 tests in `project_memory/runlogs/20260708-191-connector-domain-metadata-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-192-connector-domain-metadata-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-193-connector-domain-metadata-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-194-connector-domain-metadata-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-195-connector-domain-metadata-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 29
+
+- Goal: refresh official The Open Group XSD evidence for MEFF 4.0-dependent implementation decisions.
+- Observation: `project_memory/runlogs/20260708-196-meff4-xsd-official-recheck.txt` records the official ArchiMate XSD directory and known 3.1 XSDs returning 200, while tested 4.0 directory/XSD candidates returned 404.
+- Observation: `project_memory/runlogs/20260708-197-meff4-xsd-official-link-scan.txt` records the official directory links; 3.1 resources are listed and no `archimate4` or `4.0` XSD link is listed.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` now record this current source state.
+- Decision: keep ArchiMate 4 XML export marked experimental and keep MEFF 4.0 namespace, schema location, Junction serialization, and multiplicity attribute names as source-dependent open items.
+- Verification: `npm run test:language` passed with 65 tests in `project_memory/runlogs/20260708-198-meff4-xsd-official-recheck-npm-test-language.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-199-meff4-xsd-official-recheck-git-diff-check.txt`; final state check is recorded in `project_memory/runlogs/20260708-200-meff4-xsd-official-recheck-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.

@@ -214,6 +214,11 @@
 - Refreshed again during loop 21 in
   `project_memory/runlogs/20260708-139-archimate-xsd-current-head-check.txt`; candidate 4.0 URLs
   still returned 404 while the known 3.1 Model XSD returned 200.
+- Refreshed again on 2026-07-08T17:53:09+09:00 in
+  `project_memory/runlogs/20260708-196-meff4-xsd-official-recheck.txt` and
+  `project_memory/runlogs/20260708-197-meff4-xsd-official-link-scan.txt`; the official directory
+  returned 200 and listed 3.1 XSD links, while tested 4.0 directory and XSD candidates returned 404
+  and no `archimate4` or `4.0` link was listed.
 - The directory returned links for ArchiMate 3.1 model/view/diagram schemas, examples, and related
   pages.
 - `https://www.opengroup.org/xsd/archimate/4.0/` returned 404.

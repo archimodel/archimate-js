@@ -272,6 +272,13 @@ Open decisions:
 - MEFF 4.0 attribute names for relationship-end multiplicity.
 - Whether relationship matrix data can be redistributed in source form.
 
+Latest official XSD recheck:
+
+- On 2026-07-08T17:53:09+09:00, the official ArchiMate XSD directory returned 200 and listed 3.1
+  XSD links, but no `archimate4` or `4.0` XSD links.
+- Tested 4.0 directory and XSD candidate URLs returned 404; keep XML export experimental until this
+  changes or a supplied official XSD is available.
+
 ## Implementation Status And Remaining Gaps
 
 The `archimate4-profile.json` element catalog must remain aligned with the 42-element catalog above.
