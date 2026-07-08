@@ -46,6 +46,8 @@
 
 - `lib/metamodel/languages/archimate4-profile.json` is now tested against the C260-derived
   42-element catalog in `test/fixtures/archimate4-c260-element-catalog.json`.
+- The C260-derived element catalog fixture also records standard display labels for all 42 elements
+  and tests each ArchiMate 4 profile `typeName` against those labels.
 - Generic `Interface` was removed from the ArchiMate 4 profile surface.
 - Domain-specific `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` are preserved
   as ArchiMate 4 elements and are not migrated to a generic interface.

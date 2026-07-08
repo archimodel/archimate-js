@@ -1,0 +1,546 @@
+{
+  "pdf": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "pdfPages": 207,
+  "expectedDisplayNameCount": 42,
+  "fixtureHasDisplayNames": false,
+  "fixtureElementCount": 42,
+  "missingPdfHits": [],
+  "profileMismatches": {},
+  "termHits": {
+    "Role": {
+      "displayName": "Role",
+      "hitCount": 15,
+      "firstPages": [
+        7,
+        39,
+        40,
+        48,
+        56,
+        69,
+        70,
+        135
+      ]
+    },
+    "Collaboration": {
+      "displayName": "Collaboration",
+      "hitCount": 14,
+      "firstPages": [
+        7,
+        29,
+        40,
+        48,
+        134,
+        135,
+        171,
+        173
+      ]
+    },
+    "Path": {
+      "displayName": "Path",
+      "hitCount": 8,
+      "firstPages": [
+        7,
+        41,
+        49,
+        173,
+        174,
+        177,
+        181,
+        200
+      ]
+    },
+    "Service": {
+      "displayName": "Service",
+      "hitCount": 28,
+      "firstPages": [
+        7,
+        11,
+        21,
+        35,
+        42,
+        49,
+        54,
+        55
+      ]
+    },
+    "Process": {
+      "displayName": "Process",
+      "hitCount": 24,
+      "firstPages": [
+        7,
+        11,
+        17,
+        20,
+        37,
+        42,
+        43,
+        49
+      ]
+    },
+    "Function": {
+      "displayName": "Function",
+      "hitCount": 13,
+      "firstPages": [
+        7,
+        43,
+        44,
+        49,
+        137,
+        142,
+        173,
+        175
+      ]
+    },
+    "Event": {
+      "displayName": "Event",
+      "hitCount": 14,
+      "firstPages": [
+        7,
+        44,
+        49,
+        137,
+        173,
+        175,
+        176,
+        177
+      ]
+    },
+    "Grouping": {
+      "displayName": "Grouping",
+      "hitCount": 10,
+      "firstPages": [
+        7,
+        11,
+        45,
+        46,
+        47,
+        49,
+        142,
+        158
+      ]
+    },
+    "Location": {
+      "displayName": "Location",
+      "hitCount": 11,
+      "firstPages": [
+        7,
+        48,
+        49,
+        159,
+        167,
+        171,
+        173,
+        174
+      ]
+    },
+    "Stakeholder": {
+      "displayName": "Stakeholder",
+      "hitCount": 12,
+      "firstPages": [
+        8,
+        11,
+        28,
+        74,
+        75,
+        76,
+        83,
+        84
+      ]
+    },
+    "Driver": {
+      "displayName": "Driver",
+      "hitCount": 8,
+      "firstPages": [
+        8,
+        74,
+        75,
+        76,
+        83,
+        140,
+        182,
+        184
+      ]
+    },
+    "Assessment": {
+      "displayName": "Assessment",
+      "hitCount": 9,
+      "firstPages": [
+        8,
+        64,
+        74,
+        75,
+        76,
+        83,
+        140,
+        182
+      ]
+    },
+    "Goal": {
+      "displayName": "Goal",
+      "hitCount": 14,
+      "firstPages": [
+        8,
+        11,
+        76,
+        77,
+        78,
+        79,
+        80,
+        83
+      ]
+    },
+    "Outcome": {
+      "displayName": "Outcome",
+      "hitCount": 14,
+      "firstPages": [
+        8,
+        12,
+        76,
+        77,
+        78,
+        79,
+        80,
+        83
+      ]
+    },
+    "Principle": {
+      "displayName": "Principle",
+      "hitCount": 12,
+      "firstPages": [
+        8,
+        28,
+        29,
+        76,
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    "Requirement": {
+      "displayName": "Requirement",
+      "hitCount": 12,
+      "firstPages": [
+        8,
+        76,
+        77,
+        78,
+        79,
+        80,
+        83,
+        84
+      ]
+    },
+    "Meaning": {
+      "displayName": "Meaning",
+      "hitCount": 10,
+      "firstPages": [
+        8,
+        80,
+        81,
+        82,
+        83,
+        84,
+        172,
+        183
+      ]
+    },
+    "Value": {
+      "displayName": "Value",
+      "hitCount": 19,
+      "firstPages": [
+        8,
+        12,
+        20,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    "Resource": {
+      "displayName": "Resource",
+      "hitCount": 9,
+      "firstPages": [
+        8,
+        12,
+        86,
+        90,
+        92,
+        184,
+        186,
+        187
+      ]
+    },
+    "Capability": {
+      "displayName": "Capability",
+      "hitCount": 15,
+      "firstPages": [
+        3,
+        8,
+        12,
+        17,
+        86,
+        87,
+        90,
+        91
+      ]
+    },
+    "ValueStream": {
+      "displayName": "Value Stream",
+      "hitCount": 7,
+      "firstPages": [
+        8,
+        12,
+        87,
+        88,
+        91,
+        92,
+        186
+      ]
+    },
+    "CourseOfAction": {
+      "displayName": "Course of Action",
+      "hitCount": 5,
+      "firstPages": [
+        9,
+        89,
+        90,
+        92,
+        141
+      ]
+    },
+    "BusinessActor": {
+      "displayName": "Business Actor",
+      "hitCount": 6,
+      "firstPages": [
+        9,
+        57,
+        84,
+        95,
+        101,
+        138
+      ]
+    },
+    "BusinessInterface": {
+      "displayName": "Business Interface",
+      "hitCount": 3,
+      "firstPages": [
+        9,
+        96,
+        101
+      ]
+    },
+    "BusinessObject": {
+      "displayName": "Business Object",
+      "hitCount": 6,
+      "firstPages": [
+        9,
+        63,
+        97,
+        98,
+        101,
+        138
+      ]
+    },
+    "Product": {
+      "displayName": "Product",
+      "hitCount": 12,
+      "firstPages": [
+        9,
+        11,
+        87,
+        88,
+        89,
+        99,
+        100,
+        101
+      ]
+    },
+    "ApplicationComponent": {
+      "displayName": "Application Component",
+      "hitCount": 2,
+      "firstPages": [
+        9,
+        103
+      ]
+    },
+    "ApplicationInterface": {
+      "displayName": "Application Interface",
+      "hitCount": 4,
+      "firstPages": [
+        9,
+        103,
+        104,
+        138
+      ]
+    },
+    "DataObject": {
+      "displayName": "Data Object",
+      "hitCount": 3,
+      "firstPages": [
+        9,
+        105,
+        106
+      ]
+    },
+    "Node": {
+      "displayName": "Node",
+      "hitCount": 7,
+      "firstPages": [
+        9,
+        109,
+        117,
+        139,
+        173,
+        174,
+        177
+      ]
+    },
+    "TechnologyInterface": {
+      "displayName": "Technology Interface",
+      "hitCount": 3,
+      "firstPages": [
+        9,
+        109,
+        110
+      ]
+    },
+    "Device": {
+      "displayName": "Device",
+      "hitCount": 7,
+      "firstPages": [
+        9,
+        110,
+        117,
+        139,
+        173,
+        174,
+        177
+      ]
+    },
+    "SystemSoftware": {
+      "displayName": "System Software",
+      "hitCount": 4,
+      "firstPages": [
+        9,
+        110,
+        111,
+        117
+      ]
+    },
+    "Equipment": {
+      "displayName": "Equipment",
+      "hitCount": 6,
+      "firstPages": [
+        9,
+        111,
+        115,
+        117,
+        139,
+        174
+      ]
+    },
+    "Facility": {
+      "displayName": "Facility",
+      "hitCount": 5,
+      "firstPages": [
+        9,
+        112,
+        117,
+        139,
+        174
+      ]
+    },
+    "CommunicationNetwork": {
+      "displayName": "Communication Network",
+      "hitCount": 4,
+      "firstPages": [
+        9,
+        112,
+        113,
+        116
+      ]
+    },
+    "DistributionNetwork": {
+      "displayName": "Distribution Network",
+      "hitCount": 3,
+      "firstPages": [
+        9,
+        113,
+        116
+      ]
+    },
+    "Artifact": {
+      "displayName": "Artifact",
+      "hitCount": 9,
+      "firstPages": [
+        10,
+        114,
+        115,
+        117,
+        172,
+        173,
+        175,
+        177
+      ]
+    },
+    "Material": {
+      "displayName": "Material",
+      "hitCount": 7,
+      "firstPages": [
+        10,
+        111,
+        115,
+        117,
+        139,
+        174,
+        175
+      ]
+    },
+    "WorkPackage": {
+      "displayName": "Work Package",
+      "hitCount": 5,
+      "firstPages": [
+        10,
+        121,
+        122,
+        124,
+        142
+      ]
+    },
+    "Deliverable": {
+      "displayName": "Deliverable",
+      "hitCount": 7,
+      "firstPages": [
+        10,
+        122,
+        124,
+        142,
+        189,
+        190,
+        191
+      ]
+    },
+    "Plateau": {
+      "displayName": "Plateau",
+      "hitCount": 9,
+      "firstPages": [
+        10,
+        11,
+        122,
+        123,
+        124,
+        159,
+        167,
+        190
+      ]
+    }
+  },
+  "derivedConclusion": [
+    "The current C260 element fixture verifies type/domain/aspect but not all user-facing display labels.",
+    "The current ArchiMate 4 profile display labels match the C260-derived expected list, so this loop should add a regression guard rather than change profile behavior.",
+    "A displayNames map in the C260 fixture will make future Course of Action-style casing regressions visible across all 42 elements."
+  ]
+}

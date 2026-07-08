@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "loopId": true,
+    "stage": true,
+    "overlay": true,
+    "check": true,
+    "runlogExists": true,
+    "auditExists": true,
+    "result": true,
+    "openIssuesCount": true,
+    "catalogElements": true,
+    "displayNames": true,
+    "noDisplayNameMismatches": true
+  },
+  "status": "## codex/archimate-4-support\n M docs/archimate4/sources.md\n M project_memory/logs/worklog.md\n M project_memory/state/aria_state.json\n M test/fixtures/archimate4-c260-element-catalog.json\n M test/language-profile.test.mjs\n?? project_memory/audit/reports/20260708-display-name-catalog-audit.md\n?? project_memory/runlogs/20260708-292-archimate4-display-name-catalog-gap-check.txt\n?? project_memory/runlogs/20260708-293-archimate4-display-name-catalog-fix-check.txt\n?? project_memory/runlogs/20260708-294-archimate4-display-name-catalog-npm-test-language.txt\n?? project_memory/runlogs/20260708-295-archimate4-display-name-catalog-eslint-gate.txt\n?? project_memory/runlogs/20260708-296-archimate4-display-name-catalog-git-diff-check.txt\n?? project_memory/runlogs/20260708-297-archimate4-display-name-catalog-repo-lint-legacy.txt\n?? project_memory/runlogs/20260708-299-archimate4-display-name-catalog-final-git-diff-check.txt\n?? project_memory/runlogs/20260708-300-archimate4-display-name-catalog-final-state-check.txt",
+  "shortstat": "5 files changed, 73 insertions(+), 9 deletions(-)",
+  "pass": true
+}

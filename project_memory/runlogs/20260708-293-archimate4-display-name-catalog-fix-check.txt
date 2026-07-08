@@ -1,0 +1,9 @@
+{
+  "catalogElementCount": 42,
+  "profileElementCount": 42,
+  "displayNameCount": 42,
+  "missingDisplayNames": [],
+  "extraDisplayNames": [],
+  "mismatches": [],
+  "pass": true
+}

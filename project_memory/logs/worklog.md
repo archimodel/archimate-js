@@ -417,3 +417,15 @@
 - Verification: fix check passed in `project_memory/runlogs/20260708-284-archimate4-standard-spelling-fix-check.txt`; `npm run test:language` passed with 77 tests in `project_memory/runlogs/20260708-285-archimate4-standard-spelling-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-286-archimate4-standard-spelling-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-287-archimate4-standard-spelling-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-288-archimate4-standard-spelling-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-standard-spelling-metadata-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 40
+
+- Goal: make the C260-derived 42-element catalog verify every ArchiMate 4 user-facing display label.
+- Observation: `project_memory/runlogs/20260708-292-archimate4-display-name-catalog-gap-check.txt` showed local C260 text extraction found all 42 expected display labels, while `test/fixtures/archimate4-c260-element-catalog.json` did not yet guard display names.
+- Observation: the same gap check showed the current ArchiMate 4 profile had no display-name mismatches, so this loop adds regression coverage rather than changing profile behavior.
+- Implemented: `test/fixtures/archimate4-c260-element-catalog.json` now records a `displayNames` map for all 42 C260-derived elements.
+- Implemented: `test/language-profile.test.mjs` now asserts each ArchiMate 4 profile `typeName` matches the catalog display name alongside domain and aspect.
+- Docs: `docs/archimate4/sources.md` records that the C260-derived fixture now guards element identity, classification, and display labels.
+- Verification: fix check passed in `project_memory/runlogs/20260708-293-archimate4-display-name-catalog-fix-check.txt`; `npm run test:language` passed with 77 tests in `project_memory/runlogs/20260708-294-archimate4-display-name-catalog-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-295-archimate4-display-name-catalog-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-296-archimate4-display-name-catalog-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-297-archimate4-display-name-catalog-repo-lint-legacy.txt`.
+- Audit: `project_memory/audit/reports/20260708-display-name-catalog-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
