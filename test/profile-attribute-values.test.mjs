@@ -1,8 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  getProfileAttributePropertyValue,
   isProfileAttributeValueValid,
-  normalizeProfileAttributeValue
+  normalizeProfileAttributeValue,
+  setProfileAttributePropertyValue
 } from '../lib/util/ProfileAttributeUtil.js';
 
 test('profile attribute values normalize implementation-supported C260 basic types', () => {
@@ -24,4 +26,41 @@ test('profile attribute values reject values outside their declared type', () =>
   assert.equal(isProfileAttributeValueValid({ type: 'Time' }, '24:00'), false);
   assert.equal(isProfileAttributeValueValid({ type: 'URL' }, 'not a url'), false);
   assert.equal(isProfileAttributeValueValid({ type: 'Structure' }, 'plain'), false);
+});
+
+test('profile attribute values can be stored as model properties', () => {
+  const model = {};
+  const element = { id: 'risk-event-1', type: 'RiskEvent' };
+  const attribute = { concept: 'RiskEvent', name: 'severity', type: 'Integer' };
+
+  const property = setProfileAttributePropertyValue(model, element, attribute, '4');
+  const propertyAgain = setProfileAttributePropertyValue(model, element, attribute, 5);
+
+  assert.equal(property, propertyAgain);
+  assert.deepEqual(
+    model.propertyDefinitionsNode.propertyDefinitions.map((definition) => ({
+      name: definition.name,
+      type: definition.type
+    })),
+    [
+      {
+        name: 'archimate-js:profileAttribute:RiskEvent:severity',
+        type: 'Integer'
+      }
+    ]
+  );
+  assert.equal(element.propertiesNode.properties.length, 1);
+  assert.equal(element.propertiesNode.properties[0].value, '5');
+  assert.equal(getProfileAttributePropertyValue(element, attribute), 5);
+});
+
+test('structured profile attribute values are stored as JSON property values', () => {
+  const model = {};
+  const element = { id: 'risk-event-2', type: 'RiskEvent' };
+  const attribute = { concept: 'RiskEvent', name: 'impact', type: 'Structure' };
+
+  setProfileAttributePropertyValue(model, element, attribute, { score: 8, unit: 'risk' });
+
+  assert.equal(element.propertiesNode.properties[0].value, '{"score":8,"unit":"risk"}');
+  assert.deepEqual(getProfileAttributePropertyValue(element, attribute), { score: 8, unit: 'risk' });
 });

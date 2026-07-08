@@ -847,3 +847,20 @@
 - Final record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-229-profile-attribute-value-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-230-profile-attribute-value-final-git-diff-check.txt` and again after record updates in `project_memory/runlogs/20260709-231-profile-attribute-value-post-record-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-profile-attribute-value-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 70
+
+- Goal: complete the implementation-defined C260 profile attribute path by allowing host tooling to persist typed profile attribute values through the existing ArchiMate model property structure.
+- Init/state: PowerShell, git status, repo root, and branch were recorded in `project_memory/runlogs/20260709-232-init-environment-check.txt`; pre-loop state remained clean except untracked runlogs.
+- Source check: `project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt` records non-verbatim Chapter 14/profile-attribute and property-model signals from the local C260 PDF.
+- Red test: `project_memory/runlogs/20260709-234-profile-attribute-property-red-test.txt` failed because `getProfileAttributePropertyValue()` and `setProfileAttributePropertyValue()` were missing.
+- Implemented: `lib/util/ModelPropertyUtil.js` now centralizes reusable `PropertyDefinition` and per-concept `Properties` write/read helpers.
+- Implemented: `lib/util/ProfileAttributeUtil.js` now exposes profile attribute property naming, serialization, parsing, set, and get helpers; `Structure` values are serialized as JSON strings and read back through the declared profile attribute type.
+- Refactor: `lib/migration/archimate3-to-4.js` now reuses `setModelProperty()` for existing migration metadata, preserving the previous model property behavior while removing duplicate helper code.
+- Public API: `lib/metamodel/languages/index.js` and `index.js` now export the new profile attribute property helpers.
+- Docs and audit: README, `docs/archimate4`, `test/language-profile.test.mjs`, and `project_memory/audit/audit_registry.json` now cover the property-persistence helpers.
+- Verification: `npm run test:language` passed with 123 tests in `project_memory/runlogs/20260709-236-profile-attribute-property-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-237-profile-attribute-property-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-238-profile-attribute-property-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-239-profile-attribute-property-git-diff-check.txt`; JSON check passed in `project_memory/runlogs/20260709-240-profile-attribute-property-json-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-241-profile-attribute-property-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` and `audit_registry.json` parsed in `project_memory/runlogs/20260709-242-profile-attribute-property-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-243-profile-attribute-property-final-git-diff-check.txt` with only the existing line-ending warning for `project_memory/state/aria_state.json`.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-property-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -82,6 +82,10 @@ Supported customization data:
   Host tooling can retrieve applicable attributes through `getProfileAttributesForConcept()` and can
   normalize or validate implementation-supported typed values through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()`.
+- Profile attribute values may be persisted through `setProfileAttributePropertyValue()`, which writes
+  a reusable `PropertyDefinition` named `archimate-js:profileAttribute:<concept>:<name>` and a
+  per-concept `Property` value. `getProfileAttributePropertyValue()` reads the stored string value back
+  through the declared profile attribute type.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
 - Specialized relationship metadata. New custom relationship objects may declare `specializes` and

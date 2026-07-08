@@ -1,0 +1,19 @@
+C260 profile attribute/property scan
+source=C:\Users\syska\Downloads\978940181474E.pdf
+note=non-verbatim derived scan; no normative prose copied
+pages=207
+page=10 hits=Adding Attributes:1
+page=71 hits=Properties:1, properties:1
+page=76 hits=Properties:1, properties:1
+page=78 hits=Properties:2, properties:2
+page=79 hits=Properties:2, properties:2
+page=112 hits=Properties:1, properties:1
+page=132 hits=Adding Attributes:2
+page=133 hits=Adding Attributes:1
+page=134 hits=Properties:2, properties:2
+page=182 hits=Properties:1, properties:1
+page=198 hits=Properties:1, properties:1
+derived_facts=
+- Chapter 14 contains the profile attribute customization mechanism and adding-attributes signals.
+- The implementation can expose host helpers without embedding Appendix tables or copied prose.
+- The existing MEFF property model has PropertyDefinitions and per-concept Properties, suitable for implementation-defined profile-attribute values while MEFF 4.0 XSD details remain external.

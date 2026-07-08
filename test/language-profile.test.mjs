@@ -407,9 +407,13 @@ test('language profile customization validates C260 profile attribute definition
   assert.match(languageIndex, /hasProfileRelationship\(attribute\.concept, profile\)/);
   assert.match(entrypoint, /normalizeProfileAttributeValue/);
   assert.match(entrypoint, /isProfileAttributeValueValid/);
+  assert.match(entrypoint, /setProfileAttributePropertyValue/);
+  assert.match(entrypoint, /getProfileAttributePropertyValue/);
   assert.match(readme, /Profile attributes require a supported ArchiMate concept and typed value/);
+  assert.match(readme, /Profile attribute values can also be stored as model `Properties`/);
   assert.match(sources, /Profile attributes are validated as C260 typed attributes/);
   assert.match(sources, /Profile attribute values can be normalized and validated/);
+  assert.match(sources, /Profile attribute values can also be written to model `Properties`/);
 });
 
 test('language profile customization supports relationship specializations', async () => {
