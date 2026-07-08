@@ -1,0 +1,3 @@
+npx eslint lib\features\modeling\ElementFactory.js lib\util\ModelUtil.js test\language-profile.test.mjs
+exit code: 0
+stdout/stderr: no output

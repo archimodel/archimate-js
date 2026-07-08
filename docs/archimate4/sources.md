@@ -81,6 +81,13 @@
 - This implements language customization without changing the 42-element standard catalog or embedding
   the licensed Appendix B matrix.
 
+## Domain Terminology Metadata
+
+- C260 shifts the language structure from ArchiMate 3 layer-centric terminology to domains.
+- 4.0 shape creation now keeps `domain` metadata from the active language profile while retaining the
+  existing `layer` property as a compatibility alias for renderer and extension code that still reads it.
+- Domain colors are resolved from `domain` first when available, then the legacy `layer` value.
+
 ## Viewpoint Mechanism
 
 - A local C260 Chapter 13 keyword scan and official 3.1 View XSD check are summarized in

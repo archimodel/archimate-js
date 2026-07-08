@@ -1,0 +1,36 @@
+
+Url                                                              StatusCode StatusDescription
+---                                                              ---------- -----------------
+https://www.opengroup.org/xsd/archimate/                                200 OK
+https://www.opengroup.org/xsd/archimate/4.0/                            404
+https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd        404
+https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd         404
+https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd        200 OK
+
+[
+  {
+    "Url": "https://www.opengroup.org/xsd/archimate/",
+    "StatusCode": 200,
+    "StatusDescription": "OK"
+  },
+  {
+    "Url": "https://www.opengroup.org/xsd/archimate/4.0/",
+    "StatusCode": 404,
+    "StatusDescription": null
+  },
+  {
+    "Url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd",
+    "StatusCode": 404,
+    "StatusDescription": null
+  },
+  {
+    "Url": "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd",
+    "StatusCode": 404,
+    "StatusDescription": null
+  },
+  {
+    "Url": "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd",
+    "StatusCode": 200,
+    "StatusDescription": "OK"
+  }
+]

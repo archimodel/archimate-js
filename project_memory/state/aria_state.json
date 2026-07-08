@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 24,
-  "stage": "archimate4_deliverable_pictoref_spelling_verified",
+  "loop_id": 25,
+  "stage": "archimate4_domain_metadata_preserved",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 5038,
+    "diff_size": 5122,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -36,7 +36,8 @@
       "language_customization_profile",
       "viewpoint_mechanism_metadata",
       "archimate4_pictoref_guard",
-      "archimate4_deliverable_pictoref_spelling"
+      "archimate4_deliverable_pictoref_spelling",
+      "archimate4_domain_terminology_metadata"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -64,12 +65,13 @@
       "check_language_customization_profile",
       "check_viewpoint_mechanism_metadata",
       "check_archimate4_pictoref_guard",
-      "check_archimate4_deliverable_pictoref_spelling"
+      "check_archimate4_deliverable_pictoref_spelling",
+      "check_archimate4_domain_terminology_metadata"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-165-archimate4-deliverable-pictoref-final-state-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-archimate4-deliverable-pictoref-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-174-domain-terminology-final-state-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-domain-terminology-metadata-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -97,10 +99,11 @@
     "ArchiMate language customization is implementation-defined through archimateLanguageProfile; custom specialized concepts resolve to their standard base concept for relationship validation.",
     "ArchiMate viewpoint mechanism support preserves viewpoint metadata and model-defined viewpoint definitions while example viewpoints remain informative and MEFF 4.0 exchange conformance awaits the official XSD.",
     "Every ArchiMate 4 profile pictoRef now resolves to a renderer PathMap entry; several entries remain explicit aliases until exact Appendix A vector artwork redistribution is confirmed.",
-    "The ArchiMate 4 Deliverable profile now uses PICTO_DELIVERABLE while the misspelled PICTO_DELIVRABLE key remains only as a legacy compatibility alias."
+    "The ArchiMate 4 Deliverable profile now uses PICTO_DELIVERABLE while the misspelled PICTO_DELIVRABLE key remains only as a legacy compatibility alias.",
+    "ArchiMate 4 shapes now preserve profile domain metadata directly while retaining the legacy layer field as a compatibility alias."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T17:26:56+09:00"
+    "updated_at": "2026-07-08T17:34:05+09:00"
   }
 }

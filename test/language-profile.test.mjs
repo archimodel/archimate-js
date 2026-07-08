@@ -136,8 +136,19 @@ test('language profile customization supports C260 specialization profiles', asy
   assert.match(languageProfile, /archimateLanguageProfile/);
   assert.match(relationshipUtil, /getBaseConceptTypeForProfile\(targetElementType, profile\)/);
   assert.match(relationshipUtil, /getBaseConceptTypeForProfile\(targetType, profile\)/);
-  assert.match(elementFactory, /getDomainColor\(layer, profile\)/);
+  assert.match(elementFactory, /getDomainColor\(domain \|\| layer, profile\)/);
   assert.match(packageEntrypoint, /createLanguageProfile/);
+});
+
+test('archimate 4 shape metadata preserves domain terminology', async () => {
+  const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
+  const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+
+  assert.match(officialSpec, /UI and docs should use "domain" rather than the old/);
+  assert.match(modelUtil, /export function getDomainType/);
+  assert.match(elementFactory, /getDomainType\(attrs\.type, profile\)/);
+  assert.match(elementFactory, /domain: domain/);
 });
 
 test('language profile customization supports viewpoint definitions', async () => {

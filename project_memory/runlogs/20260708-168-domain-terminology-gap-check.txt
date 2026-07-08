@@ -1,0 +1,5 @@
+
+ElementFactoryAssignsDomain   : False
+ElementFactoryUsesLayerHelper : True
+ModelUtilHasGetDomainType     : False
+Xsd4ModelHead                 : 404

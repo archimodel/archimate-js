@@ -1,0 +1,7 @@
+
+HasGetDomainType              : True
+ShapeAssignsDomain            : True
+ShapeColorUsesDomainFirst     : True
+SpecRequiresDomainTerminology : True
+Xsd4ModelHeadLog              : project_memory/runlogs/20260708-166-archimate-xsd-current-head-check.txt
+Xsd4LinkScanLog               : project_memory/runlogs/20260708-167-archimate-xsd-current-link-scan.txt
