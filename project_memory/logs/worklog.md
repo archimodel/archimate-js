@@ -671,3 +671,22 @@
 - Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-086-influence-custom-modifier-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-087-influence-custom-modifier-final-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-influence-custom-modifier-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 59
+
+- Goal: implement a small, verifiable part of the C260 Appendix B derived relationship rules the user highlighted in the DR1/DR2 screenshots without embedding the full licensed relationship matrix.
+- Source check: `project_memory/runlogs/20260709-088-c260-derived-relationship-source-scan.txt` scanned the local C260 PDF for DR1, DR2, specialization transitivity, weakest structural relationship, and structural relationship strength signals without copying licensed prose.
+- Implemented: added `lib/util/DerivedRelationshipUtil.js` with host-callable `deriveRelationshipType()` and `deriveRelationship()` helpers.
+- Implemented: DR1 derives `Specialization` from a two-step `Specialization` chain.
+- Implemented: DR2 derives the weakest relationship in a two-step structural chain using the C260-derived order Realization, Assignment, Aggregation, Composition from weakest to strongest.
+- Implemented: relationship specializations in a supplied language profile resolve to their base relationship before derivation; the helper returns candidate data and does not automatically mutate models.
+- Public API: exported the derived relationship helpers from `index.js`.
+- Tests: `test/derived-relationships.test.mjs` covers DR1, DR2, chain endpoint preservation, non-chain rejection, and custom relationship specialization resolution.
+- Verification: initial `npm run test:language` failed in `project_memory/runlogs/20260709-089-derived-relationship-test-language.txt` due direct JSON import through the language profile loader; changed-file ESLint passed in `project_memory/runlogs/20260709-090-derived-relationship-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-091-derived-relationship-git-diff-check.txt`.
+- Correction: removed the heavy language profile loader dependency from the new utility and used a local relationship-specialization resolver; a second `npm run test:language` still failed in `project_memory/runlogs/20260709-092-derived-relationship-test-language-pass.txt` because the new file imported `Concept` without a `.js` extension under direct Node ESM.
+- Final verification: `npm run test:language` passed with 102 tests in `project_memory/runlogs/20260709-095-derived-relationship-test-language-pass2.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-096-derived-relationship-eslint-changed-pass2.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-097-derived-relationship-git-diff-check-pass2.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-098-derived-relationship-demo-build.txt`.
+- Final checks: `npm run test:language` passed again with 102 tests in `project_memory/runlogs/20260709-099-derived-relationship-final-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-100-derived-relationship-final-eslint-registry-gate.txt`; `aria_state.json` parsed in `project_memory/runlogs/20260709-101-derived-relationship-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-102-derived-relationship-final-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-103-derived-relationship-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-104-derived-relationship-final-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-105-derived-relationship-final-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-derived-relationship-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

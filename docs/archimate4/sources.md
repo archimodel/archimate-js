@@ -287,6 +287,20 @@
 - The ArchiMate 3 descriptor is intentionally unchanged and remains constrained to `BaseElement` for
   relationships and `Node` for diagram connections.
 
+## Derived Relationship Rule Guard
+
+- A local C260 Appendix B derivation keyword scan is recorded in
+  `project_memory/runlogs/20260709-088-c260-derived-relationship-source-scan.txt`.
+- DR1 specialization transitivity is implemented by `deriveRelationshipType()` and
+  `deriveRelationship()`: a two-step `Specialization` chain derives a `Specialization` relationship.
+- DR2 structural derivation is implemented for the C260 strength order Realization, Assignment,
+  Aggregation, Composition. A two-step structural chain derives the weakest relationship type in
+  that pair.
+- Custom relationship specializations supplied through a language profile resolve to their standard
+  base relationship before applying DR1 or DR2.
+- This utility returns derivation candidates for host tooling. It does not embed the full Appendix B
+  relationship table and does not automatically mutate a model.
+
 ## Influence Modifier Guard
 
 - A local C260 Influence keyword scan is recorded in

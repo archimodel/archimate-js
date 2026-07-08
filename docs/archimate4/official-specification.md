@@ -188,6 +188,10 @@ Implementation note:
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
   and negative modifier actions plus a custom modifier input in the ArchiMate 4 popup. Empty custom
   input clears the modifier.
+- Derived relationship rules are available as host-callable utilities. DR1 derives `Specialization`
+  from a two-step `Specialization` chain. DR2 derives the weakest structural relationship from a
+  two-step structural chain, using the order Realization, Assignment, Aggregation, Composition from
+  weakest to strongest. The utilities return candidates and do not automatically mutate the model.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
   constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for
@@ -364,6 +368,9 @@ Implemented relationship rule wiring:
 - Influence relationship modifiers are rendered from `modifier` or `typeOption`, and the ArchiMate 4
   popup can set common positive or negative influence values or a custom modeler-defined sign/strength
   value.
+- `deriveRelationshipType()` and `deriveRelationship()` implement C260-derived DR1 specialization
+  transitivity and DR2 weakest-structural derivation for host tooling, while keeping automatic model
+  mutation out of the core editor.
 
 Implemented multiplicity guard:
 

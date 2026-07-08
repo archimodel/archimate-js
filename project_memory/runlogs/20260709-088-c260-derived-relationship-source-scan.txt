@@ -1,0 +1,12 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+DR 1: count=5 pages=147,152,155,157,158
+DR 2: count=3 pages=147,153,155
+Transitivity of Specialization: count=1 pages=147
+Derivation Between Structural Relationships: count=1 pages=147
+weakest: count=3 pages=147,148,156
+structural relationships: count=19 pages=7,11,50,51,52,53,54,55,56,57,62,65,69,147,148,149,151,158,206
+derived relationship: count=5 pages=59,71,151,155,160
+Derivation of Structural Relationships: count=1 pages=147
+derived_note=Keyword scan only. Implementation facts derived: DR1 specialization transitivity; DR2 structural chain derives the weakest structural relationship, using the structural strength order identified in the local source review.
+EXIT_CODE=0

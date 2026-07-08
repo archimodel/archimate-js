@@ -16,3 +16,11 @@ export {
   getLanguageProfile,
   normalizeArchimateVersion
 } from './lib/metamodel/languages';
+
+export {
+  deriveRelationship,
+  deriveRelationshipType,
+  getStructuralRelationshipStrength,
+  getWeakestStructuralRelationshipType,
+  isStructuralRelationshipType
+} from './lib/util/DerivedRelationshipUtil';
