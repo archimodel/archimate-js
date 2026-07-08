@@ -76,3 +76,11 @@ test('renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path', asyn
   assert.doesNotMatch(pathMap, /'PICTO_EQUIPMENT': 'PICTO_DEVICE'/);
   assert.match(pathMap, /m 7\.5 10 a 1 1 90 0 0 8 0/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_WORK_PACKAGE': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_WORK_PACKAGE': 'PICTO_PROCESS'/);
+  assert.match(pathMap, /m 4 7 a 1 1 90 1 0 8 0/);
+});

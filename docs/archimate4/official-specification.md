@@ -199,6 +199,8 @@ Implementation notes:
   cube pictogram fallback.
 - `Equipment` must use a gear-shaped renderer pictogram in ArchiMate 4 mode, not the `Device`
   monitor pictogram fallback.
+- `WorkPackage` must use a loop-arrow renderer pictogram in ArchiMate 4 mode, not the `Process`
+  horizontal arrow pictogram fallback.
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.

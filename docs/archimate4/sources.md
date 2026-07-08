@@ -138,6 +138,11 @@
   `project_memory/runlogs/20260709-414-c260-appendix-a-equipment-visual-check.txt`. The derived
   renderer requirement is limited to replacing the local `PICTO_EQUIPMENT` Device alias with a
   locally-authored gear-shaped path.
+- A local C260 Appendix A rendered visual check for `Work Package` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-427-c260-appendix-a-work-package-render.txt` and
+  `project_memory/runlogs/20260709-428-c260-appendix-a-work-package-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_WORK_PACKAGE` Process alias with a
+  locally-authored loop-arrow path.
 
 ## Language Customization Mechanism
 

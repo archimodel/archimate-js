@@ -1051,3 +1051,16 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-422-equipment-pictogram-repo-lint.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-equipment-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 85
+
+- Goal: replace the ArchiMate 4 `Work Package` renderer pictogram fallback with a C260 Appendix A-derived loop-arrow path.
+- Source evidence: `project_memory/runlogs/20260709-427-c260-appendix-a-work-package-render.txt` and `project_memory/runlogs/20260709-428-c260-appendix-a-work-package-visual-check.txt` record the Appendix A page render and non-verbatim visual check. `project_memory/runlogs/20260709-426-c260-appendix-a-work-package-render.txt` records the failed Poppler wrapper attempt before using the actual Poppler executable.
+- Red test: `project_memory/runlogs/20260709-429-work-package-pictogram-red-test.txt` failed because `PICTO_WORK_PACKAGE` was still aliased to `PICTO_PROCESS`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_WORK_PACKAGE` loop-arrow path and removes the Process alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Work Package renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-430-work-package-pictogram-test.txt`; `npm run test:language` passed with 143 tests in `project_memory/runlogs/20260709-431-work-package-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-432-work-package-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-433-work-package-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-434-work-package-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-435-work-package-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-436-work-package-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-439-work-package-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-440-work-package-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-work-package-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
