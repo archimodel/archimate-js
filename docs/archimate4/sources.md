@@ -114,6 +114,8 @@
 - Migration now stores the original ArchiMate 3 type and specialization profile name in model
   `Properties`, using reusable `PropertyDefinition` entries, so the information is not limited to
   transient JavaScript fields.
+- Migration also stores `archimate-js:originalArchiMate3Domain` for retired, merged, or moved concepts
+  when the source domain is important to preserving the ArchiMate 3.x modeling intent.
 - `test/migration.test.mjs` directly exercises the migration utility so replacement and warning data
   are verified, not only present in source text.
 

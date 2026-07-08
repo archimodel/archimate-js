@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 import {
   migrateArchimate3ModelTo4,
+  ORIGINAL_ARCHIMATE3_DOMAIN_PROPERTY,
   ORIGINAL_ARCHIMATE3_TYPE_PROPERTY,
   SPECIALIZATION_PROPERTY
 } from '../lib/migration/archimate3-to-4.js';
@@ -56,6 +57,7 @@ test('migration utility preserves specialization information', async () => {
 
 test('migration table records C260-derived ambiguous replacement candidates', () => {
   assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').replacement, 'DataObject');
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').originalDomain, 'Business');
   assert.deepEqual(
     ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').alternativeReplacements,
     [ 'Artifact', 'Material' ]
@@ -69,6 +71,13 @@ test('migration table records C260-derived ambiguous replacement candidates', ()
     [ 'Function' ]
   );
   assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('ImplementationEvent').preserveSpecialization, true);
+});
+
+test('migration table records original domains for merged common-domain concepts', () => {
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('BusinessService').originalDomain, 'Business');
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('ApplicationProcess').originalDomain, 'Application');
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('TechnologyFunction').originalDomain, 'Technology');
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Path').originalDomain, 'Technology');
 });
 
 test('migration utility reports alternative replacement types for ambiguous C260 rows', () => {
@@ -85,10 +94,13 @@ test('migration utility reports alternative replacement types for ambiguous C260
 
   assert.equal(model.elementsNode.baseElements[0].type, 'DataObject');
   assert.equal(model.elementsNode.baseElements[0].specialization, 'Representation');
+  assert.equal(model.elementsNode.baseElements[0].originalArchiMate3Domain, 'Business');
   assert.deepEqual(result.warnings[0].alternativeReplacementTypes, [ 'Artifact', 'Material' ]);
+  assert.equal(result.warnings[0].originalDomain, 'Business');
 
   assert.equal(model.elementsNode.baseElements[1].type, 'Event');
   assert.equal(model.elementsNode.baseElements[1].specialization, 'ImplementationEvent');
+  assert.equal(model.elementsNode.baseElements[1].originalArchiMate3Domain, 'Implementation & Migration');
 });
 
 test('migration utility stores specialization profile metadata as model properties', () => {
@@ -110,13 +122,37 @@ test('migration utility stores specialization profile metadata as model properti
   assert.equal(model.elementsNode.baseElements[0].type, 'BusinessObject');
   assert.deepEqual(definitionNames, [
     ORIGINAL_ARCHIMATE3_TYPE_PROPERTY,
-    SPECIALIZATION_PROPERTY
+    SPECIALIZATION_PROPERTY,
+    ORIGINAL_ARCHIMATE3_DOMAIN_PROPERTY
   ]);
   assert.deepEqual(properties.map((property) => property.value), [
     'Contract',
-    'Contract'
+    'Contract',
+    'Business'
   ]);
-  assert.equal(properties.length, 2);
+  assert.equal(properties.length, 3);
+});
+
+test('migration utility stores original domain for merged behavior concepts', () => {
+  const model = {
+    elementsNode: {
+      baseElements: [
+        { id: 'business-service-1', type: 'BusinessService' },
+        { id: 'path-1', type: 'Path' }
+      ]
+    }
+  };
+
+  const result = migrateArchimate3ModelTo4(model);
+  const service = model.elementsNode.baseElements[0];
+  const path = model.elementsNode.baseElements[1];
+
+  assert.equal(service.type, 'Service');
+  assert.equal(service.originalArchiMate3Domain, 'Business');
+  assert.equal(path.type, 'Path');
+  assert.equal(path.originalArchiMate3Domain, 'Technology');
+  assert.equal(result.warnings[0].originalDomain, 'Business');
+  assert.equal(result.warnings[1].originalDomain, 'Technology');
 });
 
 test('migration utility can skip specialization profile metadata', () => {

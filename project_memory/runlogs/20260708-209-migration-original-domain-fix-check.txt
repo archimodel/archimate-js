@@ -1,0 +1,40 @@
+(node:65556) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "element": {
+    "type": "Service",
+    "originalArchiMate3Type": "BusinessService",
+    "specialization": "BusinessService",
+    "originalArchiMate3Domain": "Business"
+  },
+  "definitions": [
+    "archimate-js:originalArchiMate3Type",
+    "archimate-js:specialization",
+    "archimate-js:originalArchiMate3Domain"
+  ],
+  "properties": [
+    {
+      "definition": "archimate-js:originalArchiMate3Type",
+      "value": "BusinessService"
+    },
+    {
+      "definition": "archimate-js:specialization",
+      "value": "BusinessService"
+    },
+    {
+      "definition": "archimate-js:originalArchiMate3Domain",
+      "value": "Business"
+    }
+  ],
+  "warnings": [
+    {
+      "elementId": "bs-1",
+      "originalType": "BusinessService",
+      "replacementType": "Service",
+      "message": "BusinessService was merged into Service with original domain preserved.",
+      "originalDomain": "Business"
+    }
+  ]
+}

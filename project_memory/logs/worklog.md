@@ -317,3 +317,13 @@
 - Docs: README and `docs/archimate4/*` now document actual target-cell coverage status metadata.
 - Verification: fix check passed in `project_memory/runlogs/20260708-202-relationship-profile-status-coverage-fix-check.txt`; `npm run test:language` passed with 66 tests in `project_memory/runlogs/20260708-203-relationship-profile-status-coverage-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-204-relationship-profile-status-coverage-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-205-relationship-profile-status-coverage-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-206-relationship-profile-status-coverage-repo-lint-legacy.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 31
+
+- Goal: preserve original ArchiMate 3.x domain metadata during 3.x to 4.0 migration for retired, merged, or moved concepts.
+- Observation: the gap check in `project_memory/runlogs/20260708-208-migration-original-domain-gap-check.txt` showed `BusinessService` migrated to `Service` with original type and specialization metadata, but without `archimate-js:originalArchiMate3Domain`.
+- Implemented: `retired-concepts.js` now records `originalDomain` for migration entries, including merged common-domain concepts and moved `Path`.
+- Implemented: `migrateArchimate3ModelTo4()` now stores `originalArchiMate3Domain`, model property metadata, and warning `originalDomain` when metadata preservation is enabled.
+- Docs: README and `docs/archimate4/*` now state that migration preserves original domain metadata.
+- Verification: fix check passed in `project_memory/runlogs/20260708-209-migration-original-domain-fix-check.txt`; `npm run test:language` passed with 68 tests in `project_memory/runlogs/20260708-210-migration-original-domain-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-211-migration-original-domain-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-212-migration-original-domain-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-213-migration-original-domain-repo-lint-legacy.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
