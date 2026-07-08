@@ -36,11 +36,15 @@ test('archimate 4 profile removes retired 3.x concepts', async () => {
   assert.equal(types.has('Gap'), false);
   assert.equal(types.has('Representation'), false);
   assert.equal(types.has('ImplementationEvent'), false);
+  assert.equal(types.has('Interface'), false);
   assert.equal(types.has('Service'), true);
   assert.equal(types.has('Process'), true);
   assert.equal(types.has('Function'), true);
   assert.equal(types.has('Event'), true);
   assert.equal(types.has('Path'), true);
+  assert.equal(types.has('BusinessInterface'), true);
+  assert.equal(types.has('ApplicationInterface'), true);
+  assert.equal(types.has('TechnologyInterface'), true);
 });
 
 test('archimate 4 profile exposes Common Domain', async () => {
@@ -51,4 +55,23 @@ test('archimate 4 profile exposes Common Domain', async () => {
   assert.equal(domains.has('Business'), true);
   assert.equal(domains.has('Application'), true);
   assert.equal(domains.has('Technology'), true);
+});
+
+test('archimate 4 profile matches the C260 element catalog', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const officialCatalog = await readJson('./fixtures/archimate4-c260-element-catalog.json');
+
+  assert.equal(officialCatalog.elements.length, 42);
+  assert.equal(profile.elements.length, 42);
+  assert.deepEqual(
+    profile.elements.map((element) => element.type).sort(),
+    officialCatalog.elements.slice().sort()
+  );
+
+  const elements = new Map(profile.elements.map((element) => [ element.type, element ]));
+
+  for (const [ type, classification ] of Object.entries(officialCatalog.classifications)) {
+    assert.equal(elements.get(type).domain, classification.domain, `${type} domain`);
+    assert.equal(elements.get(type).aspect, classification.aspect, `${type} aspect`);
+  }
 });

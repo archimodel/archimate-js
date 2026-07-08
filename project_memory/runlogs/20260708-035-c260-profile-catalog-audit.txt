@@ -1,0 +1,8 @@
+profileCount=42
+catalogCount=42
+hasGenericInterface=false
+hasBusinessInterface=true
+hasApplicationInterface=true
+hasTechnologyInterface=true
+missing=
+extra=

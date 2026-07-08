@@ -1,35 +1,37 @@
 {
   "version": "1.0",
-  "loop_id": 3,
-  "stage": "spec_extracted",
+  "loop_id": 4,
+  "stage": "profile_conformance_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
     "target_branch": "main"
   },
   "change_context": {
-    "change_type": "documentation",
-    "diff_size": 0,
+    "change_type": "bugfix",
+    "diff_size": 137,
     "touches_dependency_manifest": false
   },
   "ckogate": {
     "profile_id": "standard_pr",
     "overlays": [
-      "licensed_source_derivation"
+      "licensed_source_derivation",
+      "c260_profile_conformance"
     ],
     "applied_checks": [
-      "check_source_trace_present",
-      "check_no_verbatim_c260_tables",
-      "check_current_implementation_gaps_recorded"
+      "check_build_passes",
+      "check_static_analysis_clean",
+      "check_c260_element_catalog_exact_match",
+      "check_domain_specific_interfaces_preserved",
+      "check_no_generic_interface_element"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260708-028-archimate4-spec-npm-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260708-archimate4-spec-audit.md",
+    "runlog_path": "project_memory/runlogs/20260708-036-c260-profile-final-npm-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260708-c260-profile-conformance-audit.md",
     "result": "pass"
   },
   "open_issues": [
-    "ArchiMate 4 implementation profile must remove generic Interface and restore BusinessInterface, ApplicationInterface, and TechnologyInterface.",
     "ArchiMate 4 relationship rules must be replaced by an official Appendix B profile or a licensed external profile loader.",
     "MEFF 4.0 namespace, Junction serialization, and multiplicity attribute names still require the official XSD."
   ],
@@ -38,6 +40,6 @@
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-08T15:00:00+09:00"
+    "updated_at": "2026-07-08T15:09:19+09:00"
   }
 }

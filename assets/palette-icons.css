@@ -624,20 +624,6 @@ height: 22px !important;
 background-color: lightgrey;
 }
 
-.archimate-common-interface {
-background-image: url("./icons/business_interface.svg");
-background-repeat: no-repeat;
-background-size: 18px 18px;
-background-position: center;
-margin: 4px 0px 0px 4px;
-width: 22px !important;
-height: 22px !important;
-}
-
-.archimate-common-interface:hover {
-background-color: lightgrey;
-}
-
 .archimate-common-service {
 background-image: url("./icons/business_service.svg");
 background-repeat: no-repeat;

@@ -75,7 +75,8 @@ language elements, excluding relationship types.
 | Technology | Active structure | `Node`, `TechnologyInterface`, `Device`, `SystemSoftware`, `Equipment`, `Facility`, `CommunicationNetwork`, `DistributionNetwork` |
 | Technology | Passive structure | `Artifact`, `Material` |
 | Implementation & Migration | Behavior | `WorkPackage` |
-| Implementation & Migration | Active structure | `Deliverable`, `Plateau` |
+| Implementation & Migration | Passive structure | `Deliverable` |
+| Implementation & Migration | Composite | `Plateau` |
 
 Implementation notes:
 
@@ -197,18 +198,17 @@ Open decisions:
 - MEFF 4.0 attribute names for relationship-end multiplicity.
 - Whether relationship matrix data can be redistributed in source form.
 
-## Current Implementation Gaps
+## Implementation Status And Remaining Gaps
 
-The current `archimate4-profile.json` must be corrected:
+The `archimate4-profile.json` element catalog must remain aligned with the 42-element catalog above.
+In particular:
 
-- Remove generic `Interface`.
-- Add `BusinessInterface`.
-- Add `ApplicationInterface`.
-- Add `TechnologyInterface`.
-- Update migration so business/application/technology interfaces are preserved.
-- Update tests to assert the official 42-element catalog.
+- Generic `Interface` must not be exposed as an ArchiMate 4 element.
+- `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` must remain available.
+- Migration must preserve those three interface types.
+- Tests must assert the official 42-element catalog.
 
-The current relationship rules remain a fallback:
+The relationship rules remain a fallback:
 
 - Replace compatibility-derived maps with an official Appendix B profile or external licensed data
   loader.

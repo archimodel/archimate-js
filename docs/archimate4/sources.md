@@ -40,6 +40,14 @@
 - ArchiMate 4 C260 describes `Junction` as a relationship connector concept; the MEFF 4.0 exchange representation is still pending XSD confirmation.
 - See `docs/archimate4/official-specification.md` for the derived implementation specification and gap list.
 
+## C260 Profile Correction
+
+- `lib/metamodel/languages/archimate4-profile.json` is now tested against the C260-derived
+  42-element catalog in `test/fixtures/archimate4-c260-element-catalog.json`.
+- Generic `Interface` was removed from the ArchiMate 4 profile surface.
+- Domain-specific `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` are preserved
+  as ArchiMate 4 elements and are not migrated to a generic interface.
+
 ## XML Exchange Decision
 
 - `archimateVersion: "3.2"` continues to write the current 3.x namespace.

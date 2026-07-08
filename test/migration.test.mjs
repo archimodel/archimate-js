@@ -19,6 +19,26 @@ test('migration table covers retired public ArchiMate 4 concepts', async () => {
   }
 });
 
+test('migration table preserves ArchiMate 4 domain-specific interfaces', async () => {
+  const source = await readFile(new URL('../lib/metamodel/languages/retired-concepts.js', import.meta.url), 'utf8');
+
+  for (const type of [
+    'BusinessInterface',
+    'ApplicationInterface',
+    'TechnologyInterface'
+  ]) {
+    assert.equal(source.includes("[ '" + type + "'"), false, `${type} remains an ArchiMate 4 element`);
+  }
+
+  assert.doesNotMatch(source, /replacement: 'Interface'/);
+});
+
+test('migration table does not introduce a generic ArchiMate 4 Interface element', async () => {
+  const profile = await readFile(new URL('../lib/metamodel/languages/archimate4-profile.json', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(profile, /"type": "Interface"/);
+});
+
 test('migration utility preserves specialization information', async () => {
   const source = await readFile(new URL('../lib/migration/archimate3-to-4.js', import.meta.url), 'utf8');
 
