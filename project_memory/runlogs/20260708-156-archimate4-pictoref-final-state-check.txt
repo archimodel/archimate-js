@@ -1,0 +1,16 @@
+state json ok
+## codex/archimate-4-support
+M  docs/archimate4/sources.md
+M  lib/draw/PathMap.js
+A  project_memory/audit/reports/20260708-archimate4-pictoref-audit.md
+M  project_memory/logs/worklog.md
+A  project_memory/runlogs/20260708-149-archimate4-pictoref-gap-check.txt
+A  project_memory/runlogs/20260708-150-archimate4-pictoref-alias-check.txt
+A  project_memory/runlogs/20260708-151-archimate4-pictoref-npm-test-language.txt
+A  project_memory/runlogs/20260708-152-archimate4-pictoref-eslint-changed-js.txt
+A  project_memory/runlogs/20260708-153-archimate4-pictoref-git-diff-check.txt
+A  project_memory/runlogs/20260708-154-archimate4-pictoref-repo-lint-legacy.txt
+A  project_memory/runlogs/20260708-155-archimate4-pictoref-source-check.txt
+AM project_memory/runlogs/20260708-156-archimate4-pictoref-final-state-check.txt
+MM project_memory/state/aria_state.json
+M  test/language-profile.test.mjs

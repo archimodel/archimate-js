@@ -234,3 +234,14 @@
 - Docs: README and `docs/archimate4/*` now describe the supported viewpoint mechanism and the MEFF 4.0 XSD boundary.
 - Verification: `npm run test:language` passed with 60 tests in `project_memory/runlogs/20260708-143-viewpoint-mechanism-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-144-viewpoint-mechanism-eslint-changed-js.txt`; descriptor JSON parse passed in `project_memory/runlogs/20260708-145-viewpoint-mechanism-descriptor-json-parse.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-146-viewpoint-mechanism-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-147-viewpoint-mechanism-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-148-viewpoint-mechanism-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 23
+
+- Goal: prevent ArchiMate 4 profile pictogram references from silently falling back to the generic renderer object path.
+- Source check: local C260 Appendix A / notation keyword scan recorded only derived facts in `project_memory/runlogs/20260708-155-archimate4-pictoref-source-check.txt`.
+- Observation: initial gap check found 18 ArchiMate 4 profile `pictoRef` values missing from `lib/draw/PathMap.js`; see `project_memory/runlogs/20260708-149-archimate4-pictoref-gap-check.txt`.
+- Implemented: `PathMap` now registers explicit aliases for every missing ArchiMate 4 `pictoRef`, using existing renderer paths while exact C260 vector artwork remains a source/licensing decision.
+- Tests: `test/language-profile.test.mjs` now verifies that every ArchiMate 4 profile element and connector references a defined renderer path key.
+- Docs: `docs/archimate4/sources.md` now records the pictogram coverage guard and artwork redistribution boundary.
+- Verification: alias check passed with 0 missing refs in `project_memory/runlogs/20260708-150-archimate4-pictoref-alias-check.txt`; `npm run test:language` passed with 61 tests in `project_memory/runlogs/20260708-151-archimate4-pictoref-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-152-archimate4-pictoref-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-153-archimate4-pictoref-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-154-archimate4-pictoref-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-156-archimate4-pictoref-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.

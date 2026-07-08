@@ -1,0 +1,9 @@
+Derived source check for ArchiMate 4 pictogram coverage.
+Date: 2026-07-08
+PDF scan status: ok, pages=207
+PDF term pages: Appendix A: count=5 pages=10, 16, 23, 144, 145
+PDF term pages: Notation: count=83 pages=1, 7, 10, 16, 17, 20, 22, 29, 33, 37, 38, 40, 41, 42, 43, 44, 46, 48, 49, 51...
+PDF term pages: icon: count=7 pages=22, 23, 37, 134, 135, 144, 199
+PDF term pages: symbol: count=4 pages=32, 37, 38, 135
+PDF term pages: pictogram: count=0 pages=
+Derived facts only: C260 includes notation coverage for ArchiMate elements; renderer profile pictogram references should not silently fall back because of undefined PathMap keys. No normative text or pictogram vector data is recorded here.

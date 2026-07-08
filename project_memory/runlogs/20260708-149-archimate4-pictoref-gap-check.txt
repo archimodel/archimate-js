@@ -1,0 +1,21 @@
+checked concepts: 44
+available path refs: 29
+missing refs: 18
+Grouping: PICTO_GROUPING
+Location: PICTO_LOCATION
+Stakeholder: PICTO_STAKHOLDER
+Driver: PICTO_DRIVER
+Assessment: PICTO_ASSESSMENT
+Goal: PICTO_GOAL
+Outcome: PICTO_OUTCOME
+Principle: PICTO_PRINCIPLE
+Requirement: PICTO_REQUIREMENT
+Meaning: PICTO_MEANING
+Value: PICTO_VALUE
+DistributionNetwork: PICTO_DISTRIBUTION_NETWORK
+Equipment: PICTO_EQUIPMENT
+Facility: PICTO_FACILITY
+Material: PICTO_MATERIAL
+WorkPackage: PICTO_WORK_PACKAGE
+Deliverable: PICTO_DELIVRABLE
+Plateau: PICTO_PLATEAU

@@ -53,6 +53,18 @@
   the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
   naming remains unresolved.
 
+## Pictogram Coverage Guard
+
+- A local C260 Appendix A / notation keyword scan is recorded in
+  `project_memory/runlogs/20260708-155-archimate4-pictoref-source-check.txt`.
+- `lib/draw/PathMap.js` now defines every `pictoRef` used by the ArchiMate 4 profile and relationship
+  connector metadata.
+- Some ArchiMate 4 profile pictograms currently use explicit aliases to existing renderer paths rather
+  than embedded C260 vector artwork. This prevents silent fallback to a generic object path while
+  avoiding redistribution of standard artwork before the exact licensing/source decision is resolved.
+- `test/language-profile.test.mjs` verifies that every ArchiMate 4 profile concept has a renderer
+  `PathMap` entry.
+
 ## Language Customization Mechanism
 
 - A local C260 Chapter 14 keyword scan is recorded in

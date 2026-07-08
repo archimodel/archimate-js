@@ -101,6 +101,20 @@ test('profile-aware metadata and palette include relationship junction connector
   assert.match(paletteProvider, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
 });
 
+test('archimate 4 profile pictogram refs are defined for renderer path map', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+  const concepts = profile.elements.concat(profile.connectors || []);
+
+  for (const concept of concepts) {
+    assert.equal(
+      pathMap.includes("'" + concept.pictoRef + "'"),
+      true,
+      `${concept.type} references missing ${concept.pictoRef}`
+    );
+  }
+});
+
 test('language profile customization supports C260 specialization profiles', async () => {
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
   const languageProfile = await readFile(new URL('../lib/core/languageProfile.js', import.meta.url), 'utf8');
