@@ -197,6 +197,8 @@ Implementation notes:
   object pictogram fallback.
 - `Goal` must use a target/bullseye renderer pictogram in ArchiMate 4 mode, not the generic object
   pictogram fallback.
+- `Outcome` must use a target/bullseye-with-arrow renderer pictogram in ArchiMate 4 mode, not the
+  generic object pictogram fallback.
 - `Location` must use a location-pin renderer pictogram in ArchiMate 4 mode, not the legacy generic
   object pictogram fallback.
 - `DistributionNetwork` must use a bidirectional-arrow renderer pictogram in ArchiMate 4 mode, not

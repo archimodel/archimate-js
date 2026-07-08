@@ -1142,3 +1142,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-514-goal-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-515-goal-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-goal-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 92
+
+- Goal: replace the ArchiMate 4 `Outcome` renderer pictogram fallback with a C260 Appendix A-derived target/bullseye-with-arrow path.
+- Source evidence: `project_memory/runlogs/20260709-516-c260-appendix-a-outcome-render.txt` and `project_memory/runlogs/20260709-517-c260-appendix-a-outcome-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-518-outcome-pictogram-red-test.txt` failed because `PICTO_OUTCOME` was still aliased to `PICTO_OBJECT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_OUTCOME` target/bullseye-with-arrow path and removes the generic object alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Outcome renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-519-outcome-pictogram-test.txt`; `npm run test:language` passed with 150 tests in `project_memory/runlogs/20260709-520-outcome-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-521-outcome-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-522-outcome-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-523-outcome-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-524-outcome-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-525-outcome-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-526-outcome-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-527-outcome-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-outcome-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

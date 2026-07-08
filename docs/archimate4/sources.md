@@ -113,6 +113,11 @@
   `project_memory/runlogs/20260709-505-c260-appendix-a-goal-visual-check.txt`. The derived renderer
   requirement is limited to replacing the local `PICTO_GOAL` generic object alias with a
   locally-authored target/bullseye path.
+- A local C260 Appendix A rendered visual check for `Outcome` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-516-c260-appendix-a-outcome-render.txt` and
+  `project_memory/runlogs/20260709-517-c260-appendix-a-outcome-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_OUTCOME` generic object alias with a
+  locally-authored target/bullseye-with-arrow path.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

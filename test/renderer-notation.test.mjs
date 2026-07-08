@@ -132,3 +132,11 @@ test('renderer uses a dedicated ArchiMate 4 Goal target pictogram path', async (
   assert.doesNotMatch(pathMap, /'PICTO_GOAL': 'PICTO_OBJECT'/);
   assert.match(pathMap, /m 9 2\.5 a 1 1 90 0 0 0 13/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Outcome target-arrow pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_OUTCOME': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_OUTCOME': 'PICTO_OBJECT'/);
+  assert.match(pathMap, /m 7 5 a 1 1 90 0 0 0 10/);
+});
