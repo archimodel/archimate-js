@@ -1,0 +1,15 @@
+Derived scan of local licensed C260 PDF for language customization scope.
+
+Source: C:/Users/syska/Downloads/978940181474E.pdf
+Date: 2026-07-08
+Tool: local pypdf keyword scan for language customization, specialization profile, specialization.
+
+Derived facts only:
+- C260 states conformance includes support for the language customization mechanisms in Chapter 14 in an implementation-defined manner.
+- Chapter 14 covers adding attributes to ArchiMate concepts and specializing concepts.
+- Specialization profiles can be coupled with ArchiMate concepts and may be shown using stereotype-like notation.
+- Multiple specialization profiles may be assigned to the same generalized concept.
+- C260 includes informative examples of specializations for common, business, technology, motivation, strategy, implementation/migration, relationships, and junctions.
+- Appendix E migration guidance explicitly references specialization when replacing retired ArchiMate 3.x concepts.
+
+No normative prose or relationship tables are recorded in this runlog.

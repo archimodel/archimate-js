@@ -54,6 +54,28 @@ Aspects remain:
 Default color cues from the specification may be used for UI consistency but do not carry formal
 semantics.
 
+## Language Customization
+
+C260 requires support for language customization mechanisms in an implementation-defined manner.
+For this repository, the supported mechanism is an `archimateLanguageProfile` option accepted by the
+viewer/modeler configuration and by `createLanguageProfile(version, customization)`.
+
+Supported customization data:
+
+- Additional or overridden domain metadata, including color.
+- Additional concept attributes retained on the active language profile for host tooling.
+- Specialized element or connector metadata. New custom concepts must declare `specializes` and point
+  to an existing standard concept or connector.
+
+Runtime behavior:
+
+- Palette and element metadata are read from the active customized profile.
+- Default element color uses custom domain colors when supplied.
+- Relationship validation resolves custom specialized concepts to their standard base concept, so a
+  `RiskEvent` specializing `Event` inherits the base `Event` relationship constraints.
+- This does not embed Appendix B relationship table data; external Appendix B profiles remain the
+  authoritative path for exact standard relationship rules.
+
 ## Element Catalog
 
 The official ArchiMate 4 element count is 42. The implementation profile must match this count for

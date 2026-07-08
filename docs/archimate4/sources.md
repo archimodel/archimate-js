@@ -53,6 +53,19 @@
   the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
   naming remains unresolved.
 
+## Language Customization Mechanism
+
+- A local C260 Chapter 14 keyword scan is recorded in
+  `project_memory/runlogs/20260708-133-language-customization-source-scan.txt`.
+- The implementation-defined customization path is `archimateLanguageProfile` on viewer/modeler
+  options, or direct use of `createLanguageProfile(version, customization)`.
+- Custom profiles may add or override domains, retain custom attribute definitions, and add specialized
+  elements or connectors.
+- New custom concepts must declare `specializes`; relationship validation resolves specialized source
+  and target concepts to their standard base concept before consulting the active relationship profile.
+- This implements language customization without changing the 42-element standard catalog or embedding
+  the licensed Appendix B matrix.
+
 ## Appendix E Migration Correction
 
 - C260 Appendix E guidance is reflected in `lib/metamodel/languages/retired-concepts.js`.
@@ -158,6 +171,9 @@
 
 - Checked `https://www.opengroup.org/xsd/archimate/` on 2026-07-08, then refreshed the check during
   loop 13.
+- Refreshed again during loop 21 in
+  `project_memory/runlogs/20260708-139-archimate-xsd-current-head-check.txt`; candidate 4.0 URLs
+  still returned 404 while the known 3.1 Model XSD returned 200.
 - The directory returned links for ArchiMate 3.1 model/view/diagram schemas, examples, and related
   pages.
 - `https://www.opengroup.org/xsd/archimate/4.0/` returned 404.

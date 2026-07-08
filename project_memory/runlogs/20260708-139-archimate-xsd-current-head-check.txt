@@ -1,0 +1,8 @@
+
+Url                                          StatusCode StatusDescription
+---                                          ---------- -----------------
+https://www.opengroup.org/xsd/archimate/            200 OK
+https://www.opengroup.org/xsd/archimate/4.0/        404
+https://www.opengroup.org/xsd/archimate/4.0…        404
+https://www.opengroup.org/xsd/archimate/4.0…        404
+https://www.opengroup.org/xsd/archimate/3.1…        200 OK

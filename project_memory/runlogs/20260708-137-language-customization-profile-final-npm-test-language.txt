@@ -1,0 +1,80 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (6.7752ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.2891ms)
+✔ junction implementation uses official xsd element names as model types (4.2757ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (6.3585ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.782ms)
+✔ archimate 4 profile exposes Common Domain (2.5733ms)
+✔ archimate 4 profile matches the C260 element catalog (2.3905ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (0.9702ms)
+✔ profile-aware metadata and palette include relationship junction connectors (2.3559ms)
+✔ language profile customization supports C260 specialization profiles (4.2374ms)
+(node:42368) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migration table covers retired public ArchiMate 4 concepts (5.1169ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (1.1883ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (1.9724ms)
+✔ migration utility preserves specialization information (0.9501ms)
+✔ migration table records C260-derived ambiguous replacement candidates (0.8867ms)
+✔ migration utility reports alternative replacement types for ambiguous C260 rows (0.6109ms)
+✔ migration utility stores specialization profile metadata as model properties (0.2782ms)
+✔ migration utility can skip specialization profile metadata (0.2059ms)
+(node:48528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (8.808ms)
+✔ element factory carries multiplicity from relationship refs (1.2873ms)
+✔ connection updater persists relationship multiplicity fields (1.1849ms)
+✔ relationship replacement preserves editable multiplicity properties (1.0612ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (1.0221ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (1.4182ms)
+✔ renderer displays relationship end multiplicities (1.4114ms)
+✔ relationship multiplicity notation follows the C260-derived subset (0.6688ms)
+✔ junction-connected relationships cannot carry multiplicity (0.3314ms)
+✔ archimate 4 grouping and location aggregate relationship concepts (0.4306ms)
+✔ junction relationship candidates follow existing relationship type (1.3477ms)
+✔ junction endpoint chain allows candidates only when direct endpoints allow the same relationship (0.3425ms)
+✔ junction endpoint chain rejects candidates when direct endpoints disallow the same relationship (0.193ms)
+✔ junction endpoint chain validates outgoing candidates against incoming endpoints (0.2481ms)
+✔ junction relationship candidates prefer relationshipRef type over generic connection type (0.1174ms)
+✔ junction relationship candidates reject mixed existing relationship types (0.1078ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (5.4264ms)
+(node:67496) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (8.2974ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.9947ms)
+✔ connection rules evaluate relationships through the active language profile (1.3632ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (1.4817ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.7024ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.2703ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.5219ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.3454ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (2.9117ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.5311ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.2347ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (1.9176ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.5352ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.2521ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.1197ms)
+✔ archimate 3 fixture keeps current namespace (6.1587ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.5498ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.7386ms)
+✔ archimate 4 descriptor allows relationships between relationship concepts (3.2998ms)
+✔ archimate 4 descriptor allows connections to relationship view elements (1.1095ms)
+✔ archimate 3 descriptor keeps existing endpoint constraints (0.8286ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 240.5894

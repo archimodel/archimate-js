@@ -100,3 +100,21 @@ test('profile-aware metadata and palette include relationship junction connector
   assert.match(paletteProvider, /getPaletteConcepts\(profile\)/);
   assert.match(paletteProvider, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
 });
+
+test('language profile customization supports C260 specialization profiles', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const languageProfile = await readFile(new URL('../lib/core/languageProfile.js', import.meta.url), 'utf8');
+  const relationshipUtil = await readFile(new URL('../lib/util/RelationshipUtil.js', import.meta.url), 'utf8');
+  const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const packageEntrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
+
+  assert.match(languageIndex, /export function createLanguageProfile/);
+  assert.match(languageIndex, /parseLanguageProfileCustomization/);
+  assert.match(languageIndex, /must declare specializes/);
+  assert.match(languageIndex, /export function getBaseConceptTypeForProfile/);
+  assert.match(languageProfile, /archimateLanguageProfile/);
+  assert.match(relationshipUtil, /getBaseConceptTypeForProfile\(targetElementType, profile\)/);
+  assert.match(relationshipUtil, /getBaseConceptTypeForProfile\(targetType, profile\)/);
+  assert.match(elementFactory, /getDomainColor\(layer, profile\)/);
+  assert.match(packageEntrypoint, /createLanguageProfile/);
+});

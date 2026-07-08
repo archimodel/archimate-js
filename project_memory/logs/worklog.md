@@ -212,3 +212,14 @@
 - Docs: README and `docs/archimate4/*` now state that callers can verify fallback vs externally loaded complete profile status.
 - Verification: `npm run test:language` passed with 55 tests in `project_memory/runlogs/20260708-128-relationship-profile-status-metadata-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-129-relationship-profile-status-metadata-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-130-relationship-profile-status-metadata-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-131-relationship-profile-status-metadata-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-132-relationship-profile-status-metadata-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 21
+
+- Goal: add implementation-defined C260 Chapter 14 language customization support without changing the standard 42-element ArchiMate 4 catalog.
+- Source check: local C260 keyword scan recorded only derived language customization facts in `project_memory/runlogs/20260708-133-language-customization-source-scan.txt`; XSD availability was refreshed in `project_memory/runlogs/20260708-139-archimate-xsd-current-head-check.txt`.
+- Implemented: `createLanguageProfile(version, customization)` and `archimateLanguageProfile` allow custom domains, attributes, and specialized element/connector metadata.
+- Implemented: new custom concepts must declare `specializes`; relationship validation resolves specialized source and target concepts to their standard base concept, so custom specializations inherit base relationship constraints.
+- Implemented: custom domain colors are used when creating shapes through the active language profile.
+- Docs: README and `docs/archimate4/*` now document the implementation-defined customization contract and MEFF/XSD boundary.
+- Verification: `npm run test:language` passed with 56 tests in `project_memory/runlogs/20260708-137-language-customization-profile-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-138-language-customization-profile-final-eslint-changed-js.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-140-language-customization-profile-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-141-language-customization-profile-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

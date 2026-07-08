@@ -38,9 +38,39 @@ The supplied profile may be an object or a JSON string loaded by the host applic
 
 Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation.
 
+Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept:
+
+```js
+const modeler = new Modeler({
+  container: document.querySelector('#canvas'),
+  archimateVersion: '4.0',
+  archimateLanguageProfile: {
+    version: '4.0',
+    domains: [
+      { name: 'Risk', color: '#E8D7FF' }
+    ],
+    elements: [
+      {
+        type: 'RiskEvent',
+        specializes: 'Event',
+        domain: 'Risk',
+        aspect: 'Behavior',
+        typeName: 'Risk Event',
+        className: 'archimate-risk-event',
+        pictoRef: 'PICTO_EVENT'
+      }
+    ],
+    attributes: [
+      { concept: 'RiskEvent', name: 'severity', type: 'String' }
+    ]
+  }
+});
+```
+
 ## ArchiMate 4 Notes
 
 * ArchiMate 4 support uses versioned language profiles.
+* Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.
 * Retired 3.x concepts are hidden from the 4.0 palette.
 * 3.x to 4.0 migration preserves original type information when the replacement would otherwise lose modeling intent.
 * Migration also stores preserved specialization metadata in model properties for exchange-friendly retention.

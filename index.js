@@ -10,3 +10,9 @@ export {
   getArchimate4RelationshipProfileStatus,
   setArchimate4RelationshipProfile
 } from './lib/metamodel/languages/archimate4-relationships';
+
+export {
+  createLanguageProfile,
+  getLanguageProfile,
+  normalizeArchimateVersion
+} from './lib/metamodel/languages';
