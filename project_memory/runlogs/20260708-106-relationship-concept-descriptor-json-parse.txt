@@ -1,0 +1,2 @@
+lib/moddle/resources/archimate4.json ok
+lib/moddle/resources/archimate3.json ok

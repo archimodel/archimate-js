@@ -43,13 +43,13 @@
         {
           "name": "source",
           "isReference": true,
-          "type": "BaseElement",
+          "type": "Concept",
           "isAttr": true
         },
         {
           "name": "target",
           "isReference": true,
-          "type": "BaseElement",
+          "type": "Concept",
           "isAttr": true
         },
         {
@@ -274,13 +274,13 @@
         },
         {
           "name": "source",
-          "type": "Node",
+          "type": "ViewElement",
           "isReference": true,
           "isAttr": true
         },
         {
           "name": "target",
-          "type": "Node",
+          "type": "ViewElement",
           "isReference": true,
           "isAttr": true
         },

@@ -1,0 +1,25 @@
+MODEL lines matching relationship/source/target attributes:
+          <xs:complexContent>
+              <xs:extension base="ConceptType">
+>                 <xs:attribute name="source" type="xs:IDREF" use="required" />
+>                 <xs:attribute name="target" type="xs:IDREF" use="required" />
+              </xs:extension>
+          </xs:complexContent>
+DIAGRAM lines matching connection/source/target/relationshipRef attributes:
+                  </xs:sequence>
+
+>                 <xs:attribute name="source" type="xs:IDREF" use="optional" />
+>                 <xs:attribute name="target" type="xs:IDREF" use="optional" />
+              </xs:extension>
+          </xs:complexContent>
+                  </xs:sequence>
+                  <xs:attributeGroup ref="IdentifierGroup" />
+>                 <xs:attribute name="source" type="xs:IDREF" use="required" />
+>                 <xs:attribute name="target" type="xs:IDREF" use="required" />
+                  <xs:anyAttribute namespace="##other" processContents="strict" />
+              </xs:restriction>
+          <xs:complexContent>
+              <xs:extension base="SourcedConnectionType">
+>                 <xs:attribute name="relationshipRef" type="xs:IDREF" use="required" />
+              </xs:extension>
+          </xs:complexContent>

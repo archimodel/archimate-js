@@ -1,0 +1,14 @@
+URL https://www.opengroup.org/xsd/archimate/ -> 200
+URL https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd -> 200
+3.1 Model RelationshipAttributes has source IDREF: False
+3.1 Model RelationshipAttributes has target IDREF: False
+3.1 Model ElementTypeEnum count: 102
+3.1 Model ElementTypeEnum contains AndJunction: True
+3.1 Model ElementTypeEnum contains OrJunction: True
+URL https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd -> 200
+3.1 Diagram ConnectionAttributes has source IDREF: False
+3.1 Diagram ConnectionAttributes has target IDREF: False
+3.1 Diagram ConnectionAttributes has relationshipRef IDREF: False
+URL https://www.opengroup.org/xsd/archimate/4.0/ -> 404
+URL https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd -> 404
+URL https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd -> 404

@@ -115,6 +115,11 @@ Implementation note:
   confirmed from the official MEFF 4.0 XSD before changing XML serialization.
 - The editor exposes `AndJunction` and `OrJunction` as relationship connector metadata outside the
   42-element ArchiMate 4 catalog until the MEFF 4.0 exchange representation is confirmed.
+- The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
+  relationship view elements as diagram connection endpoints. It does this with abstract endpoint
+  constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for
+  `Connection.source` / `Connection.target`. The ArchiMate 3 descriptor keeps the existing narrower
+  constraints.
 
 ## Multiplicity
 

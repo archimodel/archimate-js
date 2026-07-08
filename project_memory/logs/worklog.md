@@ -170,3 +170,14 @@
 - Docs: README and `docs/archimate4/*` now state that migration specialization metadata is retained in model properties.
 - Verification: `npm run test:language` passed with 48 tests in `project_memory/runlogs/20260708-098-specialization-profile-properties-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-099-specialization-profile-properties-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-100-specialization-profile-properties-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-102-specialization-profile-properties-final-diff-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 17
+
+- Goal: remove the ArchiMate 4 moddle descriptor endpoint limitation that prevented relationship concepts from being used as relationship or diagram connection endpoints.
+- Source check: official ArchiMate 3.1 Model and Diagram XSDs were reachable and show endpoint attributes as ID references; the first regex attempt in `project_memory/runlogs/20260708-103-relationship-concept-descriptor-source-check.txt` was too narrow, and the corrected focused extraction is in `project_memory/runlogs/20260708-103b-relationship-concept-descriptor-xsd-snippets.txt`.
+- Implemented: `lib/moddle/resources/archimate4.json` now uses `Concept` for `Relationship.source` / `Relationship.target` and `ViewElement` for `Connection.source` / `Connection.target`.
+- Guardrail: `lib/moddle/resources/archimate3.json` is intentionally unchanged; tests assert it still uses `BaseElement` and `Node` endpoint constraints.
+- Tests: `test/xml-roundtrip.test.mjs` parses descriptors and asserts the ArchiMate 4 abstract endpoint types plus the preserved ArchiMate 3 constraints.
+- Docs: `docs/archimate4/*` now record the relationship concept descriptor guard and the XSD-derived endpoint rationale.
+- Verification: `npm run test:language` passed with 51 tests in `project_memory/runlogs/20260708-104-relationship-concept-descriptor-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-105-relationship-concept-descriptor-eslint-changed-js.txt`; descriptor JSON parse passed in `project_memory/runlogs/20260708-106-relationship-concept-descriptor-json-parse.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-107-relationship-concept-descriptor-git-diff-check.txt`; final diff/state check passed in `project_memory/runlogs/20260708-108-relationship-concept-descriptor-final-diff-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data and MEFF 4.0 XSD details remain external-source dependent.

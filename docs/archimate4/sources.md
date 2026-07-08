@@ -119,6 +119,17 @@
 - `Plateau` and the rest of the Appendix B.6 table still depend on the external Appendix B profile path
   rather than a committed verbatim table.
 
+## Relationship Concept Descriptor Guard
+
+- The public ArchiMate 3.1 Model and Diagram XSDs express relationship and diagram connection
+  endpoints as ID references, while the local moddle descriptor adds implementation-level type
+  constraints.
+- The ArchiMate 4 moddle descriptor now uses the shared abstract endpoint types needed for relationship
+  concepts: `Relationship.source` and `Relationship.target` reference `Concept`, while
+  `Connection.source` and `Connection.target` reference `ViewElement`.
+- The ArchiMate 3 descriptor is intentionally unchanged and remains constrained to `BaseElement` for
+  relationships and `Node` for diagram connections.
+
 ## Multiplicity Notation Guard
 
 - C260 defines the relationship-end multiplicity notation as a positive integer, `*`, or a finite
