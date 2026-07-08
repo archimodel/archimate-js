@@ -553,10 +553,26 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
+  assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
+  assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
+  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-606-meff4-xsd-current-recheck.txt');
+  assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
+    '3.1/archimate3_Model.xsd',
+    '3.1/archimate3_View.xsd',
+    '3.1/archimate3_Diagram.xsd'
+  ]);
+  assert.equal(sourceCoverage.meff4Xsd.candidateStatusCodes['https://www.opengroup.org/xsd/archimate/4.0/'], 404);
+  assert.equal(
+    sourceCoverage.meff4Xsd.candidateStatusCodes[
+      'https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd'
+    ],
+    404
+  );
 
   assert.match(languageIndex, /sourceCoverage: summarizeSourceCoverage/);
   assert.match(languageIndex, /missingCompanionSources/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
+  assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
 });
 
 test('archimate 4 implementation plan records current execution boundary', async () => {

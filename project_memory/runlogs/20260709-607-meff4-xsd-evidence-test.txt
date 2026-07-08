@@ -1,0 +1,37 @@
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (7.5083ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.2745ms)
+✔ archimate 4 profile exposes Common Domain (1.0653ms)
+✔ archimate 4 profile matches the C260 element catalog (4.0015ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (1.8493ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (1.4803ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (1.6639ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.5657ms)
+✔ archimate 4 palette exposes every standard element (1.6292ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (6.2703ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (6.2189ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.8161ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.1439ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (1.72ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (34.2214ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (1.8167ms)
+✔ active profile rejects concepts and relationships outside the selected version (2.2442ms)
+✔ renderer uses active language profile pictogram refs (2.1606ms)
+✔ language profile customization supports C260 specialization profiles (2.3002ms)
+✔ language profile customization validates C260 profile attribute definitions (2.1756ms)
+✔ language profile customization supports relationship specializations (1.6815ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (2.51ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.7269ms)
+✔ language profile customization supports viewpoint definitions (1.523ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (3.4942ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (1.6285ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (2.3626ms)
+✔ archimate 4 implementation plan records current execution boundary (0.8364ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (2.1796ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 191.3033

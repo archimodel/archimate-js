@@ -1,0 +1,8 @@
+{"Url":"https://www.opengroup.org/xsd/archimate/","StatusCode":200,"ContentType":["text/html; charset=UTF-8"],"Length":3056,"XsdLinks":"3.1/archimate3_Model.xsd,3.1/archimate3_View.xsd,3.1/archimate3_Diagram.xsd"}
+{"Url":"https://www.opengroup.org/xsd/archimate/4.0/","StatusCode":404,"Error":"Response status code does not indicate success: 404 (Not Found)."}
+{"Url":"https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd","StatusCode":404,"Error":"Response status code does not indicate success: 404 (Not Found)."}
+{"Url":"https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd","StatusCode":404,"Error":"Response status code does not indicate success: 404 (Not Found)."}
+{"Url":"https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd","StatusCode":404,"Error":"Response status code does not indicate success: 404 (Not Found)."}
+{"Url":"https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd","StatusCode":200,"ContentType":["text/xml"],"Length":49107,"XsdLinks":""}
+{"Url":"https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd","StatusCode":200,"ContentType":["text/xml"],"Length":23286,"XsdLinks":""}
+{"Url":"https://www.opengroup.org/xsd/archimate/3.1/archimate3_View.xsd","StatusCode":200,"ContentType":["text/xml"],"Length":13570,"XsdLinks":""}

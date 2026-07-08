@@ -1230,3 +1230,15 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-604-plan-execution-status-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-605-plan-execution-status-final-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-plan-execution-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 99
+
+- Goal: refresh the official XSD directory evidence and make the MEFF 4.0 XSD blocker machine-auditable in the ArchiMate 4 implementation status.
+- Source check: `project_memory/runlogs/20260709-606-meff4-xsd-current-recheck.txt` records the official `https://www.opengroup.org/xsd/archimate/` result as HTTP 200 with only 3.1 Model/View/Diagram XSD links; tested 4.0 directory and Model/Diagram/View XSD candidate URLs returned 404.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records the XSD evidence in `sourceCoverage.meff4Xsd`, including `lastCheckedAt`, `lastRunlogPath`, `directoryStatusCode`, discovered 3.1 XSD links, `official4XsdDiscovered: false`, and candidate 4.0 status codes.
+- Tests/docs: `test/language-profile.test.mjs`, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and describe the refreshed MEFF 4.0 XSD evidence.
+- Verification: focused language-profile test passed in `project_memory/runlogs/20260709-607-meff4-xsd-evidence-test.txt`; `npm run test:language` passed with 157 tests in `project_memory/runlogs/20260709-608-meff4-xsd-evidence-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-609-meff4-xsd-evidence-eslint-registry.txt`; JSON check passed in `project_memory/runlogs/20260709-610-meff4-xsd-evidence-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-611-meff4-xsd-evidence-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-612-meff4-xsd-evidence-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-613-meff4-xsd-evidence-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-614-meff4-xsd-evidence-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-615-meff4-xsd-evidence-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-meff4-xsd-evidence-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
