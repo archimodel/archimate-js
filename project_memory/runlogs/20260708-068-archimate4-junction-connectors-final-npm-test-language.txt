@@ -1,0 +1,79 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (7.0447ms)
+✔ archimate 3 profile exposes relationship junction connector elements (1.3241ms)
+✔ junction implementation uses official xsd element names as model types (4.2085ms)
+(node:60904) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/features/palette/PaletteProvider.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+node:internal/modules/esm/resolve:274
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\github\archimate-js\lib\util\ModelUtil' imported from D:\github\archimate-js\lib\features\palette\PaletteProvider.js
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:864:10)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:718:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:735:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:764:52)
+    at #resolve (node:internal/modules/esm/loader:700:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:228:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///D:/github/archimate-js/lib/util/ModelUtil'
+}
+
+Node.js v24.12.0
+✖ test\language-profile.test.mjs (79.466ms)
+✔ migration table covers retired public ArchiMate 4 concepts (5.7709ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (2.1394ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (2.1424ms)
+✔ migration utility preserves specialization information (2.4517ms)
+(node:30716) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (7.2844ms)
+✔ element factory carries multiplicity from relationship refs (1.868ms)
+✔ connection updater persists relationship multiplicity fields (1.23ms)
+✔ relationship replacement preserves editable multiplicity properties (1.0137ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (0.992ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (0.7895ms)
+✔ renderer displays relationship end multiplicities (0.6314ms)
+✔ relationship multiplicity notation follows the C260-derived subset (0.3682ms)
+✔ junction-connected relationships cannot carry multiplicity (0.2035ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (1.7234ms)
+(node:41596) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (5.8855ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.427ms)
+✔ connection rules evaluate relationships through the active language profile (0.8838ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.0791ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2446ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.4598ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.2023ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.1634ms)
+✔ archimate 3 fixture keeps current namespace (5.7495ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.2173ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.241ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 28
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.3029
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1:1
+✖ test\language-profile.test.mjs (79.466ms)
+  'test failed'

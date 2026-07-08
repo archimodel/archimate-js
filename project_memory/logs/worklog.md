@@ -90,3 +90,16 @@
 - Audit: first changed-file ESLint failed after `lib/features/rules/ArchimateRules.js` entered the lint gate, exposing pre-existing style issues in the touched file; see `project_memory/runlogs/20260708-061-profile-aware-rules-eslint-changed-js.txt`.
 - Fix verification: changed-file ESLint passed after formatting the touched file in `project_memory/runlogs/20260708-062-profile-aware-rules-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-063-profile-aware-rules-git-diff-check.txt`; final post-log `git diff --check` passed in `project_memory/runlogs/20260708-064-profile-aware-rules-final-git-diff-check.txt`.
 - Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.
+
+## 2026-07-08 loop 10
+
+- Goal: expose ArchiMate 4 junctions as relationship connectors without corrupting the C260-derived 42-element catalog.
+- Implemented: added `AndJunction` and `OrJunction` to `archimate4-profile.json` under `connectors`, not `elements`.
+- Implemented: profile-aware metadata lookup and palette generation now include `profile.connectors` in addition to `profile.elements`.
+- Implemented: `ColorUtil` maps `Relationships` and legacy `Other` to concrete fill colors so junction connector shapes do not inherit undefined fill color.
+- Tests: added coverage that ArchiMate 4 junction connectors remain outside the 42-element catalog while still available to profile metadata and palette code.
+- Docs: updated README and `docs/archimate4/*` to record the connector-outside-element-catalog decision.
+- Verification: `npm run test:language` passed with 34 tests in `project_memory/runlogs/20260708-065-archimate4-junction-connectors-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-066-archimate4-junction-connectors-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-067-archimate4-junction-connectors-git-diff-check.txt`.
+- Note: `project_memory/runlogs/20260708-068-archimate4-junction-connectors-final-npm-test-language.txt` is a failed intermediary attempt to import `PaletteProvider` directly in Node tests; the attempt was reverted because the existing source uses bundler-style extensionless imports.
+- Final verification: `npm run test:language` passed with 34 tests in `project_memory/runlogs/20260708-069-archimate4-junction-connectors-final-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-070-archimate4-junction-connectors-final-eslint-changed-js.txt`; final `git diff --check` passed in `project_memory/runlogs/20260708-071-archimate4-junction-connectors-final-git-diff-check.txt`.
+- Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.

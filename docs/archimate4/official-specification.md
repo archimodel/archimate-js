@@ -112,6 +112,8 @@ Implementation note:
 - ArchiMate 3.1 MEFF exposes `AndJunction` and `OrJunction` element type values. ArchiMate 4 C260
   describes the modeling concept as `Junction`; the exact MEFF 4.0 exchange representation must be
   confirmed from the official MEFF 4.0 XSD before changing XML serialization.
+- The editor exposes `AndJunction` and `OrJunction` as relationship connector metadata outside the
+  42-element ArchiMate 4 catalog until the MEFF 4.0 exchange representation is confirmed.
 
 ## Multiplicity
 
@@ -220,6 +222,8 @@ In particular:
 - `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` must remain available.
 - Migration must preserve those three interface types.
 - Tests must assert the official 42-element catalog.
+- `AndJunction` and `OrJunction` must remain available as relationship connectors without being counted
+  as ArchiMate 4 elements.
 
 The relationship rules remain a fallback:
 

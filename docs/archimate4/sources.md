@@ -49,6 +49,9 @@
 - Generic `Interface` was removed from the ArchiMate 4 profile surface.
 - Domain-specific `BusinessInterface`, `ApplicationInterface`, and `TechnologyInterface` are preserved
   as ArchiMate 4 elements and are not migrated to a generic interface.
+- `AndJunction` and `OrJunction` are exposed as ArchiMate 4 relationship connector metadata outside
+  the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
+  naming remains unresolved.
 
 ## Appendix B Relationship Profile Loading
 

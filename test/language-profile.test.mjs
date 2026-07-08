@@ -75,3 +75,28 @@ test('archimate 4 profile matches the C260 element catalog', async () => {
     assert.equal(elements.get(type).aspect, classification.aspect, `${type} aspect`);
   }
 });
+
+test('archimate 4 exposes relationship junction connectors outside the element catalog', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const elements = new Set(profile.elements.map((element) => element.type));
+  const connectors = new Map(profile.connectors.map((connector) => [ connector.type, connector ]));
+
+  assert.equal(profile.elements.length, 42);
+  assert.equal(elements.has('AndJunction'), false);
+  assert.equal(elements.has('OrJunction'), false);
+  assert.equal(connectors.get('AndJunction').typeName, 'And Junction');
+  assert.equal(connectors.get('OrJunction').typeName, 'Or Junction');
+  assert.notEqual(connectors.get('AndJunction').palette, false);
+  assert.notEqual(connectors.get('OrJunction').palette, false);
+});
+
+test('profile-aware metadata and palette include relationship junction connectors', async () => {
+  const modelUtil = await readFile(new URL('../lib/util/ModelUtil.js', import.meta.url), 'utf8');
+  const colorUtil = await readFile(new URL('../lib/util/ColorUtil.js', import.meta.url), 'utf8');
+  const paletteProvider = await readFile(new URL('../lib/features/palette/PaletteProvider.js', import.meta.url), 'utf8');
+
+  assert.match(modelUtil, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
+  assert.match(colorUtil, /\['Relationships', COLOR_DOMAIN_RELATIONSHIPS\]/);
+  assert.match(paletteProvider, /getPaletteConcepts\(profile\)/);
+  assert.match(paletteProvider, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
+});

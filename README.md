@@ -41,6 +41,7 @@ The supplied profile is validated against the ArchiMate 4 element catalog before
 * ArchiMate 4 support uses versioned language profiles.
 * Retired 3.x concepts are hidden from the 4.0 palette.
 * 3.x to 4.0 migration preserves original type information when the replacement would otherwise lose modeling intent.
+* Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*`, or finite `n..m` notation, except where an end is connected to a junction.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.
