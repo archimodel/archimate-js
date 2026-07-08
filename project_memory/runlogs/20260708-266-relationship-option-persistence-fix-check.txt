@@ -1,0 +1,12 @@
+COMMAND: rg relationship option persistence guards
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:56:        setOptionalProperty(newRelationshipRef, 'modifier', getRelationshipOptionValue(connection, 'modifier'));
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:60:        setOptionalProperty(newRelationshipRef, 'accessType', getRelationshipOptionValue(connection, 'accessType'));
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:64:        setOptionalProperty(newRelationshipRef, 'isDirected', getRelationshipOptionValue(connection, 'isDirected'));
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:94:      setConnectionRelationshipOption(connection, 'isDirected', newRelationshipRef.isDirected);
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:190:    setOptionalProperty(relationship, 'modifier', getRelationshipPropertyValue(properties, connection, 'modifier'));
+lib/features/modeling/ConnectionUpdater.js:332:      setOptionalRelationshipProperty(relationship, 'modifier', getRelationshipOptionValue(connection, 'modifier'));
+lib/features/modeling/ConnectionUpdater.js:336:      setOptionalRelationshipProperty(relationship, 'accessType', getRelationshipOptionValue(connection, 'accessType'));
+lib/features/modeling/ConnectionUpdater.js:340:      setOptionalRelationshipProperty(relationship, 'isDirected', getRelationshipOptionValue(connection, 'isDirected'));
+COMMAND: rg removed legacy modifier fallback
+removed_legacy_modifier_fallback=true
+RELATIONSHIP_OPTION_PERSISTENCE_FIX_CHECK_EXIT=0

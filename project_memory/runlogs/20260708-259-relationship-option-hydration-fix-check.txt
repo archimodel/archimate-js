@@ -1,0 +1,32 @@
+ README.md                                         |  1 +
+ docs/archimate4/official-specification.md         |  3 ++
+ docs/archimate4/sources.md                        | 12 +++++++
+ lib/draw/ArchimateRenderer.js                     | 43 ++++++++++++++++++-----
+ lib/features/modeling/ElementFactory.js           |  9 +++--
+ lib/features/popup-menu/ConnectionMenuProvider.js | 20 +++++++++--
+ test/relationship-rules.test.mjs                  | 16 +++++++++
+ 7 files changed, 90 insertions(+), 14 deletions(-)
+test/relationship-rules.test.mjs:142:  assert.match(elementFactory, /accessType: relationshipRef && relationshipRef\.accessType/);
+test/relationship-rules.test.mjs:143:  assert.match(elementFactory, /isDirected: relationshipRef && relationshipRef\.isDirected/);
+test/relationship-rules.test.mjs:144:  assert.match(elementFactory, /modifier: relationshipRef && relationshipRef\.modifier/);
+test/relationship-rules.test.mjs:145:  assert.match(popupProvider, /getRelationshipOptionValue\(element, 'accessType'\)/);
+test/relationship-rules.test.mjs:146:  assert.match(popupProvider, /getRelationshipFlagValue\(element, 'isDirected'\)/);
+test/relationship-rules.test.mjs:149:  assert.match(renderer, /getRelationshipOptionValue\(connection, 'modifier'\)/);
+lib/draw/ArchimateRenderer.js:455:    var modifier = getRelationshipOptionValue(connection, 'modifier');
+lib/draw/ArchimateRenderer.js:464:  function getAccessType(connection) {
+lib/draw/ArchimateRenderer.js:465:    return getRelationshipOptionValue(connection, 'accessType');
+lib/draw/ArchimateRenderer.js:468:  function isAssociationDirected(connection) {
+lib/draw/ArchimateRenderer.js:469:    return isRelationshipFlagEnabled(getRelationshipOptionValue(connection, 'isDirected'));
+lib/draw/ArchimateRenderer.js:472:  function getRelationshipOptionValue(element, propertyName) {
+lib/draw/ArchimateRenderer.js:674:      var accessType = getAccessType(connection);
+lib/draw/ArchimateRenderer.js:712:      if (isAssociationDirected(connection)) {
+lib/features/modeling/ElementFactory.js:372:      accessType: relationshipRef && relationshipRef.accessType
+lib/features/modeling/ElementFactory.js:379:      isDirected: relationshipRef && relationshipRef.isDirected
+lib/features/modeling/ElementFactory.js:386:      modifier: relationshipRef && relationshipRef.modifier
+lib/features/popup-menu/ConnectionMenuProvider.js:115:function getRelationshipOptionValue(element, propertyName) {
+lib/features/popup-menu/ConnectionMenuProvider.js:125:function getRelationshipFlagValue(element, propertyName) {
+lib/features/popup-menu/ConnectionMenuProvider.js:126:  var value = getRelationshipOptionValue(element, propertyName);
+lib/features/popup-menu/ConnectionMenuProvider.js:236:  var isDirected = getRelationshipFlagValue(element, 'isDirected');
+lib/features/popup-menu/ConnectionMenuProvider.js:347:  var accessType = getRelationshipOptionValue(element, 'accessType');
+docs/archimate4\sources.md:164:## Relationship Option Hydration Guard
+eslint_changed_exit=0

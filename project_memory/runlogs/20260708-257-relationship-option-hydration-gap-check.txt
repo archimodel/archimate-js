@@ -1,0 +1,124 @@
+source: C260 local PDF relationship option attribute check
+pdf_exists=True
+pages=207
+page=62 counts={'directed association': 1, 'directed': 2, 'influence': 4}
+line=Example 5-9 illustrates two directed association relationships between a business object
+page=199 counts={'directed association': 1, 'directed': 1}
+line=directed association.
+derived_fact: C260 models optional relationship attributes such as Access type, directed Association, and Influence modifier separately from the relationship type itself.
+implementation_gap: imported relationship refs hydrate several of those values only into typeOption, while popup state and renderer branches sometimes read only explicit properties or only typeOption.
+code: relationship option hydration scan
+README.md:95:* Influence relationship modifiers are preserved and rendered; the popup includes quick actions for positive and negative influence.
+lib/features/modeling/ConnectionUpdater.js:12:import { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, ARCHIMATE_RELATIONSHIP, ARCHIMATE_RELATIONSHIPS, RELATIONSHIP_ACCESS, RELATIONSHIP_ASSOCIATION, RELATIONSHIP_INFLUENCE } from '../../metamodel/Concept';
+lib/features/modeling/ConnectionUpdater.js:325:    delete relationship.modifier;
+lib/features/modeling/ConnectionUpdater.js:326:    delete relationship.accessType;
+lib/features/modeling/ConnectionUpdater.js:327:    delete relationship.isDirected;
+lib/features/modeling/ConnectionUpdater.js:331:    if (connection.type === RELATIONSHIP_INFLUENCE) {
+lib/features/modeling/ConnectionUpdater.js:332:      relationship.modifier = connection.modifier || connection.typeOption;
+lib/features/modeling/ConnectionUpdater.js:335:    if (connection.type === RELATIONSHIP_ACCESS) {
+lib/features/modeling/ConnectionUpdater.js:336:      relationship.accessType = connection.accessType !== undefined ? connection.accessType : connection.typeOption;
+lib/features/modeling/ConnectionUpdater.js:339:    if (connection.type === RELATIONSHIP_ASSOCIATION) {
+lib/features/modeling/ConnectionUpdater.js:340:      relationship.isDirected = connection.isDirected !== undefined ? connection.isDirected : connection.typeOption;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:1:import { ARCHIMATE_CONNECTION, ARCHIMATE_NODE, ARCHIMATE_RELATIONSHIPS, ARCHIMATE_RELATIONSHIP, RELATIONSHIP_ACCESS, RELATIONSHIP_ASSOCIATION, RELATIONSHIP_INFLUENCE } from '../../../metamodel/Concept';
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:55:      if (connection.type === RELATIONSHIP_INFLUENCE) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:56:        newRelationshipRef.modifier = connection.typeOption;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:59:      if (connection.type === RELATIONSHIP_ACCESS) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:60:        newRelationshipRef.accessType = connection.typeOption;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:63:      if (connection.type === RELATIONSHIP_ASSOCIATION) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:64:        newRelationshipRef.isDirected = connection.typeOption;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:80:    delete connection.typeOption;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:81:    delete connection.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:82:    delete connection.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:83:    delete connection.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:85:    if (type === RELATIONSHIP_INFLUENCE) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:86:      connection.typeOption = newRelationshipRef.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:87:      connection.modifier = newRelationshipRef.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:90:    if (type === RELATIONSHIP_ACCESS) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:91:      connection.typeOption = newRelationshipRef.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:92:      connection.accessType = newRelationshipRef.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:95:    if (type === RELATIONSHIP_ASSOCIATION) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:96:      connection.typeOption = newRelationshipRef.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:97:      connection.isDirected = newRelationshipRef.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:131:    if (type === RELATIONSHIP_INFLUENCE) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:132:      connection.modifier = properties.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:133:      //relationshipRef.modifier = properties.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:136:    if (type === RELATIONSHIP_ACCESS) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:137:      connection.accessType = properties.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:138:      //relationshipRef.accessType = properties.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:141:    if (type === RELATIONSHIP_ASSOCIATION) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:142:      connection.isDirected = properties.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:143:      //relationshipRef.isDirected = properties.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:176:      hasProperty(value, 'modifier') ||
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:177:      hasProperty(value, 'accessType') ||
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:178:      hasProperty(value, 'isDirected') ||
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:188:  delete relationship.modifier;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:189:  delete relationship.accessType;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:190:  delete relationship.isDirected;
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:192:  if (relationship.type === RELATIONSHIP_INFLUENCE) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:193:    setOptionalProperty(relationship, 'modifier', hasProperty(properties, 'modifier') ? properties.modifier : connection.typeOption);
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:196:  if (relationship.type === RELATIONSHIP_ACCESS) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:197:    setOptionalProperty(relationship, 'accessType', hasProperty(properties, 'accessType') ? properties.accessType : connection.typeOption);
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:200:  if (relationship.type === RELATIONSHIP_ASSOCIATION) {
+lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js:201:    setOptionalProperty(relationship, 'isDirected', hasProperty(properties, 'isDirected') ? properties.isDirected : connection.typeOption);
+lib/features/popup-menu/ConnectionMenuProvider.js:4:import { ARCHIMATE_CONNECTION, RELATIONSHIP_ACCESS, RELATIONSHIP_ACCESS_NONE, RELATIONSHIP_ACCESS_READ, RELATIONSHIP_ACCESS_READWRITE, RELATIONSHIP_ACCESS_WRITE, RELATIONSHIP_ASSOCIATION, RELATIONSHIP_INFLUENCE } from '../../metamodel/Concept';
+lib/features/popup-menu/ConnectionMenuProvider.js:126:  if (element.type === RELATIONSHIP_ACCESS) {
+lib/features/popup-menu/ConnectionMenuProvider.js:130:  if (element.type === RELATIONSHIP_ASSOCIATION) {
+lib/features/popup-menu/ConnectionMenuProvider.js:134:  if (element.type === RELATIONSHIP_INFLUENCE) {
+lib/features/popup-menu/ConnectionMenuProvider.js:215:      { type: RELATIONSHIP_ASSOCIATION,
+lib/features/popup-menu/ConnectionMenuProvider.js:216:        isDirected: !entry.active
+lib/features/popup-menu/ConnectionMenuProvider.js:220:  var isDirected = element.isDirected || false;
+lib/features/popup-menu/ConnectionMenuProvider.js:226:      active: isDirected,
+lib/features/popup-menu/ConnectionMenuProvider.js:236:  var modifier = element.modifier !== undefined ? element.modifier : element.typeOption;
+lib/features/popup-menu/ConnectionMenuProvider.js:240:      type: RELATIONSHIP_INFLUENCE,
+lib/features/popup-menu/ConnectionMenuProvider.js:241:      modifier: entry.active ? '' : entry.options.modifier
+lib/features/popup-menu/ConnectionMenuProvider.js:247:      id: 'set-influence-modifier-positive',
+lib/features/popup-menu/ConnectionMenuProvider.js:251:      active: modifier === '+',
+lib/features/popup-menu/ConnectionMenuProvider.js:253:        modifier: '+'
+lib/features/popup-menu/ConnectionMenuProvider.js:258:      id: 'set-influence-modifier-negative',
+lib/features/popup-menu/ConnectionMenuProvider.js:262:      active: modifier === '-',
+lib/features/popup-menu/ConnectionMenuProvider.js:264:        modifier: '-'
+lib/features/popup-menu/ConnectionMenuProvider.js:320:        { type: RELATIONSHIP_ACCESS,
+lib/features/popup-menu/ConnectionMenuProvider.js:321:          accessType: RELATIONSHIP_ACCESS_NONE
+lib/features/popup-menu/ConnectionMenuProvider.js:325:        { type: RELATIONSHIP_ACCESS,
+lib/features/popup-menu/ConnectionMenuProvider.js:326:          accessType: entry.options.accessType
+lib/features/popup-menu/ConnectionMenuProvider.js:331:  var accessType = element.accessType;
+lib/features/popup-menu/ConnectionMenuProvider.js:332:  var isRead = accessType === RELATIONSHIP_ACCESS_READ,
+lib/features/popup-menu/ConnectionMenuProvider.js:333:      isReadWrite = accessType === RELATIONSHIP_ACCESS_READWRITE,
+lib/features/popup-menu/ConnectionMenuProvider.js:334:      isWrite = accessType === RELATIONSHIP_ACCESS_WRITE;
+lib/features/popup-menu/ConnectionMenuProvider.js:336:  var accessTypeEntries = [
+lib/features/popup-menu/ConnectionMenuProvider.js:344:        accessType: RELATIONSHIP_ACCESS_READ
+lib/features/popup-menu/ConnectionMenuProvider.js:354:        accessType: RELATIONSHIP_ACCESS_WRITE
+lib/features/popup-menu/ConnectionMenuProvider.js:364:        accessType: RELATIONSHIP_ACCESS_READWRITE
+lib/features/popup-menu/ConnectionMenuProvider.js:368:  return accessTypeEntries;
+lib/features/modeling/ElementFactory.js:371:      typeOption: relationshipRef && relationshipRef.accessType
+lib/features/modeling/ElementFactory.js:377:      typeOption: relationshipRef && relationshipRef.isDirected
+lib/features/modeling/ElementFactory.js:383:      typeOption: relationshipRef && relationshipRef.modifier
+lib/draw/ArchimateRenderer.js:48:import { RELATIONSHIP_ACCESS_READ, RELATIONSHIP_ACCESS_READWRITE, RELATIONSHIP_ACCESS_WRITE, RELATIONSHIP_INFLUENCE } from '../metamodel/Concept';
+lib/draw/ArchimateRenderer.js:403:    var modifier = getInfluenceModifier(connection);
+lib/draw/ArchimateRenderer.js:430:    if (modifier && waypoints.length) {
+lib/draw/ArchimateRenderer.js:432:      renderLabel(parentGfx, modifier, {
+lib/draw/ArchimateRenderer.js:451:    if (connection.type !== RELATIONSHIP_INFLUENCE) {
+lib/draw/ArchimateRenderer.js:455:    if (connection.modifier !== undefined && connection.modifier !== null && connection.modifier !== '') {
+lib/draw/ArchimateRenderer.js:456:      return String(connection.modifier);
+lib/draw/ArchimateRenderer.js:459:    if (connection.typeOption !== undefined && connection.typeOption !== null && connection.typeOption !== '') {
+lib/draw/ArchimateRenderer.js:460:      return String(connection.typeOption);
+lib/draw/ArchimateRenderer.js:651:      if (connection.typeOption === RELATIONSHIP_ACCESS_WRITE ||
+lib/draw/ArchimateRenderer.js:652:          connection.typeOption === RELATIONSHIP_ACCESS_READWRITE) {
+lib/draw/ArchimateRenderer.js:656:      if (connection.typeOption === RELATIONSHIP_ACCESS_READ ||
+lib/draw/ArchimateRenderer.js:657:          connection.typeOption === RELATIONSHIP_ACCESS_READWRITE) {
+lib/draw/ArchimateRenderer.js:687:      if (connection.typeOption) {
+docs/archimate4\sources.md:221:- The local descriptor and relationship replacement path already preserve `modifier`; the renderer now
+docs/archimate4\sources.md:223:  without restricting host-supplied arbitrary modifier values.
+docs/archimate4\official-specification.md:167:- Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
+docs/archimate4\official-specification.md:168:  preserves arbitrary modifier values, renders them near the connection, and offers common positive
+docs/archimate4\official-specification.md:169:  and negative modifier actions in the popup.
+docs/archimate4\official-specification.md:329:- Influence relationship modifiers are rendered from `modifier` or `typeOption`, and the popup can
+test\relationship-rules.test.mjs:118:test('connection popup exposes influence modifier actions', async () => {
+test\relationship-rules.test.mjs:121:  assert.match(source, /RELATIONSHIP_INFLUENCE/);
+test\relationship-rules.test.mjs:123:  assert.match(source, /set-influence-modifier-positive/);
+test\relationship-rules.test.mjs:124:  assert.match(source, /set-influence-modifier-negative/);
+test\relationship-rules.test.mjs:125:  assert.match(source, /modifier: entry\.active \? '' : entry\.options\.modifier/);
+test\relationship-rules.test.mjs:128:test('renderer displays influence modifier labels', async () => {
+test\relationship-rules.test.mjs:131:  assert.match(source, /RELATIONSHIP_INFLUENCE/);
+test\relationship-rules.test.mjs:133:  assert.match(source, /renderLabel\(parentGfx, modifier/);
+test\relationship-rules.test.mjs:134:  assert.doesNotMatch(source, /TODO vbo add modifier management/);

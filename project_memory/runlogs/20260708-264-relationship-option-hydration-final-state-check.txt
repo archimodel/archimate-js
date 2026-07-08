@@ -1,0 +1,52 @@
+COMMAND: git status --short --branch
+## codex/archimate-4-support
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/draw/ArchimateRenderer.js
+ M lib/features/modeling/ConnectionUpdater.js
+ M lib/features/modeling/ElementFactory.js
+ M lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js
+ M lib/features/popup-menu/ConnectionMenuProvider.js
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/relationship-rules.test.mjs
+?? project_memory/audit/reports/20260708-relationship-option-hydration-audit.md
+?? project_memory/runlogs/20260708-257-relationship-option-hydration-gap-check.txt
+?? project_memory/runlogs/20260708-258-access-type-source-check.txt
+?? project_memory/runlogs/20260708-259-relationship-option-hydration-fix-check.txt
+?? project_memory/runlogs/20260708-260-relationship-option-hydration-npm-test-language.txt
+?? project_memory/runlogs/20260708-261-relationship-option-hydration-eslint-archimate4-gate.txt
+?? project_memory/runlogs/20260708-262-relationship-option-hydration-git-diff-check.txt
+?? project_memory/runlogs/20260708-263-relationship-option-hydration-repo-lint-legacy.txt
+?? project_memory/runlogs/20260708-264-relationship-option-hydration-final-state-check.txt
+?? project_memory/runlogs/20260708-265-relationship-option-hydration-final-git-diff-check.txt
+?? project_memory/runlogs/20260708-266-relationship-option-persistence-fix-check.txt
+?? project_memory/runlogs/20260708-267-relationship-option-persistence-npm-test-language.txt
+?? project_memory/runlogs/20260708-268-relationship-option-persistence-eslint-archimate4-gate.txt
+?? project_memory/runlogs/20260708-269-relationship-option-persistence-git-diff-check.txt
+?? project_memory/runlogs/20260708-270-relationship-option-persistence-repo-lint-legacy.txt
+COMMAND: node JSON.parse project_memory/state/aria_state.json
+aria_state_json_valid
+COMMAND: git diff --stat
+ README.md                                          |  1 +
+ docs/archimate4/official-specification.md          |  3 ++
+ docs/archimate4/sources.md                         | 13 +++++++
+ lib/draw/ArchimateRenderer.js                      | 43 ++++++++++++++++-----
+ lib/features/modeling/ConnectionUpdater.js         | 24 ++++++++++--
+ lib/features/modeling/ElementFactory.js            |  9 +++--
+ .../modeling/cmd/ReplaceRelationshipRefHandler.js  | 44 ++++++++++++++++------
+ lib/features/popup-menu/ConnectionMenuProvider.js  | 22 +++++++++--
+ project_memory/logs/worklog.md                     | 15 ++++++++
+ project_memory/state/aria_state.json               | 24 +++++++-----
+ test/relationship-rules.test.mjs                   | 26 +++++++++++++
+ 11 files changed, 185 insertions(+), 39 deletions(-)
+COMMAND: rg relationship option trace markers
+project_memory/logs/worklog.md:394:- Audit: `project_memory/audit/reports/20260708-relationship-option-hydration-audit.md`.
+project_memory/state/aria_state.json:4:  "stage": "relationship_option_hydration_verified",
+project_memory/state/aria_state.json:52:      "relationship_option_hydration",
+project_memory/state/aria_state.json:53:      "relationship_option_persistence"
+project_memory/state/aria_state.json:94:      "check_relationship_option_hydration",
+project_memory/state/aria_state.json:95:      "check_relationship_option_persistence"
+project_memory/state/aria_state.json:100:    "audit_report_path": "project_memory/audit/reports/20260708-relationship-option-hydration-audit.md",
+FINAL_STATE_CHECK_EXIT=0

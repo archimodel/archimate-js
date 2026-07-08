@@ -161,6 +161,19 @@
 - Menu entries keep the underlying relationship type in `relationshipType` and `target.type`, so
   replacement and persistence still operate on the standard relationship type value.
 
+## Relationship Option Hydration Guard
+
+- C260 describes relationship options separately from the core relationship type, including directed
+  association examples and modifier values on influence relationships.
+- PDF text extraction did not reliably recover exact Access-type wording in this run, but C260
+  examples and existing MEFF attributes require preserving `accessType` without inventing new values.
+- Imported and edited `Access`, `Association`, and `Influence` relationship refs now use explicit
+  `accessType`, `isDirected`, and `modifier` connection properties while retaining `typeOption` as a
+  legacy compatibility alias.
+- Popup active-state, renderer marker logic, relationshipRef replacement, and connection update
+  persistence now prefer the explicit property and fall back to `typeOption` only when the explicit
+  property is absent.
+
 ## Junction Multiplicity Guard
 
 - C260 requires relationship-end multiplicity to be omitted when a relationship end is connected to a

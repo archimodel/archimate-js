@@ -92,6 +92,7 @@ const modeler = new Modeler({
 * Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
+* Imported and edited Access, Association, and Influence relationship options use explicit `accessType`, `isDirected`, and `modifier` properties while retaining `typeOption` compatibility.
 * Influence relationship modifiers are preserved and rendered; the popup includes quick actions for positive and negative influence.
 * Relationship multiplicity is supported on relationship ends with positive integer, `*` / `0..*`, or finite `n..m` notation, except where an end is connected to a junction. `0..*` is normalized to the canonical `*` value.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.

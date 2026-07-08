@@ -1,0 +1,49 @@
+pdf_exists=True
+pages=207
+page=7 counts={'access relationship': 1}
+line=5.2.2. Access Relationship. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+page=35 counts={'accessed by': 1}
+line=Passive structure elements can be accessed by behavior elements.
+page=57 counts={'access relationship': 1}
+line=• An access relationship represents a data dependency, denoted by a dotted line
+page=58 counts={'access relationship': 3}
+line=5.2.2. Access Relationship
+line=An access relationship represents the ability of behavior and active structure elements to observe
+line=An access relationship indicates that a process, function, service, or event “does something” with a
+page=59 counts={'access relationship': 3, 'accesses': 1}
+line=access relationship should not be confused with the UML dependency relationship, which uses a
+line=Alternatively, an access relationship can be expressed by nesting the passive structure element inside
+line=the behavior or active structure element that accesses it; for example, nesting a data object inside an
+line=Example 5-7 illustrates the access relationship. The “Create Invoice” process writes/creates the
+page=62 counts={'access relationship': 1, 'accesses': 2}
+line=• In access relationships, some part of a behavior element accesses some part of a passive structure
+line=element; for example, if a function A accesses a data object B, some unmodeled sub-function of A
+page=63 counts={'accesses': 1}
+line=right-hand example, a part of Process B accesses (reads) a part of Business Object A.
+page=69 counts={'accesses': 1, 'accessed by': 1}
+line=Access Represents the ability of behavior and active → accesses
+line=structure elements to observe or act upon ← accessed by
+page=103 counts={'accessed by': 1}
+line=An application interface specifies how the functionality of a component can be accessed by other
+page=108 counts={'accessed by': 1}
+line=accessed by other elements.
+page=109 counts={'accessed by': 1}
+line=be accessed by other elements. A technology interface exposes a service to the environment. The same
+page=113 counts={'accessed by': 1}
+line=Technology passive structure elements may be accessed by behavior (functions, processes, events, and
+page=115 counts={'accessed by': 1}
+line=as fuel and electricity. Material can be accessed by behavior elements to model how it is created, used,
+page=119 counts={'write access': 1, 'accesses': 1}
+line=common case of this is an application interface serving a business actor, to model that a user accesses
+line=the registration process can update. The “CRM System” has read-write access to “Customer Data”,
+page=123 counts={'accessed by': 1}
+line=deliverables: “Business Plan”, “Architecture”, and “Roadmap” (which is accessed by the
+page=154 counts={'accesses': 2}
+line=specialization of “Project”. A “Project Team” aggregates a “Project Manager”, a “Project” accesses
+line=(reads) “Project Planning”, and an “IT Project” accesses (writes) “Software Documentation”).
+page=155 counts={'accesses': 2}
+line=• “IT Project” accesses (reads) “Project Planning” (PDR 1) is almost certainly a derived relationship,
+line=while “Project” accesses (writes) “Software Documentation” (PDR 3) is only valid for a subset of
+page=204 counts={'access relationship': 1}
+line=access relationship, 36, 37 composite elements, 24
+derived_fact: Access role-label evidence is extractable; exact Access-type wording is not reliably recovered by PDF text extraction in this run, so implementation must preserve existing MEFF accessType behavior without inventing new values.

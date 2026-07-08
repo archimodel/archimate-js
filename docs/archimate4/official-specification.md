@@ -164,6 +164,9 @@ Implementation note:
   modeler-supplied name below the connector.
 - Relationship popup labels use the C260 direct/reverse relationship role names while retaining the
   underlying relationship type for replacement and persistence.
+- Relationship option attributes are preserved separately from the relationship type. Imported and
+  edited `Access`, `Association`, and `Influence` relationships use explicit `accessType`,
+  `isDirected`, and `modifier` properties while retaining legacy `typeOption` compatibility.
 - Influence relationships can carry a modeler-defined sign or strength modifier. The implementation
   preserves arbitrary modifier values, renders them near the connection, and offers common positive
   and negative modifier actions in the popup.

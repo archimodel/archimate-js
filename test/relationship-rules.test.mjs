@@ -134,6 +134,32 @@ test('renderer displays influence modifier labels', async () => {
   assert.doesNotMatch(source, /TODO vbo add modifier management/);
 });
 
+test('relationship option attributes hydrate, persist and render explicit properties', async () => {
+  const elementFactory = await readFile(new URL('../lib/features/modeling/ElementFactory.js', import.meta.url), 'utf8');
+  const connectionUpdater = await readFile(new URL('../lib/features/modeling/ConnectionUpdater.js', import.meta.url), 'utf8');
+  const replaceHandler = await readFile(new URL('../lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js', import.meta.url), 'utf8');
+  const popupProvider = await readFile(new URL('../lib/features/popup-menu/ConnectionMenuProvider.js', import.meta.url), 'utf8');
+  const renderer = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
+
+  assert.match(elementFactory, /accessType: relationshipRef && relationshipRef\.accessType/);
+  assert.match(elementFactory, /isDirected: relationshipRef && relationshipRef\.isDirected/);
+  assert.match(elementFactory, /modifier: relationshipRef && relationshipRef\.modifier/);
+  assert.match(connectionUpdater, /getRelationshipOptionValue\(connection, 'modifier'\)/);
+  assert.match(connectionUpdater, /getRelationshipOptionValue\(connection, 'accessType'\)/);
+  assert.match(connectionUpdater, /getRelationshipOptionValue\(connection, 'isDirected'\)/);
+  assert.doesNotMatch(connectionUpdater, /connection\.modifier \|\| connection\.typeOption/);
+  assert.match(replaceHandler, /getRelationshipPropertyValue\(properties, connection, 'modifier'\)/);
+  assert.match(replaceHandler, /setConnectionRelationshipOption\(connection, 'isDirected', newRelationshipRef\.isDirected\)/);
+  assert.match(popupProvider, /getRelationshipOptionValue\(element, 'accessType'\)/);
+  assert.match(popupProvider, /getRelationshipFlagValue\(element, 'isDirected'\)/);
+  assert.match(popupProvider, /getRelationshipOptionValue\(element, 'modifier'\)/);
+  assert.match(renderer, /var accessType = getAccessType\(connection\)/);
+  assert.match(renderer, /if \(isAssociationDirected\(connection\)\)/);
+  assert.match(renderer, /getRelationshipOptionValue\(connection, 'modifier'\)/);
+  assert.match(renderer, /if \(value !== undefined && value !== null\)/);
+  assert.match(renderer, /return value === true \|\| value === 'true'/);
+});
+
 test('renderer preserves optional junction names outside the marker', async () => {
   const source = await readFile(new URL('../lib/draw/ArchimateRenderer.js', import.meta.url), 'utf8');
 
