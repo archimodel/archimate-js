@@ -1,0 +1,27 @@
+## git diff --check
+no output
+exit code: 0
+
+## state json parse
+state json ok
+exit code: 0
+
+## git status --short --branch
+## codex/archimate-4-support
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M lib/features/palette/PaletteProvider.js
+ M lib/metamodel/languages/archimate4-profile.json
+ M lib/util/ModelUtil.js
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/language-profile.test.mjs
+?? project_memory/audit/reports/20260708-connector-domain-metadata-audit.md
+?? project_memory/runlogs/20260708-189-connector-domain-metadata-gap-check.txt
+?? project_memory/runlogs/20260708-190-connector-domain-metadata-fix-check.txt
+?? project_memory/runlogs/20260708-191-connector-domain-metadata-npm-test-language.txt
+?? project_memory/runlogs/20260708-192-connector-domain-metadata-eslint-changed-js.txt
+?? project_memory/runlogs/20260708-193-connector-domain-metadata-git-diff-check.txt
+?? project_memory/runlogs/20260708-194-connector-domain-metadata-repo-lint-legacy.txt
+?? project_memory/runlogs/20260708-195-connector-domain-metadata-final-state-check.txt
+exit code: 0

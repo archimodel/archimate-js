@@ -52,6 +52,8 @@
 - `AndJunction` and `OrJunction` are exposed as ArchiMate 4 relationship connector metadata outside
   the 42-element catalog so the editor can create and render junction connectors while MEFF 4.0 XML
   naming remains unresolved.
+- Relationship connector metadata deliberately uses editor-oriented `paletteGroup` and `colorGroup`
+  values rather than adding a non-standard ArchiMate domain.
 
 ## Pictogram Coverage Guard
 

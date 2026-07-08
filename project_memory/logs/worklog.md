@@ -287,3 +287,13 @@
 - Docs: README and `docs/archimate4/*` now document CSV/TSV matrix text input for host-supplied licensed Appendix B data.
 - Verification: fix check passed in `project_memory/runlogs/20260708-183-appendix-b-matrix-text-fix-check.txt`; `npm run test:language` passed with 65 tests in `project_memory/runlogs/20260708-184-appendix-b-matrix-text-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-185-appendix-b-matrix-text-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-186-appendix-b-matrix-text-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-187-appendix-b-matrix-text-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-188-appendix-b-matrix-text-final-state-check.txt`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.
+
+## 2026-07-08 loop 28
+
+- Goal: separate ArchiMate 4 relationship connector editor grouping from the ArchiMate domain catalog.
+- Observation: initial check found `AndJunction` and `OrJunction` carrying `domain: Relationships`; see `project_memory/runlogs/20260708-189-connector-domain-metadata-gap-check.txt`.
+- Implemented: `archimate4-profile.json` now stores relationship connector grouping as `paletteGroup` and `colorGroup`, leaving `domain` absent for connectors.
+- Implemented: `PaletteProvider` reads `paletteGroup` before domain/layer, and `ModelUtil.getLayerType()` falls back to `colorGroup` for legacy rendering/color paths.
+- Docs: `docs/archimate4/*` now state that relationship connectors are not added to the ArchiMate domain catalog.
+- Verification: fix check passed in `project_memory/runlogs/20260708-190-connector-domain-metadata-fix-check.txt`; `npm run test:language` passed with 65 tests in `project_memory/runlogs/20260708-191-connector-domain-metadata-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-192-connector-domain-metadata-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-193-connector-domain-metadata-git-diff-check.txt`; repo-wide lint remains the expected legacy failure in `project_memory/runlogs/20260708-194-connector-domain-metadata-repo-lint-legacy.txt`; final state check is recorded in `project_memory/runlogs/20260708-195-connector-domain-metadata-final-state-check.txt`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD details remain external-source dependent.

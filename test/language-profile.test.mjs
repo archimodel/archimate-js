@@ -86,6 +86,12 @@ test('archimate 4 exposes relationship junction connectors outside the element c
   assert.equal(elements.has('OrJunction'), false);
   assert.equal(connectors.get('AndJunction').typeName, 'And Junction');
   assert.equal(connectors.get('OrJunction').typeName, 'Or Junction');
+  assert.equal(connectors.get('AndJunction').domain, undefined);
+  assert.equal(connectors.get('OrJunction').domain, undefined);
+  assert.equal(connectors.get('AndJunction').paletteGroup, 'Relationships');
+  assert.equal(connectors.get('OrJunction').paletteGroup, 'Relationships');
+  assert.equal(connectors.get('AndJunction').colorGroup, 'Relationships');
+  assert.equal(connectors.get('OrJunction').colorGroup, 'Relationships');
   assert.notEqual(connectors.get('AndJunction').palette, false);
   assert.notEqual(connectors.get('OrJunction').palette, false);
 });
@@ -103,8 +109,10 @@ test('profile-aware metadata and palette include relationship junction connector
   const paletteProvider = await readFile(new URL('../lib/features/palette/PaletteProvider.js', import.meta.url), 'utf8');
 
   assert.match(modelUtil, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
+  assert.match(modelUtil, /element\.layer \|\| element\.domain \|\| element\.colorGroup/);
   assert.match(colorUtil, /\['Relationships', COLOR_DOMAIN_RELATIONSHIPS\]/);
   assert.match(paletteProvider, /getPaletteConcepts\(profile\)/);
+  assert.match(paletteProvider, /value\.paletteGroup \|\| value\.domain \|\| value\.layer/);
   assert.match(paletteProvider, /\(profile\.elements \|\| \[\]\)\.concat\(profile\.connectors \|\| \[\]\)/);
 });
 

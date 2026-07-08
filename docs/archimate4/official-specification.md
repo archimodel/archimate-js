@@ -157,6 +157,9 @@ Implementation note:
   confirmed from the official MEFF 4.0 XSD before changing XML serialization.
 - The editor exposes `AndJunction` and `OrJunction` as relationship connector metadata outside the
   42-element ArchiMate 4 catalog until the MEFF 4.0 exchange representation is confirmed.
+- Relationship connectors are not part of the ArchiMate 4 domain catalog. Runtime metadata uses
+  `paletteGroup` and `colorGroup` for editor grouping and color fallback instead of assigning a
+  domain.
 - The ArchiMate 4 moddle descriptor must allow relationship concepts as relationship endpoints and
   relationship view elements as diagram connection endpoints. It does this with abstract endpoint
   constraints: `Concept` for `Relationship.source` / `Relationship.target`, and `ViewElement` for

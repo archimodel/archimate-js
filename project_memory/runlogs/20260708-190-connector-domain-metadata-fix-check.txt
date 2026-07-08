@@ -1,0 +1,4 @@
+connectors checked: AndJunction, OrJunction
+connectors with domain field: 0
+connectors missing palette/color groups: 0
+metadata separated: true

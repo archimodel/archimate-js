@@ -23,8 +23,8 @@
     "ImplementationEvent"
   ],
   "connectors": [
-    { "type": "AndJunction", "domain": "Relationships", "aspect": "Connector", "typeName": "And Junction", "className": "archimate-other-and-junction", "pictoRef": "PICTO_JUNCTION_AND" },
-    { "type": "OrJunction", "domain": "Relationships", "aspect": "Connector", "typeName": "Or Junction", "className": "archimate-other-or-junction", "pictoRef": "PICTO_JUNCTION_OR" }
+    { "type": "AndJunction", "paletteGroup": "Relationships", "colorGroup": "Relationships", "aspect": "Connector", "typeName": "And Junction", "className": "archimate-other-and-junction", "pictoRef": "PICTO_JUNCTION_AND" },
+    { "type": "OrJunction", "paletteGroup": "Relationships", "colorGroup": "Relationships", "aspect": "Connector", "typeName": "Or Junction", "className": "archimate-other-or-junction", "pictoRef": "PICTO_JUNCTION_OR" }
   ],
   "elements": [
     { "type": "Role", "domain": "Common", "aspect": "Active structure", "typeName": "Role", "className": "archimate-common-role", "pictoRef": "PICTO_ROLE" },

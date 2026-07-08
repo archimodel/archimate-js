@@ -1,0 +1,3 @@
+git diff --check
+exit code: 0
+stdout/stderr: no output

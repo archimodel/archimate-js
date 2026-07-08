@@ -1,0 +1,3 @@
+connectors checked: AndJunction, OrJunction
+connectors with domain field: AndJunction=Relationships, OrJunction=Relationships
+expected: relationship connectors use paletteGroup/colorGroup, not domain
