@@ -299,10 +299,12 @@ Open decisions:
 
 Latest official XSD recheck:
 
-- On 2026-07-08T17:53:09+09:00, the official ArchiMate XSD directory returned 200 and listed 3.1
-  XSD links, but no `archimate4` or `4.0` XSD links.
-- Tested 4.0 directory and XSD candidate URLs returned 404; keep XML export experimental until this
-  changes or a supplied official XSD is available.
+- On 2026-07-08T19:30:52+09:00, the official ArchiMate XSD directory returned 200 and listed only
+  `3.1/archimate3_Diagram.xsd`, `3.1/archimate3_Model.xsd`, and `3.1/archimate3_View.xsd` as XSD
+  links; no `archimate4` or `4.0` XSD links were listed.
+- The current recheck is recorded in
+  `project_memory/runlogs/20260708-330-official-xsd-directory-recheck.txt`. Keep XML export
+  experimental until this changes or a supplied official XSD is available.
 
 ## Implementation Status And Remaining Gaps
 

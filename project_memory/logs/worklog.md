@@ -462,3 +462,13 @@
 - Verification: fix check passed in `project_memory/runlogs/20260708-322-renderer-profile-pictoref-fix-check.txt`; `npm run test:language` passed with 79 tests in `project_memory/runlogs/20260708-323-renderer-profile-pictoref-npm-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260708-324-renderer-profile-pictoref-eslint-changed.txt`; final `npm run test:language` passed in `project_memory/runlogs/20260708-325-renderer-profile-pictoref-final-npm-test-language.txt`; ArchiMate 4 gate ESLint passed in `project_memory/runlogs/20260708-326-renderer-profile-pictoref-final-eslint-gate.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-327-renderer-profile-pictoref-final-git-diff-check.txt`; repo-wide lint remains expected legacy failure with 4467 errors in `project_memory/runlogs/20260708-328-renderer-profile-pictoref-repo-lint-legacy.txt`.
 - Audit: `project_memory/audit/reports/20260708-renderer-profile-pictoref-audit.md`.
 - Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
+
+## 2026-07-08 loop 44
+
+- Goal: refresh official The Open Group XSD evidence for MEFF 4.0-dependent XML decisions.
+- Observation: `project_memory/runlogs/20260708-330-official-xsd-directory-recheck.txt` shows the public ArchiMate XSD directory returned 200 and listed only 3.1 Model, Diagram, and View XSD links.
+- Observation: no `4.0` or `archimate4` XSD link was listed, so MEFF 4.0 namespace, schema location, junction serialization, and multiplicity attribute names remain external-source dependent.
+- Docs: `docs/archimate4/official-specification.md` now points to the current recheck runlog and keeps XML export marked experimental.
+- Verification: `npm run test:language` passed with 79 tests in `project_memory/runlogs/20260708-331-meff4-xsd-current-recheck-npm-test-language.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-332-meff4-xsd-current-recheck-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260708-meff4-xsd-current-recheck-audit.md`.
+- Remaining open issues: official Appendix B relationship data itself, exact C260 Appendix A vector artwork redistribution, and MEFF 4.0 XSD publication/supply remain external-source dependent.
