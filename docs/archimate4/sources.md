@@ -83,6 +83,9 @@
   compatibility alias for existing 3.x profile metadata.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
+- `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4
+  spelling-corrected `pictoRef` entries and implementation-defined specialized concepts do not fall
+  back to the legacy 3.x `ModelUtil` metadata.
 
 ## Language Customization Mechanism
 

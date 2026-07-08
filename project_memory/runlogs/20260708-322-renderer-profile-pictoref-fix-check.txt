@@ -1,0 +1,3 @@
+renderer uses getPictoRef(elementType, profile): true
+renderer injects languageProfile: true
+ArchiMate 4 profile spelling-sensitive pictoRefs: Stakeholder:PICTO_STAKEHOLDER, Deliverable:PICTO_DELIVERABLE

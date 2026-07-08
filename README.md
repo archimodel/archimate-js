@@ -92,6 +92,7 @@ const modeler = new Modeler({
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * Named junctions keep the `AND`/`OR` marker visible and render the optional modeler-supplied name below the connector.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
+* Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.
 * ArchiMate 4 `Grouping` and `Location` can aggregate relationship concepts, including relationships and junctions.
 * Imported and edited Access, Association, and Influence relationship options use explicit `accessType`, `isDirected`, and `modifier` properties while retaining `typeOption` compatibility.
 * Influence relationship modifiers are preserved and rendered; the popup includes quick actions for positive and negative influence.
