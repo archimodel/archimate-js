@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2023 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2026 by original authors @ fontello.com</metadata>
 <defs>
 <font id="archimate-font" horiz-adv-x="1000" >
 <font-face font-family="archimate-font" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -53,6 +53,90 @@
 <glyph glyph-name="relation-line" unicode="&#xe816;" d="M147-29l-49 49 146 146 49-48z m146 244l49 49 49-49-49-49z m98 98l146 146 49-48-146-147z m195 195l49 49 49-49-49-49z m98 98l48-49 147 147-49 48z" horiz-adv-x="1000" />
 
 <glyph glyph-name="tool-note" unicode="&#xe818;" d="M49 801l879 0 0-73-879 0z m810-73l69 0 0-562-73 30z m69-562l-244-244 0 0-30 73 201 201m-171-274l-30 73-605 0 0-73v0z m-562 73l-73 0 0 733 78 0z m171 611l391 0 0-73-391 0z m0-195l391 0 0-74-391 0z m0-196l244 0 0-73-244 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-role" unicode="&#xe819;" d="M300 100a249 249 0 0 0-94 19l0 0 0 0a250 250 0 0 0-152 187l0 0 0 0a252 252 0 0 0-4 44l0 14 25 15 25-15 0-14a202 202 0 0 1 3-35 200 200 0 0 1 121-150 199 199 0 0 1 72-15l191 69a250 250 0 0 0-33 87l0 0a252 252 0 0 0-4 44l50 0a202 202 0 0 1 3-35 200 200 0 0 1 32-79l364 131a202 202 0 0 1-2 19 200 200 0 0 1-121 149 199 199 0 0 1-76 15m95 32l0 0 0 0a249 249 0 0 1-95 18l-400 0-25 0 0-50 25 0m4-450l5 2 210 75a250 250 0 0 1 87-58m-306 431l400 0m0 0l4 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-collaboration" unicode="&#xe81a;" d="M950 350a300 300 0 0 1-18 101l0 0 0 1a300 300 0 0 1-224 192l0 0 0 0a302 302 0 0 1-58 6l-25 0 0-50 25 0a252 252 0 0 0 48-5 250 250 0 0 0 187-160 250 250 0 0 0 15-85l0-14 25-15 25 15 0 14z m-658-294l0 0 0 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-path" unicode="&#xe81b;" d="M668 108l233 237 29 1-5 29 5 29-29 1-233 238m-336-535l-233 237-29 1 6 29-6 29 29 1 233 238m300-500l228 232-228 233m-264-465l-228 232 228 233m-53 17l35 35 35-35-35-35m-125-190l-50 0 0-50 50 0m133-197l27-28-35-35-28 28m336 535l-28-7-8-28m-422-218l150 0m-150-50l150 0m75 50l150 0m-150-50l150 0m75 50l150 0m-150-50l150 0m-185-225l35-35m-275 260l0 50" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-service" unicode="&#xe81c;" d="M300 100a249 249 0 0 0-94 19l0 0 0 0a250 250 0 0 0-152 187l0 0 0 0a252 252 0 0 0-4 44l0 14 25 15 25-15 0-14a202 202 0 0 1 3-35 200 200 0 0 1 121-150 199 199 0 0 1 72-15l603 217a202 202 0 0 1-2 19 200 200 0 0 1-121 149 199 199 0 0 1-76 15m229-225l21 7 0 18a252 252 0 0 1-4 44l0 0 0 0a250 250 0 0 1-151 188l0 0 0 0a249 249 0 0 1-95 18l-400 0-25 0 0-50 25 0m0 0l400 0m234-223l-625-225m391 448l4 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-process" unicode="&#xe81d;" d="M50 500l500 0 0-50-500 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-function" unicode="&#xe81e;" d="M172 390l363 307-16 19-16 19-363-307 32-38z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-event" unicode="&#xe81f;" d="M50 800m25-175l600 0c325 0 325-550 0-550l-600 0 175 275z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-grouping" unicode="&#xe820;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-location" unicode="&#xe821;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-stakeholder" unicode="&#xe822;" d="M300 350l200 0 0 150 50 0 0-150 200 0 0-50-200 0 0-141 210-263-39-31-196 245-189-237-29 4-5 14-5 13 203 255 0 141-200 0 0 50z m50 215l235 235-60 0a174 174 0 0 1-87-23 175 175 0 0 1-86-128l0 0 0 0a176 176 0 0 1-2-24l0-60z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-driver" unicode="&#xe823;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-assessment" unicode="&#xe824;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-goal" unicode="&#xe825;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-outcome" unicode="&#xe826;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-principle" unicode="&#xe827;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-requirement" unicode="&#xe828;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-meaning" unicode="&#xe829;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-value" unicode="&#xe82a;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-resource" unicode="&#xe82b;" d="M450 125l0 450-50 0 0-450 50 0z m-200 0l0 450-50 0 0-450 50 0z m50 0l0 450 50 0 0-450-50 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-capability" unicode="&#xe82c;" d="M350 250l250 0 0 250 300 0 0-50-250 0 0-200 250 0 0-50-250 0 0-250-50 0 0 250-200 0 0-250-50 0 0 300z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-value-stream" unicode="&#xe82d;" d="M50 800m850-450l-250 325-550 0 250-325-250-325 550 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-course-of-action" unicode="&#xe82e;" d="M500 690a340 340 0 1 0 0-680 340 340 0 1 0 0 680z m0-100a240 240 0 1 1 0-480 240 240 0 1 1 0 480z m0-75a165 165 0 1 0 0-330 165 165 0 1 0 0 330z m0-95a70 70 0 1 1 0-140 70 70 0 1 1 0 140z m0-35a35 35 0 1 0 0-70 35 35 0 1 0 0 70z m-345-390l115 235 80-80 380 380-50 50 240 100-100-240-50 50-380-380 80-80z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-business-actor" unicode="&#xe82f;" d="M300 350l200 0 0 150 50 0 0-150 200 0 0-50-200 0 0-141 210-263-39-31-196 245-189-237-29 4-5 14-5 13 203 255 0 141-200 0 0 50z m50 215l235 235-60 0a174 174 0 0 1-87-23 175 175 0 0 1-86-128l0 0 0 0a176 176 0 0 1-2-24l0-60z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-business-interface" unicode="&#xe830;" d="M615 600l292-293 43-42 0 60a275 275 0 0 1-18 98l0 0 0 0a275 275 0 0 1-207 173l0 0 0 0a277 277 0 0 1-50 4l-60 0z m-565-300l400 0 0 50-400 0 0-50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-business-object" unicode="&#xe831;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-product" unicode="&#xe832;" d="M100 700l800 0 0-50-350 0 0-200-450 0 0 50 400 0 0 150-400 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-application-component" unicode="&#xe833;" d="M250 600l0 150 50 0 0-150 150 0 0-50-350 0 0 50 150 0z m-150-300l150 0 0 150 50 0 0-150 150 0 0-50-350 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-application-interface" unicode="&#xe834;" d="M615 600l292-293 43-42 0 60a275 275 0 0 1-18 98l0 0 0 0a275 275 0 0 1-207 173l0 0 0 0a277 277 0 0 1-50 4l-60 0z m-565-300l400 0 0 50-400 0 0-50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-data-object" unicode="&#xe835;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-node" unicode="&#xe836;" d="M910 725l-35 35-18-17-192-193-540 0-25 0 0-50 35 0m-10 0l550 0m18 7l200 200m-208-207l25 25" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-technology-interface" unicode="&#xe837;" d="M615 600l292-293 43-42 0 60a275 275 0 0 1-18 98l0 0 0 0a275 275 0 0 1-207 173l0 0 0 0a277 277 0 0 1-50 4l-60 0z m-565-300l400 0 0 50-400 0 0-50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-device" unicode="&#xe838;" d="M180 605h640q55 0 55-55v-310q0-55-55-55h-640q-55 0-55 55v310q0 55 55 55z m65-75h510v-265h-510z m135-380h240l100-135h-440z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-system-software" unicode="&#xe839;" d="M337 531a252 252 0 0 1-3-5l-13-22-43 25 13 22a302 302 0 0 0 3 6 300 300 0 0 0 245 143l25 1 1-25 1-25-25-1a250 250 0 0 1-204-119m55-525l0 0 0 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-communication-network" unicode="&#xe83a;" d="M875 575a99 99 0 0 1-18 57l0 0 0 0a100 100 0 0 1-72 43 101 101 0 0 1-10 0l-25 0 0 50 25 0a151 151 0 0 0 14-1l0 0 0 0a150 150 0 0 0 110-64 149 149 0 0 0 26-85m-750 0a149 149 0 0 1 26-85 150 150 0 0 1 86-60l-84-169m458-285a150 150 0 0 0-110 64 149 149 0 0 0-24 60l-177 0m-139-124l0 0 0 0a150 150 0 0 0-110 64 149 149 0 0 0-26 85m139 159l-22-45 44-22 30 58m209 325l-50 0 0-50 50 0m-400-450l0 50 50 0 0-50m241 375l-41 0a101 101 0 0 0-9 0 100 100 0 0 0-73 43m350-450a99 99 0 0 0-18 57l0 25m-432-82l0 0 0 0a99 99 0 0 0-18 57m325 475l200 0m-200-50l200 0m-300-400l200 0m-303 89l100 200m306-178l100 200m-56-222l100 200m-554 79a99 99 0 0 0-18 57m450-25l0 50m89-116l45-23m66 89l50 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-artifact" unicode="&#xe83b;" d="M250 750l-50 0 0-50 50 0m-25 50l300 0m-300-50l300 0m250-250l-250 0m250 50l-250 0m25 200l0 50" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-distribution-network" unicode="&#xe83c;" d="M875 575a99 99 0 0 1-18 57l0 0 0 0a100 100 0 0 1-72 43 101 101 0 0 1-10 0l-25 0 0 50 25 0a151 151 0 0 0 14-1l0 0 0 0a150 150 0 0 0 110-64 149 149 0 0 0 26-85m-750 0a149 149 0 0 1 26-85 150 150 0 0 1 86-60l-84-169m458-285a150 150 0 0 0-110 64 149 149 0 0 0-24 60l-177 0m-139-124l0 0 0 0a150 150 0 0 0-110 64 149 149 0 0 0-26 85m139 159l-22-45 44-22 30 58m209 325l-50 0 0-50 50 0m-400-450l0 50 50 0 0-50m241 375l-41 0a101 101 0 0 0-9 0 100 100 0 0 0-73 43m350-450a99 99 0 0 0-18 57l0 25m-432-82l0 0 0 0a99 99 0 0 0-18 57m325 475l200 0m-200-50l200 0m-300-400l200 0m-303 89l100 200m306-178l100 200m-56-222l100 200m-554 79a99 99 0 0 0-18 57m450-25l0 50m89-116l45-23m66 89l50 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-equipment" unicode="&#xe83d;" d="M180 605h640q55 0 55-55v-310q0-55-55-55h-640q-55 0-55 55v310q0 55 55 55z m65-75h510v-265h-510z m135-380h240l100-135h-440z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-facility" unicode="&#xe83e;" d="M910 725l-35 35-18-17-192-193-540 0-25 0 0-50 35 0m-10 0l550 0m18 7l200 200m-208-207l25 25" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-material" unicode="&#xe83f;" d="M250 750l-50 0 0-50 50 0m-25 50l300 0m-300-50l300 0m250-250l-250 0m250 50l-250 0m25 200l0 50" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-work-package" unicode="&#xe840;" d="M50 500l500 0 0-50-500 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-deliverable" unicode="&#xe841;" d="M100 700l800 0 0-50-800 0 0 50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="element-plateau" unicode="&#xe842;" d="M100 700l800 0 0-50-350 0 0-200-450 0 0 50 400 0 0 150-400 0 0 50z" horiz-adv-x="1000" />
 
 <glyph glyph-name="relation-or-junction" unicode="&#xf10c;" d="M429 654q-83 0-153-41t-110-111-41-152 41-152 110-111 153-41 152 41 110 111 41 152-41 152-110 111-152 41z m428-304q0-117-57-215t-156-156-215-58-216 58-155 156-58 215 58 215 155 156 216 58 215-58 156-156 57-215z" horiz-adv-x="857.1" />
 

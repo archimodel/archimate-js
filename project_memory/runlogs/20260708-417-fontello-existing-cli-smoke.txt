@@ -1,0 +1,3 @@
+Creating a new session
+Session was saved as .fontello-session
+Install complete.

@@ -1,0 +1,43 @@
+{
+  "elementIconCount": 42,
+  "fontReady": true,
+  "hasCourseOfAction": true,
+  "hasPlateau": true,
+  "hasRole": true,
+  "iconCount": 69,
+  "links": [
+    {
+      "href": "../../demo/viewer.html",
+      "text": "Viewer"
+    },
+    {
+      "href": "../../demo/editor.html",
+      "text": "Editor"
+    }
+  ],
+  "rects": {
+    "course-of-action": {
+      "height": 14,
+      "text": "",
+      "width": 14,
+      "x": 437.796875,
+      "y": 373
+    },
+    "plateau": {
+      "height": 14,
+      "text": "",
+      "width": 14,
+      "x": 437.796875,
+      "y": 573
+    },
+    "role": {
+      "height": 14,
+      "text": "",
+      "width": 14,
+      "x": 197.796875,
+      "y": 253
+    }
+  },
+  "title": "",
+  "url": "http://127.0.0.1:4174/archimate-font/lib/demo.html"
+}

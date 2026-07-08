@@ -545,3 +545,16 @@
 - Final record checks: `git diff --check` passed in `project_memory/runlogs/20260708-415-demo-archimate4-notation-final-final-git-diff-check.txt`; state JSON parsed in `project_memory/runlogs/20260708-416-demo-archimate4-notation-final-state-json-check.txt`.
 - Audit: `project_memory/audit/reports/20260708-demo-archimate4-notation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution remains unconfirmed, so the new Common icons are local visual cues rather than copied standard artwork; official Appendix B relationship data and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-08 loop 51
+
+- Goal: use Fontello to create ArchiMate 4 element icons for `archimate-font`.
+- Observation: `archimate-font/lib/config.json` was already a Fontello config with existing tool and relationship glyphs; Fontello CLI smoke passed against the existing config in `project_memory/runlogs/20260708-417-fontello-existing-cli-smoke.txt`.
+- Implemented: generated 42 `archimate-element-*` custom Fontello glyphs from the local renderer pictogram paths and added source SVGs under `archimate-font/src/elements/`.
+- Implemented: regenerated `archimate-font/lib/config.json`, CSS, demo HTML, and font binaries through Fontello; the demo keeps the Viewer and Editor links.
+- Tests: `test/language-profile.test.mjs` now verifies every ArchiMate 4 profile element has a Fontello custom glyph, CSS rule, demo entry, SVG font glyph, and source SVG.
+- Verification: `npm run test:language` passed with 88 tests in `project_memory/runlogs/20260708-425-fontello-archimate4-elements-test-language.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-426-fontello-archimate4-elements-git-diff-check.txt`.
+- Browser verification: Font demo smoke confirmed 42 element glyph entries, Viewer/Editor links, and loaded `archimate-font` in `project_memory/runlogs/20260708-427-fontello-demo-browser-smoke.json`; screenshot pixel check confirmed representative glyphs rendered in `project_memory/runlogs/20260708-429-fontello-demo-pixel-check.json`.
+- Final checks: `npm run test:language` passed with 88 tests in `project_memory/runlogs/20260708-430-fontello-archimate4-elements-final-test-language.txt`; test-file ESLint passed in `project_memory/runlogs/20260708-431-fontello-archimate4-elements-eslint-test-file.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-432-fontello-archimate4-elements-final-git-diff-check.txt`; state JSON parsed in `project_memory/runlogs/20260708-433-fontello-archimate4-elements-state-json-check.txt`.
+- Audit: `project_memory/audit/reports/20260708-fontello-archimate4-elements-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution remains unconfirmed; these font icons are derived from existing local renderer pictogram paths rather than copied official artwork.

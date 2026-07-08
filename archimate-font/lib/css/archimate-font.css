@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'archimate-font';
-  src: url('../font/archimate-font.eot?11010257');
-  src: url('../font/archimate-font.eot?11010257#iefix') format('embedded-opentype'),
-       url('../font/archimate-font.woff2?11010257') format('woff2'),
-       url('../font/archimate-font.woff?11010257') format('woff'),
-       url('../font/archimate-font.ttf?11010257') format('truetype'),
-       url('../font/archimate-font.svg?11010257#archimate-font') format('svg');
+  src: url('../font/archimate-font.eot?29583628');
+  src: url('../font/archimate-font.eot?29583628#iefix') format('embedded-opentype'),
+       url('../font/archimate-font.woff2?29583628') format('woff2'),
+       url('../font/archimate-font.woff?29583628') format('woff'),
+       url('../font/archimate-font.ttf?29583628') format('truetype'),
+       url('../font/archimate-font.svg?29583628#archimate-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'archimate-font';
-    src: url('../font/archimate-font.svg?11010257#archimate-font') format('svg');
+    src: url('../font/archimate-font.svg?29583628#archimate-font') format('svg');
   }
 }
 */
@@ -28,7 +28,7 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  /* margin-right: .2em; */
+  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
 
@@ -41,7 +41,7 @@
 
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
-  /* margin-left: .2em; */
+  margin-left: .2em;
 
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
@@ -78,6 +78,48 @@
 .archimate-tool-gear:before { content: '\e815'; } /* '' */
 .archimate-relation-line:before { content: '\e816'; } /* '' */
 .archimate-tool-note:before { content: '\e818'; } /* '' */
+.archimate-element-role:before { content: '\e819'; } /* '' */
+.archimate-element-collaboration:before { content: '\e81a'; } /* '' */
+.archimate-element-path:before { content: '\e81b'; } /* '' */
+.archimate-element-service:before { content: '\e81c'; } /* '' */
+.archimate-element-process:before { content: '\e81d'; } /* '' */
+.archimate-element-function:before { content: '\e81e'; } /* '' */
+.archimate-element-event:before { content: '\e81f'; } /* '' */
+.archimate-element-grouping:before { content: '\e820'; } /* '' */
+.archimate-element-location:before { content: '\e821'; } /* '' */
+.archimate-element-stakeholder:before { content: '\e822'; } /* '' */
+.archimate-element-driver:before { content: '\e823'; } /* '' */
+.archimate-element-assessment:before { content: '\e824'; } /* '' */
+.archimate-element-goal:before { content: '\e825'; } /* '' */
+.archimate-element-outcome:before { content: '\e826'; } /* '' */
+.archimate-element-principle:before { content: '\e827'; } /* '' */
+.archimate-element-requirement:before { content: '\e828'; } /* '' */
+.archimate-element-meaning:before { content: '\e829'; } /* '' */
+.archimate-element-value:before { content: '\e82a'; } /* '' */
+.archimate-element-resource:before { content: '\e82b'; } /* '' */
+.archimate-element-capability:before { content: '\e82c'; } /* '' */
+.archimate-element-value-stream:before { content: '\e82d'; } /* '' */
+.archimate-element-course-of-action:before { content: '\e82e'; } /* '' */
+.archimate-element-business-actor:before { content: '\e82f'; } /* '' */
+.archimate-element-business-interface:before { content: '\e830'; } /* '' */
+.archimate-element-business-object:before { content: '\e831'; } /* '' */
+.archimate-element-product:before { content: '\e832'; } /* '' */
+.archimate-element-application-component:before { content: '\e833'; } /* '' */
+.archimate-element-application-interface:before { content: '\e834'; } /* '' */
+.archimate-element-data-object:before { content: '\e835'; } /* '' */
+.archimate-element-node:before { content: '\e836'; } /* '' */
+.archimate-element-technology-interface:before { content: '\e837'; } /* '' */
+.archimate-element-device:before { content: '\e838'; } /* '' */
+.archimate-element-system-software:before { content: '\e839'; } /* '' */
+.archimate-element-communication-network:before { content: '\e83a'; } /* '' */
+.archimate-element-artifact:before { content: '\e83b'; } /* '' */
+.archimate-element-distribution-network:before { content: '\e83c'; } /* '' */
+.archimate-element-equipment:before { content: '\e83d'; } /* '' */
+.archimate-element-facility:before { content: '\e83e'; } /* '' */
+.archimate-element-material:before { content: '\e83f'; } /* '' */
+.archimate-element-work-package:before { content: '\e840'; } /* '' */
+.archimate-element-deliverable:before { content: '\e841'; } /* '' */
+.archimate-element-plateau:before { content: '\e842'; } /* '' */
 .archimate-relation-or-junction:before { content: '\f10c'; } /* '' */
 .archimate-relation-and-junction:before { content: '\f111'; } /* '' */
 .archimate-tool-hand:before { content: '\f256'; } /* '' */

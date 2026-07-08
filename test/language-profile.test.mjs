@@ -7,6 +7,14 @@ async function readJson(path) {
   return JSON.parse(text);
 }
 
+function kebab(type) {
+  return type
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/[^a-zA-Z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase();
+}
+
 test('archimate 3 profile keeps retired 3.x concepts for compatibility', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate3-profile.json');
   const types = new Set(profile.elements.map((element) => element.type));
@@ -217,6 +225,40 @@ test('archimate 4 profile pictogram refs are defined for renderer path map', asy
       `${concept.type} references missing ${concept.pictoRef}`
     );
   }
+});
+
+test('archimate font exposes Fontello glyphs for every ArchiMate 4 element', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const config = await readJson('../archimate-font/lib/config.json');
+  const css = await readFile(new URL('../archimate-font/lib/css/archimate-font.css', import.meta.url), 'utf8');
+  const demo = await readFile(new URL('../archimate-font/lib/demo.html', import.meta.url), 'utf8');
+  const fontSvg = await readFile(new URL('../archimate-font/lib/font/archimate-font.svg', import.meta.url), 'utf8');
+  const glyphs = new Map(config.glyphs.map((glyph) => [ glyph.css, glyph ]));
+  const codes = new Set(config.glyphs.map((glyph) => glyph.code));
+
+  assert.equal(config.name, 'archimate-font');
+  assert.equal(config.css_prefix_text, 'archimate-');
+  assert.equal(config.glyphs.filter((glyph) => glyph.css.startsWith('element-')).length, 42);
+  assert.equal(codes.size, config.glyphs.length);
+
+  for (const element of profile.elements) {
+    const cssName = `element-${kebab(element.type)}`;
+    const glyph = glyphs.get(cssName);
+    const sourceSvg = await readFile(new URL(`../archimate-font/src/elements/${cssName}.svg`, import.meta.url), 'utf8');
+
+    assert.equal(Boolean(glyph), true, `${element.type} must have a Fontello glyph`);
+    assert.equal(glyph.src, 'custom_icons', `${element.type} must use a custom Fontello icon`);
+    assert.equal(glyph.selected, true, `${element.type} must be selected in Fontello config`);
+    assert.equal(glyph.svg.width, 1000, `${element.type} glyph width`);
+    assert.match(glyph.svg.path, /\S/, `${element.type} glyph path`);
+    assert.match(css, new RegExp(`\\.archimate-${cssName}:before \\{ content: '\\\\[ef][0-9a-f]{3}'`));
+    assert.match(demo, new RegExp(`archimate-${cssName}`));
+    assert.match(fontSvg, new RegExp(`glyph-name="${cssName}"`));
+    assert.match(sourceSvg, /<path d="[^"]+" fill="black" \/>/);
+  }
+
+  assert.equal(glyphs.get('element-role').code, 0xe819);
+  assert.equal(glyphs.get('element-plateau').code, 0xe842);
 });
 
 test('renderer uses active language profile pictogram refs', async () => {
