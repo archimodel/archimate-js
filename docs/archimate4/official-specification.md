@@ -227,6 +227,13 @@ The relationship rules remain a fallback:
   loader.
 - Confirm XML serialization details after MEFF 4.0 XSD is available.
 
+Implemented relationship rule wiring:
+
+- Popup relationship choices and reconnect validation both read allowed relationships through the active
+  language profile.
+- When an external ArchiMate 4 relationship profile is loaded, `connection.reconnect` checks use that
+  profile instead of the legacy ArchiMate 3.x relationship map.
+
 Implemented multiplicity guard:
 
 - Relationship-end multiplicity is suppressed for connections whose source or target is `AndJunction`

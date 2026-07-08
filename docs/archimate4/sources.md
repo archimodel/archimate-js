@@ -62,6 +62,8 @@
   `archimateVersion` is `4.0`, so licensed Appendix B data can be supplied at startup.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
+- Relationship popup options and reconnect validation both call the profile-aware relationship lookup,
+  so an external Appendix B profile affects editing constraints as well as menu display.
 
 ## Junction Multiplicity Guard
 

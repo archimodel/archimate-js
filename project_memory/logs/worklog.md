@@ -78,3 +78,15 @@
 - Docs: updated README and `docs/archimate4/*` with the implemented notation guard and the remaining MEFF 4.0/XSD dependency.
 - Verification: `npm run test:language` passed with 31 tests in `project_memory/runlogs/20260708-055-multiplicity-validator-npm-test-language.txt`; changed JS ESLint passed in `project_memory/runlogs/20260708-056-multiplicity-validator-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-057-multiplicity-validator-git-diff-check.txt`; final post-log `git diff --check` passed in `project_memory/runlogs/20260708-058-multiplicity-validator-final-git-diff-check.txt`.
 - Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.
+
+## 2026-07-08 loop 9
+
+- Goal: ensure ArchiMate 4 relationship editing constraints use the active language profile, not only popup menu display.
+- Observation: C260 Appendix B and relationship table locations were confirmed from the supplied PDF in `project_memory/runlogs/20260708-059-pdf-outline-keyword-scan.txt`.
+- Implemented: `ArchimateRules` now injects `languageProfile` and passes the active profile into `canConnect()` and `isRelationshipAllowed()` for reconnect validation.
+- Implemented: `docs/archimate4/*` now record that popup relationship options and reconnect validation both use the active profile.
+- Tests: added source-level coverage that connection rules route relationship checks through the active profile.
+- Verification: `npm run test:language` passed with 32 tests in `project_memory/runlogs/20260708-060-profile-aware-rules-npm-test-language.txt`.
+- Audit: first changed-file ESLint failed after `lib/features/rules/ArchimateRules.js` entered the lint gate, exposing pre-existing style issues in the touched file; see `project_memory/runlogs/20260708-061-profile-aware-rules-eslint-changed-js.txt`.
+- Fix verification: changed-file ESLint passed after formatting the touched file in `project_memory/runlogs/20260708-062-profile-aware-rules-eslint-changed-js.txt`; `git diff --check` passed in `project_memory/runlogs/20260708-063-profile-aware-rules-git-diff-check.txt`; final post-log `git diff --check` passed in `project_memory/runlogs/20260708-064-profile-aware-rules-final-git-diff-check.txt`.
+- Remaining open issues: Appendix B relationship matrix data and MEFF 4.0 XSD details are still external-source dependent.

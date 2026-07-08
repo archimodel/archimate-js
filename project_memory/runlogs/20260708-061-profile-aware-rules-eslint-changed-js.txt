@@ -1,0 +1,16 @@
+
+D:\github\archimate-js\lib\features\rules\ArchimateRules.js
+   16:24  error  Strings must use singlequote                  quotes
+  200:1   error  Expected indentation of 2 spaces but found 0  indent
+  263:1   error  Trailing spaces not allowed                   no-trailing-spaces
+  284:14  error  A space is required after '{'                 object-curly-spacing
+  284:41  error  A space is required before '}'                object-curly-spacing
+  286:25  error  There should be no space before this paren    space-in-parens
+  294:54  error  Expected space or tab after '//' in comment   spaced-comment
+  295:56  error  Expected space or tab after '//' in comment   spaced-comment
+  299:41  error  A space is required before '}'                object-curly-spacing
+  307:60  error  Expected space or tab after '//' in comment   spaced-comment
+  318:56  error  Expected space or tab after '//' in comment   spaced-comment
+
+✖ 11 problems (11 errors, 0 warnings)
+  11 errors and 0 warnings potentially fixable with the `--fix` option.

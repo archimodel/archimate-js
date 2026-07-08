@@ -38,6 +38,17 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(baseViewer, /setArchimate4RelationshipProfile\(/);
 });
 
+test('connection rules evaluate relationships through the active language profile', async () => {
+  const source = await readFile(new URL('../lib/features/rules/ArchimateRules.js', import.meta.url), 'utf8');
+
+  assert.match(source, /ArchimateRules\(eventBus, languageProfile\)/);
+  assert.match(source, /ArchimateRules\.\$inject = \[ 'eventBus', 'languageProfile' \]/);
+  assert.match(source, /this\._languageProfile = languageProfile/);
+  assert.match(source, /var profile = this\._languageProfile && this\._languageProfile\.get\(\)/);
+  assert.match(source, /canConnect\(source, target, connection, profile\)/);
+  assert.match(source, /isRelationshipAllowed\(source\.type, target\.type, connection\.type, profile\)/);
+});
+
 test('archimate 4 relationship profile loader accepts object maps with names and codes', () => {
   const validTypes = new Set([
     'BusinessActor',

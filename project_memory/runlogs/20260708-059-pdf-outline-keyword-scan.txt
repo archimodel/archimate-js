@@ -1,0 +1,172 @@
+pdf=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+metadata= {'/Author': 'The Open Group', '/CreationDate': "D:20260403101104+02'00'", '/Creator': 'Adobe InDesign 20.5 (Macintosh)', '/GTS_PDFXVersion': 'PDF/X-4', '/ModDate': "D:20260429150241+02'00'", '/Producer': 'Adobe PDF Library 17.0', '/Title': 'ArchiMate 4 Specification', '/Trapped': '/False'}
+outline_scan=
+  2.8. Composite Element -> page 26
+  2.12. Core Element -> page 26
+  2.14. Element -> page 27
+  2.16. Relationship -> page 27
+  3.4. Structure and Behavior Elements -> page 33
+    3.4.1. Active Structure Elements -> page 34
+    3.4.2. Passive Structure Elements -> page 35
+    3.4.3. Behavior Elements -> page 35
+  3.6. Concepts and Their Notation -> page 37
+  3.8. Use of Colors and Notational Cues -> page 38
+  4.1. Active Structure Elements -> page 39
+  4.2. Behavior Elements -> page 41
+  4.3. Composite Elements -> page 45
+  4.4. Summary of Common Domain Elements -> page 48
+5. Relationships and Junctions -> page 50
+  5.1. Structural Relationships -> page 51
+    5.1.1. Aggregation Relationship -> page 51
+    5.1.2. Composition Relationship -> page 52
+    5.1.3. Assignment Relationship -> page 53
+    5.1.4. Realization Relationship -> page 55
+    5.1.5. Semantics of Structural Relationships -> page 56
+  5.2. Dependency Relationships -> page 57
+    5.2.1. Serving Relationship -> page 58
+    5.2.2. Access Relationship -> page 58
+    5.2.3. Influence Relationship -> page 59
+    5.2.4. Association Relationship -> page 61
+    5.2.5. Semantics of Dependency Relationships -> page 62
+  5.3. Dynamic Relationships -> page 63
+    5.3.1. Triggering Relationship -> page 63
+    5.3.2. Flow Relationship -> page 64
+    5.3.3. Semantics of Dynamic Relationships -> page 65
+  5.4. Other Relationships -> page 65
+    5.4.1. Specialization Relationship -> page 65
+    5.4.2. Semantics of Other Relationships -> page 66
+  5.7. Summary of Relationships and Junctions. -> page 69
+  5.8. Derivation of Relationships -> page 70
+  6.1. Motivation Elements -> page 72
+  6.2. Motivation Elements Metamodel -> page 73
+  6.6. Summary of Motivation Elements -> page 83
+  6.7. Relationships with Other Domains -> page 84
+  7.1. Strategy Elements Metamodel -> page 85
+  7.2. Structure Elements -> page 86
+  7.3. Behavior Elements -> page 86
+  7.5. Summary of Strategy Elements -> page 92
+  7.6. Relationships with Other Domains -> page 92
+  8.2. Active Structure Elements -> page 94
+  8.3. Passive Structure Elements -> page 97
+  8.4. Composite Elements -> page 99
+  8.5. Summary of Business Domain Elements -> page 101
+  9.2. Active Structure Elements -> page 102
+  9.3. Passive Structure Elements -> page 104
+  9.4. Summary of Application Domain Elements -> page 106
+  10.2. Active Structure Elements -> page 108
+  10.3. Passive Structure Elements -> page 113
+  10.5. Summary of Technology Domain Elements -> page 116
+11. Relationships Between Core Domains -> page 118
+12. Implementation and Migration Domain -> page 121
+  12.1. Implementation and Migration Elements Metamodel -> page 121
+  12.2. Implementation and Migration Elements -> page 121
+  12.3. Summary of Implementation and Migration Elements -> page 124
+  12.4. Relationships with Domains -> page 124
+    14.2.1. Examples of Specializations of Common Domain Elements (Informative) -> page 135
+    14.2.2. Examples of Specializations of Business Domain Elements (Informative)
+ -> page 138
+    14.2.3. Examples of Specializations of Application Domain Elements (Informative) -> page 138
+    14.2.4. Examples of Specializations of Technology Domain Elements (Informative) -> page 139
+    14.2.5. Examples of Specializations of Motivation Elements (Informative) -> page 140
+    14.2.6. Examples of Specializations of Strategy Elements (Informative) -> page 141
+    14.2.7. Examples of Specializations of Implementation and Migration Elements (Informative)
+ -> page 142
+    14.2.8. Examples of Specializations of Composite Elements (Informative) -> page 142
+    14.2.9. Examples of Specializations of Relationships and Junctions (Informative) -> page 143
+Appendix A: Summary of Language Notation -> page 144
+  A.1. Core Elements -> page 144
+  A.2. Motivation, Strategy, Implementation and Migration Elements -> page 145
+  A.3. Relationships and Junctions -> page 145
+Appendix B: Relationships (Normative) -> page 146
+  B.2. Derivation Rules for Valid Relationships -> page 147
+    B.2.1. Valid Derivations for Specialization Relationships -> page 147
+    B.2.2. Valid Derivations for Structural Relationships -> page 147
+    B.2.3. Valid Derivations for Dependency Relationships -> page 148
+    B.2.4. Valid Derivations for Dynamic Relationships -> page 149
+  B.3. Derivation Rules for Potential Relationships -> page 151
+    B.3.1. Potential Derivation for Specialization Relationships -> page 152
+    B.3.2. Potential Derivation for Structural and Dependency Relationships -> page 155
+    B.3.3. Potential Derivation for Dependency Relationships -> page 156
+    B.3.4. Potential Derivation for Dynamic Relationships -> page 157
+  B.5. Relationship Tables -> page 160
+  B.6. Grouping, Plateau, and Relationships Between Relationships -> page 167
+  C.4. Implementation and Migration Viewpoints -> page 188
+    C.4.2. Migration Viewpoint -> page 189
+    C.4.3. Implementation and Migration Viewpoint -> page 190
+Appendix D: Relationship to Other Standards, Specifications, and Guidance Documents -> page 192
+keyword_pages=
+page 1: Junction
+page 7: Junction
+page 8: multiplicity, Junction
+page 10: Junction
+page 11: Appendix B, Relationship Tables, Junction
+page 12: Appendix E
+page 15: Junction
+page 16: Appendix B, Appendix E
+page 20: Model Exchange
+page 23: Appendix B
+page 26: Junction
+page 32: Junction
+page 39: Appendix B
+page 46: Appendix B
+page 50: Junction
+page 51: Appendix B, Junction
+page 52: Junction
+page 53: Appendix B, Junction
+page 54: Junction
+page 55: Junction
+page 56: Junction
+page 57: Junction
+page 58: Junction
+page 59: Junction
+page 60: Junction
+page 61: Junction
+page 62: Junction
+page 63: Junction
+page 64: Junction
+page 65: Junction
+page 66: Junction
+page 67: Junction
+page 68: multiplicity, Junction
+page 69: multiplicity, Junction
+page 70: Appendix B, Junction
+page 71: Appendix B, Junction
+page 84: Appendix B
+page 88: Junction
+page 92: Appendix B
+page 125: Junction
+page 133: Model Exchange
+page 143: Junction
+page 145: Junction
+page 146: Appendix B, Relationship Tables
+page 147: Appendix B
+page 148: Appendix B
+page 149: Appendix B
+page 150: Appendix B
+page 151: Appendix B
+page 152: Appendix B
+page 153: Appendix B
+page 154: Appendix B
+page 155: Appendix B
+page 156: Appendix B
+page 157: Appendix B
+page 158: Appendix B
+page 159: Appendix B
+page 160: Appendix B, Relationship Tables
+page 161: Appendix B, Relationship Tables
+page 162: Appendix B, Relationship Tables
+page 163: Appendix B, Relationship Tables
+page 164: Appendix B, Relationship Tables
+page 165: Appendix B, Relationship Tables
+page 166: Appendix B, Relationship Tables
+page 167: Appendix B, Junction
+page 170: Junction
+page 193: Junction
+page 194: Junction
+page 195: Junction
+page 197: Junction, Appendix E
+page 198: Appendix E
+page 199: Appendix E
+page 200: multiplicity, Appendix E
+page 205: Junction
