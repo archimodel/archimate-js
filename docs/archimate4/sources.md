@@ -11,6 +11,8 @@
 
 - C260 is now present locally as `C:\Users\syska\Downloads\978940181474E.pdf` and was reviewed on
   2026-07-08.
+- The C260 conformance shall/may source scan is recorded in
+  `project_memory/runlogs/20260709-188-c260-conformance-shall-scan.txt`.
 - The supplied launch transcript is present locally at
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
 - C260 is a licensed copyrighted publication; this repository records a derived implementation
@@ -24,6 +26,9 @@
   point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
+- C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
+  metadata so required, optional, implemented, and externally blocked support can be audited without
+  treating fallback data as final conformance.
 
 ## Current Public Release Notes Captured
 

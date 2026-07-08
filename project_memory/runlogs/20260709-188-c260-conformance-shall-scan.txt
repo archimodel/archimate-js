@@ -1,0 +1,34 @@
+--- page 20 ---
+by The Open Group, April 2022 and updated May 2025 to include Technical
+April 2022 and updated May 2025 to include Technical Corrigendum 1; refer to:
+--- page 21 ---
+--- page 22 ---
+ArchiMate ecosystem also supports an exchange format in XML, which allows model and diagram
+exchange between tools [C19C].
+architectures, specific viewpoints for selected stakeholders, and language customization mechanisms.
+Enterprise Architectures, and uses realization relationships to relate concrete elements to more
+--- page 23 ---
+1.3. Conformance Chapter 1. Introduction
+1.3. Conformance
+The ArchiMate language may be implemented in software used for Enterprise Architecture modeling.
+For the purposes of this document, the conformance requirements for implementations of the
+A conforming implementation:
+1. Shall support the language structure, relationships, domains, cross-domain dependencies, and
+2. Shall support the standard iconography as specified in Chapter 4, Chapter 5, Chapter 6, Chapter 7,
+3. Shall support the viewpoint mechanism as specified in Chapter 13
+4. Shall support the language customization mechanisms as specified in Chapter 14 in an
+5. Shall support the relationships between elements as specified in Appendix B
+6. May support the example viewpoints described in Appendix C and Chapter 3, Chapter 4, Chapter 5,
+Readers are advised to check The Open Group website for additional conformance and certification
+Deprecated Items identified as deprecated may be removed in the next version of this
+defined by an implementor of a software tool. The value or behavior may vary among
+implementations that conform to this standard. A user should not rely on the
+existence of the value or behavior. The implementor shall document such a
+May Describes a feature or behavior that is optional. To avoid ambiguity, the
+opposite of “may” is expressed as “need not”, instead of “may not”.
+--- page 24 ---
+Obsolescent Certain features are obsolescent, which means that they may be considered for
+Shall Describes a feature or behavior that is a requirement. To avoid ambiguity, do
+not use “must” as an alternative to “shall”.
+Shall not Describes a feature or behavior that is an absolute prohibition.
+Will Same meaning as “shall”; “shall” is the preferred term.

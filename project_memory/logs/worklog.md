@@ -788,3 +788,18 @@
 - Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-185-implementation-status-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-186-implementation-status-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-implementation-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 66
+
+- Goal: make the ArchiMate 4 implementation status audit complete enough to track C260 conformance requirements per required and optional clause.
+- Source check: `project_memory/runlogs/20260709-187-c260-viewpoint-standard-scan.txt` located Chapter 13 and Appendix C viewpoint references; `project_memory/runlogs/20260709-188-c260-conformance-shall-scan.txt` located the conformance shall/may clauses without copying normative prose.
+- Red test: `project_memory/runlogs/20260709-189-conformance-requirements-red-test.txt` failed because `profile.conformance.requirements` and the status summary were missing.
+- Implemented: `archimate4-profile.json` now records five `shall` requirement entries and one `may` example-viewpoint entry with statuses for implemented, implementation-defined, local-renderer, optional, and external-profile-required support.
+- Implemented: `getArchimate4ImplementationStatus()` now returns `conformanceRequirements` with the raw requirement items plus summary counts for required and optional clauses.
+- Docs: README, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now describe the conformance requirement map and its external-blocker semantics.
+- Verification: `npm run test:language` passed with 117 tests in `project_memory/runlogs/20260709-190-conformance-requirements-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-191-conformance-requirements-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-192-conformance-requirements-demo-build.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-193-conformance-requirements-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-194-conformance-requirements-repo-lint-legacy.txt` with 4413 existing errors.
+- Final record checks: `aria_state.json` parsed in `project_memory/runlogs/20260709-195-conformance-requirements-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-196-conformance-requirements-final-git-diff-check.txt`.
+- Post-record checks: `aria_state.json` parsed again in `project_memory/runlogs/20260709-197-conformance-requirements-post-record-state-json-check.txt`; `git diff --check` passed again in `project_memory/runlogs/20260709-198-conformance-requirements-post-record-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-conformance-requirements-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -492,3 +492,28 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(entrypoint, /getArchimate4ImplementationStatus/);
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
 });
+
+test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const requirements = profile.conformance.requirements;
+  const byId = new Map(requirements.map((requirement) => [ requirement.id, requirement ]));
+
+  assert.equal(requirements.filter((requirement) => requirement.level === 'shall').length, 5);
+  assert.equal(requirements.filter((requirement) => requirement.level === 'may').length, 1);
+  assert.equal(byId.get('language-structure').status, 'implemented');
+  assert.equal(byId.get('standard-iconography').status, 'local-renderer-coverage');
+  assert.equal(byId.get('standard-iconography').externalBlocker, 'exactAppendixAArtworkRights');
+  assert.equal(byId.get('viewpoint-mechanism').status, 'implemented');
+  assert.equal(byId.get('language-customization').status, 'implemented');
+  assert.equal(byId.get('language-customization').implementationDefined, true);
+  assert.equal(byId.get('appendix-b-relationships').status, 'external-profile-required');
+  assert.equal(byId.get('appendix-b-relationships').externalBlocker, 'officialAppendixBRelationshipMatrix');
+  assert.equal(byId.get('example-viewpoints').level, 'may');
+  assert.equal(byId.get('example-viewpoints').status, 'not-bundled-informative');
+
+  assert.match(languageIndex, /conformanceRequirements: summarizeConformanceRequirements/);
+  assert.match(languageIndex, /function summarizeConformanceRequirements/);
+  assert.match(sources, /C260 conformance requirements are represented per shall\/may clause/);
+});

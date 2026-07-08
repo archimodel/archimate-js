@@ -21,7 +21,43 @@
     "iconography": {
       "status": "local-renderer-coverage",
       "exactAppendixAVectorsConfirmed": false
-    }
+    },
+    "requirements": [
+      {
+        "id": "language-structure",
+        "level": "shall",
+        "status": "implemented"
+      },
+      {
+        "id": "standard-iconography",
+        "level": "shall",
+        "status": "local-renderer-coverage",
+        "externalBlocker": "exactAppendixAArtworkRights"
+      },
+      {
+        "id": "viewpoint-mechanism",
+        "level": "shall",
+        "status": "implemented"
+      },
+      {
+        "id": "language-customization",
+        "level": "shall",
+        "status": "implemented",
+        "implementationDefined": true
+      },
+      {
+        "id": "appendix-b-relationships",
+        "level": "shall",
+        "status": "external-profile-required",
+        "externalBlocker": "officialAppendixBRelationshipMatrix"
+      },
+      {
+        "id": "example-viewpoints",
+        "level": "may",
+        "status": "not-bundled-informative",
+        "optional": true
+      }
+    ]
   },
   "domains": [
     { "name": "Common", "color": "#D9D3C8" },

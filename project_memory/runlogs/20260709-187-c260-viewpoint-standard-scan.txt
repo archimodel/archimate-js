@@ -1,0 +1,352 @@
+pages=207
+--- page 1 ---
+• T he concepts of stakeholders, architecture viewpoints, and views, as well as the ArchiMate
+viewpoint mechanism
+--- page 6 ---
+2.5. Architecture Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+--- page 10 ---
+13. Stakeholders, Architecture Views, and Viewpoints. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105
+13.3. Architecture Views and Viewpoints. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 106
+13.4. Viewpoint Mechanism. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 107
+13.4.1. Defining and Classifying Viewpoints. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 109
+13.5. Example Viewpoints . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110
+--- page 11 ---
+Appendix C: Example Viewpoints . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 147
+C.1. Basic Viewpoints in the ArchiMate Language. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 147
+C.1.1. Organization Viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 149
+C.1.2. Application Structure Viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 150
+C.1.3. Information Structure Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 151
+C.1.4. Technology Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 151
+C.1.5. Layered Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 152
+C.1.6. Physical Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 153
+C.1.7. Product Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 154
+C.1.8. Application Usage Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 155
+--- page 12 ---
+C.3. Strategy Viewpoints. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 164
+C.3.1. Strategy Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 164
+C.3.2. Capability Map Viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 165
+C.3.3. Value Stream Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 165
+C.3.4. Outcome Realization Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 166
+C.3.5. Resource Map Viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 166
+C.4. Implementation and Migration Viewpoints. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167
+C.4.1. Project Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167
+C.4.2. Migration Viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 168
+C.4.3. Implementation and Migration Viewpoint. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 169
+--- page 16 ---
+• Chapter 13, Stakeholders, Architecture Views, and Viewpoints, describes the ArchiMate viewpoint
+• Appendix C, Example Viewpoints, presents a set of architecture viewpoints, developed in ArchiMate
+All viewpoints are described in detail. The appendix specifies the elements, relationships, usage
+guidelines, goals, and target groups for each viewpoint.
+--- page 22 ---
+architectures, specific viewpoints for selected stakeholders, and language customization mechanisms.
+--- page 23 ---
+3. Shall support the viewpoint mechanism as specified in Chapter 13
+6. May support the example viewpoints described in Appendix C and Chapter 3, Chapter 4, Chapter 5,
+--- page 25 ---
+2.5. Architecture Viewpoint
+In some sections of this standard, the term “viewpoint” is used as a synonym for
+“architecture viewpoint”.
+--- page 31 ---
+The structure of the language allows for the modeling of the enterprise from different viewpoints,
+--- page 37 ---
+The viewpoint mechanism explained in Chapter 13 provides the means for defining such stakeholder-
+--- page 126 ---
+Chapter 13. Stakeholders, Architecture Views, and Viewpoints 13.1. Introduction
+and Viewpoints
+by architecture viewpoints. Architecture viewpoints define abstractions on the set of models
+addressing a particular set of concerns. Viewpoints can be used to view certain aspects in isolation,
+TOGAF framework also provides guidelines for the development and use of architecture viewpoints
+The architecture viewpoints and views proposed by any of the above-mentioned frameworks should
+communicate a piece of architecture. It should, however, be noted that viewpoints and views have a
+stakeholder concerns: the viewpoint mechanism. This viewpoint mechanism conforms to the ISO/IEC
+concerns, viewpoints, and views are important elements in this model, as depicted in Figure 6-1.
+--- page 127 ---
+13.3. Architecture Views and Viewpoints Chapter 13. Stakeholders, Architecture Views, and Viewpoints
+The ArchiMate language with the viewpoint mechanism described in Section 13.4 assists and guides
+the architect in the definition and classification of governing viewpoints. The architect will use this
+13.3. Architecture Views and Viewpoints
+architecture viewpoint, which prescribes the concepts, models, analysis techniques, and visualizations
+that are provided by the view. Simply put, a view is what you see, and a viewpoint is where you are
+--- page 128 ---
+Chapter 13. Stakeholders, Architecture Views, and Viewpoints 13.4. Viewpoint Mechanism
+architecture viewpoint (or simply “viewpoint”). There are two aspects to a viewpoint: the concerns it
+An architecture viewpoint frames one or more concerns. A concern can be framed by more than one
+viewpoint.
+A view is governed by its viewpoint: the viewpoint establishes the conventions for constructing,
+interpreting, and analyzing the view to address concerns framed by that viewpoint. Viewpoint
+Architecture viewpoints are a means to focus on particular aspects and domains of the architecture.
+communication takes place. What should and should not be visible from a specific viewpoint is
+Viewpoints are designed for the purpose of communicating certain aspects and domains of an
+architecture. The communication enabled by a viewpoint can be strictly informative, but in general is
+--- page 129 ---
+13.4. Viewpoint Mechanism Chapter 13. Stakeholders, Architecture Views, and Viewpoints
+Figure 13-2: Framing Stakeholder Concerns using the Viewpoint Mechanism
+viewpoint mechanism is used to identify purpose and content and to help define and classify the
+viewpoint. The viewpoint governs the construction and design of the view. The view is a description of
+the architecture addressing stakeholder concerns and is governed by the viewpoint.
+Creating an ArchiMate viewpoint consists of two steps:
+Applying this viewpoint to an architecture model means that those parts of the architecture are
+--- page 130 ---
+Chapter 13. Stakeholders, Architecture Views, and Viewpoints 13.4. Viewpoint Mechanism
+13.4.1. Defining and Classifying Viewpoints
+To help define and classify viewpoints based on a repeatable structure, the ArchiMate language assists
+• Designing: Design viewpoints support architects and designers in the design process from initial
+Typically, design viewpoints consist of diagrams.
+• Deciding: Decision support viewpoints assist managers in the process of decision-making by
+• Informing: Informing viewpoints help to inform any stakeholder about the Enterprise Architecture,
+--- page 131 ---
+13.5. Example Viewpoints Chapter 13. Stakeholders, Architecture Views, and Viewpoints
+With a governing viewpoint, the architect can create and design a view. The view contains elements
+13.5. Example Viewpoints
+See Appendix C for a set of example viewpoints.
+--- page 168 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+Appendix C: Example Viewpoints
+C.1. Basic Viewpoints in the ArchiMate Language
+A viewpoint in the ArchiMate language is a selection of a relevant subset of the ArchiMate elements
+A basic type of viewpoint, is a simple selection of a relevant subset of ArchiMate concepts. The
+The following are examples of stakeholders and concerns as a basis for the specification of viewpoints:
+--- page 169 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+In each basic viewpoint, concepts from the three domains of Business, Application, and Technology
+separate viewpoints for the different domains are advisable. Based on common architectural practice
+form of a set of basic viewpoints have been defined. These are listed in Table C-1. The table also shows
+the perspective for the viewpoint. Some viewpoints have a scope that is limited to a single domain or
+aspect, when others link multiple domains and/or aspects. The different viewpoints are grouped into
+categories that indicate which direction and which elements the viewpoint is looking at:
+1. Composition: Viewpoints that define the internal structure of elements
+2. Support: Viewpoints where you are looking at elements that are supported by other elements
+4. Realization: Viewpoints where you are looking at elements that realize other elements
+--- page 170 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+In the following sections, the ArchiMate viewpoints are described in more detail. For each viewpoint,
+the comprised elements are listed guidelines for the viewpoint’s use, and the stakeholder concerns
+addressed by the viewpoint are indicated. In addition to the specified elements, the grouping element,
+junction, and or junction can be used in every viewpoint. For more details on the goal and use of
+viewpoints, refer to Chapter 14 of Enterprise Architecture at Work: Modeling, Communication, and
+These basic viewpoints are starting points for modeling efforts. They can accelerate architectural
+basic viewpoints should not constrain modeling activities. Organizations and individual modelers
+should address stakeholder concerns by selecting from the basic viewpoints, modifying them, or
+defining new ones. The viewpoints listed here are therefore intended as examples, not as a normative
+--- page 171 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+Table C-2: Organization Viewpoint Description
+Organization Viewpoint
+C.1.2. Application Structure Viewpoint
+The application structure viewpoint shows the structure of one or more applications or components.
+This viewpoint is useful in designing or understanding the main structure of applications or
+Table C-3: Application Structure Viewpoint Description
+Application Structure Viewpoint
+--- page 172 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+C.1.3. Information Structure Viewpoint
+The information structure viewpoint is comparable to the traditional information models created in
+Table C-4: Information Structure Viewpoint Description
+Information Structure Viewpoint
+C.1.4. Technology Viewpoint
+The technology viewpoint contains the software and hardware technology elements supporting the
+Table C-5: Technology Viewpoint Description
+Technology Viewpoint
+--- page 173 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+C.1.5. Layered Viewpoint
+The layered viewpoint pictures several layers and aspects of an Enterprise Architecture in one
+belong to the first category. The structural principle behind a fully layered viewpoint is that each
+intended to be prescriptive. The main goal of the layered viewpoint is to provide an overview in one
+diagram. Furthermore, this viewpoint can be used as support for impact of change analysis and
+--- page 174 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+Table C-6: Layered Viewpoint Description
+Layered Viewpoint
+All core elements and all relationships are permitted in this viewpoint.
+C.1.6. Physical Viewpoint
+The physical viewpoint contains equipment (one or more physical machines, tools, or instruments)
+Table C-7: Physical Viewpoint Description
+Physical Viewpoint
+--- page 175 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+C.1.7. Product Viewpoint
+The product viewpoint depicts the value that these products offer to the customers or other external
+product. A product viewpoint is typically used in product development to design a product by
+Table C-8: Product Viewpoint Description
+Product Viewpoint
+--- page 176 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+C.1.8. Application Usage Viewpoint
+The application usage viewpoint describes how applications are used to support one or more
+Table C-9: Application Usage Viewpoint Description
+Application Usage Viewpoint
+C.1.9. Technology Usage Viewpoint
+The technology usage viewpoint shows how applications are supported by the software and hardware
+provided to the applications. This viewpoint plays an important role in the analysis of performance
+--- page 177 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+Table C-10: Technology Usage Viewpoint Description
+Technology Usage Viewpoint
+C.1.10. Process Cooperation Viewpoint
+The process cooperation viewpoint is used to show the relationships of one or more processes with
+Each of these can be regarded as a “sub-viewpoint” of the process cooperation viewpoint.
+--- page 178 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+Table C-11: Process Cooperation Viewpoint Description
+Process Cooperation Viewpoint
+C.1.11. Application Cooperation Viewpoint
+The application cooperation viewpoint describes the relationships between application components in
+viewpoint is typically used to create an overview of the application landscape of an organization. This
+viewpoint is also used to express the (internal) cooperation or orchestration of services that together
+--- page 179 ---
+C.1. Basic Viewpoints in the ArchiMate Language Appendix C: Example Viewpoints
+Table C-12: Application Cooperation Viewpoint Description
+Application Cooperation Viewpoint
+C.1.12. Service Realization Viewpoint
+The service realization viewpoint is used to show how one or more business services are realized by
+between the business products viewpoint and the process view. It provides a “view from the outside”
+Table C-13: Service Realization Viewpoint Description
+Service Realization Viewpoint
+--- page 180 ---
+Appendix C: Example Viewpoints C.1. Basic Viewpoints in the ArchiMate Language
+C.1.13. Implementation and Deployment Viewpoint
+The implementation and deployment viewpoint shows how one or more applications are realized on
+Table C-14: Implementation and Deployment Viewpoint Description
+Implementation and Deployment Platform Viewpoint
+--- page 181 ---
+C.2. Motivation Viewpoints Appendix C: Example Viewpoints
+C.2. Motivation Viewpoints
+A number of standard viewpoints for modeling motivational aspects have been defined. Each of these
+viewpoints presents a different perspective on modeling the motivation that underlies some Enterprise
+Architecture and allows a modeler to focus on certain aspects. Therefore, each viewpoint considers
+The following viewpoints are distinguished:
+• The stakeholder viewpoint focuses on modeling the stakeholders, drivers, the assessments of these
+• The goal realization viewpoint focuses on refining the initial, high-level goals into more concrete
+• The goal contribution viewpoint focuses on modeling and analyzing the influence relationships
+• The principles viewpoint focuses on modeling the relevant principles and the goals that motivate
+--- page 182 ---
+Appendix C: Example Viewpoints C.2. Motivation Viewpoints
+C.2.1. Stakeholder Viewpoint
+The stakeholder viewpoint allows the analyst to model the stakeholders, the internal and external
+Table C-15: Stakeholder Viewpoint Description
+Stakeholder Viewpoint
+C.2.2. Goal Realization Viewpoint
+The goal realization viewpoint allows a designer to model the refinement of (high-level) goals into
+--- page 183 ---
+C.2. Motivation Viewpoints Appendix C: Example Viewpoints
+Table C-16: Goal Realization Viewpoint Description
+Goal Realization Viewpoint
+C.2.3. Requirements Realization Viewpoint
+The requirements realization viewpoint allows the designer to model the realization of requirements
+application components, etc. Typically, the requirements result from the goal refinement viewpoint.
+Additionally, this viewpoint can be used to refine requirements into more detailed requirements. The
+Table C-17: Requirements Realization Viewpoint Description
+Requirements Realization Viewpoint
+--- page 184 ---
+Appendix C: Example Viewpoints C.2. Motivation Viewpoints
+C.2.4. Motivation Viewpoint
+The motivation viewpoint allows the designer or analyst to model the motivation aspect, without
+focusing on certain elements within this aspect. For example, this viewpoint can be used to present a
+Table C-18: Motivation Viewpoint Description
+Motivation Viewpoint
+--- page 185 ---
+C.3. Strategy Viewpoints Appendix C: Example Viewpoints
+C.3. Strategy Viewpoints
+To describe strategic aspects of the enterprise, the viewpoints below have been defined. Each of these
+viewpoints presents a different perspective on modeling the high-level strategic direction and make-up
+of the enterprise that allows a modeler to focus on certain aspects. Therefore, each viewpoint
+The following viewpoints are distinguished:
+• The strategy viewpoint provides a high-level strategic overview of the strategies of the enterprise,
+• The capability map viewpoint provides an overview of the capabilities of the enterprise
+• The value stream viewpoint shows an overview of value-creating steps in the enterprise and the
+• The outcome realization viewpoint describes how high-level, business-oriented results are produced
+--- page 186 ---
+Appendix C: Example Viewpoints C.3. Strategy Viewpoints
+C.3.2. Capability Map Viewpoint
+The capability map viewpoint allows the Business Architect to create a structured overview of the
+Table C-20: Capability Map Viewpoint Description
+Capability Map Viewpoint
+C.3.3. Value Stream Viewpoint
+The value stream viewpoint allows the Business Architect to create a structured overview of a value
+Table C-21: Value Stream Viewpoint Description
+Value Stream Viewpoint
+--- page 187 ---
+C.3. Strategy Viewpoints Appendix C: Example Viewpoints
+C.3.4. Outcome Realization Viewpoint
+The outcome realization viewpoint is used to show how the highest-level, business-oriented results are
+Table C-22: Outcome Realization Viewpoint Description
+Outcome Realization Viewpoint
+C.3.5. Resource Map Viewpoint
+The resource map viewpoint allows the Business Architect to create a structured overview of the
+--- page 188 ---
+Appendix C: Example Viewpoints C.4. Implementation and Migration Viewpoints
+Table C-23: Resource Map Viewpoint Description
+Resource Map Viewpoint
+C.4. Implementation and Migration Viewpoints
+The following standard viewpoints for modeling implementation and migration aspects are
+• The project viewpoint is primarily used to model the management of architecture change
+• The migration viewpoint is used to model the transition from an existing architecture to a Target
+• The implementation and migration viewpoint is used to model the relationships between the
+All viewpoints are described separately below. For each viewpoint the comprised elements and
+relationships, the guidelines for the viewpoint use, and the goal and target group of the viewpoint are
+--- page 189 ---
+C.4. Implementation and Migration Viewpoints Appendix C: Example Viewpoints
+Table C-24: Project Viewpoint Description
+Project Viewpoint
+C.4.2. Migration Viewpoint
+The migration viewpoint entails models and concepts that can be used for specifying the transition
+extensively presented in Chapter 12, here the migration viewpoint is only briefly described and
+--- page 190 ---
+Appendix C: Example Viewpoints C.4. Implementation and Migration Viewpoints
+Table C-25: Migration Viewpoint Description
+Migration Viewpoint
+C.4.3. Implementation and Migration Viewpoint
+The implementation and migration viewpoint is used to relate programs and projects to the parts of
+Furthermore, this viewpoint can be used in combination with the programs and projects viewpoint to
+• The programs and projects viewpoint is suited to relate business goals to programs and projects
+• The implementation and migration viewpoint is suited to relate business goals (and requirements)
+--- page 191 ---
+C.4. Implementation and Migration Viewpoints Appendix C: Example Viewpoints
+Table C-26: Implementation and Migration Viewpoint Description
+Implementation and Migration Viewpoint
+--- page 192 ---
+mapping between TOGAF views and the ArchiMate viewpoints. A more detailed description of this
+--- page 193 ---
+Although some of the viewpoints that are defined in the TOGAF Standard cannot easily be mapped
+onto ArchiMate viewpoints, the ArchiMate language and its analysis techniques support the concepts
+addressed in these viewpoints. While there is no one-to-one mapping between them, there is still a fair
+amount of correspondence between the ArchiMate viewpoints and the TOGAF viewpoints and many
+viewpoints from both address largely the same issues. Moreover, the viewpoint mechanism described
+in Section 13.4 lends itself well to define TOGAF viewpoints using ArchiMate concepts.
+Therefore, the viewpoint definitions are more detailed and specify the stakeholders, concerns, level of
+detail, or abstraction level, and the entity types involved in the viewpoints. In the TOGAF Standard this
+• The two standards overlap in their use of viewpoints, and the concept of an underlying common
+--- page 196 ---
+Finally, UML has a predefined, fixed set of diagram types, whereas the ArchiMate viewpoint
+--- page 198 ---
+• Improved the description of viewpoints and the viewpoints mechanism, removed the introductory
+viewpoint, and moved the basic viewpoints listed in the standard to an informative appendix to
+--- page 204 ---
+application cooperation viewpoint, 157 conformance, 5
+application structure viewpoint, 150
+application usage viewpoint, 155 data object, 84
+ArchiMate Core Language, 4 decision viewpoints, 109
+architecture viewpoint, 4, 106 derivation of relationships, 49, 125
+artifact, 93 design viewpoints, 109
+capability map viewpoint, 165 facility, 91
+--- page 205 ---
+goal realization viewpoint, 161 notational cues, 17
+I organization viewpoint, 149
+implementation and deployment viewpoint, 159 outcome realization viewpoint, 166
+implementation and migration viewpoint, 169
+implementation and migration viewpoints, 167 Passive Structure Aspect, 11
+information structure viewpoint, 151 physical application components, 16
+informing viewpoints, 109 physical elements, 15
+internal active structure element, 13 physical viewpoint, 153
+process cooperation viewpoint, 156
+junction, 45 product viewpoint, 154
+--- page 206 ---
+stakeholder viewpoint, 161
+strategy viewpoint, 164
+strategy viewpoints, 164
+technology usage viewpoint, 155
+technology viewpoint, 151
+value stream viewpoint, 165
+viewpoint, 109, 147
+viewpoint mechanism, 105, 107

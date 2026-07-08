@@ -26,6 +26,12 @@ An ArchiMate 4 implementation in this repository must support:
 
 Example viewpoints are informative, so they are not required for editor conformance.
 
+`archimate4-profile.json` must keep a machine-readable C260 conformance requirement map with the
+five required clauses represented as `shall` entries and the example viewpoint clause represented as a
+`may` entry. `getArchimate4ImplementationStatus()` must surface that map with summary counts so
+formal support, implementation-defined support, optional support, and external blockers are not
+collapsed into one ambiguous "supported" flag.
+
 ## Language Structure
 
 ArchiMate 4 organizes concepts by domains and aspects.
