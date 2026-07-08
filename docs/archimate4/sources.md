@@ -92,6 +92,12 @@
 - The ArchiMate 4 `Stakeholder` profile entry uses the correctly spelled `PICTO_STAKEHOLDER`
   reference. The older misspelled `PICTO_STAKHOLDER` key remains in `PathMap` only as a legacy
   compatibility alias for existing 3.x profile metadata.
+- A local C260 Appendix A rendered visual check for `Stakeholder` pictogram notation is recorded in
+  `project_memory/runlogs/20260709-468-c260-appendix-a-stakeholder-render.txt` and
+  `project_memory/runlogs/20260709-469-c260-appendix-a-stakeholder-visual-check.txt`. The derived
+  renderer requirement is limited to replacing the local `PICTO_STAKEHOLDER` actor/person alias with
+  a locally-authored horizontal cylinder path while retaining the legacy `PICTO_STAKHOLDER` alias as
+  compatibility.
 - The ArchiMate 4 `CourseOfAction` display label is `Course of Action`, matching the standard
   capitalization captured from C260.
 - `ArchimateRenderer` resolves pictograms through the active language profile, so ArchiMate 4

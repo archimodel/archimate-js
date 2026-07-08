@@ -189,6 +189,8 @@ Implementation notes:
   elements and must not be migrated to a generic `Interface`.
 - `Path` is a Common Domain active structure element.
 - `Grouping` and `Location` are Common Domain composite elements.
+- `Stakeholder` must use a cylinder renderer pictogram in ArchiMate 4 mode, not the
+  Business Actor or actor/person pictogram fallback.
 - `Location` must use a location-pin renderer pictogram in ArchiMate 4 mode, not the legacy generic
   object pictogram fallback.
 - `DistributionNetwork` must use a bidirectional-arrow renderer pictogram in ArchiMate 4 mode, not

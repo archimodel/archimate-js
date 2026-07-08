@@ -1090,3 +1090,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-465-plateau-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-466-plateau-pictogram-final-git-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-plateau-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 88
+
+- Goal: replace the ArchiMate 4 `Stakeholder` renderer pictogram fallback with a C260 Appendix A-derived horizontal cylinder path.
+- Source evidence: `project_memory/runlogs/20260709-468-c260-appendix-a-stakeholder-render.txt` and `project_memory/runlogs/20260709-469-c260-appendix-a-stakeholder-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-470-stakeholder-pictogram-red-test.txt` failed because `PICTO_STAKEHOLDER` was still aliased to `PICTO_ACTOR`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_STAKEHOLDER` horizontal cylinder path and keeps the legacy misspelled `PICTO_STAKHOLDER` alias pointed at the corrected path.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Stakeholder renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-471-stakeholder-pictogram-test.txt`; `npm run test:language` passed with 146 tests in `project_memory/runlogs/20260709-472-stakeholder-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-473-stakeholder-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-474-stakeholder-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-475-stakeholder-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-476-stakeholder-pictogram-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-477-stakeholder-pictogram-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-478-stakeholder-pictogram-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-479-stakeholder-pictogram-final-git-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-stakeholder-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

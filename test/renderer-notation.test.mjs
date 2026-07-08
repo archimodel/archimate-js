@@ -100,3 +100,11 @@ test('renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path'
   assert.doesNotMatch(pathMap, /'PICTO_PLATEAU': 'PICTO_PRODUCT'/);
   assert.match(pathMap, /m 4 4 l 9 0 m -11 5 l 9 0 m -11 5 l 9 0/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_STAKEHOLDER': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_STAKEHOLDER': 'PICTO_ACTOR'/);
+  assert.match(pathMap, /m 2 5 a 1 1 90 0 0 0 8/);
+});
