@@ -52,3 +52,11 @@ test('renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram
   assert.doesNotMatch(pathMap, /'PICTO_DISTRIBUTION_NETWORK': 'PICTO_COMMUNICATION_NETWORK'/);
   assert.match(pathMap, /m 1\.5 9 l 4 -4 m -4 4 l 4 4/);
 });
+
+test('renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path', async () => {
+  const pathMap = await readFile(new URL('../lib/draw/PathMap.js', import.meta.url), 'utf8');
+
+  assert.match(pathMap, /'PICTO_MATERIAL': \{/);
+  assert.doesNotMatch(pathMap, /'PICTO_MATERIAL': 'PICTO_ARTIFACT'/);
+  assert.match(pathMap, /m 8\.5 1\.5 l 7 4/);
+});

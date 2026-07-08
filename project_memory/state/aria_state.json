@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 81,
-  "stage": "distribution_network_pictogram_verified",
+  "loop_id": 82,
+  "stage": "material_pictogram_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 26,
+    "diff_size": 25,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -99,7 +99,8 @@
       "junction_renderer_notation_guard",
       "motivation_renderer_notation_guard",
       "location_pictogram_guard",
-      "distribution_network_pictogram_guard"
+      "distribution_network_pictogram_guard",
+      "material_pictogram_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -209,12 +210,13 @@
       "check_junction_renderer_notation",
       "check_motivation_renderer_notation",
       "check_location_pictogram_path",
-      "check_distribution_network_pictogram_path"
+      "check_distribution_network_pictogram_path",
+      "check_material_pictogram_path"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-381-distribution-network-pictogram-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-distribution-network-pictogram-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-393-material-pictogram-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-material-pictogram-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -304,10 +306,11 @@
     "ArchiMate 4 AndJunction renders as a filled dot and OrJunction renders as an unfilled ring while ArchiMate 3.x keeps the legacy AND/OR text marker.",
     "ArchiMate 4 Motivation element bodies render with clipped/chamfered corners while ArchiMate 3.x keeps the existing rectangle body rendering.",
     "ArchiMate 4 Location uses a dedicated locally-authored location-pin renderer pictogram instead of the generic object pictogram alias.",
-    "ArchiMate 4 Distribution Network uses a dedicated locally-authored bidirectional-arrow renderer pictogram instead of the Communication Network node-link pictogram alias."
+    "ArchiMate 4 Distribution Network uses a dedicated locally-authored bidirectional-arrow renderer pictogram instead of the Communication Network node-link pictogram alias.",
+    "ArchiMate 4 Material uses a dedicated locally-authored hexagonal renderer pictogram instead of the Artifact document pictogram alias."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T04:19:30+09:00"
+    "updated_at": "2026-07-09T04:23:44+09:00"
   }
 }

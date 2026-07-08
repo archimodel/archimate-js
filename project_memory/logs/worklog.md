@@ -1015,3 +1015,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-386-distribution-network-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-distribution-network-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 82
+
+- Goal: replace the ArchiMate 4 `Material` renderer pictogram fallback with a C260 Appendix A-derived hexagonal path.
+- Source evidence: `project_memory/runlogs/20260709-389-c260-appendix-a-material-render.txt` and `project_memory/runlogs/20260709-390-c260-appendix-a-material-visual-check.txt` record the Appendix A page render and non-verbatim visual check.
+- Red test: `project_memory/runlogs/20260709-391-material-pictogram-red-test.txt` failed because `PICTO_MATERIAL` was still aliased to `PICTO_ARTIFACT`.
+- Implemented: `lib/draw/PathMap.js` now defines a locally-authored `PICTO_MATERIAL` hexagonal path and removes the Artifact alias.
+- Tests/docs: `test/renderer-notation.test.mjs`, README, and `docs/archimate4` now guard and describe the Material renderer pictogram boundary.
+- Verification: focused renderer notation test passed in `project_memory/runlogs/20260709-392-material-pictogram-test.txt`; `npm run test:language` passed with 140 tests in `project_memory/runlogs/20260709-393-material-pictogram-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-394-material-pictogram-eslint-registry.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-395-material-pictogram-demo-build.txt`; JSON check passed in `project_memory/runlogs/20260709-396-material-pictogram-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-397-material-pictogram-git-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-398-material-pictogram-repo-lint-legacy.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-material-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
