@@ -202,6 +202,11 @@
   `c260SourceAlignment.actualOutlineCoverageCounts`, and
   `c260SourceAlignment.outlineCoverageCountDeltas` so each PDF-outline-derived coverage group is
   checked against its assigned source count rather than only the aggregate total.
+- `getArchimate4ImplementationStatus().c260CoverageSourceEvidence` reports
+  `c260CoverageSourceEvidence.coverageSourceRunlogPaths`,
+  `c260CoverageSourceEvidence.missingSourceRunlogCoverageIds`, and
+  `c260CoverageSourceEvidence.sourceRunlogPathDeltas` so each C260 coverage group remains tied to a
+  recorded source-extraction runlog.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

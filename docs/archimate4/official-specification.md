@@ -203,6 +203,11 @@ It must expose C260 outline assignment fields
 `c260SourceAlignment.missingOutlineCoverageCountIds`, and
 `c260SourceAlignment.outlineCoverageCountDeltas`) so each outline-derived coverage group is checked
 against its source-assigned count.
+It must expose C260 coverage source evidence fields
+(`c260CoverageSourceEvidence.coverageSourceRunlogPaths`,
+`c260CoverageSourceEvidence.missingSourceRunlogCoverageIds`, and
+`c260CoverageSourceEvidence.sourceRunlogPathDeltas`) so every C260 coverage group remains tied to a
+recorded source-extraction runlog.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

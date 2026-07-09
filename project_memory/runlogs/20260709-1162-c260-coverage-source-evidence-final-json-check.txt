@@ -1,0 +1,2 @@
+lib/metamodel/languages/archimate4-profile.json OK
+project_memory/state/aria_state.json OK

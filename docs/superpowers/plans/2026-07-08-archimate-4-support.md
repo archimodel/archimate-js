@@ -135,6 +135,9 @@ Appendix F derived acronym tokens.
 C260 outline assignment status reports `expectedOutlineCoverageCounts`, `actualOutlineCoverageCounts`,
 `missingOutlineCoverageCountIds`, and `outlineCoverageCountDeltas` so every PDF-outline-derived
 coverage group is audited against its assigned source count rather than only the aggregate total.
+C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
+`missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
+stays tied to a recorded source-extraction runlog.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

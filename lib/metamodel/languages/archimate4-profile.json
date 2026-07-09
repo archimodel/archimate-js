@@ -1187,6 +1187,33 @@
         "appendixFAcronymsCoverage": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt"
       }
     },
+    "c260CoverageSourceEvidenceCatalog": {
+      "status": "c260-coverage-source-evidence-aligned",
+      "expectedCoverageSourceRunlogPaths": {
+        "sectionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "introductionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "definitionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "languageStructureCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "commonDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "relationshipsAndJunctionsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "motivationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "strategyDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "businessDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "applicationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "technologyDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "relationshipsBetweenCoreDomainsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "implementationAndMigrationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "stakeholdersArchitectureViewsViewpointsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "languageCustomizationMechanismsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixANotationCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixBRelationshipsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixCExampleViewpointsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixDStandardsGuidanceCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixEVersionChangesCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+        "appendixFAcronymsCoverage": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+        "documentArtifactCoverage": "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt"
+      }
+    },
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

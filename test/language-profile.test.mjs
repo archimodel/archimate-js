@@ -1720,6 +1720,67 @@ test('archimate 4 implementation status audits C260 outline assignment counts by
   assert.match(plan, /C260 outline assignment status reports/);
 });
 
+test('archimate 4 implementation status audits C260 coverage source runlog evidence', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const { getArchimate4ImplementationStatus } = await import('../lib/metamodel/languages/index.js');
+  const status = getArchimate4ImplementationStatus();
+  const evidence = status.c260CoverageSourceEvidence;
+  const outlineRunlogPath = 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt';
+  const expectedCoverageSourceRunlogPaths = {
+    sectionCoverage: outlineRunlogPath,
+    introductionCoverage: outlineRunlogPath,
+    definitionCoverage: outlineRunlogPath,
+    languageStructureCoverage: outlineRunlogPath,
+    commonDomainCoverage: outlineRunlogPath,
+    relationshipsAndJunctionsCoverage: outlineRunlogPath,
+    motivationDomainCoverage: outlineRunlogPath,
+    strategyDomainCoverage: outlineRunlogPath,
+    businessDomainCoverage: outlineRunlogPath,
+    applicationDomainCoverage: outlineRunlogPath,
+    technologyDomainCoverage: outlineRunlogPath,
+    relationshipsBetweenCoreDomainsCoverage: outlineRunlogPath,
+    implementationAndMigrationDomainCoverage: outlineRunlogPath,
+    stakeholdersArchitectureViewsViewpointsCoverage: outlineRunlogPath,
+    languageCustomizationMechanismsCoverage: outlineRunlogPath,
+    appendixANotationCoverage: outlineRunlogPath,
+    appendixBRelationshipsCoverage: outlineRunlogPath,
+    appendixCExampleViewpointsCoverage: outlineRunlogPath,
+    appendixDStandardsGuidanceCoverage: outlineRunlogPath,
+    appendixEVersionChangesCoverage: outlineRunlogPath,
+    appendixFAcronymsCoverage: 'project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt',
+    documentArtifactCoverage: 'project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt'
+  };
+
+  assert.equal(evidence.status, 'c260-coverage-source-evidence-aligned');
+  assert.deepEqual(evidence.coverageSourceRunlogPaths, expectedCoverageSourceRunlogPaths);
+  assert.deepEqual(evidence.missingSourceRunlogCoverageIds, []);
+  assert.deepEqual(evidence.extraSourceRunlogCoverageIds, []);
+  assert.deepEqual(evidence.sourceRunlogPathDeltas, []);
+  assert.deepEqual(evidence.uniqueSourceRunlogPaths, [
+    outlineRunlogPath,
+    'project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt',
+    'project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt'
+  ]);
+  assert.equal(evidence.expectedCoverageCount, 22);
+  assert.equal(evidence.actualCoverageCount, 22);
+  assert.equal(evidence.complete, true);
+
+  await Promise.all(evidence.uniqueSourceRunlogPaths.map((runlogPath) => {
+    return readFile(new URL(`../${runlogPath}`, import.meta.url), 'utf8');
+  }));
+
+  assert.match(languageIndex, /function summarizeC260CoverageSourceEvidence/);
+  assert.match(languageIndex, /c260CoverageSourceEvidence: c260CoverageSourceEvidence/);
+  assert.match(readme, /c260CoverageSourceEvidence\.missingSourceRunlogCoverageIds/);
+  assert.match(sources, /c260CoverageSourceEvidence\.coverageSourceRunlogPaths/);
+  assert.match(officialSpec, /c260CoverageSourceEvidence\.sourceRunlogPathDeltas/);
+  assert.match(plan, /C260 coverage source evidence status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

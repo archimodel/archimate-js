@@ -1817,3 +1817,18 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1148-c260-outline-assignment-staged-diff-check.txt` and `project_memory/runlogs/20260709-1149-c260-outline-assignment-staged-diff-check.txt` first failed on runlog whitespace; `project_memory/runlogs/20260709-1150-c260-outline-assignment-final-staged-diff-check.txt` passed after trimming those runlog files.
 - Audit: `project_memory/audit/reports/20260709-c260-outline-assignment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 141
+
+- Goal: make the source-extraction runlog behind every tracked C260 coverage group machine-auditable.
+- Source scan: `project_memory/runlogs/20260709-1152-c260-coverage-catalog-source-runlog-scan.txt` confirmed the 22 C260 aggregate coverage groups have `sourceRunlogPath` values across the C260 outline extraction, Appendix F acronym-token extraction, and C260 document-artifact extraction runlogs.
+- Red test: `project_memory/runlogs/20260709-1153-c260-coverage-source-evidence-red-test.txt` failed because `getArchimate4ImplementationStatus().c260CoverageSourceEvidence` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `c260CoverageSourceEvidenceCatalog.expectedCoverageSourceRunlogPaths` for all 22 tracked C260 coverage groups.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `c260CoverageSourceEvidence` with expected/actual coverage ids, coverage-to-runlog path map, missing/extra source-runlog coverage ids, path deltas, unique source runlog paths, counts, and complete status.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe C260 coverage source runlog evidence.
+- Focused verification: `project_memory/runlogs/20260709-1154-c260-coverage-source-evidence-focused-test.txt` passed with 188 tests; `project_memory/runlogs/20260709-1155-c260-coverage-source-evidence-status.json` shows 22 expected and actual coverage ids, no missing/extra source-runlog coverage ids, no path deltas, and complete true.
+- Verification: `npm run test:language` passed with 188 tests in `project_memory/runlogs/20260709-1159-c260-coverage-source-evidence-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1158-c260-coverage-source-evidence-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-1156-c260-coverage-source-evidence-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1157-c260-coverage-source-evidence-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1160-c260-coverage-source-evidence-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1161-c260-coverage-source-evidence-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1165-c260-coverage-source-evidence-staged-diff-check.txt` first failed on a trailing blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1166-c260-coverage-source-evidence-staged-diff-check-pass.txt` passed after trimming that EOF blank line.
+- Audit: `project_memory/audit/reports/20260709-c260-coverage-source-evidence-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
