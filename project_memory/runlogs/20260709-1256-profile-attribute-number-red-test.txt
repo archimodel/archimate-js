@@ -1,0 +1,131 @@
+﻿(node:55504) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (7.2969ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.0356ms)
+✔ archimate 4 profile exposes Common Domain (1.0478ms)
+✔ archimate 4 profile matches the C260 element catalog (3.5157ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (1.1511ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (0.9626ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (1.4615ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.2388ms)
+✔ archimate 4 palette exposes every standard element (1.8132ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (4.3724ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (5.872ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.7103ms)
+✔ demo sample switches concepts by selected ArchiMate profile (0.6864ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (2.5338ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (25.4074ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (1.9041ms)
+✔ active profile rejects concepts and relationships outside the selected version (1.4402ms)
+✔ renderer uses active language profile pictogram refs (0.5488ms)
+✔ language profile customization supports C260 specialization profiles (1.8957ms)
+✔ language profile customization validates C260 profile attribute definitions (1.7071ms)
+✖ archimate 4 implementation status exposes profile attribute type coverage (6.9327ms)
+✔ custom profile attributes validate active concepts relationships and lineage lookup (4.1919ms)
+✔ language profile customization supports relationship specializations (2.1651ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (2.4687ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.1066ms)
+✔ language profile customization supports viewpoint definitions (1.4257ms)
+✔ custom viewpoint definitions validate purpose content and allowed types (2.567ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (3.5169ms)
+✔ archimate 4 implementation status exposes C260 introduction coverage identity (3.1523ms)
+✔ archimate 4 implementation status exposes C260 language structure coverage identity (2.6972ms)
+✔ archimate 4 implementation status exposes C260 common domain coverage identity (2.5616ms)
+✔ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (2.7362ms)
+✔ archimate 4 implementation status exposes C260 motivation domain coverage identity (2.5434ms)
+✔ archimate 4 implementation status exposes C260 strategy domain coverage identity (3.0235ms)
+✔ archimate 4 implementation status exposes C260 business domain coverage identity (2.5679ms)
+✔ archimate 4 implementation status exposes C260 application domain coverage identity (2.5942ms)
+✔ archimate 4 implementation status exposes C260 technology domain coverage identity (2.4716ms)
+✔ archimate 4 implementation status exposes C260 relationships between core domains coverage identity (2.6221ms)
+✔ archimate 4 implementation status exposes C260 implementation and migration domain coverage identity (3.2875ms)
+✔ archimate 4 implementation status exposes C260 stakeholders architecture views viewpoints coverage identity (2.3789ms)
+✔ archimate 4 implementation status exposes C260 language customization mechanisms coverage identity (2.3173ms)
+✔ archimate 4 implementation status exposes C260 appendix A notation coverage identity (2.5276ms)
+✔ archimate 4 implementation status exposes C260 appendix B relationships coverage identity (3.7408ms)
+✔ archimate 4 implementation status exposes C260 appendix C example viewpoints coverage identity (2.7673ms)
+✔ archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity (2.4918ms)
+✔ archimate 4 implementation status exposes C260 appendix E version changes coverage identity (2.4886ms)
+✔ archimate 4 implementation status exposes C260 appendix F acronym coverage identity (2.8393ms)
+✔ archimate 4 implementation status exposes C260 document artifact boundary (3.6457ms)
+✔ archimate 4 implementation status exposes aggregate C260 coverage integrity (3.7679ms)
+✔ archimate 4 implementation status reconciles C260 PDF outline source with derived coverage (4.1119ms)
+✔ archimate 4 implementation status audits C260 outline assignment counts by coverage group (3.4409ms)
+✔ archimate 4 implementation status audits C260 coverage source runlog evidence (3.9552ms)
+✔ archimate 4 implementation status exposes C260 definition vocabulary identity (2.4009ms)
+✔ archimate 4 implementation status API can be imported directly by Node ESM (91.309ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (1.7977ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (2.9409ms)
+✔ archimate 4 implementation status exposes official conformance readiness (2.5978ms)
+✔ archimate 4 implementation status exposes remaining gap identity (3.0467ms)
+✔ archimate 4 implementation status exposes C260 section coverage identity (2.652ms)
+✔ archimate 4 implementation plan records current execution boundary (0.6352ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (2.1127ms)
+(node:41696) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/ProfileAttributeUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ profile attribute values normalize implementation-supported C260 basic types (0.74ms)
+✔ profile attribute values reject values outside their declared type (1.0974ms)
+✔ profile attribute values can be stored as model properties (1.8625ms)
+✔ structured profile attribute values are stored as JSON property values (0.2347ms)
+ℹ tests 65
+ℹ suites 0
+ℹ pass 63
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 389.6733
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:442:1
+✖ archimate 4 implementation status exposes profile attribute type coverage (6.9327ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'String',
+      'Boolean',
+      'Date',
+  -   'Number',
+      'Real',
+      'Currency',
+      'Time',
+      'Integer'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:449:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'String',   'Boolean',
+      'Date',     'Real',
+      'Currency', 'Time',
+      'Integer'
+    ],
+    expected: [
+      'String', 'Boolean',
+      'Date',   'Number',
+      'Real',   'Currency',
+      'Time',   'Integer'
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\profile-attribute-values.test.mjs:10:1
+✖ profile attribute values normalize implementation-supported C260 basic types (0.74ms)
+  Error: Unsupported ArchiMate profile attribute type: Number
+      at normalizeProfileAttributeValue (file:///D:/github/archimate-js/lib/util/ProfileAttributeUtil.js:79:11)
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/profile-attribute-values.test.mjs:12:16)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

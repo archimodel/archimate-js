@@ -450,6 +450,7 @@ test('archimate 4 implementation status exposes profile attribute type coverage'
     'String',
     'Boolean',
     'Date',
+    'Number',
     'Real',
     'Currency',
     'Time',

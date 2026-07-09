@@ -1946,3 +1946,18 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1255-profile-attribute-type-status-staged-diff-check.txt` passed after trimming runlog EOF blank lines.
 - Audit: `project_memory/audit/reports/20260709-profile-attribute-type-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 151
+
+- Goal: close the C260 Chapter 14 profile attribute `Number` type gap exposed by the local type token scan.
+- Red test: `project_memory/runlogs/20260709-1256-profile-attribute-number-red-test.txt` failed because `Number` was absent from `profileAttributeTypes.expectedC260TypeNames` and `normalizeProfileAttributeValue({ type: 'Number' }, ...)` was unsupported.
+- Implemented: `lib/util/ProfileAttributeUtil.js` now accepts `Number` as an implementation-supported profile attribute type and normalizes it through the finite numeric path shared with `Real` and `Currency`.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now includes `Number` in `profileAttributeTypeCatalog.expectedC260TypeNames`, so `getArchimate4ImplementationStatus().profileAttributeTypes` reports it as implemented C260 coverage.
+- Docs/tests: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, `test/profile-attribute-values.test.mjs`, and `test/language-profile.test.mjs` now include `Number`.
+- Focused verification: `project_memory/runlogs/20260709-1257-profile-attribute-number-focused-test-pass.txt` passed.
+- Verification: `npm run test:language` passed with 195 tests in `project_memory/runlogs/20260709-1258-profile-attribute-number-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1259-profile-attribute-number-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1260-profile-attribute-number-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1261-profile-attribute-number-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1262-profile-attribute-number-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1264-profile-attribute-number-status.json` shows `Number` in `expectedC260TypeNames`, `supportedTypeNames`, and `actualC260TypeNames`, with no missing C260 or unexpected additional types.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1263-profile-attribute-number-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1267-profile-attribute-number-staged-diff-check.txt` passed after trimming runlog whitespace.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-number-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

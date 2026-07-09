@@ -9,6 +9,7 @@ import {
 
 test('profile attribute values normalize implementation-supported C260 basic types', () => {
   assert.equal(normalizeProfileAttributeValue({ type: 'String' }, 'high'), 'high');
+  assert.equal(normalizeProfileAttributeValue({ type: 'Number' }, '42.5'), 42.5);
   assert.equal(normalizeProfileAttributeValue({ type: 'Integer' }, '42'), 42);
   assert.equal(normalizeProfileAttributeValue({ type: 'Real' }, '42.5'), 42.5);
   assert.equal(normalizeProfileAttributeValue({ type: 'Currency' }, '1200.50'), 1200.5);

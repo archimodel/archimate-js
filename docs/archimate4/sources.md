@@ -434,8 +434,8 @@
   concepts, unsupported attribute types, or missing attribute names.
 - Profile attribute values can be normalized and validated through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()` for the implementation-supported basic type set recorded from
-  the local C260 scan. `getProfileAttributesForConcept()` returns attributes for a concept and its
-  specialization lineage.
+  the local C260 scan, including the C260 basic `Number` type.
+  `getProfileAttributesForConcept()` returns attributes for a concept and its specialization lineage.
 - `getArchimate4ImplementationStatus().profileAttributeTypes` reports
   `profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`,
   `profileAttributeTypes.missingC260TypeNames`, and

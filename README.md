@@ -92,7 +92,7 @@ const modeler = new Modeler({
 * ArchiMate 4 support uses versioned language profiles.
 * Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.
 * Profile attributes require `concept`, `name`, and `type`; the concept must resolve to an active element, connector, or relationship in the customized profile.
-* Profile attribute values can be normalized and validated for the implementation-supported types `String`, `Integer`, `Real`, `Boolean`, `Currency`, `Date`, `URL`, `Time`, and `Structure`.
+* Profile attribute values can be normalized and validated for the implementation-supported types `String`, `Number`, `Integer`, `Real`, `Boolean`, `Currency`, `Date`, `URL`, `Time`, and `Structure`.
 * Implementation status includes `profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`, `profileAttributeTypes.missingC260TypeNames`, and `profileAttributeTypes.unexpectedAdditionalTypeNames` so the C260 basic/example profile attribute types and implementation-defined additions are audited explicitly.
 * Profile attribute value helpers store values as reusable model `PropertyDefinition` entries named `archimate-js:profileAttribute:<concept>:<name>` plus per-concept `Properties`, preserving typed values without adding non-standard element fields.
 * Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.

@@ -1,0 +1,56 @@
+(node:83696) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "status": "implemented",
+  "sourceRunlogPaths": [
+    "project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt",
+    "project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt",
+    "project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt"
+  ],
+  "expectedC260TypeNames": [
+    "String",
+    "Boolean",
+    "Date",
+    "Number",
+    "Real",
+    "Currency",
+    "Time",
+    "Integer"
+  ],
+  "implementationAdditionalTypeNames": [
+    "URL",
+    "Structure"
+  ],
+  "supportedTypeNames": [
+    "String",
+    "Number",
+    "Integer",
+    "Real",
+    "Boolean",
+    "Currency",
+    "Date",
+    "URL",
+    "Time",
+    "Structure"
+  ],
+  "actualC260TypeNames": [
+    "String",
+    "Boolean",
+    "Date",
+    "Number",
+    "Real",
+    "Currency",
+    "Time",
+    "Integer"
+  ],
+  "missingC260TypeNames": [],
+  "actualAdditionalTypeNames": [
+    "URL",
+    "Structure"
+  ],
+  "missingAdditionalTypeNames": [],
+  "unexpectedAdditionalTypeNames": [],
+  "complete": true
+}

@@ -96,6 +96,7 @@
         "String",
         "Boolean",
         "Date",
+        "Number",
         "Real",
         "Currency",
         "Time",

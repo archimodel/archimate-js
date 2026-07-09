@@ -256,6 +256,8 @@ Supported customization data:
   Host tooling can retrieve applicable attributes through `getProfileAttributesForConcept()` and can
   normalize or validate implementation-supported typed values through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()`.
+  The implementation-supported C260 basic types include `String`, `Boolean`, `Date`, and `Number`;
+  C260 example/profile table types such as `Real`, `Currency`, `Time`, and `Integer` are also tracked.
   Implementation status must expose exact profile attribute type fields
   (`profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`,
   `profileAttributeTypes.missingC260TypeNames`, and
