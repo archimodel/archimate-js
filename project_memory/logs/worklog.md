@@ -2022,3 +2022,16 @@
 - Final staged diff check: `git diff --cached --check` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1322-status-no-incomplete-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-status-no-incomplete-guard-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 156
+
+- Goal: ensure every runlog evidence reference exposed by `getArchimate4ImplementationStatus()` resolves to a committed `project_memory/runlogs` artifact.
+- Pre-check: a status-reference scan found 38 `RunlogPath`/`RunlogPaths` references and no missing files.
+- Implemented: `test/language-profile.test.mjs` now recursively collects status fields whose names contain `RunlogPath`, checks that every path stays under `project_memory/runlogs/`, and reads every referenced artifact.
+- Focused verification: `project_memory/runlogs/20260709-1323-status-runlog-references-focused-test.txt` passed with 1 test.
+- Verification: `npm run test:language` passed with 200 tests in `project_memory/runlogs/20260709-1324-status-runlog-references-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1325-status-runlog-references-eslint-test.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1326-status-runlog-references-diff-check.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1327-status-runlog-references.json` shows 38 total runlog references, 14 unique runlog paths, and no missing references. `project_memory/runlogs/20260709-1328-status-runlog-references-warning.txt` records the known Node typeless-package ESM warning emitted by the direct status import path; `project_memory/runlogs/20260709-1329-status-runlog-references-json-check.txt` confirms the status JSON is parseable.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1330-status-runlog-references-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1331-status-runlog-references-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1332-status-runlog-references-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-status-runlog-reference-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

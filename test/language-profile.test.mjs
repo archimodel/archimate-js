@@ -52,6 +52,37 @@ function collectIncompleteStatusSummaries(value, path = []) {
   return incomplete;
 }
 
+function collectStatusRunlogReferences(value, path = []) {
+  if (!value || typeof value !== 'object') {
+    return [];
+  }
+
+  if (Array.isArray(value)) {
+    return value.flatMap((child, index) => collectStatusRunlogReferences(child, path.concat(String(index))));
+  }
+
+  const references = [];
+
+  for (const [ key, child ] of Object.entries(value)) {
+    if (/RunlogPath/.test(key)) {
+      const values = Array.isArray(child) ? child : [ child ];
+
+      values.forEach((runlogPath, index) => {
+        if (typeof runlogPath === 'string') {
+          references.push({
+            keyPath: path.concat(key, String(index)).join('.'),
+            runlogPath
+          });
+        }
+      });
+    }
+
+    references.push(...collectStatusRunlogReferences(child, path.concat(key)));
+  }
+
+  return references;
+}
+
 test('archimate 3 profile keeps retired 3.x concepts for compatibility', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate3-profile.json');
   const types = new Set(profile.elements.map((element) => element.type));
@@ -923,6 +954,27 @@ test('archimate 4 implementation status has no incomplete non-external summaries
   assert.deepEqual(status.remainingGaps.unresolvedIds, expectedGapIds);
   assert.deepEqual(status.remainingGaps.missingIds, []);
   assert.deepEqual(status.remainingGaps.extraIds, []);
+});
+
+test('archimate 4 implementation status runlog references resolve to committed evidence', async () => {
+  const status = getArchimate4ImplementationStatus();
+  const references = collectStatusRunlogReferences(status);
+  const missing = [];
+
+  assert.equal(references.length > 0, true);
+  assert.equal(references.every((reference) => reference.runlogPath.startsWith('project_memory/runlogs/')), true);
+
+  for (const reference of references) {
+    try {
+      await readFile(new URL(`../${reference.runlogPath}`, import.meta.url), 'utf8');
+    } catch (error) {
+      missing.push(Object.assign({}, reference, {
+        error: error.code || error.message
+      }));
+    }
+  }
+
+  assert.deepEqual(missing, []);
 });
 
 test('archimate 4 implementation status exposes C260 introduction coverage identity', async () => {

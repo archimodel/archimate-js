@@ -1,0 +1,20 @@
+{
+  "totalRunlogReferences": 38,
+  "missingRunlogReferences": [],
+  "uniqueRunlogPaths": [
+    "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+    "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt",
+    "project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt",
+    "project_memory/runlogs/20260709-1167-meff4-xsd-continuation-recheck.json",
+    "project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json",
+    "project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json",
+    "project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt",
+    "project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt",
+    "project_memory/runlogs/20260709-1284-c260-viewpoint-mechanism-feature-scan.txt",
+    "project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt",
+    "project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt",
+    "project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt",
+    "project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt",
+    "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt"
+  ]
+}
