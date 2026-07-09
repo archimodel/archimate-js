@@ -167,7 +167,7 @@ C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
 `missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
 stays tied to a recorded source-extraction runlog.
 Implementation-status completion scan evidence is recorded in
-`project_memory/runlogs/20260709-1453-status-completion-scan.json`; it currently reports 46 top-level
+`project_memory/runlogs/20260709-2052-status-completion-scan.json`; it currently reports 46 top-level
 status keys, 37 `complete` summaries, and no incomplete summaries.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status

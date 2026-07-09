@@ -1029,9 +1029,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-1453-status-completion-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-2052-status-completion-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-1453-status-completion-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-2052-status-completion-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1053,7 +1053,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(runlog.completeSummaryCount, summaries.length);
   assert.equal(runlog.incompleteSummaries.length, 0);
   assert.deepEqual(runlogSummaryIdentity, summaryIdentity);
-  assert.match(readme, /20260709-1453-status-completion-scan/);
+  assert.match(readme, /20260709-2052-status-completion-scan/);
   assert.match(sources, /37 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion scan evidence/);

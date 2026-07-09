@@ -239,7 +239,7 @@
   `c260CoverageSourceEvidence.sourceRunlogPathDeltas` so each C260 coverage group remains tied to a
   recorded source-extraction runlog.
 - The current implementation-status completion scan is recorded in
-  `project_memory/runlogs/20260709-1453-status-completion-scan.json`; it records 46 top-level status
+  `project_memory/runlogs/20260709-2052-status-completion-scan.json`; it records 46 top-level status
   keys, 37 `complete` summaries, and no incomplete summaries. The companion stderr log is empty so the
   runlog can be parsed by audit tooling without warning-text cleanup.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
