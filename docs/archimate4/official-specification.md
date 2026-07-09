@@ -254,7 +254,7 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoints, relationship option
 field types, multiplicity,
-view node geometry, junction consistency, present `IdObject.id` string values, view `viewpoint`
+view node geometry, junction consistency, present `IdObject.id` and `xsi:type` string values, view `viewpoint`
 string attributes and `viewpointRef` references, view node element references, view element
 `label` string values, view connection
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
@@ -824,7 +824,8 @@ In particular:
   concept, relationship profile, multiplicity, junction consistency, view viewpoint-attribute and
   viewpoint-reference, view
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
-  relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry, IdObject id structure, view element label structure, view style-structure, viewpoint definition, viewpoint
+  relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry,
+  IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, BaseObject field structure, organization identifier-reference,
   property-definition structure and reference, property value string-structure, or profile attribute

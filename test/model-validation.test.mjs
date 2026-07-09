@@ -132,6 +132,65 @@ test('archimate 4 model validation reports invalid base object name and document
   assert.equal(invalidDocumentationDiagnostics[0].field, 'documentation');
 });
 
+test('archimate 4 model validation rejects invalid xsi type fields', () => {
+  const actor = {
+    id: 'actor-1',
+    type: 'BusinessActor',
+    'xsi:type': false
+  };
+  const role = { id: 'role-1', type: 'Role' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role,
+    'xsi:type': 42
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: actor,
+                'xsi:type': []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const conceptDiagnostics = result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-concept-xsi-type';
+  });
+  const viewElementDiagnostic = findDiagnostic(result, 'invalid-view-element-xsi-type');
+
+  assert.equal(result.valid, false);
+  assert.equal(conceptDiagnostics.length, 2);
+  assert.equal(conceptDiagnostics[0].field, 'xsi:type');
+  assert.equal(conceptDiagnostics[0].valueType, 'boolean');
+  assert.equal(conceptDiagnostics[1].valueType, 'number');
+  assert.equal(viewElementDiagnostic.viewElementId, 'node-actor');
+  assert.equal(viewElementDiagnostic.valueType, 'object');
+});
+
 test('archimate 4 model validation reports invalid present IdObject ids', () => {
   const actor = { id: 42, type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

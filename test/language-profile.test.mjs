@@ -1087,6 +1087,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'junction-relationship-type-consistency',
     'junction-chain-profile-validation',
     'id-object-id',
+    'xsi-type-fields',
     'viewpoint-purpose-content',
     'viewpoint-allowed-types',
     'view-viewpoint-attribute',
