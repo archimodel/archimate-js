@@ -46,6 +46,8 @@ For Node-based audit tooling that does not load the browser viewer bundle, impor
 
 Run `node scripts/audit_archimate4_completion.mjs --out project_memory/runlogs/<file>.json` to map the current status API to the plan's M0-M5 milestones and to verify that referenced runlogs resolve. The audit is expected to pass while still reporting the official Appendix B, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 companion-source gaps.
 
+Run `node scripts/audit_archimate4_c260_coverage.mjs --out project_memory/runlogs/<file>.json` to verify the C260 book-derived coverage ledger specifically. It checks the 20 section groups, 22 tracked coverage groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived tokens, and the recorded source-extraction runlogs without copying specification prose or Appendix B relationship tables.
+
 The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
 
 The W262 source-coverage entry records the latest scripted local Downloads/attachments search, local ArchiMate PDF inventory, and publication-page status so hosts can distinguish a missing companion paper from local C260 specification or license files.

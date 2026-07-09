@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `DOCS`: refreshed the implementation-status completion scan after adding section status-key guards.
 * `DOCS`: added a scripted external-source recheck for W262 and MEFF 4.0 XSD evidence.
 * `DOCS`: added a reusable ArchiMate 4 completion audit script for M0-M5 milestone verification.
+* `DOCS`: added a reusable C260 coverage audit script for book-derived section, aggregate, outline, and source-runlog evidence.
 
 ## 0.0.4
 

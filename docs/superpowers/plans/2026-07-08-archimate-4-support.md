@@ -27,6 +27,9 @@ in `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`; 
 does not clear the Appendix B redistributable-profile blocker or Appendix A exact-artwork-rights blocker.
 The current M0-M5 completion audit is executable via `scripts/audit_archimate4_completion.mjs`; the
 latest run is recorded in `project_memory/runlogs/20260709-1030-archimate4-completion-audit.json`.
+The C260 coverage ledger audit is executable via `scripts/audit_archimate4_c260_coverage.mjs`; it
+checks section, aggregate, outline-assignment, Appendix F derived-token, and source-runlog evidence
+without copying specification prose or Appendix B relationship tables.
 
 Implemented and verified on the current branch:
 

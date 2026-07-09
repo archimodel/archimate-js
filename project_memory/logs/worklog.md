@@ -2464,3 +2464,20 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1038-archimate4-completion-audit-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-archimate4-completion-audit-script-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 191
+
+- Goal: add a reusable C260 coverage audit that verifies book-derived section, aggregate, outline-assignment, Appendix F derived-token, and source-runlog evidence without copying C260 prose or Appendix B relationship tables.
+- Observation: `getArchimate4ImplementationStatus()` already exposed C260 coverage summaries, but the M0-M5 completion audit did not provide a focused CLI failure report for the C260 coverage ledger itself.
+- Implemented: `scripts/audit_archimate4_c260_coverage.mjs` now verifies 20 section groups, 22 tracked coverage groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym tokens, and all coverage source-runlog references.
+- Implemented: `test/language-profile.test.mjs` now executes the C260 coverage audit script and checks the key counts, source runlog references, and retained external blocker boundaries.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the C260 coverage audit script.
+- Audit registry: `project_memory/audit/audit_registry.json` now includes `audit.archimate4.c260_coverage`.
+- Audit run: `project_memory/runlogs/20260709-1039-archimate4-c260-coverage-audit.json` reports `complete: true`, 22/22 coverage groups, 284 aggregate items, 253 outline items, 31 non-outline derived items, three unique source runlogs, and zero failures.
+- Focused verification: C260 coverage audit focused test passed in `project_memory/runlogs/20260709-1040-archimate4-c260-coverage-audit-focused-test.txt`.
+- Verification: changed-file ESLint passed in `project_memory/runlogs/20260709-1041-archimate4-c260-coverage-audit-eslint-changed.txt`; `npm run test:language` passed with 225 tests in `project_memory/runlogs/20260709-1042-archimate4-c260-coverage-audit-test-language.txt`; JSON parse passed in `project_memory/runlogs/20260709-1043-archimate4-c260-coverage-audit-json-check.txt`; final audit-script run passed in `project_memory/runlogs/20260709-1044-archimate4-c260-coverage-audit-script-run.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1045-archimate4-c260-coverage-audit-diff-check.txt`.
+- Final verification after state/audit updates: JSON parse passed in `project_memory/runlogs/20260709-1047-archimate4-c260-coverage-audit-final-json-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1048-archimate4-c260-coverage-audit-final-diff-check.txt`; final `npm run test:language` passed in `project_memory/runlogs/20260709-1049-archimate4-c260-coverage-audit-final-test-language.txt`.
+- Post-state verification: JSON parse passed in `project_memory/runlogs/20260709-1050-archimate4-c260-coverage-audit-post-state-json-check.txt`; post-state `git diff --check` passed in `project_memory/runlogs/20260709-1051-archimate4-c260-coverage-audit-post-state-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1046-archimate4-c260-coverage-audit-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-archimate4-c260-coverage-audit-script-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

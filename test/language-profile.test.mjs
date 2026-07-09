@@ -3568,6 +3568,54 @@ test('archimate 4 completion audit script maps status API to plan milestones', a
   assert.equal(audit.failureCount, 0);
 });
 
+test('archimate 4 C260 coverage audit script verifies book-derived source evidence', async () => {
+  const { stdout } = await execFileAsync(
+    process.execPath,
+    [
+      'scripts/audit_archimate4_c260_coverage.mjs',
+      '--checked-at',
+      '2026-07-09T23:20:00+09:00'
+    ],
+    {
+      cwd: new URL('..', import.meta.url)
+    }
+  );
+  const audit = JSON.parse(stdout);
+
+  assert.equal(audit.complete, true);
+  assert.equal(audit.coverageGroups.expectedCoverageCount, 22);
+  assert.equal(audit.coverageGroups.actualCoverageCount, 22);
+  assert.deepEqual(audit.coverageGroups.incompleteCoverageIds, []);
+  assert.equal(audit.counts.sectionCount, 20);
+  assert.equal(audit.counts.aggregateItemCount, 284);
+  assert.equal(audit.counts.outlineSourceItemCount, 253);
+  assert.equal(audit.counts.outlineCoveredItemCount, 253);
+  assert.equal(audit.counts.nonOutlineDerivedItemCount, 31);
+  assert.equal(audit.counts.uniqueSourceRunlogPathCount, 3);
+  assert.equal(
+    audit.sourceEvidence.outlineSourceRunlogPath,
+    'project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt'
+  );
+  assert.deepEqual(audit.sourceEvidence.uniqueSourceRunlogPaths, [
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt',
+    'project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt',
+    'project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt'
+  ]);
+  assert.equal(audit.externalBoundariesRetained.officialConformanceClaimable, false);
+  assert.deepEqual(audit.externalBoundariesRetained.officialBlockerIds, [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ]);
+  assert.deepEqual(audit.externalBoundariesRetained.missingRequiredSources, [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.deepEqual(audit.externalBoundariesRetained.missingCompanionSources, [ 'w262' ]);
+  assert.equal(audit.failureCount, 0);
+});
+
 test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

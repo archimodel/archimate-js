@@ -21,6 +21,17 @@
       "artifacts": []
     },
     {
+      "id": "audit.archimate4.c260_coverage",
+      "description": "C260 book-derived section, aggregate, outline, and source-runlog coverage audit passes",
+      "when": ["post_change", "pre_commit"],
+      "severity": "blocker",
+      "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-09T23:20:00+09:00",
+      "expect": { "exit_code": 0 },
+      "artifacts": [
+        "project_memory/runlogs/20260709-1039-archimate4-c260-coverage-audit.json"
+      ]
+    },
+    {
       "id": "audit.lint.changed_files",
       "description": "ESLint passes for ArchiMate 4 implementation files",
       "when": ["pre_commit"],
