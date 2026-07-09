@@ -52,6 +52,86 @@ test('archimate model validation can detect 4.0 concepts in a 3.x profile', () =
   assert.equal(diagnostic.archimateVersion, '3.2');
 });
 
+test('archimate 4 model validation reports invalid base object name and documentation fields', () => {
+  const actor = {
+    id: 'actor-1',
+    type: 'BusinessActor',
+    name: 42,
+    documentation: false
+  };
+  const role = { id: 'role-1', type: 'Role' };
+  const result = validateArchimate4Model({
+    id: 'model-1',
+    name: 9,
+    documentation: [],
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        {
+          id: 'relationship-1',
+          type: 'Association',
+          source: actor,
+          target: role,
+          name: [],
+          documentation: {}
+        }
+      ]
+    },
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: 'viewpoint-1',
+            name: {},
+            documentation: []
+          }
+        ]
+      },
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            name: false,
+            documentation: 1
+          }
+        ]
+      }
+    },
+    organizationsNode: {
+      organizations: [
+        {
+          id: 'organization-1',
+          name: 123,
+          documentation: [],
+          identifierRef: 'actor-1'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+  const invalidNameDiagnostics = result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-base-object-name';
+  });
+  const invalidDocumentationDiagnostics = result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-base-object-documentation';
+  });
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-base-object-name'), true);
+  assert.equal(codes.includes('invalid-base-object-documentation'), true);
+  assert.equal(invalidNameDiagnostics.length, 6);
+  assert.equal(invalidDocumentationDiagnostics.length, 6);
+  assert.equal(invalidNameDiagnostics[0].field, 'name');
+  assert.equal(invalidDocumentationDiagnostics[0].field, 'documentation');
+});
+
 test('archimate 4 model validation reports unsupported relationship types and endpoints', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const unsupported = { id: 'legacy-1', type: 'BusinessInteraction' };

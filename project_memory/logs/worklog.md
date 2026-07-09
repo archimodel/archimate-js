@@ -2824,3 +2824,17 @@
 - Post-state verification: JSON parse passed in `project_memory/runlogs/20260710-0217-property-value-structure-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260710-0218-property-value-structure-final-diff-check.txt`.
 - Audit report: `project_memory/audit/reports/20260710-property-value-structure-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-10 loop 214
+
+- Goal: tighten ArchiMate model validation against the local descriptor's BaseObject string fields.
+- Observation: the local ArchiMate 4 descriptor declares `BaseObject.name` and `BaseObject.documentation` as string fields, and the C260 PDF term scan in `project_memory/runlogs/20260710-0220-pdf-baseobject-term-scan.txt` confirms `name`, `documentation`, `Property`, and `Properties` terminology is present in the local specification PDF. The validator did not check generic BaseObject `name`/`documentation` structure.
+- Red test: `project_memory/runlogs/20260710-0221-base-object-fields-red-test.txt` failed as expected before implementation because non-string BaseObject fields did not produce diagnostics.
+- Implemented: `validateArchimate4Model()` and `validateArchimateModel()` now report `invalid-base-object-name` and `invalid-base-object-documentation` when present values are not strings, while continuing to tolerate undefined or null values as absent during partial in-memory editing.
+- Implemented: `getArchimate4ImplementationStatus().modelValidation` now exposes `base-object-fields` in expected/actual check ids; README, CHANGELOG, source ledger, implementation specification, and execution plan now document the check.
+- Verification: focused model validation passed in `project_memory/runlogs/20260710-0222-base-object-fields-focused-model-test.txt`; focused status test passed in `project_memory/runlogs/20260710-0223-base-object-fields-status-test.txt`; changed-file ESLint passed in `project_memory/runlogs/20260710-0224-base-object-fields-eslint-changed.txt`.
+- Verification: status snapshot parse passed in `project_memory/runlogs/20260710-0231-base-object-fields-final-json-check.txt`; `npm run test:language` passed with 259 tests in `project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt`; completion audit passed with no failures in `project_memory/runlogs/20260710-0227-base-object-fields-completion-audit.json`; C260 coverage audit passed with no failures in `project_memory/runlogs/20260710-0228-base-object-fields-c260-coverage-audit.json`; `git diff --check` passed in `project_memory/runlogs/20260710-0229-base-object-fields-diff-check.txt`.
+- Post-state verification: JSON parse passed in `project_memory/runlogs/20260710-0232-base-object-fields-post-state-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260710-0233-base-object-fields-post-state-diff-check.txt`.
+- Pre-stage verification: `git diff --check` passed in `project_memory/runlogs/20260710-0234-base-object-fields-prestage-diff-check.txt`.
+- Audit report: `project_memory/audit/reports/20260710-base-object-fields-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -257,9 +257,9 @@ view node geometry, junction consistency, view viewpoint references, view node e
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
 `style`/`font`/`color` values, viewpoint definitions, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
-organization `identifierRef` references, reusable `PropertyDefinition` structure,
-`Property.propertyDefinitionRef` references, present `Property.value` string structure, and profile
-attribute property values.
+`BaseObject` `name` / `documentation` string fields, organization `identifierRef` references,
+reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
+`Property.value` string structure, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
@@ -822,8 +822,9 @@ In particular:
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
   view connection endpoint-alignment, view connection waypoint-geometry, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
-  modeling-note structure, organization identifier-reference, property-definition structure and
-  reference, property value string-structure, or profile attribute property coverage.
+  modeling-note structure, BaseObject field structure, organization identifier-reference,
+  property-definition structure and reference, property value string-structure, or profile attribute
+  property coverage.
 
 The relationship rules remain a fallback:
 

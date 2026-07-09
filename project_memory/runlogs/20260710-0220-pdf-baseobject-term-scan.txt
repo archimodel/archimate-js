@@ -1,0 +1,7 @@
+pages 207
+metadata_title ArchiMate 4 Specification
+BaseObject [] count 0
+documentation [14, 154, 155] count 3
+Property [17, 26, 78, 83, 148] count 5
+Properties [71, 76, 78, 79, 112, 134, 182, 198] count 8
+name [17, 40, 42, 43, 44, 51, 69, 70, 74, 75, 77, 81, 86, 87, 88, 95, 96, 98, 100, 103] count 37
