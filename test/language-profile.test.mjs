@@ -1022,6 +1022,7 @@ test('archimate 4 implementation status has no incomplete non-external summaries
 
 test('archimate 4 implementation status completion scan stays parseable', async () => {
   const status = getArchimate4ImplementationStatus();
+  const completion = status.implementationCompletion;
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
   const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
@@ -1029,9 +1030,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-2052-status-completion-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-2043-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-2052-status-completion-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-2043-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1048,15 +1049,26 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     };
   });
 
+  assert.equal(completion.status, 'current-status-summary-derived');
+  assert.equal(
+    completion.sourceRunlogPath,
+    'project_memory/runlogs/20260709-2043-status-completion-api-scan.json'
+  );
+  assert.deepEqual(completion.topKeys, Object.keys(status));
+  assert.equal(completion.topKeyCount, Object.keys(status).length);
+  assert.equal(completion.completeSummaryCount, summaries.length);
+  assert.equal(completion.incompleteSummaryCount, 0);
+  assert.deepEqual(completion.incompleteSummaryPaths, []);
+  assert.equal(completion.complete, true);
   assert.equal(stderr, '');
   assert.deepEqual(runlog.topKeys, Object.keys(status));
   assert.equal(runlog.completeSummaryCount, summaries.length);
   assert.equal(runlog.incompleteSummaries.length, 0);
   assert.deepEqual(runlogSummaryIdentity, summaryIdentity);
-  assert.match(readme, /20260709-2052-status-completion-scan/);
-  assert.match(sources, /37 `complete` summaries/);
+  assert.match(readme, /20260709-2043-status-completion-api-scan/);
+  assert.match(sources, /38 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
-  assert.match(plan, /Implementation-status completion scan evidence/);
+  assert.match(plan, /Implementation-status completion API scan evidence/);
 });
 
 test('archimate 4 implementation status runlog references resolve to committed evidence', async () => {

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 185,
-  "stage": "ncl_license_boundary_verified",
+  "loop_id": 186,
+  "stage": "implementation_completion_api_scan_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "test",
-    "diff_size": 57,
+    "diff_size": 139,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -203,7 +203,8 @@
       "external_source_201226_current_recheck",
       "status_completion_scan_2052_guard",
       "local_archimate_pdf_inventory_guard",
-      "ncl_license_boundary_guard"
+      "ncl_license_boundary_guard",
+      "implementation_completion_api_scan_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -418,12 +419,13 @@
       "check_external_source_201226_current_recheck",
       "check_status_completion_scan_2052_parseable",
       "check_local_archimate_pdf_inventory_source_coverage",
-      "check_ncl_license_boundary_source_coverage"
+      "check_ncl_license_boundary_source_coverage",
+      "check_implementation_completion_api_scan"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json",
-    "audit_report_path": "project_memory/audit/reports/20260709-ncl-license-boundary-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-2043-status-completion-api-scan.json",
+    "audit_report_path": "project_memory/audit/reports/20260709-completion-api-scan-audit.md",
     "result": "pass_with_known_legacy_lint_and_external_blockers"
   },
   "open_issues": [
@@ -624,13 +626,14 @@
     "C260 Appendix E.1-E.3 version-change headings are now regression-tested as historical references while E.4 is regression-tested as the ArchiMate 4 migration source boundary outside source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids.",
     "MEFF 4.0 XSD and W262 source status were refreshed on 2026-07-09T20:12:26+09:00: official XSD directory still exposes only 3.1 links, 4.0 candidates return 404, W262 publication metadata is visible, and no local W262 PDF is present.",
     "getArchimate4ImplementationStatus().sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260709-201226-external-source-current-recheck.json as the current external-source evidence.",
-    "Implementation status completion scanning is refreshed against project_memory/runlogs/20260709-2052-status-completion-scan.json: 46 top-level status keys, 37 complete summaries, and no incomplete summaries.",
-    "The refreshed implementation-status completion scan is verified by project_memory/runlogs/20260709-2057-status-completion-scan-test-language.txt with 223 passing language tests; repo-wide lint remains the known 4382-error legacy baseline in project_memory/runlogs/20260709-2058-status-completion-scan-repo-lint.txt.",
+    "Implementation status completion scanning is exposed through getArchimate4ImplementationStatus().implementationCompletion and refreshed against project_memory/runlogs/20260709-2043-status-completion-api-scan.json: 47 top-level status keys, 38 complete summaries, and no incomplete summaries.",
+    "The refreshed implementation-status completion API scan is verified by project_memory/runlogs/20260709-2046-completion-api-test-language.txt with 223 passing language tests; repo-wide lint remains the known 4382-error legacy baseline in project_memory/runlogs/20260709-2049-completion-api-repo-lint.txt.",
     "Local ArchiMate PDF inventory is sanitized and recorded in project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json: local C260 specification and license PDFs are identified, and no W262 candidate is matched.",
-    "Local ArchiMate 4 Non-Commercial License boundary scanning is sanitized and recorded in project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json; it does not clear the Appendix B redistributable-profile blocker or the Appendix A exact-artwork-rights blocker."
+    "Local ArchiMate 4 Non-Commercial License boundary scanning is sanitized and recorded in project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json; it does not clear the Appendix B redistributable-profile blocker or the Appendix A exact-artwork-rights blocker.",
+    "getArchimate4ImplementationStatus().implementationCompletion exposes the current completion scan directly so status consumers can detect top-level status-key drift and incomplete summaries without separately parsing runlogs."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T21:33:00+09:00"
+    "updated_at": "2026-07-09T21:49:00+09:00"
   }
 }
