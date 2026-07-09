@@ -19,7 +19,7 @@
   specification and source trace, not copied normative prose or verbatim relationship tables.
 - W262 is published by The Open Group as a free PDF download that requires login. The latest
   publication-page and local-source check is recorded in
-  `project_memory/runlogs/20260709-201226-external-source-current-recheck.json`; it detected the W262
+  `project_memory/runlogs/20260709-1017-external-source-latest-recheck.json`; it detected the W262
   title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the
   recursive filename search under `C:\Users\syska\Downloads` and
   `C:\Users\syska\.codex\attachments` still found no local W262 or ArchiMate 4 motivation PDF
@@ -907,7 +907,14 @@
   directory returned 200 and still listed only the 3.1 Diagram, Model, and View XSD links. Tested
   4.0 directory, `archimate4_*`, `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and
   `archimate_*` candidate URLs returned 404, while the 3.1 Model XSD baseline returned 200.
-  `archimate4-profile.json` records this latest check in `sourceCoverage.meff4Xsd`.
+  `archimate4-profile.json` recorded this check in `sourceCoverage.meff4Xsd`.
+- Refreshed again on 2026-07-09T22:35:00+09:00 in
+  `project_memory/runlogs/20260709-1017-external-source-latest-recheck.json` using
+  `scripts/check_archimate4_external_sources.mjs`; the official directory returned 200 and still
+  listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory, `archimate4_*`,
+  `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and `archimate_*` candidate URLs returned
+  404, while the 3.1 Model XSD baseline returned 200. `archimate4-profile.json` records this latest
+  check in `sourceCoverage.meff4Xsd`.
 
 ## Local ArchiMate PDF Inventory
 
