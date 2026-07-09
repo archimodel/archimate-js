@@ -2406,3 +2406,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2049-completion-api-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-completion-api-scan-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 187
+
+- Goal: make C260 section coverage traceable to actual top-level `getArchimate4ImplementationStatus()` status keys so reviewed chapters and appendices cannot drift from the exposed implementation status API.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now declares `sectionCoverageCatalog.expectedStatusKeyIds` and per-section `statusKeys` for Chapter 1 through Chapter 14 and Appendices A through F.
+- Implemented: `lib/metamodel/languages/index.js` now summarizes `sectionCoverage.statusKeyIds`, `missingStatusKeyIds`, `extraStatusKeyIds`, and `missingStatusKeyReferenceIds`, and requires those checks for section coverage completion.
+- Implemented: `test/language-profile.test.mjs` now verifies section status-key identity, detects unregistered status-key references, and checks README/source/spec/plan documentation mentions the status-key guard.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the section status-key reference boundary.
+- Focused verification: JSON parse passed in `project_memory/runlogs/20260709-1000-section-status-key-json-check.txt`; section coverage focused test passed with 87 tests in `project_memory/runlogs/20260709-1001-section-status-key-focused-test.txt`.
+- Verification: `npm run test:language` passed with 223 tests in `project_memory/runlogs/20260709-1002-section-status-key-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1003-section-status-key-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1004-section-status-key-diff-check.txt`.
+- Final verification: JSON parse passed in `project_memory/runlogs/20260709-1006-section-status-key-final-json-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1007-section-status-key-final-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1005-section-status-key-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-section-status-key-reference-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

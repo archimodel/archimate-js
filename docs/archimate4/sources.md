@@ -65,12 +65,13 @@
   conformance blockers and companion-source gaps remain visible in one exact residual gap catalog.
 - `getArchimate4ImplementationStatus().sectionCoverage` reports `sectionCoverage.expectedIds`,
   `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
-  `sectionCoverage.missingRequirementReferenceIds`,
-  `sectionCoverage.missingExternalBlockerReferenceIds`, `externalDependentIds`, and `optionalIds` so
-  C260 chapter and appendix coverage remains visible by exact section identity while rejecting
-  unregistered conformance requirement or external blocker references. The exact section list starts
-  at Chapter 1 and includes the Introduction/Conformance and Definitions chapters, not only the
-  implementation-heavy language chapters.
+  `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,
+  `sectionCoverage.missingExternalBlockerReferenceIds`,
+  `sectionCoverage.missingStatusKeyReferenceIds`, `externalDependentIds`, and `optionalIds` so C260
+  chapter and appendix coverage remains visible by exact section identity while rejecting
+  unregistered conformance requirement, external blocker, or status API key references. The exact
+  section list starts at Chapter 1 and includes the Introduction/Conformance and Definitions
+  chapters, not only the implementation-heavy language chapters.
 - `getArchimate4ImplementationStatus().introductionCoverage` reports
   `introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,
   `introductionCoverage.missingIntroductionIds`, and

@@ -1,0 +1,1 @@
+PASS: npx eslint lib\metamodel\languages\index.js test\language-profile.test.mjs

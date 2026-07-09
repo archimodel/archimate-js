@@ -71,12 +71,13 @@ fields such as `missingOfficialConformanceGapIds` and `missingCompanionGapSource
 conformance blockers and companion-source gaps cannot drift silently.
 It must expose exact C260 section coverage fields (`sectionCoverage.expectedIds`,
 `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
-`sectionCoverage.missingRequirementReferenceIds`, and
-`sectionCoverage.missingExternalBlockerReferenceIds`) so the implementation boundary remains
-traceable to the reviewed C260 chapter and appendix outline without allowing unregistered
-requirement or blocker references. The exact section coverage must include Chapter 1
-Introduction/Conformance and Chapter 2 Definitions as status-tracked sections, even though they are
-not element-catalog chapters.
+`sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,
+`sectionCoverage.missingExternalBlockerReferenceIds`, and
+`sectionCoverage.missingStatusKeyReferenceIds`) so the implementation boundary remains traceable to
+the reviewed C260 chapter and appendix outline without allowing unregistered requirement, blocker, or
+status API key references. The exact section coverage must include Chapter 1 Introduction/Conformance
+and Chapter 2 Definitions as status-tracked sections, even though they are not element-catalog
+chapters.
 It must expose exact C260 Chapter 1 Introduction/Conformance outline fields
 (`introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,
 `introductionCoverage.missingIntroductionIds`, and `introductionCoverage.extraIntroductionIds`) so

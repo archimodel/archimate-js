@@ -241,6 +241,43 @@
       "expectedExternalBlockerIds": [
         "exactAppendixAArtworkRights",
         "officialAppendixBRelationshipMatrix"
+      ],
+      "expectedStatusKeyIds": [
+        "introductionCoverage",
+        "sourceCoverage",
+        "conformanceRequirements",
+        "conformanceReadiness",
+        "remainingGaps",
+        "externalBlockerCatalog",
+        "exchangeFormat",
+        "definitionCoverage",
+        "elementCatalog",
+        "relationshipConnectors",
+        "languageStructureCoverage",
+        "commonDomainCoverage",
+        "relationshipsAndJunctionsCoverage",
+        "relationshipMatrix",
+        "relationshipProfile",
+        "motivationDomainCoverage",
+        "strategyDomainCoverage",
+        "businessDomainCoverage",
+        "applicationDomainCoverage",
+        "technologyDomainCoverage",
+        "relationshipsBetweenCoreDomainsCoverage",
+        "implementationAndMigrationDomainCoverage",
+        "stakeholdersArchitectureViewsViewpointsCoverage",
+        "viewpointClassification",
+        "viewpointMechanism",
+        "stakeholderConcerns",
+        "languageCustomizationMechanismsCoverage",
+        "profileAttributeTypes",
+        "appendixANotationCoverage",
+        "iconography",
+        "appendixBRelationshipsCoverage",
+        "appendixCExampleViewpointsCoverage",
+        "appendixDStandardsGuidanceCoverage",
+        "appendixEVersionChangesCoverage",
+        "appendixFAcronymsCoverage"
       ]
     },
     "sectionCoverage": [
@@ -248,12 +285,24 @@
         "id": "introduction-and-conformance",
         "c260Section": "1",
         "status": "tracked",
+        "statusKeys": [
+          "introductionCoverage",
+          "sourceCoverage",
+          "conformanceRequirements",
+          "conformanceReadiness",
+          "remainingGaps",
+          "externalBlockerCatalog",
+          "exchangeFormat"
+        ],
         "evidence": "source status, conformance requirement map, source coverage, conformance readiness, and external blocker catalog"
       },
       {
         "id": "definitions",
         "c260Section": "2",
         "status": "implemented-as-profile-vocabulary",
+        "statusKeys": [
+          "definitionCoverage"
+        ],
         "evidence": "domain, aspect, element, relationship, viewpoint, attribute, and conformance vocabulary metadata"
       },
       {
@@ -261,60 +310,103 @@
         "c260Section": "3",
         "status": "implemented",
         "requirementId": "language-structure",
+        "statusKeys": [
+          "languageStructureCoverage",
+          "elementCatalog",
+          "relationshipConnectors"
+        ],
         "evidence": "versioned language profile, domain/aspect metadata, and active profile services"
       },
       {
         "id": "common-domain",
         "c260Section": "4",
         "status": "implemented",
+        "statusKeys": [
+          "commonDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Role, Collaboration, Path, Service, Process, Function, Event, Grouping, and Location profile entries"
       },
       {
         "id": "relationships-and-junctions",
         "c260Section": "5",
         "status": "implemented-with-external-profile-boundary",
+        "statusKeys": [
+          "relationshipsAndJunctionsCoverage",
+          "relationshipConnectors",
+          "relationshipMatrix",
+          "relationshipProfile"
+        ],
         "evidence": "relationship metadata, junction connectors, multiplicity, options, and external Appendix B profile loader"
       },
       {
         "id": "motivation-domain",
         "c260Section": "6",
         "status": "implemented",
+        "statusKeys": [
+          "motivationDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Motivation profile entries and local notation renderer paths"
       },
       {
         "id": "strategy-domain",
         "c260Section": "7",
         "status": "implemented",
+        "statusKeys": [
+          "strategyDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Strategy profile entries and standard display labels"
       },
       {
         "id": "business-domain",
         "c260Section": "8",
         "status": "implemented",
+        "statusKeys": [
+          "businessDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Business profile entries with domain-specific interface retained"
       },
       {
         "id": "application-domain",
         "c260Section": "9",
         "status": "implemented",
+        "statusKeys": [
+          "applicationDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Application profile entries with domain-specific interface retained"
       },
       {
         "id": "technology-domain",
         "c260Section": "10",
         "status": "implemented",
+        "statusKeys": [
+          "technologyDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Technology profile entries including Equipment, Facility, Distribution Network, and Material"
       },
       {
         "id": "relationships-between-core-domains",
         "c260Section": "11",
         "status": "implemented-through-active-profile",
+        "statusKeys": [
+          "relationshipsBetweenCoreDomainsCoverage",
+          "relationshipProfile"
+        ],
         "evidence": "relationship validation resolves current element metadata and host-supplied Appendix B profile data"
       },
       {
         "id": "implementation-and-migration-domain",
         "c260Section": "12",
         "status": "implemented",
+        "statusKeys": [
+          "implementationAndMigrationDomainCoverage",
+          "elementCatalog"
+        ],
         "evidence": "Work Package, Deliverable, and Plateau profile entries and renderer paths"
       },
       {
@@ -322,6 +414,12 @@
         "c260Section": "13",
         "status": "implemented",
         "requirementId": "viewpoint-mechanism",
+        "statusKeys": [
+          "stakeholdersArchitectureViewsViewpointsCoverage",
+          "viewpointClassification",
+          "viewpointMechanism",
+          "stakeholderConcerns"
+        ],
         "evidence": "viewpoint metadata, viewpoint definitions, and active-profile type validation"
       },
       {
@@ -329,6 +427,10 @@
         "c260Section": "14",
         "status": "implementation-defined",
         "requirementId": "language-customization",
+        "statusKeys": [
+          "languageCustomizationMechanismsCoverage",
+          "profileAttributeTypes"
+        ],
         "evidence": "custom profile domains, concepts, relationships, profile attributes, and viewpoint definitions"
       },
       {
@@ -337,6 +439,11 @@
         "status": "local-renderer-coverage",
         "requirementId": "standard-iconography",
         "externalBlocker": "exactAppendixAArtworkRights",
+        "statusKeys": [
+          "appendixANotationCoverage",
+          "iconography",
+          "sourceCoverage"
+        ],
         "evidence": "local renderer and palette paths; exact Appendix A vector redistribution remains unconfirmed"
       },
       {
@@ -345,6 +452,12 @@
         "status": "external-profile-required",
         "requirementId": "appendix-b-relationships",
         "externalBlocker": "officialAppendixBRelationshipMatrix",
+        "statusKeys": [
+          "appendixBRelationshipsCoverage",
+          "relationshipMatrix",
+          "relationshipProfile",
+          "sourceCoverage"
+        ],
         "evidence": "relationship derivation helpers and profile loader are implemented; redistributable table data is not embedded"
       },
       {
@@ -353,24 +466,37 @@
         "status": "optional-informative",
         "optional": true,
         "requirementId": "example-viewpoints",
+        "statusKeys": [
+          "appendixCExampleViewpointsCoverage",
+          "conformanceRequirements"
+        ],
         "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"
       },
       {
         "id": "appendix-d-standards-guidance",
         "c260Section": "Appendix D",
         "status": "tracked",
+        "statusKeys": [
+          "appendixDStandardsGuidanceCoverage"
+        ],
         "evidence": "standards and guidance relationship appendix headings are tracked without copying Appendix D prose"
       },
       {
         "id": "appendix-e-version-changes",
         "c260Section": "Appendix E.4",
         "status": "implemented-with-migration-warnings",
+        "statusKeys": [
+          "appendixEVersionChangesCoverage"
+        ],
         "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
       },
       {
         "id": "appendix-f-acronyms",
         "c260Section": "Appendix F",
         "status": "tracked-as-acronym-vocabulary",
+        "statusKeys": [
+          "appendixFAcronymsCoverage"
+        ],
         "evidence": "acronym tokens are tracked without copying Appendix F expansions or prose"
       }
     ],

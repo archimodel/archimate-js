@@ -3348,6 +3348,7 @@ test('archimate 4 conformance requirement blockers map to gaps and required sour
 });
 
 test('archimate 4 implementation status exposes C260 section coverage identity', async () => {
+  const status = getArchimate4ImplementationStatus();
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
@@ -3392,12 +3393,60 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
     'exactAppendixAArtworkRights',
     'officialAppendixBRelationshipMatrix'
   ];
+  const expectedStatusKeyIds = [
+    'introductionCoverage',
+    'sourceCoverage',
+    'conformanceRequirements',
+    'conformanceReadiness',
+    'remainingGaps',
+    'externalBlockerCatalog',
+    'exchangeFormat',
+    'definitionCoverage',
+    'elementCatalog',
+    'relationshipConnectors',
+    'languageStructureCoverage',
+    'commonDomainCoverage',
+    'relationshipsAndJunctionsCoverage',
+    'relationshipMatrix',
+    'relationshipProfile',
+    'motivationDomainCoverage',
+    'strategyDomainCoverage',
+    'businessDomainCoverage',
+    'applicationDomainCoverage',
+    'technologyDomainCoverage',
+    'relationshipsBetweenCoreDomainsCoverage',
+    'implementationAndMigrationDomainCoverage',
+    'stakeholdersArchitectureViewsViewpointsCoverage',
+    'viewpointClassification',
+    'viewpointMechanism',
+    'stakeholderConcerns',
+    'languageCustomizationMechanismsCoverage',
+    'profileAttributeTypes',
+    'appendixANotationCoverage',
+    'iconography',
+    'appendixBRelationshipsCoverage',
+    'appendixCExampleViewpointsCoverage',
+    'appendixDStandardsGuidanceCoverage',
+    'appendixEVersionChangesCoverage',
+    'appendixFAcronymsCoverage'
+  ];
   const sectionRequirementIds = sections
     .map((section) => section.requirementId)
     .filter(Boolean);
   const sectionExternalBlockerIds = sections
     .map((section) => section.externalBlocker)
     .filter(Boolean);
+  const sectionStatusKeyIds = [];
+
+  for (const section of sections) {
+    assert.equal(section.statusKeys.length > 0, true);
+
+    for (const statusKey of section.statusKeys) {
+      if (!sectionStatusKeyIds.includes(statusKey)) {
+        sectionStatusKeyIds.push(statusKey);
+      }
+    }
+  }
 
   assert.equal(sectionCatalog.status, 'c260-outline-derived');
   assert.equal(sectionCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
@@ -3405,10 +3454,16 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
   assert.deepEqual(sectionCatalog.expectedIds, expectedSectionIds);
   assert.deepEqual(sectionCatalog.expectedRequirementIds, expectedRequirementIds);
   assert.deepEqual(sectionCatalog.expectedExternalBlockerIds, expectedExternalBlockerIds);
+  assert.deepEqual(sectionCatalog.expectedStatusKeyIds, expectedStatusKeyIds);
   assert.deepEqual(sections.map((section) => section.id), expectedSectionIds);
   assert.equal(sections.every((section) => section.c260Section), true);
   assert.deepEqual(sectionRequirementIds, expectedRequirementIds);
   assert.deepEqual(sectionExternalBlockerIds, expectedExternalBlockerIds);
+  assert.deepEqual(status.sectionCoverage.statusKeyIds, sectionStatusKeyIds);
+  assert.deepEqual(status.sectionCoverage.missingStatusKeyIds, []);
+  assert.deepEqual(status.sectionCoverage.extraStatusKeyIds, []);
+  assert.deepEqual(status.sectionCoverage.missingStatusKeyReferenceIds, []);
+  assert.equal(status.sectionCoverage.statusKeyIds.every((statusKey) => Object.keys(status).includes(statusKey)), true);
   assert.equal(sectionRequirementIds.every((id) => requirementIds.includes(id)), true);
   assert.equal(sectionExternalBlockerIds.every((id) => externalBlockerIds.includes(id)), true);
   assert.deepEqual(sections.filter((section) => section.externalBlocker).map((section) => section.id), [
@@ -3424,12 +3479,16 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
   assert.match(languageIndex, /externalDependentIds/);
   assert.match(languageIndex, /missingRequirementReferenceIds/);
   assert.match(languageIndex, /missingExternalBlockerReferenceIds/);
+  assert.match(languageIndex, /missingStatusKeyReferenceIds/);
   assert.match(readme, /sectionCoverage\.expectedIds/);
   assert.match(readme, /sectionCoverage\.missingRequirementReferenceIds/);
+  assert.match(readme, /sectionCoverage\.missingStatusKeyReferenceIds/);
   assert.match(sources, /sectionCoverage\.actualIds/);
   assert.match(sources, /sectionCoverage\.missingExternalBlockerReferenceIds/);
+  assert.match(sources, /sectionCoverage\.statusKeyIds/);
   assert.match(officialSpec, /sectionCoverage\.missingIds/);
   assert.match(officialSpec, /sectionCoverage\.missingRequirementReferenceIds/);
+  assert.match(officialSpec, /sectionCoverage\.missingStatusKeyReferenceIds/);
   assert.match(plan, /Section coverage status reports/);
 });
 
