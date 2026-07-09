@@ -1,0 +1,1 @@
+warning: in the working copy of 'project_memory/runlogs/20260709-788-xml-internal-roundtrip-final-json-check.txt', CRLF will be replaced by LF the next time Git touches it

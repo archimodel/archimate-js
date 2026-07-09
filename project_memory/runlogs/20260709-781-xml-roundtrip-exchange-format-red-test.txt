@@ -1,0 +1,32 @@
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (9.8818ms)
+✔ archimate 3 fixture round-trips through the internal descriptor (13.0459ms)
+✔ archimate 4 fixture round-trips through the experimental internal descriptor (3.5428ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.9126
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:505:1
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (9.8818ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - true
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:526:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

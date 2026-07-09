@@ -144,6 +144,7 @@ const modeler = new Modeler({
 * Implementation status includes `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so blocker identity stays aligned across readiness, requirements, and source coverage.
 * Implementation status includes `sourceCoverage.expectedSourceIds`, `sourceCoverage.actualSourceIds`, `sourceCoverage.missingSourceIds`, and `sourceCoverage.extraSourceIds` so the source-evidence ledger is audited by exact source identity.
 * Implementation status includes source coverage for the local C260 PDF, local launch transcript, W262 companion paper availability, Appendix B relationship matrix, MEFF 4.0 XSD, and Appendix A artwork-rights boundary.
+* Implementation status includes `exchangeFormat.internalRoundTripTested`, `exchangeFormat.internalRoundTripRunlogPath`, and `exchangeFormat.officialConformanceClaimable` so the internal ArchiMate 4 XML read/write/read coverage stays separate from official MEFF 4.0 conformance.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.
 

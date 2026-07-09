@@ -25,8 +25,9 @@ Implemented and verified on the current branch:
   blockers.
 - M1 Runtime Boundary: `archimateVersion` selects versioned language profiles; ArchiMate 3.x remains
   the default; ArchiMate 4 exposes the C260-derived 42-element catalog and relationship connectors.
-- M2 XML Boundary: moddle descriptors and model templates are version-aware. ArchiMate 4 exchange
-  remains experimental until an official MEFF 4.0 XSD is available.
+- M2 XML Boundary: moddle descriptors and model templates are version-aware, and 3.x/4.0 minimal
+  fixtures have internal read/write/read round-trip coverage. ArchiMate 4 exchange remains
+  experimental until an official MEFF 4.0 XSD is available.
 - M3 Semantics: relationship validation routes through the active profile; host-supplied Appendix B
   profiles are supported as nested data, rows, matrices, CSV/TSV text, or JSON strings; migration and
   derivation helpers are implemented from non-verbatim C260-derived requirements where redistribution

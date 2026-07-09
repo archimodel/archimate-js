@@ -589,6 +589,9 @@
 - `archimateVersion: "3.2"` continues to write the current 3.x namespace.
 - `archimateVersion: "4.0"` writes an internal ArchiMate 4 namespace and source/target multiplicity attributes.
 - 4.0 XML export is marked experimental until the corresponding ArchiMate 4 Model Exchange File Format XSD is confirmed.
+- Internal XML read/write/read coverage for the 3.x and 4.0 minimal fixtures is recorded in
+  `project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt`. This proves the local
+  descriptors can round-trip the current fixtures; it does not prove official MEFF 4.0 conformance.
 
 ## Current XSD Directory Check
 

@@ -73,7 +73,10 @@
     "exchangeFormat": {
       "status": "experimental",
       "officialXsdRequired": true,
-      "officialXsdDirectory": "https://www.opengroup.org/xsd/archimate/"
+      "officialXsdDirectory": "https://www.opengroup.org/xsd/archimate/",
+      "internalRoundTripTested": true,
+      "internalRoundTripRunlogPath": "project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt",
+      "officialConformanceClaimable": false
     },
     "iconography": {
       "status": "local-renderer-coverage",

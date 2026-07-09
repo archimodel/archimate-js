@@ -1,0 +1,11 @@
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (9.5539ms)
+✔ archimate 3 fixture round-trips through the internal descriptor (17.3313ms)
+✔ archimate 4 fixture round-trips through the experimental internal descriptor (5.4768ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 139.7759

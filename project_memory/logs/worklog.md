@@ -1414,3 +1414,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-778-section-coverage-reference-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-779-section-coverage-reference-final-diff-check.txt`; staged diff check passed in `project_memory/runlogs/20260709-780-section-coverage-reference-staged-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-section-coverage-reference-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 113
+
+- Goal: make the XML boundary stronger by proving internal read/write/read round-trip coverage for the current 3.x and experimental 4.0 descriptors while keeping official MEFF 4.0 conformance blocked on the official XSD.
+- Red test: `project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-red-test.txt` failed because `exchangeFormat.internalRoundTripTested` was absent; the same run also showed the new 3.x and 4.0 internal fixture round-trip checks already passed.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `exchangeFormat.internalRoundTripTested`, `internalRoundTripRunlogPath`, and `officialConformanceClaimable: false`.
+- Tests/docs: `test/xml-roundtrip.test.mjs` now performs descriptor read/write/read checks for the 3.x and 4.0 minimal fixtures; `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now describe the internal round-trip versus official MEFF 4.0 boundary.
+- Focused verification: `project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt` passed with 3 tests.
+- Verification: `npm run test:language` passed with 162 tests in `project_memory/runlogs/20260709-782-xml-internal-roundtrip-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-783-xml-internal-roundtrip-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-784-xml-internal-roundtrip-json-check.txt`; `git diff --check` passed with the existing state JSON CRLF warning in `project_memory/runlogs/20260709-785-xml-internal-roundtrip-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-786-xml-internal-roundtrip-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-787-xml-internal-roundtrip-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-788-xml-internal-roundtrip-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-789-xml-internal-roundtrip-final-diff-check.txt`; staged diff check passed in `project_memory/runlogs/20260709-790-xml-internal-roundtrip-staged-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-xml-internal-roundtrip-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

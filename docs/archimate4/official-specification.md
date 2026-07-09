@@ -453,7 +453,9 @@ External profile contract:
 ## XML And MEFF Requirements
 
 The editor can expose ArchiMate 4 modeling semantics before MEFF 4.0 is confirmed, but XML export
-must stay marked experimental until the official exchange schema is available.
+must stay marked experimental until the official exchange schema is available. The local 3.x and
+4.0 descriptors are internally round-trip tested through read/write/read XML coverage; this is not an
+official MEFF 4.0 conformance claim.
 
 Open decisions:
 

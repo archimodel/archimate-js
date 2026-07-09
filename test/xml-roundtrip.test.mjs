@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { Moddle } from 'moddle';
-import { Reader } from 'moddle-xml';
+import { Reader, Writer } from 'moddle-xml';
 
 async function readDescriptor(path) {
   const descriptor = await readFile(new URL(path, import.meta.url), 'utf8');
@@ -42,6 +42,21 @@ async function readModel(path, xml) {
   return reader.fromXML(xml, reader.handler('archimate:Model'));
 }
 
+async function roundTripModel(path, xml) {
+  const descriptor = await readDescriptor(path);
+  const model = new Moddle({ archimate: descriptor });
+  const reader = new Reader({ model, lax: true });
+  const writer = new Writer({ format: true, preamble: true });
+  const parsed = await reader.fromXML(xml, reader.handler('archimate:Model'));
+  const serialized = writer.toXML(parsed.rootElement);
+  const reparsed = await reader.fromXML(serialized, reader.handler('archimate:Model'));
+
+  return {
+    serialized,
+    reparsed
+  };
+}
+
 test('archimate 3 fixture keeps current namespace', async () => {
   const xml = await readFile(new URL('./fixtures/archimate3-minimal.xml', import.meta.url), 'utf8');
 
@@ -52,6 +67,24 @@ test('archimate 4 fixture uses archimate 4 namespace', async () => {
   const xml = await readFile(new URL('./fixtures/archimate4-minimal.xml', import.meta.url), 'utf8');
 
   assert.match(xml, /http:\/\/www\.opengroup\.org\/xsd\/archimate\/4\.0\//);
+});
+
+test('archimate 3 fixture round-trips through the internal descriptor', async () => {
+  const xml = await readFile(new URL('./fixtures/archimate3-minimal.xml', import.meta.url), 'utf8');
+  const result = await roundTripModel('../lib/moddle/resources/archimate3.json', xml);
+
+  assert.match(result.serialized, /http:\/\/www\.opengroup\.org\/xsd\/archimate\/3\.0\//);
+  assert.equal(result.reparsed.rootElement.name, 'Minimal ArchiMate 3 model');
+  assert.equal(result.reparsed.rootElement.views.diagrams.viewsList[0].id, 'view-1');
+});
+
+test('archimate 4 fixture round-trips through the experimental internal descriptor', async () => {
+  const xml = await readFile(new URL('./fixtures/archimate4-minimal.xml', import.meta.url), 'utf8');
+  const result = await roundTripModel('../lib/moddle/resources/archimate4.json', xml);
+
+  assert.match(result.serialized, /http:\/\/www\.opengroup\.org\/xsd\/archimate\/4\.0\//);
+  assert.equal(result.reparsed.rootElement.name, 'Minimal ArchiMate 4 model');
+  assert.equal(result.reparsed.rootElement.views.diagrams.viewsList[0].id, 'view-1');
 });
 
 test('archimate 4 descriptor stores relationship multiplicity fields', async () => {

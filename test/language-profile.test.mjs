@@ -523,6 +523,12 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.equal(profile.conformance.relationshipMatrix.status, 'external-profile-required');
   assert.equal(profile.conformance.exchangeFormat.status, 'experimental');
   assert.equal(profile.conformance.exchangeFormat.officialXsdRequired, true);
+  assert.equal(profile.conformance.exchangeFormat.internalRoundTripTested, true);
+  assert.equal(
+    profile.conformance.exchangeFormat.internalRoundTripRunlogPath,
+    'project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt'
+  );
+  assert.equal(profile.conformance.exchangeFormat.officialConformanceClaimable, false);
   assert.equal(profile.conformance.iconography.status, 'local-renderer-coverage');
   assert.equal(profile.conformance.iconography.exactAppendixAVectorsConfirmed, false);
   assert.equal(profile.conformance.externalBlockerCatalog.status, 'external-source-dependent');
@@ -538,6 +544,7 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(languageIndex, /missingTypes/);
   assert.match(languageIndex, /extraTypes/);
   assert.match(languageIndex, /relationshipProfile: getArchimate4RelationshipProfileStatus\(\)/);
+  assert.match(languageIndex, /exchangeFormat: conformance\.exchangeFormat/);
   assert.match(languageIndex, /var externalBlockerCatalog = summarizeExternalBlockers/);
   assert.match(languageIndex, /externalBlockerCatalog: externalBlockerCatalog/);
   assert.match(languageIndex, /externalBlockers: externalBlockerCatalog\.actualIds/);
@@ -546,8 +553,11 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
   assert.match(readme, /elementCatalog\.(expectedTypes|missingTypes|extraTypes)/);
   assert.match(readme, /relationshipConnectors\.(expectedTypes|missingTypes|extraTypes)/);
+  assert.match(readme, /exchangeFormat\.internalRoundTripTested/);
   assert.match(readme, /externalBlockerCatalog\.expectedIds/);
+  assert.match(sources, /read\/write\/read coverage/);
   assert.match(sources, /externalBlockerCatalog\.actualIds/);
+  assert.match(officialSpec, /internally round-trip tested/);
   assert.match(officialSpec, /expectedTypes/);
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
