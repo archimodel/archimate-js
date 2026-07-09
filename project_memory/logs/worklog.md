@@ -2167,3 +2167,14 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1414-appendix-a-local-pictogram-rights-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-appendix-a-local-pictogram-rights-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 168
+
+- Goal: strengthen the MEFF 4.0 XSD boundary so visible official ArchiMate 3.1 XSD evidence cannot be mistaken for official MEFF 4.0 XSD availability.
+- Observation: direct status output shows `sourceCoverage.items.meff4Xsd.discoveredXsdLinks` contains only `3.1/` XSD links and the only 200 candidate status is `https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd`; `official4XsdDiscovered` remains false.
+- Implemented: `test/language-profile.test.mjs` now verifies 3.1 XSD links and the 3.1 baseline 200 status keep `meff4Xsd` external-source-required, the XML exchange status experimental, and `officialMeff4Xsd` in conformance readiness.
+- Focused verification: `project_memory/runlogs/20260709-1416-meff4-xsd-31-baseline-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 211 tests in `project_memory/runlogs/20260709-1417-meff4-xsd-31-baseline-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1418-meff4-xsd-31-baseline-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1419-meff4-xsd-31-baseline-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1420-meff4-xsd-31-baseline-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-meff4-xsd-31-baseline-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

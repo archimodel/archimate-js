@@ -2567,6 +2567,36 @@ test('archimate 4 XML exchange stays experimental until official MEFF 4 XSD is p
   assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
 });
 
+test('archimate 4 source coverage does not treat 3.1 XSD evidence as MEFF 4 XSD', () => {
+  const status = getArchimate4ImplementationStatus();
+  const meff4Xsd = status.sourceCoverage.items.meff4Xsd;
+  const discoveredLinks = meff4Xsd.discoveredXsdLinks;
+  const successfulCandidates = Object.entries(meff4Xsd.candidateStatusCodes)
+    .filter((entry) => entry[1] === 200)
+    .map((entry) => entry[0]);
+
+  assert.equal(meff4Xsd.directoryStatusCode, 200);
+  assert.deepEqual(discoveredLinks, [
+    '3.1/archimate3_Diagram.xsd',
+    '3.1/archimate3_Model.xsd',
+    '3.1/archimate3_View.xsd'
+  ]);
+  assert.equal(discoveredLinks.every((link) => link.startsWith('3.1/')), true);
+  assert.deepEqual(successfulCandidates, [
+    'https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd'
+  ]);
+  assert.equal(successfulCandidates.some((url) => url.includes('/4.0/')), false);
+
+  assert.equal(meff4Xsd.official4XsdDiscovered, false);
+  assert.equal(meff4Xsd.localSourcePresent, false);
+  assert.equal(meff4Xsd.status, 'external-source-required');
+  assert.equal(meff4Xsd.externalBlocker, 'officialMeff4Xsd');
+  assert.equal(status.exchangeFormat.status, 'experimental');
+  assert.equal(status.exchangeFormat.officialConformanceClaimable, false);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('meff4Xsd'), true);
+  assert.equal(status.conformanceReadiness.blockers.includes('officialMeff4Xsd'), true);
+});
+
 test('archimate 4 Appendix A artwork status agrees with pictogram audit evidence', async () => {
   const status = getArchimate4ImplementationStatus();
   const appendixA = status.sourceCoverage.items.appendixAArtworkRights;
