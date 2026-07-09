@@ -1,0 +1,42 @@
+[
+  {
+    "name": "editor4",
+    "data": {
+      "state": "Blocked",
+      "summary": "3 official blockers",
+      "required": "appendixBRelationshipMatrix, meff4Xsd, appendixAArtworkRights",
+      "companion": "w262",
+      "actionCount": 3
+    }
+  },
+  {
+    "name": "viewer4",
+    "data": {
+      "state": "Blocked",
+      "summary": "3 official blockers",
+      "required": "appendixBRelationshipMatrix, meff4Xsd, appendixAArtworkRights",
+      "companion": "w262",
+      "actionCount": 3
+    }
+  },
+  {
+    "name": "editor3",
+    "data": {
+      "state": "Not applicable",
+      "summary": "ArchiMate 3.x compatibility mode",
+      "required": "none",
+      "companion": "none",
+      "actionCount": 0
+    }
+  },
+  {
+    "name": "viewer3",
+    "data": {
+      "state": "Not applicable",
+      "summary": "ArchiMate 3.x compatibility mode",
+      "required": "none",
+      "companion": "none",
+      "actionCount": 0
+    }
+  }
+]

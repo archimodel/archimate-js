@@ -72,6 +72,8 @@ conformance blockers and companion-source gaps cannot drift silently.
 `getArchimate4ConformanceReport()` must derive a flattened host-facing report from the same status
 object, preserving official blocker ids, missing required source ids, required-before-claim actions,
 remaining gap ids, and companion gaps without changing the official conformance claim boundary.
+The bundled Viewer and Editor demos must render that report in ArchiMate 4 mode so the official
+blockers are visible to evaluators; in ArchiMate 3.x mode the report must remain not applicable.
 It must expose exact C260 section coverage fields (`sectionCoverage.expectedIds`,
 `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
 `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,

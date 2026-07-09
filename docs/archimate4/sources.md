@@ -1017,6 +1017,11 @@
 - `project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json` records
   the flattened `getArchimate4ConformanceReport()` output used to verify that official blockers and
   the W262 companion gap remain visible to host tooling.
+- `demo/viewer.html` and `demo/editor.html` now render the same flattened report in ArchiMate 4 mode.
+  Browser smoke evidence is recorded in
+  `project_memory/runlogs/20260710-0199-demo-conformance-panel-browser-smoke.txt`; it verifies 4.0
+  Viewer/Editor pages show the blocked official conformance state and 3.x pages show the report as
+  not applicable.
 
 ## Verification Notes
 

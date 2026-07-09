@@ -68,6 +68,21 @@
       ]
     },
     {
+      "id": "audit.archimate4.demo_conformance_panel",
+      "description": "Viewer and Editor demos render the flattened ArchiMate 4 conformance report while keeping ArchiMate 3.x marked as not applicable",
+      "when": ["post_change", "pre_commit"],
+      "severity": "blocker",
+      "command": "node --test test/demo-conformance-panel.test.mjs",
+      "expect": { "exit_code": 0 },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0191-demo-conformance-panel-focused-test.txt",
+        "project_memory/runlogs/20260710-0193-demo-conformance-panel-demo-build.txt",
+        "project_memory/runlogs/20260710-0199-demo-conformance-panel-browser-smoke.txt",
+        "project_memory/runlogs/20260710-0202-demo-conformance-panel-final-focused-test.txt",
+        "project_memory/runlogs/20260710-0203-demo-conformance-panel-final-test-language.txt"
+      ]
+    },
+    {
       "id": "audit.archimate4.external_source_current_recheck",
       "description": "Current W262 and MEFF 4.0 XSD source evidence stays aligned with archimate4-profile sourceCoverage and the host-facing conformance report",
       "when": ["post_change", "pre_commit"],

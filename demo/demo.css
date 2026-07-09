@@ -110,6 +110,25 @@ body {
 .demo-side dd {
   margin: 0;
   font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.demo-conformance {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #d8dde3;
+}
+
+.demo-conformance-actions {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #3d4754;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.demo-conformance-actions li + li {
+  margin-top: 5px;
 }
 
 .demo-canvas {

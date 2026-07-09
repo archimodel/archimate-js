@@ -44,6 +44,8 @@ Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 imp
 
 Use `getArchimate4ConformanceReport()` when a host needs a flattened official-conformance report. It preserves the Appendix B profile, MEFF 4.0 XSD, and Appendix A artwork-rights blockers, separates the W262 companion gap, and lists the required action for each blocker without allowing local implementation coverage to be mistaken for an official conformance claim.
 
+The bundled Viewer and Editor demos display the same flattened report in ArchiMate 4 mode. In ArchiMate 3.x mode the panel is marked not applicable, preserving the existing 3.x compatibility boundary.
+
 For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` or `getArchimate4ConformanceReport()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
 
 Use `getArchimate4ExampleViewpointCatalog()` to list the C260 Appendix C example viewpoint groups and viewpoint names as an informative reference catalog. It exposes the Appendix C outline headings only; it does not bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.

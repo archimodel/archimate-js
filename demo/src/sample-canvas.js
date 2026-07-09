@@ -1,4 +1,5 @@
 import {
+  getArchimate4ConformanceReport,
   getLanguageProfile,
   normalizeArchimateVersion
 } from '../../lib/metamodel/languages';
@@ -82,6 +83,7 @@ export function applyDemoProfileToDocument(profile, mode) {
   updateDemoLink('#editor-link', './editor.html?version=' + profile.version);
   updateVersionLink('#version-3-link', profile.version === DEMO_ARCHIMATE3_VERSION);
   updateVersionLink('#version-4-link', profile.version === DEMO_ARCHIMATE4_VERSION);
+  renderConformanceReport(profile);
 }
 
 export function setStatus(message) {
@@ -179,6 +181,53 @@ function updateVersionLink(selector, active) {
   } else {
     link.removeAttribute('aria-current');
   }
+}
+
+function renderConformanceReport(profile) {
+  const actions = document.querySelector('#conformance-actions');
+
+  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {
+    setText('#conformance-state', 'Not applicable');
+    setText('#conformance-summary', 'ArchiMate 3.x compatibility mode');
+    setText('#conformance-required', 'none');
+    setText('#conformance-companion', 'none');
+    renderList(actions, []);
+    return;
+  }
+
+  const report = getArchimate4ConformanceReport();
+  const officialBlockerCount = report.blockerIds.length;
+  const companionGapCount = report.companionGapIds.length;
+
+  setText('#conformance-state', report.officialConformanceClaimable ? 'Claimable' : 'Blocked');
+  setText(
+    '#conformance-summary',
+    officialBlockerCount + ' official blocker' + (officialBlockerCount === 1 ? '' : 's')
+  );
+  setText('#conformance-required', formatSourceList(report.missingRequiredSources));
+  setText(
+    '#conformance-companion',
+    companionGapCount ? formatSourceList(report.missingCompanionSources) : 'none'
+  );
+  renderList(actions, report.requiredBeforeClaim);
+}
+
+function renderList(node, items) {
+  if (!node) {
+    return;
+  }
+
+  node.innerHTML = '';
+
+  items.forEach(function(item) {
+    const li = document.createElement('li');
+    li.textContent = item;
+    node.appendChild(li);
+  });
+}
+
+function formatSourceList(items) {
+  return items && items.length ? items.join(', ') : 'none';
 }
 
 function setText(selector, text) {
