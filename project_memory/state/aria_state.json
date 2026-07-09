@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 158,
-  "stage": "external_source_continuation_verified",
+  "loop_id": 159,
+  "stage": "source_coverage_runlog_alignment_guard_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "test",
-    "diff_size": 119,
+    "diff_size": 34,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -179,7 +179,8 @@
       "implementation_status_identity_array_guard",
       "external_source_continuation_recheck",
       "meff4_xsd_20260709_1728_recheck",
-      "w262_20260709_1728_recheck"
+      "w262_20260709_1728_recheck",
+      "source_coverage_runlog_alignment_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -370,12 +371,13 @@
       "check_archimate4_status_identity_arrays_unique",
       "check_external_source_continuation_recheck",
       "check_meff4_xsd_20260709_1728_recheck",
-      "check_w262_20260709_1728_recheck"
+      "check_w262_20260709_1728_recheck",
+      "check_source_coverage_status_matches_external_runlog"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1352-external-source-final-staged-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-external-source-continuation-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-1359-source-coverage-runlog-alignment-final-staged-diff-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-source-coverage-runlog-alignment-audit.md",
     "result": "pass_with_external_blockers"
   },
   "open_issues": [
@@ -551,10 +553,11 @@
     "getArchimate4ImplementationStatus() is now regression-tested to ensure every exposed RunlogPath reference stays under project_memory/runlogs and resolves to an evidence artifact.",
     "getArchimate4ImplementationStatus() is now regression-tested to ensure status identity arrays do not hide duplicate ids, types, names, sources, blockers, gaps, or evidence paths.",
     "MEFF 4.0 XSD remains unavailable after the 2026-07-09T17:28:55+09:00 official URL recheck; ArchiMate 4 XML exchange remains experimental.",
-    "W262 remains unavailable locally after the 2026-07-09T17:28:55+09:00 publication-page and local-source recheck; it is tracked as a missing companion source, not missing C260 implementation evidence."
+    "W262 remains unavailable locally after the 2026-07-09T17:28:55+09:00 publication-page and local-source recheck; it is tracked as a missing companion source, not missing C260 implementation evidence.",
+    "getArchimate4ImplementationStatus().sourceCoverage is now regression-tested against the external-source runlog JSON so MEFF 4.0 XSD and W262 status metadata cannot drift from the cited evidence."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T18:00:00+09:00"
+    "updated_at": "2026-07-09T18:16:00+09:00"
   }
 }

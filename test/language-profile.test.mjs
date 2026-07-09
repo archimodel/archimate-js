@@ -2502,6 +2502,40 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 
+test('archimate 4 source coverage status agrees with external source runlog evidence', async () => {
+  const status = getArchimate4ImplementationStatus();
+  const sourceCoverage = status.sourceCoverage.items;
+  const meff4Xsd = sourceCoverage.meff4Xsd;
+  const w262 = sourceCoverage.w262;
+  const runlog = await readJson(`../${meff4Xsd.lastRunlogPath}`);
+
+  assert.equal(meff4Xsd.lastRunlogPath, w262.lastPublicationPageRunlogPath);
+  assert.equal(w262.lastPublicationPageRunlogPath, w262.lastLocalSearchRunlogPath);
+  assert.equal(runlog.checkedAt, meff4Xsd.lastCheckedAt);
+  assert.equal(runlog.checkedAt, w262.lastPublicationPageCheckedAt);
+  assert.equal(runlog.checkedAt, w262.lastLocalSearchAt);
+
+  assert.equal(runlog.meff4Xsd.url, meff4Xsd.url);
+  assert.equal(runlog.meff4Xsd.directoryStatusCode, meff4Xsd.directoryStatusCode);
+  assert.equal(runlog.meff4Xsd.official4XsdDiscovered, meff4Xsd.official4XsdDiscovered);
+  assert.deepEqual(runlog.meff4Xsd.discoveredXsdLinks, meff4Xsd.discoveredXsdLinks);
+  assert.deepEqual(runlog.meff4Xsd.candidateStatusCodes, meff4Xsd.candidateStatusCodes);
+
+  assert.equal(runlog.w262.url, w262.url);
+  assert.equal(runlog.w262.publicationPageStatusCode, w262.publicationPageStatusCode);
+  assert.equal(runlog.w262.titleDetected, true);
+  assert.equal(runlog.w262.freePdfDetected, w262.freePdfDetected);
+  assert.equal(runlog.w262.loginRequiredDetected, w262.loginRequiredDetected);
+  assert.equal(runlog.w262.pages22Detected, w262.pages22Detected);
+  assert.equal(runlog.w262.published20260427Detected, w262.published20260427Detected);
+  assert.deepEqual(runlog.w262.localSearchRoots, w262.localSearchRoots);
+  assert.deepEqual(runlog.w262.localSearchPatterns, w262.localSearchPatterns);
+  assert.deepEqual(
+    runlog.w262.localSearchMatchedFiles.map((candidate) => candidate.path),
+    w262.localSearchMatchedFiles
+  );
+});
+
 test('archimate 4 implementation status exposes official conformance readiness', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

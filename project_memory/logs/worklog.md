@@ -2063,3 +2063,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1351-external-source-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1352-external-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-external-source-continuation-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 159
+
+- Goal: strengthen the ArchiMate 4 source-coverage guard so status metadata cannot drift from the runlog evidence it cites.
+- Implemented: `test/language-profile.test.mjs` now reads the referenced external-source recheck runlog from `getArchimate4ImplementationStatus().sourceCoverage` and compares the MEFF 4.0 XSD status fields and W262 publication/local-source fields against the JSON evidence.
+- Guarded fields: MEFF 4.0 XSD checked timestamp, directory status, discovered XSD links, 4.0 discovery flag, candidate status codes, W262 checked timestamps, page status, title/free/login/pages/published markers, local search roots, local search patterns, and local matched file paths.
+- Focused verification: `project_memory/runlogs/20260709-1353-source-coverage-runlog-alignment-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 202 tests in `project_memory/runlogs/20260709-1354-source-coverage-runlog-alignment-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1355-source-coverage-runlog-alignment-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1356-source-coverage-runlog-alignment-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1357-source-coverage-runlog-alignment-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1358-source-coverage-runlog-alignment-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1359-source-coverage-runlog-alignment-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-source-coverage-runlog-alignment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
