@@ -1,0 +1,73 @@
+(node:14652) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "documentArtifactCoverage": {
+    "status": "c260-outline-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+    "expectedCount": 1,
+    "expectedIds": [
+      "index"
+    ],
+    "items": [
+      {
+        "id": "index",
+        "c260Section": "Index",
+        "heading": "Index",
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 Index is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      }
+    ],
+    "actualIds": [
+      "index"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "missingDocumentArtifactIds": [],
+    "extraDocumentArtifactIds": [],
+    "nonImplementationIds": [
+      "index"
+    ],
+    "actualCount": 1,
+    "complete": true
+  },
+  "meff4Xsd": {
+    "status": "external-source-required",
+    "url": "https://www.opengroup.org/xsd/archimate/",
+    "localSourcePresent": false,
+    "required": true,
+    "externalBlocker": "officialMeff4Xsd",
+    "lastCheckedAt": "2026-07-09T14:12:30+09:00",
+    "lastRunlogPath": "project_memory/runlogs/20260709-1079-meff4-xsd-latest-recheck.txt",
+    "directoryStatusCode": 200,
+    "official4XsdDiscovered": false,
+    "discoveredXsdLinks": [
+      "3.1/archimate3_Model.xsd",
+      "3.1/archimate3_View.xsd",
+      "3.1/archimate3_Diagram.xsd"
+    ],
+    "candidateStatusCodes": {
+      "https://www.opengroup.org/xsd/archimate/4.0/": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404
+    }
+  },
+  "sectionCoverage": {
+    "expectedCount": 20,
+    "missing": [],
+    "extra": [],
+    "includesIndex": false
+  },
+  "officialClaimable": false,
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}

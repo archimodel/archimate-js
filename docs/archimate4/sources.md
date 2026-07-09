@@ -177,6 +177,12 @@
   `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
   `appendixFAcronymsCoverage.extraAppendixFAcronymIds` so the Appendix F acronym tokens remain
   visible by exact identity without copying acronym expansions or Appendix F prose.
+- `getArchimate4ImplementationStatus().documentArtifactCoverage` reports
+  `documentArtifactCoverage.expectedIds`,
+  `documentArtifactCoverage.actualIds`,
+  `documentArtifactCoverage.missingDocumentArtifactIds`, and
+  `documentArtifactCoverage.extraDocumentArtifactIds` so the C260 Index remains visible as a
+  non-implementation document artifact rather than an ArchiMate language section.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
@@ -754,6 +760,11 @@
   Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
   returned 404. `archimate4-profile.json` now records this latest check in
   `sourceCoverage.meff4Xsd`.
+- Refreshed again on 2026-07-09T14:12:30+09:00 in
+  `project_memory/runlogs/20260709-1079-meff4-xsd-latest-recheck.txt`; the official directory and
+  3.1 directory returned 200, while tested 4.0 directory, Model/Diagram/View XSD, `archimate4.xsd`,
+  and `archimate4_ModelExchangeFile.xsd` candidate URLs returned 404. `archimate4-profile.json`
+  records this latest check in `sourceCoverage.meff4Xsd`.
 
 ## ArchiMate 3.1 XSD Verification
 

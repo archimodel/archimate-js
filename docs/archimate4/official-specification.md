@@ -183,6 +183,10 @@ It must expose exact C260 Appendix F Acronyms token fields
 `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
 `appendixFAcronymsCoverage.extraAppendixFAcronymIds`) so the implementation can track acronym
 coverage by token identity without copying acronym expansions or Appendix F prose.
+It must expose exact C260 document artifact fields (`documentArtifactCoverage.expectedIds`,
+`documentArtifactCoverage.actualIds`, `documentArtifactCoverage.missingDocumentArtifactIds`, and
+`documentArtifactCoverage.extraDocumentArtifactIds`) so the C260 Index is tracked as a
+non-implementation reference rather than mixed into ArchiMate language section coverage.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

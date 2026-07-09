@@ -1471,6 +1471,43 @@ test('archimate 4 implementation status exposes C260 appendix F acronym coverage
   assert.match(plan, /Appendix F acronym coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 document artifact boundary', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const documentArtifactCatalog = profile.conformance.documentArtifactCoverageCatalog;
+  const documentArtifactCoverage = profile.conformance.documentArtifactCoverage;
+  const sectionCatalog = profile.conformance.sectionCoverageCatalog;
+  const expectedDocumentArtifactIds = [
+    'index'
+  ];
+
+  assert.equal(documentArtifactCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    documentArtifactCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(documentArtifactCatalog.expectedCount, expectedDocumentArtifactIds.length);
+  assert.deepEqual(documentArtifactCatalog.expectedIds, expectedDocumentArtifactIds);
+  assert.deepEqual(
+    documentArtifactCoverage.map((documentArtifactItem) => documentArtifactItem.id),
+    expectedDocumentArtifactIds
+  );
+  assert.equal(documentArtifactCoverage.every((documentArtifactItem) => documentArtifactItem.nonImplementation), true);
+  assert.equal(sectionCatalog.expectedIds.includes('index'), false);
+
+  assert.match(languageIndex, /function summarizeDocumentArtifactCoverage/);
+  assert.match(languageIndex, /documentArtifactCoverage: documentArtifactCoverage/);
+  assert.match(languageIndex, /missingDocumentArtifactIds/);
+  assert.match(readme, /documentArtifactCoverage\.expectedIds/);
+  assert.match(sources, /documentArtifactCoverage\.actualIds/);
+  assert.match(officialSpec, /documentArtifactCoverage\.missingDocumentArtifactIds/);
+  assert.match(plan, /Document artifact coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
@@ -1610,7 +1647,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
-  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-731-meff4-xsd-latest-recheck.txt');
+  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-1079-meff4-xsd-latest-recheck.txt');
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
     '3.1/archimate3_Model.xsd',
     '3.1/archimate3_View.xsd',

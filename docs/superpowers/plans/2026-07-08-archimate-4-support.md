@@ -121,6 +121,10 @@ Appendix F acronym coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixFAcronymIds`, and `extraAppendixFAcronymIds` for the C260 Appendix F acronym-token
 list so acronym vocabulary cannot drift silently without copying acronym expansions or Appendix F
 prose.
+Document artifact coverage status reports `expectedIds`, `actualIds`,
+`missingDocumentArtifactIds`, and `extraDocumentArtifactIds` for the C260 Index outline artifact so
+the non-implementation reference boundary cannot drift silently or be confused with language section
+coverage.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

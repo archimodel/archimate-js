@@ -1,0 +1,47 @@
+checked_at=2026-07-09T14:12:30.7324393+09:00
+official_url=https://www.opengroup.org/xsd/archimate/
+web_search_result=OpenGroup search results still expose 3.1 XSD entries and MEFF page; no 4.0 XSD result detected.
+[
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/",
+    "status": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "length": "3056"
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd",
+    "status": 404,
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://www.opengroup.org/xsd/archimate/3.1/",
+    "status": 200,
+    "contentType": "text/html; charset=ISO-8859-1",
+    "length": ""
+  }
+]
