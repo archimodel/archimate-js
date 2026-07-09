@@ -2286,3 +2286,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1933-introduction-reference-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-introduction-reference-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 178
+
+- Goal: strengthen the C260 front matter and Index document-artifact boundary so non-implementation document references cannot be mistaken for language implementation sections, source gaps, remaining gaps, or official conformance blockers.
+- Observation: `project_memory/runlogs/20260709-1948-c260-document-artifact-boundary-check.json` confirms the local C260 PDF covers Cover, Title, Copyright, Table of Contents, Preface, The Open Group, This Document, Trademarks, Acknowledgements, Referenced Documents, and Index; Cover is derived from PDF page 1 because it is not a textual outline heading.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `expectedNonImplementationIds` for the 11 C260 document artifacts and points to the refreshed document-artifact boundary runlog.
+- Implemented: `lib/metamodel/languages/index.js` now reports `expectedNonImplementationIds`, `nonImplementationIds`, `missingNonImplementationIds`, and `extraNonImplementationIds` for `documentArtifactCoverage`.
+- Implemented: `test/language-profile.test.mjs` now verifies all document artifacts are non-implementation references and stay out of `sectionCoverage`, `sourceCoverage`, `remainingGaps`, `conformanceReadiness`, and `externalBlockerCatalog`.
+- Documentation: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the document-artifact non-implementation boundary.
+- Focused verification: `project_memory/runlogs/20260709-1950-document-artifact-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 220 tests in `project_memory/runlogs/20260709-1951-document-artifact-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1952-document-artifact-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1953-document-artifact-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1954-document-artifact-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-document-artifact-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

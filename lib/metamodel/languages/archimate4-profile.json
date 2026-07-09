@@ -1110,8 +1110,22 @@
     "documentArtifactCoverageCatalog": {
       "status": "c260-outline-derived",
       "sourceRunlogPath": "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt",
+      "boundarySourceRunlogPath": "project_memory/runlogs/20260709-1948-c260-document-artifact-boundary-check.json",
       "expectedCount": 11,
       "expectedIds": [
+        "cover",
+        "title",
+        "copyright",
+        "table-of-contents",
+        "preface",
+        "the-open-group",
+        "this-document",
+        "trademarks",
+        "acknowledgements",
+        "referenced-documents",
+        "index"
+      ],
+      "expectedNonImplementationIds": [
         "cover",
         "title",
         "copyright",

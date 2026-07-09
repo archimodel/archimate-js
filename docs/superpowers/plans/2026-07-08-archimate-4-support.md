@@ -138,9 +138,10 @@ Appendix F acronym coverage status reports `expectedIds`, `actualIds`,
 list so acronym vocabulary cannot drift silently without copying acronym expansions or Appendix F
 prose.
 Document artifact coverage status reports `expectedIds`, `actualIds`,
-`missingDocumentArtifactIds`, and `extraDocumentArtifactIds` for C260 front matter and Index outline
+`missingDocumentArtifactIds`, `extraDocumentArtifactIds`, `documentArtifactCoverage.nonImplementationIds`,
+and `documentArtifactCoverage.missingNonImplementationIds` for C260 front matter and Index outline
 artifacts so the non-implementation reference boundary cannot drift silently or be confused with
-language section coverage.
+language section coverage, source gaps, remaining gaps, or official conformance blockers.
 Aggregate C260 coverage status reports `expectedCoverageIds`, `actualCoverageIds`,
 `incompleteCoverageIds`, `rawDuplicateIds`, and `qualifiedDuplicateCount` so every tracked C260
 coverage group can be audited together without hiding repeated raw heading ids across chapters.

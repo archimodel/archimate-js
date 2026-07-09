@@ -188,10 +188,13 @@
 - `getArchimate4ImplementationStatus().documentArtifactCoverage` reports
   `documentArtifactCoverage.expectedIds`,
   `documentArtifactCoverage.actualIds`,
-  `documentArtifactCoverage.missingDocumentArtifactIds`, and
-  `documentArtifactCoverage.extraDocumentArtifactIds` so C260 front matter and Index outline
+  `documentArtifactCoverage.missingDocumentArtifactIds`,
+  `documentArtifactCoverage.extraDocumentArtifactIds`, `documentArtifactCoverage.nonImplementationIds`,
+  and `documentArtifactCoverage.missingNonImplementationIds` so C260 front matter and Index outline
   artifacts remain visible as non-implementation document artifacts rather than ArchiMate language
-  sections.
+  sections, source gaps, remaining gaps, or official conformance blockers. The document-artifact
+  boundary was rechecked from the local C260 PDF in
+  `project_memory/runlogs/20260709-1948-c260-document-artifact-boundary-check.json`.
 - `getArchimate4ImplementationStatus().c260CoverageAggregate` reports
   `c260CoverageAggregate.expectedCoverageIds`,
   `c260CoverageAggregate.incompleteCoverageIds`,

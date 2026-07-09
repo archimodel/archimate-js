@@ -193,10 +193,11 @@ It must expose exact C260 Appendix F Acronyms token fields
 `appendixFAcronymsCoverage.extraAppendixFAcronymIds`) so the implementation can track acronym
 coverage by token identity without copying acronym expansions or Appendix F prose.
 It must expose exact C260 document artifact fields (`documentArtifactCoverage.expectedIds`,
-`documentArtifactCoverage.actualIds`, `documentArtifactCoverage.missingDocumentArtifactIds`, and
-`documentArtifactCoverage.extraDocumentArtifactIds`) so C260 front matter and Index outline
+`documentArtifactCoverage.actualIds`, `documentArtifactCoverage.missingDocumentArtifactIds`,
+`documentArtifactCoverage.extraDocumentArtifactIds`, `documentArtifactCoverage.nonImplementationIds`,
+and `documentArtifactCoverage.missingNonImplementationIds`) so C260 front matter and Index outline
 artifacts are tracked as non-implementation references rather than mixed into ArchiMate language
-section coverage.
+section coverage, source gaps, remaining gaps, or official conformance blockers.
 It must expose aggregate C260 coverage fields (`c260CoverageAggregate.expectedCoverageIds`,
 `c260CoverageAggregate.incompleteCoverageIds`, `c260CoverageAggregate.rawDuplicateIds`, and
 `c260CoverageAggregate.qualifiedDuplicateCount`) so all C260 coverage groups can be audited together

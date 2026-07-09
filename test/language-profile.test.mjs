@@ -2070,6 +2070,7 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
   const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
   const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const status = getArchimate4ImplementationStatus();
   const documentArtifactCatalog = profile.conformance.documentArtifactCoverageCatalog;
   const documentArtifactCoverage = profile.conformance.documentArtifactCoverage;
   const sectionCatalog = profile.conformance.sectionCoverageCatalog;
@@ -2092,8 +2093,13 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
     documentArtifactCatalog.sourceRunlogPath,
     'project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt'
   );
+  assert.equal(
+    documentArtifactCatalog.boundarySourceRunlogPath,
+    'project_memory/runlogs/20260709-1948-c260-document-artifact-boundary-check.json'
+  );
   assert.equal(documentArtifactCatalog.expectedCount, expectedDocumentArtifactIds.length);
   assert.deepEqual(documentArtifactCatalog.expectedIds, expectedDocumentArtifactIds);
+  assert.deepEqual(documentArtifactCatalog.expectedNonImplementationIds, expectedDocumentArtifactIds);
   assert.deepEqual(
     documentArtifactCoverage.map((documentArtifactItem) => documentArtifactItem.id),
     expectedDocumentArtifactIds
@@ -2104,16 +2110,49 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
     'the-open-group',
     'this-document'
   ]);
-  assert.equal(sectionCatalog.expectedIds.includes('index'), false);
-  assert.equal(sectionCatalog.expectedIds.includes('table-of-contents'), false);
+  assert.deepEqual(status.documentArtifactCoverage.nonImplementationIds, expectedDocumentArtifactIds);
+  assert.deepEqual(status.documentArtifactCoverage.missingNonImplementationIds, []);
+  assert.deepEqual(status.documentArtifactCoverage.extraNonImplementationIds, []);
+  assert.equal(status.documentArtifactCoverage.complete, true);
+  assert.deepEqual(
+    expectedDocumentArtifactIds.filter((documentArtifactId) => sectionCatalog.expectedIds.includes(documentArtifactId)),
+    []
+  );
 
   assert.match(languageIndex, /function summarizeDocumentArtifactCoverage/);
   assert.match(languageIndex, /documentArtifactCoverage: documentArtifactCoverage/);
   assert.match(languageIndex, /missingDocumentArtifactIds/);
+  assert.match(languageIndex, /missingNonImplementationIds/);
   assert.match(readme, /documentArtifactCoverage\.expectedIds/);
+  assert.match(readme, /documentArtifactCoverage\.nonImplementationIds/);
   assert.match(sources, /documentArtifactCoverage\.actualIds/);
+  assert.match(sources, /documentArtifactCoverage\.missingNonImplementationIds/);
   assert.match(officialSpec, /documentArtifactCoverage\.missingDocumentArtifactIds/);
+  assert.match(officialSpec, /documentArtifactCoverage\.missingNonImplementationIds/);
   assert.match(plan, /Document artifact coverage status reports/);
+  assert.match(plan, /documentArtifactCoverage\.nonImplementationIds/);
+});
+
+test('archimate 4 document artifacts stay outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const documentArtifactIds = status.documentArtifactCoverage.nonImplementationIds;
+
+  assert.deepEqual(documentArtifactIds, status.documentArtifactCoverage.expectedIds);
+  assert.deepEqual(status.documentArtifactCoverage.missingNonImplementationIds, []);
+  assert.deepEqual(status.documentArtifactCoverage.extraNonImplementationIds, []);
+
+  for (const documentArtifactId of documentArtifactIds) {
+    assert.equal(status.sectionCoverage.expectedIds.includes(documentArtifactId), false);
+    assert.equal(status.sectionCoverage.actualIds.includes(documentArtifactId), false);
+    assert.equal(status.sourceCoverage.actualSourceIds.includes(documentArtifactId), false);
+    assert.equal(status.sourceCoverage.missingRequiredSources.includes(documentArtifactId), false);
+    assert.equal(status.sourceCoverage.missingCompanionSources.includes(documentArtifactId), false);
+    assert.equal(status.remainingGaps.actualIds.includes(documentArtifactId), false);
+    assert.equal(status.remainingGaps.unresolvedIds.includes(documentArtifactId), false);
+    assert.equal(status.conformanceReadiness.blockers.includes(documentArtifactId), false);
+    assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes(documentArtifactId), false);
+    assert.equal(status.externalBlockerCatalog.actualIds.includes(documentArtifactId), false);
+  }
 });
 
 test('archimate 4 implementation status exposes aggregate C260 coverage integrity', async () => {
