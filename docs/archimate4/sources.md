@@ -263,7 +263,7 @@
   references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color`
   values, `Viewpoints` container
   structure, viewpoint
-  purpose/content and allowed-type string-entry definitions, model-defined and profile-defined viewpoint
+  purpose/content token-field structure and allowed-type string-entry definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
   structure, `BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef`
   references, `PropertyDefinitions` / `Properties` container structure, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references,
@@ -584,7 +584,7 @@
 - `validateArchimate4Model()` checks `modelingNotes` list shape plus note `type` and
   `documentation` string fields.
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
-  host tooling, with purpose/content token validation.
+  host tooling, with purpose/content token-field structure and token validation.
 - Custom viewpoint definitions validate allowed element and relationship types against the active profile,
   including custom specialized concepts and relationships already merged into that profile.
 - A View can apply a profile-defined viewpoint by using its `viewpoint` name. Unknown `View.viewpoint`
@@ -887,7 +887,7 @@
   relationship types at a junction, direct relationship validity for chains through a junction,
   view tree structure, view viewpoint string attributes and references, view node element references and geometry, view connection relationship references,
   endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values,
-  `Viewpoints` container structure, viewpoint purpose/content and allowed element/relationship type definitions with string `type` values, model-defined and
+  `Viewpoints` container structure, viewpoint purpose/content token-field structure and allowed element/relationship type definitions with string `type` values, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
   and `modelingNotes` structure, relationship option field types, present IdObject id and `xsi:type` string values, ViewElement label string values, `BaseObject` name/documentation string fields, reusable
   `PropertyDefinitions` / `Properties` container structure, `PropertyDefinition` structure,

@@ -672,6 +672,51 @@ test('archimate 4 model validation reports invalid viewpoint container structure
   assert.equal(diagnosticCodes(invalidViewpointShorthandResult).includes('invalid-viewpoint-list'), true);
 });
 
+test('archimate 4 model validation reports invalid viewpoint purpose content field structure', () => {
+  const result = validateArchimate4Model({
+    views: {
+      viewpoints: [
+        {
+          id: 'viewpoint-invalid-purpose',
+          viewpointPurpose: [
+            'Deciding',
+            42
+          ],
+          viewpointContent: 'Overview'
+        },
+        {
+          id: 'viewpoint-invalid-content',
+          viewpointPurpose: 'Designing',
+          viewpointContent: [
+            'Details',
+            {}
+          ]
+        },
+        {
+          id: 'viewpoint-invalid-scalars',
+          viewpointPurpose: false,
+          viewpointContent: {}
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-viewpoint-purpose-entry'), true);
+  assert.equal(codes.includes('invalid-viewpoint-content-entry'), true);
+  assert.equal(codes.includes('unsupported-viewpoint-purpose'), false);
+  assert.equal(codes.includes('unsupported-viewpoint-content'), false);
+  assert.equal(result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-viewpoint-purpose-entry';
+  }).length, 2);
+  assert.equal(result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-viewpoint-content-entry';
+  }).length, 2);
+});
+
 test('archimate 4 model validation rejects invalid view viewpoint attributes', () => {
   const result = validateArchimate4Model({
     views: {

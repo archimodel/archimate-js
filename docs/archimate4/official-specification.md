@@ -386,6 +386,9 @@ Supported mechanism:
 - `validateArchimate4Model()` checks `Viewpoints` root container, viewpoint list, and viewpoint
   entry structure before applying purpose/content, allowed-type, concern, stakeholder, and
   modeling-note diagnostics.
+- `validateArchimate4Model()` checks `viewpointPurpose` and `viewpointContent` token-field shape
+  before applying supported-token diagnostics, so malformed scalar or list entries are not mistaken
+  for unsupported C260 classification values.
 - `validateArchimate4Model()` checks `modelingNotes` list shape plus each note's optional `type` and
   `documentation` string fields.
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
@@ -831,7 +834,7 @@ In particular:
   relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry,
   IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition,
   Viewpoints container structure, viewpoint allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
-  modeling-note structure, BaseObject field structure, organization tree structure and identifier-reference,
+  modeling-note structure, viewpoint purpose/content token-field structure, BaseObject field structure, organization tree structure and identifier-reference,
   property-container structure, property-definition structure and reference, property value string-structure, or profile attribute
   property coverage.
 

@@ -1,0 +1,54 @@
+(node:16780) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/validation/archimate4-model.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (2.1564ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.2458ms)
+✔ archimate 4 model validation reports invalid base object name and documentation fields (1.4032ms)
+✔ archimate 4 model validation rejects invalid xsi type fields (0.8114ms)
+✔ archimate 4 model validation reports invalid present IdObject ids (0.9878ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (0.2654ms)
+✔ archimate 4 model validation reports invalid concept container structure (0.5038ms)
+✔ archimate 4 model validation reports invalid and unknown relationship endpoint references (0.2849ms)
+✔ archimate 4 model validation can call an active relationship validator (0.3017ms)
+✔ archimate 4 model validation reports invalid relationship option fields (0.3558ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.5495ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.2097ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.61ms)
+✔ archimate 4 model validation reports invalid viewpoint container structure (0.2324ms)
+✔ archimate 4 model validation reports invalid viewpoint purpose content field structure (0.19ms)
+✔ archimate 4 model validation rejects invalid view viewpoint attributes (0.1257ms)
+✔ archimate 4 model validation rejects non-string viewpoint allowed type entries (0.1397ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.3176ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.1498ms)
+✔ archimate 4 model validation reports invalid view tree structure (0.2918ms)
+✔ archimate 4 model validation reports invalid view element references (0.4575ms)
+✔ archimate 4 model validation reports invalid view connection endpoint references (0.2414ms)
+✔ archimate 4 model validation reports view connection endpoint concept mismatches (0.1835ms)
+✔ archimate 4 model validation accepts valid view element references (0.1899ms)
+✔ archimate 4 model validation reports invalid view node geometry (0.2102ms)
+✔ archimate 4 model validation reports invalid view connection waypoint geometry (0.3197ms)
+✔ archimate 4 model validation reports invalid view element label values (0.1362ms)
+✔ archimate 4 model validation reports invalid view style values (0.5501ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.4691ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.242ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (2.0441ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.1561ms)
+✔ archimate 4 model validation reports invalid organization identifier references (0.2365ms)
+✔ archimate 4 model validation reports invalid organization tree structure (0.1404ms)
+✔ archimate 4 model validation accepts organization references to model concepts (0.1744ms)
+✔ archimate 4 model validation reports invalid property definition lists (0.1216ms)
+✔ archimate 4 model validation reports invalid property container structure (0.1439ms)
+✔ archimate 4 model validation reports invalid property definition entries (0.1911ms)
+✔ archimate 4 model validation reports invalid property definition references (1.322ms)
+✔ archimate 4 model validation accepts property definition references by id (1.0117ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (0.6454ms)
+✔ archimate 4 model validation is exported from the package root (20.1635ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 170.3198

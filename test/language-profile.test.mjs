@@ -1092,6 +1092,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'xsi-type-fields',
     'viewpoint-container-structure',
     'viewpoint-purpose-content',
+    'viewpoint-token-field-structure',
     'viewpoint-allowed-types',
     'view-viewpoint-attribute',
     'view-viewpoint-reference',

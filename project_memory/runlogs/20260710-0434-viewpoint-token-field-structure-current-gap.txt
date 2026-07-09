@@ -1,0 +1,105 @@
+(node:51996) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/validation/archimate4-model.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "label": "purpose-number",
+  "valid": false,
+  "codes": [
+    "unsupported-viewpoint-purpose"
+  ],
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-purpose",
+      "message": "42 is not a supported ArchiMate viewpoint viewpointPurpose value.",
+      "viewpointId": "vp",
+      "field": "viewpointPurpose",
+      "value": "42"
+    }
+  ]
+}
+{
+  "label": "purpose-object",
+  "valid": false,
+  "codes": [
+    "unsupported-viewpoint-purpose",
+    "unsupported-viewpoint-purpose"
+  ],
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-purpose",
+      "message": "[object is not a supported ArchiMate viewpoint viewpointPurpose value.",
+      "viewpointId": "vp",
+      "field": "viewpointPurpose",
+      "value": "[object"
+    },
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-purpose",
+      "message": "Object] is not a supported ArchiMate viewpoint viewpointPurpose value.",
+      "viewpointId": "vp",
+      "field": "viewpointPurpose",
+      "value": "Object]"
+    }
+  ]
+}
+{
+  "label": "purpose-array-object",
+  "valid": false,
+  "codes": [
+    "unsupported-viewpoint-purpose",
+    "unsupported-viewpoint-purpose"
+  ],
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-purpose",
+      "message": "[object is not a supported ArchiMate viewpoint viewpointPurpose value.",
+      "viewpointId": "vp",
+      "field": "viewpointPurpose",
+      "value": "[object"
+    },
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-purpose",
+      "message": "Object] is not a supported ArchiMate viewpoint viewpointPurpose value.",
+      "viewpointId": "vp",
+      "field": "viewpointPurpose",
+      "value": "Object]"
+    }
+  ]
+}
+{
+  "label": "content-false",
+  "valid": true,
+  "codes": [],
+  "diagnostics": []
+}
+{
+  "label": "content-array-object",
+  "valid": false,
+  "codes": [
+    "unsupported-viewpoint-content",
+    "unsupported-viewpoint-content"
+  ],
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-content",
+      "message": "[object is not a supported ArchiMate viewpoint viewpointContent value.",
+      "viewpointId": "vp",
+      "field": "viewpointContent",
+      "value": "[object"
+    },
+    {
+      "severity": "error",
+      "code": "unsupported-viewpoint-content",
+      "message": "Object] is not a supported ArchiMate viewpoint viewpointContent value.",
+      "viewpointId": "vp",
+      "field": "viewpointContent",
+      "value": "Object]"
+    }
+  ]
+}
