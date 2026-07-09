@@ -129,6 +129,13 @@ It must expose exact C260 Chapter 11 Relationships Between Core Domains outline 
 `relationshipsBetweenCoreDomainsCoverage.missingRelationshipsBetweenCoreDomainsIds`, and
 `relationshipsBetweenCoreDomainsCoverage.extraRelationshipsBetweenCoreDomainsIds`) so the
 implementation can track cross-domain relationship example coverage by subsection identity.
+It must expose exact C260 Chapter 12 Implementation and Migration Domain outline fields
+(`implementationAndMigrationDomainCoverage.expectedIds`,
+`implementationAndMigrationDomainCoverage.actualIds`,
+`implementationAndMigrationDomainCoverage.missingImplementationAndMigrationDomainIds`, and
+`implementationAndMigrationDomainCoverage.extraImplementationAndMigrationDomainIds`) so the
+implementation can track Implementation and Migration metamodel, element, example, summary, and
+relationship-with-domains coverage by subsection and element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

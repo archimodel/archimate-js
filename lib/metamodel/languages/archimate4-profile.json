@@ -666,6 +666,31 @@
     "relationshipsBetweenCoreDomainsCoverage": [
       { "id": "core-domain-relationships-example", "c260Section": "11.1", "heading": "Example", "status": "tracked" }
     ],
+    "implementationAndMigrationDomainCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 8,
+      "expectedIds": [
+        "implementation-and-migration-elements-metamodel",
+        "implementation-and-migration-elements",
+        "work-package",
+        "deliverable",
+        "plateau",
+        "implementation-and-migration-example",
+        "summary-of-implementation-and-migration-elements",
+        "relationships-with-domains"
+      ]
+    },
+    "implementationAndMigrationDomainCoverage": [
+      { "id": "implementation-and-migration-elements-metamodel", "c260Section": "12.1", "heading": "Implementation and Migration Elements Metamodel", "status": "tracked" },
+      { "id": "implementation-and-migration-elements", "c260Section": "12.2", "heading": "Implementation and Migration Elements", "status": "tracked" },
+      { "id": "work-package", "c260Section": "12.2.1", "heading": "Work Package", "status": "tracked" },
+      { "id": "deliverable", "c260Section": "12.2.2", "heading": "Deliverable", "status": "tracked" },
+      { "id": "plateau", "c260Section": "12.2.3", "heading": "Plateau", "status": "tracked" },
+      { "id": "implementation-and-migration-example", "c260Section": "12.2.4", "heading": "Example", "status": "tracked" },
+      { "id": "summary-of-implementation-and-migration-elements", "c260Section": "12.3", "heading": "Summary of Implementation and Migration Elements", "status": "tracked" },
+      { "id": "relationships-with-domains", "c260Section": "12.4", "heading": "Relationships with Domains", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

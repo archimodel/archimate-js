@@ -1,0 +1,28 @@
+{
+  "expectedCount": 8,
+  "actualCount": 8,
+  "missingImplementationAndMigrationDomainIds": [],
+  "extraImplementationAndMigrationDomainIds": [],
+  "complete": true,
+  "expectedIds": [
+    "implementation-and-migration-elements-metamodel",
+    "implementation-and-migration-elements",
+    "work-package",
+    "deliverable",
+    "plateau",
+    "implementation-and-migration-example",
+    "summary-of-implementation-and-migration-elements",
+    "relationships-with-domains"
+  ],
+  "actualIds": [
+    "implementation-and-migration-elements-metamodel",
+    "implementation-and-migration-elements",
+    "work-package",
+    "deliverable",
+    "plateau",
+    "implementation-and-migration-example",
+    "summary-of-implementation-and-migration-elements",
+    "relationships-with-domains"
+  ]
+}
+EXIT_CODE=0

@@ -1024,6 +1024,51 @@ test('archimate 4 implementation status exposes C260 relationships between core 
   assert.match(plan, /Relationships between core domains coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 implementation and migration domain coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const implementationAndMigrationDomainCatalog = profile.conformance.implementationAndMigrationDomainCoverageCatalog;
+  const implementationAndMigrationDomainCoverage = profile.conformance.implementationAndMigrationDomainCoverage;
+  const expectedImplementationAndMigrationDomainIds = [
+    'implementation-and-migration-elements-metamodel',
+    'implementation-and-migration-elements',
+    'work-package',
+    'deliverable',
+    'plateau',
+    'implementation-and-migration-example',
+    'summary-of-implementation-and-migration-elements',
+    'relationships-with-domains'
+  ];
+
+  assert.equal(implementationAndMigrationDomainCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    implementationAndMigrationDomainCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(implementationAndMigrationDomainCatalog.expectedCount, expectedImplementationAndMigrationDomainIds.length);
+  assert.deepEqual(implementationAndMigrationDomainCatalog.expectedIds, expectedImplementationAndMigrationDomainIds);
+  assert.deepEqual(
+    implementationAndMigrationDomainCoverage.map((implementationAndMigrationDomainItem) => implementationAndMigrationDomainItem.id),
+    expectedImplementationAndMigrationDomainIds
+  );
+  assert.equal(
+    implementationAndMigrationDomainCoverage.every((implementationAndMigrationDomainItem) => implementationAndMigrationDomainItem.c260Section && implementationAndMigrationDomainItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeImplementationAndMigrationDomainCoverage/);
+  assert.match(languageIndex, /implementationAndMigrationDomainCoverage: implementationAndMigrationDomainCoverage/);
+  assert.match(languageIndex, /missingImplementationAndMigrationDomainIds/);
+  assert.match(readme, /implementationAndMigrationDomainCoverage\.expectedIds/);
+  assert.match(sources, /implementationAndMigrationDomainCoverage\.actualIds/);
+  assert.match(officialSpec, /implementationAndMigrationDomainCoverage\.missingImplementationAndMigrationDomainIds/);
+  assert.match(plan, /Implementation and migration domain coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

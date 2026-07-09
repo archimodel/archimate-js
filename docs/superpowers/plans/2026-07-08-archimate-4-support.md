@@ -87,6 +87,10 @@ Technology subsection and element headings cannot drift silently.
 Relationships between core domains coverage status reports `expectedIds`, `actualIds`,
 `missingRelationshipsBetweenCoreDomainsIds`, and `extraRelationshipsBetweenCoreDomainsIds` for the
 C260 Chapter 11 outline so cross-domain relationship subsection headings cannot drift silently.
+Implementation and migration domain coverage status reports `expectedIds`, `actualIds`,
+`missingImplementationAndMigrationDomainIds`, and `extraImplementationAndMigrationDomainIds` for
+the C260 Chapter 12 outline so Implementation and Migration subsection and element headings cannot
+drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact
