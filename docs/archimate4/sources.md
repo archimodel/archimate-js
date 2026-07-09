@@ -252,9 +252,10 @@
   `implementationCompletion.incompleteSummaryCount`, and
   `implementationCompletion.incompleteSummaryPaths` so the API exposes its own completion scan.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-2043-status-completion-api-scan.json`; it records 47 top-level
-  status keys, 38 `complete` summaries, and no incomplete summaries. The companion stderr log is
-  empty so the runlog can be parsed by audit tooling without warning-text cleanup.
+  `project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
+  status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage
+  status-key guard arrays. The companion stderr log is empty so the runlog can be parsed by audit
+  tooling without warning-text cleanup.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

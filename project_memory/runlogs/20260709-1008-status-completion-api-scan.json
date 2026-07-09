@@ -1,0 +1,346 @@
+{
+  "checkedAt": "2026-07-09T22:18:00+09:00",
+  "topKeys": [
+    "version",
+    "standard",
+    "experimental",
+    "namespace",
+    "schemaLocation",
+    "elementCatalog",
+    "relationshipConnectors",
+    "relationshipMatrix",
+    "relationshipProfile",
+    "exchangeFormat",
+    "iconography",
+    "profileAttributeTypes",
+    "viewpointClassification",
+    "viewpointMechanism",
+    "stakeholderConcerns",
+    "conformanceRequirements",
+    "sourceCoverage",
+    "conformanceReadiness",
+    "remainingGaps",
+    "sectionCoverage",
+    "introductionCoverage",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "languageCustomizationMechanismsCoverage",
+    "appendixANotationCoverage",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "appendixFAcronymsCoverage",
+    "documentArtifactCoverage",
+    "c260CoverageAggregate",
+    "c260SourceAlignment",
+    "c260CoverageSourceEvidence",
+    "externalBlockerCatalog",
+    "externalBlockers",
+    "implementationCompletion"
+  ],
+  "topKeyCount": 47,
+  "implementationCompletion": {
+    "status": "current-status-summary-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-1008-status-completion-api-scan.json",
+    "topKeys": [
+      "version",
+      "standard",
+      "experimental",
+      "namespace",
+      "schemaLocation",
+      "elementCatalog",
+      "relationshipConnectors",
+      "relationshipMatrix",
+      "relationshipProfile",
+      "exchangeFormat",
+      "iconography",
+      "profileAttributeTypes",
+      "viewpointClassification",
+      "viewpointMechanism",
+      "stakeholderConcerns",
+      "conformanceRequirements",
+      "sourceCoverage",
+      "conformanceReadiness",
+      "remainingGaps",
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage",
+      "c260CoverageAggregate",
+      "c260SourceAlignment",
+      "c260CoverageSourceEvidence",
+      "externalBlockerCatalog",
+      "externalBlockers",
+      "implementationCompletion"
+    ],
+    "topKeyCount": 47,
+    "auditedCompleteSummaryCount": 37,
+    "completeSummaryCount": 38,
+    "incompleteSummaryCount": 0,
+    "incompleteSummaryPaths": [],
+    "incompleteSummaries": [],
+    "complete": true
+  },
+  "sectionCoverageStatusKeys": [
+    "introductionCoverage",
+    "sourceCoverage",
+    "conformanceRequirements",
+    "conformanceReadiness",
+    "remainingGaps",
+    "externalBlockerCatalog",
+    "exchangeFormat",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "elementCatalog",
+    "relationshipConnectors",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "relationshipMatrix",
+    "relationshipProfile",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "viewpointClassification",
+    "viewpointMechanism",
+    "stakeholderConcerns",
+    "languageCustomizationMechanismsCoverage",
+    "profileAttributeTypes",
+    "appendixANotationCoverage",
+    "iconography",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "appendixFAcronymsCoverage"
+  ],
+  "sectionCoverageMissingStatusKeyIds": [],
+  "sectionCoverageExtraStatusKeyIds": [],
+  "sectionCoverageMissingStatusKeyReferenceIds": [],
+  "completeSummaryCount": 38,
+  "incompleteSummaryCount": 0,
+  "incompleteSummaries": [],
+  "completeSummaries": [
+    {
+      "path": "elementCatalog",
+      "complete": true,
+      "status": "implemented"
+    },
+    {
+      "path": "relationshipConnectors",
+      "complete": true,
+      "status": "implemented-experimental-exchange"
+    },
+    {
+      "path": "profileAttributeTypes",
+      "complete": true,
+      "status": "implemented"
+    },
+    {
+      "path": "viewpointClassification",
+      "complete": true,
+      "status": "implemented"
+    },
+    {
+      "path": "viewpointMechanism",
+      "complete": true,
+      "status": "implemented"
+    },
+    {
+      "path": "stakeholderConcerns",
+      "complete": true,
+      "status": "implemented"
+    },
+    {
+      "path": "conformanceRequirements",
+      "complete": true,
+      "status": "implemented-with-external-blockers"
+    },
+    {
+      "path": "conformanceRequirements.shall",
+      "complete": true
+    },
+    {
+      "path": "conformanceRequirements.may",
+      "complete": true
+    },
+    {
+      "path": "sourceCoverage",
+      "complete": true,
+      "status": "implemented-with-external-blockers"
+    },
+    {
+      "path": "remainingGaps",
+      "complete": true,
+      "status": "external-source-dependent"
+    },
+    {
+      "path": "sectionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "introductionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "definitionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "languageStructureCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "commonDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "relationshipsAndJunctionsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "motivationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "strategyDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "businessDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "applicationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "technologyDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "relationshipsBetweenCoreDomainsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "implementationAndMigrationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "stakeholdersArchitectureViewsViewpointsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "languageCustomizationMechanismsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixANotationCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixBRelationshipsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixCExampleViewpointsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixDStandardsGuidanceCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixEVersionChangesCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "appendixFAcronymsCoverage",
+      "complete": true,
+      "status": "c260-acronym-token-derived"
+    },
+    {
+      "path": "documentArtifactCoverage",
+      "complete": true,
+      "status": "c260-outline-derived"
+    },
+    {
+      "path": "c260CoverageAggregate",
+      "complete": true,
+      "status": "c260-coverage-aggregate-derived"
+    },
+    {
+      "path": "c260SourceAlignment",
+      "complete": true,
+      "status": "c260-pdf-outline-and-derived-token-aligned"
+    },
+    {
+      "path": "c260CoverageSourceEvidence",
+      "complete": true,
+      "status": "c260-coverage-source-evidence-aligned"
+    },
+    {
+      "path": "externalBlockerCatalog",
+      "complete": true,
+      "status": "external-source-dependent"
+    },
+    {
+      "path": "implementationCompletion",
+      "complete": true,
+      "status": "current-status-summary-derived"
+    }
+  ]
+}

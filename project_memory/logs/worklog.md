@@ -2420,3 +2420,18 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1005-section-status-key-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-section-status-key-reference-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 188
+
+- Goal: refresh the implementation-status completion API scan after adding C260 section status-key guards so the current status evidence includes the latest guard arrays.
+- Observation: `implementationCompletion.sourceRunlogPath` still pointed at `project_memory/runlogs/20260709-2043-status-completion-api-scan.json`, which predated the section status-key reference guard even though the live status API was current.
+- Implemented: `lib/metamodel/languages/index.js` now points `implementationCompletion.sourceRunlogPath` at `project_memory/runlogs/20260709-1008-status-completion-api-scan.json`.
+- Implemented: `project_memory/runlogs/20260709-1008-status-completion-api-scan.json` now records 47 top-level status keys, 38 complete summaries, no incomplete summaries, and the section coverage status-key guard arrays.
+- Implemented: `test/language-profile.test.mjs` now verifies the refreshed scan path and checks the scan's section status-key guard arrays against live `status.sectionCoverage`.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now cite the refreshed scan.
+- Focused verification: completion scan focused test passed with 87 tests in `project_memory/runlogs/20260709-1009-status-completion-api-refresh-focused-test.txt`.
+- Verification: `npm run test:language` passed with 223 tests in `project_memory/runlogs/20260709-1010-status-completion-api-refresh-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1011-status-completion-api-refresh-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1012-status-completion-api-refresh-diff-check.txt`; JSON parse passed in `project_memory/runlogs/20260709-1014-status-completion-api-refresh-json-check.txt`.
+- Final verification: JSON parse passed in `project_memory/runlogs/20260709-1015-status-completion-api-refresh-final-json-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1016-status-completion-api-refresh-final-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1013-status-completion-api-refresh-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-status-completion-api-refresh-1008-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

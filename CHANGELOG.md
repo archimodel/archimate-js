@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `DOCS`: refreshed the ArchiMate 4 implementation-status completion scan evidence.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 * `CORE`: linked C260 section coverage entries to implementation status API keys so chapter and appendix coverage cannot drift from exposed status summaries.
+* `DOCS`: refreshed the implementation-status completion scan after adding section status-key guards.
 
 ## 0.0.4
 

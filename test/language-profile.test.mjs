@@ -1030,9 +1030,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-2043-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-1008-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-2043-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-1008-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1052,7 +1052,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260709-2043-status-completion-api-scan.json'
+    'project_memory/runlogs/20260709-1008-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1065,7 +1065,14 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(runlog.completeSummaryCount, summaries.length);
   assert.equal(runlog.incompleteSummaries.length, 0);
   assert.deepEqual(runlogSummaryIdentity, summaryIdentity);
-  assert.match(readme, /20260709-2043-status-completion-api-scan/);
+  assert.deepEqual(runlog.sectionCoverageStatusKeys, status.sectionCoverage.statusKeyIds);
+  assert.deepEqual(runlog.sectionCoverageMissingStatusKeyIds, status.sectionCoverage.missingStatusKeyIds);
+  assert.deepEqual(runlog.sectionCoverageExtraStatusKeyIds, status.sectionCoverage.extraStatusKeyIds);
+  assert.deepEqual(
+    runlog.sectionCoverageMissingStatusKeyReferenceIds,
+    status.sectionCoverage.missingStatusKeyReferenceIds
+  );
+  assert.match(readme, /20260709-1008-status-completion-api-scan/);
   assert.match(sources, /38 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);

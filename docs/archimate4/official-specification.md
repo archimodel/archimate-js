@@ -245,8 +245,9 @@ The status must expose implementation completion scan fields
 (`implementationCompletion.topKeys`, `implementationCompletion.completeSummaryCount`,
 `implementationCompletion.incompleteSummaryCount`, and `implementationCompletion.incompleteSummaryPaths`).
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260709-2043-status-completion-api-scan.json`; it records 47 top-level
-status keys, 38 `complete` summaries, and no incomplete summaries, with an empty stderr companion log.
+`project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
+status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage status-key
+guard arrays, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot
