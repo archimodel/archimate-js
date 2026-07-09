@@ -1883,3 +1883,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1205-viewpoint-customization-staged-diff-check.txt` passed.
 - Audit: `project_memory/audit/reports/20260709-viewpoint-customization-behavior-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 146
+
+- Goal: strengthen C260 language customization profile-attribute verification from source-pattern checks to direct customization behavior tests.
+- Implemented: `test/language-profile.test.mjs` now verifies `archimateLanguageProfile.attributes` through `createLanguageProfile()` and `getProfileAttributesForConcept()`.
+- Guarded behavior: attributes on standard and specialized element concepts and standard/specialized relationship concepts are returned through specialization lineage; retired ArchiMate 3.x concepts, unsupported attribute types, and missing names are rejected.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` point to the behavior-test runlog while preserving the MEFF 4.0 exchange boundary.
+- Verification: initial behavior test passed in `project_memory/runlogs/20260709-1206-profile-attribute-customization-behavior-test-language.txt`; final `npm run test:language` passed with 190 tests in `project_memory/runlogs/20260709-1207-profile-attribute-customization-test-language-pass.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1208-profile-attribute-customization-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1209-profile-attribute-customization-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1210-profile-attribute-customization-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1211-profile-attribute-customization-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1212-profile-attribute-customization-staged-diff-check.txt` passed.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-customization-behavior-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

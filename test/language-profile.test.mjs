@@ -3,7 +3,10 @@ import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
-import { createLanguageProfile } from '../lib/metamodel/languages/index.js';
+import {
+  createLanguageProfile,
+  getProfileAttributesForConcept
+} from '../lib/metamodel/languages/index.js';
 
 const execFileAsync = promisify(execFile);
 
@@ -433,6 +436,95 @@ test('language profile customization validates C260 profile attribute definition
   assert.match(sources, /Profile attributes are validated as C260 typed attributes/);
   assert.match(sources, /Profile attribute values can be normalized and validated/);
   assert.match(sources, /Profile attribute values can also be written to model `Properties`/);
+});
+
+test('custom profile attributes validate active concepts relationships and lineage lookup', () => {
+  const profile = createLanguageProfile('4.0', {
+    version: '4.0',
+    elements: [
+      {
+        type: 'CustomerActor',
+        specializes: 'BusinessActor',
+        domain: 'Business',
+        aspect: 'active-structure',
+        className: 'business-actor',
+        typeName: 'Customer Actor'
+      }
+    ],
+    relationships: [
+      {
+        type: 'EscalatesTo',
+        specializes: 'Association',
+        label: 'Escalates To'
+      }
+    ],
+    attributes: [
+      {
+        concept: 'BusinessActor',
+        name: 'criticality',
+        type: 'Integer'
+      },
+      {
+        concept: 'CustomerActor',
+        name: 'segment',
+        type: 'String'
+      },
+      {
+        concept: 'Association',
+        name: 'contractual',
+        type: 'Boolean'
+      },
+      {
+        concept: 'EscalatesTo',
+        name: 'escalationNote',
+        type: 'String'
+      }
+    ]
+  });
+
+  assert.deepEqual(
+    getProfileAttributesForConcept('CustomerActor', profile).map((attribute) => attribute.name),
+    [
+      'criticality',
+      'segment'
+    ]
+  );
+  assert.deepEqual(
+    getProfileAttributesForConcept('EscalatesTo', profile).map((attribute) => attribute.name),
+    [
+      'contractual',
+      'escalationNote'
+    ]
+  );
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    attributes: [
+      {
+        concept: 'BusinessInteraction',
+        name: 'retired',
+        type: 'String'
+      }
+    ]
+  }), /Unsupported ArchiMate profile attribute concept: BusinessInteraction/);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    attributes: [
+      {
+        concept: 'BusinessActor',
+        name: 'badType',
+        type: 'Enumeration'
+      }
+    ]
+  }), /Unsupported ArchiMate profile attribute type: Enumeration/);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    attributes: [
+      {
+        concept: 'Association',
+        type: 'String'
+      }
+    ]
+  }), /Custom ArchiMate profile attributes require name/);
 });
 
 test('language profile customization supports relationship specializations', async () => {

@@ -424,6 +424,11 @@
   elements, connectors, or relationships.
 - Profile attributes are validated as C260 typed attributes: each entry must name an active element,
   connector, or relationship concept and use an implementation-supported attribute type.
+- Behavioral coverage is recorded in
+  `project_memory/runlogs/20260709-1206-profile-attribute-customization-behavior-test-language.txt`:
+  custom profile attributes are accepted for active standard and specialized element/relationship
+  concepts, inherited through the specialization lineage, and rejected for retired ArchiMate 3.x
+  concepts, unsupported attribute types, or missing attribute names.
 - Profile attribute values can be normalized and validated through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()` for the implementation-supported basic type set recorded from
   the local C260 scan. `getProfileAttributesForConcept()` returns attributes for a concept and its

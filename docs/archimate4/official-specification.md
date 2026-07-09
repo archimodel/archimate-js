@@ -256,6 +256,10 @@ Supported customization data:
   Host tooling can retrieve applicable attributes through `getProfileAttributesForConcept()` and can
   normalize or validate implementation-supported typed values through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()`.
+  Behavior is guarded by
+  `project_memory/runlogs/20260709-1206-profile-attribute-customization-behavior-test-language.txt`:
+  attributes on standard and specialized element/relationship concepts are returned through the
+  specialization lineage, while retired concepts, unsupported types, and missing names are rejected.
 - Profile attribute values may be persisted through `setProfileAttributePropertyValue()`, which writes
   a reusable `PropertyDefinition` named `archimate-js:profileAttribute:<concept>:<name>` and a
   per-concept `Property` value. `getProfileAttributePropertyValue()` reads the stored string value back
