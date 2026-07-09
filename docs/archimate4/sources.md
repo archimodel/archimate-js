@@ -184,6 +184,12 @@
   `documentArtifactCoverage.extraDocumentArtifactIds` so C260 front matter and Index outline
   artifacts remain visible as non-implementation document artifacts rather than ArchiMate language
   sections.
+- `getArchimate4ImplementationStatus().c260CoverageAggregate` reports
+  `c260CoverageAggregate.expectedCoverageIds`,
+  `c260CoverageAggregate.incompleteCoverageIds`,
+  `c260CoverageAggregate.rawDuplicateIds`, and
+  `c260CoverageAggregate.qualifiedDuplicateCount` so all C260 coverage groups can be audited
+  together while repeated raw heading ids remain visible and qualified coverage ids stay unique.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

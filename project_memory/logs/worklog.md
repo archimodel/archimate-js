@@ -1774,3 +1774,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1102-c260-front-matter-document-artifacts-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-front-matter-document-artifacts-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 138
+
+- Goal: add an aggregate C260 coverage integrity status so all tracked C260 coverage groups can be audited together.
+- Source check: existing profile coverage arrays total 22 coverage groups and 284 qualified coverage items; raw ids repeat for expected chapter-local headings, so the aggregate status must expose raw duplicates while ensuring qualified ids are collision-free.
+- Red test: `project_memory/runlogs/20260709-1106-c260-coverage-aggregate-red-test.txt` failed because `getArchimate4ImplementationStatus().c260CoverageAggregate` was absent.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `c260CoverageAggregate` with expected/actual/missing/extra coverage ids, incomplete coverage ids, expected/actual item counts, qualified duplicate count, qualified duplicate ids, unique raw item count, and raw duplicate ids.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now describe the aggregate C260 coverage boundary.
+- Focused verification: `project_memory/runlogs/20260709-1107-c260-coverage-aggregate-focused-test.txt` passed with 185 tests; `project_memory/runlogs/20260709-1108-c260-coverage-aggregate-status.json` shows 22 coverage groups, 284 expected and actual items, zero qualified duplicates, zero incomplete coverage groups, and 13 visible raw duplicate ids.
+- Verification: `npm run test:language` passed with 185 tests in `project_memory/runlogs/20260709-1111-c260-coverage-aggregate-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1112-c260-coverage-aggregate-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-1109-c260-coverage-aggregate-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1110-c260-coverage-aggregate-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1113-c260-coverage-aggregate-demo-build.txt`.
+- Final pre-commit checks: JSON parse passed in `project_memory/runlogs/20260709-1115-c260-coverage-aggregate-final-json-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1116-c260-coverage-aggregate-final-diff-check.txt`; staged diff check passed in `project_memory/runlogs/20260709-1117-c260-coverage-aggregate-staged-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1114-c260-coverage-aggregate-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-coverage-aggregate-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -1,0 +1,100 @@
+(node:79300) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "c260CoverageAggregate": {
+    "status": "c260-coverage-aggregate-derived",
+    "expectedCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "actualCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "missingCoverageIds": [],
+    "extraCoverageIds": [],
+    "incompleteCoverageIds": [],
+    "expectedCoverageCount": 22,
+    "actualCoverageCount": 22,
+    "expectedItemCount": 284,
+    "actualItemCount": 284,
+    "qualifiedItemCount": 284,
+    "qualifiedDuplicateCount": 0,
+    "qualifiedDuplicateIds": [],
+    "uniqueRawItemCount": 265,
+    "rawDuplicateIds": [
+      "conformance",
+      "active-structure-elements",
+      "behavior-elements",
+      "relationships-with-other-domains",
+      "passive-structure-elements",
+      "composite-elements",
+      "active-structure-example",
+      "passive-structure-example",
+      "viewpoint-mechanism",
+      "relationships-and-junctions",
+      "bmm",
+      "bpmn",
+      "uml"
+    ],
+    "complete": true
+  },
+  "documentArtifact": {
+    "expectedCount": 11,
+    "missing": [],
+    "extra": []
+  },
+  "sectionCoverage": {
+    "expectedCount": 20,
+    "missing": [],
+    "extra": []
+  },
+  "officialClaimable": false,
+  "blockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ]
+}

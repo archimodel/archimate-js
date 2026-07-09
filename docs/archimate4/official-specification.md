@@ -188,6 +188,10 @@ It must expose exact C260 document artifact fields (`documentArtifactCoverage.ex
 `documentArtifactCoverage.extraDocumentArtifactIds`) so C260 front matter and Index outline
 artifacts are tracked as non-implementation references rather than mixed into ArchiMate language
 section coverage.
+It must expose aggregate C260 coverage fields (`c260CoverageAggregate.expectedCoverageIds`,
+`c260CoverageAggregate.incompleteCoverageIds`, `c260CoverageAggregate.rawDuplicateIds`, and
+`c260CoverageAggregate.qualifiedDuplicateCount`) so all C260 coverage groups can be audited together
+without hiding repeated raw heading ids across chapters.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

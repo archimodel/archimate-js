@@ -1524,6 +1524,75 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
   assert.match(plan, /Document artifact coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes aggregate C260 coverage integrity', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const { getArchimate4ImplementationStatus } = await import('../lib/metamodel/languages/index.js');
+  const status = getArchimate4ImplementationStatus();
+  const aggregate = status.c260CoverageAggregate;
+  const expectedCoverageIds = [
+    'sectionCoverage',
+    'introductionCoverage',
+    'definitionCoverage',
+    'languageStructureCoverage',
+    'commonDomainCoverage',
+    'relationshipsAndJunctionsCoverage',
+    'motivationDomainCoverage',
+    'strategyDomainCoverage',
+    'businessDomainCoverage',
+    'applicationDomainCoverage',
+    'technologyDomainCoverage',
+    'relationshipsBetweenCoreDomainsCoverage',
+    'implementationAndMigrationDomainCoverage',
+    'stakeholdersArchitectureViewsViewpointsCoverage',
+    'languageCustomizationMechanismsCoverage',
+    'appendixANotationCoverage',
+    'appendixBRelationshipsCoverage',
+    'appendixCExampleViewpointsCoverage',
+    'appendixDStandardsGuidanceCoverage',
+    'appendixEVersionChangesCoverage',
+    'appendixFAcronymsCoverage',
+    'documentArtifactCoverage'
+  ];
+  const expectedRawDuplicateIds = [
+    'conformance',
+    'active-structure-elements',
+    'behavior-elements',
+    'relationships-with-other-domains',
+    'passive-structure-elements',
+    'composite-elements',
+    'active-structure-example',
+    'passive-structure-example',
+    'viewpoint-mechanism',
+    'relationships-and-junctions',
+    'bmm',
+    'bpmn',
+    'uml'
+  ];
+
+  assert.deepEqual(aggregate.expectedCoverageIds, expectedCoverageIds);
+  assert.deepEqual(aggregate.actualCoverageIds, expectedCoverageIds);
+  assert.deepEqual(aggregate.incompleteCoverageIds, []);
+  assert.equal(aggregate.expectedCoverageCount, expectedCoverageIds.length);
+  assert.equal(aggregate.expectedItemCount, 284);
+  assert.equal(aggregate.actualItemCount, 284);
+  assert.equal(aggregate.qualifiedItemCount, 284);
+  assert.equal(aggregate.qualifiedDuplicateCount, 0);
+  assert.equal(aggregate.uniqueRawItemCount, 265);
+  assert.deepEqual(aggregate.rawDuplicateIds, expectedRawDuplicateIds);
+  assert.equal(aggregate.complete, true);
+
+  assert.match(languageIndex, /function summarizeC260CoverageAggregate/);
+  assert.match(languageIndex, /c260CoverageAggregate: c260CoverageAggregate/);
+  assert.match(readme, /c260CoverageAggregate\.qualifiedDuplicateCount/);
+  assert.match(sources, /c260CoverageAggregate\.rawDuplicateIds/);
+  assert.match(officialSpec, /c260CoverageAggregate\.incompleteCoverageIds/);
+  assert.match(plan, /Aggregate C260 coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
