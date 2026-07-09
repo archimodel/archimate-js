@@ -2035,3 +2035,16 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1331-status-runlog-references-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1332-status-runlog-references-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-status-runlog-reference-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 157
+
+- Goal: guard the machine-readable ArchiMate 4 status identity arrays against duplicate IDs, type names, source ids, blocker ids, and evidence paths.
+- Pre-check: a status-array scan found no duplicate values in the current expected/actual/missing/extra identity arrays.
+- Implemented: `test/language-profile.test.mjs` now recursively collects scalar status arrays whose names end in `Ids`, `Types`, `Names`, `Sources`, `Blockers`, `Gaps`, or `Paths`, and fails if any collected array contains duplicate values.
+- Focused verification: `project_memory/runlogs/20260709-1333-status-identity-arrays-focused-test.txt` passed with 1 test.
+- Verification: `npm run test:language` passed with 201 tests in `project_memory/runlogs/20260709-1334-status-identity-arrays-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1335-status-identity-arrays-eslint-test.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1336-status-identity-arrays-diff-check.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1337-status-identity-arrays.json` shows 251 identity arrays, 1038 total identity values, and no duplicate identity arrays. `project_memory/runlogs/20260709-1338-status-identity-arrays-warning.txt` records the known Node typeless-package ESM warning emitted by the direct status import path; `project_memory/runlogs/20260709-1339-status-identity-arrays-json-check.txt` confirms the status JSON is parseable.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1340-status-identity-arrays-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1341-status-identity-arrays-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1342-status-identity-arrays-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-status-identity-array-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

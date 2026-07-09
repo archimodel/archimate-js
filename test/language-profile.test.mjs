@@ -83,6 +83,49 @@ function collectStatusRunlogReferences(value, path = []) {
   return references;
 }
 
+function collectStatusIdentityArrays(value, path = []) {
+  if (!value || typeof value !== 'object') {
+    return [];
+  }
+
+  if (Array.isArray(value)) {
+    return value.flatMap((child, index) => collectStatusIdentityArrays(child, path.concat(String(index))));
+  }
+
+  const arrays = [];
+  const identityArrayPattern = /(Ids|Types|Names|Sources|Blockers|Gaps|Paths)$/;
+
+  for (const [ key, child ] of Object.entries(value)) {
+    if (Array.isArray(child) &&
+        identityArrayPattern.test(key) &&
+        child.every((item) => typeof item === 'string' || typeof item === 'number')) {
+      arrays.push({
+        keyPath: path.concat(key).join('.'),
+        values: child
+      });
+    }
+
+    arrays.push(...collectStatusIdentityArrays(child, path.concat(key)));
+  }
+
+  return arrays;
+}
+
+function collectDuplicateValues(values) {
+  const seen = new Set();
+  const duplicates = new Set();
+
+  values.forEach((value) => {
+    if (seen.has(value)) {
+      duplicates.add(value);
+    }
+
+    seen.add(value);
+  });
+
+  return Array.from(duplicates);
+}
+
 test('archimate 3 profile keeps retired 3.x concepts for compatibility', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate3-profile.json');
   const types = new Set(profile.elements.map((element) => element.type));
@@ -975,6 +1018,27 @@ test('archimate 4 implementation status runlog references resolve to committed e
   }
 
   assert.deepEqual(missing, []);
+});
+
+test('archimate 4 implementation status identity arrays contain no duplicate values', () => {
+  const status = getArchimate4ImplementationStatus();
+  const identityArrays = collectStatusIdentityArrays(status);
+  const duplicateArrays = identityArrays
+    .map((identityArray) => {
+      return Object.assign({}, identityArray, {
+        duplicates: collectDuplicateValues(identityArray.values)
+      });
+    })
+    .filter((identityArray) => identityArray.duplicates.length > 0)
+    .map((identityArray) => {
+      return {
+        keyPath: identityArray.keyPath,
+        duplicates: identityArray.duplicates
+      };
+    });
+
+  assert.equal(identityArrays.length > 0, true);
+  assert.deepEqual(duplicateArrays, []);
 });
 
 test('archimate 4 implementation status exposes C260 introduction coverage identity', async () => {
