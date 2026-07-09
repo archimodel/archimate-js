@@ -83,6 +83,12 @@
   `commonDomainCoverage.missingCommonDomainIds`, and `commonDomainCoverage.extraCommonDomainIds`
   so the Chapter 4 Common Domain outline remains visible by exact subsection and element-heading
   identity.
+- `getArchimate4ImplementationStatus().relationshipsAndJunctionsCoverage` reports
+  `relationshipsAndJunctionsCoverage.expectedIds`, `relationshipsAndJunctionsCoverage.actualIds`,
+  `relationshipsAndJunctionsCoverage.missingRelationshipsAndJunctionsIds`, and
+  `relationshipsAndJunctionsCoverage.extraRelationshipsAndJunctionsIds` so the Chapter 5
+  Relationships and Junctions outline remains visible by exact subsection identity while the
+  normative Appendix B matrix remains externally supplied.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

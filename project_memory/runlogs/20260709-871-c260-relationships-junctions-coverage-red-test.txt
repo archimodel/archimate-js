@@ -1,0 +1,18 @@
+✖ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (8.6667ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.1931
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:703:1
+✖ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (8.6667ms)
+  TypeError: Cannot read properties of undefined (reading 'status')
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:739:49)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)

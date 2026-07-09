@@ -700,6 +700,66 @@ test('archimate 4 implementation status exposes C260 common domain coverage iden
   assert.match(plan, /Common domain coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 relationships and junctions coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const relationshipsAndJunctionsCatalog = profile.conformance.relationshipsAndJunctionsCoverageCatalog;
+  const relationshipsAndJunctionsCoverage = profile.conformance.relationshipsAndJunctionsCoverage;
+  const expectedRelationshipsAndJunctionsIds = [
+    'structural-relationships',
+    'aggregation-relationship',
+    'composition-relationship',
+    'assignment-relationship',
+    'realization-relationship',
+    'semantics-of-structural-relationships',
+    'dependency-relationships',
+    'serving-relationship',
+    'access-relationship',
+    'influence-relationship',
+    'association-relationship',
+    'semantics-of-dependency-relationships',
+    'dynamic-relationships',
+    'triggering-relationship',
+    'flow-relationship',
+    'semantics-of-dynamic-relationships',
+    'other-relationships',
+    'specialization-relationship',
+    'semantics-of-other-relationships',
+    'junctions',
+    'junction',
+    'multiplicity',
+    'summary-of-relationships-and-junctions',
+    'derivation-of-relationships'
+  ];
+
+  assert.equal(relationshipsAndJunctionsCatalog.status, 'c260-outline-derived');
+  assert.equal(relationshipsAndJunctionsCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(relationshipsAndJunctionsCatalog.expectedCount, expectedRelationshipsAndJunctionsIds.length);
+  assert.deepEqual(relationshipsAndJunctionsCatalog.expectedIds, expectedRelationshipsAndJunctionsIds);
+  assert.deepEqual(
+    relationshipsAndJunctionsCoverage.map((relationshipsAndJunctionsItem) => relationshipsAndJunctionsItem.id),
+    expectedRelationshipsAndJunctionsIds
+  );
+  assert.equal(
+    relationshipsAndJunctionsCoverage.every((relationshipsAndJunctionsItem) => (
+      relationshipsAndJunctionsItem.c260Section && relationshipsAndJunctionsItem.heading
+    )),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeRelationshipsAndJunctionsCoverage/);
+  assert.match(languageIndex, /relationshipsAndJunctionsCoverage: relationshipsAndJunctionsCoverage/);
+  assert.match(languageIndex, /missingRelationshipsAndJunctionsIds/);
+  assert.match(readme, /relationshipsAndJunctionsCoverage\.expectedIds/);
+  assert.match(sources, /relationshipsAndJunctionsCoverage\.actualIds/);
+  assert.match(officialSpec, /relationshipsAndJunctionsCoverage\.missingRelationshipsAndJunctionsIds/);
+  assert.match(plan, /Relationships and junctions coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
