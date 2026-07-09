@@ -1579,3 +1579,18 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-932-c260-application-domain-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-application-domain-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 125
+
+- Goal: make C260 Chapter 10 Technology Domain auditable by exact outline identity rather than only by broad Technology element support.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 10 outline from 10.1 through 10.5, including Node, Technology Interface, Device., System Software, Equipment, Facility, Communication Network, Distribution Network, Artifact, Material, example, and summary headings.
+- Red test: `project_memory/runlogs/20260709-936-c260-technology-domain-coverage-red-test.txt` failed because `technologyDomainCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `technologyDomainCoverageCatalog` and `technologyDomainCoverage` for the fifteen Chapter 10 outline headings without copying Technology Domain prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().technologyDomainCoverage` with expected/actual/missing/extra ids, `missingTechnologyDomainIds`, `extraTechnologyDomainIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 10 Technology Domain outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-937-c260-technology-domain-coverage-focused-test.txt` passed for the Technology Domain coverage identity test; `project_memory/runlogs/20260709-938-c260-technology-domain-coverage-status.json` shows expectedCount 15, actualCount 15, no missing Technology Domain ids, no extra Technology Domain ids, and complete true.
+- Verification: `npm run test:language` passed with 173 tests in `project_memory/runlogs/20260709-939-c260-technology-domain-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-940-c260-technology-domain-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-941-c260-technology-domain-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-942-c260-technology-domain-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-943-c260-technology-domain-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-944-c260-technology-domain-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-945-c260-technology-domain-coverage-repo-lint.txt` with 4382 existing errors.
+- Final pre-commit checks: JSON parse passed in `project_memory/runlogs/20260709-946-c260-technology-domain-coverage-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-947-c260-technology-domain-coverage-final-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-c260-technology-domain-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

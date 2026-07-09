@@ -616,6 +616,45 @@
       { "id": "passive-structure-example", "c260Section": "9.3.2", "heading": "Example", "status": "tracked" },
       { "id": "summary-of-application-domain-elements", "c260Section": "9.4", "heading": "Summary of Application Domain Elements", "status": "tracked" }
     ],
+    "technologyDomainCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 15,
+      "expectedIds": [
+        "technology-metamodel",
+        "active-structure-elements",
+        "node",
+        "technology-interface",
+        "device",
+        "system-software",
+        "equipment",
+        "facility",
+        "communication-network",
+        "distribution-network",
+        "passive-structure-elements",
+        "artifact",
+        "material",
+        "technology-example",
+        "summary-of-technology-domain-elements"
+      ]
+    },
+    "technologyDomainCoverage": [
+      { "id": "technology-metamodel", "c260Section": "10.1", "heading": "Technology Metamodel", "status": "tracked" },
+      { "id": "active-structure-elements", "c260Section": "10.2", "heading": "Active Structure Elements", "status": "tracked" },
+      { "id": "node", "c260Section": "10.2.1", "heading": "Node", "status": "tracked" },
+      { "id": "technology-interface", "c260Section": "10.2.2", "heading": "Technology Interface", "status": "tracked" },
+      { "id": "device", "c260Section": "10.2.3", "heading": "Device.", "status": "tracked" },
+      { "id": "system-software", "c260Section": "10.2.4", "heading": "System Software", "status": "tracked" },
+      { "id": "equipment", "c260Section": "10.2.5", "heading": "Equipment", "status": "tracked" },
+      { "id": "facility", "c260Section": "10.2.6", "heading": "Facility", "status": "tracked" },
+      { "id": "communication-network", "c260Section": "10.2.7", "heading": "Communication Network", "status": "tracked" },
+      { "id": "distribution-network", "c260Section": "10.2.8", "heading": "Distribution Network", "status": "tracked" },
+      { "id": "passive-structure-elements", "c260Section": "10.3", "heading": "Passive Structure Elements", "status": "tracked" },
+      { "id": "artifact", "c260Section": "10.3.1", "heading": "Artifact", "status": "tracked" },
+      { "id": "material", "c260Section": "10.3.2", "heading": "Material", "status": "tracked" },
+      { "id": "technology-example", "c260Section": "10.4", "heading": "Example", "status": "tracked" },
+      { "id": "summary-of-technology-domain-elements", "c260Section": "10.5", "heading": "Summary of Technology Domain Elements", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

@@ -117,6 +117,12 @@ It must expose exact C260 Chapter 9 Application Domain outline fields
 `applicationDomainCoverage.extraApplicationDomainIds`) so the implementation can track Application
 structure metamodel, active structure, passive structure, examples, and summaries by subsection and
 element-heading identity.
+It must expose exact C260 Chapter 10 Technology Domain outline fields
+(`technologyDomainCoverage.expectedIds`, `technologyDomainCoverage.actualIds`,
+`technologyDomainCoverage.missingTechnologyDomainIds`, and
+`technologyDomainCoverage.extraTechnologyDomainIds`) so the implementation can track Technology
+metamodel, active structure, passive structure, examples, and summaries by subsection and
+element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

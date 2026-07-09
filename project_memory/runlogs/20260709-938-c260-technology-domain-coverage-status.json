@@ -1,0 +1,42 @@
+{
+  "expectedCount": 15,
+  "actualCount": 15,
+  "missingTechnologyDomainIds": [],
+  "extraTechnologyDomainIds": [],
+  "complete": true,
+  "expectedIds": [
+    "technology-metamodel",
+    "active-structure-elements",
+    "node",
+    "technology-interface",
+    "device",
+    "system-software",
+    "equipment",
+    "facility",
+    "communication-network",
+    "distribution-network",
+    "passive-structure-elements",
+    "artifact",
+    "material",
+    "technology-example",
+    "summary-of-technology-domain-elements"
+  ],
+  "actualIds": [
+    "technology-metamodel",
+    "active-structure-elements",
+    "node",
+    "technology-interface",
+    "device",
+    "system-software",
+    "equipment",
+    "facility",
+    "communication-network",
+    "distribution-network",
+    "passive-structure-elements",
+    "artifact",
+    "material",
+    "technology-example",
+    "summary-of-technology-domain-elements"
+  ]
+}
+EXIT_CODE=0

@@ -81,6 +81,9 @@ cannot drift silently.
 Application domain coverage status reports `expectedIds`, `actualIds`,
 `missingApplicationDomainIds`, and `extraApplicationDomainIds` for the C260 Chapter 9 outline so
 Application subsection and element headings cannot drift silently.
+Technology domain coverage status reports `expectedIds`, `actualIds`,
+`missingTechnologyDomainIds`, and `extraTechnologyDomainIds` for the C260 Chapter 10 outline so
+Technology subsection and element headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

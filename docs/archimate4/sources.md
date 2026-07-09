@@ -109,6 +109,11 @@
   `applicationDomainCoverage.missingApplicationDomainIds`, and
   `applicationDomainCoverage.extraApplicationDomainIds` so the Chapter 9 Application Domain outline
   remains visible by exact subsection and element-heading identity.
+- `getArchimate4ImplementationStatus().technologyDomainCoverage` reports
+  `technologyDomainCoverage.expectedIds`, `technologyDomainCoverage.actualIds`,
+  `technologyDomainCoverage.missingTechnologyDomainIds`, and
+  `technologyDomainCoverage.extraTechnologyDomainIds` so the Chapter 10 Technology Domain outline
+  remains visible by exact subsection and element-heading identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
