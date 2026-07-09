@@ -257,7 +257,8 @@
 - `getArchimate4ImplementationStatus().modelValidation` reports `modelValidation.expectedCheckIds`,
   `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
-  embedding the Appendix B relationship matrix. The current diagnostics include view `viewpoint`
+  embedding the Appendix B relationship matrix. The current diagnostics include relationship
+  source/target reference shape, view `viewpoint`
   string attributes and `viewpointRef` references, relationship option field types, present `IdObject.id` and `xsi:type` string values, view node element references, view element `label` string values and geometry, view connection relationship references, endpoint
   references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color`
   values, viewpoint

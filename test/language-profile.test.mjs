@@ -1079,6 +1079,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'element-catalog',
     'retired-archimate3-concepts',
     'relationship-catalog',
+    'relationship-endpoint-reference',
     'relationship-endpoint-catalog',
     'relationship-option-fields',
     'active-relationship-profile',

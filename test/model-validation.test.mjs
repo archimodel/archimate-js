@@ -293,6 +293,41 @@ test('archimate 4 model validation reports unsupported relationship types and en
   assert.equal(findDiagnostic(result, 'unsupported-relationship-endpoint-type').endpoint, 'target');
 });
 
+test('archimate 4 model validation reports invalid and unknown relationship endpoint references', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [ actor, role ]
+    },
+    relationshipsNode: {
+      relationships: [
+        {
+          id: 'relationship-invalid-source',
+          type: 'Assignment',
+          source: {},
+          target: role
+        },
+        {
+          id: 'relationship-unknown-target',
+          type: 'Association',
+          source: actor,
+          target: 'missing-concept'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-relationship-source-reference'), true);
+  assert.equal(codes.includes('unknown-relationship-target-reference'), true);
+  assert.equal(findDiagnostic(result, 'invalid-relationship-source-reference').relationshipId, 'relationship-invalid-source');
+  assert.equal(findDiagnostic(result, 'unknown-relationship-target-reference').referenceId, 'missing-concept');
+});
+
 test('archimate 4 model validation can call an active relationship validator', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

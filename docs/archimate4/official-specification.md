@@ -252,7 +252,7 @@ The status must expose implementation completion scan fields
 The status must expose model-validation coverage fields (`modelValidation.expectedCheckIds`,
 `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
-diagnostics cover catalog membership, retired concepts, relationship endpoints, relationship option
+diagnostics cover catalog membership, retired concepts, relationship endpoint references and endpoint type support, relationship option
 field types, multiplicity,
 view node geometry, junction consistency, present `IdObject.id` and `xsi:type` string values, view `viewpoint`
 string attributes and `viewpointRef` references, view node element references, view element

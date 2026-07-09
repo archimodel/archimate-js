@@ -1,0 +1,29 @@
+## codex/archimate-4-support
+ M CHANGELOG.md
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M docs/superpowers/plans/2026-07-08-archimate-4-support.md
+ M lib/metamodel/languages/archimate4-profile.json
+ M lib/metamodel/languages/index.js
+ M lib/validation/archimate4-model.js
+ M project_memory/audit/audit_registry.json
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/language-profile.test.mjs
+ M test/model-validation.test.mjs
+?? .codex-runlogs/
+?? project_memory/audit/reports/20260710-relationship-endpoint-reference-audit.md
+?? project_memory/runlogs/20260710-0316-relationship-endpoint-reference-red-test.txt
+?? project_memory/runlogs/20260710-0317-relationship-endpoint-reference-focused-model-test.txt
+?? project_memory/runlogs/20260710-0318-relationship-endpoint-reference-status-test.txt
+?? project_memory/runlogs/20260710-0319-relationship-endpoint-reference-model-validation-test.txt
+?? project_memory/runlogs/20260710-0320-relationship-endpoint-reference-eslint-changed.txt
+?? project_memory/runlogs/20260710-0321-relationship-endpoint-reference-status-snapshot.json
+?? project_memory/runlogs/20260710-0322-relationship-endpoint-reference-test-language.txt
+?? project_memory/runlogs/20260710-0323-relationship-endpoint-reference-completion-audit.json
+?? project_memory/runlogs/20260710-0324-relationship-endpoint-reference-c260-coverage-audit.json
+?? project_memory/runlogs/20260710-0325-relationship-endpoint-reference-json-check.txt
+?? project_memory/runlogs/20260710-0326-relationship-endpoint-reference-diff-check.txt
+?? project_memory/runlogs/20260710-0327-relationship-endpoint-reference-status.txt
+?? project_memory/runlogs/20260710-0328-relationship-endpoint-reference-final-status-api.json

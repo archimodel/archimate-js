@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 219,
-  "stage": "xsi_type_fields_verified",
+  "loop_id": 220,
+  "stage": "relationship_endpoint_reference_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -256,7 +256,8 @@
       "id_object_id_guard",
       "relationship_option_fields_guard",
       "viewpoint_descriptor_fields_guard",
-      "xsi_type_fields_guard"
+      "xsi_type_fields_guard",
+      "relationship_endpoint_reference_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -541,12 +542,13 @@
       "check_relationship_option_field_types",
       "check_view_viewpoint_attribute_structure",
       "check_viewpoint_allowed_type_string_entries",
-      "check_xsi_type_fields_string"
+      "check_xsi_type_fields_string",
+      "check_relationship_endpoint_reference_shape"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260710-0304-xsi-type-fields-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260710-xsi-type-fields-audit.md",
+    "runlog_path": "project_memory/runlogs/20260710-0329-relationship-endpoint-reference-final-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260710-relationship-endpoint-reference-audit.md",
     "result": "pass_with_known_external_blockers"
   },
   "open_issues": [
@@ -784,7 +786,8 @@
     "Present Relationship.modifier and Relationship.accessType fields are validated as strings and present Relationship.isDirected is validated as boolean to match the local ArchiMate 4 descriptor, while undefined or null values are treated as absent for partial in-memory editing.",
     "Present View.viewpoint attributes are validated as strings to match the local ArchiMate 4 descriptor, while undefined or null values are treated as absent for partial in-memory editing and unknown string names remain metadata-only.",
     "Viewpoint allowedElementTypes and allowedRelationshipTypes continue to accept string shorthand and object entries, but explicit type values must be strings before active-profile support checks run.",
-    "Present xsi:type fields are validated as strings to match the local ArchiMate descriptors, while undefined or null values are treated as absent and namespace-qualified value semantics remain MEFF 4.0 XSD dependent."
+    "Present xsi:type fields are validated as strings to match the local ArchiMate descriptors, while undefined or null values are treated as absent and namespace-qualified value semantics remain MEFF 4.0 XSD dependent.",
+    "Relationship source/target references now report malformed or unknown references separately, while absent endpoints and typed in-memory endpoint objects preserve the existing partial-editing behavior."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
@@ -829,6 +832,7 @@
     "validateArchimate4Model() and validateArchimateModel() now report invalid relationship option field diagnostics for non-string modifier/accessType and non-boolean isDirected values, and modelValidation status exposes relationship-option-fields.",
     "validateArchimate4Model() and validateArchimateModel() now report invalid-view-viewpoint when a present View.viewpoint attribute is not a string, and modelValidation status exposes view-viewpoint-attribute.",
     "Viewpoint allowed element and relationship type parsing now rejects non-string allowed type entries with malformed-entry diagnostics before active-profile support checks.",
-    "validateArchimate4Model() and validateArchimateModel() now report invalid-concept-xsi-type and invalid-view-element-xsi-type when present xsi:type fields are not strings, and modelValidation status exposes xsi-type-fields."
+    "validateArchimate4Model() and validateArchimateModel() now report invalid-concept-xsi-type and invalid-view-element-xsi-type when present xsi:type fields are not strings, and modelValidation status exposes xsi-type-fields.",
+    "validateArchimate4Model() and validateArchimateModel() now report invalid-relationship-source-reference, invalid-relationship-target-reference, unknown-relationship-source-reference, and unknown-relationship-target-reference for malformed or unresolved relationship endpoint references, and modelValidation status exposes relationship-endpoint-reference."
   ]
 }
