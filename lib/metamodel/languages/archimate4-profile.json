@@ -87,6 +87,7 @@
         "view-viewpoint-reference",
         "view-node-element-reference",
         "view-connection-relationship-reference",
+        "view-connection-endpoint-reference",
         "view-viewpoint-content-application",
         "view-profile-viewpoint-content-application",
         "viewpoint-stakeholder-concern-structure",

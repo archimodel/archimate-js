@@ -1,0 +1,12 @@
+✔ archimate 4 model validation reports invalid view element references (2.6281ms)
+✔ archimate 4 model validation reports invalid view connection endpoint references (0.2685ms)
+✔ archimate 4 model validation accepts valid view element references (0.7059ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.571
+exitCode=0

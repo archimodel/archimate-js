@@ -437,6 +437,64 @@ test('archimate 4 model validation reports invalid view element references', () 
   assert.equal(findDiagnostic(result, 'invalid-view-relationship-reference').viewElementId, 'connection-invalid');
 });
 
+test('archimate 4 model validation reports invalid view connection endpoint references', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: actor
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1'
+              },
+              {
+                id: 'connection-invalid-source',
+                relationshipRef: 'relationship-1',
+                source: {},
+                target: 'node-actor'
+              },
+              {
+                id: 'connection-missing-target',
+                relationshipRef: 'relationship-1',
+                source: 'node-actor',
+                target: 'missing-node'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-view-connection-source-reference'), true);
+  assert.equal(codes.includes('unknown-view-connection-target-reference'), true);
+  assert.equal(findDiagnostic(result, 'invalid-view-connection-source-reference').viewElementId, 'connection-invalid-source');
+  assert.equal(findDiagnostic(result, 'unknown-view-connection-target-reference').referenceId, 'missing-node');
+});
+
 test('archimate 4 model validation accepts valid view element references', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };
@@ -479,7 +537,9 @@ test('archimate 4 model validation accepts valid view element references', () =>
               },
               {
                 id: 'connection-1',
-                relationshipRef: 'relationship-1'
+                relationshipRef: 'relationship-1',
+                source: 'node-actor',
+                target: 'node-role'
               }
             ]
           }

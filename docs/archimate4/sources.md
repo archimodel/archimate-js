@@ -258,7 +258,7 @@
   `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
   embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
-  references, view node element references, view connection relationship references, viewpoint
+  references, view node element references, view connection relationship and endpoint references, viewpoint
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
   structure, organization `identifierRef` references, reusable `PropertyDefinition` structure,
@@ -276,7 +276,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260710-0023-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260710-0043-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -879,7 +879,7 @@
   ArchiMate 4, relationship type membership, relationship endpoint membership, active relationship
   profile allowance, multiplicity notation, multiplicity on junction-connected ends, mixed
   relationship types at a junction, direct relationship validity for chains through a junction,
-  view viewpoint references, view node element references, view connection relationship references,
+  view viewpoint references, view node element references, view connection relationship and endpoint references,
   viewpoint purpose/content and allowed element/relationship type definitions, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
   and `modelingNotes` structure, reusable `PropertyDefinition` structure, property-definition
