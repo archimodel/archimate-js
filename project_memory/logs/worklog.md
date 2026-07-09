@@ -2226,3 +2226,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1444-source-coverage-required-companion-catalog-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-source-coverage-required-companion-catalog-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 173
+
+- Goal: refresh current external-source evidence for MEFF 4.0 XSD and W262 so ArchiMate 4 conformance boundaries stay tied to current official/local state.
+- Observation: `project_memory/runlogs/20260709-1446-external-source-current-recheck.json` records HTTP 200 for `https://www.opengroup.org/xsd/archimate/`, only 3.1 Diagram/Model/View XSD links discovered, tested 4.0 candidate URLs returning 404, and the 3.1 Model XSD baseline returning 200.
+- Observation: the same runlog records HTTP 200 for W262, detects title/free PDF/login/22-page/2026-04-27 markers, and still finds no matching local W262 or ArchiMate 4 motivation PDF under Downloads or Codex attachments.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json`, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `test/language-profile.test.mjs` now point to the current external-source evidence runlog.
+- Focused verification: `project_memory/runlogs/20260709-1447-external-source-current-recheck-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 215 tests in `project_memory/runlogs/20260709-1448-external-source-current-recheck-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1449-external-source-current-recheck-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1450-external-source-current-recheck-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1451-external-source-current-recheck-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-external-source-current-recheck-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

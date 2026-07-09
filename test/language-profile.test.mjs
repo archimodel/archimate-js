@@ -2392,19 +2392,19 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     sourceCoverage.w262.publicationPageTitle,
     'The Motivation for Changes in the ArchiMate® 4 Specification'
   );
-  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-09T17:28:55+09:00');
+  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-09T18:55:21+09:00');
   assert.equal(
     sourceCoverage.w262.lastPublicationPageRunlogPath,
-    'project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json'
+    'project_memory/runlogs/20260709-1446-external-source-current-recheck.json'
   );
   assert.equal(sourceCoverage.w262.freePdfDetected, true);
   assert.equal(sourceCoverage.w262.loginRequiredDetected, true);
   assert.equal(sourceCoverage.w262.pages22Detected, true);
   assert.equal(sourceCoverage.w262.published20260427Detected, true);
-  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T17:28:55+09:00');
+  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T18:55:21+09:00');
   assert.equal(
     sourceCoverage.w262.lastLocalSearchRunlogPath,
-    'project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json'
+    'project_memory/runlogs/20260709-1446-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.w262.localSearchRoots, [
     'C:\\Users\\syska\\Downloads',
@@ -2443,7 +2443,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
   assert.equal(
     sourceCoverage.meff4Xsd.lastRunlogPath,
-    'project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json'
+    'project_memory/runlogs/20260709-1446-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
     '3.1/archimate3_Diagram.xsd',
@@ -2518,10 +2518,10 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(readme, /sourceCoverage\.missingSourceIds/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
   assert.match(sources, /sourceCoverage\.actualSourceIds/);
-  assert.match(sources, /20260709-1343-external-source-continuation-recheck/);
+  assert.match(sources, /20260709-1446-external-source-current-recheck/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
-  assert.match(officialSpec, /20260709-1343-external-source-continuation-recheck/);
+  assert.match(officialSpec, /20260709-1446-external-source-current-recheck/);
   assert.match(sources, /20260709-1189-appendix-a-artwork-rights-pictogram-audit/);
   assert.match(officialSpec, /locally-authored renderer\s+paths/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
