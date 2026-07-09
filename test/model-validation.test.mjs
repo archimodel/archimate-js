@@ -495,6 +495,64 @@ test('archimate 4 model validation reports invalid view connection endpoint refe
   assert.equal(findDiagnostic(result, 'unknown-view-connection-target-reference').referenceId, 'missing-node');
 });
 
+test('archimate 4 model validation reports view connection endpoint concept mismatches', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1'
+              },
+              {
+                id: 'node-role',
+                elementRef: 'role-1'
+              },
+              {
+                id: 'connection-reversed',
+                relationshipRef: 'relationship-1',
+                source: 'node-role',
+                target: 'node-actor'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('view-connection-source-concept-mismatch'), true);
+  assert.equal(codes.includes('view-connection-target-concept-mismatch'), true);
+  assert.equal(findDiagnostic(result, 'view-connection-source-concept-mismatch').expectedConceptId, 'actor-1');
+  assert.equal(findDiagnostic(result, 'view-connection-target-concept-mismatch').actualConceptId, 'actor-1');
+});
+
 test('archimate 4 model validation accepts valid view element references', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

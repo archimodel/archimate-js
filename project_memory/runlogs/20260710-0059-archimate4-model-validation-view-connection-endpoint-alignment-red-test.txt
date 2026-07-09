@@ -1,0 +1,38 @@
+✔ archimate 4 model validation reports invalid view element references (2.5107ms)
+✖ archimate 4 model validation reports view connection endpoint concept mismatches (0.8223ms)
+✔ archimate 4 model validation accepts valid view element references (0.6338ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.061
+
+✖ failing tests:
+
+test at test\model-validation.test.mjs:498:1
+✖ archimate 4 model validation reports view connection endpoint concept mismatches (0.8223ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/model-validation.test.mjs:549:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at node:internal/test_runner/test:1040:31
+      at node:internal/process/task_queues:149:7
+      at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+      at AsyncResource.runMicrotask (node:internal/process/task_queues:146:8)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+exitCode=1

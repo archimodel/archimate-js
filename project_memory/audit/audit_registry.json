@@ -57,14 +57,14 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references, view connection relationship and endpoint references, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, viewpoint definitions, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references, view connection relationship references, endpoint references, and endpoint-to-relationship alignment, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260710-0044-archimate4-model-validation-view-connection-endpoint-full-model-test.txt",
-        "project_memory/runlogs/20260710-0043-status-completion-api-scan.json"
+        "project_memory/runlogs/20260710-0063-archimate4-model-validation-view-connection-endpoint-alignment-full-model-test.txt",
+        "project_memory/runlogs/20260710-0061-status-completion-api-scan.json"
       ]
     },
     {

@@ -249,7 +249,7 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoints, multiplicity,
 junction consistency, view viewpoint references, view node element references, view connection
-relationship and endpoint references, viewpoint definitions, model-defined and profile-defined viewpoint
+relationship references, endpoint references, and endpoint-to-relationship alignment, viewpoint definitions, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
 organization `identifierRef` references, reusable `PropertyDefinition` structure,
 `Property.propertyDefinitionRef` references, and profile attribute property values.
@@ -261,7 +261,7 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260710-0043-status-completion-api-scan.json`; it records 49 top-level
+`project_memory/runlogs/20260710-0061-status-completion-api-scan.json`; it records 49 top-level
 status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
 guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
@@ -580,7 +580,8 @@ Implementation note:
 - `validateArchimate4Model()` reports unsupported relationship types, unsupported endpoint concept
   types, relationships disallowed by the active profile, mixed relationship types at a junction,
   invalid endpoint chains through a junction, unknown or malformed view viewpoint references, invalid
-  view node element references, invalid view connection relationship and endpoint references, invalid
+  view node element references, invalid view connection relationship references, invalid endpoint
+  references, endpoint-to-relationship alignment mismatches, invalid
   viewpoint definitions, invalid stakeholder/concern structure, and invalid profile attribute properties as
   structured diagnostics for host import/export checks.
 
@@ -802,7 +803,8 @@ In particular:
 - `getArchimate4ImplementationStatus().modelValidation` must expose expected/actual/missing/extra
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
   concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference, view
-  node element-reference, view connection relationship-reference, view connection endpoint-reference, viewpoint definition, viewpoint
+  node element-reference, view connection relationship-reference, view connection endpoint-reference,
+  view connection endpoint-alignment, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, organization identifier-reference, property-definition structure and
   reference, or profile attribute property coverage.
