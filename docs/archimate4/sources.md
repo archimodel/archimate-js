@@ -254,6 +254,9 @@
   `implementationCompletion.topKeys`, `implementationCompletion.completeSummaryCount`,
   `implementationCompletion.incompleteSummaryCount`, and
   `implementationCompletion.incompleteSummaryPaths` so the API exposes its own completion scan.
+- `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
+  reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
+  definitions and normative relationship constraints explicitly false.
 - `scripts/audit_archimate4_completion.mjs` maps the current
   `getArchimate4ImplementationStatus()` output to the plan's M0-M5 milestones, verifies referenced
   runlog paths resolve, and leaves official conformance unclaimable while the external source and
@@ -264,10 +267,10 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
-  status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage
-  status-key guard arrays. The companion stderr log is empty so the runlog can be parsed by audit
-  tooling without warning-text cleanup.
+  `project_memory/runlogs/20260709-1061-status-completion-api-scan.json`; it records 48 top-level
+  status keys, 39 `complete` summaries, no incomplete summaries, and the section coverage
+  status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
+  the runlog can be parsed by audit tooling without warning-text cleanup.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

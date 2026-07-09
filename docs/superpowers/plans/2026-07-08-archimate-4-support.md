@@ -179,9 +179,9 @@ C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
 `missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
 stays tied to a recorded source-extraction runlog.
 Implementation-status completion API scan evidence is recorded in
-`project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it currently reports 47
-top-level status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage
-status-key guard arrays. The same completion state is exposed directly through
+`project_memory/runlogs/20260709-1061-status-completion-api-scan.json`; it currently reports 48
+top-level status keys, 39 `complete` summaries, no incomplete summaries, and the section coverage
+status-key guard arrays including `exampleViewpointCatalog`. The same completion state is exposed directly through
 `getArchimate4ImplementationStatus().implementationCompletion`.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status

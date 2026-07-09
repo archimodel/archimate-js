@@ -275,6 +275,7 @@
         "iconography",
         "appendixBRelationshipsCoverage",
         "appendixCExampleViewpointsCoverage",
+        "exampleViewpointCatalog",
         "appendixDStandardsGuidanceCoverage",
         "appendixEVersionChangesCoverage",
         "appendixFAcronymsCoverage"
@@ -468,6 +469,7 @@
         "requirementId": "example-viewpoints",
         "statusKeys": [
           "appendixCExampleViewpointsCoverage",
+          "exampleViewpointCatalog",
           "conformanceRequirements"
         ],
         "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"

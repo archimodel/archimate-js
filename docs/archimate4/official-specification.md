@@ -252,9 +252,9 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
-status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage status-key
-guard arrays, with an empty stderr companion log.
+`project_memory/runlogs/20260709-1061-status-completion-api-scan.json`; it records 48 top-level
+status keys, 39 `complete` summaries, no incomplete summaries, and the section coverage status-key
+guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot
@@ -365,6 +365,9 @@ Supported mechanism:
 - `getArchimate4ExampleViewpointCatalog()` exposes C260 Appendix C example viewpoint headings as an
   informative-reference catalog for UI selection and documentation. It does not bundle full
   viewpoint definitions, allowed-element filters, or normative relationship constraints.
+- `getArchimate4ImplementationStatus().exampleViewpointCatalog` must expose the same Appendix C
+  catalog boundary with expected/actual group and viewpoint counts and `complete: true`, while
+  keeping full viewpoint definitions and normative relationship constraints unbundled.
 - `getArchimate4ImplementationStatus().stakeholderConcerns` must expose expected, actual, missing,
   and extra stakeholder/concern feature ids derived from the ArchiMate 4 moddle descriptor, so C260
   Chapter 13.2 support remains auditable separately from the broader viewpoint mechanism.

@@ -1031,9 +1031,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-1008-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-1061-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-1008-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-1061-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1053,7 +1053,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260709-1008-status-completion-api-scan.json'
+    'project_memory/runlogs/20260709-1061-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1073,8 +1073,8 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260709-1008-status-completion-api-scan/);
-  assert.match(sources, /38 `complete` summaries/);
+  assert.match(readme, /20260709-1061-status-completion-api-scan/);
+  assert.match(sources, /39 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);
 });
@@ -1944,7 +1944,9 @@ test('archimate 4 exposes Appendix C example viewpoints as an informative catalo
   assert.equal(catalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
   assert.equal(catalog.expectedOutlineCount, 29);
   assert.equal(catalog.totalOutlineCount, 29);
+  assert.equal(catalog.expectedGroupCount, 4);
   assert.equal(catalog.groupCount, 4);
+  assert.equal(catalog.expectedViewpointCount, 25);
   assert.equal(catalog.viewpointCount, 25);
   assert.deepEqual(catalog.groups.map((group) => group.id), [
     'basic-viewpoints-in-the-archimate-language',
@@ -1971,10 +1973,17 @@ test('archimate 4 exposes Appendix C example viewpoints as an informative catalo
   assert.equal(catalog.bundledViewpointDefinitions, false);
   assert.equal(catalog.officialConformanceBlocker, false);
   assert.equal(catalog.normativeRelationshipConstraints, false);
+  assert.equal(catalog.complete, true);
   assert.equal(catalog.viewpoints.some((viewpoint) => viewpoint.allowedElementTypes), false);
   assert.equal(catalog.viewpoints.some((viewpoint) => viewpoint.viewpointPurpose), false);
 
+  const status = getArchimate4ImplementationStatus();
+  assert.deepEqual(status.exampleViewpointCatalog, catalog);
+  assert.equal(status.sectionCoverage.statusKeyIds.includes('exampleViewpointCatalog'), true);
+  assert.equal(status.sectionCoverage.missingStatusKeyReferenceIds.includes('exampleViewpointCatalog'), false);
+
   assert.match(languageIndex, /export function getArchimate4ExampleViewpointCatalog/);
+  assert.match(languageIndex, /exampleViewpointCatalog: getArchimate4ExampleViewpointCatalog\(\)/);
   assert.match(languageIndex, /informative-reference-catalog/);
   assert.match(entrypoint, /getArchimate4ExampleViewpointCatalog/);
   assert.match(readme, /getArchimate4ExampleViewpointCatalog\(\)/);
@@ -3485,6 +3494,7 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
     'iconography',
     'appendixBRelationshipsCoverage',
     'appendixCExampleViewpointsCoverage',
+    'exampleViewpointCatalog',
     'appendixDStandardsGuidanceCoverage',
     'appendixEVersionChangesCoverage',
     'appendixFAcronymsCoverage'
