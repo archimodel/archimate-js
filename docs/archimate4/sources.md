@@ -257,8 +257,9 @@
 - `getArchimate4ImplementationStatus().modelValidation` reports `modelValidation.expectedCheckIds`,
   `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
-  embedding the Appendix B relationship matrix. The current diagnostics include viewpoint
-  purpose/content and allowed-type definitions plus profile attribute property/value checks.
+  embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
+  references, viewpoint purpose/content and allowed-type definitions, viewpoint stakeholder/concern
+  structure, and profile attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -272,7 +273,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-1096-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260709-1109-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -863,8 +864,9 @@
   ArchiMate 4, relationship type membership, relationship endpoint membership, active relationship
   profile allowance, multiplicity notation, multiplicity on junction-connected ends, mixed
   relationship types at a junction, direct relationship validity for chains through a junction,
-  viewpoint purpose/content and allowed element/relationship type definitions, and profile attribute
-  properties with typed values.
+  view viewpoint references, viewpoint purpose/content and allowed element/relationship type
+  definitions, viewpoint stakeholder/concern structure, and profile attribute properties with typed
+  values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active
   relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
   Appendix B profile outside the repository.

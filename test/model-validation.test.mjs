@@ -204,7 +204,34 @@ test('archimate 4 model validation reports invalid viewpoint definitions', () =>
               'Association',
               { type: 'UnknownRelationship' },
               {}
+            ],
+            concerns: [
+              null,
+              {
+                label: 42,
+                documentation: false,
+                stakeholdersNode: {
+                  stakeholders: [
+                    'missing-object',
+                    {
+                      label: 100
+                    }
+                  ]
+                }
+              }
             ]
+          }
+        ]
+      },
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewpointRef: 'missing-viewpoint'
+          },
+          {
+            id: 'view-2',
+            viewpointRef: {}
           }
         ]
       }
@@ -221,7 +248,15 @@ test('archimate 4 model validation reports invalid viewpoint definitions', () =>
   assert.equal(codes.includes('invalid-viewpoint-element-type-entry'), true);
   assert.equal(codes.includes('unsupported-viewpoint-relationship-type'), true);
   assert.equal(codes.includes('invalid-viewpoint-relationship-type-entry'), true);
+  assert.equal(codes.includes('unknown-viewpoint-reference'), true);
+  assert.equal(codes.includes('invalid-viewpoint-reference'), true);
+  assert.equal(codes.includes('invalid-viewpoint-concern-entry'), true);
+  assert.equal(codes.includes('invalid-concern-label'), true);
+  assert.equal(codes.includes('invalid-concern-documentation'), true);
+  assert.equal(codes.includes('invalid-stakeholder-entry'), true);
+  assert.equal(codes.includes('invalid-stakeholder-label'), true);
   assert.equal(findDiagnostic(result, 'unsupported-viewpoint-purpose').viewpointId, 'viewpoint-1');
+  assert.equal(findDiagnostic(result, 'unknown-viewpoint-reference').viewId, 'view-1');
 });
 
 test('archimate 4 model validation accepts valid viewpoint definitions', () => {
@@ -236,9 +271,30 @@ test('archimate 4 model validation accepts valid viewpoint definitions', () => {
             'BusinessActor',
             { type: 'Role' }
           ],
-          allowedRelationshipTypes: 'Association Flow'
+          allowedRelationshipTypes: 'Association Flow',
+          concerns: [
+            {
+              label: 'Risk concern',
+              documentation: 'Risk view concern',
+              stakeholdersNode: {
+                stakeholders: [
+                  {
+                    label: 'Architecture Board'
+                  }
+                ]
+              }
+            }
+          ]
         }
-      ]
+      ],
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewpointRef: 'viewpoint-1'
+          }
+        ]
+      }
     }
   }, {
     validateRelationshipRules: false

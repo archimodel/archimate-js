@@ -84,6 +84,8 @@
         "junction-chain-profile-validation",
         "viewpoint-purpose-content",
         "viewpoint-allowed-types",
+        "view-viewpoint-reference",
+        "viewpoint-stakeholder-concern-structure",
         "profile-attribute-properties",
         "profile-attribute-values"
       ],

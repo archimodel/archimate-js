@@ -1043,6 +1043,8 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'junction-chain-profile-validation',
     'viewpoint-purpose-content',
     'viewpoint-allowed-types',
+    'view-viewpoint-reference',
+    'viewpoint-stakeholder-concern-structure',
     'profile-attribute-properties',
     'profile-attribute-values'
   ]);
@@ -1059,9 +1061,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-1096-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-1109-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-1096-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-1109-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1081,7 +1083,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260709-1096-status-completion-api-scan.json'
+    'project_memory/runlogs/20260709-1109-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1101,7 +1103,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260709-1096-status-completion-api-scan/);
+  assert.match(readme, /20260709-1109-status-completion-api-scan/);
   assert.match(sources, /40 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);

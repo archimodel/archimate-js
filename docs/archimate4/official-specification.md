@@ -247,8 +247,9 @@ The status must expose implementation completion scan fields
 The status must expose model-validation coverage fields (`modelValidation.expectedCheckIds`,
 `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
-diagnostics cover catalog membership, retired concepts, relationship endpoints, multiplicity, and
-junction consistency, viewpoint definitions, and profile attribute property values.
+diagnostics cover catalog membership, retired concepts, relationship endpoints, multiplicity,
+junction consistency, view viewpoint references, viewpoint definitions, stakeholder/concern
+structure, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
@@ -257,7 +258,7 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260709-1096-status-completion-api-scan.json`; it records 49 top-level
+`project_memory/runlogs/20260709-1109-status-completion-api-scan.json`; it records 49 top-level
 status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
 guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
@@ -563,8 +564,9 @@ Implementation note:
   constraints.
 - `validateArchimate4Model()` reports unsupported relationship types, unsupported endpoint concept
   types, relationships disallowed by the active profile, mixed relationship types at a junction,
-  invalid endpoint chains through a junction, invalid viewpoint definitions, and invalid profile
-  attribute properties as structured diagnostics for host import/export checks.
+  invalid endpoint chains through a junction, unknown or malformed view viewpoint references, invalid
+  viewpoint definitions, invalid stakeholder/concern structure, and invalid profile attribute
+  properties as structured diagnostics for host import/export checks.
 
 ## Multiplicity
 
@@ -783,8 +785,8 @@ In particular:
   42-element catalog while MEFF 4.0 connector serialization remains source-dependent.
 - `getArchimate4ImplementationStatus().modelValidation` must expose expected/actual/missing/extra
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
-  concept, relationship profile, multiplicity, junction consistency, viewpoint definition, or
-  profile attribute property coverage.
+  concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference,
+  viewpoint definition, stakeholder/concern structure, or profile attribute property coverage.
 
 The relationship rules remain a fallback:
 

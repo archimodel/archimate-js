@@ -57,14 +57,14 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, viewpoint definitions, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, viewpoint stakeholder/concern structure, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260709-1097-archimate4-model-validation-viewpoint-profile-focused-test.txt",
-        "project_memory/runlogs/20260709-1096-status-completion-api-scan.json"
+        "project_memory/runlogs/20260709-1110-archimate4-model-validation-view-reference-focused-test.txt",
+        "project_memory/runlogs/20260709-1109-status-completion-api-scan.json"
       ]
     },
     {
