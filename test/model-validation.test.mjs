@@ -621,6 +621,57 @@ test('archimate 4 model validation reports invalid viewpoint definitions', () =>
   assert.equal(findDiagnostic(result, 'unknown-viewpoint-reference').viewId, 'view-1');
 });
 
+test('archimate 4 model validation reports invalid viewpoint container structure', () => {
+  const invalidViewpointsNodeResult = validateArchimate4Model({
+    views: {
+      viewpointsNode: 'not-a-viewpoints-node'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidViewpointListResult = validateArchimate4Model({
+    views: {
+      viewpointsNode: {
+        viewpoints: 'not-a-viewpoint-list'
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidViewpointEntryResult = validateArchimate4Model({
+    views: {
+      viewpoints: [
+        null,
+        'not-a-viewpoint'
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidViewpointShorthandResult = validateArchimate4Model({
+    views: {
+      viewpoints: 'not-a-viewpoint-list'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(invalidViewpointsNodeResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewpointsNodeResult).includes('invalid-viewpoints-node'), true);
+
+  assert.equal(invalidViewpointListResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewpointListResult).includes('invalid-viewpoint-list'), true);
+
+  assert.equal(invalidViewpointEntryResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewpointEntryResult).includes('invalid-viewpoint-entry'), true);
+  assert.equal(invalidViewpointEntryResult.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-viewpoint-entry';
+  }).length, 2);
+
+  assert.equal(invalidViewpointShorthandResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewpointShorthandResult).includes('invalid-viewpoint-list'), true);
+});
+
 test('archimate 4 model validation rejects invalid view viewpoint attributes', () => {
   const result = validateArchimate4Model({
     views: {

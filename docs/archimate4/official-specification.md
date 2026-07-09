@@ -258,7 +258,7 @@ view tree structure, view node geometry, junction consistency, present `IdObject
 string attributes and `viewpointRef` references, view node element references, view element
 `label` string values, view connection
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
-`style`/`font`/`color` values, viewpoint definitions including allowed-type string entries, model-defined and profile-defined viewpoint
+`style`/`font`/`color` values, `Viewpoints` container structure, viewpoint definitions including allowed-type string entries, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
 `BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef` references,
 `PropertyDefinitions` / `Properties` container structure, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
@@ -383,6 +383,9 @@ Supported mechanism:
 - `View` can retain a reference to a model-defined viewpoint definition in `viewpointRef`.
 - `Views` can retain a `Viewpoints` container with viewpoint definitions, concerns, stakeholders,
   purpose, content, allowed element types, allowed relationship types, and modeling notes.
+- `validateArchimate4Model()` checks `Viewpoints` root container, viewpoint list, and viewpoint
+  entry structure before applying purpose/content, allowed-type, concern, stakeholder, and
+  modeling-note diagnostics.
 - `validateArchimate4Model()` checks `modelingNotes` list shape plus each note's optional `type` and
   `documentation` string fields.
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
@@ -826,8 +829,8 @@ In particular:
   viewpoint-reference, view
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
   relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry,
-  IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition, viewpoint
-  allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
+  IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition,
+  Viewpoints container structure, viewpoint allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, BaseObject field structure, organization tree structure and identifier-reference,
   property-container structure, property-definition structure and reference, property value string-structure, or profile attribute
   property coverage.

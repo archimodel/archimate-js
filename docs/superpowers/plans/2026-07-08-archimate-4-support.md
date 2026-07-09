@@ -73,7 +73,7 @@ official-claim prerequisite remains aligned to an external blocker id.
 Model validation status reports `expectedCheckIds`, `actualCheckIds`, `missingCheckIds`, and
 `extraCheckIds` for the host-callable model diagnostics that cover concept container structure, element catalog membership,
 retired ArchiMate 3 concepts, relationship catalog, endpoint references, and endpoint type support, active profile checks,
-multiplicity notation, junction consistency, view tree structure, view viewpoint string attributes and references, viewpoint
+multiplicity notation, junction consistency, view tree structure, view viewpoint string attributes and references, Viewpoints container structure, viewpoint
 definitions including allowed-type string entries, relationship option field types, present IdObject
 id and xsi:type string values, view node element references, view element label string values and geometry, view connection relationship references, endpoint references,
 endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values including invalid

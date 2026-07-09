@@ -1,0 +1,3 @@
+viewpointsNodeString {"valid":true,"codes":[]}
+viewpointsListString THREW (viewpoints || []).forEach is not a function
+viewpointsAliasString {"valid":true,"codes":[]}
