@@ -1319,6 +1319,49 @@ test('archimate 4 implementation status exposes C260 appendix C example viewpoin
   assert.match(plan, /Appendix C example viewpoints coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixDStandardsGuidanceCatalog = profile.conformance.appendixDStandardsGuidanceCoverageCatalog;
+  const appendixDStandardsGuidanceCoverage = profile.conformance.appendixDStandardsGuidanceCoverage;
+  const expectedAppendixDStandardsGuidanceIds = [
+    'togaf-standard',
+    'bizbok-guide',
+    'other-modeling-languages',
+    'bpmn',
+    'uml',
+    'bmm'
+  ];
+
+  assert.equal(appendixDStandardsGuidanceCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    appendixDStandardsGuidanceCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(appendixDStandardsGuidanceCatalog.expectedCount, expectedAppendixDStandardsGuidanceIds.length);
+  assert.deepEqual(appendixDStandardsGuidanceCatalog.expectedIds, expectedAppendixDStandardsGuidanceIds);
+  assert.deepEqual(
+    appendixDStandardsGuidanceCoverage.map((appendixDStandardsGuidanceItem) => appendixDStandardsGuidanceItem.id),
+    expectedAppendixDStandardsGuidanceIds
+  );
+  assert.equal(
+    appendixDStandardsGuidanceCoverage.every((appendixDStandardsGuidanceItem) => appendixDStandardsGuidanceItem.c260Section && appendixDStandardsGuidanceItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixDStandardsGuidanceCoverage/);
+  assert.match(languageIndex, /appendixDStandardsGuidanceCoverage: appendixDStandardsGuidanceCoverage/);
+  assert.match(languageIndex, /missingAppendixDStandardsGuidanceIds/);
+  assert.match(readme, /appendixDStandardsGuidanceCoverage\.expectedIds/);
+  assert.match(sources, /appendixDStandardsGuidanceCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixDStandardsGuidanceCoverage\.missingAppendixDStandardsGuidanceIds/);
+  assert.match(plan, /Appendix D standards guidance coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

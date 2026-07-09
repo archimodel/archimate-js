@@ -866,6 +866,27 @@
       { "id": "migration-viewpoint", "c260Section": "C.4.2", "heading": "Migration Viewpoint", "status": "tracked" },
       { "id": "implementation-and-migration-viewpoint", "c260Section": "C.4.3", "heading": "Implementation and Migration Viewpoint", "status": "tracked" }
     ],
+    "appendixDStandardsGuidanceCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 6,
+      "expectedIds": [
+        "togaf-standard",
+        "bizbok-guide",
+        "other-modeling-languages",
+        "bpmn",
+        "uml",
+        "bmm"
+      ]
+    },
+    "appendixDStandardsGuidanceCoverage": [
+      { "id": "togaf-standard", "c260Section": "D.1", "heading": "The TOGAF Standard", "status": "tracked" },
+      { "id": "bizbok-guide", "c260Section": "D.2", "heading": "The BIZBOK Guide", "status": "tracked" },
+      { "id": "other-modeling-languages", "c260Section": "D.3", "heading": "Other Modeling Languages", "status": "tracked" },
+      { "id": "bpmn", "c260Section": "D.4", "heading": "BPMN", "status": "tracked" },
+      { "id": "uml", "c260Section": "D.5", "heading": "UML", "status": "tracked" },
+      { "id": "bmm", "c260Section": "D.6", "heading": "BMM", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

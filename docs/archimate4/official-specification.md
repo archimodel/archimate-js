@@ -167,6 +167,12 @@ It must expose exact C260 Appendix C Example Viewpoints outline fields
 `appendixCExampleViewpointsCoverage.missingAppendixCExampleViewpointsIds`, and
 `appendixCExampleViewpointsCoverage.extraAppendixCExampleViewpointsIds`) so the implementation can
 track example viewpoint coverage by subsection identity.
+It must expose exact C260 Appendix D Relationship to Other Standards, Specifications, and Guidance
+Documents outline fields (`appendixDStandardsGuidanceCoverage.expectedIds`,
+`appendixDStandardsGuidanceCoverage.actualIds`,
+`appendixDStandardsGuidanceCoverage.missingAppendixDStandardsGuidanceIds`, and
+`appendixDStandardsGuidanceCoverage.extraAppendixDStandardsGuidanceIds`) so the implementation can
+track standards and guidance relationship coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot
