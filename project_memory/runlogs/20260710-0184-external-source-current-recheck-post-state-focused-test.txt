@@ -1,0 +1,19 @@
+(node:80800) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 conformance report preserves official blockers and companion gaps (12.9667ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (7.5779ms)
+✔ archimate 4 source coverage counts match local and external classifications (6.0454ms)
+✔ archimate 4 source coverage status agrees with external source runlog evidence (6.3024ms)
+✔ archimate 4 XML exchange stays experimental until official MEFF 4 XSD is present (4.6549ms)
+✔ archimate 4 source coverage does not treat 3.1 XSD evidence as MEFF 4 XSD (4.4919ms)
+✔ archimate 4 external blocker gaps map to source coverage and readiness (4.1638ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 171.507

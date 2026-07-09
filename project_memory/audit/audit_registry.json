@@ -25,10 +25,10 @@
       "description": "C260 book-derived section, aggregate, outline, and source-runlog coverage audit passes",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
-      "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-09T23:20:00+09:00",
+      "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-10T03:56:00+09:00",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260709-1039-archimate4-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0187-external-source-current-recheck-post-state-c260-coverage-audit.json"
       ]
     },
     {
@@ -65,6 +65,26 @@
       "artifacts": [
         "project_memory/runlogs/20260710-0161-archimate4-conformance-report-focused-test.txt",
         "project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json"
+      ]
+    },
+    {
+      "id": "audit.archimate4.external_source_current_recheck",
+      "description": "Current W262 and MEFF 4.0 XSD source evidence stays aligned with archimate4-profile sourceCoverage and the host-facing conformance report",
+      "when": ["post_change", "pre_commit"],
+      "severity": "blocker",
+      "command": "node --test --test-name-pattern \"source coverage|external source|MEFF 4 XSD|3.1 XSD evidence|conformance report\" test/language-profile.test.mjs",
+      "expect": { "exit_code": 0 },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0173-external-source-current-recheck.json",
+        "project_memory/runlogs/20260710-0174-external-source-current-recheck-focused-test.txt",
+        "project_memory/runlogs/20260710-0178-external-source-current-recheck-test-language.txt",
+        "project_memory/runlogs/20260710-0179-external-source-current-recheck-completion-audit.json",
+        "project_memory/runlogs/20260710-0180-external-source-current-recheck-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0181-external-source-current-recheck-conformance-report.json",
+        "project_memory/runlogs/20260710-0184-external-source-current-recheck-post-state-focused-test.txt",
+        "project_memory/runlogs/20260710-0185-external-source-current-recheck-post-state-test-language.txt",
+        "project_memory/runlogs/20260710-0186-external-source-current-recheck-post-state-completion-audit.json",
+        "project_memory/runlogs/20260710-0187-external-source-current-recheck-post-state-c260-coverage-audit.json"
       ]
     },
     {

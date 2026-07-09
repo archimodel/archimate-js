@@ -1,0 +1,2 @@
+lib/metamodel/languages/archimate4-profile.json OK
+project_memory/runlogs/20260710-0173-external-source-current-recheck.json OK

@@ -14,7 +14,7 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
 - W262 companion paper status: The Open Group publication page for W262 is reachable and lists a free
   PDF download that requires login; the PDF is not yet present locally. The latest page and local
   Downloads/attachments check is recorded in
-  `project_memory/runlogs/20260709-1174-external-source-current-recheck.json`; it detected the W262
+  `project_memory/runlogs/20260710-0173-external-source-current-recheck.json`; it detected the W262
   title, 22-page metadata, 2026-04-27 publication metadata, and found no matching local W262 PDF.
 - Local ArchiMate PDF inventory status: `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`
   identifies the local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files,
@@ -780,6 +780,12 @@ Latest official XSD recheck:
   implementation status recorded this evidence in `sourceCoverage.meff4Xsd`.
 - On 2026-07-09T23:50:00+09:00, the official directory evidence was refreshed again in
   `project_memory/runlogs/20260709-1174-external-source-current-recheck.json` using
+  `scripts/check_archimate4_external_sources.mjs`. The directory returned 200 and still listed only
+  the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory, `archimate4_*`,
+  `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and `archimate_*` candidate URLs returned
+  404, while the 3.1 Model XSD baseline returned 200.
+- On 2026-07-10T03:35:00+09:00, the official directory evidence was refreshed again in
+  `project_memory/runlogs/20260710-0173-external-source-current-recheck.json` using
   `scripts/check_archimate4_external_sources.mjs`. The directory returned 200 and still listed only
   the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory, `archimate4_*`,
   `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and `archimate_*` candidate URLs returned
