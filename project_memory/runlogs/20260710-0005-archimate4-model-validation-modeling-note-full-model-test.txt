@@ -1,0 +1,30 @@
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (2.0686ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.2773ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (1.2048ms)
+✔ archimate 4 model validation can call an active relationship validator (0.2809ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.5463ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.2623ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.8722ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.3074ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.2412ms)
+✔ archimate 4 model validation reports invalid view element references (0.9524ms)
+✔ archimate 4 model validation accepts valid view element references (0.3747ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.577ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.3368ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (1.3892ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.2228ms)
+✔ archimate 4 model validation reports invalid organization identifier references (0.3646ms)
+✔ archimate 4 model validation accepts organization references to model concepts (0.2783ms)
+✔ archimate 4 model validation reports invalid property definition references (1.5119ms)
+✔ archimate 4 model validation accepts property definition references by id (0.8986ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (0.9185ms)
+✔ archimate 4 model validation is exported from the package root (15.2085ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 169.4832
+exitCode=0

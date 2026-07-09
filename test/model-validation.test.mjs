@@ -284,6 +284,12 @@ test('archimate 4 model validation accepts valid viewpoint definitions', () => {
                 ]
               }
             }
+          ],
+          modelingNotes: [
+            {
+              type: 'usage',
+              documentation: 'Use this viewpoint for risk overview reviews.'
+            }
           ]
         }
       ],
@@ -302,6 +308,39 @@ test('archimate 4 model validation accepts valid viewpoint definitions', () => {
 
   assert.equal(result.valid, true);
   assert.deepEqual(result.diagnostics, []);
+});
+
+test('archimate 4 model validation reports invalid viewpoint modeling notes', () => {
+  const result = validateArchimate4Model({
+    views: {
+      viewpoints: [
+        {
+          id: 'viewpoint-invalid-list',
+          modelingNotes: 'not-an-array'
+        },
+        {
+          id: 'viewpoint-invalid-entry',
+          modelingNotes: [
+            null,
+            {
+              type: 42,
+              documentation: false
+            }
+          ]
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-viewpoint-modeling-note-list'), true);
+  assert.equal(codes.includes('invalid-viewpoint-modeling-note-entry'), true);
+  assert.equal(codes.includes('invalid-modeling-note-type'), true);
+  assert.equal(codes.includes('invalid-modeling-note-documentation'), true);
+  assert.equal(findDiagnostic(result, 'invalid-viewpoint-modeling-note-list').viewpointId, 'viewpoint-invalid-list');
 });
 
 test('archimate 4 model validation reports invalid view element references', () => {

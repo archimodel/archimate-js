@@ -260,9 +260,9 @@
   embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
   references, view node element references, view connection relationship references, viewpoint
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
-  allowed-type application to View contents, viewpoint stakeholder/concern structure, organization
-  `identifierRef` references, `Property.propertyDefinitionRef` references, and profile attribute
-  property/value checks.
+  allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
+  structure, organization `identifierRef` references, `Property.propertyDefinitionRef` references,
+  and profile attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -276,7 +276,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-2303-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260710-0003-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -574,6 +574,8 @@
   `View.viewpointRef`, and a model-level `Views.viewpointsNode` container.
 - Viewpoint definitions can carry concerns, stakeholders, purpose, content, allowed element types,
   allowed relationship types, and modeling notes.
+- `validateArchimate4Model()` checks `modelingNotes` list shape plus note `type` and
+  `documentation` string fields.
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
   host tooling, with purpose/content token validation.
 - Custom viewpoint definitions validate allowed element and relationship types against the active profile,
@@ -878,7 +880,7 @@
   view viewpoint references, view node element references, view connection relationship references,
   viewpoint purpose/content and allowed element/relationship type definitions, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
-  structure, and profile attribute properties with typed values.
+  and `modelingNotes` structure, and profile attribute properties with typed values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active
   relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
   Appendix B profile outside the repository.

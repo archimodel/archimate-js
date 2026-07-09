@@ -1,0 +1,5 @@
+json ok lib/metamodel/languages/archimate4-profile.json
+json ok project_memory/audit/audit_registry.json
+json ok project_memory/state/aria_state.json
+json ok project_memory/runlogs/20260710-0003-status-completion-api-scan.json
+exitCode=0

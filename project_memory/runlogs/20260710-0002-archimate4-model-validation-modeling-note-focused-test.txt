@@ -1,0 +1,11 @@
+✔ archimate 4 model validation reports invalid viewpoint definitions (2.3456ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.806ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.1856ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 213.0502
