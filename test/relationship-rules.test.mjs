@@ -460,6 +460,37 @@ test('archimate 4 implementation status includes active relationship profile sou
   assert.equal(resetStatus.relationshipProfile.sourceMetadata, null);
 });
 
+test('archimate 4 default relationship fallback does not satisfy Appendix B source coverage', () => {
+  resetArchimate4RelationshipProfileForTests();
+
+  const relationshipStatus = getArchimate4RelationshipProfileStatus();
+  const status = getArchimate4ImplementationStatus();
+  const appendixB = status.sourceCoverage.items.appendixBRelationshipMatrix;
+  const appendixBGap = status.remainingGaps.items.find((gap) => {
+    return gap.id === 'officialAppendixBRelationshipMatrix';
+  });
+
+  assert.equal(relationshipStatus.source, 'compatibility-fallback');
+  assert.equal(status.relationshipProfile.source, relationshipStatus.source);
+  assert.equal(status.relationshipProfile.sourceScope, 'default');
+  assert.equal(status.relationshipProfile.completeSourceCoverage, true);
+  assert.equal(status.relationshipProfile.completeTargetCoverage, true);
+
+  assert.equal(appendixB.status, 'external-profile-required');
+  assert.equal(appendixB.localSourcePresent, false);
+  assert.equal(appendixB.redistributableProfilePresent, false);
+  assert.equal(appendixB.externalProfileLoaderImplemented, true);
+  assert.equal(appendixB.coverageReportImplemented, true);
+  assert.equal(appendixB.externalBlocker, 'officialAppendixBRelationshipMatrix');
+
+  assert.equal(appendixBGap.sourceId, 'appendixBRelationshipMatrix');
+  assert.equal(appendixBGap.requirementId, 'appendix-b-relationships');
+  assert.equal(appendixBGap.officialConformanceBlocker, true);
+  assert.equal(status.conformanceReadiness.blockers.includes(appendixBGap.id), true);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('appendixBRelationshipMatrix'), true);
+  assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+});
+
 test('archimate 4 relationship profile loader reports invalid JSON strings clearly', () => {
   assert.throws(() => parseRelationshipProfile('{bad json'), /relationship profile JSON could not be parsed/);
 });

@@ -2123,3 +2123,14 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1390-xml-exchange-meff4-boundary-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1391-xml-exchange-meff4-boundary-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-xml-exchange-meff4-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 164
+
+- Goal: strengthen the Appendix B relationship-profile boundary so the default ArchiMate 4 compatibility fallback cannot be mistaken for a redistributable official Appendix B matrix profile.
+- Implemented: `test/relationship-rules.test.mjs` now verifies that the default relationship profile reports `compatibility-fallback` and complete fallback coverage while `sourceCoverage.items.appendixBRelationshipMatrix` still reports `external-profile-required`, no local redistributable profile, and the `officialAppendixBRelationshipMatrix` blocker.
+- Implemented: the guard ties the Appendix B remaining gap and `appendix-b-relationships` requirement to `conformanceReadiness.missingRequiredSources`, keeping official conformance unclaimable until an official or redistributable profile is supplied.
+- Focused verification: `project_memory/runlogs/20260709-1392-appendix-b-fallback-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 207 tests in `project_memory/runlogs/20260709-1393-appendix-b-fallback-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1394-appendix-b-fallback-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1395-appendix-b-fallback-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1396-appendix-b-fallback-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-b-fallback-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
