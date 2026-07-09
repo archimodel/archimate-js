@@ -1931,3 +1931,18 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1242-relationship-profile-default-reset-final-staged-diff-check.txt` passed after trimming the repository-lint runlog EOF blank line.
 - Audit: `project_memory/audit/reports/20260709-relationship-profile-default-reset-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 150
+
+- Goal: make C260 profile attribute type support machine-auditable so language customization type coverage cannot drift silently.
+- Source evidence: `project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt` records a C260 Chapter 14 profile attribute type token scan without copying profile table prose.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `profileAttributeTypeCatalog` with C260-derived basic/example type names and implementation-defined additional type names.
+- Implemented: `getArchimate4ImplementationStatus().profileAttributeTypes` now reports supported type names, actual/missing C260 type names, actual/missing implementation additional type names, unexpected additional type names, source runlog paths, and complete status.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the execution plan now guard and describe the profile attribute type status fields.
+- Focused verification: initial `project_memory/runlogs/20260709-1244-profile-attribute-type-status-focused-test.txt` failed because the new test missed the `getArchimate4ImplementationStatus` import; `project_memory/runlogs/20260709-1245-profile-attribute-type-status-focused-test-pass.txt` passed after adding the import.
+- Verification: `npm run test:language` passed with 195 tests in `project_memory/runlogs/20260709-1246-profile-attribute-type-status-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1247-profile-attribute-type-status-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1248-profile-attribute-type-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1249-profile-attribute-type-status-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1250-profile-attribute-type-status-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1252-profile-attribute-type-status.json` shows the seven C260-derived basic/example types complete, additional `URL` and `Structure` types present, and no unexpected additional types.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1251-profile-attribute-type-status-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1255-profile-attribute-type-status-staged-diff-check.txt` passed after trimming runlog EOF blank lines.
+- Audit: `project_memory/audit/reports/20260709-profile-attribute-type-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

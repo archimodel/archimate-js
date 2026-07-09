@@ -103,6 +103,10 @@ Language customization mechanisms coverage status reports `expectedIds`, `actual
 `missingLanguageCustomizationMechanismsIds`, and `extraLanguageCustomizationMechanismsIds` for the
 C260 Chapter 14 outline so attribute-extension and specialization subsection headings cannot drift
 silently.
+Profile attribute type status reports `expectedC260TypeNames`, `actualC260TypeNames`,
+`missingC260TypeNames`, `implementationAdditionalTypeNames`, and `unexpectedAdditionalTypeNames` so
+C260-derived basic/example profile attribute types and implementation-defined additions remain
+separate and auditable.
 Appendix A notation coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixANotationIds`, and `extraAppendixANotationIds` for the C260 Appendix A outline so
 notation summary subsection headings cannot drift silently while exact artwork rights remain

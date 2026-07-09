@@ -418,6 +418,9 @@
   `project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt`; it keeps the
   derived implementation boundary non-verbatim and ties attribute values to the existing model
   `PropertyDefinition` / `Properties` structure.
+- A C260 Chapter 14 profile attribute type token scan is recorded in
+  `project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt`; it supports the
+  exact profile attribute type status without copying profile table prose.
 - The implementation-defined customization path is `archimateLanguageProfile` on viewer/modeler
   options, or direct use of `createLanguageProfile(version, customization)`.
 - Custom profiles may add or override domains, retain custom attribute definitions, and add specialized
@@ -433,6 +436,11 @@
   and `isProfileAttributeValueValid()` for the implementation-supported basic type set recorded from
   the local C260 scan. `getProfileAttributesForConcept()` returns attributes for a concept and its
   specialization lineage.
+- `getArchimate4ImplementationStatus().profileAttributeTypes` reports
+  `profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`,
+  `profileAttributeTypes.missingC260TypeNames`, and
+  `profileAttributeTypes.unexpectedAdditionalTypeNames`, separating C260 basic/example attribute
+  types from implementation-defined additions such as `URL` and `Structure`.
 - Profile attribute values can also be written to model `Properties` through
   `setProfileAttributePropertyValue()` and read through `getProfileAttributePropertyValue()`. The
   helper creates reusable `PropertyDefinition` entries named

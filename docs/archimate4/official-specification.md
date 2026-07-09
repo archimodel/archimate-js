@@ -256,6 +256,11 @@ Supported customization data:
   Host tooling can retrieve applicable attributes through `getProfileAttributesForConcept()` and can
   normalize or validate implementation-supported typed values through `normalizeProfileAttributeValue()`
   and `isProfileAttributeValueValid()`.
+  Implementation status must expose exact profile attribute type fields
+  (`profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`,
+  `profileAttributeTypes.missingC260TypeNames`, and
+  `profileAttributeTypes.unexpectedAdditionalTypeNames`) so C260-derived basic/example attribute
+  types and implementation-defined additions cannot drift silently.
   Behavior is guarded by
   `project_memory/runlogs/20260709-1206-profile-attribute-customization-behavior-test-language.txt`:
   attributes on standard and specialized element/relationship concepts are returned through the

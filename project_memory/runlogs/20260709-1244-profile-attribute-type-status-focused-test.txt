@@ -1,0 +1,82 @@
+(node:83508) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (8.0276ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.5254ms)
+✔ archimate 4 profile exposes Common Domain (1.7148ms)
+✔ archimate 4 profile matches the C260 element catalog (2.9454ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (1.4146ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (1.1899ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (1.8764ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.1488ms)
+✔ archimate 4 palette exposes every standard element (1.8777ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (5.9107ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (5.7631ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.7835ms)
+✔ demo sample switches concepts by selected ArchiMate profile (0.7272ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (1.6957ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (26.8508ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (2.2041ms)
+✔ active profile rejects concepts and relationships outside the selected version (1.6055ms)
+✔ renderer uses active language profile pictogram refs (2.0052ms)
+✔ language profile customization supports C260 specialization profiles (2.2157ms)
+✔ language profile customization validates C260 profile attribute definitions (2.2835ms)
+✖ archimate 4 implementation status exposes profile attribute type coverage (2.3333ms)
+✔ custom profile attributes validate active concepts relationships and lineage lookup (3.7149ms)
+✔ language profile customization supports relationship specializations (2.4716ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (2.5836ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.4496ms)
+✔ language profile customization supports viewpoint definitions (2.0069ms)
+✔ custom viewpoint definitions validate purpose content and allowed types (2.7607ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (5.8426ms)
+✔ archimate 4 implementation status exposes C260 introduction coverage identity (3.4489ms)
+✔ archimate 4 implementation status exposes C260 language structure coverage identity (3.8867ms)
+✔ archimate 4 implementation status exposes C260 common domain coverage identity (4.0819ms)
+✔ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (3.6627ms)
+✔ archimate 4 implementation status exposes C260 motivation domain coverage identity (4.9985ms)
+✔ archimate 4 implementation status exposes C260 strategy domain coverage identity (4.3826ms)
+✔ archimate 4 implementation status exposes C260 business domain coverage identity (4.1546ms)
+✔ archimate 4 implementation status exposes C260 application domain coverage identity (4.0883ms)
+✔ archimate 4 implementation status exposes C260 technology domain coverage identity (4.6644ms)
+✔ archimate 4 implementation status exposes C260 relationships between core domains coverage identity (3.9021ms)
+✔ archimate 4 implementation status exposes C260 implementation and migration domain coverage identity (3.3101ms)
+✔ archimate 4 implementation status exposes C260 stakeholders architecture views viewpoints coverage identity (3.4358ms)
+✔ archimate 4 implementation status exposes C260 language customization mechanisms coverage identity (3.6222ms)
+✔ archimate 4 implementation status exposes C260 appendix A notation coverage identity (4.0124ms)
+✔ archimate 4 implementation status exposes C260 appendix B relationships coverage identity (3.6142ms)
+✔ archimate 4 implementation status exposes C260 appendix C example viewpoints coverage identity (3.4628ms)
+✔ archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity (3.3848ms)
+✔ archimate 4 implementation status exposes C260 appendix E version changes coverage identity (4.569ms)
+✔ archimate 4 implementation status exposes C260 appendix F acronym coverage identity (4.5345ms)
+✔ archimate 4 implementation status exposes C260 document artifact boundary (4.0626ms)
+✔ archimate 4 implementation status exposes aggregate C260 coverage integrity (8.205ms)
+✔ archimate 4 implementation status reconciles C260 PDF outline source with derived coverage (6.972ms)
+✔ archimate 4 implementation status audits C260 outline assignment counts by coverage group (5.2023ms)
+✔ archimate 4 implementation status audits C260 coverage source runlog evidence (4.5772ms)
+✔ archimate 4 implementation status exposes C260 definition vocabulary identity (4.1306ms)
+✔ archimate 4 implementation status API can be imported directly by Node ESM (95.3874ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (2.0531ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (3.9741ms)
+✔ archimate 4 implementation status exposes official conformance readiness (4.1351ms)
+✔ archimate 4 implementation status exposes remaining gap identity (3.846ms)
+✔ archimate 4 implementation status exposes C260 section coverage identity (4.3974ms)
+✔ archimate 4 implementation plan records current execution boundary (1.6498ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (3.2517ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 60
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 441.8262
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:441:1
+✖ archimate 4 implementation status exposes profile attribute type coverage (2.3333ms)
+  ReferenceError: getArchimate4ImplementationStatus is not defined
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:446:18)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)

@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
 import {
   createLanguageProfile,
+  getArchimate4ImplementationStatus,
   getProfileAttributesForConcept
 } from '../lib/metamodel/languages/index.js';
 
@@ -436,6 +437,51 @@ test('language profile customization validates C260 profile attribute definition
   assert.match(sources, /Profile attributes are validated as C260 typed attributes/);
   assert.match(sources, /Profile attribute values can be normalized and validated/);
   assert.match(sources, /Profile attribute values can also be written to model `Properties`/);
+});
+
+test('archimate 4 implementation status exposes profile attribute type coverage', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const status = getArchimate4ImplementationStatus();
+
+  assert.deepEqual(status.profileAttributeTypes.expectedC260TypeNames, [
+    'String',
+    'Boolean',
+    'Date',
+    'Real',
+    'Currency',
+    'Time',
+    'Integer'
+  ]);
+  assert.deepEqual(
+    status.profileAttributeTypes.actualC260TypeNames,
+    status.profileAttributeTypes.expectedC260TypeNames
+  );
+  assert.deepEqual(status.profileAttributeTypes.missingC260TypeNames, []);
+  assert.deepEqual(status.profileAttributeTypes.implementationAdditionalTypeNames, [
+    'URL',
+    'Structure'
+  ]);
+  assert.deepEqual(status.profileAttributeTypes.actualAdditionalTypeNames, [
+    'URL',
+    'Structure'
+  ]);
+  assert.deepEqual(status.profileAttributeTypes.missingAdditionalTypeNames, []);
+  assert.deepEqual(status.profileAttributeTypes.unexpectedAdditionalTypeNames, []);
+  assert.equal(status.profileAttributeTypes.complete, true);
+  assert.deepEqual(status.profileAttributeTypes.sourceRunlogPaths, [
+    'project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt',
+    'project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt',
+    'project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt'
+  ]);
+
+  assert.match(languageIndex, /function summarizeProfileAttributeTypes/);
+  assert.match(languageIndex, /profileAttributeTypes: profileAttributeTypes/);
+  assert.match(readme, /profileAttributeTypes\.expectedC260TypeNames/);
+  assert.match(sources, /profileAttributeTypes\.missingC260TypeNames/);
+  assert.match(officialSpec, /profileAttributeTypes\.unexpectedAdditionalTypeNames/);
 });
 
 test('custom profile attributes validate active concepts relationships and lineage lookup', () => {

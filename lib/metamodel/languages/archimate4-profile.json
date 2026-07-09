@@ -85,6 +85,27 @@
       "legacyCompatibilityAliases": [ "PICTO_DELIVRABLE", "PICTO_STAKHOLDER" ],
       "exactAppendixAVectorsConfirmed": false
     },
+    "profileAttributeTypeCatalog": {
+      "status": "implemented",
+      "sourceRunlogPaths": [
+        "project_memory/runlogs/20260709-200-c260-profile-attribute-detail-scan.txt",
+        "project_memory/runlogs/20260709-233-c260-profile-attribute-property-scan.txt",
+        "project_memory/runlogs/20260709-1243-c260-profile-attribute-type-token-scan.txt"
+      ],
+      "expectedC260TypeNames": [
+        "String",
+        "Boolean",
+        "Date",
+        "Real",
+        "Currency",
+        "Time",
+        "Integer"
+      ],
+      "implementationAdditionalTypeNames": [
+        "URL",
+        "Structure"
+      ]
+    },
     "externalBlockerCatalog": {
       "status": "external-source-dependent",
       "expectedCount": 3,
