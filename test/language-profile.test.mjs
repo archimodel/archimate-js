@@ -1102,6 +1102,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'organization-identifier-reference',
     'property-definition-structure',
     'property-definition-reference',
+    'property-value-structure',
     'profile-attribute-properties',
     'profile-attribute-values'
   ]);

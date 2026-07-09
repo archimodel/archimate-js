@@ -79,7 +79,7 @@ endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`
 `font.style` `plain` combinations, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern and
 modeling-note structure, organization identifier references, property definition structure and
-references, and profile attribute property values.
+references, present property value string structure, and profile attribute property values.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.
 `getArchimate4ConformanceReport()` derives a flattened host-facing report from the same status

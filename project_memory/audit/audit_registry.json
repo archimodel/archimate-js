@@ -18,17 +18,19 @@
       "severity": "blocker",
       "command": "npm run test:language",
       "expect": { "exit_code": 0 },
-      "artifacts": []
+      "artifacts": [
+        "project_memory/runlogs/20260710-0212-property-value-structure-test-language.txt"
+      ]
     },
     {
       "id": "audit.archimate4.c260_coverage",
       "description": "C260 book-derived section, aggregate, outline, and source-runlog coverage audit passes",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
-      "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-10T03:56:00+09:00",
+      "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-10T05:06:00+09:00",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260710-0187-external-source-current-recheck-post-state-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0214-property-value-structure-c260-coverage-audit.json"
       ]
     },
     {
@@ -104,7 +106,7 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, viewpoint definitions, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, present property value string structure, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
@@ -112,7 +114,13 @@
       "artifacts": [
         "project_memory/runlogs/20260710-0144-official-diagram-font-style-source-check.json",
         "project_memory/runlogs/20260710-0147-archimate4-model-validation-font-style-plain-full-model-test.txt",
-        "project_memory/runlogs/20260710-0127-status-completion-api-scan.json"
+        "project_memory/runlogs/20260710-0127-status-completion-api-scan.json",
+        "project_memory/runlogs/20260710-0207-property-value-structure-red-test.txt",
+        "project_memory/runlogs/20260710-0208-property-value-structure-focused-model-test.txt",
+        "project_memory/runlogs/20260710-0209-property-value-structure-status-test.txt",
+        "project_memory/runlogs/20260710-0211-property-value-structure-status-snapshot.json",
+        "project_memory/runlogs/20260710-0212-property-value-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0213-property-value-structure-completion-audit.json"
       ]
     },
     {

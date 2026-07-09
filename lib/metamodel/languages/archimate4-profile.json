@@ -99,6 +99,7 @@
         "organization-identifier-reference",
         "property-definition-structure",
         "property-definition-reference",
+        "property-value-structure",
         "profile-attribute-properties",
         "profile-attribute-values"
       ],

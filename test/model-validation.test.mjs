@@ -1226,6 +1226,10 @@ test('archimate 4 model validation reports invalid property definition reference
             properties: [
               {
                 propertyDefinitionRef: 'pd-severity',
+                value: 7
+              },
+              {
+                propertyDefinitionRef: 'pd-severity',
                 value: 'high'
               },
               {
@@ -1282,8 +1286,10 @@ test('archimate 4 model validation reports invalid property definition reference
   assert.equal(codes.includes('invalid-property-definition-reference'), true);
   assert.equal(codes.includes('missing-property-definition-reference'), true);
   assert.equal(codes.includes('invalid-properties-list'), true);
+  assert.equal(codes.includes('invalid-property-value'), true);
   assert.equal(findDiagnostic(result, 'invalid-profile-attribute-value').propertyName, 'archimate-js:profileAttribute:RiskEvent:severity');
   assert.equal(findDiagnostic(result, 'unknown-property-definition-reference').propertyDefinitionId, 'missing-definition');
+  assert.equal(findDiagnostic(result, 'invalid-property-value').propertyIndex, 0);
 });
 
 test('archimate 4 model validation accepts property definition references by id', () => {

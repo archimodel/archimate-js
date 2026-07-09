@@ -258,7 +258,8 @@ relationship references, endpoint references, endpoint-to-relationship alignment
 `style`/`font`/`color` values, viewpoint definitions, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
 organization `identifierRef` references, reusable `PropertyDefinition` structure,
-`Property.propertyDefinitionRef` references, and profile attribute property values.
+`Property.propertyDefinitionRef` references, present `Property.value` string structure, and profile
+attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
@@ -336,8 +337,8 @@ Supported customization data:
 - `validateArchimate4Model()` checks model-level `PropertyDefinition` list/entry shape and optional
   definition `name` / `type` string fields, resolves `Property.propertyDefinitionRef` id references
   against model `PropertyDefinition` entries, reports missing, malformed, or unknown
-  property-definition references, and applies profile attribute value validation after the reference
-  is resolved.
+  property-definition references, validates present `Property.value` fields as strings, and applies
+  profile attribute value validation after the reference is resolved.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
 - Specialized relationship metadata. New custom relationship objects may declare `specializes` and
@@ -822,7 +823,7 @@ In particular:
   view connection endpoint-alignment, view connection waypoint-geometry, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, organization identifier-reference, property-definition structure and
-  reference, or profile attribute property coverage.
+  reference, property value string-structure, or profile attribute property coverage.
 
 The relationship rules remain a fallback:
 

@@ -2811,3 +2811,16 @@
 - Post-registry verification: JSON parse passed in `project_memory/runlogs/20260710-0204-demo-conformance-panel-post-registry-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260710-0205-demo-conformance-panel-post-registry-diff-check.txt`.
 - Audit report: `project_memory/audit/reports/20260710-demo-conformance-panel-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-10 loop 213
+
+- Goal: tighten ArchiMate model validation against the local MEFF property descriptor by checking present `Property.value` fields.
+- Observation: `Property.propertyDefinitionRef` and profile attribute property values were validated, but generic property values were not checked for string shape even though the local descriptor declares `Property.value` as `String`.
+- Red test: `project_memory/runlogs/20260710-0207-property-value-structure-red-test.txt` failed as expected before implementation because non-string `Property.value` did not produce `invalid-property-value`.
+- Implemented: `validateArchimate4Model()` and `validateArchimateModel()` now report `invalid-property-value` when a present property value is not a string, while continuing to tolerate undefined or null values as absent during partial in-memory editing.
+- Implemented: `getArchimate4ImplementationStatus().modelValidation` now exposes `property-value-structure` in expected/actual check ids; README, CHANGELOG, source ledger, implementation specification, and execution plan now document the check.
+- Verification: focused model validation passed in `project_memory/runlogs/20260710-0208-property-value-structure-focused-model-test.txt`; focused status test passed in `project_memory/runlogs/20260710-0209-property-value-structure-status-test.txt`; changed-file ESLint passed in `project_memory/runlogs/20260710-0210-property-value-structure-eslint-changed.txt`; status snapshot parse passed in `project_memory/runlogs/20260710-0216-property-value-structure-json-check.txt`.
+- Verification: `npm run test:language` passed with 258 tests in `project_memory/runlogs/20260710-0212-property-value-structure-test-language.txt`; completion audit passed with no failures in `project_memory/runlogs/20260710-0213-property-value-structure-completion-audit.json`; C260 coverage audit passed with no failures in `project_memory/runlogs/20260710-0214-property-value-structure-c260-coverage-audit.json`; `git diff --check` passed in `project_memory/runlogs/20260710-0215-property-value-structure-diff-check.txt`.
+- Post-state verification: JSON parse passed in `project_memory/runlogs/20260710-0217-property-value-structure-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260710-0218-property-value-structure-final-diff-check.txt`.
+- Audit report: `project_memory/audit/reports/20260710-property-value-structure-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

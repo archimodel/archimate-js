@@ -264,7 +264,8 @@
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
   structure, organization `identifierRef` references, reusable `PropertyDefinition` structure,
-  `Property.propertyDefinitionRef` references, and profile attribute property/value checks.
+  `Property.propertyDefinitionRef` references, present `Property.value` string structure, and profile
+  attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -544,8 +545,8 @@
 - `validateArchimate4Model()` checks model-level `propertyDefinitionsNode.propertyDefinitions`
   list/entry shape and optional definition `name` / `type` string fields, resolves
   `Property.propertyDefinitionRef` id references against those model-level definitions, reports
-  missing, malformed, or unknown references, and uses the resolved definition name for profile
-  attribute value validation.
+  missing, malformed, or unknown references, validates present `Property.value` fields as strings,
+  and uses the resolved definition name for profile attribute value validation.
 - New custom concepts must declare `specializes`; relationship validation resolves specialized source
   and target concepts to their standard base concept before consulting the active relationship profile.
 - New custom relationship objects may declare `specializes` to point to a standard ArchiMate
@@ -886,7 +887,8 @@
   viewpoint purpose/content and allowed element/relationship type definitions, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
   and `modelingNotes` structure, reusable `PropertyDefinition` structure, property-definition
-  references, and profile attribute properties with typed values.
+  references, present property value string structure, and profile attribute properties with typed
+  values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active
   relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
   Appendix B profile outside the repository.
