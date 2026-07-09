@@ -51,6 +51,10 @@ The status must expose exact source identity fields (`sourceCoverage.expectedSou
 complete.
 It must also expose `conformanceReadiness.officialConformanceClaimable` so host tools cannot mistake
 implemented local coverage for a complete official conformance claim while external blockers remain.
+It must expose `conformanceReadiness.requiredBeforeClaimByBlocker`,
+`conformanceReadiness.missingRequiredBeforeClaimBlockerIds`, and
+`conformanceReadiness.extraRequiredBeforeClaimBlockerIds` so every prerequisite for an official
+conformance claim stays aligned to an external blocker id.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

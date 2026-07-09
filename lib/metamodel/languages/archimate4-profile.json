@@ -155,7 +155,17 @@
         "Load an official or redistributable Appendix B relationship profile",
         "Confirm the official MEFF 4.0 XSD namespace and serialization details",
         "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
-      ]
+      ],
+      "requiredBeforeClaimBlockerIds": [
+        "officialAppendixBRelationshipMatrix",
+        "officialMeff4Xsd",
+        "exactAppendixAArtworkRights"
+      ],
+      "requiredBeforeClaimByBlocker": {
+        "officialAppendixBRelationshipMatrix": "Load an official or redistributable Appendix B relationship profile",
+        "officialMeff4Xsd": "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+        "exactAppendixAArtworkRights": "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
+      }
     },
     "sourceCoverageCatalog": {
       "status": "implemented-with-external-blockers",

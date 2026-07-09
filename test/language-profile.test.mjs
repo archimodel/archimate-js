@@ -682,17 +682,33 @@ test('archimate 4 implementation status exposes official conformance readiness',
     'Confirm the official MEFF 4.0 XSD namespace and serialization details',
     'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
   ]);
+  assert.deepEqual(readiness.requiredBeforeClaimBlockerIds, [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ]);
+  assert.deepEqual(readiness.requiredBeforeClaimByBlocker, {
+    officialAppendixBRelationshipMatrix: 'Load an official or redistributable Appendix B relationship profile',
+    officialMeff4Xsd: 'Confirm the official MEFF 4.0 XSD namespace and serialization details',
+    exactAppendixAArtworkRights: 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
+  });
 
   assert.match(languageIndex, /conformanceReadiness: summarizeConformanceReadiness/);
   assert.match(languageIndex, /officialConformanceClaimable/);
+  assert.match(languageIndex, /requiredBeforeClaimByBlocker/);
+  assert.match(languageIndex, /missingRequiredBeforeClaimBlockerIds/);
+  assert.match(languageIndex, /extraRequiredBeforeClaimBlockerIds/);
   assert.match(languageIndex, /implementedShallCount/);
   assert.match(languageIndex, /externalBlockedShallCount/);
   assert.match(languageIndex, /missingRequiredSources/);
   assert.match(languageIndex, /missingCompanionSources/);
   assert.match(languageIndex, /external-blockers-remain/);
   assert.match(readme, /conformanceReadiness\.officialConformanceClaimable/);
+  assert.match(readme, /conformanceReadiness\.missingRequiredBeforeClaimBlockerIds/);
   assert.match(sources, /officialConformanceClaimable: false/);
+  assert.match(sources, /requiredBeforeClaimByBlocker/);
   assert.match(officialSpec, /conformanceReadiness\.officialConformanceClaimable/);
+  assert.match(officialSpec, /missingRequiredBeforeClaimBlockerIds/);
 
   assert.equal(profile.conformance.requirements.filter((requirement) => requirement.level === 'shall' && requirement.status === 'implemented').length, 3);
   assert.equal(profile.conformance.requirements.filter((requirement) => requirement.level === 'shall' && requirement.externalBlocker).length, 2);

@@ -43,6 +43,9 @@ catalog status reports `expectedTypes`, `actualTypes`, `missingTypes`, and `extr
 C260 type-coverage auditing. Relationship connector status reports the same exact fields for
 `AndJunction` and `OrJunction` outside the 42-element catalog. Conformance requirement status reports
 `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the C260-derived shall/may map.
+Conformance readiness reports `requiredBeforeClaimByBlocker`,
+`missingRequiredBeforeClaimBlockerIds`, and `extraRequiredBeforeClaimBlockerIds` so every
+official-claim prerequisite remains aligned to an external blocker id.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

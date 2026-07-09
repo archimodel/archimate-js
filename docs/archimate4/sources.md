@@ -44,6 +44,10 @@
 - `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including
   `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing
   companion source ids while external sources remain unresolved.
+- `getArchimate4ImplementationStatus().conformanceReadiness` reports
+  `requiredBeforeClaimByBlocker`, `missingRequiredBeforeClaimBlockerIds`, and
+  `extraRequiredBeforeClaimBlockerIds` so each official-claim prerequisite remains tied to an
+  external blocker id.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
