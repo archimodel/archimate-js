@@ -186,6 +186,124 @@ test('archimate 4 model validation reports mixed relationship types at a junctio
   assert.deepEqual(diagnostic.relationshipIds, [ 'relationship-1', 'relationship-2' ]);
 });
 
+test('archimate 4 model validation reports invalid viewpoint definitions', () => {
+  const result = validateArchimate4Model({
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: 'viewpoint-1',
+            viewpointPurpose: 'Planning',
+            viewpointContent: [ 'Overview', 'DeepDive' ],
+            allowedElementTypes: [
+              'BusinessActor',
+              'BusinessInteraction',
+              {}
+            ],
+            allowedRelationshipTypes: [
+              'Association',
+              { type: 'UnknownRelationship' },
+              {}
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('unsupported-viewpoint-purpose'), true);
+  assert.equal(codes.includes('unsupported-viewpoint-content'), true);
+  assert.equal(codes.includes('unsupported-viewpoint-element-type'), true);
+  assert.equal(codes.includes('invalid-viewpoint-element-type-entry'), true);
+  assert.equal(codes.includes('unsupported-viewpoint-relationship-type'), true);
+  assert.equal(codes.includes('invalid-viewpoint-relationship-type-entry'), true);
+  assert.equal(findDiagnostic(result, 'unsupported-viewpoint-purpose').viewpointId, 'viewpoint-1');
+});
+
+test('archimate 4 model validation accepts valid viewpoint definitions', () => {
+  const result = validateArchimate4Model({
+    views: {
+      viewpoints: [
+        {
+          id: 'viewpoint-1',
+          viewpointPurpose: 'Deciding',
+          viewpointContent: [ 'Overview', 'Coherence' ],
+          allowedElementTypes: [
+            'BusinessActor',
+            { type: 'Role' }
+          ],
+          allowedRelationshipTypes: 'Association Flow'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, true);
+  assert.deepEqual(result.diagnostics, []);
+});
+
+test('archimate 4 model validation reports invalid profile attribute properties', () => {
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        {
+          id: 'risk-event-1',
+          type: 'RiskEvent',
+          propertiesNode: {
+            properties: [
+              {
+                propertyDefinitionRef: {
+                  name: 'archimate-js:profileAttribute:RiskEvent:severity'
+                },
+                value: 'high'
+              },
+              {
+                propertyDefinitionRef: {
+                  name: 'archimate-js:profileAttribute:RiskEvent:unknown'
+                },
+                value: 'x'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }, {
+    customization: {
+      version: '4.0',
+      elements: [
+        {
+          type: 'RiskEvent',
+          specializes: 'Event',
+          domain: 'Common',
+          aspect: 'behavior',
+          className: 'event',
+          typeName: 'Risk Event'
+        }
+      ],
+      attributes: [
+        {
+          concept: 'RiskEvent',
+          name: 'severity',
+          type: 'Integer'
+        }
+      ]
+    },
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, false);
+  assert.equal(findDiagnostic(result, 'invalid-profile-attribute-value').conceptId, 'risk-event-1');
+  assert.equal(findDiagnostic(result, 'invalid-profile-attribute-value').attributeType, 'Integer');
+  assert.equal(findDiagnostic(result, 'unsupported-profile-attribute').propertyName, 'archimate-js:profileAttribute:RiskEvent:unknown');
+});
+
 test('archimate 4 model validation is exported from the package root', async () => {
   const source = await readFile(new URL('../index.js', import.meta.url), 'utf8');
 

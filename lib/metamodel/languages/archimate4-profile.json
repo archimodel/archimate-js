@@ -81,7 +81,11 @@
         "multiplicity-notation",
         "junction-multiplicity",
         "junction-relationship-type-consistency",
-        "junction-chain-profile-validation"
+        "junction-chain-profile-validation",
+        "viewpoint-purpose-content",
+        "viewpoint-allowed-types",
+        "profile-attribute-properties",
+        "profile-attribute-values"
       ],
       "externalAppendixBProfileAware": true,
       "officialMatrixEmbedded": false,
