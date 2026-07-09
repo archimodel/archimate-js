@@ -1113,6 +1113,54 @@ test('archimate 4 implementation status exposes C260 stakeholders architecture v
   assert.match(plan, /Stakeholders architecture views viewpoints coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 language customization mechanisms coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const languageCustomizationMechanismsCatalog = profile.conformance.languageCustomizationMechanismsCoverageCatalog;
+  const languageCustomizationMechanismsCoverage = profile.conformance.languageCustomizationMechanismsCoverage;
+  const expectedLanguageCustomizationMechanismsIds = [
+    'adding-attributes-to-archimate-concepts',
+    'specialization-of-concepts',
+    'specializations-of-common-domain-elements',
+    'specializations-of-business-domain-elements',
+    'specializations-of-application-domain-elements',
+    'specializations-of-technology-domain-elements',
+    'specializations-of-motivation-elements',
+    'specializations-of-strategy-elements',
+    'specializations-of-implementation-and-migration-elements',
+    'specializations-of-composite-elements',
+    'specializations-of-relationships-and-junctions'
+  ];
+
+  assert.equal(languageCustomizationMechanismsCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    languageCustomizationMechanismsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(languageCustomizationMechanismsCatalog.expectedCount, expectedLanguageCustomizationMechanismsIds.length);
+  assert.deepEqual(languageCustomizationMechanismsCatalog.expectedIds, expectedLanguageCustomizationMechanismsIds);
+  assert.deepEqual(
+    languageCustomizationMechanismsCoverage.map((languageCustomizationMechanismsItem) => languageCustomizationMechanismsItem.id),
+    expectedLanguageCustomizationMechanismsIds
+  );
+  assert.equal(
+    languageCustomizationMechanismsCoverage.every((languageCustomizationMechanismsItem) => languageCustomizationMechanismsItem.c260Section && languageCustomizationMechanismsItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeLanguageCustomizationMechanismsCoverage/);
+  assert.match(languageIndex, /languageCustomizationMechanismsCoverage: languageCustomizationMechanismsCoverage/);
+  assert.match(languageIndex, /missingLanguageCustomizationMechanismsIds/);
+  assert.match(readme, /languageCustomizationMechanismsCoverage\.expectedIds/);
+  assert.match(sources, /languageCustomizationMechanismsCoverage\.actualIds/);
+  assert.match(officialSpec, /languageCustomizationMechanismsCoverage\.missingLanguageCustomizationMechanismsIds/);
+  assert.match(plan, /Language customization mechanisms coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

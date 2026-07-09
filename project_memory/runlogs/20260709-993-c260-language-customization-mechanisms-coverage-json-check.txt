@@ -1,0 +1,2 @@
+archimate4-profile.json ok
+EXIT_CODE=0

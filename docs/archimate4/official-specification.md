@@ -143,6 +143,12 @@ It must expose exact C260 Chapter 13 Stakeholders, Architecture Views, and Viewp
 and `stakeholdersArchitectureViewsViewpointsCoverage.extraStakeholdersArchitectureViewsViewpointsIds`)
 so the implementation can track stakeholder, architecture view, viewpoint mechanism, and example
 viewpoint coverage by subsection identity.
+It must expose exact C260 Chapter 14 Language Customization Mechanisms outline fields
+(`languageCustomizationMechanismsCoverage.expectedIds`,
+`languageCustomizationMechanismsCoverage.actualIds`,
+`languageCustomizationMechanismsCoverage.missingLanguageCustomizationMechanismsIds`, and
+`languageCustomizationMechanismsCoverage.extraLanguageCustomizationMechanismsIds`) so the
+implementation can track attribute-extension and specialization coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

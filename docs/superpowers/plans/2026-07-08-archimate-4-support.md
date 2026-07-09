@@ -95,6 +95,10 @@ Stakeholders architecture views viewpoints coverage status reports `expectedIds`
 `missingStakeholdersArchitectureViewsViewpointsIds`, and
 `extraStakeholdersArchitectureViewsViewpointsIds` for the C260 Chapter 13 outline so stakeholder,
 architecture view, and viewpoint subsection headings cannot drift silently.
+Language customization mechanisms coverage status reports `expectedIds`, `actualIds`,
+`missingLanguageCustomizationMechanismsIds`, and `extraLanguageCustomizationMechanismsIds` for the
+C260 Chapter 14 outline so attribute-extension and specialization subsection headings cannot drift
+silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

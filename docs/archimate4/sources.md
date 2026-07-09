@@ -134,6 +134,12 @@
   and `stakeholdersArchitectureViewsViewpointsCoverage.extraStakeholdersArchitectureViewsViewpointsIds`
   so the Chapter 13 Stakeholders, Architecture Views, and Viewpoints outline remains visible by
   exact subsection identity.
+- `getArchimate4ImplementationStatus().languageCustomizationMechanismsCoverage` reports
+  `languageCustomizationMechanismsCoverage.expectedIds`,
+  `languageCustomizationMechanismsCoverage.actualIds`,
+  `languageCustomizationMechanismsCoverage.missingLanguageCustomizationMechanismsIds`, and
+  `languageCustomizationMechanismsCoverage.extraLanguageCustomizationMechanismsIds` so the Chapter
+  14 Language Customization Mechanisms outline remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

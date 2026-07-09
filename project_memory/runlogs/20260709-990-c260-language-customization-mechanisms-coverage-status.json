@@ -1,0 +1,105 @@
+{
+  "status": "c260-outline-derived",
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 11,
+  "expectedIds": [
+    "adding-attributes-to-archimate-concepts",
+    "specialization-of-concepts",
+    "specializations-of-common-domain-elements",
+    "specializations-of-business-domain-elements",
+    "specializations-of-application-domain-elements",
+    "specializations-of-technology-domain-elements",
+    "specializations-of-motivation-elements",
+    "specializations-of-strategy-elements",
+    "specializations-of-implementation-and-migration-elements",
+    "specializations-of-composite-elements",
+    "specializations-of-relationships-and-junctions"
+  ],
+  "items": [
+    {
+      "id": "adding-attributes-to-archimate-concepts",
+      "c260Section": "14.1",
+      "heading": "Adding Attributes to ArchiMate Concepts",
+      "status": "tracked"
+    },
+    {
+      "id": "specialization-of-concepts",
+      "c260Section": "14.2",
+      "heading": "Specialization of Concepts",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-common-domain-elements",
+      "c260Section": "14.2.1",
+      "heading": "Examples of Specializations of Common Domain Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-business-domain-elements",
+      "c260Section": "14.2.2",
+      "heading": "Examples of Specializations of Business Domain Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-application-domain-elements",
+      "c260Section": "14.2.3",
+      "heading": "Examples of Specializations of Application Domain Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-technology-domain-elements",
+      "c260Section": "14.2.4",
+      "heading": "Examples of Specializations of Technology Domain Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-motivation-elements",
+      "c260Section": "14.2.5",
+      "heading": "Examples of Specializations of Motivation Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-strategy-elements",
+      "c260Section": "14.2.6",
+      "heading": "Examples of Specializations of Strategy Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-implementation-and-migration-elements",
+      "c260Section": "14.2.7",
+      "heading": "Examples of Specializations of Implementation and Migration Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-composite-elements",
+      "c260Section": "14.2.8",
+      "heading": "Examples of Specializations of Composite Elements (Informative)",
+      "status": "tracked"
+    },
+    {
+      "id": "specializations-of-relationships-and-junctions",
+      "c260Section": "14.2.9",
+      "heading": "Examples of Specializations of Relationships and Junctions (Informative)",
+      "status": "tracked"
+    }
+  ],
+  "actualIds": [
+    "adding-attributes-to-archimate-concepts",
+    "specialization-of-concepts",
+    "specializations-of-common-domain-elements",
+    "specializations-of-business-domain-elements",
+    "specializations-of-application-domain-elements",
+    "specializations-of-technology-domain-elements",
+    "specializations-of-motivation-elements",
+    "specializations-of-strategy-elements",
+    "specializations-of-implementation-and-migration-elements",
+    "specializations-of-composite-elements",
+    "specializations-of-relationships-and-junctions"
+  ],
+  "missingIds": [],
+  "extraIds": [],
+  "missingLanguageCustomizationMechanismsIds": [],
+  "extraLanguageCustomizationMechanismsIds": [],
+  "actualCount": 11,
+  "complete": true
+}
