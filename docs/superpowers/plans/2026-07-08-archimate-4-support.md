@@ -73,7 +73,7 @@ Model validation status reports `expectedCheckIds`, `actualCheckIds`, `missingCh
 retired ArchiMate 3 concepts, relationship catalog and endpoints, active profile checks,
 multiplicity notation, junction consistency, view viewpoint references, viewpoint definitions,
 view node element references and geometry, view connection relationship references, endpoint references,
-endpoint-to-relationship alignment, and waypoint geometry, model-defined and
+endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern and
 modeling-note structure, organization identifier references, property definition structure and
 references, and profile attribute property values.
@@ -189,7 +189,7 @@ C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
 `missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
 stays tied to a recorded source-extraction runlog.
 Implementation-status completion API scan evidence is recorded in
-`project_memory/runlogs/20260710-0102-status-completion-api-scan.json`; it currently reports 49
+`project_memory/runlogs/20260710-0127-status-completion-api-scan.json`; it currently reports 49
 top-level status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
 status-key guard arrays including `exampleViewpointCatalog`. The same completion state is exposed directly through
 `getArchimate4ImplementationStatus().implementationCompletion`.

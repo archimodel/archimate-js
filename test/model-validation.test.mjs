@@ -721,6 +721,63 @@ test('archimate 4 model validation reports invalid view connection waypoint geom
   assert.equal(findDiagnostic(result, 'invalid-view-connection-waypoint-y').value, 'not-a-number');
 });
 
+test('archimate 4 model validation reports invalid view style values', () => {
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        { id: 'actor-1', type: 'BusinessActor' }
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1',
+                style: {
+                  lineWidth: 0,
+                  fillColor: { r: -1, g: 256, b: 'blue', a: 101 },
+                  lineColor: 'not-a-color',
+                  font: {
+                    size: 10.25,
+                    style: 'bold shadow',
+                    color: { r: 20, g: 20 }
+                  }
+                }
+              },
+              {
+                id: 'node-style',
+                style: 'not-a-style'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-view-style'), true);
+  assert.equal(codes.includes('invalid-view-style-line-width'), true);
+  assert.equal(codes.includes('invalid-view-style-color-channel'), true);
+  assert.equal(codes.includes('invalid-view-style-color-alpha'), true);
+  assert.equal(codes.includes('invalid-view-style-line-color'), true);
+  assert.equal(codes.includes('invalid-view-style-font-size'), true);
+  assert.equal(codes.includes('invalid-view-style-font-style'), true);
+  assert.equal(codes.includes('missing-view-style-color-channel'), true);
+  assert.equal(findDiagnostic(result, 'invalid-view-style-line-width').viewElementId, 'node-actor');
+  assert.equal(findDiagnostic(result, 'invalid-view-style-line-color').stylePath, 'style.lineColor');
+  assert.equal(findDiagnostic(result, 'invalid-view-style-font-style').value, 'shadow');
+  assert.equal(findDiagnostic(result, 'missing-view-style-color-channel').stylePath, 'style.font.color.b');
+  assert.equal(findDiagnostic(result, 'invalid-view-style').viewElementId, 'node-style');
+});
+
 test('archimate 4 model validation reports view content outside viewpoint allowed types', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

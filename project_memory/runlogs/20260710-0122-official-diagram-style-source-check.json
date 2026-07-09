@@ -1,0 +1,139 @@
+{
+  "timestamp": "2026-07-10T02:22:00+09:00",
+  "officialDiagramXsd": {
+    "url": "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd",
+    "status": 200,
+    "styleType": true,
+    "lineColorType": true,
+    "fillColorType": true,
+    "fontType": true,
+    "lineWidthPositiveInteger": true,
+    "rgbColorType": true,
+    "rgbRequiredChannels": true,
+    "rgbValueRange": true,
+    "alphaOptionalRange": true,
+    "fontStyleValues": true,
+    "fontSizeHalfGranularity": true,
+    "textAlignInLocalDescriptorOnly": true
+  },
+  "localArchimate4Descriptor": {
+    "Style": {
+      "superClass": [],
+      "properties": [
+        {
+          "name": "lineWidth",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "textAlign",
+          "type": "String",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "font",
+          "type": "Font",
+          "isAttr": false,
+          "isMany": false
+        },
+        {
+          "name": "fillColor",
+          "type": "FillColor",
+          "isAttr": false,
+          "isMany": false
+        },
+        {
+          "name": "lineColor",
+          "type": "LineColor",
+          "isAttr": false,
+          "isMany": false
+        }
+      ]
+    },
+    "Font": {
+      "superClass": [],
+      "properties": [
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "size",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "style",
+          "type": "String",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "color",
+          "type": "Color",
+          "isAttr": false,
+          "isMany": false
+        }
+      ]
+    },
+    "Color": {
+      "superClass": [],
+      "properties": [
+        {
+          "name": "r",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "g",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        },
+        {
+          "name": "b",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        }
+      ]
+    },
+    "FillColor": {
+      "superClass": [
+        "Color"
+      ],
+      "properties": [
+        {
+          "name": "a",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        }
+      ]
+    },
+    "LineColor": {
+      "superClass": [
+        "Color"
+      ],
+      "properties": [
+        {
+          "name": "a",
+          "type": "Integer",
+          "isAttr": true,
+          "isMany": false
+        }
+      ]
+    }
+  },
+  "decision": {
+    "canImplementNow": true,
+    "scope": "Validate present view element style/font/color values without claiming official MEFF 4.0 XML conformance.",
+    "meff4Boundary": "MEFF 4.0 XSD remains unavailable; constraints are aligned to public 3.1 Diagram XSD and current local ArchiMate 4 descriptor."
+  }
+}

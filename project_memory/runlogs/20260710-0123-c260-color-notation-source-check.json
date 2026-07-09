@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-07-10T02:23:00+09:00",
+  "pdf": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "pageCount": 207,
+  "patterns": [
+    "Use of Colors and Notational Cues",
+    "color",
+    "notational cues",
+    "Style",
+    "Font"
+  ],
+  "hitCount": 6,
+  "firstHits": [
+    {
+      "page": 7,
+      "matched": [
+        "Use of Colors and Notational Cues",
+        "color",
+        "notational cues"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    },
+    {
+      "page": 38,
+      "matched": [
+        "Use of Colors and Notational Cues",
+        "color",
+        "notational cues"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    },
+    {
+      "page": 131,
+      "matched": [
+        "color"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    },
+    {
+      "page": 135,
+      "matched": [
+        "color",
+        "Font"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    },
+    {
+      "page": 199,
+      "matched": [
+        "color"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    },
+    {
+      "page": 205,
+      "matched": [
+        "notational cues"
+      ],
+      "hasSection38Heading": false,
+      "hasAppendixANotationHeading": false
+    }
+  ],
+  "decision": {
+    "c260TextBoundary": "The runlog records page/heading evidence only and does not store specification prose.",
+    "styleValidationSource": "Concrete value constraints for exchange style/font/color values are taken from the public Open Group 3.1 Diagram XSD and the local ArchiMate 4 descriptor."
+  }
+}
