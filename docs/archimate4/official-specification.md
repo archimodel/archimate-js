@@ -315,6 +315,9 @@ Supported mechanism:
 - `archimateLanguageProfile.viewpoints` can supply implementation-defined viewpoint definitions for
   host tooling. Supported purpose values are `Designing`, `Deciding`, and `Informing`; supported
   content values are `Details`, `Coherence`, and `Overview`.
+- `getArchimate4ImplementationStatus().viewpointClassification` must expose the expected, actual,
+  missing, and unexpected C260 viewpoint purpose/content classification tokens so viewpoint
+  mechanism support cannot drift silently from the C260 Chapter 13 token set.
 - Custom viewpoint definitions must validate allowed element and relationship types against the active
   language profile, including implementation-defined specialized concepts and relationships.
 - Behavior is guarded by `project_memory/runlogs/20260709-1199-viewpoint-customization-behavior-test-language.txt`:

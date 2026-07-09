@@ -636,9 +636,12 @@ test('language profile customization supports viewpoint definitions', async () =
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
 
   assert.match(languageIndex, /VIEWPOINT_PURPOSES/);
   assert.match(languageIndex, /VIEWPOINT_CONTENT_TYPES/);
+  assert.match(languageIndex, /viewpointClassification: viewpointClassification/);
+  assert.match(languageIndex, /summarizeViewpointClassification/);
   assert.match(languageIndex, /mergeViewpoints\(profile, customProfile\)/);
   assert.match(languageIndex, /validateViewpoint\(viewpoint, profile\)/);
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint/);
@@ -649,7 +652,10 @@ test('language profile customization supports viewpoint definitions', async () =
   assert.match(languageIndex, /Custom ArchiMate viewpoint ' \+ fieldName \+ ' entries require type/);
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint ' \+ fieldName \+ ': ' \+ type/);
   assert.match(readme, /viewpoints/);
+  assert.match(readme, /viewpointClassification\.expectedPurposeNames/);
   assert.match(sources, /allowed element and relationship types against the active profile/);
+  assert.match(sources, /viewpointClassification\.missingContentNames/);
+  assert.match(officialSpec, /viewpointClassification/);
 });
 
 test('custom viewpoint definitions validate purpose content and allowed types', () => {
@@ -723,6 +729,39 @@ test('custom viewpoint definitions validate purpose content and allowed types', 
       }
     ]
   }), /Custom ArchiMate viewpoint allowedElementTypes entries require type/);
+});
+
+test('archimate 4 implementation status exposes C260 viewpoint classification tokens', () => {
+  const status = getArchimate4ImplementationStatus();
+
+  assert.deepEqual(status.viewpointClassification.expectedPurposeNames, [
+    'Designing',
+    'Deciding',
+    'Informing'
+  ]);
+  assert.deepEqual(status.viewpointClassification.actualPurposeNames, [
+    'Designing',
+    'Deciding',
+    'Informing'
+  ]);
+  assert.deepEqual(status.viewpointClassification.missingPurposeNames, []);
+  assert.deepEqual(status.viewpointClassification.expectedContentNames, [
+    'Details',
+    'Coherence',
+    'Overview'
+  ]);
+  assert.deepEqual(status.viewpointClassification.actualContentNames, [
+    'Details',
+    'Coherence',
+    'Overview'
+  ]);
+  assert.deepEqual(status.viewpointClassification.missingContentNames, []);
+  assert.deepEqual(status.viewpointClassification.unexpectedPurposeNames, []);
+  assert.deepEqual(status.viewpointClassification.unexpectedContentNames, []);
+  assert.equal(status.viewpointClassification.complete, true);
+  assert.deepEqual(status.viewpointClassification.sourceRunlogPaths, [
+    'project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt'
+  ]);
 });
 
 test('archimate 4 implementation status is machine-readable and preserves external blockers', async () => {

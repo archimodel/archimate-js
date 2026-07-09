@@ -1,0 +1,9 @@
+source=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+--- pdf page 130 ---
+• Designing: Design viewpoints support architects and designers in the design process from initial
+• Deciding: Decision support viewpoints assist managers in the process of decision-making by
+• Informing: Informing viewpoints help to inform any stakeholder about the Enterprise Architecture,
+• Details: Views on the detailed level typically consider one domain and one aspect from the
+• Coherence: At the coherence abstraction level, multiple domains or multiple aspects are spanned
+• Overview: The overview abstraction level addresses both multiple domains and multiple aspects

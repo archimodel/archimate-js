@@ -441,6 +441,13 @@
   `profileAttributeTypes.missingC260TypeNames`, and
   `profileAttributeTypes.unexpectedAdditionalTypeNames`, separating C260 basic/example attribute
   types from implementation-defined additions such as `URL` and `Structure`.
+- `getArchimate4ImplementationStatus().viewpointClassification` reports
+  `viewpointClassification.expectedPurposeNames`, `viewpointClassification.actualPurposeNames`,
+  `viewpointClassification.missingPurposeNames`, `viewpointClassification.expectedContentNames`,
+  `viewpointClassification.actualContentNames`, and
+  `viewpointClassification.missingContentNames`, tying the supported C260 viewpoint purpose/content
+  classification tokens to
+  `project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt`.
 - Profile attribute values can also be written to model `Properties` through
   `setProfileAttributePropertyValue()` and read through `getProfileAttributePropertyValue()`. The
   helper creates reusable `PropertyDefinition` entries named

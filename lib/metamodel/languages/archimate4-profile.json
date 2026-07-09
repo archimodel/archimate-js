@@ -107,6 +107,22 @@
         "Structure"
       ]
     },
+    "viewpointClassificationCatalog": {
+      "status": "implemented",
+      "sourceRunlogPaths": [
+        "project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt"
+      ],
+      "expectedPurposeNames": [
+        "Designing",
+        "Deciding",
+        "Informing"
+      ],
+      "expectedContentNames": [
+        "Details",
+        "Coherence",
+        "Overview"
+      ]
+    },
     "externalBlockerCatalog": {
       "status": "external-source-dependent",
       "expectedCount": 3,

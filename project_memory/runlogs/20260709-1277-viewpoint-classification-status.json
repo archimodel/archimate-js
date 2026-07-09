@@ -1,0 +1,41 @@
+{
+  "status": "implemented",
+  "sourceRunlogPaths": [
+    "project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt"
+  ],
+  "expectedPurposeNames": [
+    "Designing",
+    "Deciding",
+    "Informing"
+  ],
+  "expectedContentNames": [
+    "Details",
+    "Coherence",
+    "Overview"
+  ],
+  "purposeNames": [
+    "Designing",
+    "Deciding",
+    "Informing"
+  ],
+  "contentNames": [
+    "Details",
+    "Coherence",
+    "Overview"
+  ],
+  "actualPurposeNames": [
+    "Designing",
+    "Deciding",
+    "Informing"
+  ],
+  "missingPurposeNames": [],
+  "unexpectedPurposeNames": [],
+  "actualContentNames": [
+    "Details",
+    "Coherence",
+    "Overview"
+  ],
+  "missingContentNames": [],
+  "unexpectedContentNames": [],
+  "complete": true
+}

@@ -1961,3 +1961,19 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1267-profile-attribute-number-staged-diff-check.txt` passed after trimming runlog whitespace.
 - Audit: `project_memory/audit/reports/20260709-profile-attribute-number-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 152
+
+- Goal: make C260 Chapter 13 viewpoint purpose/content classification tokens machine-auditable through the ArchiMate 4 implementation status API.
+- Source evidence: `project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt` extracts only the short C260 page 130 classification-token lines for `Designing`, `Deciding`, `Informing`, `Details`, `Coherence`, and `Overview`.
+- Red test: `project_memory/runlogs/20260709-1269-viewpoint-classification-status-red-test.txt` failed because `getArchimate4ImplementationStatus().viewpointClassification` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `viewpointClassificationCatalog` with expected C260 purpose/content token names and the source runlog path.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().viewpointClassification` with expected, actual, missing, and unexpected purpose/content token names plus complete status.
+- Docs/tests: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `test/language-profile.test.mjs` now guard and describe the viewpoint classification status fields.
+- Focused verification: `project_memory/runlogs/20260709-1270-viewpoint-classification-status-focused-test.txt` and `project_memory/runlogs/20260709-1271-viewpoint-classification-status-focused-test-pass.txt` passed after implementation.
+- Verification: `npm run test:language` passed with 196 tests in `project_memory/runlogs/20260709-1272-viewpoint-classification-status-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1273-viewpoint-classification-status-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1274-viewpoint-classification-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1275-viewpoint-classification-status-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1276-viewpoint-classification-status-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1277-viewpoint-classification-status.json` shows all expected purpose/content names present, no missing or unexpected tokens, and complete true.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1278-viewpoint-classification-status-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1281-viewpoint-classification-staged-diff-check.txt` first failed on a trailing EOF blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1283-viewpoint-classification-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-viewpoint-classification-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
