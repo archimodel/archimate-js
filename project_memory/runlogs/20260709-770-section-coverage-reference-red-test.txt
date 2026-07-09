@@ -1,0 +1,37 @@
+✖ archimate 4 implementation status exposes C260 section coverage identity (9.7895ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 95.3397
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:764:1
+✖ archimate 4 implementation status exposes C260 section coverage identity (9.7895ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + undefined
+  - [
+  -   'language-structure',
+  -   'viewpoint-mechanism',
+  -   'language-customization',
+  -   'standard-iconography',
+  -   'appendix-b-relationships',
+  -   'example-viewpoints'
+  - ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:814:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [ 'language-structure', 'viewpoint-mechanism', 'language-customization', 'standard-iconography', 'appendix-b-relationships', 'example-viewpoints' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -60,8 +60,11 @@ It must expose exact remaining-gap identity fields (`remainingGaps.expectedIds`,
 fields such as `missingOfficialConformanceGapIds` and `missingCompanionGapSourceIds`, so external
 conformance blockers and companion-source gaps cannot drift silently.
 It must expose exact C260 section coverage fields (`sectionCoverage.expectedIds`,
-`sectionCoverage.actualIds`, `sectionCoverage.missingIds`, and `sectionCoverage.extraIds`) so the
-implementation boundary remains traceable to the reviewed C260 chapter and appendix outline.
+`sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
+`sectionCoverage.missingRequirementReferenceIds`, and
+`sectionCoverage.missingExternalBlockerReferenceIds`) so the implementation boundary remains
+traceable to the reviewed C260 chapter and appendix outline without allowing unregistered
+requirement or blocker references.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

@@ -151,6 +151,18 @@
         "appendix-b-relationships",
         "appendix-c-example-viewpoints",
         "appendix-e-version-changes"
+      ],
+      "expectedRequirementIds": [
+        "language-structure",
+        "viewpoint-mechanism",
+        "language-customization",
+        "standard-iconography",
+        "appendix-b-relationships",
+        "example-viewpoints"
+      ],
+      "expectedExternalBlockerIds": [
+        "exactAppendixAArtworkRights",
+        "officialAppendixBRelationshipMatrix"
       ]
     },
     "sectionCoverage": [
@@ -158,6 +170,7 @@
         "id": "language-structure",
         "c260Section": "3",
         "status": "implemented",
+        "requirementId": "language-structure",
         "evidence": "versioned language profile, domain/aspect metadata, and active profile services"
       },
       {

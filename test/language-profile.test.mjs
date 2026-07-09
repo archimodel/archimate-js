@@ -770,6 +770,8 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
   const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
   const sectionCatalog = profile.conformance.sectionCoverageCatalog;
   const sections = profile.conformance.sectionCoverage;
+  const requirementIds = profile.conformance.requirements.map((requirement) => requirement.id);
+  const externalBlockerIds = profile.conformance.externalBlockerCatalog.expectedIds;
   const expectedSectionIds = [
     'language-structure',
     'common-domain',
@@ -788,11 +790,35 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
     'appendix-c-example-viewpoints',
     'appendix-e-version-changes'
   ];
+  const expectedRequirementIds = [
+    'language-structure',
+    'viewpoint-mechanism',
+    'language-customization',
+    'standard-iconography',
+    'appendix-b-relationships',
+    'example-viewpoints'
+  ];
+  const expectedExternalBlockerIds = [
+    'exactAppendixAArtworkRights',
+    'officialAppendixBRelationshipMatrix'
+  ];
+  const sectionRequirementIds = sections
+    .map((section) => section.requirementId)
+    .filter(Boolean);
+  const sectionExternalBlockerIds = sections
+    .map((section) => section.externalBlocker)
+    .filter(Boolean);
 
   assert.equal(sectionCatalog.status, 'c260-outline-derived');
   assert.deepEqual(sectionCatalog.expectedIds, expectedSectionIds);
+  assert.deepEqual(sectionCatalog.expectedRequirementIds, expectedRequirementIds);
+  assert.deepEqual(sectionCatalog.expectedExternalBlockerIds, expectedExternalBlockerIds);
   assert.deepEqual(sections.map((section) => section.id), expectedSectionIds);
   assert.equal(sections.every((section) => section.c260Section), true);
+  assert.deepEqual(sectionRequirementIds, expectedRequirementIds);
+  assert.deepEqual(sectionExternalBlockerIds, expectedExternalBlockerIds);
+  assert.equal(sectionRequirementIds.every((id) => requirementIds.includes(id)), true);
+  assert.equal(sectionExternalBlockerIds.every((id) => externalBlockerIds.includes(id)), true);
   assert.deepEqual(sections.filter((section) => section.externalBlocker).map((section) => section.id), [
     'appendix-a-notation',
     'appendix-b-relationships'
@@ -804,9 +830,14 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
   assert.match(languageIndex, /var sectionCoverage = summarizeSectionCoverage/);
   assert.match(languageIndex, /sectionCoverage: sectionCoverage/);
   assert.match(languageIndex, /externalDependentIds/);
+  assert.match(languageIndex, /missingRequirementReferenceIds/);
+  assert.match(languageIndex, /missingExternalBlockerReferenceIds/);
   assert.match(readme, /sectionCoverage\.expectedIds/);
+  assert.match(readme, /sectionCoverage\.missingRequirementReferenceIds/);
   assert.match(sources, /sectionCoverage\.actualIds/);
+  assert.match(sources, /sectionCoverage\.missingExternalBlockerReferenceIds/);
   assert.match(officialSpec, /sectionCoverage\.missingIds/);
+  assert.match(officialSpec, /sectionCoverage\.missingRequirementReferenceIds/);
   assert.match(plan, /Section coverage status reports/);
 });
 

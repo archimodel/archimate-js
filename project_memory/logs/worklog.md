@@ -1400,3 +1400,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-764-section-coverage-repo-lint.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-section-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 112
+
+- Goal: align the C260 section coverage catalog with the existing conformance requirement and external blocker catalogs, so section coverage cannot reference unregistered ids.
+- Red test: `project_memory/runlogs/20260709-770-section-coverage-reference-red-test.txt` failed because `sectionCoverageCatalog.expectedRequirementIds` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `sectionCoverageCatalog.expectedRequirementIds`, `sectionCoverageCatalog.expectedExternalBlockerIds`, and the `language-structure` section's `requirementId`.
+- Implemented: `lib/metamodel/languages/index.js` now passes conformance requirement and external blocker summaries into `summarizeSectionCoverage()` and exposes requirement/blocker alignment fields including `missingRequirementReferenceIds` and `missingExternalBlockerReferenceIds`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now guard and describe section requirement/blocker reference alignment.
+- Focused verification: `project_memory/runlogs/20260709-771-section-coverage-reference-focused-test.txt` passed for the section coverage identity test.
+- Verification: `npm run test:language` passed with 160 tests in `project_memory/runlogs/20260709-772-section-coverage-reference-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-773-section-coverage-reference-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-774-section-coverage-reference-json-check.txt`; `git diff --check` passed with the existing state JSON CRLF warning in `project_memory/runlogs/20260709-775-section-coverage-reference-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-776-section-coverage-reference-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-777-section-coverage-reference-repo-lint.txt` with 4383 existing errors.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-778-section-coverage-reference-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-779-section-coverage-reference-final-diff-check.txt`; staged diff check passed in `project_memory/runlogs/20260709-780-section-coverage-reference-staged-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-section-coverage-reference-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

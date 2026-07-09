@@ -48,8 +48,10 @@ Conformance readiness reports `requiredBeforeClaimByBlocker`,
 official-claim prerequisite remains aligned to an external blocker id.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.
-Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
-reviewed C260 chapter and appendix outline so broad specification coverage cannot drift silently.
+Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extraIds`,
+`missingRequirementReferenceIds`, and `missingExternalBlockerReferenceIds` for the reviewed C260
+chapter and appendix outline so broad specification coverage and its conformance/blocker references
+cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact
