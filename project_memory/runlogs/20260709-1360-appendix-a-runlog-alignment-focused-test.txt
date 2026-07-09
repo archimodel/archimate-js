@@ -1,0 +1,37 @@
+(node:81976) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ archimate 4 Appendix A artwork status agrees with pictogram audit evidence (10.9897ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 131.8194
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:2539:1
+✖ archimate 4 Appendix A artwork status agrees with pictogram audit evidence (10.9897ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'PICTO_STAKHOLDER',
+      'PICTO_DELIVRABLE',
+  -   'PICTO_STAKHOLDER'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:2562:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'PICTO_STAKHOLDER', 'PICTO_DELIVRABLE' ],
+    expected: [ 'PICTO_DELIVRABLE', 'PICTO_STAKHOLDER' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

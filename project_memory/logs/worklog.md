@@ -2075,3 +2075,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1358-source-coverage-runlog-alignment-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1359-source-coverage-runlog-alignment-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-source-coverage-runlog-alignment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 160
+
+- Goal: strengthen the Appendix A source-coverage guard so artwork-rights and local pictogram status cannot drift from the pictogram audit runlog evidence.
+- Red/adjustment evidence: `project_memory/runlogs/20260709-1360-appendix-a-runlog-alignment-focused-test.txt` first failed because legacy compatibility alias order differs between the status array and the audit runlog. The guard now treats those aliases as an unordered compatibility set.
+- Implemented: `test/language-profile.test.mjs` now reads `sourceCoverage.appendixAArtworkRights.lastPictogramAuditRunlogPath` and compares Appendix A artwork-rights flags, local artwork policy, local dedicated-path coverage, committed official artwork flag, pictogram counts, object pictogram concept types, missing PathMap refs, object alias refs, and iconography alias membership against the JSON evidence.
+- Focused verification: `project_memory/runlogs/20260709-1361-appendix-a-runlog-alignment-focused-test-pass.txt` passed.
+- Verification: `npm run test:language` passed with 203 tests in `project_memory/runlogs/20260709-1362-appendix-a-runlog-alignment-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1363-appendix-a-runlog-alignment-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1364-appendix-a-runlog-alignment-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1365-appendix-a-runlog-alignment-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1366-appendix-a-runlog-alignment-staged-diff-check.txt` first failed on generated runlog whitespace; `project_memory/runlogs/20260709-1370-appendix-a-runlog-alignment-final-staged-diff-check.txt` passed after trimming the generated runlogs.
+- Audit: `project_memory/audit/reports/20260709-appendix-a-runlog-alignment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

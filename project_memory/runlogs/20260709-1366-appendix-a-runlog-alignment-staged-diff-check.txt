@@ -1,0 +1,5 @@
+project_memory/runlogs/20260709-1360-appendix-a-runlog-alignment-focused-test.txt:21: trailing whitespace.
++
+project_memory/runlogs/20260709-1360-appendix-a-runlog-alignment-focused-test.txt:27: trailing whitespace.
++
+project_memory/runlogs/20260709-1365-appendix-a-runlog-alignment-repo-lint.txt:4490: new blank line at EOF.

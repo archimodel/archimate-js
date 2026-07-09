@@ -2536,6 +2536,35 @@ test('archimate 4 source coverage status agrees with external source runlog evid
   );
 });
 
+test('archimate 4 Appendix A artwork status agrees with pictogram audit evidence', async () => {
+  const status = getArchimate4ImplementationStatus();
+  const appendixA = status.sourceCoverage.items.appendixAArtworkRights;
+  const iconography = status.iconography;
+  const runlog = await readJson(`../${appendixA.lastPictogramAuditRunlogPath}`);
+
+  assert.equal(runlog.checkedAt, appendixA.lastPictogramAuditAt);
+  assert.equal(runlog.sourceCoverageId, 'appendixAArtworkRights');
+  assert.equal(runlog.externalBlocker, appendixA.externalBlocker);
+  assert.equal(runlog.exactArtworkRedistributionRightsConfirmed, appendixA.exactArtworkRedistributionRightsConfirmed);
+  assert.equal(runlog.exactArtworkRedistributionRightsRequired, appendixA.required);
+  assert.equal(runlog.localArtworkPolicy, appendixA.localArtworkPolicy);
+  assert.equal(runlog.localDedicatedPathCoverageComplete, appendixA.localDedicatedPathCoverageComplete);
+  assert.equal(runlog.officialAppendixAArtworkCommitted, appendixA.officialAppendixAArtworkCommitted);
+  assert.equal(runlog.profileConceptAndConnectorCount, appendixA.profileConceptAndConnectorCount);
+  assert.equal(runlog.profilePictogramRefCount, appendixA.profilePictogramRefCount);
+  assert.equal(runlog.nonObjectPictoRefCount, appendixA.nonObjectPictoRefCount);
+  assert.deepEqual(runlog.objectPictoRefConceptTypes, appendixA.objectPictoRefConceptTypes);
+  assert.deepEqual(runlog.missingPathMapRefs, appendixA.missingPathMapRefs);
+  assert.deepEqual(runlog.objectAliasRefs, appendixA.objectAliasRefs);
+
+  assert.equal(runlog.profilePictogramCoverage, iconography.profilePictogramCoverage);
+  assert.equal(runlog.genericObjectAliasCount, iconography.genericObjectAliasCount);
+  assert.deepEqual(
+    runlog.legacyCompatibilityAliases.map((alias) => alias.alias).sort(),
+    iconography.legacyCompatibilityAliases.slice().sort()
+  );
+});
+
 test('archimate 4 implementation status exposes official conformance readiness', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
