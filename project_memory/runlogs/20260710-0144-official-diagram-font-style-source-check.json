@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-10T02:44:00+09:00",
+  "officialDiagramXsd": {
+    "url": "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd",
+    "status": 200,
+    "fontStyleEnumPresent": true,
+    "fontStyleListPresent": true,
+    "values": [
+      {
+        "value": "plain",
+        "present": true
+      },
+      {
+        "value": "bold",
+        "present": true
+      },
+      {
+        "value": "italic",
+        "present": true
+      },
+      {
+        "value": "underline",
+        "present": true
+      }
+    ],
+    "plainNoStylingDocumentationPresent": true
+  },
+  "decision": {
+    "canImplementNow": true,
+    "scope": "Reject a font style list that combines plain with bold, italic, or underline.",
+    "boundary": "This extends the existing view-style-structure validation check; no MEFF 4.0 XSD conformance claim changes."
+  }
+}

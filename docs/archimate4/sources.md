@@ -1003,6 +1003,9 @@
 - `project_memory/runlogs/20260710-0122-official-diagram-style-source-check.json` records the public
   3.1 Diagram XSD `StyleType`, `FontType`, and `RGBColorType` constraints used for view
   `style`/`font`/`color` value validation, alongside the local ArchiMate 4 descriptor surface.
+- `project_memory/runlogs/20260710-0144-official-diagram-font-style-source-check.json` records the
+  public 3.1 Diagram XSD `FontStyleEnum` and `FontStyleType` evidence used to reject `plain` when it
+  is combined with other font style tokens.
 - `project_memory/runlogs/20260710-0123-c260-color-notation-source-check.json` records sanitized C260
   page/heading evidence for color and notational-cue coverage without storing specification prose.
 

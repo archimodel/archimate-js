@@ -73,7 +73,8 @@ Model validation status reports `expectedCheckIds`, `actualCheckIds`, `missingCh
 retired ArchiMate 3 concepts, relationship catalog and endpoints, active profile checks,
 multiplicity notation, junction consistency, view viewpoint references, viewpoint definitions,
 view node element references and geometry, view connection relationship references, endpoint references,
-endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values, model-defined and
+endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values including invalid
+`font.style` `plain` combinations, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern and
 modeling-note structure, organization identifier references, property definition structure and
 references, and profile attribute property values.

@@ -586,6 +586,8 @@ Implementation note:
   invalid view `style`/`font`/`color` values, invalid viewpoint definitions, invalid stakeholder/concern
   structure, and invalid profile attribute properties as
   structured diagnostics for host import/export checks.
+- The view style diagnostics also reject `font.style` lists that combine `plain` with styling tokens,
+  preserving the public Diagram XSD meaning of `plain` as no styling.
 
 ## Multiplicity
 

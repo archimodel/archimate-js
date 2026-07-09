@@ -751,6 +751,14 @@ test('archimate 4 model validation reports invalid view style values', () => {
               {
                 id: 'node-style',
                 style: 'not-a-style'
+              },
+              {
+                id: 'node-plain-style',
+                style: {
+                  font: {
+                    style: 'plain bold'
+                  }
+                }
               }
             ]
           }
@@ -770,10 +778,12 @@ test('archimate 4 model validation reports invalid view style values', () => {
   assert.equal(codes.includes('invalid-view-style-line-color'), true);
   assert.equal(codes.includes('invalid-view-style-font-size'), true);
   assert.equal(codes.includes('invalid-view-style-font-style'), true);
+  assert.equal(codes.includes('invalid-view-style-font-plain-combination'), true);
   assert.equal(codes.includes('missing-view-style-color-channel'), true);
   assert.equal(findDiagnostic(result, 'invalid-view-style-line-width').viewElementId, 'node-actor');
   assert.equal(findDiagnostic(result, 'invalid-view-style-line-color').stylePath, 'style.lineColor');
   assert.equal(findDiagnostic(result, 'invalid-view-style-font-style').value, 'shadow');
+  assert.equal(findDiagnostic(result, 'invalid-view-style-font-plain-combination').viewElementId, 'node-plain-style');
   assert.equal(findDiagnostic(result, 'missing-view-style-color-channel').stylePath, 'style.font.color.b');
   assert.equal(findDiagnostic(result, 'invalid-view-style').viewElementId, 'node-style');
 });
