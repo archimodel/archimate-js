@@ -149,6 +149,12 @@ It must expose exact C260 Chapter 14 Language Customization Mechanisms outline f
 `languageCustomizationMechanismsCoverage.missingLanguageCustomizationMechanismsIds`, and
 `languageCustomizationMechanismsCoverage.extraLanguageCustomizationMechanismsIds`) so the
 implementation can track attribute-extension and specialization coverage by subsection identity.
+It must expose exact C260 Appendix A Summary of Language Notation outline fields
+(`appendixANotationCoverage.expectedIds`, `appendixANotationCoverage.actualIds`,
+`appendixANotationCoverage.missingAppendixANotationIds`, and
+`appendixANotationCoverage.extraAppendixANotationIds`) so the implementation can track notation
+summary coverage by subsection identity while preserving the external-source boundary for exact
+artwork redistribution rights.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

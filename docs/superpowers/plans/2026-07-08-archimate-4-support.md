@@ -99,6 +99,10 @@ Language customization mechanisms coverage status reports `expectedIds`, `actual
 `missingLanguageCustomizationMechanismsIds`, and `extraLanguageCustomizationMechanismsIds` for the
 C260 Chapter 14 outline so attribute-extension and specialization subsection headings cannot drift
 silently.
+Appendix A notation coverage status reports `expectedIds`, `actualIds`,
+`missingAppendixANotationIds`, and `extraAppendixANotationIds` for the C260 Appendix A outline so
+notation summary subsection headings cannot drift silently while exact artwork rights remain
+external.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

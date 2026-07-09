@@ -1161,6 +1161,46 @@ test('archimate 4 implementation status exposes C260 language customization mech
   assert.match(plan, /Language customization mechanisms coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix A notation coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixANotationCatalog = profile.conformance.appendixANotationCoverageCatalog;
+  const appendixANotationCoverage = profile.conformance.appendixANotationCoverage;
+  const expectedAppendixANotationIds = [
+    'core-elements',
+    'motivation-strategy-implementation-and-migration-elements',
+    'relationships-and-junctions'
+  ];
+
+  assert.equal(appendixANotationCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    appendixANotationCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(appendixANotationCatalog.expectedCount, expectedAppendixANotationIds.length);
+  assert.deepEqual(appendixANotationCatalog.expectedIds, expectedAppendixANotationIds);
+  assert.deepEqual(
+    appendixANotationCoverage.map((appendixANotationItem) => appendixANotationItem.id),
+    expectedAppendixANotationIds
+  );
+  assert.equal(
+    appendixANotationCoverage.every((appendixANotationItem) => appendixANotationItem.c260Section && appendixANotationItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixANotationCoverage/);
+  assert.match(languageIndex, /appendixANotationCoverage: appendixANotationCoverage/);
+  assert.match(languageIndex, /missingAppendixANotationIds/);
+  assert.match(readme, /appendixANotationCoverage\.expectedIds/);
+  assert.match(sources, /appendixANotationCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixANotationCoverage\.missingAppendixANotationIds/);
+  assert.match(plan, /Appendix A notation coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

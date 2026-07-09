@@ -1,0 +1,19 @@
+✖ archimate 4 implementation status exposes C260 appendix A notation coverage identity (10.5816ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.0859
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1164:1
+✖ archimate 4 implementation status exposes C260 appendix A notation coverage identity (10.5816ms)
+  TypeError: Cannot read properties of undefined (reading 'status')
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1179:41)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+EXIT_CODE=1

@@ -745,6 +745,21 @@
       { "id": "specializations-of-composite-elements", "c260Section": "14.2.8", "heading": "Examples of Specializations of Composite Elements (Informative)", "status": "tracked" },
       { "id": "specializations-of-relationships-and-junctions", "c260Section": "14.2.9", "heading": "Examples of Specializations of Relationships and Junctions (Informative)", "status": "tracked" }
     ],
+    "appendixANotationCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 3,
+      "expectedIds": [
+        "core-elements",
+        "motivation-strategy-implementation-and-migration-elements",
+        "relationships-and-junctions"
+      ]
+    },
+    "appendixANotationCoverage": [
+      { "id": "core-elements", "c260Section": "A.1", "heading": "Core Elements", "status": "tracked" },
+      { "id": "motivation-strategy-implementation-and-migration-elements", "c260Section": "A.2", "heading": "Motivation, Strategy, Implementation and Migration Elements", "status": "tracked" },
+      { "id": "relationships-and-junctions", "c260Section": "A.3", "heading": "Relationships and Junctions", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

@@ -140,6 +140,12 @@
   `languageCustomizationMechanismsCoverage.missingLanguageCustomizationMechanismsIds`, and
   `languageCustomizationMechanismsCoverage.extraLanguageCustomizationMechanismsIds` so the Chapter
   14 Language Customization Mechanisms outline remains visible by exact subsection identity.
+- `getArchimate4ImplementationStatus().appendixANotationCoverage` reports
+  `appendixANotationCoverage.expectedIds`, `appendixANotationCoverage.actualIds`,
+  `appendixANotationCoverage.missingAppendixANotationIds`, and
+  `appendixANotationCoverage.extraAppendixANotationIds` so the Appendix A Summary of Language
+  Notation outline remains visible by exact subsection identity while exact artwork rights remain
+  externally source-dependent.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

@@ -1,0 +1,41 @@
+{
+  "status": "c260-outline-derived",
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 3,
+  "expectedIds": [
+    "core-elements",
+    "motivation-strategy-implementation-and-migration-elements",
+    "relationships-and-junctions"
+  ],
+  "items": [
+    {
+      "id": "core-elements",
+      "c260Section": "A.1",
+      "heading": "Core Elements",
+      "status": "tracked"
+    },
+    {
+      "id": "motivation-strategy-implementation-and-migration-elements",
+      "c260Section": "A.2",
+      "heading": "Motivation, Strategy, Implementation and Migration Elements",
+      "status": "tracked"
+    },
+    {
+      "id": "relationships-and-junctions",
+      "c260Section": "A.3",
+      "heading": "Relationships and Junctions",
+      "status": "tracked"
+    }
+  ],
+  "actualIds": [
+    "core-elements",
+    "motivation-strategy-implementation-and-migration-elements",
+    "relationships-and-junctions"
+  ],
+  "missingIds": [],
+  "extraIds": [],
+  "missingAppendixANotationIds": [],
+  "extraAppendixANotationIds": [],
+  "actualCount": 3,
+  "complete": true
+}
