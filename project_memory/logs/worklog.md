@@ -1871,3 +1871,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1198-appendix-a-artwork-rights-staged-diff-check.txt` passed after trimming saved failure-log trailing whitespace.
 - Audit: `project_memory/audit/reports/20260709-appendix-a-artwork-rights-pictogram-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 145
+
+- Goal: strengthen C260 viewpoint mechanism verification from source-pattern checks to direct customization behavior tests.
+- Implemented: `test/language-profile.test.mjs` now imports `createLanguageProfile()` and verifies that `archimateLanguageProfile.viewpoints` accepts a valid custom viewpoint with `Deciding`/`Overview`, allowed element types, and allowed relationship types.
+- Guarded failure paths: the same test rejects unsupported viewpoint purpose values, retired ArchiMate 3.x element types in ArchiMate 4 allowed element lists, unknown relationship types, and malformed allowed-type entries.
+- Docs: `docs/archimate4/sources.md` and `docs/archimate4/official-specification.md` now point to the behavior-test runlog while keeping example viewpoints informative rather than bundled as normative data.
+- Verification: initial behavior test passed with 189 tests in `project_memory/runlogs/20260709-1199-viewpoint-customization-behavior-test-language.txt`; final `npm run test:language` passed with 189 tests in `project_memory/runlogs/20260709-1200-viewpoint-customization-test-language-pass.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1201-viewpoint-customization-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1202-viewpoint-customization-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1203-viewpoint-customization-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1204-viewpoint-customization-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1205-viewpoint-customization-staged-diff-check.txt` passed.
+- Audit: `project_memory/audit/reports/20260709-viewpoint-customization-behavior-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

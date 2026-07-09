@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
+import { createLanguageProfile } from '../lib/metamodel/languages/index.js';
 
 const execFileAsync = promisify(execFile);
 
@@ -510,6 +511,79 @@ test('language profile customization supports viewpoint definitions', async () =
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint ' \+ fieldName \+ ': ' \+ type/);
   assert.match(readme, /viewpoints/);
   assert.match(sources, /allowed element and relationship types against the active profile/);
+});
+
+test('custom viewpoint definitions validate purpose content and allowed types', () => {
+  const profile = createLanguageProfile('4.0', {
+    version: '4.0',
+    viewpoints: [
+      {
+        id: 'custom-decision-overview',
+        name: 'Custom Decision Overview',
+        viewpointPurpose: [ 'Deciding' ],
+        viewpointContent: 'Overview',
+        allowedElementTypes: [
+          'BusinessActor',
+          { type: 'ApplicationComponent' }
+        ],
+        allowedRelationshipTypes: [
+          'Association',
+          { type: 'Serving' }
+        ]
+      }
+    ]
+  });
+
+  const customViewpoint = profile.viewpoints.find((viewpoint) => viewpoint.id === 'custom-decision-overview');
+
+  assert.equal(profile.customized, true);
+  assert.equal(customViewpoint.name, 'Custom Decision Overview');
+  assert.deepEqual(customViewpoint.viewpointPurpose, [ 'Deciding' ]);
+  assert.equal(customViewpoint.viewpointContent, 'Overview');
+  assert.deepEqual(customViewpoint.allowedElementTypes, [
+    'BusinessActor',
+    { type: 'ApplicationComponent' }
+  ]);
+  assert.deepEqual(customViewpoint.allowedRelationshipTypes, [
+    'Association',
+    { type: 'Serving' }
+  ]);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    viewpoints: [
+      {
+        id: 'bad-purpose',
+        viewpointPurpose: [ 'Planning' ]
+      }
+    ]
+  }), /Unsupported ArchiMate viewpoint viewpointPurpose: Planning/);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    viewpoints: [
+      {
+        id: 'retired-element-type',
+        allowedElementTypes: [ 'BusinessInteraction' ]
+      }
+    ]
+  }), /Unsupported ArchiMate viewpoint allowedElementTypes: BusinessInteraction/);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    viewpoints: [
+      {
+        id: 'unknown-relationship-type',
+        allowedRelationshipTypes: [ 'UnknownRelationship' ]
+      }
+    ]
+  }), /Unsupported ArchiMate viewpoint allowedRelationshipTypes: UnknownRelationship/);
+
+  assert.throws(() => createLanguageProfile('4.0', {
+    viewpoints: [
+      {
+        id: 'missing-element-type',
+        allowedElementTypes: [ {} ]
+      }
+    ]
+  }), /Custom ArchiMate viewpoint allowedElementTypes entries require type/);
 });
 
 test('archimate 4 implementation status is machine-readable and preserves external blockers', async () => {

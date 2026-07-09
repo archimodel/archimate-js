@@ -469,6 +469,11 @@
   host tooling, with purpose/content token validation.
 - Custom viewpoint definitions validate allowed element and relationship types against the active profile,
   including custom specialized concepts and relationships already merged into that profile.
+- Behavioral coverage is recorded in
+  `project_memory/runlogs/20260709-1199-viewpoint-customization-behavior-test-language.txt`: a custom
+  viewpoint with valid purpose/content and allowed element/relationship types is accepted, while an
+  unsupported purpose, retired ArchiMate 3.x element type, unknown relationship type, and malformed
+  type entry are rejected.
 - Example viewpoints remain informative and are not embedded as normative data.
 
 ## View Nesting Notation

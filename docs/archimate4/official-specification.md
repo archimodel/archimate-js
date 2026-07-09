@@ -306,6 +306,9 @@ Supported mechanism:
   content values are `Details`, `Coherence`, and `Overview`.
 - Custom viewpoint definitions must validate allowed element and relationship types against the active
   language profile, including implementation-defined specialized concepts and relationships.
+- Behavior is guarded by `project_memory/runlogs/20260709-1199-viewpoint-customization-behavior-test-language.txt`:
+  valid custom viewpoint definitions are accepted, while unsupported purpose/content and unsupported or
+  malformed allowed type entries are rejected.
 
 The MEFF 4.0 XSD is still required before claiming official ArchiMate 4 exchange conformance for this
 serialization surface.
