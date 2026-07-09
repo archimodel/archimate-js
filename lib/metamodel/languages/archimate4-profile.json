@@ -655,6 +655,17 @@
       { "id": "technology-example", "c260Section": "10.4", "heading": "Example", "status": "tracked" },
       { "id": "summary-of-technology-domain-elements", "c260Section": "10.5", "heading": "Summary of Technology Domain Elements", "status": "tracked" }
     ],
+    "relationshipsBetweenCoreDomainsCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 1,
+      "expectedIds": [
+        "core-domain-relationships-example"
+      ]
+    },
+    "relationshipsBetweenCoreDomainsCoverage": [
+      { "id": "core-domain-relationships-example", "c260Section": "11.1", "heading": "Example", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

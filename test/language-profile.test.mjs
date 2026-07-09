@@ -986,6 +986,44 @@ test('archimate 4 implementation status exposes C260 technology domain coverage 
   assert.match(plan, /Technology domain coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 relationships between core domains coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const relationshipsBetweenCoreDomainsCatalog = profile.conformance.relationshipsBetweenCoreDomainsCoverageCatalog;
+  const relationshipsBetweenCoreDomainsCoverage = profile.conformance.relationshipsBetweenCoreDomainsCoverage;
+  const expectedRelationshipsBetweenCoreDomainsIds = [
+    'core-domain-relationships-example'
+  ];
+
+  assert.equal(relationshipsBetweenCoreDomainsCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    relationshipsBetweenCoreDomainsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(relationshipsBetweenCoreDomainsCatalog.expectedCount, expectedRelationshipsBetweenCoreDomainsIds.length);
+  assert.deepEqual(relationshipsBetweenCoreDomainsCatalog.expectedIds, expectedRelationshipsBetweenCoreDomainsIds);
+  assert.deepEqual(
+    relationshipsBetweenCoreDomainsCoverage.map((relationshipsBetweenCoreDomainsItem) => relationshipsBetweenCoreDomainsItem.id),
+    expectedRelationshipsBetweenCoreDomainsIds
+  );
+  assert.equal(
+    relationshipsBetweenCoreDomainsCoverage.every((relationshipsBetweenCoreDomainsItem) => relationshipsBetweenCoreDomainsItem.c260Section && relationshipsBetweenCoreDomainsItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeRelationshipsBetweenCoreDomainsCoverage/);
+  assert.match(languageIndex, /relationshipsBetweenCoreDomainsCoverage: relationshipsBetweenCoreDomainsCoverage/);
+  assert.match(languageIndex, /missingRelationshipsBetweenCoreDomainsIds/);
+  assert.match(readme, /relationshipsBetweenCoreDomainsCoverage\.expectedIds/);
+  assert.match(sources, /relationshipsBetweenCoreDomainsCoverage\.actualIds/);
+  assert.match(officialSpec, /relationshipsBetweenCoreDomainsCoverage\.missingRelationshipsBetweenCoreDomainsIds/);
+  assert.match(plan, /Relationships between core domains coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

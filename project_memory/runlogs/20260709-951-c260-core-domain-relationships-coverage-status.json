@@ -1,0 +1,14 @@
+{
+  "expectedCount": 1,
+  "actualCount": 1,
+  "missingRelationshipsBetweenCoreDomainsIds": [],
+  "extraRelationshipsBetweenCoreDomainsIds": [],
+  "complete": true,
+  "expectedIds": [
+    "core-domain-relationships-example"
+  ],
+  "actualIds": [
+    "core-domain-relationships-example"
+  ]
+}
+EXIT_CODE=0

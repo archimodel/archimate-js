@@ -114,6 +114,12 @@
   `technologyDomainCoverage.missingTechnologyDomainIds`, and
   `technologyDomainCoverage.extraTechnologyDomainIds` so the Chapter 10 Technology Domain outline
   remains visible by exact subsection and element-heading identity.
+- `getArchimate4ImplementationStatus().relationshipsBetweenCoreDomainsCoverage` reports
+  `relationshipsBetweenCoreDomainsCoverage.expectedIds`,
+  `relationshipsBetweenCoreDomainsCoverage.actualIds`,
+  `relationshipsBetweenCoreDomainsCoverage.missingRelationshipsBetweenCoreDomainsIds`, and
+  `relationshipsBetweenCoreDomainsCoverage.extraRelationshipsBetweenCoreDomainsIds` so the Chapter
+  11 Relationships Between Core Domains outline remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
