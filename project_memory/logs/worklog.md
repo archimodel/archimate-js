@@ -2048,3 +2048,18 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1341-status-identity-arrays-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1342-status-identity-arrays-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-status-identity-array-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 158
+
+- Goal: refresh current external-source evidence for MEFF 4.0 XSD and W262 so ArchiMate 4 status remains tied to current official/public availability checks.
+- Source recheck: `project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json` records HTTP 200 for `https://www.opengroup.org/xsd/archimate/`, only 3.1 Diagram/Model/View XSD links discovered, tested 4.0 candidate URLs returning 404, and the 3.1 Model XSD baseline returning 200.
+- W262 recheck: the same runlog records HTTP 200 for `https://publications.opengroup.org/w262`, detects the title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, and finds no matching local W262 or ArchiMate 4 motivation PDF candidates under Downloads or Codex attachments.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now points `sourceCoverage.meff4Xsd` and `sourceCoverage.w262` at the refreshed runlog and includes the additional `archimate_Model`, `archimate_Diagram`, and `archimate_View` 4.0 candidate URL checks.
+- Docs/tests: `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `test/language-profile.test.mjs` now assert and describe the refreshed external-source evidence.
+- Status evidence: `project_memory/runlogs/20260709-1344-external-source-status-check.json` shows the updated source coverage, official conformance blockers still present, and `w262CompanionPaper` still listed as a remaining companion-source gap.
+- Focused verification: `project_memory/runlogs/20260709-1345-external-source-focused-test.txt` passed.
+- Verification: JSON parse passed in `project_memory/runlogs/20260709-1346-external-source-json-check.txt`; `npm run test:language` passed with 201 tests in `project_memory/runlogs/20260709-1347-external-source-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1348-external-source-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1349-external-source-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1350-external-source-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1351-external-source-staged-diff-check.txt` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1352-external-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-external-source-continuation-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

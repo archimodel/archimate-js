@@ -1,0 +1,70 @@
+{
+  "meff4Xsd": {
+    "status": "external-source-required",
+    "url": "https://www.opengroup.org/xsd/archimate/",
+    "localSourcePresent": false,
+    "required": true,
+    "externalBlocker": "officialMeff4Xsd",
+    "lastCheckedAt": "2026-07-09T17:28:55+09:00",
+    "lastRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
+    "directoryStatusCode": 200,
+    "official4XsdDiscovered": false,
+    "discoveredXsdLinks": [
+      "3.1/archimate3_Diagram.xsd",
+      "3.1/archimate3_Model.xsd",
+      "3.1/archimate3_View.xsd"
+    ],
+    "candidateStatusCodes": {
+      "https://www.opengroup.org/xsd/archimate/4.0/": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd": 200
+    }
+  },
+  "w262": {
+    "document": "W262",
+    "status": "external-download-required",
+    "url": "https://publications.opengroup.org/w262",
+    "localSourcePresent": false,
+    "companion": true,
+    "publicationPageStatusCode": 200,
+    "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+    "lastPublicationPageCheckedAt": "2026-07-09T17:28:55+09:00",
+    "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
+    "freePdfDetected": true,
+    "loginRequiredDetected": true,
+    "pages22Detected": true,
+    "published20260427Detected": true,
+    "lastLocalSearchAt": "2026-07-09T17:28:55+09:00",
+    "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
+    "localSearchRoots": [
+      "C:\\Users\\syska\\Downloads",
+      "C:\\Users\\syska\\.codex\\attachments"
+    ],
+    "localSearchPatterns": [
+      "*W262*.pdf",
+      "*w262*.pdf",
+      "*Motivation*ArchiMate*.pdf",
+      "*ArchiMate*Motivation*.pdf",
+      "*Changes*ArchiMate*.pdf"
+    ],
+    "localSearchMatchedFiles": []
+  },
+  "blockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}

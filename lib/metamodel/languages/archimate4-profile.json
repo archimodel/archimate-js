@@ -1395,14 +1395,14 @@
         "companion": true,
         "publicationPageStatusCode": 200,
         "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
-        "lastPublicationPageCheckedAt": "2026-07-09T15:19:25+09:00",
-        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json",
+        "lastPublicationPageCheckedAt": "2026-07-09T17:28:55+09:00",
+        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
         "freePdfDetected": true,
         "loginRequiredDetected": true,
         "pages22Detected": true,
         "published20260427Detected": true,
-        "lastLocalSearchAt": "2026-07-09T15:19:25+09:00",
-        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json",
+        "lastLocalSearchAt": "2026-07-09T17:28:55+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
         "localSearchRoots": [
           "C:\\Users\\syska\\Downloads",
           "C:\\Users\\syska\\.codex\\attachments"
@@ -1444,8 +1444,8 @@
         "localSourcePresent": false,
         "required": true,
         "externalBlocker": "officialMeff4Xsd",
-        "lastCheckedAt": "2026-07-09T15:09:21+09:00",
-        "lastRunlogPath": "project_memory/runlogs/20260709-1167-meff4-xsd-continuation-recheck.json",
+        "lastCheckedAt": "2026-07-09T17:28:55+09:00",
+        "lastRunlogPath": "project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json",
         "directoryStatusCode": 200,
         "official4XsdDiscovered": false,
         "discoveredXsdLinks": [
@@ -1460,6 +1460,9 @@
           "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
           "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
           "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate_Diagram.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate_View.xsd": 404,
           "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd": 200
         }
       },

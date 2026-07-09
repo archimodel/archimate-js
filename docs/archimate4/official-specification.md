@@ -14,7 +14,7 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
 - W262 companion paper status: The Open Group publication page for W262 is reachable and lists a free
   PDF download that requires login; the PDF is not yet present locally. The latest page and local
   Downloads/attachments check is recorded in
-  `project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json`; it detected the W262
+  `project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json`; it detected the W262
   title, 22-page metadata, 2026-04-27 publication metadata, and found no matching local W262 PDF.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
@@ -675,7 +675,13 @@ Latest official XSD recheck:
   200 and still listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory,
   Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
   returned 404, while the 3.1 Model XSD baseline returned 200. The ArchiMate 4 implementation status
-  records this latest evidence in `sourceCoverage.meff4Xsd`.
+  recorded this evidence in `sourceCoverage.meff4Xsd`.
+- On 2026-07-09T17:28:55+09:00, the official directory evidence was refreshed again in
+  `project_memory/runlogs/20260709-1343-external-source-continuation-recheck.json`. The directory
+  returned 200 and still listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0
+  directory, `archimate4_*`, `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and `archimate_*`
+  candidate URLs returned 404, while the 3.1 Model XSD baseline returned 200. The ArchiMate 4
+  implementation status records this latest evidence in `sourceCoverage.meff4Xsd`.
 
 ## Implementation Status And Remaining Gaps
 
