@@ -2817,6 +2817,37 @@ test('archimate 4 external blocker gaps map to source coverage and readiness', (
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
 });
 
+test('archimate 4 missing required sources map to required-before-claim actions', () => {
+  const status = getArchimate4ImplementationStatus();
+  const missingRequiredSources = status.sourceCoverage.missingRequiredSources;
+  const actionsByBlocker = status.conformanceReadiness.requiredBeforeClaimByBlocker;
+  const missingSourcesByBlocker = new Map(missingRequiredSources.map((sourceId) => {
+    const source = status.sourceCoverage.items[sourceId];
+
+    return [ source.externalBlocker, sourceId ];
+  }));
+  const gapsById = new Map(status.remainingGaps.items.map((gap) => [ gap.id, gap ]));
+
+  assert.deepEqual(Array.from(missingSourcesByBlocker.keys()), status.conformanceReadiness.blockers);
+  assert.deepEqual(Object.keys(actionsByBlocker), status.conformanceReadiness.requiredBeforeClaimBlockerIds);
+  assert.deepEqual(Object.values(actionsByBlocker), status.conformanceReadiness.requiredBeforeClaim);
+
+  for (const blockerId of status.conformanceReadiness.requiredBeforeClaimBlockerIds) {
+    const sourceId = missingSourcesByBlocker.get(blockerId);
+    const source = status.sourceCoverage.items[sourceId];
+    const gap = gapsById.get(blockerId);
+    const action = actionsByBlocker[blockerId];
+
+    assert.equal(typeof action, 'string');
+    assert.equal(action.length > 0, true);
+    assert.equal(source.required, true);
+    assert.equal(source.localSourcePresent, false);
+    assert.equal(source.externalBlocker, blockerId);
+    assert.equal(gap.sourceId, sourceId);
+    assert.equal(gap.officialConformanceBlocker, true);
+  }
+});
+
 test('archimate 4 W262 companion source stays outside official conformance blockers', () => {
   const status = getArchimate4ImplementationStatus();
   const w262 = status.sourceCoverage.items.w262;

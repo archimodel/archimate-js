@@ -2190,3 +2190,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1426-c260-coverage-external-blocker-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-coverage-external-blocker-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 170
+
+- Goal: strengthen the readiness-action boundary so every missing required external source has a matching official-conformance blocker and required-before-claim action.
+- Observation: direct status output shows missing required sources `appendixBRelationshipMatrix`, `meff4Xsd`, and `appendixAArtworkRights`; each source has an `externalBlocker`, while W262 remains a companion source.
+- Implemented: `test/language-profile.test.mjs` now verifies missing required sources map to `conformanceReadiness.blockers`, `requiredBeforeClaimBlockerIds`, non-empty `requiredBeforeClaimByBlocker` actions, and matching `remainingGaps` entries.
+- Implemented: the guard verifies the inverse action mapping as well, so required-before-claim actions cannot drift away from the current missing required source set.
+- Focused verification: `project_memory/runlogs/20260709-1428-required-source-readiness-action-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 213 tests in `project_memory/runlogs/20260709-1429-required-source-readiness-action-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1430-required-source-readiness-action-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1431-required-source-readiness-action-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1432-required-source-readiness-action-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-required-source-readiness-action-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
