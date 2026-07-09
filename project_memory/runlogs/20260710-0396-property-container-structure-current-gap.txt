@@ -1,0 +1,4 @@
+propertyDefinitionsNodeString {"valid":false,"codes":["invalid-property-definition-list"]}
+propertyDefinitionsListString {"valid":false,"codes":["invalid-property-definition-list"]}
+propertiesNodeString {"valid":false,"codes":["invalid-properties-list"]}
+propertiesListString {"valid":false,"codes":["invalid-properties-list"]}

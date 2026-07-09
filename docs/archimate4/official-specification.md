@@ -261,7 +261,7 @@ relationship references, endpoint references, endpoint-to-relationship alignment
 `style`/`font`/`color` values, viewpoint definitions including allowed-type string entries, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
 `BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef` references,
-reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
+`PropertyDefinitions` / `Properties` container structure, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
 `Property.value` string structure, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
@@ -337,8 +337,8 @@ Supported customization data:
   a reusable `PropertyDefinition` named `archimate-js:profileAttribute:<concept>:<name>` and a
   per-concept `Property` value. `getProfileAttributePropertyValue()` reads the stored string value back
   through the declared profile attribute type.
-- `validateArchimate4Model()` checks model-level `PropertyDefinition` list/entry shape and optional
-  definition `name` / `type` string fields, resolves `Property.propertyDefinitionRef` id references
+- `validateArchimate4Model()` checks model-level `PropertyDefinitions` / `Properties` container
+  structure, `PropertyDefinition` list/entry shape, and optional definition `name` / `type` string fields, resolves `Property.propertyDefinitionRef` id references
   against model `PropertyDefinition` entries, reports missing, malformed, or unknown
   property-definition references, validates present `Property.value` fields as strings, and applies
   profile attribute value validation after the reference is resolved.
@@ -829,7 +829,7 @@ In particular:
   IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, BaseObject field structure, organization tree structure and identifier-reference,
-  property-definition structure and reference, property value string-structure, or profile attribute
+  property-container structure, property-definition structure and reference, property value string-structure, or profile attribute
   property coverage.
 
 The relationship rules remain a fallback:

@@ -42,7 +42,9 @@
         "project_memory/runlogs/20260710-0362-view-tree-structure-test-language.txt",
         "project_memory/runlogs/20260710-0372-view-tree-structure-final-test-language.txt",
         "project_memory/runlogs/20260710-0382-concept-container-structure-test-language.txt",
-        "project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt"
+        "project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt",
+        "project_memory/runlogs/20260710-0403-property-container-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0408-property-container-structure-final-test-language.txt"
       ]
     },
     {
@@ -71,7 +73,9 @@
         "project_memory/runlogs/20260710-0364-view-tree-structure-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0368-view-tree-structure-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0384-concept-container-structure-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0390-concept-container-structure-final-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0390-concept-container-structure-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0405-property-container-structure-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0410-property-container-structure-final-c260-coverage-audit.json"
       ]
     },
     {
@@ -172,7 +176,7 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover concept container structure, profile mismatch, retired concepts, relationship rules, relationship endpoint references, relationship option field types, multiplicity, junction consistency, present IdObject id and xsi:type string values, view tree structure, view viewpoint string attributes and references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier references, property definition structure and references, present property value string structure, viewpoint definitions including allowed-type string entries, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover concept and property container structure, profile mismatch, retired concepts, relationship rules, relationship endpoint references, relationship option field types, multiplicity, junction consistency, present IdObject id and xsi:type string values, view tree structure, view viewpoint string attributes and references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier references, property definition structure and references, present property value string structure, viewpoint definitions including allowed-type string entries, and profile attribute property values",
       "when": [
         "post_change",
         "pre_commit"
@@ -281,7 +285,21 @@
         "project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt",
         "project_memory/runlogs/20260710-0389-concept-container-structure-final-completion-audit.json",
         "project_memory/runlogs/20260710-0391-concept-container-structure-final-json-check.txt",
-        "project_memory/runlogs/20260710-0392-concept-container-structure-final-diff-check.txt"
+        "project_memory/runlogs/20260710-0392-concept-container-structure-final-diff-check.txt",
+        "project_memory/runlogs/20260710-0396-property-container-structure-current-gap.txt",
+        "project_memory/runlogs/20260710-0397-property-container-structure-red-test.txt",
+        "project_memory/runlogs/20260710-0398-property-container-structure-focused-model-test.txt",
+        "project_memory/runlogs/20260710-0399-property-container-structure-status-test.txt",
+        "project_memory/runlogs/20260710-0400-property-container-structure-model-validation-test.txt",
+        "project_memory/runlogs/20260710-0402-property-container-structure-status-snapshot.json",
+        "project_memory/runlogs/20260710-0403-property-container-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0404-property-container-structure-completion-audit.json",
+        "project_memory/runlogs/20260710-0406-property-container-structure-json-check.txt",
+        "project_memory/runlogs/20260710-0407-property-container-structure-diff-check.txt",
+        "project_memory/runlogs/20260710-0408-property-container-structure-final-test-language.txt",
+        "project_memory/runlogs/20260710-0409-property-container-structure-final-completion-audit.json",
+        "project_memory/runlogs/20260710-0411-property-container-structure-precommit-json-check.txt",
+        "project_memory/runlogs/20260710-0412-property-container-structure-precommit-diff-check.txt"
       ]
     },
     {
@@ -304,7 +322,8 @@
         "project_memory/runlogs/20260710-0320-relationship-endpoint-reference-eslint-changed.txt",
         "project_memory/runlogs/20260710-0340-organization-tree-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0360-view-tree-structure-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0380-concept-container-structure-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0380-concept-container-structure-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0401-property-container-structure-eslint-changed.txt"
       ]
     },
     {

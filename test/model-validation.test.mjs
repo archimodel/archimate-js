@@ -1738,6 +1738,33 @@ test('archimate 4 model validation reports invalid property definition lists', (
   assert.equal(diagnostic.propertyDefinitionsNodePresent, true);
 });
 
+test('archimate 4 model validation reports invalid property container structure', () => {
+  const invalidPropertyDefinitionsNodeResult = validateArchimate4Model({
+    propertyDefinitionsNode: 'not-a-property-definitions-node'
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidPropertiesNodeResult = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        {
+          id: 'actor-1',
+          type: 'BusinessActor',
+          propertiesNode: 'not-a-properties-node'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(invalidPropertyDefinitionsNodeResult.valid, false);
+  assert.equal(diagnosticCodes(invalidPropertyDefinitionsNodeResult).includes('invalid-property-definitions-node'), true);
+
+  assert.equal(invalidPropertiesNodeResult.valid, false);
+  assert.equal(diagnosticCodes(invalidPropertiesNodeResult).includes('invalid-properties-node'), true);
+});
+
 test('archimate 4 model validation reports invalid property definition entries', () => {
   const result = validateArchimate4Model({
     propertyDefinitionsNode: {

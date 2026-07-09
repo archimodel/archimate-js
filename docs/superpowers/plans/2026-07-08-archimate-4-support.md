@@ -80,7 +80,7 @@ endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`
 `font.style` `plain` combinations, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern and
 modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier
-references, property definition structure and references, present property value string structure, and
+references, PropertyDefinitions / Properties container structure, property definition structure and references, present property value string structure, and
 profile attribute property values.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.

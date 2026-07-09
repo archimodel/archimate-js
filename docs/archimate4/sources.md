@@ -265,7 +265,7 @@
   purpose/content and allowed-type string-entry definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
   structure, `BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef`
-  references, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references,
+  references, `PropertyDefinitions` / `Properties` container structure, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references,
   present `Property.value` string structure, and profile attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
@@ -889,7 +889,8 @@
   viewpoint purpose/content and allowed element/relationship type definitions with string `type` values, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
   and `modelingNotes` structure, relationship option field types, present IdObject id and `xsi:type` string values, ViewElement label string values, `BaseObject` name/documentation string fields, reusable
-  `PropertyDefinition` structure, property-definition references, present property value string
+  `PropertyDefinitions` / `Properties` container structure, `PropertyDefinition` structure,
+  property-definition references, present property value string
   structure, and profile attribute properties with typed values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active
   relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
