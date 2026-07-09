@@ -261,7 +261,8 @@
   references, view node element references, view connection relationship references, viewpoint
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern structure, organization
-  `identifierRef` references, and profile attribute property/value checks.
+  `identifierRef` references, `Property.propertyDefinitionRef` references, and profile attribute
+  property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -275,7 +276,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-2200-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260709-2303-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -538,6 +539,9 @@
   helper creates reusable `PropertyDefinition` entries named
   `archimate-js:profileAttribute:<concept>:<name>` and serializes `Structure` values as JSON strings
   because the local MEFF property value field is string-based.
+- `validateArchimate4Model()` resolves `Property.propertyDefinitionRef` id references against
+  model-level `propertyDefinitionsNode.propertyDefinitions`, reports missing, malformed, or unknown
+  references, and uses the resolved definition name for profile attribute value validation.
 - New custom concepts must declare `specializes`; relationship validation resolves specialized source
   and target concepts to their standard base concept before consulting the active relationship profile.
 - New custom relationship objects may declare `specializes` to point to a standard ArchiMate

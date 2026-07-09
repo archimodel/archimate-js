@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 200,
-  "stage": "archimate4_model_validation_organization_reference_verified",
+  "loop_id": 201,
+  "stage": "archimate4_model_validation_property_definition_reference_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature_validation",
-    "diff_size": 334,
+    "diff_size": 410,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -221,7 +221,9 @@
       "viewpoint_content_application_guard",
       "profile_viewpoint_content_application_guard",
       "organization_identifier_reference_guard",
-      "external_source_current_recheck_1174_guard"
+      "external_source_current_recheck_1174_guard",
+      "property_definition_reference_guard",
+      "status_completion_scan_2303_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -468,12 +470,16 @@
       "check_organization_identifier_reference_validation",
       "check_status_completion_scan_2200",
       "check_external_source_current_recheck_1174",
-      "check_archimate4_completion_audit_organization_reference"
+      "check_archimate4_completion_audit_organization_reference",
+      "check_property_definition_reference_validation",
+      "check_status_completion_scan_2303",
+      "check_archimate4_completion_audit_property_definition_reference",
+      "check_archimate4_c260_coverage_audit_property_definition_reference"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-2212-archimate4-model-validation-organization-reference-final-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-model-validation-organization-reference-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-2321-archimate4-model-validation-property-definition-final-test-language-rerun.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-model-validation-property-definition-reference-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -691,11 +697,13 @@
     "Viewpoint allowed element and relationship type lists are applied to referenced View contents using exact type or active-profile base type matches; views without a model-defined viewpointRef remain metadata-only.",
     "Profile-defined Viewpoints supplied through archimateLanguageProfile.viewpoints can be applied to a View by matching View.viewpoint to the profile Viewpoint id; unmatched View.viewpoint values remain metadata-only.",
     "Organization.identifierRef may reference any model-defined Concept, including elements or relationships; the validator checks the referenced concept against the active ArchiMate profile.",
-    "The 2026-07-09T23:50:00+09:00 external-source recheck did not discover official MEFF 4.0 XSD files or a local W262 PDF, so those remain external blockers or companion gaps."
+    "The 2026-07-09T23:50:00+09:00 external-source recheck did not discover official MEFF 4.0 XSD files or a local W262 PDF, so those remain external blockers or companion gaps.",
+    "Property.propertyDefinitionRef may be a string id or resolved PropertyDefinition object; validation resolves string ids through model.propertyDefinitionsNode.propertyDefinitions before applying profile attribute checks.",
+    "Inline propertyDefinitionRef objects with a name remain accepted for existing in-memory helper compatibility, while string or id-bearing references must resolve to model-level PropertyDefinition entries."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T23:55:00+09:00"
+    "updated_at": "2026-07-09T23:59:59+09:00"
   },
   "implemented_items": [
     "validateArchimate4Model() and validateArchimateModel() now validate View Node elementRef values against model-defined elements and connectors, reporting malformed, unknown, relationship-targeted, or unsupported references.",
@@ -706,6 +714,10 @@
     "getArchimate4ImplementationStatus().modelValidation now exposes view-profile-viewpoint-content-application and the implementation-status completion scan points at project_memory/runlogs/20260709-1160-status-completion-api-scan.json.",
     "validateArchimate4Model() and validateArchimateModel() now recursively validate organizationsNode.organizations identifierRef values against model-defined elements and relationships, reporting malformed, unknown, and active-profile unsupported references.",
     "getArchimate4ImplementationStatus().modelValidation now exposes organization-identifier-reference and the implementation-status completion scan points at project_memory/runlogs/20260709-2200-status-completion-api-scan.json.",
-    "sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260709-1174-external-source-current-recheck.json for the current external-source recheck."
+    "sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260709-1174-external-source-current-recheck.json for the current external-source recheck.",
+    "validateArchimate4Model() and validateArchimateModel() now validate Property.propertyDefinitionRef references on model property owners, reporting missing, malformed, and unknown property-definition references.",
+    "Profile attribute property validation now resolves string propertyDefinitionRef ids through model-level PropertyDefinition entries before checking the active profile attribute and typed value.",
+    "getArchimate4ImplementationStatus().modelValidation now exposes property-definition-reference and the implementation-status completion scan points at project_memory/runlogs/20260709-2303-status-completion-api-scan.json.",
+    "validateArchimate4Model() now reports invalid-properties-list for non-array propertiesNode.properties without throwing during profile attribute property validation."
   ]
 }

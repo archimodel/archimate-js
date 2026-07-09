@@ -832,6 +832,141 @@ test('archimate 4 model validation accepts organization references to model conc
   assert.deepEqual(result.diagnostics, []);
 });
 
+test('archimate 4 model validation reports invalid property definition references', () => {
+  const result = validateArchimate4Model({
+    propertyDefinitionsNode: {
+      propertyDefinitions: [
+        {
+          id: 'pd-severity',
+          name: 'archimate-js:profileAttribute:RiskEvent:severity',
+          type: 'Integer'
+        }
+      ]
+    },
+    elementsNode: {
+      baseElements: [
+        {
+          id: 'risk-event-1',
+          type: 'RiskEvent',
+          propertiesNode: {
+            properties: [
+              {
+                propertyDefinitionRef: 'pd-severity',
+                value: 'high'
+              },
+              {
+                propertyDefinitionRef: 'missing-definition',
+                value: 'x'
+              },
+              {
+                propertyDefinitionRef: {},
+                value: 'x'
+              },
+              {
+                value: 'x'
+              }
+            ]
+          }
+        },
+        {
+          id: 'risk-event-invalid-properties',
+          type: 'RiskEvent',
+          propertiesNode: {
+            properties: 'not-an-array'
+          }
+        }
+      ]
+    }
+  }, {
+    customization: {
+      version: '4.0',
+      elements: [
+        {
+          type: 'RiskEvent',
+          specializes: 'Event',
+          domain: 'Common',
+          aspect: 'behavior',
+          className: 'event',
+          typeName: 'Risk Event'
+        }
+      ],
+      attributes: [
+        {
+          concept: 'RiskEvent',
+          name: 'severity',
+          type: 'Integer'
+        }
+      ]
+    },
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-profile-attribute-value'), true);
+  assert.equal(codes.includes('unknown-property-definition-reference'), true);
+  assert.equal(codes.includes('invalid-property-definition-reference'), true);
+  assert.equal(codes.includes('missing-property-definition-reference'), true);
+  assert.equal(codes.includes('invalid-properties-list'), true);
+  assert.equal(findDiagnostic(result, 'invalid-profile-attribute-value').propertyName, 'archimate-js:profileAttribute:RiskEvent:severity');
+  assert.equal(findDiagnostic(result, 'unknown-property-definition-reference').propertyDefinitionId, 'missing-definition');
+});
+
+test('archimate 4 model validation accepts property definition references by id', () => {
+  const result = validateArchimate4Model({
+    propertyDefinitionsNode: {
+      propertyDefinitions: [
+        {
+          id: 'pd-severity',
+          name: 'archimate-js:profileAttribute:RiskEvent:severity',
+          type: 'Integer'
+        }
+      ]
+    },
+    elementsNode: {
+      baseElements: [
+        {
+          id: 'risk-event-1',
+          type: 'RiskEvent',
+          propertiesNode: {
+            properties: [
+              {
+                propertyDefinitionRef: 'pd-severity',
+                value: '4'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }, {
+    customization: {
+      version: '4.0',
+      elements: [
+        {
+          type: 'RiskEvent',
+          specializes: 'Event',
+          domain: 'Common',
+          aspect: 'behavior',
+          className: 'event',
+          typeName: 'Risk Event'
+        }
+      ],
+      attributes: [
+        {
+          concept: 'RiskEvent',
+          name: 'severity',
+          type: 'Integer'
+        }
+      ]
+    },
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, true);
+  assert.deepEqual(result.diagnostics, []);
+});
+
 test('archimate 4 model validation reports invalid profile attribute properties', () => {
   const result = validateArchimate4Model({
     elementsNode: {

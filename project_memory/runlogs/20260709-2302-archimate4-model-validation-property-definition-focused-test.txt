@@ -1,0 +1,11 @@
+✔ archimate 4 model validation reports invalid property definition references (3.2247ms)
+✔ archimate 4 model validation accepts property definition references by id (1.3014ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (0.7495ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 126.9832

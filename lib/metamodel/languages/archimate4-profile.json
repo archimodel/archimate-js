@@ -91,6 +91,7 @@
         "view-profile-viewpoint-content-application",
         "viewpoint-stakeholder-concern-structure",
         "organization-identifier-reference",
+        "property-definition-reference",
         "profile-attribute-properties",
         "profile-attribute-values"
       ],
