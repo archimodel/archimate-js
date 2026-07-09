@@ -2009,3 +2009,16 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1312-stakeholder-concern-staged-diff-check.txt` first failed on a trailing EOF blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1313-stakeholder-concern-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-stakeholder-concern-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 155
+
+- Goal: add a broad implementation-status guard so ArchiMate 4 status summaries cannot become incomplete silently while only external-source blockers remain unresolved.
+- Implemented: `test/language-profile.test.mjs` now recursively collects every `complete` field in `getArchimate4ImplementationStatus()` and fails if any summary is incomplete.
+- Implemented: the same test asserts the three official conformance blockers (`officialAppendixBRelationshipMatrix`, `officialMeff4Xsd`, `exactAppendixAArtworkRights`) and the companion W262 gap remain visible through `conformanceReadiness` and `remainingGaps`.
+- Focused verification: `project_memory/runlogs/20260709-1314-status-no-incomplete-focused-test.txt` passed with 1 test.
+- Verification: `npm run test:language` passed with 199 tests in `project_memory/runlogs/20260709-1315-status-no-incomplete-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1316-status-no-incomplete-eslint-test.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1317-status-no-incomplete-diff-check.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1319-status-no-incomplete-status.json` shows `incompleteStatusSummaries: []`, `officialConformanceClaimable: false`, the three official blocker ids, and the W262 companion gap with no missing or extra gap ids. `project_memory/runlogs/20260709-1320-status-no-incomplete-status-warning.txt` records the known Node typeless-package ESM warning emitted by the direct status import path; `project_memory/runlogs/20260709-1321-status-no-incomplete-json-check.txt` confirms the status JSON is parseable.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1318-status-no-incomplete-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `git diff --cached --check` first failed on a trailing EOF blank line in the generated repo-lint runlog; `project_memory/runlogs/20260709-1322-status-no-incomplete-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-status-no-incomplete-guard-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

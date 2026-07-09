@@ -30,6 +30,28 @@ async function runNodeModule(source) {
   });
 }
 
+function collectIncompleteStatusSummaries(value, path = []) {
+  if (!value || typeof value !== 'object') {
+    return [];
+  }
+
+  const incomplete = [];
+
+  if (Object.prototype.hasOwnProperty.call(value, 'complete') && value.complete !== true) {
+    incomplete.push({
+      path: path.join('.'),
+      complete: value.complete,
+      status: value.status
+    });
+  }
+
+  for (const [ key, child ] of Object.entries(value)) {
+    incomplete.push(...collectIncompleteStatusSummaries(child, path.concat(key)));
+  }
+
+  return incomplete;
+}
+
 test('archimate 3 profile keeps retired 3.x concepts for compatibility', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate3-profile.json');
   const types = new Set(profile.elements.map((element) => element.type));
@@ -881,6 +903,26 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
   assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
+});
+
+test('archimate 4 implementation status has no incomplete non-external summaries', () => {
+  const status = getArchimate4ImplementationStatus();
+  const expectedOfficialBlockerIds = [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ];
+  const expectedGapIds = expectedOfficialBlockerIds.concat('w262CompanionPaper');
+
+  assert.deepEqual(collectIncompleteStatusSummaries(status), []);
+  assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+  assert.deepEqual(status.conformanceReadiness.blockers, expectedOfficialBlockerIds);
+  assert.deepEqual(status.conformanceReadiness.missingRequiredBeforeClaimBlockerIds, []);
+  assert.deepEqual(status.conformanceReadiness.extraRequiredBeforeClaimBlockerIds, []);
+  assert.deepEqual(status.remainingGaps.actualIds, expectedGapIds);
+  assert.deepEqual(status.remainingGaps.unresolvedIds, expectedGapIds);
+  assert.deepEqual(status.remainingGaps.missingIds, []);
+  assert.deepEqual(status.remainingGaps.extraIds, []);
 });
 
 test('archimate 4 implementation status exposes C260 introduction coverage identity', async () => {

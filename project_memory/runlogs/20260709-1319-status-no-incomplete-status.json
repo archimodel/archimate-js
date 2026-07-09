@@ -1,0 +1,17 @@
+{
+  "incompleteStatusSummaries": [],
+  "officialConformanceClaimable": false,
+  "officialBlockerIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "remainingGapIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ],
+  "missingRemainingGapIds": [],
+  "extraRemainingGapIds": []
+}
