@@ -9,6 +9,7 @@ export {
 export {
   getArchimate4RelationshipProfileCoverageReport,
   getArchimate4RelationshipProfileStatus,
+  resetArchimate4RelationshipProfile,
   setArchimate4RelationshipProfile
 } from './lib/metamodel/languages/archimate4-relationships';
 

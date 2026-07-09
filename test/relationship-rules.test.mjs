@@ -4,8 +4,10 @@ import { readFile } from 'node:fs/promises';
 import { getArchimate4ImplementationStatus } from '../lib/metamodel/languages/index.js';
 import {
   getArchimate4RelationshipProfileStatus,
+  resetArchimate4RelationshipProfileIfViewerScoped,
   resetArchimate4RelationshipProfileForTests,
-  setArchimate4RelationshipProfile
+  setArchimate4RelationshipProfile,
+  setArchimate4RelationshipProfileForViewer
 } from '../lib/metamodel/languages/archimate4-relationships.js';
 import {
   getRelationshipProfileCoverageReport,
@@ -58,14 +60,20 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /completeTargetCoverage/);
   assert.match(source, /sourceMetadata/);
   assert.match(source, /hasSourceMetadata/);
+  assert.match(source, /sourceScope/);
+  assert.match(source, /resetArchimate4RelationshipProfile/);
+  assert.match(source, /resetArchimate4RelationshipProfileIfViewerScoped/);
+  assert.match(source, /setArchimate4RelationshipProfileForViewer/);
   assert.doesNotMatch(source, /completeTargetCoverage:\s*RELATIONSHIP_PROFILE_OPTIONS\.requireCompleteTargets/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
+  assert.match(entrypoint, /resetArchimate4RelationshipProfile/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileStatus/);
   assert.match(entrypoint, /getArchimate4RelationshipProfileCoverageReport/);
   assert.match(baseViewer, /archimate4RelationshipProfile/);
-  assert.match(baseViewer, /normalizeArchimateVersion\(options\.archimateVersion\) !== '4\.0'/);
-  assert.match(baseViewer, /setArchimate4RelationshipProfile\(/);
+  assert.match(baseViewer, /var version = normalizeArchimateVersion\(options\.archimateVersion\)/);
+  assert.match(baseViewer, /resetArchimate4RelationshipProfileIfViewerScoped\(\)/);
+  assert.match(baseViewer, /setArchimate4RelationshipProfileForViewer\(/);
 });
 
 test('connection rules evaluate relationships through the active language profile', async () => {
@@ -321,6 +329,7 @@ test('archimate 4 relationship profile status exposes external source metadata',
     const status = getArchimate4RelationshipProfileStatus();
 
     assert.equal(status.source, 'external');
+    assert.equal(status.sourceScope, 'global');
     assert.equal(status.hasSourceMetadata, true);
     assert.deepEqual(status.sourceMetadata, {
       sourceId: 'c260-appendix-b-local-profile',
@@ -344,8 +353,67 @@ test('archimate 4 relationship profile status exposes external source metadata',
   const resetStatus = getArchimate4RelationshipProfileStatus();
 
   assert.equal(resetStatus.source, 'compatibility-fallback');
+  assert.equal(resetStatus.sourceScope, 'default');
   assert.equal(resetStatus.hasSourceMetadata, false);
   assert.equal(resetStatus.sourceMetadata, null);
+});
+
+test('archimate 4 viewer-scoped relationship profiles reset before default 4 mode', () => {
+  try {
+    setArchimate4RelationshipProfileForViewer({
+      sources: {
+        BusinessActor: {
+          Role: 'Assignment'
+        }
+      }
+    }, {
+      requireComplete: false,
+      requireCompleteTargets: false
+    });
+
+    const viewerScopedStatus = getArchimate4RelationshipProfileStatus();
+
+    assert.equal(viewerScopedStatus.source, 'external');
+    assert.equal(viewerScopedStatus.sourceScope, 'viewer-constructor');
+
+    resetArchimate4RelationshipProfileIfViewerScoped();
+
+    const resetStatus = getArchimate4RelationshipProfileStatus();
+
+    assert.equal(resetStatus.source, 'compatibility-fallback');
+    assert.equal(resetStatus.sourceScope, 'default');
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
+});
+
+test('archimate 4 global relationship profiles survive viewer-scoped reset checks', () => {
+  try {
+    setArchimate4RelationshipProfile({
+      sources: {
+        BusinessActor: {
+          Role: 'Assignment'
+        }
+      }
+    }, {
+      requireComplete: false,
+      requireCompleteTargets: false
+    });
+
+    const globalStatus = getArchimate4RelationshipProfileStatus();
+
+    assert.equal(globalStatus.source, 'external');
+    assert.equal(globalStatus.sourceScope, 'global');
+
+    resetArchimate4RelationshipProfileIfViewerScoped();
+
+    const retainedStatus = getArchimate4RelationshipProfileStatus();
+
+    assert.equal(retainedStatus.source, 'external');
+    assert.equal(retainedStatus.sourceScope, 'global');
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
 });
 
 test('archimate 4 implementation status includes active relationship profile source metadata', () => {
@@ -372,6 +440,7 @@ test('archimate 4 implementation status includes active relationship profile sou
     const status = getArchimate4ImplementationStatus();
 
     assert.equal(status.relationshipProfile.source, 'external');
+    assert.equal(status.relationshipProfile.sourceScope, 'global');
     assert.equal(status.relationshipProfile.hasSourceMetadata, true);
     assert.deepEqual(status.relationshipProfile.sourceMetadata, {
       sourceId: 'appendix-b-host-status-profile',
@@ -386,6 +455,7 @@ test('archimate 4 implementation status includes active relationship profile sou
   const resetStatus = getArchimate4ImplementationStatus();
 
   assert.equal(resetStatus.relationshipProfile.source, 'compatibility-fallback');
+  assert.equal(resetStatus.relationshipProfile.sourceScope, 'default');
   assert.equal(resetStatus.relationshipProfile.hasSourceMetadata, false);
   assert.equal(resetStatus.relationshipProfile.sourceMetadata, null);
 });

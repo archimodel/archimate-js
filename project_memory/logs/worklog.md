@@ -1917,3 +1917,17 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1227-implementation-status-relationship-metadata-staged-diff-check.txt` passed.
 - Audit: `project_memory/audit/reports/20260709-implementation-status-relationship-metadata-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 149
+
+- Goal: prevent a constructor-supplied external Appendix B relationship profile from leaking into a later default ArchiMate 4 viewer/modeler.
+- Implemented: `lib/metamodel/languages/archimate4-relationships.js` now exposes a production reset API, tracks relationship profile `sourceScope`, marks constructor-supplied profiles as `viewer-constructor`, and resets only that scoped profile when requested.
+- Implemented: `lib/BaseViewer.js` now loads constructor-supplied profiles through the viewer-scoped path and resets any prior viewer-scoped profile when a 4.0 viewer/modeler starts without `archimate4RelationshipProfile`; public `setArchimate4RelationshipProfile(profile)` profiles remain global until explicitly reset.
+- Tests/docs/status: `test/relationship-rules.test.mjs`, `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, `docs/superpowers/plans/2026-07-08-archimate-4-support.md`, and `archimate4-profile.json` now document and guard the profile scope/reset boundary.
+- Focused verification: `project_memory/runlogs/20260709-1229-relationship-profile-default-reset-focused-test.txt` passed with 32 relationship-rules tests.
+- Verification: `npm run test:language` passed with 194 tests in `project_memory/runlogs/20260709-1230-relationship-profile-default-reset-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1231-relationship-profile-default-reset-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1232-relationship-profile-default-reset-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1233-relationship-profile-default-reset-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1234-relationship-profile-default-reset-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1236-relationship-profile-default-reset-status.json` shows `relationshipProfile.sourceScope: default`, `relationshipProfileResetApi: resetArchimate4RelationshipProfile`, `relationshipProfileSourceScopeField`, and `viewerScopedProfileResetImplemented: true`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1235-relationship-profile-default-reset-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1242-relationship-profile-default-reset-final-staged-diff-check.txt` passed after trimming the repository-lint runlog EOF blank line.
+- Audit: `project_memory/audit/reports/20260709-relationship-profile-default-reset-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

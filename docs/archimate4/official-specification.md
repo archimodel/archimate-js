@@ -606,6 +606,12 @@ External profile contract:
 - Profile status must expose optional scalar `sourceMetadata` for host-controlled source ids, version,
   URI, hash, generation time, and supplier values while ignoring nested metadata, so a loaded
   licensed Appendix B artifact remains auditable without copying table text into status output.
+- Profile status must expose `sourceScope` so hosts can distinguish the compatibility fallback,
+  process-wide profiles set through `setArchimate4RelationshipProfile(profile)`, and profiles supplied
+  for a specific viewer/modeler constructor.
+- A later ArchiMate 4 viewer/modeler constructed without `archimate4RelationshipProfile` must reset a
+  previous constructor-scoped profile to the compatibility fallback, while preserving an explicitly
+  process-wide profile.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

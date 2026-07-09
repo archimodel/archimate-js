@@ -561,6 +561,10 @@
   `getArchimate4RelationshipProfileStatus()`.
 - `Modeler` and `Viewer` construction also accepts `archimate4RelationshipProfile` when
   `archimateVersion` is `4.0`, so licensed Appendix B data can be supplied at startup.
+- Constructor-supplied profiles are marked as viewer/modeler scoped. A later ArchiMate 4 constructor
+  call without `archimate4RelationshipProfile` resets a previous constructor-scoped profile back to
+  the compatibility fallback, while a profile set explicitly through the public
+  `setArchimate4RelationshipProfile(profile)` API remains process-wide until reset.
 - The profile can be supplied as a parsed object or a JSON string loaded by the host application; this
   keeps file-system access outside the browser-oriented package while still supporting licensed local
   artifacts.
@@ -581,6 +585,8 @@
 - The same status API exposes optional `sourceMetadata` copied from the host-supplied profile or load
   options. Only scalar audit fields such as source id, version, URI, hash, generation time, and
   supplier are retained; nested objects are ignored so licensed table text is not leaked into status.
+- The status API also exposes `sourceScope`, allowing hosts to distinguish the compatibility fallback,
+  a process-wide external profile, and a constructor-scoped external profile.
 - `getArchimate4RelationshipProfileCoverageReport()` returns the same coverage metadata plus the
   specific missing source types and missing source-target cells, allowing hosts to audit licensed
   Appendix B profile transcription without committing the table.

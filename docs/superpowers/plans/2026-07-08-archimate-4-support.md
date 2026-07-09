@@ -44,6 +44,10 @@ catalog status reports `expectedTypes`, `actualTypes`, `missingTypes`, and `extr
 C260 type-coverage auditing. Relationship connector status reports the same exact fields for
 `AndJunction` and `OrJunction` outside the 42-element catalog. Conformance requirement status reports
 `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the C260-derived shall/may map.
+Relationship profile status reports `sourceScope`, so default compatibility fallback, explicitly
+global external profiles, and viewer/modeler-constructor scoped profiles can be distinguished; a
+later 4.0 viewer/modeler constructed without `archimate4RelationshipProfile` resets only the
+constructor-scoped profile back to fallback.
 Conformance readiness reports `requiredBeforeClaimByBlocker`,
 `missingRequiredBeforeClaimBlockerIds`, and `extraRequiredBeforeClaimBlockerIds` so every
 official-claim prerequisite remains aligned to an external blocker id.

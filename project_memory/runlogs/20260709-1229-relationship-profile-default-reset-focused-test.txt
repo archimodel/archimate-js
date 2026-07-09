@@ -1,0 +1,44 @@
+(node:74040) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (7.2737ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (2.8499ms)
+✔ connection rules evaluate relationships through the active language profile (0.6653ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (0.6359ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (0.7008ms)
+✔ connection popup labels relationships with C260 role names (0.9016ms)
+✔ connection popup exposes influence modifier actions (0.6295ms)
+✔ connection popup exposes explicit Access type actions (0.6434ms)
+✔ connection popup exposes explicit Association direction actions (0.7644ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (0.9501ms)
+✔ renderer displays influence modifier labels (0.6867ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (1.7277ms)
+✔ renderer preserves optional junction names outside the marker (0.738ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (0.9999ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.108ms)
+✔ archimate 4 relationship profile status exposes external source metadata (5.667ms)
+✔ archimate 4 viewer-scoped relationship profiles reset before default 4 mode (6.7736ms)
+✔ archimate 4 global relationship profiles survive viewer-scoped reset checks (3.953ms)
+✔ archimate 4 implementation status includes active relationship profile source metadata (9.1444ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.3956ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2145ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.2965ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.1853ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.1305ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.3655ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (4.3298ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.2769ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.1143ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (1.4108ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.1885ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1074ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.093ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 170.5064
