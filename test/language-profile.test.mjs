@@ -1593,6 +1593,78 @@ test('archimate 4 implementation status exposes aggregate C260 coverage integrit
   assert.match(plan, /Aggregate C260 coverage status reports/);
 });
 
+test('archimate 4 implementation status reconciles C260 PDF outline source with derived coverage', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const { getArchimate4ImplementationStatus } = await import('../lib/metamodel/languages/index.js');
+  const status = getArchimate4ImplementationStatus();
+  const alignment = status.c260SourceAlignment;
+  const expectedOutlineCoverageIds = [
+    'sectionCoverage',
+    'introductionCoverage',
+    'definitionCoverage',
+    'languageStructureCoverage',
+    'commonDomainCoverage',
+    'relationshipsAndJunctionsCoverage',
+    'motivationDomainCoverage',
+    'strategyDomainCoverage',
+    'businessDomainCoverage',
+    'applicationDomainCoverage',
+    'technologyDomainCoverage',
+    'relationshipsBetweenCoreDomainsCoverage',
+    'implementationAndMigrationDomainCoverage',
+    'stakeholdersArchitectureViewsViewpointsCoverage',
+    'languageCustomizationMechanismsCoverage',
+    'appendixANotationCoverage',
+    'appendixBRelationshipsCoverage',
+    'appendixCExampleViewpointsCoverage',
+    'appendixDStandardsGuidanceCoverage',
+    'appendixEVersionChangesCoverage',
+    'documentArtifactCoverage'
+  ];
+  const expectedSourceRawDuplicateIds = [
+    'conformance',
+    'active-structure-elements',
+    'behavior-elements',
+    'example',
+    'relationships-with-other-domains',
+    'passive-structure-elements',
+    'composite-elements',
+    'introduction',
+    'relationships-and-junctions'
+  ];
+
+  assert.equal(profile.conformance.c260SourceAlignmentCatalog.outlineSourceItemCount, 253);
+  assert.equal(alignment.status, 'c260-pdf-outline-and-derived-token-aligned');
+  assert.equal(alignment.outlineSourceRunlogPath, 'project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt');
+  assert.equal(alignment.outlineSourceItemCount, 253);
+  assert.equal(alignment.outlineCoveredItemCount, 253);
+  assert.equal(alignment.outlineItemCountDelta, 0);
+  assert.deepEqual(alignment.expectedOutlineCoverageIds, expectedOutlineCoverageIds);
+  assert.deepEqual(alignment.actualOutlineCoverageIds, expectedOutlineCoverageIds);
+  assert.deepEqual(alignment.missingOutlineCoverageIds, []);
+  assert.deepEqual(alignment.extraOutlineCoverageIds, []);
+  assert.deepEqual(alignment.incompleteOutlineCoverageIds, []);
+  assert.deepEqual(alignment.nonOutlineDerivedCoverageIds, [ 'appendixFAcronymsCoverage' ]);
+  assert.equal(alignment.nonOutlineDerivedItemCount, 31);
+  assert.equal(alignment.aggregateItemCount, 284);
+  assert.equal(alignment.expectedAggregateItemCount, 284);
+  assert.equal(alignment.aggregateItemCountDelta, 0);
+  assert.deepEqual(alignment.sourceRawDuplicateIds, expectedSourceRawDuplicateIds);
+  assert.equal(alignment.complete, true);
+
+  assert.match(languageIndex, /function summarizeC260SourceAlignment/);
+  assert.match(languageIndex, /c260SourceAlignment: c260SourceAlignment/);
+  assert.match(readme, /c260SourceAlignment\.outlineSourceItemCount/);
+  assert.match(sources, /c260SourceAlignment\.nonOutlineDerivedCoverageIds/);
+  assert.match(officialSpec, /c260SourceAlignment\.missingOutlineCoverageIds/);
+  assert.match(plan, /C260 source alignment status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

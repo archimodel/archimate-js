@@ -1119,6 +1119,51 @@
         "evidence": "C260 index is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
       }
     ],
+    "c260SourceAlignmentCatalog": {
+      "status": "c260-pdf-outline-and-derived-token-aligned",
+      "outlineSourceRunlogPath": "project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt",
+      "outlineSourceItemCount": 253,
+      "sourceRawDuplicateIds": [
+        "conformance",
+        "active-structure-elements",
+        "behavior-elements",
+        "example",
+        "relationships-with-other-domains",
+        "passive-structure-elements",
+        "composite-elements",
+        "introduction",
+        "relationships-and-junctions"
+      ],
+      "expectedOutlineCoverageIds": [
+        "sectionCoverage",
+        "introductionCoverage",
+        "definitionCoverage",
+        "languageStructureCoverage",
+        "commonDomainCoverage",
+        "relationshipsAndJunctionsCoverage",
+        "motivationDomainCoverage",
+        "strategyDomainCoverage",
+        "businessDomainCoverage",
+        "applicationDomainCoverage",
+        "technologyDomainCoverage",
+        "relationshipsBetweenCoreDomainsCoverage",
+        "implementationAndMigrationDomainCoverage",
+        "stakeholdersArchitectureViewsViewpointsCoverage",
+        "languageCustomizationMechanismsCoverage",
+        "appendixANotationCoverage",
+        "appendixBRelationshipsCoverage",
+        "appendixCExampleViewpointsCoverage",
+        "appendixDStandardsGuidanceCoverage",
+        "appendixEVersionChangesCoverage",
+        "documentArtifactCoverage"
+      ],
+      "nonOutlineDerivedCoverageIds": [
+        "appendixFAcronymsCoverage"
+      ],
+      "nonOutlineDerivedSourceRunlogPaths": {
+        "appendixFAcronymsCoverage": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt"
+      }
+    },
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

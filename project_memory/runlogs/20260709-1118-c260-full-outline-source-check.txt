@@ -1,0 +1,1526 @@
+source_pdf=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+outline_count=253
+unique_raw_id_count=228
+raw_duplicate_count=9
+raw_duplicate_ids=conformance,active-structure-elements,behavior-elements,example,relationships-with-other-domains,passive-structure-elements,composite-elements,introduction,relationships-and-junctions
+[
+  {
+    "title": "Cover",
+    "id": "cover",
+    "page": 1,
+    "depth": 0
+  },
+  {
+    "title": "Title",
+    "id": "title",
+    "page": 4,
+    "depth": 0
+  },
+  {
+    "title": "Copyright",
+    "id": "copyright",
+    "page": 5,
+    "depth": 0
+  },
+  {
+    "title": "Table of Contents",
+    "id": "table-of-contents",
+    "page": 6,
+    "depth": 0
+  },
+  {
+    "title": "Preface",
+    "id": "preface",
+    "page": 14,
+    "depth": 0
+  },
+  {
+    "title": "The Open Group",
+    "id": "the-open-group",
+    "page": 14,
+    "depth": 1
+  },
+  {
+    "title": "This Document",
+    "id": "this-document",
+    "page": 14,
+    "depth": 1
+  },
+  {
+    "title": "Trademarks",
+    "id": "trademarks",
+    "page": 17,
+    "depth": 0
+  },
+  {
+    "title": "Acknowledgements",
+    "id": "acknowledgements",
+    "page": 18,
+    "depth": 0
+  },
+  {
+    "title": "Referenced Documents",
+    "id": "referenced-documents",
+    "page": 20,
+    "depth": 0
+  },
+  {
+    "title": "1. Introduction",
+    "id": "introduction",
+    "page": 22,
+    "depth": 0
+  },
+  {
+    "title": "1.1. Objective",
+    "id": "objective",
+    "page": 22,
+    "depth": 1
+  },
+  {
+    "title": "1.2. Overview",
+    "id": "overview",
+    "page": 22,
+    "depth": 1
+  },
+  {
+    "title": "1.3. Conformance",
+    "id": "conformance",
+    "page": 23,
+    "depth": 1
+  },
+  {
+    "title": "1.4. Normative References",
+    "id": "normative-references",
+    "page": 23,
+    "depth": 1
+  },
+  {
+    "title": "1.5. Terminology",
+    "id": "terminology",
+    "page": 23,
+    "depth": 1
+  },
+  {
+    "title": "1.6. Future Directions",
+    "id": "future-directions",
+    "page": 24,
+    "depth": 1
+  },
+  {
+    "title": "2. Definitions",
+    "id": "definitions",
+    "page": 25,
+    "depth": 0
+  },
+  {
+    "title": "2.1. ArchiMate Core Language",
+    "id": "archimate-core-language",
+    "page": 25,
+    "depth": 1
+  },
+  {
+    "title": "2.2. ArchiMate Full Language",
+    "id": "archimate-full-language",
+    "page": 25,
+    "depth": 1
+  },
+  {
+    "title": "2.3. Architecture Domain",
+    "id": "architecture-domain",
+    "page": 25,
+    "depth": 1
+  },
+  {
+    "title": "2.4. Architecture View",
+    "id": "architecture-view",
+    "page": 25,
+    "depth": 1
+  },
+  {
+    "title": "2.5. Architecture Viewpoint",
+    "id": "architecture-viewpoint",
+    "page": 25,
+    "depth": 1
+  },
+  {
+    "title": "2.6. Aspect",
+    "id": "aspect",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.7. Attribute",
+    "id": "attribute",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.8. Composite Element",
+    "id": "composite-element",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.9. Concept",
+    "id": "concept",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.10. Conformance",
+    "id": "conformance",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.11. Conforming Implementation",
+    "id": "conforming-implementation",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.12. Core Element",
+    "id": "core-element",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "2.13. Domain",
+    "id": "domain",
+    "page": 27,
+    "depth": 1
+  },
+  {
+    "title": "2.14. Element",
+    "id": "element",
+    "page": 27,
+    "depth": 1
+  },
+  {
+    "title": "2.15. Model",
+    "id": "model",
+    "page": 27,
+    "depth": 1
+  },
+  {
+    "title": "2.16. Relationship",
+    "id": "relationship",
+    "page": 27,
+    "depth": 1
+  },
+  {
+    "title": "3. Language Structure",
+    "id": "language-structure",
+    "page": 28,
+    "depth": 0
+  },
+  {
+    "title": "3.1. Language Design Considerations",
+    "id": "language-design-considerations",
+    "page": 28,
+    "depth": 1
+  },
+  {
+    "title": "3.2. The ArchiMate Language",
+    "id": "the-archimate-language",
+    "page": 30,
+    "depth": 1
+  },
+  {
+    "title": "3.2.1. Domains of the ArchiMate Language",
+    "id": "domains-of-the-archimate-language",
+    "page": 30,
+    "depth": 2
+  },
+  {
+    "title": "3.2.2. Aspects of the ArchiMate Language",
+    "id": "aspects-of-the-archimate-language",
+    "page": 32,
+    "depth": 2
+  },
+  {
+    "title": "3.3. Top-Level Language Structure",
+    "id": "top-level-language-structure",
+    "page": 32,
+    "depth": 1
+  },
+  {
+    "title": "3.4. Structure and Behavior Elements",
+    "id": "structure-and-behavior-elements",
+    "page": 33,
+    "depth": 1
+  },
+  {
+    "title": "3.4.1. Active Structure Elements",
+    "id": "active-structure-elements",
+    "page": 34,
+    "depth": 2
+  },
+  {
+    "title": "3.4.2. Passive Structure Elements",
+    "id": "passive-structure-elements",
+    "page": 35,
+    "depth": 2
+  },
+  {
+    "title": "3.4.3. Behavior Elements",
+    "id": "behavior-elements",
+    "page": 35,
+    "depth": 2
+  },
+  {
+    "title": "3.4.4. Example",
+    "id": "example",
+    "page": 35,
+    "depth": 2
+  },
+  {
+    "title": "3.5. Abstraction in the ArchiMate Language",
+    "id": "abstraction-in-the-archimate-language",
+    "page": 36,
+    "depth": 1
+  },
+  {
+    "title": "3.6. Concepts and Their Notation",
+    "id": "concepts-and-their-notation",
+    "page": 37,
+    "depth": 1
+  },
+  {
+    "title": "3.7. Use of Nesting",
+    "id": "use-of-nesting",
+    "page": 38,
+    "depth": 1
+  },
+  {
+    "title": "3.8. Use of Colors and Notational Cues",
+    "id": "use-of-colors-and-notational-cues",
+    "page": 38,
+    "depth": 1
+  },
+  {
+    "title": "4. Common Domain",
+    "id": "common-domain",
+    "page": 39,
+    "depth": 0
+  },
+  {
+    "title": "4.1. Active Structure Elements",
+    "id": "active-structure-elements",
+    "page": 39,
+    "depth": 1
+  },
+  {
+    "title": "4.1.1. Role",
+    "id": "role",
+    "page": 39,
+    "depth": 2
+  },
+  {
+    "title": "4.1.2. Collaboration",
+    "id": "collaboration",
+    "page": 40,
+    "depth": 2
+  },
+  {
+    "title": "4.1.3. Path.",
+    "id": "path",
+    "page": 41,
+    "depth": 2
+  },
+  {
+    "title": "4.2. Behavior Elements",
+    "id": "behavior-elements",
+    "page": 41,
+    "depth": 1
+  },
+  {
+    "title": "4.2.1. Service",
+    "id": "service",
+    "page": 42,
+    "depth": 2
+  },
+  {
+    "title": "4.2.2. Process",
+    "id": "process",
+    "page": 42,
+    "depth": 2
+  },
+  {
+    "title": "4.2.3. Function",
+    "id": "function",
+    "page": 43,
+    "depth": 2
+  },
+  {
+    "title": "4.2.4. Event",
+    "id": "event",
+    "page": 44,
+    "depth": 2
+  },
+  {
+    "title": "4.3. Composite Elements",
+    "id": "composite-elements",
+    "page": 45,
+    "depth": 1
+  },
+  {
+    "title": "4.3.1. Grouping",
+    "id": "grouping",
+    "page": 46,
+    "depth": 2
+  },
+  {
+    "title": "4.3.2. Location",
+    "id": "location",
+    "page": 48,
+    "depth": 2
+  },
+  {
+    "title": "4.4. Summary of Common Domain Elements",
+    "id": "summary-of-common-domain-elements",
+    "page": 48,
+    "depth": 1
+  },
+  {
+    "title": "5. Relationships and Junctions",
+    "id": "relationships-and-junctions",
+    "page": 50,
+    "depth": 0
+  },
+  {
+    "title": "5.1. Structural Relationships",
+    "id": "structural-relationships",
+    "page": 51,
+    "depth": 1
+  },
+  {
+    "title": "5.1.1. Aggregation Relationship",
+    "id": "aggregation-relationship",
+    "page": 51,
+    "depth": 2
+  },
+  {
+    "title": "5.1.2. Composition Relationship",
+    "id": "composition-relationship",
+    "page": 52,
+    "depth": 2
+  },
+  {
+    "title": "5.1.3. Assignment Relationship",
+    "id": "assignment-relationship",
+    "page": 53,
+    "depth": 2
+  },
+  {
+    "title": "5.1.4. Realization Relationship",
+    "id": "realization-relationship",
+    "page": 55,
+    "depth": 2
+  },
+  {
+    "title": "5.1.5. Semantics of Structural Relationships",
+    "id": "semantics-of-structural-relationships",
+    "page": 56,
+    "depth": 2
+  },
+  {
+    "title": "5.2. Dependency Relationships",
+    "id": "dependency-relationships",
+    "page": 57,
+    "depth": 1
+  },
+  {
+    "title": "5.2.1. Serving Relationship",
+    "id": "serving-relationship",
+    "page": 58,
+    "depth": 2
+  },
+  {
+    "title": "5.2.2. Access Relationship",
+    "id": "access-relationship",
+    "page": 58,
+    "depth": 2
+  },
+  {
+    "title": "5.2.3. Influence Relationship",
+    "id": "influence-relationship",
+    "page": 59,
+    "depth": 2
+  },
+  {
+    "title": "5.2.4. Association Relationship",
+    "id": "association-relationship",
+    "page": 61,
+    "depth": 2
+  },
+  {
+    "title": "5.2.5. Semantics of Dependency Relationships",
+    "id": "semantics-of-dependency-relationships",
+    "page": 62,
+    "depth": 2
+  },
+  {
+    "title": "5.3. Dynamic Relationships",
+    "id": "dynamic-relationships",
+    "page": 63,
+    "depth": 1
+  },
+  {
+    "title": "5.3.1. Triggering Relationship",
+    "id": "triggering-relationship",
+    "page": 63,
+    "depth": 2
+  },
+  {
+    "title": "5.3.2. Flow Relationship",
+    "id": "flow-relationship",
+    "page": 64,
+    "depth": 2
+  },
+  {
+    "title": "5.3.3. Semantics of Dynamic Relationships",
+    "id": "semantics-of-dynamic-relationships",
+    "page": 65,
+    "depth": 2
+  },
+  {
+    "title": "5.4. Other Relationships",
+    "id": "other-relationships",
+    "page": 65,
+    "depth": 1
+  },
+  {
+    "title": "5.4.1. Specialization Relationship",
+    "id": "specialization-relationship",
+    "page": 65,
+    "depth": 2
+  },
+  {
+    "title": "5.4.2. Semantics of Other Relationships",
+    "id": "semantics-of-other-relationships",
+    "page": 66,
+    "depth": 2
+  },
+  {
+    "title": "5.5. Junctions",
+    "id": "junctions",
+    "page": 66,
+    "depth": 1
+  },
+  {
+    "title": "5.5.1. Junction",
+    "id": "junction",
+    "page": 66,
+    "depth": 2
+  },
+  {
+    "title": "5.6. Multiplicity",
+    "id": "multiplicity",
+    "page": 68,
+    "depth": 1
+  },
+  {
+    "title": "5.7. Summary of Relationships and Junctions.",
+    "id": "summary-of-relationships-and-junctions",
+    "page": 69,
+    "depth": 1
+  },
+  {
+    "title": "5.8. Derivation of Relationships",
+    "id": "derivation-of-relationships",
+    "page": 70,
+    "depth": 1
+  },
+  {
+    "title": "6. Motivation Domain",
+    "id": "motivation-domain",
+    "page": 72,
+    "depth": 0
+  },
+  {
+    "title": "6.1. Motivation Elements",
+    "id": "motivation-elements",
+    "page": 72,
+    "depth": 1
+  },
+  {
+    "title": "6.2. Motivation Elements Metamodel",
+    "id": "motivation-elements-metamodel",
+    "page": 73,
+    "depth": 1
+  },
+  {
+    "title": "6.3. Stakeholder, Driver, and Assessment",
+    "id": "stakeholder-driver-and-assessment",
+    "page": 74,
+    "depth": 1
+  },
+  {
+    "title": "6.3.1. Stakeholder",
+    "id": "stakeholder",
+    "page": 74,
+    "depth": 2
+  },
+  {
+    "title": "6.3.2. Driver",
+    "id": "driver",
+    "page": 74,
+    "depth": 2
+  },
+  {
+    "title": "6.3.3. Assessment",
+    "id": "assessment",
+    "page": 75,
+    "depth": 2
+  },
+  {
+    "title": "6.3.4. Example",
+    "id": "example",
+    "page": 75,
+    "depth": 2
+  },
+  {
+    "title": "6.4. Goal, Outcome, Principle, and Requirement",
+    "id": "goal-outcome-principle-and-requirement",
+    "page": 76,
+    "depth": 1
+  },
+  {
+    "title": "6.4.1. Goal",
+    "id": "goal",
+    "page": 76,
+    "depth": 2
+  },
+  {
+    "title": "6.4.2. Outcome",
+    "id": "outcome",
+    "page": 77,
+    "depth": 2
+  },
+  {
+    "title": "6.4.3. Principle",
+    "id": "principle",
+    "page": 78,
+    "depth": 2
+  },
+  {
+    "title": "6.4.4. Requirement",
+    "id": "requirement",
+    "page": 78,
+    "depth": 2
+  },
+  {
+    "title": "6.4.5. Example",
+    "id": "example",
+    "page": 79,
+    "depth": 2
+  },
+  {
+    "title": "6.5. Meaning and Value",
+    "id": "meaning-and-value",
+    "page": 80,
+    "depth": 1
+  },
+  {
+    "title": "6.5.1. Meaning",
+    "id": "meaning",
+    "page": 80,
+    "depth": 2
+  },
+  {
+    "title": "6.5.2. Value",
+    "id": "value",
+    "page": 81,
+    "depth": 2
+  },
+  {
+    "title": "6.5.3. Example",
+    "id": "example",
+    "page": 82,
+    "depth": 2
+  },
+  {
+    "title": "6.6. Summary of Motivation Elements",
+    "id": "summary-of-motivation-elements",
+    "page": 83,
+    "depth": 1
+  },
+  {
+    "title": "6.7. Relationships with Other Domains",
+    "id": "relationships-with-other-domains",
+    "page": 84,
+    "depth": 1
+  },
+  {
+    "title": "7. Strategy Domain",
+    "id": "strategy-domain",
+    "page": 85,
+    "depth": 0
+  },
+  {
+    "title": "7.1. Strategy Elements Metamodel",
+    "id": "strategy-elements-metamodel",
+    "page": 85,
+    "depth": 1
+  },
+  {
+    "title": "7.2. Structure Elements",
+    "id": "structure-elements",
+    "page": 86,
+    "depth": 1
+  },
+  {
+    "title": "7.2.1. Resource",
+    "id": "resource",
+    "page": 86,
+    "depth": 2
+  },
+  {
+    "title": "7.3. Behavior Elements",
+    "id": "behavior-elements",
+    "page": 86,
+    "depth": 1
+  },
+  {
+    "title": "7.3.1. Capability",
+    "id": "capability",
+    "page": 86,
+    "depth": 2
+  },
+  {
+    "title": "7.3.2. Value Stream",
+    "id": "value-stream",
+    "page": 87,
+    "depth": 2
+  },
+  {
+    "title": "7.3.3. Course of Action",
+    "id": "course-of-action",
+    "page": 89,
+    "depth": 2
+  },
+  {
+    "title": "7.4. Examples",
+    "id": "examples",
+    "page": 89,
+    "depth": 1
+  },
+  {
+    "title": "7.5. Summary of Strategy Elements",
+    "id": "summary-of-strategy-elements",
+    "page": 92,
+    "depth": 1
+  },
+  {
+    "title": "7.6. Relationships with Other Domains",
+    "id": "relationships-with-other-domains",
+    "page": 92,
+    "depth": 1
+  },
+  {
+    "title": "8. Business Domain",
+    "id": "business-domain",
+    "page": 94,
+    "depth": 0
+  },
+  {
+    "title": "8.1. Business Structure Metamodel",
+    "id": "business-structure-metamodel",
+    "page": 94,
+    "depth": 1
+  },
+  {
+    "title": "8.2. Active Structure Elements",
+    "id": "active-structure-elements",
+    "page": 94,
+    "depth": 1
+  },
+  {
+    "title": "8.2.1. Business Actor",
+    "id": "business-actor",
+    "page": 95,
+    "depth": 2
+  },
+  {
+    "title": "8.2.2. Business Interface",
+    "id": "business-interface",
+    "page": 96,
+    "depth": 2
+  },
+  {
+    "title": "8.2.3. Example",
+    "id": "example",
+    "page": 96,
+    "depth": 2
+  },
+  {
+    "title": "8.3. Passive Structure Elements",
+    "id": "passive-structure-elements",
+    "page": 97,
+    "depth": 1
+  },
+  {
+    "title": "8.3.1. Business Object",
+    "id": "business-object",
+    "page": 97,
+    "depth": 2
+  },
+  {
+    "title": "8.3.2. Example",
+    "id": "example",
+    "page": 98,
+    "depth": 2
+  },
+  {
+    "title": "8.4. Composite Elements",
+    "id": "composite-elements",
+    "page": 99,
+    "depth": 1
+  },
+  {
+    "title": "8.4.1. Product",
+    "id": "product",
+    "page": 99,
+    "depth": 2
+  },
+  {
+    "title": "8.4.2. Example",
+    "id": "example",
+    "page": 100,
+    "depth": 2
+  },
+  {
+    "title": "8.5. Summary of Business Domain Elements",
+    "id": "summary-of-business-domain-elements",
+    "page": 101,
+    "depth": 1
+  },
+  {
+    "title": "9. Application Domain",
+    "id": "application-domain",
+    "page": 102,
+    "depth": 0
+  },
+  {
+    "title": "9.1. Application Structure Metamodel",
+    "id": "application-structure-metamodel",
+    "page": 102,
+    "depth": 1
+  },
+  {
+    "title": "9.2. Active Structure Elements",
+    "id": "active-structure-elements",
+    "page": 102,
+    "depth": 1
+  },
+  {
+    "title": "9.2.1. Application Component",
+    "id": "application-component",
+    "page": 103,
+    "depth": 2
+  },
+  {
+    "title": "9.2.2. Application Interface",
+    "id": "application-interface",
+    "page": 103,
+    "depth": 2
+  },
+  {
+    "title": "9.2.3. Example",
+    "id": "example",
+    "page": 104,
+    "depth": 2
+  },
+  {
+    "title": "9.3. Passive Structure Elements",
+    "id": "passive-structure-elements",
+    "page": 104,
+    "depth": 1
+  },
+  {
+    "title": "9.3.1. Data Object",
+    "id": "data-object",
+    "page": 105,
+    "depth": 2
+  },
+  {
+    "title": "9.3.2. Example",
+    "id": "example",
+    "page": 105,
+    "depth": 2
+  },
+  {
+    "title": "9.4. Summary of Application Domain Elements",
+    "id": "summary-of-application-domain-elements",
+    "page": 106,
+    "depth": 1
+  },
+  {
+    "title": "10. Technology Domain",
+    "id": "technology-domain",
+    "page": 107,
+    "depth": 0
+  },
+  {
+    "title": "10.1. Technology Metamodel",
+    "id": "technology-metamodel",
+    "page": 107,
+    "depth": 1
+  },
+  {
+    "title": "10.2. Active Structure Elements",
+    "id": "active-structure-elements",
+    "page": 108,
+    "depth": 1
+  },
+  {
+    "title": "10.2.1. Node",
+    "id": "node",
+    "page": 109,
+    "depth": 2
+  },
+  {
+    "title": "10.2.2. Technology Interface",
+    "id": "technology-interface",
+    "page": 109,
+    "depth": 2
+  },
+  {
+    "title": "10.2.3. Device.",
+    "id": "device",
+    "page": 110,
+    "depth": 2
+  },
+  {
+    "title": "10.2.4. System Software",
+    "id": "system-software",
+    "page": 110,
+    "depth": 2
+  },
+  {
+    "title": "10.2.5. Equipment",
+    "id": "equipment",
+    "page": 111,
+    "depth": 2
+  },
+  {
+    "title": "10.2.6. Facility",
+    "id": "facility",
+    "page": 112,
+    "depth": 2
+  },
+  {
+    "title": "10.2.7. Communication Network",
+    "id": "communication-network",
+    "page": 112,
+    "depth": 2
+  },
+  {
+    "title": "10.2.8. Distribution Network",
+    "id": "distribution-network",
+    "page": 113,
+    "depth": 2
+  },
+  {
+    "title": "10.3. Passive Structure Elements",
+    "id": "passive-structure-elements",
+    "page": 113,
+    "depth": 1
+  },
+  {
+    "title": "10.3.1. Artifact",
+    "id": "artifact",
+    "page": 114,
+    "depth": 2
+  },
+  {
+    "title": "10.3.2. Material",
+    "id": "material",
+    "page": 115,
+    "depth": 2
+  },
+  {
+    "title": "10.4. Example",
+    "id": "example",
+    "page": 116,
+    "depth": 1
+  },
+  {
+    "title": "10.5. Summary of Technology Domain Elements",
+    "id": "summary-of-technology-domain-elements",
+    "page": 116,
+    "depth": 1
+  },
+  {
+    "title": "11. Relationships Between Core Domains",
+    "id": "relationships-between-core-domains",
+    "page": 118,
+    "depth": 0
+  },
+  {
+    "title": "11.1. Example",
+    "id": "example",
+    "page": 119,
+    "depth": 1
+  },
+  {
+    "title": "12. Implementation and Migration Domain",
+    "id": "implementation-and-migration-domain",
+    "page": 121,
+    "depth": 0
+  },
+  {
+    "title": "12.1. Implementation and Migration Elements Metamodel",
+    "id": "implementation-and-migration-elements-metamodel",
+    "page": 121,
+    "depth": 1
+  },
+  {
+    "title": "12.2. Implementation and Migration Elements",
+    "id": "implementation-and-migration-elements",
+    "page": 121,
+    "depth": 1
+  },
+  {
+    "title": "12.2.1. Work Package",
+    "id": "work-package",
+    "page": 121,
+    "depth": 2
+  },
+  {
+    "title": "12.2.2. Deliverable",
+    "id": "deliverable",
+    "page": 122,
+    "depth": 2
+  },
+  {
+    "title": "12.2.3. Plateau",
+    "id": "plateau",
+    "page": 122,
+    "depth": 2
+  },
+  {
+    "title": "12.2.4. Example",
+    "id": "example",
+    "page": 123,
+    "depth": 2
+  },
+  {
+    "title": "12.3. Summary of Implementation and Migration Elements",
+    "id": "summary-of-implementation-and-migration-elements",
+    "page": 124,
+    "depth": 1
+  },
+  {
+    "title": "12.4. Relationships with Domains",
+    "id": "relationships-with-domains",
+    "page": 124,
+    "depth": 1
+  },
+  {
+    "title": "13. Stakeholders, Architecture Views, and Viewpoints",
+    "id": "stakeholders-architecture-views-and-viewpoints",
+    "page": 126,
+    "depth": 0
+  },
+  {
+    "title": "13.1. Introduction",
+    "id": "introduction",
+    "page": 126,
+    "depth": 1
+  },
+  {
+    "title": "13.2. Stakeholders and Concerns",
+    "id": "stakeholders-and-concerns",
+    "page": 126,
+    "depth": 1
+  },
+  {
+    "title": "13.3. Architecture Views and Viewpoints",
+    "id": "architecture-views-and-viewpoints",
+    "page": 127,
+    "depth": 1
+  },
+  {
+    "title": "13.4. Viewpoint Mechanism",
+    "id": "viewpoint-mechanism",
+    "page": 128,
+    "depth": 1
+  },
+  {
+    "title": "13.4.1. Defining and Classifying Viewpoints",
+    "id": "defining-and-classifying-viewpoints",
+    "page": 130,
+    "depth": 2
+  },
+  {
+    "title": "13.4.2. Creating the View",
+    "id": "creating-the-view",
+    "page": 131,
+    "depth": 2
+  },
+  {
+    "title": "13.5. Example Viewpoints",
+    "id": "example-viewpoints",
+    "page": 131,
+    "depth": 1
+  },
+  {
+    "title": "14. Language Customization Mechanisms",
+    "id": "language-customization-mechanisms",
+    "page": 132,
+    "depth": 0
+  },
+  {
+    "title": "14.1. Adding Attributes to ArchiMate Concepts",
+    "id": "adding-attributes-to-archimate-concepts",
+    "page": 132,
+    "depth": 1
+  },
+  {
+    "title": "14.2. Specialization of Concepts",
+    "id": "specialization-of-concepts",
+    "page": 134,
+    "depth": 1
+  },
+  {
+    "title": "14.2.1. Examples of Specializations of Common Domain Elements (Informative)",
+    "id": "examples-of-specializations-of-common-domain-elements-informative",
+    "page": 135,
+    "depth": 2
+  },
+  {
+    "title": "14.2.2. Examples of Specializations of Business Domain Elements (Informative)",
+    "id": "examples-of-specializations-of-business-domain-elements-informative",
+    "page": 138,
+    "depth": 2
+  },
+  {
+    "title": "14.2.3. Examples of Specializations of Application Domain Elements (Informative)",
+    "id": "examples-of-specializations-of-application-domain-elements-informative",
+    "page": 138,
+    "depth": 2
+  },
+  {
+    "title": "14.2.4. Examples of Specializations of Technology Domain Elements (Informative)",
+    "id": "examples-of-specializations-of-technology-domain-elements-informative",
+    "page": 139,
+    "depth": 2
+  },
+  {
+    "title": "14.2.5. Examples of Specializations of Motivation Elements (Informative)",
+    "id": "examples-of-specializations-of-motivation-elements-informative",
+    "page": 140,
+    "depth": 2
+  },
+  {
+    "title": "14.2.6. Examples of Specializations of Strategy Elements (Informative)",
+    "id": "examples-of-specializations-of-strategy-elements-informative",
+    "page": 141,
+    "depth": 2
+  },
+  {
+    "title": "14.2.7. Examples of Specializations of Implementation and Migration Elements (Informative)",
+    "id": "examples-of-specializations-of-implementation-and-migration-elements-informative",
+    "page": 142,
+    "depth": 2
+  },
+  {
+    "title": "14.2.8. Examples of Specializations of Composite Elements (Informative)",
+    "id": "examples-of-specializations-of-composite-elements-informative",
+    "page": 142,
+    "depth": 2
+  },
+  {
+    "title": "14.2.9. Examples of Specializations of Relationships and Junctions (Informative)",
+    "id": "examples-of-specializations-of-relationships-and-junctions-informative",
+    "page": 143,
+    "depth": 2
+  },
+  {
+    "title": "Appendix A: Summary of Language Notation",
+    "id": "appendix-a-summary-of-language-notation",
+    "page": 144,
+    "depth": 0
+  },
+  {
+    "title": "A.1. Core Elements",
+    "id": "core-elements",
+    "page": 144,
+    "depth": 1
+  },
+  {
+    "title": "A.2. Motivation, Strategy, Implementation and Migration Elements",
+    "id": "motivation-strategy-implementation-and-migration-elements",
+    "page": 145,
+    "depth": 1
+  },
+  {
+    "title": "A.3. Relationships and Junctions",
+    "id": "relationships-and-junctions",
+    "page": 145,
+    "depth": 1
+  },
+  {
+    "title": "Appendix B: Relationships (Normative)",
+    "id": "appendix-b-relationships-normative",
+    "page": 146,
+    "depth": 0
+  },
+  {
+    "title": "B.1. Specification of Derivation Rules",
+    "id": "specification-of-derivation-rules",
+    "page": 146,
+    "depth": 1
+  },
+  {
+    "title": "B.2. Derivation Rules for Valid Relationships",
+    "id": "derivation-rules-for-valid-relationships",
+    "page": 147,
+    "depth": 1
+  },
+  {
+    "title": "B.2.1. Valid Derivations for Specialization Relationships",
+    "id": "valid-derivations-for-specialization-relationships",
+    "page": 147,
+    "depth": 2
+  },
+  {
+    "title": "B.2.2. Valid Derivations for Structural Relationships",
+    "id": "valid-derivations-for-structural-relationships",
+    "page": 147,
+    "depth": 2
+  },
+  {
+    "title": "B.2.3. Valid Derivations for Dependency Relationships",
+    "id": "valid-derivations-for-dependency-relationships",
+    "page": 148,
+    "depth": 2
+  },
+  {
+    "title": "B.2.4. Valid Derivations for Dynamic Relationships",
+    "id": "valid-derivations-for-dynamic-relationships",
+    "page": 149,
+    "depth": 2
+  },
+  {
+    "title": "B.3. Derivation Rules for Potential Relationships",
+    "id": "derivation-rules-for-potential-relationships",
+    "page": 151,
+    "depth": 1
+  },
+  {
+    "title": "B.3.1. Potential Derivation for Specialization Relationships",
+    "id": "potential-derivation-for-specialization-relationships",
+    "page": 152,
+    "depth": 2
+  },
+  {
+    "title": "B.3.2. Potential Derivation for Structural and Dependency Relationships",
+    "id": "potential-derivation-for-structural-and-dependency-relationships",
+    "page": 155,
+    "depth": 2
+  },
+  {
+    "title": "B.3.3. Potential Derivation for Dependency Relationships",
+    "id": "potential-derivation-for-dependency-relationships",
+    "page": 156,
+    "depth": 2
+  },
+  {
+    "title": "B.3.4. Potential Derivation for Dynamic Relationships",
+    "id": "potential-derivation-for-dynamic-relationships",
+    "page": 157,
+    "depth": 2
+  },
+  {
+    "title": "B.3.5. Potential Derivation Rule for Grouping",
+    "id": "potential-derivation-rule-for-grouping",
+    "page": 158,
+    "depth": 2
+  },
+  {
+    "title": "B.4. Restrictions on Applying Derivation Rules",
+    "id": "restrictions-on-applying-derivation-rules",
+    "page": 158,
+    "depth": 1
+  },
+  {
+    "title": "B.5. Relationship Tables",
+    "id": "relationship-tables",
+    "page": 160,
+    "depth": 1
+  },
+  {
+    "title": "B.6. Grouping, Plateau, and Relationships Between Relationships",
+    "id": "grouping-plateau-and-relationships-between-relationships",
+    "page": 167,
+    "depth": 1
+  },
+  {
+    "title": "Appendix C: Example Viewpoints",
+    "id": "appendix-c-example-viewpoints",
+    "page": 168,
+    "depth": 0
+  },
+  {
+    "title": "C.1. Basic Viewpoints in the ArchiMate Language",
+    "id": "basic-viewpoints-in-the-archimate-language",
+    "page": 168,
+    "depth": 1
+  },
+  {
+    "title": "C.1.1. Organization Viewpoint",
+    "id": "organization-viewpoint",
+    "page": 170,
+    "depth": 2
+  },
+  {
+    "title": "C.1.2. Application Structure Viewpoint",
+    "id": "application-structure-viewpoint",
+    "page": 171,
+    "depth": 2
+  },
+  {
+    "title": "C.1.3. Information Structure Viewpoint",
+    "id": "information-structure-viewpoint",
+    "page": 172,
+    "depth": 2
+  },
+  {
+    "title": "C.1.4. Technology Viewpoint",
+    "id": "technology-viewpoint",
+    "page": 172,
+    "depth": 2
+  },
+  {
+    "title": "C.1.5. Layered Viewpoint",
+    "id": "layered-viewpoint",
+    "page": 173,
+    "depth": 2
+  },
+  {
+    "title": "C.1.6. Physical Viewpoint",
+    "id": "physical-viewpoint",
+    "page": 174,
+    "depth": 2
+  },
+  {
+    "title": "C.1.7. Product Viewpoint",
+    "id": "product-viewpoint",
+    "page": 175,
+    "depth": 2
+  },
+  {
+    "title": "C.1.8. Application Usage Viewpoint",
+    "id": "application-usage-viewpoint",
+    "page": 176,
+    "depth": 2
+  },
+  {
+    "title": "C.1.9. Technology Usage Viewpoint",
+    "id": "technology-usage-viewpoint",
+    "page": 176,
+    "depth": 2
+  },
+  {
+    "title": "C.1.10. Process Cooperation Viewpoint",
+    "id": "process-cooperation-viewpoint",
+    "page": 177,
+    "depth": 2
+  },
+  {
+    "title": "C.1.11. Application Cooperation Viewpoint",
+    "id": "application-cooperation-viewpoint",
+    "page": 178,
+    "depth": 2
+  },
+  {
+    "title": "C.1.12. Service Realization Viewpoint",
+    "id": "service-realization-viewpoint",
+    "page": 179,
+    "depth": 2
+  },
+  {
+    "title": "C.1.13. Implementation and Deployment Viewpoint",
+    "id": "implementation-and-deployment-viewpoint",
+    "page": 180,
+    "depth": 2
+  },
+  {
+    "title": "C.2. Motivation Viewpoints",
+    "id": "motivation-viewpoints",
+    "page": 181,
+    "depth": 1
+  },
+  {
+    "title": "C.2.1. Stakeholder Viewpoint",
+    "id": "stakeholder-viewpoint",
+    "page": 182,
+    "depth": 2
+  },
+  {
+    "title": "C.2.2. Goal Realization Viewpoint",
+    "id": "goal-realization-viewpoint",
+    "page": 182,
+    "depth": 2
+  },
+  {
+    "title": "C.2.3. Requirements Realization Viewpoint",
+    "id": "requirements-realization-viewpoint",
+    "page": 183,
+    "depth": 2
+  },
+  {
+    "title": "C.2.4. Motivation Viewpoint",
+    "id": "motivation-viewpoint",
+    "page": 184,
+    "depth": 2
+  },
+  {
+    "title": "C.3. Strategy Viewpoints",
+    "id": "strategy-viewpoints",
+    "page": 185,
+    "depth": 1
+  },
+  {
+    "title": "C.3.1. Strategy Viewpoint",
+    "id": "strategy-viewpoint",
+    "page": 185,
+    "depth": 2
+  },
+  {
+    "title": "C.3.2. Capability Map Viewpoint",
+    "id": "capability-map-viewpoint",
+    "page": 186,
+    "depth": 2
+  },
+  {
+    "title": "C.3.3. Value Stream Viewpoint",
+    "id": "value-stream-viewpoint",
+    "page": 186,
+    "depth": 2
+  },
+  {
+    "title": "C.3.4. Outcome Realization Viewpoint",
+    "id": "outcome-realization-viewpoint",
+    "page": 187,
+    "depth": 2
+  },
+  {
+    "title": "C.3.5. Resource Map Viewpoint",
+    "id": "resource-map-viewpoint",
+    "page": 187,
+    "depth": 2
+  },
+  {
+    "title": "C.4. Implementation and Migration Viewpoints",
+    "id": "implementation-and-migration-viewpoints",
+    "page": 188,
+    "depth": 1
+  },
+  {
+    "title": "C.4.1. Project Viewpoint",
+    "id": "project-viewpoint",
+    "page": 188,
+    "depth": 2
+  },
+  {
+    "title": "C.4.2. Migration Viewpoint",
+    "id": "migration-viewpoint",
+    "page": 189,
+    "depth": 2
+  },
+  {
+    "title": "C.4.3. Implementation and Migration Viewpoint",
+    "id": "implementation-and-migration-viewpoint",
+    "page": 190,
+    "depth": 2
+  },
+  {
+    "title": "Appendix D: Relationship to Other Standards, Specifications, and Guidance Documents",
+    "id": "appendix-d-relationship-to-other-standards-specifications-and-guidance-documents",
+    "page": 192,
+    "depth": 0
+  },
+  {
+    "title": "D.1. The TOGAF Standard",
+    "id": "the-togaf-standard",
+    "page": 192,
+    "depth": 1
+  },
+  {
+    "title": "D.2. The BIZBOK Guide",
+    "id": "the-bizbok-guide",
+    "page": 193,
+    "depth": 1
+  },
+  {
+    "title": "D.3. Other Modeling Languages",
+    "id": "other-modeling-languages",
+    "page": 194,
+    "depth": 1
+  },
+  {
+    "title": "D.4. BPMN",
+    "id": "bpmn",
+    "page": 194,
+    "depth": 1
+  },
+  {
+    "title": "D.5. UML",
+    "id": "uml",
+    "page": 195,
+    "depth": 1
+  },
+  {
+    "title": "D.6. BMM",
+    "id": "bmm",
+    "page": 196,
+    "depth": 1
+  },
+  {
+    "title": "Appendix E: Changes from Version 2.1 to This Document",
+    "id": "appendix-e-changes-from-version-2-1-to-this-document",
+    "page": 197,
+    "depth": 0
+  },
+  {
+    "title": "E.1. Changes from Version 2.1 to Version 3.0.1",
+    "id": "changes-from-version-2-1-to-version-3-0-1",
+    "page": 197,
+    "depth": 1
+  },
+  {
+    "title": "E.2. Changes from Version 3.0.1 to Version 3.1",
+    "id": "changes-from-version-3-0-1-to-version-3-1",
+    "page": 198,
+    "depth": 1
+  },
+  {
+    "title": "E.3. Changes from Version 3.1 to Version 3.2",
+    "id": "changes-from-version-3-1-to-version-3-2",
+    "page": 199,
+    "depth": 1
+  },
+  {
+    "title": "E.4. Changes from Version 3.2 to This Document",
+    "id": "changes-from-version-3-2-to-this-document",
+    "page": 199,
+    "depth": 1
+  },
+  {
+    "title": "Appendix F: Acronyms",
+    "id": "appendix-f-acronyms",
+    "page": 201,
+    "depth": 0
+  },
+  {
+    "title": "Index",
+    "id": "index",
+    "page": 204,
+    "depth": 0
+  }
+]

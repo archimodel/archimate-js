@@ -192,6 +192,11 @@ It must expose aggregate C260 coverage fields (`c260CoverageAggregate.expectedCo
 `c260CoverageAggregate.incompleteCoverageIds`, `c260CoverageAggregate.rawDuplicateIds`, and
 `c260CoverageAggregate.qualifiedDuplicateCount`) so all C260 coverage groups can be audited together
 without hiding repeated raw heading ids across chapters.
+It must expose C260 source alignment fields (`c260SourceAlignment.outlineSourceItemCount`,
+`c260SourceAlignment.outlineCoveredItemCount`, `c260SourceAlignment.missingOutlineCoverageIds`,
+`c260SourceAlignment.nonOutlineDerivedCoverageIds`, and `c260SourceAlignment.aggregateItemCountDelta`)
+so the full PDF outline source count remains reconciled with derived non-outline coverage such as
+Appendix F acronym tokens.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

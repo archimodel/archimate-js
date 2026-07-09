@@ -1788,3 +1788,18 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1114-c260-coverage-aggregate-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-coverage-aggregate-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 139
+
+- Goal: reconcile the full C260 PDF outline source count with the aggregate C260 coverage status so the 253 outline entries and 284 aggregate items cannot be misread as a coverage mismatch.
+- Source check: `project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt` extracted 253 PDF outline entries from `C:\Users\syska\Downloads\978940181474E.pdf`, with 228 unique raw ids and 9 repeated raw heading ids.
+- Red test: `project_memory/runlogs/20260709-1121-c260-source-alignment-red-test.txt` failed because `c260SourceAlignmentCatalog` and `getArchimate4ImplementationStatus().c260SourceAlignment` were absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `c260SourceAlignmentCatalog` with the full-outline source runlog, outline coverage group ids, raw duplicate source ids, and `appendixFAcronymsCoverage` as the non-outline derived group.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().c260SourceAlignment` with outline covered count, outline delta, non-outline derived item count, aggregate item count, aggregate delta, missing/extra/incomplete outline coverage ids, and complete status.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the C260 source alignment boundary.
+- Focused verification: `project_memory/runlogs/20260709-1122-c260-source-alignment-focused-test.txt` passed with 186 tests; `project_memory/runlogs/20260709-1123-c260-source-alignment-status.json` shows outlineSourceItemCount 253, outlineCoveredItemCount 253, nonOutlineDerivedItemCount 31, aggregateItemCount 284, and zero outline/aggregate count deltas.
+- Verification: `npm run test:language` passed with 186 tests in `project_memory/runlogs/20260709-1127-c260-source-alignment-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1126-c260-source-alignment-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-1124-c260-source-alignment-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1125-c260-source-alignment-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1128-c260-source-alignment-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1129-c260-source-alignment-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1133-c260-source-alignment-staged-diff-check.txt` first failed on a trailing blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1134-c260-source-alignment-staged-diff-check.txt` passed after trimming that EOF blank line.
+- Audit: `project_memory/audit/reports/20260709-c260-source-alignment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

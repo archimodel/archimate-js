@@ -128,6 +128,10 @@ language section coverage.
 Aggregate C260 coverage status reports `expectedCoverageIds`, `actualCoverageIds`,
 `incompleteCoverageIds`, `rawDuplicateIds`, and `qualifiedDuplicateCount` so every tracked C260
 coverage group can be audited together without hiding repeated raw heading ids across chapters.
+C260 source alignment status reports `outlineSourceItemCount`, `outlineCoveredItemCount`,
+`missingOutlineCoverageIds`, `nonOutlineDerivedCoverageIds`, and `aggregateItemCountDelta` so the
+253-entry PDF outline source is reconciled with the 284-item aggregate coverage total through the 31
+Appendix F derived acronym tokens.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

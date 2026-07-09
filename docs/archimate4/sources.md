@@ -190,6 +190,13 @@
   `c260CoverageAggregate.rawDuplicateIds`, and
   `c260CoverageAggregate.qualifiedDuplicateCount` so all C260 coverage groups can be audited
   together while repeated raw heading ids remain visible and qualified coverage ids stay unique.
+- `getArchimate4ImplementationStatus().c260SourceAlignment` reports
+  `c260SourceAlignment.outlineSourceItemCount`,
+  `c260SourceAlignment.outlineCoveredItemCount`,
+  `c260SourceAlignment.nonOutlineDerivedCoverageIds`, and
+  `c260SourceAlignment.aggregateItemCountDelta` so the 253-entry C260 PDF outline source remains
+  reconciled with the aggregate 284-item coverage total through the 31 Appendix F derived acronym
+  tokens.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

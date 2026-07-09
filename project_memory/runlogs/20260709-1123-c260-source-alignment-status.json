@@ -1,0 +1,82 @@
+(node:68288) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "status": "c260-pdf-outline-and-derived-token-aligned",
+  "outlineSourceRunlogPath": "project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt",
+  "outlineSourceItemCount": 253,
+  "sourceRawDuplicateIds": [
+    "conformance",
+    "active-structure-elements",
+    "behavior-elements",
+    "example",
+    "relationships-with-other-domains",
+    "passive-structure-elements",
+    "composite-elements",
+    "introduction",
+    "relationships-and-junctions"
+  ],
+  "expectedOutlineCoverageIds": [
+    "sectionCoverage",
+    "introductionCoverage",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "languageCustomizationMechanismsCoverage",
+    "appendixANotationCoverage",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "documentArtifactCoverage"
+  ],
+  "nonOutlineDerivedCoverageIds": [
+    "appendixFAcronymsCoverage"
+  ],
+  "nonOutlineDerivedSourceRunlogPaths": {
+    "appendixFAcronymsCoverage": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt"
+  },
+  "actualOutlineCoverageIds": [
+    "sectionCoverage",
+    "introductionCoverage",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "languageCustomizationMechanismsCoverage",
+    "appendixANotationCoverage",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "documentArtifactCoverage"
+  ],
+  "missingOutlineCoverageIds": [],
+  "extraOutlineCoverageIds": [],
+  "incompleteOutlineCoverageIds": [],
+  "outlineCoveredItemCount": 253,
+  "outlineItemCountDelta": 0,
+  "nonOutlineDerivedItemCount": 31,
+  "aggregateItemCount": 284,
+  "expectedAggregateItemCount": 284,
+  "aggregateItemCountDelta": 0,
+  "complete": true
+}
