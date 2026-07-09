@@ -258,7 +258,7 @@
   `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
   embedding the Appendix B relationship matrix. The current diagnostics include relationship
-  source/target reference shape, view `viewpoint`
+  source/target reference shape, `Views` / `Diagrams` / `View` / `ViewElement` tree structure, view `viewpoint`
   string attributes and `viewpointRef` references, relationship option field types, present `IdObject.id` and `xsi:type` string values, view node element references, view element `label` string values and geometry, view connection relationship references, endpoint
   references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color`
   values, viewpoint
@@ -883,7 +883,7 @@
   ArchiMate 4, relationship type membership, relationship endpoint membership, active relationship
   profile allowance, multiplicity notation, multiplicity on junction-connected ends, mixed
   relationship types at a junction, direct relationship validity for chains through a junction,
-  view viewpoint string attributes and references, view node element references and geometry, view connection relationship references,
+  view tree structure, view viewpoint string attributes and references, view node element references and geometry, view connection relationship references,
   endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values,
   viewpoint purpose/content and allowed element/relationship type definitions with string `type` values, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern

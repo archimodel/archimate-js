@@ -254,7 +254,7 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoint references and endpoint type support, relationship option
 field types, multiplicity,
-view node geometry, junction consistency, present `IdObject.id` and `xsi:type` string values, view `viewpoint`
+view tree structure, view node geometry, junction consistency, present `IdObject.id` and `xsi:type` string values, view `viewpoint`
 string attributes and `viewpointRef` references, view node element references, view element
 `label` string values, view connection
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
@@ -589,7 +589,7 @@ Implementation note:
   constraints.
 - `validateArchimate4Model()` reports unsupported relationship types, unsupported endpoint concept
   types, relationships disallowed by the active profile, mixed relationship types at a junction,
-  invalid endpoint chains through a junction, unknown or malformed view viewpoint references, invalid
+  invalid endpoint chains through a junction, invalid view tree structure, unknown or malformed view viewpoint references, invalid
   view node element references, invalid view node geometry values, invalid view connection relationship references,
   invalid endpoint references, endpoint-to-relationship alignment mismatches, invalid waypoint geometry values,
   invalid view `style`/`font`/`color` values, invalid viewpoint definitions, invalid stakeholder/concern
@@ -821,7 +821,7 @@ In particular:
   42-element catalog while MEFF 4.0 connector serialization remains source-dependent.
 - `getArchimate4ImplementationStatus().modelValidation` must expose expected/actual/missing/extra
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
-  concept, relationship profile, multiplicity, junction consistency, view viewpoint-attribute and
+  concept, relationship profile, multiplicity, junction consistency, view tree structure, view viewpoint-attribute and
   viewpoint-reference, view
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
   relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry,

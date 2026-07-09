@@ -695,6 +695,80 @@ test('archimate 4 model validation reports invalid viewpoint modeling notes', ()
   assert.equal(findDiagnostic(result, 'invalid-viewpoint-modeling-note-list').viewpointId, 'viewpoint-invalid-list');
 });
 
+test('archimate 4 model validation reports invalid view tree structure', () => {
+  const result = validateArchimate4Model({
+    views: {
+      diagrams: {
+        viewsList: [
+          'not-a-view',
+          {
+            id: 'view-invalid-elements',
+            viewElements: 'not-a-view-element-list'
+          },
+          {
+            id: 'view-invalid-node-children',
+            viewElements: [
+              {
+                id: 'node-invalid-children',
+                nodes: [
+                  null,
+                  'not-a-node'
+                ]
+              },
+              {
+                id: 'node-invalid-node-list',
+                nodes: 'not-a-node-list'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidViewListResult = validateArchimate4Model({
+    views: {
+      diagrams: {
+        viewsList: 'not-a-view-list'
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidDiagramsResult = validateArchimate4Model({
+    views: {
+      diagrams: 'not-a-diagrams-node'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidViewsResult = validateArchimate4Model({
+    views: 'not-a-views-node'
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-view-entry'), true);
+  assert.equal(codes.includes('invalid-view-element-list'), true);
+  assert.equal(codes.includes('invalid-view-node-list'), true);
+  assert.equal(codes.includes('invalid-view-node-entry'), true);
+  assert.equal(findDiagnostic(result, 'invalid-view-element-list').viewId, 'view-invalid-elements');
+  assert.equal(findDiagnostic(result, 'invalid-view-node-list').viewElementId, 'node-invalid-node-list');
+  assert.equal(findDiagnostic(result, 'invalid-view-node-entry').viewElementId, 'node-invalid-children');
+
+  assert.equal(invalidViewListResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewListResult).includes('invalid-view-list'), true);
+
+  assert.equal(invalidDiagramsResult.valid, false);
+  assert.equal(diagnosticCodes(invalidDiagramsResult).includes('invalid-diagrams-node'), true);
+
+  assert.equal(invalidViewsResult.valid, false);
+  assert.equal(diagnosticCodes(invalidViewsResult).includes('invalid-views-node'), true);
+});
+
 test('archimate 4 model validation reports invalid view element references', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const legacyElement = { id: 'legacy-1', type: 'BusinessInteraction' };

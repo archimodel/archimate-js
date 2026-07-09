@@ -1,0 +1,8 @@
+ok lib/metamodel/languages/archimate4-profile.json
+ok project_memory/state/aria_state.json
+ok project_memory/audit/audit_registry.json
+ok project_memory/runlogs/20260710-0361-view-tree-structure-status-snapshot.json
+ok project_memory/runlogs/20260710-0363-view-tree-structure-completion-audit.json
+ok project_memory/runlogs/20260710-0364-view-tree-structure-c260-coverage-audit.json
+ok project_memory/runlogs/20260710-0367-view-tree-structure-final-completion-audit.json
+ok project_memory/runlogs/20260710-0368-view-tree-structure-final-c260-coverage-audit.json

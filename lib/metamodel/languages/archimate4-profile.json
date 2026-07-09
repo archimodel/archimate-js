@@ -90,6 +90,7 @@
         "viewpoint-allowed-types",
         "view-viewpoint-attribute",
         "view-viewpoint-reference",
+        "view-tree-structure",
         "view-node-element-reference",
         "view-element-label",
         "view-node-geometry",
