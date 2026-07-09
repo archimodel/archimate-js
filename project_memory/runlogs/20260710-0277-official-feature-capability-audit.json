@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-07-10T03:16:28+09:00",
+  "source": "getArchimate4ImplementationStatus",
+  "complete": true,
+  "milestoneCount": 6,
+  "completeMilestoneCount": 6,
+  "milestones": [
+    {
+      "id": "M0 Source Gate",
+      "complete": true,
+      "checkIds": [
+        "m0.sourceCoverage.complete",
+        "m0.c260.localSourcePresent",
+        "m0.launchTranscript.localSourcePresent",
+        "m0.missingRequiredSources",
+        "m0.missingCompanionSources",
+        "m0.remainingGaps"
+      ],
+      "failedCheckIds": []
+    },
+    {
+      "id": "M1 Runtime Boundary",
+      "complete": true,
+      "checkIds": [
+        "m1.elementCatalog.complete",
+        "m1.elementCatalog.expectedCount",
+        "m1.elementCatalog.missingTypes",
+        "m1.elementCatalog.extraTypes",
+        "m1.relationshipConnectors.complete",
+        "m1.relationshipConnectors.types"
+      ],
+      "failedCheckIds": []
+    },
+    {
+      "id": "M2 XML Boundary",
+      "complete": true,
+      "checkIds": [
+        "m2.exchangeFormat.status",
+        "m2.exchangeFormat.internalRoundTripTested",
+        "m2.exchangeFormat.officialXsdRequired",
+        "m2.exchangeFormat.officialConformanceClaimable",
+        "m2.exchangeFormat.internalRoundTripRunlogPath"
+      ],
+      "failedCheckIds": []
+    },
+    {
+      "id": "M3 Semantics",
+      "complete": true,
+      "checkIds": [
+        "m3.conformanceRequirements.complete",
+        "m3.conformanceRequirements.shall.complete",
+        "m3.relationshipProfile.completeSourceCoverage",
+        "m3.relationshipProfile.completeTargetCoverage",
+        "m3.modelValidation.complete",
+        "m3.modelValidation.missingCheckIds",
+        "m3.modelValidation.extraCheckIds",
+        "m3.appendixB.externalProfileLoaderImplemented",
+        "m3.appendixB.redistributableProfilePresent",
+        "m3.migrationUtility.file"
+      ],
+      "failedCheckIds": []
+    },
+    {
+      "id": "M4 Modeling UX",
+      "complete": true,
+      "checkIds": [
+        "m4.iconography.status",
+        "m4.iconography.profilePictogramCoverage",
+        "m4.iconography.genericObjectAliasCount",
+        "m4.profileAttributeTypes.complete",
+        "m4.viewpointMechanism.complete",
+        "m4.appendixA.localDedicatedPathCoverageComplete",
+        "m4.paletteProvider.file",
+        "m4.renderer.file"
+      ],
+      "failedCheckIds": []
+    },
+    {
+      "id": "M5 Release Readiness",
+      "complete": true,
+      "checkIds": [
+        "m5.implementationCompletion.complete",
+        "m5.implementationCompletion.incompleteSummaryCount",
+        "m5.officialConformanceBlockers",
+        "m5.conformanceReadiness.officialConformanceClaimable",
+        "m5.doc.README.md",
+        "m5.doc.CHANGELOG.md",
+        "m5.doc.docs/archimate4/sources.md",
+        "m5.doc.docs/archimate4/official-specification.md",
+        "m5.doc.docs/superpowers/plans/2026-07-08-archimate-4-support.md",
+        "m5.doc.project_memory/state/aria_state.json",
+        "m5.doc.project_memory/logs/worklog.md"
+      ],
+      "failedCheckIds": []
+    }
+  ],
+  "externalBlockers": {
+    "officialConformanceClaimable": false,
+    "officialBlockerIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingRequiredSources": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingCompanionSources": [
+      "w262"
+    ],
+    "remainingGapIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ]
+  },
+  "evidence": {
+    "statusTopKeyCount": 49,
+    "completeSummaryCount": 40,
+    "incompleteSummaryCount": 0,
+    "statusCompletionRunlogPath": "project_memory/runlogs/20260710-0127-status-completion-api-scan.json",
+    "runlogReferenceCount": 49,
+    "missingRunlogReferenceCount": 0
+  },
+  "failureCount": 0,
+  "failures": []
+}

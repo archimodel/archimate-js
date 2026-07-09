@@ -254,10 +254,11 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoints, relationship option
 field types, multiplicity,
-view node geometry, junction consistency, present `IdObject.id` string values, view viewpoint references, view node element references, view element
+view node geometry, junction consistency, present `IdObject.id` string values, view `viewpoint`
+string attributes and `viewpointRef` references, view node element references, view element
 `label` string values, view connection
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
-`style`/`font`/`color` values, viewpoint definitions, model-defined and profile-defined viewpoint
+`style`/`font`/`color` values, viewpoint definitions including allowed-type string entries, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
 `BaseObject` `name` / `documentation` string fields, organization `identifierRef` references,
 reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
@@ -820,7 +821,8 @@ In particular:
   42-element catalog while MEFF 4.0 connector serialization remains source-dependent.
 - `getArchimate4ImplementationStatus().modelValidation` must expose expected/actual/missing/extra
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
-  concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference, view
+  concept, relationship profile, multiplicity, junction consistency, view viewpoint-attribute and
+  viewpoint-reference, view
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
   relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry, IdObject id structure, view element label structure, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and

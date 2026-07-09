@@ -1,0 +1,46 @@
+(node:86208) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/validation/archimate4-model.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (1.8361ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.236ms)
+✔ archimate 4 model validation reports invalid base object name and documentation fields (1.1531ms)
+✔ archimate 4 model validation reports invalid present IdObject ids (1.3845ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (0.3351ms)
+✔ archimate 4 model validation can call an active relationship validator (0.2678ms)
+✔ archimate 4 model validation reports invalid relationship option fields (0.3012ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.6814ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.3562ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.8611ms)
+✔ archimate 4 model validation rejects invalid view viewpoint attributes (0.2248ms)
+✔ archimate 4 model validation rejects non-string viewpoint allowed type entries (0.2526ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.4958ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.1613ms)
+✔ archimate 4 model validation reports invalid view element references (0.5115ms)
+✔ archimate 4 model validation reports invalid view connection endpoint references (0.3301ms)
+✔ archimate 4 model validation reports view connection endpoint concept mismatches (0.2126ms)
+✔ archimate 4 model validation accepts valid view element references (0.1929ms)
+✔ archimate 4 model validation reports invalid view node geometry (0.2435ms)
+✔ archimate 4 model validation reports invalid view connection waypoint geometry (0.3617ms)
+✔ archimate 4 model validation reports invalid view element label values (0.1307ms)
+✔ archimate 4 model validation reports invalid view style values (0.4959ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.5031ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.2292ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (1.2986ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.123ms)
+✔ archimate 4 model validation reports invalid organization identifier references (0.2342ms)
+✔ archimate 4 model validation accepts organization references to model concepts (0.1633ms)
+✔ archimate 4 model validation reports invalid property definition lists (0.103ms)
+✔ archimate 4 model validation reports invalid property definition entries (0.187ms)
+✔ archimate 4 model validation reports invalid property definition references (2.2963ms)
+✔ archimate 4 model validation accepts property definition references by id (0.6733ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (0.8909ms)
+✔ archimate 4 model validation is exported from the package root (13.3736ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 164.7607

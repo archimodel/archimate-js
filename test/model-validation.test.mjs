@@ -456,6 +456,67 @@ test('archimate 4 model validation reports invalid viewpoint definitions', () =>
   assert.equal(findDiagnostic(result, 'unknown-viewpoint-reference').viewId, 'view-1');
 });
 
+test('archimate 4 model validation rejects invalid view viewpoint attributes', () => {
+  const result = validateArchimate4Model({
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewpoint: 123
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const diagnostic = findDiagnostic(result, 'invalid-view-viewpoint');
+
+  assert.equal(result.valid, false);
+  assert.equal(diagnostic.viewId, 'view-1');
+  assert.equal(diagnostic.field, 'viewpoint');
+  assert.equal(diagnostic.valueType, 'number');
+});
+
+test('archimate 4 model validation rejects non-string viewpoint allowed type entries', () => {
+  const result = validateArchimate4Model({
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: 'viewpoint-1',
+            allowedElementTypes: [
+              {
+                type: 7
+              }
+            ],
+            allowedRelationshipTypes: [
+              {
+                type: false
+              }
+            ]
+          },
+          {
+            id: 'viewpoint-2',
+            allowedElementTypes: 42
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-viewpoint-element-type-entry'), true);
+  assert.equal(codes.includes('invalid-viewpoint-relationship-type-entry'), true);
+  assert.equal(codes.includes('unsupported-viewpoint-element-type'), false);
+  assert.equal(findDiagnostic(result, 'invalid-viewpoint-element-type-entry').valueType, 'number');
+  assert.equal(findDiagnostic(result, 'invalid-viewpoint-relationship-type-entry').valueType, 'boolean');
+});
+
 test('archimate 4 model validation accepts valid viewpoint definitions', () => {
   const result = validateArchimate4Model({
     views: {
