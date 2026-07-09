@@ -1,0 +1,45 @@
+{
+  "appendixE": {
+    "expectedIds": [
+      "changes-from-version-2-1-to-version-3-0-1",
+      "changes-from-version-3-0-1-to-version-3-1",
+      "changes-from-version-3-1-to-version-3-2",
+      "changes-from-version-3-2-to-this-document"
+    ],
+    "actualIds": [
+      "changes-from-version-2-1-to-version-3-0-1",
+      "changes-from-version-3-0-1-to-version-3-1",
+      "changes-from-version-3-1-to-version-3-2",
+      "changes-from-version-3-2-to-this-document"
+    ],
+    "historicalReferenceIds": [
+      "changes-from-version-2-1-to-version-3-0-1",
+      "changes-from-version-3-0-1-to-version-3-1",
+      "changes-from-version-3-1-to-version-3-2"
+    ],
+    "migrationSourceIds": [
+      "changes-from-version-3-2-to-this-document"
+    ],
+    "missingHistoricalReferenceIds": [],
+    "missingMigrationSourceIds": [],
+    "extraHistoricalReferenceIds": [],
+    "extraMigrationSourceIds": [],
+    "complete": true
+  },
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ],
+  "blockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "externalBlockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ]
+}

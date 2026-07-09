@@ -133,8 +133,12 @@ Appendix D standards guidance coverage status reports `expectedIds`, `actualIds`
 related-standards and guidance-document subsection headings cannot drift silently or be confused
 with source gaps, remaining gaps, readiness blockers, or official conformance blockers.
 Appendix E version changes coverage status reports `expectedIds`, `actualIds`,
-`missingAppendixEVersionChangesIds`, and `extraAppendixEVersionChangesIds` for the C260 Appendix E
-outline so version-change subsection headings cannot drift silently.
+`missingAppendixEVersionChangesIds`, `extraAppendixEVersionChangesIds`,
+`appendixEVersionChangesCoverage.historicalReferenceIds`, and
+`appendixEVersionChangesCoverage.migrationSourceIds` for the C260 Appendix E outline so
+version-change subsection headings cannot drift silently, while E.1-E.3 remain historical references
+and E.4 remains the ArchiMate 4 migration source boundary outside external source gaps, remaining
+gaps, readiness blockers, and official conformance blockers.
 Appendix F acronym coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixFAcronymIds`, `extraAppendixFAcronymIds`,
 `appendixFAcronymsCoverage.vocabularyOnlyIds`, and

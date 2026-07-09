@@ -185,6 +185,14 @@
   `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
   `appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds` so the Appendix E version-change
   outline remains visible by exact subsection identity.
+- The same status reports `appendixEVersionChangesCoverage.historicalReferenceIds`,
+  `appendixEVersionChangesCoverage.migrationSourceIds`,
+  `appendixEVersionChangesCoverage.missingHistoricalReferenceIds`, and
+  `appendixEVersionChangesCoverage.missingMigrationSourceIds` so E.1-E.3 remain historical references
+  while E.4 is the ArchiMate 4 migration source boundary, with neither classification becoming an
+  external source gap, remaining gap, readiness blocker, or official conformance blocker. The Appendix
+  E boundary was rechecked from the local C260 PDF in
+  `project_memory/runlogs/20260709-2037-c260-appendix-e-version-change-boundary-check.json`.
 - `getArchimate4ImplementationStatus().appendixFAcronymsCoverage` reports
   `appendixFAcronymsCoverage.expectedIds`,
   `appendixFAcronymsCoverage.actualIds`,

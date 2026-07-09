@@ -191,6 +191,13 @@ It must expose exact C260 Appendix E Changes from Version 2.1 to This Document o
 `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
 `appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds`) so the implementation can track
 version-change coverage by subsection identity.
+It must expose `appendixEVersionChangesCoverage.historicalReferenceIds`,
+`appendixEVersionChangesCoverage.migrationSourceIds`,
+`appendixEVersionChangesCoverage.missingHistoricalReferenceIds`, and
+`appendixEVersionChangesCoverage.missingMigrationSourceIds` so E.1-E.3 are tracked as historical
+references while E.4 is tracked as the ArchiMate 4 migration source boundary, without either class
+being confused with external source gaps, remaining gaps, readiness blockers, or official
+conformance blockers.
 It must expose exact C260 Appendix F Acronyms token fields
 (`appendixFAcronymsCoverage.expectedIds`, `appendixFAcronymsCoverage.actualIds`,
 `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and

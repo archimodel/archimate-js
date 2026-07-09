@@ -1031,19 +1031,28 @@
     "appendixEVersionChangesCoverageCatalog": {
       "status": "c260-outline-derived",
       "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "versionChangeBoundaryRunlogPath": "project_memory/runlogs/20260709-2037-c260-appendix-e-version-change-boundary-check.json",
       "expectedCount": 4,
       "expectedIds": [
         "changes-from-version-2-1-to-version-3-0-1",
         "changes-from-version-3-0-1-to-version-3-1",
         "changes-from-version-3-1-to-version-3-2",
         "changes-from-version-3-2-to-this-document"
+      ],
+      "expectedHistoricalReferenceIds": [
+        "changes-from-version-2-1-to-version-3-0-1",
+        "changes-from-version-3-0-1-to-version-3-1",
+        "changes-from-version-3-1-to-version-3-2"
+      ],
+      "expectedMigrationSourceIds": [
+        "changes-from-version-3-2-to-this-document"
       ]
     },
     "appendixEVersionChangesCoverage": [
-      { "id": "changes-from-version-2-1-to-version-3-0-1", "c260Section": "E.1", "heading": "Changes from Version 2.1 to Version 3.0.1", "status": "tracked" },
-      { "id": "changes-from-version-3-0-1-to-version-3-1", "c260Section": "E.2", "heading": "Changes from Version 3.0.1 to Version 3.1", "status": "tracked" },
-      { "id": "changes-from-version-3-1-to-version-3-2", "c260Section": "E.3", "heading": "Changes from Version 3.1 to Version 3.2", "status": "tracked" },
-      { "id": "changes-from-version-3-2-to-this-document", "c260Section": "E.4", "heading": "Changes from Version 3.2 to This Document", "status": "tracked" }
+      { "id": "changes-from-version-2-1-to-version-3-0-1", "c260Section": "E.1", "heading": "Changes from Version 2.1 to Version 3.0.1", "status": "tracked", "historicalReference": true },
+      { "id": "changes-from-version-3-0-1-to-version-3-1", "c260Section": "E.2", "heading": "Changes from Version 3.0.1 to Version 3.1", "status": "tracked", "historicalReference": true },
+      { "id": "changes-from-version-3-1-to-version-3-2", "c260Section": "E.3", "heading": "Changes from Version 3.1 to Version 3.2", "status": "tracked", "historicalReference": true },
+      { "id": "changes-from-version-3-2-to-this-document", "c260Section": "E.4", "heading": "Changes from Version 3.2 to This Document", "status": "tracked", "migrationSource": true }
     ],
     "appendixFAcronymsCoverageCatalog": {
       "status": "c260-acronym-token-derived",

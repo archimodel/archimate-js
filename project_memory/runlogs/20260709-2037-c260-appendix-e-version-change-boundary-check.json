@@ -1,0 +1,59 @@
+{
+  "source": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "checkedAt": "2026-07-09T20:37:00+09:00",
+  "purpose": "Confirm Appendix E version-change headings and classify E.1-E.3 as historical references and E.4 as the ArchiMate 4 migration source boundary.",
+  "expectedSubsectionTitles": [
+    "E.1 Changes from Version 2.1 to Version 3.0.1",
+    "E.2 Changes from Version 3.0.1 to Version 3.1",
+    "E.3 Changes from Version 3.1 to Version 3.2",
+    "E.4 Changes from Version 3.2 to This Document"
+  ],
+  "actualSubsectionTitles": [
+    "E.1 Changes from Version 2.1 to Version 3.0.1",
+    "E.2 Changes from Version 3.0.1 to Version 3.1",
+    "E.3 Changes from Version 3.1 to Version 3.2",
+    "E.4 Changes from Version 3.2 to This Document"
+  ],
+  "actualOutlineItems": [
+    {
+      "title": "E.1. Changes from Version 2.1 to Version 3.0.1",
+      "normalizedTitle": "E.1 Changes from Version 2.1 to Version 3.0.1",
+      "pdfPage": 197,
+      "depth": 1
+    },
+    {
+      "title": "E.2. Changes from Version 3.0.1 to Version 3.1",
+      "normalizedTitle": "E.2 Changes from Version 3.0.1 to Version 3.1",
+      "pdfPage": 198,
+      "depth": 1
+    },
+    {
+      "title": "E.3. Changes from Version 3.1 to Version 3.2",
+      "normalizedTitle": "E.3 Changes from Version 3.1 to Version 3.2",
+      "pdfPage": 199,
+      "depth": 1
+    },
+    {
+      "title": "E.4. Changes from Version 3.2 to This Document",
+      "normalizedTitle": "E.4 Changes from Version 3.2 to This Document",
+      "pdfPage": 199,
+      "depth": 1
+    }
+  ],
+  "historicalReferenceTitles": [
+    "E.1 Changes from Version 2.1 to Version 3.0.1",
+    "E.2 Changes from Version 3.0.1 to Version 3.1",
+    "E.3 Changes from Version 3.1 to Version 3.2"
+  ],
+  "migrationSourceTitles": [
+    "E.4 Changes from Version 3.2 to This Document"
+  ],
+  "missingExpectedTitles": [],
+  "extraESubsectionTitles": [],
+  "copiesNormativeProse": false,
+  "classification": {
+    "E.1-E.3": "historical-reference",
+    "E.4": "migration-source"
+  },
+  "complete": true
+}

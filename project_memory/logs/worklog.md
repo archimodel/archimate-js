@@ -2328,3 +2328,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2024-appendix-f-vocabulary-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-appendix-f-vocabulary-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 181
+
+- Goal: strengthen the C260 Appendix E version-change boundary so prior-version history remains separate from the ArchiMate 3.2 to 4.0 migration source boundary.
+- Observation: `project_memory/runlogs/20260709-2037-c260-appendix-e-version-change-boundary-check.json` confirms the local C260 PDF exposes E.1 through E.4 Appendix E headings; the check copies headings only and no Appendix E prose.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `expectedHistoricalReferenceIds`, `expectedMigrationSourceIds`, and `versionChangeBoundaryRunlogPath` for Appendix E, and marks E.1-E.3 as `historicalReference` and E.4 as `migrationSource`.
+- Implemented: `lib/metamodel/languages/index.js` now reports `appendixEVersionChangesCoverage.historicalReferenceIds`, `migrationSourceIds`, and missing/extra identity arrays for both classifications, and includes them in the completion check.
+- Implemented: `test/language-profile.test.mjs` now verifies Appendix E history/migration ids stay out of `sourceCoverage`, `remainingGaps`, `conformanceReadiness`, and `externalBlockerCatalog`.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the Appendix E boundary.
+- Focused verification: `node --test test/language-profile.test.mjs --test-name-pattern "appendix E"` passed in `project_memory/runlogs/20260709-2038-appendix-e-version-change-boundary-focused-test.txt`.
+- Verification: `npm run test:language` passed with 223 tests in `project_memory/runlogs/20260709-2039-appendix-e-version-change-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-2040-appendix-e-version-change-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-2041-appendix-e-version-change-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2043-appendix-e-version-change-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-e-version-change-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

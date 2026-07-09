@@ -2010,14 +2010,24 @@ test('archimate 4 implementation status exposes C260 appendix E version changes 
     'changes-from-version-3-1-to-version-3-2',
     'changes-from-version-3-2-to-this-document'
   ];
+  const expectedHistoricalReferenceIds = expectedAppendixEVersionChangesIds.slice(0, 3);
+  const expectedMigrationSourceIds = [
+    'changes-from-version-3-2-to-this-document'
+  ];
 
   assert.equal(appendixEVersionChangesCatalog.status, 'c260-outline-derived');
   assert.equal(
     appendixEVersionChangesCatalog.sourceRunlogPath,
     'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
   );
+  assert.equal(
+    appendixEVersionChangesCatalog.versionChangeBoundaryRunlogPath,
+    'project_memory/runlogs/20260709-2037-c260-appendix-e-version-change-boundary-check.json'
+  );
   assert.equal(appendixEVersionChangesCatalog.expectedCount, expectedAppendixEVersionChangesIds.length);
   assert.deepEqual(appendixEVersionChangesCatalog.expectedIds, expectedAppendixEVersionChangesIds);
+  assert.deepEqual(appendixEVersionChangesCatalog.expectedHistoricalReferenceIds, expectedHistoricalReferenceIds);
+  assert.deepEqual(appendixEVersionChangesCatalog.expectedMigrationSourceIds, expectedMigrationSourceIds);
   assert.deepEqual(
     appendixEVersionChangesCoverage.map((appendixEVersionChangesItem) => appendixEVersionChangesItem.id),
     expectedAppendixEVersionChangesIds
@@ -2026,14 +2036,60 @@ test('archimate 4 implementation status exposes C260 appendix E version changes 
     appendixEVersionChangesCoverage.every((appendixEVersionChangesItem) => appendixEVersionChangesItem.c260Section && appendixEVersionChangesItem.heading),
     true
   );
+  assert.deepEqual(
+    appendixEVersionChangesCoverage.filter((appendixEVersionChangesItem) => appendixEVersionChangesItem.historicalReference).map((appendixEVersionChangesItem) => appendixEVersionChangesItem.id),
+    expectedHistoricalReferenceIds
+  );
+  assert.deepEqual(
+    appendixEVersionChangesCoverage.filter((appendixEVersionChangesItem) => appendixEVersionChangesItem.migrationSource).map((appendixEVersionChangesItem) => appendixEVersionChangesItem.id),
+    expectedMigrationSourceIds
+  );
+
+  const status = getArchimate4ImplementationStatus();
+
+  assert.deepEqual(status.appendixEVersionChangesCoverage.historicalReferenceIds, expectedHistoricalReferenceIds);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.missingHistoricalReferenceIds, []);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.extraHistoricalReferenceIds, []);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.migrationSourceIds, expectedMigrationSourceIds);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.missingMigrationSourceIds, []);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.extraMigrationSourceIds, []);
+  assert.equal(status.appendixEVersionChangesCoverage.complete, true);
 
   assert.match(languageIndex, /function summarizeAppendixEVersionChangesCoverage/);
   assert.match(languageIndex, /appendixEVersionChangesCoverage: appendixEVersionChangesCoverage/);
   assert.match(languageIndex, /missingAppendixEVersionChangesIds/);
+  assert.match(languageIndex, /missingHistoricalReferenceIds/);
+  assert.match(languageIndex, /missingMigrationSourceIds/);
   assert.match(readme, /appendixEVersionChangesCoverage\.expectedIds/);
+  assert.match(readme, /appendixEVersionChangesCoverage\.migrationSourceIds/);
   assert.match(sources, /appendixEVersionChangesCoverage\.actualIds/);
+  assert.match(sources, /appendixEVersionChangesCoverage\.historicalReferenceIds/);
   assert.match(officialSpec, /appendixEVersionChangesCoverage\.missingAppendixEVersionChangesIds/);
+  assert.match(officialSpec, /appendixEVersionChangesCoverage\.missingMigrationSourceIds/);
   assert.match(plan, /Appendix E version changes coverage status reports/);
+  assert.match(plan, /appendixEVersionChangesCoverage\.migrationSourceIds/);
+});
+
+test('archimate 4 appendix E version changes stay outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const appendixEIds = status.appendixEVersionChangesCoverage.historicalReferenceIds.concat(
+    status.appendixEVersionChangesCoverage.migrationSourceIds
+  );
+
+  assert.deepEqual(appendixEIds, status.appendixEVersionChangesCoverage.expectedIds);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.missingHistoricalReferenceIds, []);
+  assert.deepEqual(status.appendixEVersionChangesCoverage.missingMigrationSourceIds, []);
+
+  for (const appendixEId of appendixEIds) {
+    assert.equal(status.sourceCoverage.actualSourceIds.includes(appendixEId), false);
+    assert.equal(status.sourceCoverage.missingRequiredSources.includes(appendixEId), false);
+    assert.equal(status.sourceCoverage.missingCompanionSources.includes(appendixEId), false);
+    assert.equal(status.remainingGaps.actualIds.includes(appendixEId), false);
+    assert.equal(status.remainingGaps.unresolvedIds.includes(appendixEId), false);
+    assert.equal(status.conformanceReadiness.blockers.includes(appendixEId), false);
+    assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes(appendixEId), false);
+    assert.equal(status.externalBlockerCatalog.actualIds.includes(appendixEId), false);
+  }
 });
 
 test('archimate 4 implementation status exposes C260 appendix F acronym coverage identity', async () => {
