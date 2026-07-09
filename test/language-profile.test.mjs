@@ -2722,6 +2722,38 @@ test('archimate 4 external blocker gaps map to source coverage and readiness', (
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
 });
 
+test('archimate 4 W262 companion source stays outside official conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const w262 = status.sourceCoverage.items.w262;
+  const w262Gap = status.remainingGaps.items.find((gap) => {
+    return gap.id === 'w262CompanionPaper';
+  });
+
+  assert.equal(w262.status, 'external-download-required');
+  assert.equal(w262.companion, true);
+  assert.equal(w262.localSourcePresent, false);
+  assert.equal(w262Gap.sourceId, 'w262');
+  assert.equal(w262Gap.companion, true);
+  assert.equal(w262Gap.officialConformanceBlocker, false);
+
+  assert.equal(status.sourceCoverage.missingCompanionSources.includes('w262'), true);
+  assert.equal(status.conformanceReadiness.missingCompanionSources.includes('w262'), true);
+  assert.equal(status.remainingGaps.companionGapSourceIds.includes('w262'), true);
+
+  assert.equal(status.sourceCoverage.missingRequiredSources.includes('w262'), false);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('w262'), false);
+  assert.equal(status.conformanceReadiness.blockers.includes('w262CompanionPaper'), false);
+  assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes('w262CompanionPaper'), false);
+  assert.equal(Object.prototype.hasOwnProperty.call(
+    status.conformanceReadiness.requiredBeforeClaimByBlocker,
+    'w262CompanionPaper'
+  ), false);
+  assert.equal(status.externalBlockerCatalog.actualIds.includes('w262CompanionPaper'), false);
+  assert.equal(status.externalBlockerCatalog.sourceCoverageIds.includes('w262CompanionPaper'), false);
+  assert.equal(status.externalBlockerCatalog.requirementIds.includes('w262CompanionPaper'), false);
+  assert.equal(status.remainingGaps.officialConformanceGapIds.includes('w262CompanionPaper'), false);
+});
+
 test('archimate 4 conformance requirement blockers map to gaps and required sources', () => {
   const status = getArchimate4ImplementationStatus();
   const requirements = status.conformanceRequirements.items;

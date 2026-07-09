@@ -2145,3 +2145,14 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1402-appendix-b-external-profile-source-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-appendix-b-external-profile-source-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 166
+
+- Goal: strengthen the W262 companion-source boundary so a missing W262 paper cannot drift into official conformance blocker or required-before-claim status.
+- Observation: direct status output shows `sourceCoverage.items.w262` and `remainingGaps.items[].w262CompanionPaper` are companion entries, while `conformanceReadiness.blockers` and `externalBlockerCatalog.actualIds` contain only the three official conformance blockers.
+- Implemented: `test/language-profile.test.mjs` now verifies W262 remains in `missingCompanionSources` and `companionGapSourceIds`, while staying out of `missingRequiredSources`, `requiredBeforeClaimBlockerIds`, `requiredBeforeClaimByBlocker`, `externalBlockerCatalog`, and `officialConformanceGapIds`.
+- Focused verification: `project_memory/runlogs/20260709-1404-w262-companion-official-blocker-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 209 tests in `project_memory/runlogs/20260709-1405-w262-companion-official-blocker-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1406-w262-companion-official-blocker-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1407-w262-companion-official-blocker-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1408-w262-companion-official-blocker-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-w262-companion-official-blocker-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
