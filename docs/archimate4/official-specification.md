@@ -253,7 +253,7 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoints, multiplicity,
-view node geometry, junction consistency, view viewpoint references, view node element references, view element
+view node geometry, junction consistency, present `IdObject.id` string values, view viewpoint references, view node element references, view element
 `label` string values, view connection
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
 `style`/`font`/`color` values, viewpoint definitions, model-defined and profile-defined viewpoint
@@ -821,7 +821,7 @@ In particular:
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
   concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference, view
   node element-reference, view node geometry, view connection relationship-reference, view connection endpoint-reference,
-  view connection endpoint-alignment, view connection waypoint-geometry, view element label structure, view style-structure, viewpoint definition, viewpoint
+  view connection endpoint-alignment, view connection waypoint-geometry, IdObject id structure, view element label structure, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
   modeling-note structure, BaseObject field structure, organization identifier-reference,
   property-definition structure and reference, property value string-structure, or profile attribute

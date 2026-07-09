@@ -132,6 +132,77 @@ test('archimate 4 model validation reports invalid base object name and document
   assert.equal(invalidDocumentationDiagnostics[0].field, 'documentation');
 });
 
+test('archimate 4 model validation reports invalid present IdObject ids', () => {
+  const actor = { id: 42, type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const result = validateArchimate4Model({
+    id: false,
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        {
+          id: {},
+          type: 'Association',
+          source: actor,
+          target: role
+        }
+      ]
+    },
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: []
+          }
+        ]
+      },
+      diagrams: {
+        viewsList: [
+          {
+            id: 0,
+            viewElements: [
+              {
+                id: 99,
+                elementRef: actor
+              }
+            ]
+          }
+        ]
+      }
+    },
+    organizationsNode: {
+      organizations: [
+        {
+          id: ''
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const diagnostics = result.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-id-object-id';
+  });
+
+  assert.equal(result.valid, false);
+  assert.equal(diagnostics.length, 7);
+  assert.deepEqual(diagnostics.map((diagnostic) => diagnostic.ownerKind), [
+    'model',
+    'element',
+    'relationship',
+    'viewpoint',
+    'view',
+    'organization',
+    'viewElement'
+  ]);
+  assert.equal(diagnostics[0].field, 'id');
+});
+
 test('archimate 4 model validation reports unsupported relationship types and endpoints', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const unsupported = { id: 'legacy-1', type: 'BusinessInteraction' };
