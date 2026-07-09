@@ -152,6 +152,12 @@
   `appendixBRelationshipsCoverage.extraAppendixBRelationshipsIds` so the Appendix B Relationships
   outline remains visible by exact subsection identity while relationship table data remains
   externally supplied.
+- `getArchimate4ImplementationStatus().appendixCExampleViewpointsCoverage` reports
+  `appendixCExampleViewpointsCoverage.expectedIds`,
+  `appendixCExampleViewpointsCoverage.actualIds`,
+  `appendixCExampleViewpointsCoverage.missingAppendixCExampleViewpointsIds`, and
+  `appendixCExampleViewpointsCoverage.extraAppendixCExampleViewpointsIds` so the Appendix C Example
+  Viewpoints outline remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

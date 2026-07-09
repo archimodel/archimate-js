@@ -107,6 +107,9 @@ Appendix B relationships coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixBRelationshipsIds`, and `extraAppendixBRelationshipsIds` for the C260 Appendix B
 outline so derivation, restriction, table, and relationship-between-relationships subsection
 headings cannot drift silently while relationship table data remains external.
+Appendix C example viewpoints coverage status reports `expectedIds`, `actualIds`,
+`missingAppendixCExampleViewpointsIds`, and `extraAppendixCExampleViewpointsIds` for the C260
+Appendix C outline so example viewpoint subsection headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

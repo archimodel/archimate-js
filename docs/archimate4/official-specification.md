@@ -161,6 +161,12 @@ It must expose exact C260 Appendix B Relationships outline fields
 `appendixBRelationshipsCoverage.extraAppendixBRelationshipsIds`) so the implementation can track
 derivation, restriction, relationship-table, and relationship-between-relationships coverage by
 subsection identity while preserving the external-source boundary for relationship table data.
+It must expose exact C260 Appendix C Example Viewpoints outline fields
+(`appendixCExampleViewpointsCoverage.expectedIds`,
+`appendixCExampleViewpointsCoverage.actualIds`,
+`appendixCExampleViewpointsCoverage.missingAppendixCExampleViewpointsIds`, and
+`appendixCExampleViewpointsCoverage.extraAppendixCExampleViewpointsIds`) so the implementation can
+track example viewpoint coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

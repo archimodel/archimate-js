@@ -1253,6 +1253,72 @@ test('archimate 4 implementation status exposes C260 appendix B relationships co
   assert.match(plan, /Appendix B relationships coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix C example viewpoints coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixCExampleViewpointsCatalog = profile.conformance.appendixCExampleViewpointsCoverageCatalog;
+  const appendixCExampleViewpointsCoverage = profile.conformance.appendixCExampleViewpointsCoverage;
+  const expectedAppendixCExampleViewpointsIds = [
+    'basic-viewpoints-in-the-archimate-language',
+    'organization-viewpoint',
+    'application-structure-viewpoint',
+    'information-structure-viewpoint',
+    'technology-viewpoint',
+    'layered-viewpoint',
+    'physical-viewpoint',
+    'product-viewpoint',
+    'application-usage-viewpoint',
+    'technology-usage-viewpoint',
+    'process-cooperation-viewpoint',
+    'application-cooperation-viewpoint',
+    'service-realization-viewpoint',
+    'implementation-and-deployment-viewpoint',
+    'motivation-viewpoints',
+    'stakeholder-viewpoint',
+    'goal-realization-viewpoint',
+    'requirements-realization-viewpoint',
+    'motivation-viewpoint',
+    'strategy-viewpoints',
+    'strategy-viewpoint',
+    'capability-map-viewpoint',
+    'value-stream-viewpoint',
+    'outcome-realization-viewpoint',
+    'resource-map-viewpoint',
+    'implementation-and-migration-viewpoints',
+    'project-viewpoint',
+    'migration-viewpoint',
+    'implementation-and-migration-viewpoint'
+  ];
+
+  assert.equal(appendixCExampleViewpointsCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    appendixCExampleViewpointsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(appendixCExampleViewpointsCatalog.expectedCount, expectedAppendixCExampleViewpointsIds.length);
+  assert.deepEqual(appendixCExampleViewpointsCatalog.expectedIds, expectedAppendixCExampleViewpointsIds);
+  assert.deepEqual(
+    appendixCExampleViewpointsCoverage.map((appendixCExampleViewpointsItem) => appendixCExampleViewpointsItem.id),
+    expectedAppendixCExampleViewpointsIds
+  );
+  assert.equal(
+    appendixCExampleViewpointsCoverage.every((appendixCExampleViewpointsItem) => appendixCExampleViewpointsItem.c260Section && appendixCExampleViewpointsItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixCExampleViewpointsCoverage/);
+  assert.match(languageIndex, /appendixCExampleViewpointsCoverage: appendixCExampleViewpointsCoverage/);
+  assert.match(languageIndex, /missingAppendixCExampleViewpointsIds/);
+  assert.match(readme, /appendixCExampleViewpointsCoverage\.expectedIds/);
+  assert.match(sources, /appendixCExampleViewpointsCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixCExampleViewpointsCoverage\.missingAppendixCExampleViewpointsIds/);
+  assert.match(plan, /Appendix C example viewpoints coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
