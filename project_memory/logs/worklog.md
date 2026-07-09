@@ -2481,3 +2481,19 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1046-archimate4-c260-coverage-audit-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-archimate4-c260-coverage-audit-script-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 192
+
+- Goal: expose the C260 Appendix C example viewpoint headings as an informative reference catalog without treating them as bundled normative viewpoint definitions.
+- Observation: Appendix C coverage was tracked by exact heading identity, and custom viewpoint definitions were already supported, but host UI had no public helper for listing the C260 example viewpoint names safely.
+- Implemented: `getArchimate4ExampleViewpointCatalog()` now returns four Appendix C groups, 25 example viewpoint headings, the source outline runlog path, and explicit boundary flags `bundledViewpointDefinitions: false`, `officialConformanceBlocker: false`, and `normativeRelationshipConstraints: false`.
+- Implemented: the package root exports `getArchimate4ExampleViewpointCatalog`.
+- Implemented: `test/language-profile.test.mjs` now verifies the catalog groups, viewpoint count, first group contents, public export, documentation, and non-bundled boundary.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now describe the Appendix C informative-reference catalog.
+- Audit registry: `project_memory/audit/audit_registry.json` now includes `audit.archimate4.appendix_c_viewpoint_catalog`.
+- Focused verification: Appendix C catalog focused test passed in `project_memory/runlogs/20260709-1052-archimate4-appendix-c-viewpoint-catalog-focused-test.txt`.
+- Verification: changed-file ESLint passed in `project_memory/runlogs/20260709-1053-archimate4-appendix-c-viewpoint-catalog-eslint-changed.txt`; API sample JSON was recorded in `project_memory/runlogs/20260709-1054-archimate4-appendix-c-viewpoint-catalog-api.json` with stderr in `project_memory/runlogs/20260709-1054-archimate4-appendix-c-viewpoint-catalog-api.stderr.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1055-archimate4-appendix-c-viewpoint-catalog-diff-check.txt`; `npm run test:language` passed with 226 tests in `project_memory/runlogs/20260709-1056-archimate4-appendix-c-viewpoint-catalog-test-language.txt`.
+- Final verification after state/audit updates: JSON parse passed in `project_memory/runlogs/20260709-1058-archimate4-appendix-c-viewpoint-catalog-json-check.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1059-archimate4-appendix-c-viewpoint-catalog-final-diff-check.txt`; final `npm run test:language` passed in `project_memory/runlogs/20260709-1060-archimate4-appendix-c-viewpoint-catalog-final-test-language.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1057-archimate4-appendix-c-viewpoint-catalog-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-archimate4-appendix-c-viewpoint-catalog-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

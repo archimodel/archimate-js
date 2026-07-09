@@ -15,6 +15,7 @@ export {
 
 export {
   createLanguageProfile,
+  getArchimate4ExampleViewpointCatalog,
   getArchimate4ImplementationStatus,
   getProfileAttributePropertyName,
   getProfileAttributePropertyValue,

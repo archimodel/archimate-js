@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "loop_id": 191,
-  "stage": "archimate4_c260_coverage_audit_script_verified",
+  "loop_id": 192,
+  "stage": "archimate4_appendix_c_viewpoint_catalog_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
     "target_branch": "main"
   },
   "change_context": {
-    "change_type": "test_docs",
-    "diff_size": 360,
+    "change_type": "feature_docs",
+    "diff_size": 260,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -209,7 +209,8 @@
       "status_completion_api_refresh_guard",
       "external_source_scripted_recheck_guard",
       "archimate4_completion_audit_script_guard",
-      "archimate4_c260_coverage_audit_guard"
+      "archimate4_c260_coverage_audit_guard",
+      "archimate4_appendix_c_viewpoint_catalog_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -430,12 +431,13 @@
       "check_status_completion_api_refresh",
       "check_external_source_scripted_recheck",
       "check_archimate4_completion_audit_script",
-      "check_archimate4_c260_coverage_audit"
+      "check_archimate4_c260_coverage_audit",
+      "check_archimate4_appendix_c_viewpoint_catalog"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1049-archimate4-c260-coverage-audit-final-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-c260-coverage-audit-script-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-1056-archimate4-appendix-c-viewpoint-catalog-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-appendix-c-viewpoint-catalog-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -646,10 +648,11 @@
     "scripts/check_archimate4_external_sources.mjs now makes the MEFF 4.0 XSD and W262 external-source recheck reproducible without saving specification prose, Appendix B tables, or license text.",
     "MEFF 4.0 XSD and W262 external-source evidence is now reproducibly refreshed by scripts/check_archimate4_external_sources.mjs and recorded in project_memory/runlogs/20260709-1017-external-source-latest-recheck.json: the official XSD directory still exposes only 3.1 links, tested 4.0 candidates return 404, W262 publication metadata remains visible, and no local W262 PDF is present.",
     "scripts/audit_archimate4_completion.mjs now maps getArchimate4ImplementationStatus() to the plan M0-M5 milestones and verifies status runlog references resolve; project_memory/runlogs/20260709-1030-archimate4-completion-audit.json reports 6/6 milestones complete, 48 runlog references present, and the expected external blockers still visible.",
-    "scripts/audit_archimate4_c260_coverage.mjs verifies C260 book-derived section, aggregate, source-alignment, and source-runlog coverage from getArchimate4ImplementationStatus(); project_memory/runlogs/20260709-1039-archimate4-c260-coverage-audit.json reports complete coverage while preserving Appendix B matrix data, MEFF 4.0 XSD, Appendix A artwork rights, and W262 as external boundaries."
+    "scripts/audit_archimate4_c260_coverage.mjs verifies C260 book-derived section, aggregate, source-alignment, and source-runlog coverage from getArchimate4ImplementationStatus(); project_memory/runlogs/20260709-1039-archimate4-c260-coverage-audit.json reports complete coverage while preserving Appendix B matrix data, MEFF 4.0 XSD, Appendix A artwork rights, and W262 as external boundaries.",
+    "getArchimate4ExampleViewpointCatalog() exposes the C260 Appendix C example viewpoint headings as an informative-reference catalog with four groups and 25 viewpoints while keeping bundledViewpointDefinitions false and preserving optional example viewpoints outside official conformance blockers."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T23:25:00+09:00"
+    "updated_at": "2026-07-09T23:40:00+09:00"
   }
 }

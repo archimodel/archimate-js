@@ -175,6 +175,9 @@
   `appendixCExampleViewpointsCoverage.missingAppendixCExampleViewpointsIds`, and
   `appendixCExampleViewpointsCoverage.extraAppendixCExampleViewpointsIds` so the Appendix C Example
   Viewpoints outline remains visible by exact subsection identity.
+- `getArchimate4ExampleViewpointCatalog()` exposes those Appendix C outline headings as an
+  informative-reference catalog grouped by C260 Appendix C subsection. It intentionally does not
+  bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.
 - `getArchimate4ImplementationStatus().appendixDStandardsGuidanceCoverage` reports
   `appendixDStandardsGuidanceCoverage.expectedIds`,
   `appendixDStandardsGuidanceCoverage.actualIds`,

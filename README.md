@@ -44,6 +44,8 @@ Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 imp
 
 For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
 
+Use `getArchimate4ExampleViewpointCatalog()` to list the C260 Appendix C example viewpoint groups and viewpoint names as an informative reference catalog. It exposes the Appendix C outline headings only; it does not bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.
+
 Run `node scripts/audit_archimate4_completion.mjs --out project_memory/runlogs/<file>.json` to map the current status API to the plan's M0-M5 milestones and to verify that referenced runlogs resolve. The audit is expected to pass while still reporting the official Appendix B, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 companion-source gaps.
 
 Run `node scripts/audit_archimate4_c260_coverage.mjs --out project_memory/runlogs/<file>.json` to verify the C260 book-derived coverage ledger specifically. It checks the 20 section groups, 22 tracked coverage groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived tokens, and the recorded source-extraction runlogs without copying specification prose or Appendix B relationship tables.

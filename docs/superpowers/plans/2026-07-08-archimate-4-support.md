@@ -47,7 +47,8 @@ Implemented and verified on the current branch:
   permits.
 - M4 Modeling UX: the palette, renderer, relationship options, multiplicity editing/persistence,
   junction behavior, profile customization, viewpoint metadata, nested view nodes, organization tree
-  descriptors, and local Appendix A-derived pictogram paths are implemented for ArchiMate 4 mode.
+  descriptors, Appendix C example viewpoint informative catalog, and local Appendix A-derived
+  pictogram paths are implemented for ArchiMate 4 mode.
 - M5 Release Readiness: README, CHANGELOG, source ledger, implementation specification, runlogs, and
   audit reports document the opt-in status, compatibility behavior, verification commands, and
   conformance boundaries.

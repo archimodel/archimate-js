@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
 import {
   createLanguageProfile,
+  getArchimate4ExampleViewpointCatalog,
   getArchimate4ImplementationStatus,
   getProfileAttributesForConcept
 } from '../lib/metamodel/languages/index.js';
@@ -1928,6 +1929,57 @@ test('archimate 4 implementation status exposes C260 appendix C example viewpoin
   assert.match(sources, /appendixCExampleViewpointsCoverage\.actualIds/);
   assert.match(officialSpec, /appendixCExampleViewpointsCoverage\.missingAppendixCExampleViewpointsIds/);
   assert.match(plan, /Appendix C example viewpoints coverage status reports/);
+});
+
+test('archimate 4 exposes Appendix C example viewpoints as an informative catalog', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const entrypoint = await readFile(new URL('../index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const catalog = getArchimate4ExampleViewpointCatalog();
+
+  assert.equal(catalog.status, 'informative-reference-catalog');
+  assert.equal(catalog.sourceCoverageStatus, 'c260-outline-derived');
+  assert.equal(catalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(catalog.expectedOutlineCount, 29);
+  assert.equal(catalog.totalOutlineCount, 29);
+  assert.equal(catalog.groupCount, 4);
+  assert.equal(catalog.viewpointCount, 25);
+  assert.deepEqual(catalog.groups.map((group) => group.id), [
+    'basic-viewpoints-in-the-archimate-language',
+    'motivation-viewpoints',
+    'strategy-viewpoints',
+    'implementation-and-migration-viewpoints'
+  ]);
+  assert.deepEqual(catalog.groups[0].viewpoints.map((viewpoint) => viewpoint.id), [
+    'organization-viewpoint',
+    'application-structure-viewpoint',
+    'information-structure-viewpoint',
+    'technology-viewpoint',
+    'layered-viewpoint',
+    'physical-viewpoint',
+    'product-viewpoint',
+    'application-usage-viewpoint',
+    'technology-usage-viewpoint',
+    'process-cooperation-viewpoint',
+    'application-cooperation-viewpoint',
+    'service-realization-viewpoint',
+    'implementation-and-deployment-viewpoint'
+  ]);
+  assert.equal(catalog.viewpoints[0].heading, 'Organization Viewpoint');
+  assert.equal(catalog.bundledViewpointDefinitions, false);
+  assert.equal(catalog.officialConformanceBlocker, false);
+  assert.equal(catalog.normativeRelationshipConstraints, false);
+  assert.equal(catalog.viewpoints.some((viewpoint) => viewpoint.allowedElementTypes), false);
+  assert.equal(catalog.viewpoints.some((viewpoint) => viewpoint.viewpointPurpose), false);
+
+  assert.match(languageIndex, /export function getArchimate4ExampleViewpointCatalog/);
+  assert.match(languageIndex, /informative-reference-catalog/);
+  assert.match(entrypoint, /getArchimate4ExampleViewpointCatalog/);
+  assert.match(readme, /getArchimate4ExampleViewpointCatalog\(\)/);
+  assert.match(sources, /informative-reference catalog/);
+  assert.match(officialSpec, /informative-reference catalog/);
 });
 
 test('archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity', async () => {

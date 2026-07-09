@@ -32,6 +32,18 @@
       ]
     },
     {
+      "id": "audit.archimate4.appendix_c_viewpoint_catalog",
+      "description": "Appendix C example viewpoint headings remain exposed as an informative catalog without bundling normative viewpoint definitions",
+      "when": ["post_change", "pre_commit"],
+      "severity": "blocker",
+      "command": "node --test --test-name-pattern \"Appendix C example viewpoints as an informative catalog\" test/language-profile.test.mjs",
+      "expect": { "exit_code": 0 },
+      "artifacts": [
+        "project_memory/runlogs/20260709-1052-archimate4-appendix-c-viewpoint-catalog-focused-test.txt",
+        "project_memory/runlogs/20260709-1054-archimate4-appendix-c-viewpoint-catalog-api.json"
+      ]
+    },
+    {
       "id": "audit.lint.changed_files",
       "description": "ESLint passes for ArchiMate 4 implementation files",
       "when": ["pre_commit"],
