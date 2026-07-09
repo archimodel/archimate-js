@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 105,
-  "stage": "conformance_requirement_exact_status_verified",
+  "loop_id": 106,
+  "stage": "source_coverage_exact_status_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 118,
+    "diff_size": 91,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -123,7 +123,8 @@
       "conformance_readiness_status_guard",
       "element_catalog_exact_status_guard",
       "relationship_connector_exact_status_guard",
-      "conformance_requirement_exact_status_guard"
+      "conformance_requirement_exact_status_guard",
+      "source_coverage_exact_status_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -258,12 +259,13 @@
       "check_archimate4_conformance_readiness_status",
       "check_archimate4_element_catalog_exact_status",
       "check_archimate4_relationship_connector_exact_status",
-      "check_archimate4_conformance_requirement_exact_status"
+      "check_archimate4_conformance_requirement_exact_status",
+      "check_archimate4_source_coverage_exact_status"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-677-conformance-requirement-catalog-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-conformance-requirement-catalog-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-691-source-coverage-catalog-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-source-coverage-catalog-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -379,10 +381,11 @@
     "getArchimate4ImplementationStatus() now exposes conformanceReadiness with officialConformanceClaimable false, blocker ids, implemented/external-blocked shall counts, missing required source ids, and missing companion source ids.",
     "getArchimate4ImplementationStatus().elementCatalog now exposes expectedTypes, actualTypes, missingTypes, and extraTypes so C260 catalog coverage is audited by exact element identity instead of count alone.",
     "getArchimate4ImplementationStatus().relationshipConnectors now exposes expectedTypes, actualTypes, missingTypes, and extraTypes for AndJunction and OrJunction outside the 42-element catalog.",
-    "getArchimate4ImplementationStatus().conformanceRequirements now exposes expectedIds, actualIds, missingIds, and extraIds for the C260-derived shall/may requirement map."
+    "getArchimate4ImplementationStatus().conformanceRequirements now exposes expectedIds, actualIds, missingIds, and extraIds for the C260-derived shall/may requirement map.",
+    "getArchimate4ImplementationStatus().sourceCoverage now exposes expectedSourceIds, actualSourceIds, missingSourceIds, and extraSourceIds for the ArchiMate 4 source-evidence ledger."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T10:20:00+09:00"
+    "updated_at": "2026-07-09T10:35:00+09:00"
   }
 }

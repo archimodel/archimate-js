@@ -45,6 +45,10 @@ The status must also expose exact requirement identity fields (`expectedIds`, `a
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
 local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B
 relationship matrix, the MEFF 4.0 XSD, and Appendix A artwork-rights boundary visible to host tools.
+The status must expose exact source identity fields (`sourceCoverage.expectedSourceIds`,
+`sourceCoverage.actualSourceIds`, `sourceCoverage.missingSourceIds`, and
+`sourceCoverage.extraSourceIds`) so a count-preserving but wrong source ledger cannot appear
+complete.
 It must also expose `conformanceReadiness.officialConformanceClaimable` so host tools cannot mistake
 implemented local coverage for a complete official conformance claim while external blockers remain.
 

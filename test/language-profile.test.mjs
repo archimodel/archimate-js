@@ -571,9 +571,29 @@ test('archimate 4 implementation status tracks dedicated local pictogram coverag
 test('archimate 4 implementation status exposes source coverage boundaries', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
   const sourceCoverage = profile.conformance.sourceCoverage;
+  const sourceCoverageCatalog = profile.conformance.sourceCoverageCatalog;
+  const expectedSourceIds = [
+    'c260',
+    'w262',
+    'launchTranscript',
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ];
 
+  assert.equal(sourceCoverageCatalog.status, 'implemented-with-external-blockers');
+  assert.deepEqual(sourceCoverageCatalog.expectedSourceIds, expectedSourceIds);
+  assert.deepEqual(sourceCoverageCatalog.requiredSourceIds, [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.deepEqual(sourceCoverageCatalog.companionSourceIds, [ 'w262' ]);
+  assert.deepEqual(Object.keys(sourceCoverage), expectedSourceIds);
   assert.equal(sourceCoverage.c260.status, 'local-licensed-source-reviewed');
   assert.equal(sourceCoverage.w262.status, 'external-download-required');
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
@@ -617,13 +637,20 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     404
   );
 
-  assert.match(languageIndex, /var sourceCoverage = summarizeSourceCoverage/);
+  assert.match(languageIndex, /var sourceCoverage = summarizeSourceCoverage\(\s*conformance\.sourceCoverage \|\| \{\},\s*conformance\.sourceCoverageCatalog \|\| \{\}/);
+  assert.match(languageIndex, /actualSourceIds/);
+  assert.match(languageIndex, /missingSourceIds/);
+  assert.match(languageIndex, /extraSourceIds/);
   assert.match(languageIndex, /sourceCoverage: sourceCoverage/);
   assert.match(languageIndex, /missingCompanionSources/);
+  assert.match(readme, /sourceCoverage\.expectedSourceIds/);
+  assert.match(readme, /sourceCoverage\.missingSourceIds/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
+  assert.match(sources, /sourceCoverage\.actualSourceIds/);
   assert.match(sources, /20260709-626-w262-local-source-search/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
+  assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 
 test('archimate 4 implementation status exposes official conformance readiness', async () => {

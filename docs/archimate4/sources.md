@@ -51,6 +51,10 @@
   and extra requirement ids for the C260-derived shall/may requirement map.
 - `getArchimate4ImplementationStatus()` also exposes source coverage metadata so local source
   evidence, externally supplied normative data, and missing companion sources are distinguishable.
+- `getArchimate4ImplementationStatus().sourceCoverage` reports `sourceCoverage.expectedSourceIds`,
+  `sourceCoverage.actualSourceIds`, `sourceCoverage.missingSourceIds`, and
+  `sourceCoverage.extraSourceIds` so a count-preserving but wrong source ledger cannot appear
+  complete.
 
 ## Current Public Release Notes Captured
 

@@ -1,0 +1,3 @@
+JSON parsed: lib\metamodel\languages\archimate4-profile.json
+JSON parsed: project_memory\state\aria_state.json
+JSON parsed: project_memory\audit\audit_registry.json

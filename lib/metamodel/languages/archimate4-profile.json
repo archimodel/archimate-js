@@ -148,6 +148,26 @@
         "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
       ]
     },
+    "sourceCoverageCatalog": {
+      "status": "implemented-with-external-blockers",
+      "expectedCount": 6,
+      "expectedSourceIds": [
+        "c260",
+        "w262",
+        "launchTranscript",
+        "appendixBRelationshipMatrix",
+        "meff4Xsd",
+        "appendixAArtworkRights"
+      ],
+      "requiredSourceIds": [
+        "appendixBRelationshipMatrix",
+        "meff4Xsd",
+        "appendixAArtworkRights"
+      ],
+      "companionSourceIds": [
+        "w262"
+      ]
+    },
     "sourceCoverage": {
       "c260": {
         "document": "C260",

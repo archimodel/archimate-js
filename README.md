@@ -138,6 +138,7 @@ const modeler = new Modeler({
 * Implementation status includes `relationshipConnectors.expectedTypes`, `relationshipConnectors.actualTypes`, `relationshipConnectors.missingTypes`, and `relationshipConnectors.extraTypes` so `AndJunction` and `OrJunction` coverage is audited outside the 42-element catalog.
 * Implementation status includes `conformanceRequirements.expectedIds`, `conformanceRequirements.actualIds`, `conformanceRequirements.missingIds`, and `conformanceRequirements.extraIds` so the C260 shall/may requirement map is audited by exact requirement identity.
 * Implementation status includes `conformanceReadiness.officialConformanceClaimable`; it remains `false` while official Appendix B, MEFF 4.0 XSD, or exact Appendix A artwork-rights blockers remain.
+* Implementation status includes `sourceCoverage.expectedSourceIds`, `sourceCoverage.actualSourceIds`, `sourceCoverage.missingSourceIds`, and `sourceCoverage.extraSourceIds` so the source-evidence ledger is audited by exact source identity.
 * Implementation status includes source coverage for the local C260 PDF, local launch transcript, W262 companion paper availability, Appendix B relationship matrix, MEFF 4.0 XSD, and Appendix A artwork-rights boundary.
 * Official XML conformance depends on the availability and redistribution rights of the ArchiMate 4 Model Exchange File Format XSD and C260-derived relationship matrix.
 * The bundled 4.0 relationship rules are compatibility-derived fallback data until the official source package is supplied.
