@@ -2084,8 +2084,13 @@ test('archimate 4 implementation status exposes C260 appendix F acronym coverage
     appendixFAcronymsCatalog.sourceRunlogPath,
     'project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt'
   );
+  assert.equal(
+    appendixFAcronymsCatalog.vocabularyBoundaryRunlogPath,
+    'project_memory/runlogs/20260709-2018-c260-appendix-f-vocabulary-boundary-check.json'
+  );
   assert.equal(appendixFAcronymsCatalog.expectedCount, expectedAppendixFAcronymIds.length);
   assert.deepEqual(appendixFAcronymsCatalog.expectedIds, expectedAppendixFAcronymIds);
+  assert.deepEqual(appendixFAcronymsCatalog.expectedVocabularyOnlyIds, expectedAppendixFAcronymIds);
   assert.deepEqual(
     appendixFAcronymsCoverage.map((appendixFAcronymItem) => appendixFAcronymItem.id),
     expectedAppendixFAcronymIds
@@ -2094,14 +2099,52 @@ test('archimate 4 implementation status exposes C260 appendix F acronym coverage
     appendixFAcronymsCoverage.every((appendixFAcronymItem) => appendixFAcronymItem.c260Section && appendixFAcronymItem.acronym),
     true
   );
+  assert.equal(
+    appendixFAcronymsCoverage.every((appendixFAcronymItem) => appendixFAcronymItem.vocabularyOnly),
+    true
+  );
+
+  const status = getArchimate4ImplementationStatus();
+
+  assert.deepEqual(status.appendixFAcronymsCoverage.vocabularyOnlyIds, expectedAppendixFAcronymIds);
+  assert.deepEqual(status.appendixFAcronymsCoverage.missingVocabularyOnlyIds, []);
+  assert.deepEqual(status.appendixFAcronymsCoverage.extraVocabularyOnlyIds, []);
+  assert.equal(status.appendixFAcronymsCoverage.complete, true);
 
   assert.match(languageIndex, /function summarizeAppendixFAcronymsCoverage/);
   assert.match(languageIndex, /appendixFAcronymsCoverage: appendixFAcronymsCoverage/);
   assert.match(languageIndex, /missingAppendixFAcronymIds/);
+  assert.match(languageIndex, /missingVocabularyOnlyIds/);
   assert.match(readme, /appendixFAcronymsCoverage\.expectedIds/);
+  assert.match(readme, /appendixFAcronymsCoverage\.vocabularyOnlyIds/);
   assert.match(sources, /appendixFAcronymsCoverage\.actualIds/);
+  assert.match(sources, /appendixFAcronymsCoverage\.missingVocabularyOnlyIds/);
   assert.match(officialSpec, /appendixFAcronymsCoverage\.missingAppendixFAcronymIds/);
+  assert.match(officialSpec, /appendixFAcronymsCoverage\.missingVocabularyOnlyIds/);
   assert.match(plan, /Appendix F acronym coverage status reports/);
+  assert.match(plan, /appendixFAcronymsCoverage\.vocabularyOnlyIds/);
+});
+
+test('archimate 4 appendix F acronym vocabulary stays outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const vocabularyOnlyIds = status.appendixFAcronymsCoverage.vocabularyOnlyIds;
+
+  assert.deepEqual(vocabularyOnlyIds, status.appendixFAcronymsCoverage.expectedIds);
+  assert.deepEqual(status.appendixFAcronymsCoverage.missingVocabularyOnlyIds, []);
+  assert.deepEqual(status.appendixFAcronymsCoverage.extraVocabularyOnlyIds, []);
+
+  for (const vocabularyOnlyId of vocabularyOnlyIds) {
+    assert.equal(status.sectionCoverage.expectedIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.sectionCoverage.actualIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.sourceCoverage.actualSourceIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.sourceCoverage.missingRequiredSources.includes(vocabularyOnlyId), false);
+    assert.equal(status.sourceCoverage.missingCompanionSources.includes(vocabularyOnlyId), false);
+    assert.equal(status.remainingGaps.actualIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.remainingGaps.unresolvedIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.conformanceReadiness.blockers.includes(vocabularyOnlyId), false);
+    assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes(vocabularyOnlyId), false);
+    assert.equal(status.externalBlockerCatalog.actualIds.includes(vocabularyOnlyId), false);
+  }
 });
 
 test('archimate 4 implementation status exposes C260 document artifact boundary', async () => {

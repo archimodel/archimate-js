@@ -191,6 +191,12 @@
   `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
   `appendixFAcronymsCoverage.extraAppendixFAcronymIds` so the Appendix F acronym tokens remain
   visible by exact identity without copying acronym expansions or Appendix F prose.
+- The same status reports `appendixFAcronymsCoverage.vocabularyOnlyIds` and
+  `appendixFAcronymsCoverage.missingVocabularyOnlyIds` so Appendix F acronym tokens remain
+  vocabulary-only coverage rather than language sections, source coverage entries, remaining gaps,
+  readiness blockers, or official conformance blockers. The Appendix F vocabulary boundary was
+  rechecked from the local C260 PDF in
+  `project_memory/runlogs/20260709-2018-c260-appendix-f-vocabulary-boundary-check.json`.
 - `getArchimate4ImplementationStatus().documentArtifactCoverage` reports
   `documentArtifactCoverage.expectedIds`,
   `documentArtifactCoverage.actualIds`,

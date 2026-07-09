@@ -196,6 +196,10 @@ It must expose exact C260 Appendix F Acronyms token fields
 `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
 `appendixFAcronymsCoverage.extraAppendixFAcronymIds`) so the implementation can track acronym
 coverage by token identity without copying acronym expansions or Appendix F prose.
+It must expose `appendixFAcronymsCoverage.vocabularyOnlyIds` and
+`appendixFAcronymsCoverage.missingVocabularyOnlyIds` so acronym tokens remain vocabulary-only
+coverage rather than language sections, source coverage, remaining gaps, readiness blockers, or
+official conformance blockers.
 It must expose exact C260 document artifact fields (`documentArtifactCoverage.expectedIds`,
 `documentArtifactCoverage.actualIds`, `documentArtifactCoverage.missingDocumentArtifactIds`,
 `documentArtifactCoverage.extraDocumentArtifactIds`, `documentArtifactCoverage.nonImplementationIds`,

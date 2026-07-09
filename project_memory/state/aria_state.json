@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 179,
-  "stage": "appendix_d_reference_boundary_verified",
+  "loop_id": 180,
+  "stage": "appendix_f_vocabulary_boundary_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "test",
-    "diff_size": 126,
+    "diff_size": 128,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -197,7 +197,8 @@
       "external_source_current_recheck",
       "status_completion_scan_guard",
       "example_viewpoints_optional_boundary_guard",
-      "appendix_d_reference_boundary_guard"
+      "appendix_d_reference_boundary_guard",
+      "appendix_f_vocabulary_boundary_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -406,12 +407,13 @@
       "check_external_source_current_recheck_updates_status_evidence",
       "check_status_completion_scan_parseable",
       "check_optional_example_viewpoints_stay_outside_conformance_blockers",
-      "check_appendix_d_reference_boundary"
+      "check_appendix_d_reference_boundary",
+      "check_appendix_f_vocabulary_boundary"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1948-appendix-d-reference-boundary-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-appendix-d-reference-boundary-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-2022-appendix-f-vocabulary-boundary-diff-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-appendix-f-vocabulary-boundary-audit.md",
     "result": "pass_with_known_legacy_lint_and_external_blockers"
   },
   "open_issues": [
@@ -606,10 +608,12 @@
     "Implementation status completion scanning is regression-tested against project_memory/runlogs/20260709-1453-status-completion-scan.json: 46 top-level status keys, 37 complete summaries, and no incomplete summaries.",
     "Optional Appendix C example viewpoints are regression-tested through conformanceRequirements.may.notBundled and stay out of remaining gaps, readiness blockers, required source gaps, and source coverage.",
     "getArchimate4ImplementationStatus().appendixDStandardsGuidanceCoverage now exposes Appendix D referenceOnlyIds with no missing or extra reference-only ids, backed by project_memory/runlogs/20260709-1944-c260-appendix-d-reference-boundary-check.json.",
-    "C260 Appendix D related-standard and guidance-document headings are now regression-tested as reference-only coverage outside source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids."
+    "C260 Appendix D related-standard and guidance-document headings are now regression-tested as reference-only coverage outside source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids.",
+    "getArchimate4ImplementationStatus().appendixFAcronymsCoverage now exposes Appendix F vocabularyOnlyIds with no missing or extra vocabulary-only ids, backed by project_memory/runlogs/20260709-2018-c260-appendix-f-vocabulary-boundary-check.json.",
+    "C260 Appendix F acronym tokens are now regression-tested as vocabulary-only coverage outside section coverage, source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T20:05:00+09:00"
+    "updated_at": "2026-07-09T20:24:00+09:00"
   }
 }

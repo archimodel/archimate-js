@@ -2314,3 +2314,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1950-appendix-d-reference-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-appendix-d-reference-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 180
+
+- Goal: strengthen the C260 Appendix F acronym boundary so acronym tokens remain vocabulary-only coverage rather than language sections, source gaps, remaining gaps, or official conformance blockers.
+- Observation: `project_memory/runlogs/20260709-2018-c260-appendix-f-vocabulary-boundary-check.json` confirms the local C260 PDF contains all 31 tracked Appendix F acronym tokens; the check copies acronym tokens only and no acronym expansions or Appendix F prose.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `expectedVocabularyOnlyIds` and `vocabularyBoundaryRunlogPath` for Appendix F, and marks all 31 acronym coverage items as `vocabularyOnly`.
+- Implemented: `lib/metamodel/languages/index.js` now reports `appendixFAcronymsCoverage.vocabularyOnlyIds`, `missingVocabularyOnlyIds`, and `extraVocabularyOnlyIds`, and includes them in the completion check.
+- Implemented: `test/language-profile.test.mjs` now verifies Appendix F vocabulary-only ids stay out of `sectionCoverage`, `sourceCoverage`, `remainingGaps`, `conformanceReadiness`, and `externalBlockerCatalog`.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the Appendix F vocabulary-only boundary.
+- Focused verification: `node --test test/language-profile.test.mjs --test-name-pattern "appendix F"` passed with the language-profile test file in `project_memory/runlogs/20260709-2019-appendix-f-vocabulary-boundary-focused-test.txt`.
+- Verification: `npm run test:language` passed with 222 tests in `project_memory/runlogs/20260709-2020-appendix-f-vocabulary-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-2021-appendix-f-vocabulary-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-2022-appendix-f-vocabulary-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2024-appendix-f-vocabulary-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-f-vocabulary-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

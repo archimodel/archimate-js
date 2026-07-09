@@ -136,9 +136,12 @@ Appendix E version changes coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixEVersionChangesIds`, and `extraAppendixEVersionChangesIds` for the C260 Appendix E
 outline so version-change subsection headings cannot drift silently.
 Appendix F acronym coverage status reports `expectedIds`, `actualIds`,
-`missingAppendixFAcronymIds`, and `extraAppendixFAcronymIds` for the C260 Appendix F acronym-token
-list so acronym vocabulary cannot drift silently without copying acronym expansions or Appendix F
-prose.
+`missingAppendixFAcronymIds`, `extraAppendixFAcronymIds`,
+`appendixFAcronymsCoverage.vocabularyOnlyIds`, and
+`appendixFAcronymsCoverage.missingVocabularyOnlyIds` for the C260 Appendix F acronym-token list so
+acronym vocabulary cannot drift silently without copying acronym expansions or Appendix F prose, and
+without being confused with language sections, source gaps, remaining gaps, readiness blockers, or
+official conformance blockers.
 Document artifact coverage status reports `expectedIds`, `actualIds`,
 `missingDocumentArtifactIds`, `extraDocumentArtifactIds`, `documentArtifactCoverage.nonImplementationIds`,
 and `documentArtifactCoverage.missingNonImplementationIds` for C260 front matter and Index outline
