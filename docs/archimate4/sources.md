@@ -34,6 +34,10 @@
 - Because redistribution rights for Appendix B relationship tables are not confirmed, this repository
   does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement
   point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
+- The Editor demo exposes that replacement point in ArchiMate 4 mode by accepting host-supplied JSON,
+  CSV, or TSV relationship-profile data, requiring complete source-target cell coverage before loading,
+  and reporting source/cell coverage separately from official conformance blockers. The same UI remains
+  disabled in ArchiMate 3.x mode.
 - The local C260 source has been reviewed for Appendix B implementation needs, but a redistributable
   Appendix B profile artifact is still not present in this repository.
   `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable

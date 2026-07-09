@@ -3,6 +3,9 @@ import {
   getLanguageProfile,
   normalizeArchimateVersion
 } from '../../lib/metamodel/languages';
+import {
+  getArchimate4RelationshipProfileStatus
+} from '../../lib/metamodel/languages/archimate4-relationships';
 
 export const DEMO_ARCHIMATE3_VERSION = '3.2';
 export const DEMO_ARCHIMATE4_VERSION = '4.0';
@@ -84,6 +87,7 @@ export function applyDemoProfileToDocument(profile, mode) {
   updateVersionLink('#version-3-link', profile.version === DEMO_ARCHIMATE3_VERSION);
   updateVersionLink('#version-4-link', profile.version === DEMO_ARCHIMATE4_VERSION);
   renderConformanceReport(profile);
+  renderRelationshipProfileStatus(profile);
 }
 
 export function setStatus(message) {
@@ -92,6 +96,35 @@ export function setStatus(message) {
   if (status) {
     status.textContent = message;
   }
+}
+
+export function renderRelationshipProfileStatus(profile, message) {
+  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {
+    setText('#relationship-profile-state', 'Not applicable');
+    setText('#relationship-profile-source', 'ArchiMate 3.x compatibility mode');
+    setText('#relationship-profile-cells', 'none');
+    setText('#relationship-profile-missing', 'none');
+    setText('#relationship-profile-message', message || 'not applicable');
+    return;
+  }
+
+  const status = getArchimate4RelationshipProfileStatus();
+  const sourceLabel = status.source === 'external' ? 'External' : 'Compatibility fallback';
+  const sourceMetadata = status.sourceMetadata && status.sourceMetadata.sourceId ?
+    ' (' + status.sourceMetadata.sourceId + ')' :
+    '';
+
+  setText('#relationship-profile-state', status.source === 'external' ? 'Loaded' : 'Fallback');
+  setText('#relationship-profile-source', sourceLabel + sourceMetadata);
+  setText(
+    '#relationship-profile-cells',
+    status.targetCellCount + ' / ' + status.expectedTargetCellCount
+  );
+  setText(
+    '#relationship-profile-missing',
+    status.missingSourceCount + ' source, ' + status.missingTargetCellCount + ' cells'
+  );
+  setText('#relationship-profile-message', message || 'ready');
 }
 
 export function seedSampleCanvas(instance, version) {

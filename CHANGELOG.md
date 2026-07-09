@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: added a reproducible ArchiMate 4 implementation-status completion scan writer and refreshed the current scan evidence.
 * `CORE`: exposed `getArchimate4ConformanceReport()` so host tooling can display official-conformance blockers, required-before-claim actions, and companion gaps without misreading local implementation coverage as an official claim.
 * `FEAT`: exposed the ArchiMate 4 conformance report in the bundled Viewer and Editor demos while keeping ArchiMate 3.x marked as not applicable.
+* `FEAT`: added an Editor demo Appendix B relationship profile import panel for host-supplied JSON, CSV, or TSV profile data, with complete cell coverage required in ArchiMate 4 mode.
 * `DOCS`: refreshed the ArchiMate 4 implementation-status completion scan evidence.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 * `CORE`: linked C260 section coverage entries to implementation status API keys so chapter and appendix coverage cannot drift from exposed status summaries.

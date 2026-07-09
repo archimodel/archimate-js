@@ -1,0 +1,97 @@
+✖ editor demo exposes an Appendix B relationship profile import panel (1.6124ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.9016
+
+✖ failing tests:
+
+test at test\demo-relationship-profile-panel.test.mjs:10:1
+✖ editor demo exposes an Appendix B relationship profile import panel (1.6124ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /id="relationship-profile-input"/. Input:
+
+  '<!doctype html>\n' +
+    '<html lang="ja">\n' +
+    '  <head>\n' +
+    '    <meta charset="utf-8">\n' +
+    '    <meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+    '    <title>archimate-js Editor Demo</title>\n' +
+    '    <link rel="stylesheet" href="../node_modules/diagram-js/assets/diagram-js.css">\n' +
+    '    <link rel="stylesheet" href="../archimate-font/lib/css/archimate-font.css">\n' +
+    '    <link rel="stylesheet" href="../assets/palette-icons.css?v=20260708-2">\n' +
+    '    <link rel="stylesheet" href="./demo.css?v=20260708-2">\n' +
+    '  </head>\n' +
+    '  <body>\n' +
+    '    <div class="demo-shell">\n' +
+    '      <header class="demo-topbar">\n' +
+    '        <div class="demo-title">archimate-js Editor Demo</div>\n' +
+    '        <nav class="demo-nav" aria-label="Demo navigation">\n' +
+    '          <a id="viewer-link" href="./viewer.html?version=4.0">Viewer</a>\n' +
+    '          <a id="editor-link" href="./editor.html?version=4.0" aria-current="page">Editor</a>\n' +
+    '          <a href="../archimate-font/lib/demo.html">Font</a>\n' +
+    '        </nav>\n' +
+    '        <div class="demo-version-switch" aria-label="ArchiMate version">\n' +
+    '          <a id="version-3-link" href="./editor.html?version=3.2">3.x</a>\n' +
+    '          <a id="version-4-link" href="./editor.html?version=4.0">4.0</a>\n' +
+    '        </div>\n' +
+    '        <div class="demo-actions">\n' +
+    '          <button id="reset-sample" class="demo-button" type="button">Reset Sample</button>\n' +
+    '          <button id="new-model" class="demo-button" type="button">New Model</button>\n' +
+    '        </div>\n' +
+    '        <div id="status" class="demo-status">loading</div>\n' +
+    '      </header>\n' +
+    '      <main class="demo-main">\n' +
+    '        <aside class="demo-side">\n' +
+    '          <h2>Sample</h2>\n' +
+    '          <dl>\n' +
+    '            <dt>Mode</dt>\n' +
+    '            <dd id="profile-mode">Editor</dd>\n' +
+    '            <dt>Version</dt>\n' +
+    '            <dd id="profile-version">ArchiMate 4.0</dd>\n' +
+    '            <dt>Profile</dt>\n' +
+    '            <dd id="profile-summary">ArchiMate 4.0 profile</dd>\n' +
+    '            <dt>Palette</dt>\n' +
+    '            <dd id="palette-summary">4.0 palette</dd>\n' +
+    '            <dt>Editing</dt>\n' +
+    '            <dd id="editing-summary">4.0 editor validation</dd>\n' +
+    '          </dl>\n' +
+    '          <div class="demo-conformance" aria-label="ArchiMate conformance status">\n' +
+    '            <h2>Conformance</h2>\n' +
+    '            <dl>\n' +
+    '              <dt>Status</dt>\n' +
+    '              <dd id="conformance-state">loading</dd>\n' +
+    '              <dt>Boundary</dt>\n' +
+    '              <dd id="conformance-summary">loading</dd>\n' +
+    '              <dt>Sources</dt>\n' +
+    '              <dd id="conformance-required">loading</dd>\n' +
+    '              <dt>Companion</dt>\n' +
+    '              <dd id="conformance-companion">loading</dd>\n' +
+    '            </dl>\n' +
+    '            <ul id="conformance-actions" class="demo-conformance-actions"></ul>\n' +
+    '          </div>\n' +
+    '        </aside>\n' +
+    '        <section class="demo-canvas" aria-label="ArchiMate editor canvas">\n' +
+    '          <div id="canvas"></div>\n' +
+    '        </section>\n' +
+    '      </main>\n' +
+    '    </div>\n' +
+    '    <script src="./dist/editor.bundle.js"></script>\n' +
+    '  </body>\n' +
+    '</html>\n'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/demo-relationship-profile-panel.test.mjs:11:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<!doctype html>\n<html lang="ja">\n  <head>\n    <meta charset="utf-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n    <title>archimate-js Editor Demo</title>\n    <link rel="stylesheet" href="../node_modules/diagram-js/assets/diagram-js.css">\n    <link rel="stylesheet" href="../archimate-font/lib/css/archimate-font.css">\n    <link rel="stylesheet" href="../assets/palette-icons.css?v=20260708-2">\n    <link rel="stylesheet" href="./demo.css?v=20260708-2">\n  </head>\n  <body>\n    <div class="demo-shell">\n      <header class="demo-topbar">\n        <div class="demo-title">archimate-js Editor Demo</div>\n        <nav class="demo-nav" aria-label="Demo navigation">\n          <a id="viewer-link" href="./viewer.html?version=4.0">Viewer</a>\n          <a id="editor-link" href="./editor.html?version=4.0" aria-current="page">Editor</a>\n          <a href="../archimate-font/lib/demo.html">Font</a>\n        </nav>\n        <div class="demo-version-switch" aria-label="ArchiMate version">\n          <a id="version-3-link" href="./editor.html?version=3.2">3.x</a>\n          <a id="version-4-link" href="./editor.html?version=4.0">4.0</a>\n        </div>\n        <div class="demo-actions">\n          <button id="reset-sample" class="demo-button" type="button">Reset Sample</button>\n          <button id="new-model" class="demo-button" type="button">New Model</button>\n        </div>\n        <div id="status" class="demo-status">loading</div>\n      </header>\n      <main class="demo-main">\n        <aside class="demo-side">\n          <h2>Sample</h2>\n          <dl>\n            <dt>Mode</dt>\n            <dd id="profile-mode">Editor</dd>\n            <dt>Version</dt>\n            <dd id="profile-version">ArchiMate 4.0</dd>\n            <dt>Profile</dt>\n            <dd id="profile-summary">ArchiMate 4.0 profile</dd>\n            <dt>Palette</dt>\n            <dd id="palette-summary">4.0 palette</dd>\n            <dt>Editing</dt>\n            <dd id="editing-summary">4.0 editor validation</dd>\n          </dl>\n          <div class="demo-conformance" aria-label="ArchiMate conformance status">\n            <h2>Conformance</h2>\n            <dl>\n              <dt>Status</dt>\n              <dd id="conformance-state">loading</dd>\n              <dt>Boundary</dt>\n              <dd id="conformance-summary">loading</dd>\n              <dt>Sources</dt>\n              <dd id="conformance-required">loading</dd>\n              <dt>Companion</dt>\n              <dd id="conformance-companion">loading</dd>\n            </dl>\n            <ul id="conformance-actions" class="demo-conformance-actions"></ul>\n          </div>\n        </aside>\n        <section class="demo-canvas" aria-label="ArchiMate editor canvas">\n          <div id="canvas"></div>\n        </section>\n      </main>\n    </div>\n    <script src="./dist/editor.bundle.js"></script>\n  </body>\n</html>\n',
+    expected: /id="relationship-profile-input"/,
+    operator: 'match',
+    diff: 'simple'
+  }

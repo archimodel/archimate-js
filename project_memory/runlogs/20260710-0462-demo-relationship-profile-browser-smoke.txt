@@ -1,0 +1,22 @@
+{
+  "initial": {
+    "state": "Fallback",
+    "source": "Compatibility fallback",
+    "cells": "3025 / 3025",
+    "disabled": false
+  },
+  "loaded": {
+    "state": "Loaded",
+    "source": "External",
+    "cells": "3025 / 3025",
+    "missing": "0 source, 0 cells",
+    "message": "loaded",
+    "status": "relationship profile loaded"
+  },
+  "archimate3": {
+    "state": "Not applicable",
+    "source": "ArchiMate 3.x compatibility mode",
+    "disabled": true,
+    "loadDisabled": true
+  }
+}

@@ -44,7 +44,7 @@ Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 imp
 
 Use `getArchimate4ConformanceReport()` when a host needs a flattened official-conformance report. It preserves the Appendix B profile, MEFF 4.0 XSD, and Appendix A artwork-rights blockers, separates the W262 companion gap, and lists the required action for each blocker without allowing local implementation coverage to be mistaken for an official conformance claim.
 
-The bundled Viewer and Editor demos display the same flattened report in ArchiMate 4 mode. In ArchiMate 3.x mode the panel is marked not applicable, preserving the existing 3.x compatibility boundary.
+The bundled Viewer and Editor demos display the same flattened report in ArchiMate 4 mode. In ArchiMate 3.x mode the panel is marked not applicable, preserving the existing 3.x compatibility boundary. The Editor demo also includes an Appendix B relationship profile import panel for host-supplied JSON, CSV, or TSV profile data; it requires complete source-target cell coverage before replacing the compatibility fallback and remains disabled in 3.x mode.
 
 For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` or `getArchimate4ConformanceReport()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
 
@@ -124,6 +124,7 @@ const modeler = new Modeler({
 * Junctions are exposed as relationship connectors without counting them as ArchiMate 4 elements.
 * Junction-connected relationships are constrained to the same relationship type and checked against the active relationship profile for direct endpoint validity.
 * `getArchimate4RelationshipProfileCoverageReport()` lists missing Appendix B source rows and source-target cells for the active profile, allowing hosts to verify licensed profile transcription without committing the table.
+* The Editor demo can load a host-supplied Appendix B relationship profile as JSON or matrix text and displays profile source, target-cell coverage, and missing source/cell counts without treating the repository as bundling the normative Appendix B matrix.
 * In ArchiMate 4 mode, junction connectors render as the Appendix A dot/ring markers, and an optional modeler-supplied name renders below the connector; ArchiMate 3.x keeps the legacy `AND`/`OR` text marker.
 * Relationship popup labels use the C260 direct/reverse role names while retaining the underlying relationship type for editing.
 * Renderer pictograms use the active language profile `pictoRef`, including ArchiMate 4 spelling-corrected entries and custom specialized concepts.

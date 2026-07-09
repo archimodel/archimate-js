@@ -1,0 +1,15 @@
+(node:58448) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ demo viewer and editor expose the ArchiMate 4 conformance report panel (0.8072ms)
+✔ demo conformance panel source stays aligned with the flattened report boundary (11.2946ms)
+✔ editor demo exposes an Appendix B relationship profile import panel (0.7803ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.5991

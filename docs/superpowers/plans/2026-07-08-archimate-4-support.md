@@ -48,10 +48,12 @@ Implemented and verified on the current branch:
   consistency without embedding Appendix B table data.
 - M4 Modeling UX: the palette, renderer, relationship options, multiplicity editing/persistence,
   junction behavior, profile customization, viewpoint metadata, nested view nodes, organization tree
-  descriptors, Appendix C example viewpoint informative catalog, and local Appendix A-derived
-  pictogram paths are implemented for ArchiMate 4 mode. The Viewer and Editor demos also surface the
-  host-facing conformance report so official blockers and companion gaps are visible in 4.0 mode,
-  while 3.x mode stays marked as not applicable.
+  descriptors, Appendix C example viewpoint informative catalog, host-supplied Appendix B
+  relationship-profile import in the Editor demo, and local Appendix A-derived pictogram paths are
+  implemented for ArchiMate 4 mode. The Viewer and Editor demos also surface the host-facing
+  conformance report so official blockers and companion gaps are visible in 4.0 mode, while 3.x mode
+  stays marked as not applicable. The Editor demo profile import path reports source/cell coverage
+  separately from the conformance panel and does not embed the normative Appendix B matrix.
 - M5 Release Readiness: README, CHANGELOG, source ledger, implementation specification, runlogs, and
   audit reports document the opt-in status, compatibility behavior, verification commands, and
   conformance boundaries.

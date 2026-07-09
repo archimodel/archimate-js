@@ -181,6 +181,34 @@
       ]
     },
     {
+      "id": "audit.archimate4.demo_relationship_profile_panel",
+      "description": "Editor demo loads host-supplied Appendix B relationship profiles in ArchiMate 4 mode, reports source and cell coverage, and disables the path in ArchiMate 3.x mode",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
+      "severity": "blocker",
+      "command": "node --test test/demo-relationship-profile-panel.test.mjs",
+      "expect": {
+        "exit_code": 0
+      },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0459-demo-relationship-profile-red-test.txt",
+        "project_memory/runlogs/20260710-0460-demo-relationship-profile-focused-test.txt",
+        "project_memory/runlogs/20260710-0461-demo-relationship-profile-demo-build.txt",
+        "project_memory/runlogs/20260710-0462-demo-relationship-profile-browser-smoke.txt",
+        "project_memory/runlogs/20260710-0463-demo-relationship-profile-focused-tests.txt",
+        "project_memory/runlogs/20260710-0466-demo-relationship-profile-final-demo-build.txt",
+        "project_memory/runlogs/20260710-0467-demo-relationship-profile-final-browser-smoke.txt",
+        "project_memory/runlogs/20260710-0468-demo-relationship-profile-test-language.txt",
+        "project_memory/runlogs/20260710-0473-demo-relationship-profile-eslint-registry.txt",
+        "project_memory/runlogs/20260710-0474-demo-relationship-profile-final-json-check.txt",
+        "project_memory/runlogs/20260710-0475-demo-relationship-profile-final-diff-check.txt",
+        "project_memory/runlogs/20260710-0476-demo-relationship-profile-prestage-json-check.txt",
+        "project_memory/runlogs/20260710-0477-demo-relationship-profile-prestage-diff-check.txt"
+      ]
+    },
+    {
       "id": "audit.archimate4.external_source_current_recheck",
       "description": "Current W262 and MEFF 4.0 XSD source evidence stays aligned with archimate4-profile sourceCoverage and the host-facing conformance report",
       "when": [

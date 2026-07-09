@@ -119,6 +119,38 @@ body {
   border-top: 1px solid #d8dde3;
 }
 
+.demo-relationship-profile {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #d8dde3;
+}
+
+.demo-profile-input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  border: 1px solid #c8d0d9;
+  border-radius: 4px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+  resize: vertical;
+}
+
+.demo-profile-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.demo-profile-message {
+  min-height: 16px;
+  margin-top: 8px;
+  color: #5f6b7a;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
 .demo-conformance-actions {
   margin: 12px 0 0;
   padding-left: 18px;

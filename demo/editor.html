@@ -57,6 +57,29 @@
             </dl>
             <ul id="conformance-actions" class="demo-conformance-actions"></ul>
           </div>
+          <div class="demo-relationship-profile" aria-label="ArchiMate relationship profile status">
+            <h2>Appendix B Profile</h2>
+            <dl>
+              <dt>Status</dt>
+              <dd id="relationship-profile-state">loading</dd>
+              <dt>Source</dt>
+              <dd id="relationship-profile-source">loading</dd>
+              <dt>Cells</dt>
+              <dd id="relationship-profile-cells">loading</dd>
+              <dt>Missing</dt>
+              <dd id="relationship-profile-missing">loading</dd>
+            </dl>
+            <textarea
+              id="relationship-profile-input"
+              class="demo-profile-input"
+              rows="6"
+              aria-label="Appendix B relationship profile input"></textarea>
+            <div class="demo-profile-actions">
+              <button id="load-relationship-profile" class="demo-button" type="button">Load Profile</button>
+              <button id="reset-relationship-profile" class="demo-button" type="button">Reset Profile</button>
+            </div>
+            <div id="relationship-profile-message" class="demo-profile-message">loading</div>
+          </div>
         </aside>
         <section class="demo-canvas" aria-label="ArchiMate editor canvas">
           <div id="canvas"></div>

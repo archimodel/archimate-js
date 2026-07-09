@@ -74,6 +74,11 @@ object, preserving official blocker ids, missing required source ids, required-b
 remaining gap ids, and companion gaps without changing the official conformance claim boundary.
 The bundled Viewer and Editor demos must render that report in ArchiMate 4 mode so the official
 blockers are visible to evaluators; in ArchiMate 3.x mode the report must remain not applicable.
+The Editor demo must also expose a host-supplied Appendix B relationship profile import path for
+JSON or matrix text input. That path must require complete source-target cell coverage before loading
+the profile in ArchiMate 4 mode, show relationship-profile source and cell coverage separately from
+the official conformance report, remain disabled in ArchiMate 3.x mode, and must not embed or imply
+repository redistribution of the normative Appendix B matrix.
 It must expose exact C260 section coverage fields (`sectionCoverage.expectedIds`,
 `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
 `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,

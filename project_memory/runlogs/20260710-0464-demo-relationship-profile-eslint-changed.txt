@@ -1,0 +1,5 @@
+
+D:\github\archimate-js\demo\src\editor.js
+  99:13  error  Unnecessary escape character: \[  no-useless-escape
+
+✖ 1 problem (1 error, 0 warnings)
