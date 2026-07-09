@@ -1,0 +1,12 @@
+✔ archimate 4 model validation reports invalid view element references (2.8656ms)
+✔ archimate 4 model validation accepts valid view element references (0.77ms)
+✔ archimate 4 model validation reports invalid view node geometry (0.2501ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 124.4049
+exitCode=0

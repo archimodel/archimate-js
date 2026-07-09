@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 205,
-  "stage": "archimate4_model_validation_view_connection_endpoint_alignment_verified",
+  "loop_id": 206,
+  "stage": "archimate4_model_validation_view_node_geometry_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature_validation",
-    "diff_size": 200,
+    "diff_size": 161,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -239,7 +239,11 @@
       "view_connection_endpoint_alignment_guard",
       "status_completion_scan_0061_guard",
       "archimate4_completion_audit_view_connection_endpoint_alignment_guard",
-      "archimate4_c260_coverage_audit_view_connection_endpoint_alignment_guard"
+      "archimate4_c260_coverage_audit_view_connection_endpoint_alignment_guard",
+      "view_node_geometry_guard",
+      "status_completion_scan_0080_guard",
+      "archimate4_completion_audit_view_node_geometry_guard",
+      "archimate4_c260_coverage_audit_view_node_geometry_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -506,19 +510,23 @@
       "check_view_connection_endpoint_alignment_validation",
       "check_status_completion_scan_0061",
       "check_archimate4_completion_audit_view_connection_endpoint_alignment",
-      "check_archimate4_c260_coverage_audit_view_connection_endpoint_alignment"
+      "check_archimate4_c260_coverage_audit_view_connection_endpoint_alignment",
+      "check_view_node_geometry_validation",
+      "check_status_completion_scan_0080",
+      "check_archimate4_completion_audit_view_node_geometry",
+      "check_archimate4_c260_coverage_audit_view_node_geometry"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260710-0067-archimate4-model-validation-view-connection-endpoint-alignment-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260710-archimate4-model-validation-view-connection-endpoint-alignment-audit.md",
+    "runlog_path": "project_memory/runlogs/20260710-0086-archimate4-model-validation-view-node-geometry-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260710-archimate4-model-validation-view-node-geometry-audit.md",
     "result": "pass"
   },
   "open_issues": [
-    "Exact C260 Appendix A vector artwork redistribution rights remain unconfirmed.",
-    "Official Appendix B relationship matrix data remains externally supplied and cannot be bundled from the book.",
-    "Official MEFF 4.0 XSD remains unavailable from the checked Open Group XSD directory.",
-    "W262 companion paper remains unavailable locally and is tracked as companion evidence, not an official conformance blocker."
+    "Official Appendix B relationship matrix data remains externally supplied until a redistributable profile artifact is available.",
+    "Official MEFF 4.0 XSD remains unavailable from the checked Open Group XSD directory, so official XML exchange conformance cannot be claimed.",
+    "Exact Appendix A artwork redistribution rights remain unconfirmed.",
+    "W262 remains a companion-source gap, not an official conformance blocker."
   ],
   "assumptions": [
     "C260 can be used as a local source for derived implementation requirements, but copied normative prose and Appendix B tables should not be committed without explicit redistribution rights.",
@@ -735,11 +743,12 @@
     "Viewpoint.modelingNotes entries are optional modeling metadata; validation enforces list/object/string-field shape without interpreting note type semantics.",
     "Model-level PropertyDefinition entries must have a non-empty string id for reusable references; name and type remain optional but must be strings when present, preserving inline propertyDefinitionRef object compatibility.",
     "Connection.source and Connection.target are optional during partial/in-memory editing, but when present they must resolve to a ViewElement id within the same View.",
-    "View connection endpoint alignment can be validated when a Connection has a valid relationshipRef and each endpoint ViewElement carries an elementRef or relationshipRef; partial editor-only endpoints remain tolerated until model refs exist."
+    "View connection endpoint alignment can be validated when a Connection has a valid relationshipRef and each endpoint ViewElement carries an elementRef or relationshipRef; partial editor-only endpoints remain tolerated until model refs exist.",
+    "View node x/y/w/h geometry is optional during partial/in-memory editing, but when present x/y must be finite non-negative numbers and w/h must be finite positive numbers until the official MEFF 4.0 XSD confirms stricter integer constraints."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-10T01:20:00+09:00"
+    "updated_at": "2026-07-10T01:45:00+09:00"
   },
   "implemented_items": [
     "validateArchimate4Model() and validateArchimateModel() now validate View Node elementRef values against model-defined elements and connectors, reporting malformed, unknown, relationship-targeted, or unsupported references.",
@@ -762,6 +771,8 @@
     "validateArchimate4Model() and validateArchimateModel() now validate present Connection.source and Connection.target references against ViewElement ids in the same View.",
     "getArchimate4ImplementationStatus().modelValidation now exposes view-connection-endpoint-reference and the implementation-status completion scan points at project_memory/runlogs/20260710-0043-status-completion-api-scan.json.",
     "validateArchimate4Model() and validateArchimateModel() now report view connection source/target concept mismatches when diagram endpoints do not match the referenced relationship endpoints.",
-    "getArchimate4ImplementationStatus().modelValidation now exposes view-connection-endpoint-alignment and the implementation-status completion scan points at project_memory/runlogs/20260710-0061-status-completion-api-scan.json."
+    "getArchimate4ImplementationStatus().modelValidation now exposes view-connection-endpoint-alignment and the implementation-status completion scan points at project_memory/runlogs/20260710-0061-status-completion-api-scan.json.",
+    "validateArchimate4Model() and validateArchimateModel() now validate present View Node x/y/w/h geometry values.",
+    "getArchimate4ImplementationStatus().modelValidation now exposes view-node-geometry and the implementation-status completion scan points at project_memory/runlogs/20260710-0080-status-completion-api-scan.json."
   ]
 }

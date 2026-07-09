@@ -86,6 +86,7 @@
         "viewpoint-allowed-types",
         "view-viewpoint-reference",
         "view-node-element-reference",
+        "view-node-geometry",
         "view-connection-relationship-reference",
         "view-connection-endpoint-reference",
         "view-connection-endpoint-alignment",

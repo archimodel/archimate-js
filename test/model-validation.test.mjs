@@ -612,6 +612,49 @@ test('archimate 4 model validation accepts valid view element references', () =>
   assert.deepEqual(result.diagnostics, []);
 });
 
+test('archimate 4 model validation reports invalid view node geometry', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-invalid-position',
+                elementRef: 'actor-1',
+                x: -1,
+                y: 'not-a-number'
+              },
+              {
+                id: 'node-invalid-size',
+                elementRef: 'actor-1',
+                w: 0,
+                h: -20
+              }
+            ]
+          }
+        ]
+      }
+    }
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-view-node-x'), true);
+  assert.equal(codes.includes('invalid-view-node-y'), true);
+  assert.equal(codes.includes('invalid-view-node-width'), true);
+  assert.equal(codes.includes('invalid-view-node-height'), true);
+  assert.equal(findDiagnostic(result, 'invalid-view-node-x').viewElementId, 'node-invalid-position');
+  assert.equal(findDiagnostic(result, 'invalid-view-node-width').value, 0);
+});
+
 test('archimate 4 model validation reports view content outside viewpoint allowed types', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

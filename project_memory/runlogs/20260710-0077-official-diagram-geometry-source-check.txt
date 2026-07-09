@@ -1,0 +1,124 @@
+url=https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd
+status=200
+length=23286
+--- geometry snippets ---
+> <?xml version="1.0" encoding="UTF-8"?>
+> <xs:schema xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+>            targetNamespace="http://www.opengroup.org/xsd/archimate/3.0/"
+>            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>            xmlns:archimate="http://www.opengroup.org/xsd/archimate/3.0/"
+             elementFormDefault="qualified"
+             version="3.1"
+>     <xs:include schemaLocation="archimate3_View.xsd" />
+
+>     <xs:annotation>
+>         <xs:documentation>
+>             XSD Data File Information
+              -------------------------
+>             Author: The Open Group ArchiMate Exchange Team
+              Start date: 04 Oct 2016
+>             Revision date: 15 July 2019
+>             XSD Version: 3.1
+>             Status: Preliminary
+>             Description: The Open Group ArchiMate 3.1 Open Exchange Format
+>         </xs:documentation>
+
+>         <xs:documentation>
+              Notes and rationale
+              -------------------
+>             This is the XSD for the ArchiMate 3.1 Model Exchange File Format.
+
+>             A number of example models in the exchange file format are available
+>             for interoperability testing. For details of how to obtain those
+>             files and for further information, see the ArchiMate Model Exchange File Format
+>             page at http://www.opengroup.org/xsd/archimate/
+>         </xs:documentation>
+>     </xs:annotation>
+
+>     <xs:redefine schemaLocation="archimate3_View.xsd">
+
+>         <xs:complexType name="ViewsType">
+>             <xs:complexContent>
+>                 <xs:extension base="ViewsType">
+>                     <xs:sequence>
+>                         <xs:element name="diagrams" type="DiagramsType" minOccurs="0" maxOccurs="1" />
+>                     </xs:sequence>
+>                 </xs:extension>
+>             </xs:complexContent>
+>         </xs:complexType>
+
+>     </xs:redefine>
+
+      <!-- =========================== Diagrams ========================== -->
+>     <xs:complexType name="DiagramsType">
+>         <xs:annotation>
+>             <xs:documentation>
+>                 This is a container for all of the Diagrams in the model.
+>             </xs:documentation>
+>         </xs:annotation>
+>         <xs:sequence>
+>             <xs:element name="view" type="Diagram" minOccurs="1" maxOccurs="unbounded">
+
+>                 <xs:key name="NodeKey">
+>                     <xs:selector xpath=".//archimate:node" />
+>                     <xs:field xpath="@identifier" />
+>                 </xs:key>
+
+>                 <xs:key name="ConnectionKey">
+>                     <xs:selector xpath=".//archimate:connection" />
+>                     <xs:field xpath="@identifier" />
+>                 </xs:key>
+
+>                 <xs:keyref name="NodeRef" refer="NodeKey">
+>                     <xs:selector xpath=".//archimate:nodeRef" />
+>                     <xs:field xpath="@ref" />
+>                 </xs:keyref>
+
+>                 <xs:keyref name="NodeRefAttribute" refer="NodeKey">
+>                     <xs:selector xpath=".//archimate:*" />
+>                     <xs:field xpath="@nodeRef" />
+>                 </xs:keyref>
+
+>                 <xs:keyref name="ConnectionRef" refer="ConnectionKey">
+>                     <xs:selector xpath=".//archimate:connectionRef" />
+>                     <xs:field xpath="@ref" />
+>                 </xs:keyref>
+
+>                 <xs:keyref name="ConnectionRefAttribute" refer="ConnectionKey">
+>                     <xs:selector xpath=".//archimate:*" />
+>                     <xs:field xpath="@connectionRef" />
+>                 </xs:keyref>
+
+>                 <!-- ViewConcept -->
+
+>                 <xs:key name="ViewConceptKey">
+>                     <xs:selector xpath=".//archimate:node | .//archimate:connection" />
+>                     <xs:field xpath="@identifier" />
+>                 </xs:key>
+
+>                 <xs:keyref name="ViewConceptRef" refer="ViewConceptKey">
+>                     <xs:selector xpath=".//archimate:viewConceptRef" />
+>                     <xs:field xpath="@ref" />
+>                 </xs:keyref>
+
+>                 <xs:keyref name="ViewConceptRefAttribute" refer="ViewConceptKey">
+>                     <xs:selector xpath=".//archimate:*" />
+>                     <xs:field xpath="@viewConceptRef" />
+>                 </xs:keyref>
+
+>                 <xs:keyref name="ConnectionSourceRef" refer="ViewConceptKey">
+--- local archimate4 descriptor geometry ---
+Node: nodes:Node[], elementRef:BaseElement, x:Real, y:Real, w:Real, h:Real
+Connection: relationshipRef:Relationship, source:ViewElement, target:ViewElement, waypointsNode:Waypoints
+Waypoints: waypoints:Waypoint[]
+Waypoint: original:Point
+Point: x:Integer, y:Integer
+--- official 3.1 diagram geometry attribute lines ---
+>         <xs:attribute name="x" type="xs:nonNegativeInteger" use="required">
+              <xs:annotation>
+>         <xs:attribute name="y" type="xs:nonNegativeInteger" use="required">
+              <xs:annotation>
+>         <xs:attribute name="w" type="xs:positiveInteger" use="required">
+              <xs:annotation>
+>         <xs:attribute name="h" type="xs:positiveInteger" use="required">
+              <xs:annotation>

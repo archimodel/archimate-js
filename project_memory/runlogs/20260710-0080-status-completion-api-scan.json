@@ -1,0 +1,263 @@
+{
+  "checkedAt": "2026-07-10T01:35:00+09:00",
+  "source": "getArchimate4ImplementationStatus",
+  "topKeys": [
+    "version",
+    "standard",
+    "experimental",
+    "namespace",
+    "schemaLocation",
+    "elementCatalog",
+    "relationshipConnectors",
+    "relationshipMatrix",
+    "relationshipProfile",
+    "modelValidation",
+    "exchangeFormat",
+    "iconography",
+    "profileAttributeTypes",
+    "viewpointClassification",
+    "viewpointMechanism",
+    "stakeholderConcerns",
+    "conformanceRequirements",
+    "sourceCoverage",
+    "conformanceReadiness",
+    "remainingGaps",
+    "sectionCoverage",
+    "introductionCoverage",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "languageCustomizationMechanismsCoverage",
+    "appendixANotationCoverage",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "exampleViewpointCatalog",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "appendixFAcronymsCoverage",
+    "documentArtifactCoverage",
+    "c260CoverageAggregate",
+    "c260SourceAlignment",
+    "c260CoverageSourceEvidence",
+    "externalBlockerCatalog",
+    "externalBlockers",
+    "implementationCompletion"
+  ],
+  "topKeyCount": 49,
+  "completeSummaryCount": 40,
+  "incompleteSummaryCount": 0,
+  "completeSummaries": [
+    {
+      "path": "elementCatalog",
+      "complete": true
+    },
+    {
+      "path": "relationshipConnectors",
+      "complete": true
+    },
+    {
+      "path": "modelValidation",
+      "complete": true
+    },
+    {
+      "path": "profileAttributeTypes",
+      "complete": true
+    },
+    {
+      "path": "viewpointClassification",
+      "complete": true
+    },
+    {
+      "path": "viewpointMechanism",
+      "complete": true
+    },
+    {
+      "path": "stakeholderConcerns",
+      "complete": true
+    },
+    {
+      "path": "conformanceRequirements",
+      "complete": true
+    },
+    {
+      "path": "conformanceRequirements.shall",
+      "complete": true
+    },
+    {
+      "path": "conformanceRequirements.may",
+      "complete": true
+    },
+    {
+      "path": "sourceCoverage",
+      "complete": true
+    },
+    {
+      "path": "remainingGaps",
+      "complete": true
+    },
+    {
+      "path": "sectionCoverage",
+      "complete": true
+    },
+    {
+      "path": "introductionCoverage",
+      "complete": true
+    },
+    {
+      "path": "definitionCoverage",
+      "complete": true
+    },
+    {
+      "path": "languageStructureCoverage",
+      "complete": true
+    },
+    {
+      "path": "commonDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "relationshipsAndJunctionsCoverage",
+      "complete": true
+    },
+    {
+      "path": "motivationDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "strategyDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "businessDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "applicationDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "technologyDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "relationshipsBetweenCoreDomainsCoverage",
+      "complete": true
+    },
+    {
+      "path": "implementationAndMigrationDomainCoverage",
+      "complete": true
+    },
+    {
+      "path": "stakeholdersArchitectureViewsViewpointsCoverage",
+      "complete": true
+    },
+    {
+      "path": "languageCustomizationMechanismsCoverage",
+      "complete": true
+    },
+    {
+      "path": "appendixANotationCoverage",
+      "complete": true
+    },
+    {
+      "path": "appendixBRelationshipsCoverage",
+      "complete": true
+    },
+    {
+      "path": "appendixCExampleViewpointsCoverage",
+      "complete": true
+    },
+    {
+      "path": "exampleViewpointCatalog",
+      "complete": true
+    },
+    {
+      "path": "appendixDStandardsGuidanceCoverage",
+      "complete": true
+    },
+    {
+      "path": "appendixEVersionChangesCoverage",
+      "complete": true
+    },
+    {
+      "path": "appendixFAcronymsCoverage",
+      "complete": true
+    },
+    {
+      "path": "documentArtifactCoverage",
+      "complete": true
+    },
+    {
+      "path": "c260CoverageAggregate",
+      "complete": true
+    },
+    {
+      "path": "c260SourceAlignment",
+      "complete": true
+    },
+    {
+      "path": "c260CoverageSourceEvidence",
+      "complete": true
+    },
+    {
+      "path": "externalBlockerCatalog",
+      "complete": true
+    },
+    {
+      "path": "implementationCompletion",
+      "complete": true
+    }
+  ],
+  "incompleteSummaries": [],
+  "incompleteSummaryPaths": [],
+  "sectionCoverageStatusKeys": [
+    "introductionCoverage",
+    "sourceCoverage",
+    "conformanceRequirements",
+    "conformanceReadiness",
+    "remainingGaps",
+    "externalBlockerCatalog",
+    "exchangeFormat",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "elementCatalog",
+    "relationshipConnectors",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "relationshipMatrix",
+    "relationshipProfile",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "viewpointClassification",
+    "viewpointMechanism",
+    "stakeholderConcerns",
+    "languageCustomizationMechanismsCoverage",
+    "profileAttributeTypes",
+    "appendixANotationCoverage",
+    "iconography",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "exampleViewpointCatalog",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "appendixFAcronymsCoverage"
+  ],
+  "sectionCoverageMissingStatusKeyIds": [],
+  "sectionCoverageExtraStatusKeyIds": [],
+  "sectionCoverageMissingStatusKeyReferenceIds": []
+}
