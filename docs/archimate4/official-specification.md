@@ -249,8 +249,8 @@ The status must expose model-validation coverage fields (`modelValidation.expect
 `modelValidation.extraCheckIds`) so host applications can audit whether import/export/editor
 diagnostics cover catalog membership, retired concepts, relationship endpoints, multiplicity,
 junction consistency, view viewpoint references, view node element references, view connection
-relationship references, viewpoint definitions, stakeholder/concern structure, and profile attribute
-property values.
+relationship references, viewpoint definitions, viewpoint allowed-type application to View contents,
+stakeholder/concern structure, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
@@ -259,7 +259,7 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260709-1125-status-completion-api-scan.json`; it records 49 top-level
+`project_memory/runlogs/20260709-1142-status-completion-api-scan.json`; it records 49 top-level
 status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
 guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
@@ -788,8 +788,8 @@ In particular:
 - `getArchimate4ImplementationStatus().modelValidation` must expose expected/actual/missing/extra
   validation check ids so model-level diagnostics cannot silently drop element catalog, retired
   concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference, view
-  node element-reference, view connection relationship-reference, viewpoint definition,
-  stakeholder/concern structure, or profile attribute property coverage.
+  node element-reference, view connection relationship-reference, viewpoint definition, viewpoint
+  allowed-type application, stakeholder/concern structure, or profile attribute property coverage.
 
 The relationship rules remain a fallback:
 

@@ -455,6 +455,154 @@ test('archimate 4 model validation accepts valid view element references', () =>
   assert.deepEqual(result.diagnostics, []);
 });
 
+test('archimate 4 model validation reports view content outside viewpoint allowed types', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const association = {
+    id: 'association-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const flow = {
+    id: 'flow-1',
+    type: 'Flow',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        association,
+        flow
+      ]
+    },
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: 'viewpoint-1',
+            allowedElementTypes: [
+              'Role'
+            ],
+            allowedRelationshipTypes: [
+              'Flow'
+            ]
+          }
+        ]
+      },
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewpointRef: 'viewpoint-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1'
+              },
+              {
+                id: 'node-role',
+                elementRef: 'role-1'
+              },
+              {
+                id: 'connection-association',
+                relationshipRef: 'association-1'
+              },
+              {
+                id: 'connection-flow',
+                relationshipRef: 'flow-1'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const elementDiagnostic = findDiagnostic(result, 'view-node-outside-viewpoint-element-types');
+  const relationshipDiagnostic = findDiagnostic(result, 'view-connection-outside-viewpoint-relationship-types');
+
+  assert.equal(result.valid, false);
+  assert.equal(elementDiagnostic.viewId, 'view-1');
+  assert.equal(elementDiagnostic.viewElementId, 'node-actor');
+  assert.equal(elementDiagnostic.viewpointId, 'viewpoint-1');
+  assert.equal(elementDiagnostic.elementType, 'BusinessActor');
+  assert.deepEqual(elementDiagnostic.allowedElementTypes, [ 'Role' ]);
+  assert.equal(relationshipDiagnostic.viewId, 'view-1');
+  assert.equal(relationshipDiagnostic.viewElementId, 'connection-association');
+  assert.equal(relationshipDiagnostic.viewpointId, 'viewpoint-1');
+  assert.equal(relationshipDiagnostic.relationshipType, 'Association');
+  assert.deepEqual(relationshipDiagnostic.allowedRelationshipTypes, [ 'Flow' ]);
+});
+
+test('archimate 4 model validation accepts view content allowed by its viewpoint', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    views: {
+      viewpoints: [
+        {
+          id: 'viewpoint-1',
+          allowedElementTypes: 'BusinessActor Role',
+          allowedRelationshipTypes: 'Association'
+        }
+      ],
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewpointRef: 'viewpoint-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: actor
+              },
+              {
+                id: 'node-role',
+                elementRef: 'role-1'
+              },
+              {
+                id: 'connection-1',
+                relationshipRef: relationship
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, true);
+  assert.deepEqual(result.diagnostics, []);
+});
+
 test('archimate 4 model validation reports invalid profile attribute properties', () => {
   const result = validateArchimate4Model({
     elementsNode: {
