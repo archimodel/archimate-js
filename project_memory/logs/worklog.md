@@ -2156,3 +2156,14 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1408-w262-companion-official-blocker-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-w262-companion-official-blocker-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 167
+
+- Goal: strengthen the Appendix A artwork-rights boundary so complete local renderer pictogram coverage cannot be mistaken for official Appendix A vector-artwork rights.
+- Observation: direct status output shows `iconography.profilePictogramCoverage` is `dedicated-local-paths` with `genericObjectAliasCount` 0, while `sourceCoverage.items.appendixAArtworkRights` remains `external-rights-required` and `standard-iconography` keeps the `exactAppendixAArtworkRights` external blocker.
+- Implemented: `test/language-profile.test.mjs` now verifies local dedicated pictogram coverage, no generic-object alias fallback, and local renderer policy remain separate from exact Appendix A vector redistribution rights and official conformance readiness.
+- Focused verification: `project_memory/runlogs/20260709-1410-appendix-a-local-pictogram-rights-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 210 tests in `project_memory/runlogs/20260709-1411-appendix-a-local-pictogram-rights-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1412-appendix-a-local-pictogram-rights-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1413-appendix-a-local-pictogram-rights-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1414-appendix-a-local-pictogram-rights-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-a-local-pictogram-rights-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

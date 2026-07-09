@@ -2596,6 +2596,46 @@ test('archimate 4 Appendix A artwork status agrees with pictogram audit evidence
   );
 });
 
+test('archimate 4 local pictogram coverage does not satisfy Appendix A artwork rights', () => {
+  const status = getArchimate4ImplementationStatus();
+  const appendixA = status.sourceCoverage.items.appendixAArtworkRights;
+  const iconography = status.iconography;
+  const standardIconography = status.conformanceRequirements.items.find((requirement) => {
+    return requirement.id === 'standard-iconography';
+  });
+  const appendixAGap = status.remainingGaps.items.find((gap) => {
+    return gap.id === 'exactAppendixAArtworkRights';
+  });
+
+  assert.equal(iconography.status, 'local-renderer-coverage');
+  assert.equal(iconography.profilePictogramCoverage, 'dedicated-local-paths');
+  assert.equal(iconography.genericObjectAliasCount, 0);
+  assert.equal(iconography.exactAppendixAVectorsConfirmed, false);
+
+  assert.equal(appendixA.localArtworkPolicy, 'locally-authored-renderer-paths');
+  assert.equal(appendixA.localDedicatedPathCoverageComplete, true);
+  assert.equal(appendixA.officialAppendixAArtworkCommitted, false);
+  assert.equal(appendixA.exactArtworkRedistributionRightsConfirmed, false);
+  assert.equal(appendixA.localSourcePresent, false);
+  assert.equal(appendixA.required, true);
+  assert.equal(appendixA.externalBlocker, 'exactAppendixAArtworkRights');
+
+  assert.equal(standardIconography.level, 'shall');
+  assert.equal(standardIconography.status, 'local-renderer-coverage');
+  assert.equal(standardIconography.externalBlocker, 'exactAppendixAArtworkRights');
+
+  assert.equal(appendixAGap.sourceId, 'appendixAArtworkRights');
+  assert.equal(appendixAGap.requirementId, 'standard-iconography');
+  assert.equal(appendixAGap.officialConformanceBlocker, true);
+  assert.equal(status.conformanceReadiness.blockers.includes('exactAppendixAArtworkRights'), true);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('appendixAArtworkRights'), true);
+  assert.equal(
+    status.conformanceReadiness.requiredBeforeClaimByBlocker.exactAppendixAArtworkRights,
+    'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
+  );
+  assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+});
+
 test('archimate 4 implementation status exposes official conformance readiness', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
