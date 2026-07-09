@@ -1907,3 +1907,13 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1220-relationship-profile-source-metadata-staged-diff-check.txt` passed.
 - Audit: `project_memory/audit/reports/20260709-relationship-profile-source-metadata-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 148
+
+- Goal: prove the aggregate ArchiMate 4 implementation status exposes active Appendix B external profile source metadata, not only the direct relationship-profile status API.
+- Implemented: `test/relationship-rules.test.mjs` now loads an external relationship profile with source metadata, checks `getArchimate4ImplementationStatus().relationshipProfile.sourceMetadata`, and verifies reset returns the status to `compatibility-fallback` with metadata cleared.
+- Verification: focused relationship-rules test passed in `project_memory/runlogs/20260709-1221-implementation-status-relationship-metadata-focused-test.txt`; final `npm run test:language` passed with 192 tests in `project_memory/runlogs/20260709-1222-implementation-status-relationship-metadata-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1223-implementation-status-relationship-metadata-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1224-implementation-status-relationship-metadata-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1225-implementation-status-relationship-metadata-demo-build.txt`; state JSON parse passed in `project_memory/runlogs/20260709-1228-implementation-status-relationship-metadata-json-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1226-implementation-status-relationship-metadata-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1227-implementation-status-relationship-metadata-staged-diff-check.txt` passed.
+- Audit: `project_memory/audit/reports/20260709-implementation-status-relationship-metadata-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

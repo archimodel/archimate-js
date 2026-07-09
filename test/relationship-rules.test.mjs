@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { getArchimate4ImplementationStatus } from '../lib/metamodel/languages/index.js';
 import {
   getArchimate4RelationshipProfileStatus,
   resetArchimate4RelationshipProfileForTests,
@@ -345,6 +346,48 @@ test('archimate 4 relationship profile status exposes external source metadata',
   assert.equal(resetStatus.source, 'compatibility-fallback');
   assert.equal(resetStatus.hasSourceMetadata, false);
   assert.equal(resetStatus.sourceMetadata, null);
+});
+
+test('archimate 4 implementation status includes active relationship profile source metadata', () => {
+  try {
+    setArchimate4RelationshipProfile({
+      sourceMetadata: {
+        sourceId: 'appendix-b-host-status-profile',
+        sourceUri: 'file://host-controlled/appendix-b-profile.json',
+        sourceHash: 'sha256:implementation-status-profile'
+      },
+      sources: {
+        BusinessActor: {
+          Role: 'Assignment'
+        }
+      }
+    }, {
+      requireComplete: false,
+      requireCompleteTargets: false,
+      sourceMetadata: {
+        suppliedBy: 'status-audit'
+      }
+    });
+
+    const status = getArchimate4ImplementationStatus();
+
+    assert.equal(status.relationshipProfile.source, 'external');
+    assert.equal(status.relationshipProfile.hasSourceMetadata, true);
+    assert.deepEqual(status.relationshipProfile.sourceMetadata, {
+      sourceId: 'appendix-b-host-status-profile',
+      sourceUri: 'file://host-controlled/appendix-b-profile.json',
+      sourceHash: 'sha256:implementation-status-profile',
+      suppliedBy: 'status-audit'
+    });
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
+
+  const resetStatus = getArchimate4ImplementationStatus();
+
+  assert.equal(resetStatus.relationshipProfile.source, 'compatibility-fallback');
+  assert.equal(resetStatus.relationshipProfile.hasSourceMetadata, false);
+  assert.equal(resetStatus.relationshipProfile.sourceMetadata, null);
 });
 
 test('archimate 4 relationship profile loader reports invalid JSON strings clearly', () => {
