@@ -656,6 +656,50 @@ test('archimate 4 implementation status exposes C260 language structure coverage
   assert.match(plan, /Language structure coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 common domain coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const commonDomainCatalog = profile.conformance.commonDomainCoverageCatalog;
+  const commonDomainCoverage = profile.conformance.commonDomainCoverage;
+  const expectedCommonDomainIds = [
+    'active-structure-elements',
+    'role',
+    'collaboration',
+    'path',
+    'behavior-elements',
+    'service',
+    'process',
+    'function',
+    'event',
+    'composite-elements',
+    'grouping',
+    'location',
+    'summary-of-common-domain-elements'
+  ];
+
+  assert.equal(commonDomainCatalog.status, 'c260-outline-derived');
+  assert.equal(commonDomainCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(commonDomainCatalog.expectedCount, expectedCommonDomainIds.length);
+  assert.deepEqual(commonDomainCatalog.expectedIds, expectedCommonDomainIds);
+  assert.deepEqual(commonDomainCoverage.map((commonDomainItem) => commonDomainItem.id), expectedCommonDomainIds);
+  assert.equal(
+    commonDomainCoverage.every((commonDomainItem) => commonDomainItem.c260Section && commonDomainItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeCommonDomainCoverage/);
+  assert.match(languageIndex, /commonDomainCoverage: commonDomainCoverage/);
+  assert.match(languageIndex, /missingCommonDomainIds/);
+  assert.match(readme, /commonDomainCoverage\.expectedIds/);
+  assert.match(sources, /commonDomainCoverage\.actualIds/);
+  assert.match(officialSpec, /commonDomainCoverage\.missingCommonDomainIds/);
+  assert.match(plan, /Common domain coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

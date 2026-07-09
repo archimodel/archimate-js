@@ -82,6 +82,11 @@ It must expose exact C260 Chapter 3 Language Structure outline fields
 `languageStructureCoverage.extraLanguageStructureIds`) so the implementation can track language
 design, domains, aspects, top-level structure, structure/behavior concepts, abstraction, notation,
 nesting, and color/cue coverage by subsection identity.
+It must expose exact C260 Chapter 4 Common Domain outline fields
+(`commonDomainCoverage.expectedIds`, `commonDomainCoverage.actualIds`,
+`commonDomainCoverage.missingCommonDomainIds`, and `commonDomainCoverage.extraCommonDomainIds`) so
+the implementation can track Common active structure, behavior, composite, element, and summary
+coverage by subsection and element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

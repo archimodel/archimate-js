@@ -78,6 +78,11 @@
   `languageStructureCoverage.missingLanguageStructureIds`, and
   `languageStructureCoverage.extraLanguageStructureIds` so the Chapter 3 Language Structure outline
   remains visible by exact subsection identity.
+- `getArchimate4ImplementationStatus().commonDomainCoverage` reports
+  `commonDomainCoverage.expectedIds`, `commonDomainCoverage.actualIds`,
+  `commonDomainCoverage.missingCommonDomainIds`, and `commonDomainCoverage.extraCommonDomainIds`
+  so the Chapter 4 Common Domain outline remains visible by exact subsection and element-heading
+  identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

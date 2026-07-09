@@ -1495,3 +1495,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-854-c260-language-structure-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-language-structure-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 119
+
+- Goal: make C260 Chapter 4 Common Domain auditable by exact outline identity rather than only by the broad `common-domain` section id.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 4 outline from 4.1 through 4.4, including Role, Collaboration, Path, Service, Process, Function, Event, Grouping, and Location headings.
+- Red test: `project_memory/runlogs/20260709-858-c260-common-domain-coverage-red-test.txt` failed because `commonDomainCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `commonDomainCoverageCatalog` and `commonDomainCoverage` for the thirteen Chapter 4 outline headings without copying Common Domain prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().commonDomainCoverage` with expected/actual/missing/extra ids, `missingCommonDomainIds`, `extraCommonDomainIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 4 Common Domain outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-859-c260-common-domain-coverage-focused-test.txt` passed for the Common Domain coverage identity test; `project_memory/runlogs/20260709-860-c260-common-domain-coverage-status.json` shows expectedCount 13, actualCount 13, no missing Common Domain ids, no extra Common Domain ids, and complete true.
+- Verification: `npm run test:language` passed with 167 tests in `project_memory/runlogs/20260709-861-c260-common-domain-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-862-c260-common-domain-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-863-c260-common-domain-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-864-c260-common-domain-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-865-c260-common-domain-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-866-c260-common-domain-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-867-c260-common-domain-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-common-domain-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

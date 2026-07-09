@@ -62,6 +62,9 @@ Definition coverage status reports `expectedIds`, `actualIds`, `missingDefinitio
 Language structure coverage status reports `expectedIds`, `actualIds`,
 `missingLanguageStructureIds`, and `extraLanguageStructureIds` for the C260 Chapter 3 outline so
 language-structure subsections cannot drift silently.
+Common domain coverage status reports `expectedIds`, `actualIds`, `missingCommonDomainIds`, and
+`extraCommonDomainIds` for the C260 Chapter 4 outline so Common Domain subsection and element
+headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact
