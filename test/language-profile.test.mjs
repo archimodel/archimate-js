@@ -2060,6 +2060,31 @@ test('archimate 4 implementation status exposes aggregate C260 coverage integrit
   assert.match(plan, /Aggregate C260 coverage status reports/);
 });
 
+test('archimate 4 complete C260 coverage does not clear external conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const expectedOfficialBlockerIds = [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ];
+  const expectedMissingRequiredSources = [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ];
+
+  assert.equal(status.c260CoverageAggregate.complete, true);
+  assert.deepEqual(status.c260CoverageAggregate.incompleteCoverageIds, []);
+  assert.equal(status.sourceCoverage.complete, true);
+  assert.deepEqual(status.sourceCoverage.missingRequiredSources, expectedMissingRequiredSources);
+  assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+  assert.deepEqual(status.conformanceReadiness.blockers, expectedOfficialBlockerIds);
+  assert.deepEqual(status.conformanceReadiness.requiredBeforeClaimBlockerIds, expectedOfficialBlockerIds);
+  assert.deepEqual(status.conformanceReadiness.missingRequiredSources, expectedMissingRequiredSources);
+  assert.deepEqual(status.remainingGaps.officialConformanceGapIds, expectedOfficialBlockerIds);
+  assert.deepEqual(status.remainingGaps.unresolvedIds, expectedOfficialBlockerIds.concat('w262CompanionPaper'));
+});
+
 test('archimate 4 implementation status reconciles C260 PDF outline source with derived coverage', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

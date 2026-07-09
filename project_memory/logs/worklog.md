@@ -2178,3 +2178,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1420-meff4-xsd-31-baseline-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-meff4-xsd-31-baseline-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 169
+
+- Goal: strengthen the aggregate C260 coverage boundary so complete C260 implementation coverage cannot be mistaken for official ArchiMate 4 conformance readiness.
+- Observation: direct status output shows `c260CoverageAggregate.complete` is true, `sourceCoverage.complete` is true, and no aggregate coverage ids are incomplete, while `conformanceReadiness.officialConformanceClaimable` remains false and the three official external blockers remain unresolved.
+- Implemented: `test/language-profile.test.mjs` now verifies complete aggregate C260 coverage and complete source-ledger identity do not clear `appendixBRelationshipMatrix`, `meff4Xsd`, or `appendixAArtworkRights` from `missingRequiredSources`, `conformanceReadiness.blockers`, `requiredBeforeClaimBlockerIds`, or `remainingGaps.officialConformanceGapIds`.
+- Implemented: the guard also keeps `w262CompanionPaper` in `remainingGaps.unresolvedIds` as a companion gap after all C260 coverage summaries are complete.
+- Focused verification: `project_memory/runlogs/20260709-1422-c260-coverage-external-blocker-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 212 tests in `project_memory/runlogs/20260709-1423-c260-coverage-external-blocker-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1424-c260-coverage-external-blocker-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1425-c260-coverage-external-blocker-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1426-c260-coverage-external-blocker-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-coverage-external-blocker-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
