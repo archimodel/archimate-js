@@ -244,6 +244,9 @@ recorded source-extraction runlog.
 The status must expose implementation completion scan fields
 (`implementationCompletion.topKeys`, `implementationCompletion.completeSummaryCount`,
 `implementationCompletion.incompleteSummaryCount`, and `implementationCompletion.incompleteSummaryPaths`).
+The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
+status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
+preserving the official-conformance blockers for missing external sources and rights.
 The current implementation-status completion API scan is recorded in
 `project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
 status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage status-key

@@ -44,6 +44,8 @@ Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 imp
 
 For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
 
+Run `node scripts/audit_archimate4_completion.mjs --out project_memory/runlogs/<file>.json` to map the current status API to the plan's M0-M5 milestones and to verify that referenced runlogs resolve. The audit is expected to pass while still reporting the official Appendix B, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 companion-source gaps.
+
 The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
 
 The W262 source-coverage entry records the latest scripted local Downloads/attachments search, local ArchiMate PDF inventory, and publication-page status so hosts can distinguish a missing companion paper from local C260 specification or license files.

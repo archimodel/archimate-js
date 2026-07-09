@@ -251,6 +251,10 @@
   `implementationCompletion.topKeys`, `implementationCompletion.completeSummaryCount`,
   `implementationCompletion.incompleteSummaryCount`, and
   `implementationCompletion.incompleteSummaryPaths` so the API exposes its own completion scan.
+- `scripts/audit_archimate4_completion.mjs` maps the current
+  `getArchimate4ImplementationStatus()` output to the plan's M0-M5 milestones, verifies referenced
+  runlog paths resolve, and leaves official conformance unclaimable while the external source and
+  rights blockers remain present.
 - The current implementation-status completion API scan is recorded in
   `project_memory/runlogs/20260709-1008-status-completion-api-scan.json`; it records 47 top-level
   status keys, 38 `complete` summaries, no incomplete summaries, and the section coverage

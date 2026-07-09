@@ -2450,3 +2450,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1022-external-source-latest-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-external-source-latest-recheck-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 190
+
+- Goal: add a reusable completion audit that maps `getArchimate4ImplementationStatus()` to the plan's M0-M5 milestones, so future checks can prove implementation coverage without manually reading every status field.
+- Observation: the current status API already exposes the needed evidence for M0 source gate, M1 runtime boundary, M2 XML boundary, M3 semantics, M4 modeling UX, and M5 release readiness, but there was no single CLI audit artifact tying those fields back to the plan milestones.
+- Implemented: `scripts/audit_archimate4_completion.mjs` now evaluates M0-M5, verifies status runlog references resolve, emits JSON, and exits non-zero on any missing milestone check.
+- Implemented: `test/language-profile.test.mjs` now executes the audit script and verifies six complete milestones, zero failed milestone checks, zero missing runlog references, and the expected external blockers.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the completion audit script.
+- Audit run: `project_memory/runlogs/20260709-1030-archimate4-completion-audit.json` reports `complete: true`, six complete milestones, 48 resolved runlog references, and zero failures.
+- Focused verification: completion-audit focused test passed in `project_memory/runlogs/20260709-1031-archimate4-completion-audit-focused-test.txt`.
+- Verification: changed-file ESLint passed in `project_memory/runlogs/20260709-1032-archimate4-completion-audit-eslint-changed.txt`; `npm run test:language` passed with 224 tests in `project_memory/runlogs/20260709-1033-archimate4-completion-audit-test-language.txt`; JSON parse passed in `project_memory/runlogs/20260709-1034-archimate4-completion-audit-json-check.txt`; final audit-script run passed in `project_memory/runlogs/20260709-1035-archimate4-completion-audit-script-run.txt`; final changed-file ESLint passed in `project_memory/runlogs/20260709-1036-archimate4-completion-audit-final-eslint-changed.txt`; final `git diff --check` passed in `project_memory/runlogs/20260709-1037-archimate4-completion-audit-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1038-archimate4-completion-audit-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-archimate4-completion-audit-script-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: linked C260 section coverage entries to implementation status API keys so chapter and appendix coverage cannot drift from exposed status summaries.
 * `DOCS`: refreshed the implementation-status completion scan after adding section status-key guards.
 * `DOCS`: added a scripted external-source recheck for W262 and MEFF 4.0 XSD evidence.
+* `DOCS`: added a reusable ArchiMate 4 completion audit script for M0-M5 milestone verification.
 
 ## 0.0.4
 

@@ -3522,6 +3522,52 @@ test('archimate 4 implementation plan records current execution boundary', async
   assert.match(plan, /Exact Appendix A vector artwork redistribution rights remain unconfirmed/);
 });
 
+test('archimate 4 completion audit script maps status API to plan milestones', async () => {
+  const { stdout } = await execFileAsync(
+    process.execPath,
+    [
+      'scripts/audit_archimate4_completion.mjs',
+      '--checked-at',
+      '2026-07-09T23:05:00+09:00'
+    ],
+    {
+      cwd: new URL('..', import.meta.url)
+    }
+  );
+  const audit = JSON.parse(stdout);
+
+  assert.equal(audit.complete, true);
+  assert.equal(audit.milestoneCount, 6);
+  assert.equal(audit.completeMilestoneCount, 6);
+  assert.deepEqual(audit.milestones.map((milestone) => milestone.id), [
+    'M0 Source Gate',
+    'M1 Runtime Boundary',
+    'M2 XML Boundary',
+    'M3 Semantics',
+    'M4 Modeling UX',
+    'M5 Release Readiness'
+  ]);
+  assert.deepEqual(
+    audit.milestones.flatMap((milestone) => milestone.failedCheckIds),
+    []
+  );
+  assert.equal(audit.externalBlockers.officialConformanceClaimable, false);
+  assert.deepEqual(audit.externalBlockers.officialBlockerIds, [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ]);
+  assert.deepEqual(audit.externalBlockers.missingRequiredSources, [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.deepEqual(audit.externalBlockers.missingCompanionSources, [ 'w262' ]);
+  assert.equal(audit.evidence.incompleteSummaryCount, 0);
+  assert.equal(audit.evidence.missingRunlogReferenceCount, 0);
+  assert.equal(audit.failureCount, 0);
+});
+
 test('archimate 4 conformance requirements are tracked per C260 shall and may clauses', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

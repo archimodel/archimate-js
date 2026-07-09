@@ -25,6 +25,8 @@ C260 and ArchiMate 4 license PDFs and confirms no W262 candidate among those loc
 Local ArchiMate 4 Non-Commercial License boundary evidence was recorded on 2026-07-09T21:25:00+09:00
 in `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`; it is sanitized and
 does not clear the Appendix B redistributable-profile blocker or Appendix A exact-artwork-rights blocker.
+The current M0-M5 completion audit is executable via `scripts/audit_archimate4_completion.mjs`; the
+latest run is recorded in `project_memory/runlogs/20260709-1030-archimate4-completion-audit.json`.
 
 Implemented and verified on the current branch:
 
