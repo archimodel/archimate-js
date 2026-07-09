@@ -1,0 +1,6 @@
+source=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+scope=C260 Chapter 13 viewpoint mechanism token presence only; no normative prose copied
+pdf_page=128; tokens=stakeholder,concern,purpose,content
+pdf_page=129; tokens=stakeholder,concern,purpose,content
+pdf_page=130; tokens=stakeholder,concern,purpose,content,Designing,Deciding,Informing,Details,Coherence,Overview

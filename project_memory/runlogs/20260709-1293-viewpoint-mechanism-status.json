@@ -1,0 +1,34 @@
+{
+  "status": "implemented",
+  "sourceRunlogPaths": [
+    "project_memory/runlogs/20260709-1284-c260-viewpoint-mechanism-feature-scan.txt",
+    "project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt"
+  ],
+  "expectedFeatureIds": [
+    "views-viewpoints-container",
+    "view-viewpoint-attribute",
+    "view-viewpoint-reference",
+    "viewpoint-concern-list",
+    "viewpoint-stakeholder-list",
+    "viewpoint-purpose",
+    "viewpoint-content",
+    "viewpoint-allowed-element-types",
+    "viewpoint-allowed-relationship-types",
+    "viewpoint-modeling-notes"
+  ],
+  "actualFeatureIds": [
+    "views-viewpoints-container",
+    "view-viewpoint-attribute",
+    "view-viewpoint-reference",
+    "viewpoint-concern-list",
+    "viewpoint-stakeholder-list",
+    "viewpoint-purpose",
+    "viewpoint-content",
+    "viewpoint-allowed-element-types",
+    "viewpoint-allowed-relationship-types",
+    "viewpoint-modeling-notes"
+  ],
+  "missingFeatureIds": [],
+  "extraFeatureIds": [],
+  "complete": true
+}

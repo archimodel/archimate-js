@@ -448,6 +448,11 @@
   `viewpointClassification.missingContentNames`, tying the supported C260 viewpoint purpose/content
   classification tokens to
   `project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt`.
+- `getArchimate4ImplementationStatus().viewpointMechanism` reports
+  `viewpointMechanism.expectedFeatureIds`, `viewpointMechanism.actualFeatureIds`,
+  `viewpointMechanism.missingFeatureIds`, and `viewpointMechanism.extraFeatureIds`, deriving actual
+  feature coverage from the ArchiMate 4 moddle descriptor and tying C260 token evidence to
+  `project_memory/runlogs/20260709-1284-c260-viewpoint-mechanism-feature-scan.txt`.
 - Profile attribute values can also be written to model `Properties` through
   `setProfileAttributePropertyValue()` and read through `getProfileAttributePropertyValue()`. The
   helper creates reusable `PropertyDefinition` entries named
