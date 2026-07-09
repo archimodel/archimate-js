@@ -2657,6 +2657,40 @@ test('archimate 4 implementation status exposes remaining gap identity', async (
   assert.match(officialSpec, /remainingGaps\.missingIds/);
 });
 
+test('archimate 4 external blocker gaps map to source coverage and readiness', () => {
+  const status = getArchimate4ImplementationStatus();
+  const sourceCoverage = status.sourceCoverage.items;
+  const expectedBlockerSourceIds = {
+    officialAppendixBRelationshipMatrix: 'appendixBRelationshipMatrix',
+    officialMeff4Xsd: 'meff4Xsd',
+    exactAppendixAArtworkRights: 'appendixAArtworkRights'
+  };
+  const gapsById = new Map(status.remainingGaps.items.map((gap) => [ gap.id, gap ]));
+
+  assert.deepEqual(status.remainingGaps.officialConformanceGapIds, status.conformanceReadiness.blockers);
+  assert.deepEqual(status.externalBlockerCatalog.actualIds, status.conformanceReadiness.blockers);
+  assert.deepEqual(status.externalBlockerCatalog.sourceCoverageIds, status.conformanceReadiness.blockers);
+  assert.deepEqual(status.conformanceReadiness.missingRequiredSources, status.sourceCoverage.missingRequiredSources);
+
+  for (const blockerId of status.conformanceReadiness.blockers) {
+    const sourceId = expectedBlockerSourceIds[blockerId];
+    const gap = gapsById.get(blockerId);
+    const source = sourceCoverage[sourceId];
+
+    assert.equal(gap.sourceId, sourceId);
+    assert.equal(gap.officialConformanceBlocker, true);
+    assert.equal(source.required, true);
+    assert.equal(source.localSourcePresent, false);
+    assert.equal(source.externalBlocker, blockerId);
+  }
+
+  assert.deepEqual(status.remainingGaps.companionGapSourceIds, status.sourceCoverage.missingCompanionSources);
+  assert.deepEqual(status.remainingGaps.companionGapSourceIds, [ 'w262' ]);
+  assert.equal(gapsById.get('w262CompanionPaper').sourceId, 'w262');
+  assert.equal(sourceCoverage.w262.companion, true);
+  assert.equal(sourceCoverage.w262.localSourcePresent, false);
+});
+
 test('archimate 4 implementation status exposes C260 section coverage identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

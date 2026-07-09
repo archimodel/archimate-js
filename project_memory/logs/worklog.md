@@ -2087,3 +2087,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1366-appendix-a-runlog-alignment-staged-diff-check.txt` first failed on generated runlog whitespace; `project_memory/runlogs/20260709-1370-appendix-a-runlog-alignment-final-staged-diff-check.txt` passed after trimming the generated runlogs.
 - Audit: `project_memory/audit/reports/20260709-appendix-a-runlog-alignment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 161
+
+- Goal: strengthen official conformance blocker tracking so remaining gaps, source coverage, external blocker catalog, and conformance readiness cannot drift apart.
+- Implemented: `test/language-profile.test.mjs` now verifies that `remainingGaps.officialConformanceGapIds`, `conformanceReadiness.blockers`, `externalBlockerCatalog.actualIds`, and `externalBlockerCatalog.sourceCoverageIds` match.
+- Implemented: the guard checks each official blocker maps to a missing required `sourceCoverage.items` entry with the matching `externalBlocker`, and keeps W262 as a companion-source gap rather than an official blocker.
+- Focused verification: `project_memory/runlogs/20260709-1371-external-blocker-gap-source-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 204 tests in `project_memory/runlogs/20260709-1372-external-blocker-gap-source-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1373-external-blocker-gap-source-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1374-external-blocker-gap-source-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1375-external-blocker-gap-source-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1376-external-blocker-gap-source-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1377-external-blocker-gap-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-external-blocker-gap-source-alignment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
