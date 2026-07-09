@@ -2558,6 +2558,25 @@ test('archimate 4 source coverage counts match local and external classification
   assert.equal(missingCompanionSources.every((sourceId) => !sourceCoverage.items[sourceId].required), true);
 });
 
+test('archimate 4 required and companion source catalogs match source item flags', () => {
+  const status = getArchimate4ImplementationStatus();
+  const sourceCoverage = status.sourceCoverage;
+  const sourceEntries = Object.entries(sourceCoverage.items);
+  const requiredSourceIds = sourceEntries.filter(([, source]) => source.required).map(([sourceId]) => sourceId);
+  const companionSourceIds = sourceEntries.filter(([, source]) => source.companion).map(([sourceId]) => sourceId);
+  const requiredSourceIdSet = new Set(sourceCoverage.requiredSourceIds);
+  const companionSourceIdSet = new Set(sourceCoverage.companionSourceIds);
+
+  assert.deepEqual(sourceCoverage.requiredSourceIds, requiredSourceIds);
+  assert.deepEqual(sourceCoverage.companionSourceIds, companionSourceIds);
+  assert.equal(sourceCoverage.requiredSourceIds.every((sourceId) => sourceCoverage.expectedSourceIds.includes(sourceId)), true);
+  assert.equal(sourceCoverage.companionSourceIds.every((sourceId) => sourceCoverage.expectedSourceIds.includes(sourceId)), true);
+  assert.deepEqual(sourceCoverage.requiredSourceIds.filter((sourceId) => companionSourceIdSet.has(sourceId)), []);
+  assert.deepEqual(sourceCoverage.companionSourceIds.filter((sourceId) => requiredSourceIdSet.has(sourceId)), []);
+  assert.equal(sourceCoverage.missingRequiredSources.every((sourceId) => requiredSourceIdSet.has(sourceId)), true);
+  assert.equal(sourceCoverage.missingCompanionSources.every((sourceId) => companionSourceIdSet.has(sourceId)), true);
+});
+
 test('archimate 4 source coverage status agrees with external source runlog evidence', async () => {
   const status = getArchimate4ImplementationStatus();
   const sourceCoverage = status.sourceCoverage.items;

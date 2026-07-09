@@ -2214,3 +2214,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1438-source-coverage-classification-counts-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-source-coverage-classification-counts-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 172
+
+- Goal: strengthen the source coverage catalog boundary so `requiredSourceIds` and `companionSourceIds` cannot drift from source item metadata.
+- Observation: direct status output shows required source ids `appendixBRelationshipMatrix`, `meff4Xsd`, and `appendixAArtworkRights`; companion source ids contain only `w262`.
+- Implemented: `test/language-profile.test.mjs` now derives required and companion source ids from `getArchimate4ImplementationStatus().sourceCoverage.items` and compares them to `sourceCoverage.requiredSourceIds` and `sourceCoverage.companionSourceIds`.
+- Implemented: the guard verifies required and companion catalogs do not overlap, and missing required/companion source lists remain subsets of their matching catalogs.
+- Focused verification: `project_memory/runlogs/20260709-1440-source-coverage-required-companion-catalog-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 215 tests in `project_memory/runlogs/20260709-1441-source-coverage-required-companion-catalog-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1442-source-coverage-required-companion-catalog-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1443-source-coverage-required-companion-catalog-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1444-source-coverage-required-companion-catalog-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-source-coverage-required-companion-catalog-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
