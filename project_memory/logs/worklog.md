@@ -2202,3 +2202,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1432-required-source-readiness-action-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-required-source-readiness-action-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 171
+
+- Goal: strengthen the source coverage classification boundary so local/external counts and missing-source lists cannot drift from `sourceCoverage.items`.
+- Observation: direct status output shows local sources `c260` and `launchTranscript`, external sources `w262`, `appendixBRelationshipMatrix`, `meff4Xsd`, and `appendixAArtworkRights`, with the three required external blockers separated from the W262 companion gap.
+- Implemented: `test/language-profile.test.mjs` now derives local, external, missing required, and missing companion source ids from `getArchimate4ImplementationStatus().sourceCoverage.items` and compares them to the reported counts and lists.
+- Implemented: the guard verifies every missing required source has an external blocker, and every missing companion source stays outside required-source status.
+- Focused verification: `project_memory/runlogs/20260709-1434-source-coverage-classification-counts-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 214 tests in `project_memory/runlogs/20260709-1435-source-coverage-classification-counts-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1436-source-coverage-classification-counts-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1437-source-coverage-classification-counts-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1438-source-coverage-classification-counts-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-source-coverage-classification-counts-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

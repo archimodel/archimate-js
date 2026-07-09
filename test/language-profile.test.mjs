@@ -2527,6 +2527,37 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 
+test('archimate 4 source coverage counts match local and external classifications', () => {
+  const status = getArchimate4ImplementationStatus();
+  const sourceCoverage = status.sourceCoverage;
+  const sourceEntries = Object.entries(sourceCoverage.items);
+  const localSourceIds = sourceEntries.filter(([, source]) => source.localSourcePresent).map(([sourceId]) => sourceId);
+  const externalSourceIds = sourceEntries.filter(([, source]) => !source.localSourcePresent).map(([sourceId]) => sourceId);
+  const missingRequiredSources = sourceEntries.filter(([, source]) => {
+    return source.required && !source.localSourcePresent;
+  }).map(([sourceId]) => sourceId);
+  const missingCompanionSources = sourceEntries.filter(([, source]) => {
+    return source.companion && !source.localSourcePresent;
+  }).map(([sourceId]) => sourceId);
+
+  assert.equal(sourceCoverage.expectedCount, sourceCoverage.expectedSourceIds.length);
+  assert.equal(sourceCoverage.total, sourceCoverage.actualSourceIds.length);
+  assert.deepEqual(sourceCoverage.actualSourceIds, sourceCoverage.expectedSourceIds);
+  assert.deepEqual(localSourceIds, [ 'c260', 'launchTranscript' ]);
+  assert.deepEqual(externalSourceIds, [
+    'w262',
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.equal(sourceCoverage.localSourceCount, localSourceIds.length);
+  assert.equal(sourceCoverage.externalSourceCount, externalSourceIds.length);
+  assert.deepEqual(sourceCoverage.missingRequiredSources, missingRequiredSources);
+  assert.deepEqual(sourceCoverage.missingCompanionSources, missingCompanionSources);
+  assert.equal(missingRequiredSources.every((sourceId) => !!sourceCoverage.items[sourceId].externalBlocker), true);
+  assert.equal(missingCompanionSources.every((sourceId) => !sourceCoverage.items[sourceId].required), true);
+});
+
 test('archimate 4 source coverage status agrees with external source runlog evidence', async () => {
   const status = getArchimate4ImplementationStatus();
   const sourceCoverage = status.sourceCoverage.items;
