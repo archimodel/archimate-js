@@ -104,6 +104,11 @@
   `businessDomainCoverage.missingBusinessDomainIds`, and
   `businessDomainCoverage.extraBusinessDomainIds` so the Chapter 8 Business Domain outline remains
   visible by exact subsection and element-heading identity.
+- `getArchimate4ImplementationStatus().applicationDomainCoverage` reports
+  `applicationDomainCoverage.expectedIds`, `applicationDomainCoverage.actualIds`,
+  `applicationDomainCoverage.missingApplicationDomainIds`, and
+  `applicationDomainCoverage.extraApplicationDomainIds` so the Chapter 9 Application Domain outline
+  remains visible by exact subsection and element-heading identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

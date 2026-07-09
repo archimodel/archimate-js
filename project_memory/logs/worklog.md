@@ -1565,3 +1565,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-919-c260-business-domain-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-business-domain-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 124
+
+- Goal: make C260 Chapter 9 Application Domain auditable by exact outline identity rather than only by broad Application element support.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 9 outline from 9.1 through 9.4, including Application Component, Application Interface, Data Object, examples, and summary headings.
+- Red test: `project_memory/runlogs/20260709-923-c260-application-domain-coverage-red-test.txt` failed because `applicationDomainCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `applicationDomainCoverageCatalog` and `applicationDomainCoverage` for the nine Chapter 9 outline headings without copying Application Domain prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().applicationDomainCoverage` with expected/actual/missing/extra ids, `missingApplicationDomainIds`, `extraApplicationDomainIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 9 Application Domain outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-924-c260-application-domain-coverage-focused-test.txt` passed for the Application Domain coverage identity test; `project_memory/runlogs/20260709-925-c260-application-domain-coverage-status.json` shows expectedCount 9, actualCount 9, no missing Application Domain ids, no extra Application Domain ids, and complete true.
+- Verification: `npm run test:language` passed with 172 tests in `project_memory/runlogs/20260709-926-c260-application-domain-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-927-c260-application-domain-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-928-c260-application-domain-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-929-c260-application-domain-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-930-c260-application-domain-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-931-c260-application-domain-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-932-c260-application-domain-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-application-domain-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

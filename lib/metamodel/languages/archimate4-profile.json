@@ -589,6 +589,33 @@
       { "id": "product-example", "c260Section": "8.4.2", "heading": "Example", "status": "tracked" },
       { "id": "summary-of-business-domain-elements", "c260Section": "8.5", "heading": "Summary of Business Domain Elements", "status": "tracked" }
     ],
+    "applicationDomainCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 9,
+      "expectedIds": [
+        "application-structure-metamodel",
+        "active-structure-elements",
+        "application-component",
+        "application-interface",
+        "active-structure-example",
+        "passive-structure-elements",
+        "data-object",
+        "passive-structure-example",
+        "summary-of-application-domain-elements"
+      ]
+    },
+    "applicationDomainCoverage": [
+      { "id": "application-structure-metamodel", "c260Section": "9.1", "heading": "Application Structure Metamodel", "status": "tracked" },
+      { "id": "active-structure-elements", "c260Section": "9.2", "heading": "Active Structure Elements", "status": "tracked" },
+      { "id": "application-component", "c260Section": "9.2.1", "heading": "Application Component", "status": "tracked" },
+      { "id": "application-interface", "c260Section": "9.2.2", "heading": "Application Interface", "status": "tracked" },
+      { "id": "active-structure-example", "c260Section": "9.2.3", "heading": "Example", "status": "tracked" },
+      { "id": "passive-structure-elements", "c260Section": "9.3", "heading": "Passive Structure Elements", "status": "tracked" },
+      { "id": "data-object", "c260Section": "9.3.1", "heading": "Data Object", "status": "tracked" },
+      { "id": "passive-structure-example", "c260Section": "9.3.2", "heading": "Example", "status": "tracked" },
+      { "id": "summary-of-application-domain-elements", "c260Section": "9.4", "heading": "Summary of Application Domain Elements", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

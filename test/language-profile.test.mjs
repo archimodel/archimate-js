@@ -894,6 +894,49 @@ test('archimate 4 implementation status exposes C260 business domain coverage id
   assert.match(plan, /Business domain coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 application domain coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const applicationDomainCatalog = profile.conformance.applicationDomainCoverageCatalog;
+  const applicationDomainCoverage = profile.conformance.applicationDomainCoverage;
+  const expectedApplicationDomainIds = [
+    'application-structure-metamodel',
+    'active-structure-elements',
+    'application-component',
+    'application-interface',
+    'active-structure-example',
+    'passive-structure-elements',
+    'data-object',
+    'passive-structure-example',
+    'summary-of-application-domain-elements'
+  ];
+
+  assert.equal(applicationDomainCatalog.status, 'c260-outline-derived');
+  assert.equal(applicationDomainCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(applicationDomainCatalog.expectedCount, expectedApplicationDomainIds.length);
+  assert.deepEqual(applicationDomainCatalog.expectedIds, expectedApplicationDomainIds);
+  assert.deepEqual(
+    applicationDomainCoverage.map((applicationDomainItem) => applicationDomainItem.id),
+    expectedApplicationDomainIds
+  );
+  assert.equal(
+    applicationDomainCoverage.every((applicationDomainItem) => applicationDomainItem.c260Section && applicationDomainItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeApplicationDomainCoverage/);
+  assert.match(languageIndex, /applicationDomainCoverage: applicationDomainCoverage/);
+  assert.match(languageIndex, /missingApplicationDomainIds/);
+  assert.match(readme, /applicationDomainCoverage\.expectedIds/);
+  assert.match(sources, /applicationDomainCoverage\.actualIds/);
+  assert.match(officialSpec, /applicationDomainCoverage\.missingApplicationDomainIds/);
+  assert.match(plan, /Application domain coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
