@@ -251,8 +251,8 @@ diagnostics cover catalog membership, retired concepts, relationship endpoints, 
 junction consistency, view viewpoint references, view node element references, view connection
 relationship references, viewpoint definitions, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
-organization `identifierRef` references, `Property.propertyDefinitionRef` references, and profile
-attribute property values.
+organization `identifierRef` references, reusable `PropertyDefinition` structure,
+`Property.propertyDefinitionRef` references, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
@@ -261,7 +261,7 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260710-0003-status-completion-api-scan.json`; it records 49 top-level
+`project_memory/runlogs/20260710-0023-status-completion-api-scan.json`; it records 49 top-level
 status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
 guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
@@ -327,9 +327,11 @@ Supported customization data:
   a reusable `PropertyDefinition` named `archimate-js:profileAttribute:<concept>:<name>` and a
   per-concept `Property` value. `getProfileAttributePropertyValue()` reads the stored string value back
   through the declared profile attribute type.
-- `validateArchimate4Model()` resolves `Property.propertyDefinitionRef` id references against model
-  `PropertyDefinition` entries, reports missing, malformed, or unknown property-definition references,
-  and applies profile attribute value validation after the reference is resolved.
+- `validateArchimate4Model()` checks model-level `PropertyDefinition` list/entry shape and optional
+  definition `name` / `type` string fields, resolves `Property.propertyDefinitionRef` id references
+  against model `PropertyDefinition` entries, reports missing, malformed, or unknown
+  property-definition references, and applies profile attribute value validation after the reference
+  is resolved.
 - Specialized element or connector metadata. New custom concepts must declare `specializes` and point
   to an existing standard concept or connector.
 - Specialized relationship metadata. New custom relationship objects may declare `specializes` and
@@ -802,8 +804,8 @@ In particular:
   concept, relationship profile, multiplicity, junction consistency, view viewpoint-reference, view
   node element-reference, view connection relationship-reference, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
-  modeling-note structure, organization identifier-reference, property-definition reference, or
-  profile attribute property coverage.
+  modeling-note structure, organization identifier-reference, property-definition structure and
+  reference, or profile attribute property coverage.
 
 The relationship rules remain a fallback:
 

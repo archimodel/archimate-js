@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: exposed the C260 Appendix C example viewpoint headings as an informative reference catalog.
 * `CORE`: exposed the Appendix C informative catalog through `getArchimate4ImplementationStatus().exampleViewpointCatalog`.
 * `CORE`: added model-level ArchiMate validation diagnostics for 3.x/4.0 profile mismatches, retired concepts, relationship rules, multiplicity, and junction consistency.
-* `CORE`: extended model-level ArchiMate 4 diagnostics to validate view viewpoint references, view node and connection concept references, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition references, viewpoint definitions, and profile attribute property values.
+* `CORE`: extended model-level ArchiMate 4 diagnostics to validate view viewpoint references, view node and connection concept references, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, viewpoint definitions, and profile attribute property values.
 * `CORE`: classified C260 Appendix D standards and guidance headings as reference-only coverage outside ArchiMate 4 source gaps and conformance blockers.
 * `CORE`: classified C260 Appendix E version-change headings as historical references and the ArchiMate 4 migration source boundary.
 * `CORE`: classified C260 Appendix F acronym tokens as vocabulary-only coverage outside ArchiMate 4 section coverage, source gaps, and conformance blockers.

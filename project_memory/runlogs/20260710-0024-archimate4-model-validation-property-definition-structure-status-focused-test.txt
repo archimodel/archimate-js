@@ -1,0 +1,11 @@
+✔ archimate 4 implementation status exposes model validation coverage (13.513ms)
+✔ archimate 4 implementation status completion scan stays parseable (15.6579ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.4188
+exitCode=0

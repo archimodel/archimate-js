@@ -1,0 +1,32 @@
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (1.6977ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.2707ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (1.1733ms)
+✔ archimate 4 model validation can call an active relationship validator (0.248ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.6029ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.3113ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.9856ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.3434ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.2838ms)
+✔ archimate 4 model validation reports invalid view element references (0.7567ms)
+✔ archimate 4 model validation accepts valid view element references (0.2362ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.8334ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.258ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (1.8814ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.2254ms)
+✔ archimate 4 model validation reports invalid organization identifier references (0.3622ms)
+✔ archimate 4 model validation accepts organization references to model concepts (0.2001ms)
+✔ archimate 4 model validation reports invalid property definition lists (0.1195ms)
+✔ archimate 4 model validation reports invalid property definition entries (0.2469ms)
+✔ archimate 4 model validation reports invalid property definition references (1.4204ms)
+✔ archimate 4 model validation accepts property definition references by id (0.6964ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (0.687ms)
+✔ archimate 4 model validation is exported from the package root (11.592ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.2015
+exitCode=0

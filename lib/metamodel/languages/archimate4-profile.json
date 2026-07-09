@@ -92,6 +92,7 @@
         "viewpoint-stakeholder-concern-structure",
         "viewpoint-modeling-note-structure",
         "organization-identifier-reference",
+        "property-definition-structure",
         "property-definition-reference",
         "profile-attribute-properties",
         "profile-attribute-values"

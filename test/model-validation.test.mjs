@@ -871,6 +871,47 @@ test('archimate 4 model validation accepts organization references to model conc
   assert.deepEqual(result.diagnostics, []);
 });
 
+test('archimate 4 model validation reports invalid property definition lists', () => {
+  const result = validateArchimate4Model({
+    propertyDefinitionsNode: {
+      propertyDefinitions: 'not-an-array'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const diagnostic = findDiagnostic(result, 'invalid-property-definition-list');
+
+  assert.equal(result.valid, false);
+  assert.equal(diagnostic.propertyDefinitionsNodePresent, true);
+});
+
+test('archimate 4 model validation reports invalid property definition entries', () => {
+  const result = validateArchimate4Model({
+    propertyDefinitionsNode: {
+      propertyDefinitions: [
+        null,
+        {
+          id: 42,
+          name: false,
+          type: []
+        },
+        {
+          name: 'missing-id'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-property-definition-entry'), true);
+  assert.equal(codes.includes('invalid-property-definition-id'), true);
+  assert.equal(codes.includes('invalid-property-definition-name'), true);
+  assert.equal(codes.includes('invalid-property-definition-type'), true);
+});
+
 test('archimate 4 model validation reports invalid property definition references', () => {
   const result = validateArchimate4Model({
     propertyDefinitionsNode: {

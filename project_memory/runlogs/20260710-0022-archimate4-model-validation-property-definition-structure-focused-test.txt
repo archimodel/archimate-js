@@ -1,0 +1,11 @@
+✔ archimate 4 model validation reports invalid property definition lists (1.5062ms)
+✔ archimate 4 model validation reports invalid property definition entries (0.2955ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.889
+exitCode=0
