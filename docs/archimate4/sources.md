@@ -68,6 +68,14 @@
   `introductionCoverage.missingIntroductionIds`, and
   `introductionCoverage.extraIntroductionIds` so the Chapter 1 Introduction/Conformance outline
   remains visible by exact subsection identity.
+- `getArchimate4ImplementationStatus().introductionCoverage` also reports
+  `introductionCoverage.requirementSourceIds`, `introductionCoverage.referenceOnlyIds`,
+  `introductionCoverage.missingRequirementSourceIds`, and
+  `introductionCoverage.missingReferenceOnlyIds` so Chapter 1 Conformance remains the requirement
+  source while Objective, Overview, Normative References, Terminology, and Future Directions remain
+  reference-only status items outside source gaps, remaining gaps, and official conformance blockers.
+  The Chapter 1 outline was rechecked from the local C260 PDF in
+  `project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json`.
 - `getArchimate4ImplementationStatus().definitionCoverage` reports
   `definitionCoverage.expectedIds`, `definitionCoverage.actualIds`,
   `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the

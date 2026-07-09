@@ -63,6 +63,12 @@ silently.
 Introduction coverage status reports `expectedIds`, `actualIds`, `missingIntroductionIds`, and
 `extraIntroductionIds` for the C260 Chapter 1 outline so Introduction/Conformance subsections cannot
 drift silently.
+It also reports `introductionCoverage.requirementSourceIds`,
+`introductionCoverage.referenceOnlyIds`, `introductionCoverage.missingRequirementSourceIds`, and
+`introductionCoverage.missingReferenceOnlyIds` so only the Conformance subsection is treated as the
+Chapter 1 requirement source while Objective, Overview, Normative References, Terminology, and Future
+Directions remain reference-only status items outside source gaps, remaining gaps, and official
+conformance blockers.
 Definition coverage status reports `expectedIds`, `actualIds`, `missingDefinitionIds`, and
 `extraDefinitionIds` for the C260 Chapter 2 vocabulary without copying definition prose.
 Language structure coverage status reports `expectedIds`, `actualIds`,

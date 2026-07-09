@@ -1,0 +1,232 @@
+{
+  "checkedAt": "2026-07-09T10:21:41.335Z",
+  "version": "4.0",
+  "standard": "ArchiMate 4 Specification C260",
+  "experimental": true,
+  "elementCatalog": {
+    "status": "implemented",
+    "expectedCount": 42,
+    "actualCount": 42,
+    "missingTypes": [],
+    "extraTypes": []
+  },
+  "relationshipConnectors": {
+    "status": "implemented-experimental-exchange",
+    "expectedTypes": [
+      "AndJunction",
+      "OrJunction"
+    ],
+    "missingTypes": [],
+    "extraTypes": []
+  },
+  "c260CoverageAggregate": {
+    "status": "c260-coverage-aggregate-derived",
+    "expectedCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "actualCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "missingCoverageIds": [],
+    "extraCoverageIds": [],
+    "incompleteCoverageIds": [],
+    "expectedCoverageCount": 22,
+    "actualCoverageCount": 22,
+    "expectedItemCount": 284,
+    "actualItemCount": 284,
+    "qualifiedItemCount": 284,
+    "qualifiedDuplicateCount": 0,
+    "qualifiedDuplicateIds": [],
+    "uniqueRawItemCount": 265,
+    "rawDuplicateIds": [
+      "conformance",
+      "active-structure-elements",
+      "behavior-elements",
+      "relationships-with-other-domains",
+      "passive-structure-elements",
+      "composite-elements",
+      "active-structure-example",
+      "passive-structure-example",
+      "viewpoint-mechanism",
+      "relationships-and-junctions",
+      "bmm",
+      "bpmn",
+      "uml"
+    ],
+    "complete": true
+  },
+  "conformanceReadiness": {
+    "officialConformanceClaimable": false,
+    "blockers": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingRequiredSources": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingCompanionSources": [
+      "w262"
+    ]
+  },
+  "remainingGaps": {
+    "status": "external-source-dependent",
+    "expectedCount": 4,
+    "expectedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "items": [
+      {
+        "id": "officialAppendixBRelationshipMatrix",
+        "status": "external-profile-required",
+        "sourceId": "appendixBRelationshipMatrix",
+        "requirementId": "appendix-b-relationships",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "officialMeff4Xsd",
+        "status": "external-source-required",
+        "sourceId": "meff4Xsd",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "exactAppendixAArtworkRights",
+        "status": "external-rights-required",
+        "sourceId": "appendixAArtworkRights",
+        "requirementId": "standard-iconography",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "w262CompanionPaper",
+        "status": "external-download-required",
+        "sourceId": "w262",
+        "companion": true,
+        "officialConformanceBlocker": false
+      }
+    ],
+    "actualIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "unresolvedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "officialConformanceGapIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingOfficialConformanceGapIds": [],
+    "extraOfficialConformanceGapIds": [],
+    "companionGapSourceIds": [
+      "w262"
+    ],
+    "missingCompanionGapSourceIds": [],
+    "extraCompanionGapSourceIds": [],
+    "complete": true
+  },
+  "exchangeFormat": {
+    "status": "experimental",
+    "officialXsdRequired": true,
+    "officialXsdDirectory": "https://www.opengroup.org/xsd/archimate/",
+    "internalRoundTripTested": true,
+    "internalRoundTripRunlogPath": "project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt",
+    "officialConformanceClaimable": false
+  },
+  "sourceCoverage": {
+    "complete": true,
+    "requiredSourceIds": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "companionSourceIds": [
+      "w262"
+    ]
+  },
+  "externalBlockerCatalog": {
+    "status": "external-source-dependent",
+    "expectedCount": 3,
+    "expectedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "actualIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "readinessIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "requirementIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "sourceCoverageIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "complete": true
+  }
+}

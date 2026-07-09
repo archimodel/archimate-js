@@ -2262,3 +2262,27 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1465-example-viewpoints-optional-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-example-viewpoints-optional-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 176
+
+- Goal: answer the current progress question for `docs/superpowers/plans/2026-07-08-archimate-4-support.md` from live plan/status/test evidence.
+- Observation: `rg` confirmed the plan now treats the original task checkboxes as historical and uses `Current Execution Status` plus implementation evidence as the source of truth.
+- Observation: `project_memory/runlogs/20260709-192141-plan-progress-status.json` records 42 expected and 42 actual ArchiMate 4 element types, no missing/extra element types, `AndJunction` and `OrJunction` present, C260 aggregate coverage complete, and `officialConformanceClaimable: false`.
+- Verification: `npm run test:language` passed with 218 tests in `project_memory/runlogs/20260709-192147-plan-progress-test-language.txt`.
+- Verification: `git diff --check` passed in `project_memory/runlogs/20260709-192254-plan-progress-diff-check.txt`.
+- Audit: `project_memory/audit/reports/20260709-plan-progress-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 177
+
+- Goal: strengthen the C260 Chapter 1 Introduction/Conformance boundary so introductory reference subsections cannot be mistaken for implementation requirements, required sources, remaining gaps, or official conformance blockers.
+- Observation: `project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json` confirms the local C260 PDF exposes Chapter 1 headings Objective, Overview, Conformance, Normative References, Terminology, and Future Directions.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now classifies `conformance` as the only Chapter 1 requirement source and classifies Objective, Overview, Normative References, Terminology, and Future Directions as reference-only.
+- Implemented: `lib/metamodel/languages/index.js` now reports `requirementSourceIds`, `referenceOnlyIds`, missing/extra requirement-source ids, and missing/extra reference-only ids for `introductionCoverage`.
+- Implemented: `test/language-profile.test.mjs` now verifies reference-only Chapter 1 ids stay out of `sourceCoverage`, `remainingGaps`, `conformanceReadiness`, and `externalBlockerCatalog`.
+- Documentation: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the Chapter 1 reference-only boundary.
+- Focused verification: initial test failed on a missing plan-field prefix in `project_memory/runlogs/20260709-1928-introduction-reference-boundary-focused-test.txt`; corrected focused verification passed in `project_memory/runlogs/20260709-1929-introduction-reference-boundary-focused-test.txt`.
+- Verification: `npm run test:language` passed with 219 tests in `project_memory/runlogs/20260709-1930-introduction-reference-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1931-introduction-reference-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1932-introduction-reference-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1933-introduction-reference-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-introduction-reference-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

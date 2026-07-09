@@ -1107,6 +1107,11 @@ test('archimate 4 implementation status exposes C260 introduction coverage ident
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
   const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(
+    new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
+    'utf8'
+  );
+  const status = getArchimate4ImplementationStatus();
   const introductionCatalog = profile.conformance.introductionCoverageCatalog;
   const introductions = profile.conformance.introductionCoverage;
   const expectedIntroductionIds = [
@@ -1117,20 +1122,80 @@ test('archimate 4 implementation status exposes C260 introduction coverage ident
     'terminology',
     'future-directions'
   ];
+  const expectedReferenceOnlyIds = [
+    'objective',
+    'overview',
+    'normative-references',
+    'terminology',
+    'future-directions'
+  ];
 
   assert.equal(introductionCatalog.status, 'c260-outline-derived');
   assert.equal(introductionCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(
+    introductionCatalog.chapter1SourceRunlogPath,
+    'project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json'
+  );
   assert.equal(introductionCatalog.expectedCount, expectedIntroductionIds.length);
   assert.deepEqual(introductionCatalog.expectedIds, expectedIntroductionIds);
+  assert.deepEqual(introductionCatalog.expectedRequirementSourceIds, [ 'conformance' ]);
+  assert.deepEqual(introductionCatalog.expectedReferenceOnlyIds, expectedReferenceOnlyIds);
   assert.deepEqual(introductions.map((introduction) => introduction.id), expectedIntroductionIds);
   assert.equal(introductions.every((introduction) => introduction.c260Section && introduction.heading), true);
+  assert.deepEqual(
+    introductions.filter((introduction) => introduction.requirementSource).map((introduction) => introduction.id),
+    [ 'conformance' ]
+  );
+  assert.deepEqual(
+    introductions.filter((introduction) => introduction.referenceOnly).map((introduction) => introduction.id),
+    expectedReferenceOnlyIds
+  );
+  assert.deepEqual(status.introductionCoverage.requirementSourceIds, [ 'conformance' ]);
+  assert.deepEqual(status.introductionCoverage.referenceOnlyIds, expectedReferenceOnlyIds);
+  assert.deepEqual(status.introductionCoverage.missingRequirementSourceIds, []);
+  assert.deepEqual(status.introductionCoverage.extraRequirementSourceIds, []);
+  assert.deepEqual(status.introductionCoverage.missingReferenceOnlyIds, []);
+  assert.deepEqual(status.introductionCoverage.extraReferenceOnlyIds, []);
 
   assert.match(languageIndex, /function summarizeIntroductionCoverage/);
   assert.match(languageIndex, /introductionCoverage: introductionCoverage/);
   assert.match(languageIndex, /missingIntroductionIds/);
+  assert.match(languageIndex, /requirementSourceIds/);
+  assert.match(languageIndex, /referenceOnlyIds/);
   assert.match(readme, /introductionCoverage\.expectedIds/);
+  assert.match(readme, /introductionCoverage\.referenceOnlyIds/);
   assert.match(sources, /introductionCoverage\.actualIds/);
+  assert.match(sources, /introductionCoverage\.requirementSourceIds/);
   assert.match(officialSpec, /introductionCoverage\.missingIntroductionIds/);
+  assert.match(officialSpec, /introductionCoverage\.missingReferenceOnlyIds/);
+  assert.match(plan, /introductionCoverage\.referenceOnlyIds/);
+});
+
+test('archimate 4 introduction references stay outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const introduction = status.introductionCoverage;
+  const referenceOnlyIds = introduction.referenceOnlyIds;
+
+  assert.deepEqual(referenceOnlyIds, [
+    'objective',
+    'overview',
+    'normative-references',
+    'terminology',
+    'future-directions'
+  ]);
+  assert.deepEqual(introduction.requirementSourceIds, [ 'conformance' ]);
+  assert.equal(introduction.complete, true);
+
+  for (const referenceOnlyId of referenceOnlyIds) {
+    assert.equal(status.sourceCoverage.actualSourceIds.includes(referenceOnlyId), false);
+    assert.equal(status.sourceCoverage.missingRequiredSources.includes(referenceOnlyId), false);
+    assert.equal(status.sourceCoverage.missingCompanionSources.includes(referenceOnlyId), false);
+    assert.equal(status.remainingGaps.actualIds.includes(referenceOnlyId), false);
+    assert.equal(status.remainingGaps.unresolvedIds.includes(referenceOnlyId), false);
+    assert.equal(status.conformanceReadiness.blockers.includes(referenceOnlyId), false);
+    assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes(referenceOnlyId), false);
+    assert.equal(status.externalBlockerCatalog.actualIds.includes(referenceOnlyId), false);
+  }
 });
 
 test('archimate 4 implementation status exposes C260 language structure coverage identity', async () => {

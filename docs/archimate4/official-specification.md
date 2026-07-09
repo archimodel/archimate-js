@@ -75,6 +75,12 @@ It must expose exact C260 Chapter 1 Introduction/Conformance outline fields
 `introductionCoverage.missingIntroductionIds`, and `introductionCoverage.extraIntroductionIds`) so
 the implementation can track introductory, conformance, normative-reference, terminology, and
 future-direction coverage by subsection identity.
+It must also expose Chapter 1 boundary fields (`introductionCoverage.requirementSourceIds`,
+`introductionCoverage.referenceOnlyIds`, `introductionCoverage.missingRequirementSourceIds`, and
+`introductionCoverage.missingReferenceOnlyIds`) so only Conformance is treated as the requirement
+source while the Objective, Overview, Normative References, Terminology, and Future Directions
+subsections remain reference-only and cannot become source gaps, remaining gaps, or official
+conformance blockers.
 It must expose exact C260 Chapter 2 definition vocabulary fields (`definitionCoverage.expectedIds`,
 `definitionCoverage.actualIds`, `definitionCoverage.missingDefinitionIds`, and
 `definitionCoverage.extraDefinitionIds`) so the implementation can track the standard terminology

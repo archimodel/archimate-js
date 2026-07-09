@@ -377,6 +377,7 @@
     "introductionCoverageCatalog": {
       "status": "c260-outline-derived",
       "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "chapter1SourceRunlogPath": "project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json",
       "expectedCount": 6,
       "expectedIds": [
         "objective",
@@ -385,15 +386,61 @@
         "normative-references",
         "terminology",
         "future-directions"
+      ],
+      "expectedRequirementSourceIds": [
+        "conformance"
+      ],
+      "expectedReferenceOnlyIds": [
+        "objective",
+        "overview",
+        "normative-references",
+        "terminology",
+        "future-directions"
       ]
     },
     "introductionCoverage": [
-      { "id": "objective", "c260Section": "1.1", "heading": "Objective", "status": "tracked" },
-      { "id": "overview", "c260Section": "1.2", "heading": "Overview", "status": "tracked" },
-      { "id": "conformance", "c260Section": "1.3", "heading": "Conformance", "status": "tracked" },
-      { "id": "normative-references", "c260Section": "1.4", "heading": "Normative References", "status": "tracked" },
-      { "id": "terminology", "c260Section": "1.5", "heading": "Terminology", "status": "tracked" },
-      { "id": "future-directions", "c260Section": "1.6", "heading": "Future Directions", "status": "tracked" }
+      {
+        "id": "objective",
+        "c260Section": "1.1",
+        "heading": "Objective",
+        "status": "tracked-reference",
+        "referenceOnly": true
+      },
+      {
+        "id": "overview",
+        "c260Section": "1.2",
+        "heading": "Overview",
+        "status": "tracked-reference",
+        "referenceOnly": true
+      },
+      {
+        "id": "conformance",
+        "c260Section": "1.3",
+        "heading": "Conformance",
+        "status": "tracked-requirement-source",
+        "requirementSource": true
+      },
+      {
+        "id": "normative-references",
+        "c260Section": "1.4",
+        "heading": "Normative References",
+        "status": "tracked-reference",
+        "referenceOnly": true
+      },
+      {
+        "id": "terminology",
+        "c260Section": "1.5",
+        "heading": "Terminology",
+        "status": "tracked-reference",
+        "referenceOnly": true
+      },
+      {
+        "id": "future-directions",
+        "c260Section": "1.6",
+        "heading": "Future Directions",
+        "status": "tracked-reference",
+        "referenceOnly": true
+      }
     ],
     "definitionCoverageCatalog": {
       "status": "c260-outline-derived",
