@@ -41,6 +41,9 @@ formal support, implementation-defined support, optional support, and external b
 collapsed into one ambiguous "supported" flag.
 The status must also expose exact requirement identity fields (`expectedIds`, `actualIds`,
 `missingIds`, and `extraIds`) so a count-preserving but wrong shall/may map cannot appear complete.
+The optional Appendix C example viewpoints must remain visible as
+`conformanceRequirements.may.notBundled` without entering `remainingGaps`,
+`conformanceReadiness.blockers`, or required source coverage.
 
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
 local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B

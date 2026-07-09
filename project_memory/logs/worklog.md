@@ -2250,3 +2250,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1458-status-completion-scan-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-status-completion-scan-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 175
+
+- Goal: strengthen the optional Appendix C example viewpoint boundary so informative example viewpoints remain visible without becoming required source gaps or official conformance blockers.
+- Observation: `project_memory/runlogs/20260709-1460-current-gap-status.json` records `conformanceRequirements.may.notBundled: 1`, `sectionCoverage.optionalIds: ["appendix-c-example-viewpoints"]`, remaining gaps limited to Appendix B/MEFF 4.0 XSD/Appendix A artwork rights plus W262 companion, and readiness blockers limited to Appendix B/MEFF 4.0 XSD/Appendix A artwork rights.
+- Implemented: `lib/metamodel/languages/index.js` now reports `conformanceRequirements.may.notBundled`; `test/language-profile.test.mjs` verifies `example-viewpoints` stays out of `remainingGaps`, `conformanceReadiness.blockers`, required-before-claim ids, missing required sources, and source coverage.
+- Documentation: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now describe the optional Example Viewpoints boundary.
+- Focused verification: `project_memory/runlogs/20260709-1461-example-viewpoints-optional-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 218 tests in `project_memory/runlogs/20260709-1462-example-viewpoints-optional-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1463-example-viewpoints-optional-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1464-example-viewpoints-optional-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1465-example-viewpoints-optional-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-example-viewpoints-optional-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

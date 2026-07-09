@@ -3196,3 +3196,52 @@ test('archimate 4 conformance requirements are tracked per C260 shall and may cl
   assert.match(readme, /conformanceRequirements\.(expectedIds|missingIds|extraIds)/);
   assert.match(sources, /C260 conformance requirements are represented per shall\/may clause/);
 });
+
+test('archimate 4 optional example viewpoints stay outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const exampleRequirement = status.conformanceRequirements.items.find((requirement) => {
+    return requirement.id === 'example-viewpoints';
+  });
+  const appendixCSection = status.sectionCoverage.items.find((section) => {
+    return section.id === 'appendix-c-example-viewpoints';
+  });
+
+  assert.equal(exampleRequirement.level, 'may');
+  assert.equal(exampleRequirement.status, 'not-bundled-informative');
+  assert.equal(exampleRequirement.optional, true);
+  assert.equal(exampleRequirement.externalBlocker, undefined);
+  assert.deepEqual(status.conformanceRequirements.may.actualIds, [ 'example-viewpoints' ]);
+  assert.equal(status.conformanceRequirements.may.bundled, 0);
+  assert.equal(status.conformanceRequirements.may.notBundled, 1);
+  assert.equal(status.conformanceRequirements.may.complete, true);
+
+  assert.equal(appendixCSection.requirementId, 'example-viewpoints');
+  assert.equal(appendixCSection.optional, true);
+  assert.deepEqual(status.sectionCoverage.optionalIds, [ 'appendix-c-example-viewpoints' ]);
+  assert.equal(status.sectionCoverage.externalDependentIds.includes('appendix-c-example-viewpoints'), false);
+  assert.equal(status.sectionCoverage.implementedIds.includes('appendix-c-example-viewpoints'), false);
+
+  assert.equal(status.remainingGaps.actualIds.includes('example-viewpoints'), false);
+  assert.equal(status.remainingGaps.actualIds.includes('appendix-c-example-viewpoints'), false);
+  assert.equal(status.conformanceReadiness.blockers.includes('example-viewpoints'), false);
+  assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes('example-viewpoints'), false);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('example-viewpoints'), false);
+  assert.equal(status.sourceCoverage.actualSourceIds.includes('example-viewpoints'), false);
+});
+
+test('archimate 4 optional example viewpoint boundary is documented', async () => {
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(
+    new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
+    'utf8'
+  );
+
+  assert.match(languageIndex, /notBundled/);
+  assert.match(readme, /conformanceRequirements\.may\.notBundled/);
+  assert.match(sources, /conformanceRequirements\.may\.notBundled/);
+  assert.match(officialSpec, /conformanceRequirements\.may\.notBundled/);
+  assert.match(plan, /conformanceRequirements\.may\.notBundled/);
+});

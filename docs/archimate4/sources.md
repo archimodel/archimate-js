@@ -220,6 +220,9 @@
   treating fallback data as final conformance.
 - `getArchimate4ImplementationStatus().conformanceRequirements` reports expected, actual, missing,
   and extra requirement ids for the C260-derived shall/may requirement map.
+- `getArchimate4ImplementationStatus().conformanceRequirements.may.notBundled` records the optional
+  Appendix C example viewpoint support as not bundled and informative, while keeping it out of
+  `remainingGaps`, `conformanceReadiness.blockers`, and `sourceCoverage`.
 - `getArchimate4ImplementationStatus()` also exposes source coverage metadata so local source
   evidence, externally supplied normative data, and missing companion sources are distinguishable.
 - `getArchimate4ImplementationStatus().sourceCoverage` reports `sourceCoverage.expectedSourceIds`,
