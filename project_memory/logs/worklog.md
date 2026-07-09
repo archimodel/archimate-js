@@ -1523,3 +1523,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-880-c260-relationships-junctions-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-relationships-junctions-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 121
+
+- Goal: make C260 Chapter 6 Motivation Domain auditable by exact outline identity rather than only by broad Motivation element support.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 6 outline from 6.1 through 6.7, including Stakeholder, Driver, Assessment, Goal, Outcome, Principle, Requirement, Meaning, Value, summary, and relationships-with-other-domains headings.
+- Red test: `project_memory/runlogs/20260709-884-c260-motivation-domain-coverage-red-test.txt` failed because `motivationDomainCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `motivationDomainCoverageCatalog` and `motivationDomainCoverage` for the nineteen Chapter 6 outline headings without copying Motivation Domain prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().motivationDomainCoverage` with expected/actual/missing/extra ids, `missingMotivationDomainIds`, `extraMotivationDomainIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 6 Motivation Domain outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-885-c260-motivation-domain-coverage-focused-test.txt` passed for the Motivation Domain coverage identity test; `project_memory/runlogs/20260709-886-c260-motivation-domain-coverage-status.json` shows expectedCount 19, actualCount 19, no missing Motivation Domain ids, no extra Motivation Domain ids, and complete true.
+- Verification: `npm run test:language` passed with 169 tests in `project_memory/runlogs/20260709-887-c260-motivation-domain-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-888-c260-motivation-domain-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-889-c260-motivation-domain-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-890-c260-motivation-domain-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-891-c260-motivation-domain-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-892-c260-motivation-domain-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-893-c260-motivation-domain-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-motivation-domain-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

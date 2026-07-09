@@ -760,6 +760,56 @@ test('archimate 4 implementation status exposes C260 relationships and junctions
   assert.match(plan, /Relationships and junctions coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 motivation domain coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const motivationDomainCatalog = profile.conformance.motivationDomainCoverageCatalog;
+  const motivationDomainCoverage = profile.conformance.motivationDomainCoverage;
+  const expectedMotivationDomainIds = [
+    'motivation-elements',
+    'motivation-elements-metamodel',
+    'stakeholder-driver-and-assessment',
+    'stakeholder',
+    'driver',
+    'assessment',
+    'stakeholder-driver-assessment-example',
+    'goal-outcome-principle-and-requirement',
+    'goal',
+    'outcome',
+    'principle',
+    'requirement',
+    'goal-outcome-principle-requirement-example',
+    'meaning-and-value',
+    'meaning',
+    'value',
+    'meaning-value-example',
+    'summary-of-motivation-elements',
+    'relationships-with-other-domains'
+  ];
+
+  assert.equal(motivationDomainCatalog.status, 'c260-outline-derived');
+  assert.equal(motivationDomainCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(motivationDomainCatalog.expectedCount, expectedMotivationDomainIds.length);
+  assert.deepEqual(motivationDomainCatalog.expectedIds, expectedMotivationDomainIds);
+  assert.deepEqual(motivationDomainCoverage.map((motivationDomainItem) => motivationDomainItem.id), expectedMotivationDomainIds);
+  assert.equal(
+    motivationDomainCoverage.every((motivationDomainItem) => motivationDomainItem.c260Section && motivationDomainItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeMotivationDomainCoverage/);
+  assert.match(languageIndex, /motivationDomainCoverage: motivationDomainCoverage/);
+  assert.match(languageIndex, /missingMotivationDomainIds/);
+  assert.match(readme, /motivationDomainCoverage\.expectedIds/);
+  assert.match(sources, /motivationDomainCoverage\.actualIds/);
+  assert.match(officialSpec, /motivationDomainCoverage\.missingMotivationDomainIds/);
+  assert.match(plan, /Motivation domain coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

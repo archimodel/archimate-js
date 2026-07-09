@@ -89,6 +89,11 @@
   `relationshipsAndJunctionsCoverage.extraRelationshipsAndJunctionsIds` so the Chapter 5
   Relationships and Junctions outline remains visible by exact subsection identity while the
   normative Appendix B matrix remains externally supplied.
+- `getArchimate4ImplementationStatus().motivationDomainCoverage` reports
+  `motivationDomainCoverage.expectedIds`, `motivationDomainCoverage.actualIds`,
+  `motivationDomainCoverage.missingMotivationDomainIds`, and
+  `motivationDomainCoverage.extraMotivationDomainIds` so the Chapter 6 Motivation Domain outline
+  remains visible by exact subsection and element-heading identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

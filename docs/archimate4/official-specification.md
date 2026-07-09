@@ -93,6 +93,12 @@ It must expose exact C260 Chapter 5 Relationships and Junctions outline fields
 `relationshipsAndJunctionsCoverage.extraRelationshipsAndJunctionsIds`) so the implementation can
 track relationship categories, individual relationship headings, junctions, multiplicity, summaries,
 and derivation coverage by subsection identity while keeping Appendix B matrix data external.
+It must expose exact C260 Chapter 6 Motivation Domain outline fields
+(`motivationDomainCoverage.expectedIds`, `motivationDomainCoverage.actualIds`,
+`motivationDomainCoverage.missingMotivationDomainIds`, and
+`motivationDomainCoverage.extraMotivationDomainIds`) so the implementation can track Motivation
+metamodel, element groups, individual Motivation elements, examples, summaries, and other-domain
+relationship coverage by subsection and element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

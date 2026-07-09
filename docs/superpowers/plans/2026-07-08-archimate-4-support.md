@@ -69,6 +69,9 @@ Relationships and junctions coverage status reports `expectedIds`, `actualIds`,
 `missingRelationshipsAndJunctionsIds`, and `extraRelationshipsAndJunctionsIds` for the C260 Chapter
 5 outline so relationship, junction, multiplicity, and derivation subsection headings cannot drift
 silently while Appendix B matrix data remains external.
+Motivation domain coverage status reports `expectedIds`, `actualIds`, `missingMotivationDomainIds`,
+and `extraMotivationDomainIds` for the C260 Chapter 6 outline so Motivation subsection and element
+headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

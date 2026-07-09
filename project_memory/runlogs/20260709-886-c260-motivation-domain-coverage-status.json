@@ -1,0 +1,33 @@
+(node:73692) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 19,
+  "actualCount": 19,
+  "expectedIds": [
+    "motivation-elements",
+    "motivation-elements-metamodel",
+    "stakeholder-driver-and-assessment",
+    "stakeholder",
+    "driver",
+    "assessment",
+    "stakeholder-driver-assessment-example",
+    "goal-outcome-principle-and-requirement",
+    "goal",
+    "outcome",
+    "principle",
+    "requirement",
+    "goal-outcome-principle-requirement-example",
+    "meaning-and-value",
+    "meaning",
+    "value",
+    "meaning-value-example",
+    "summary-of-motivation-elements",
+    "relationships-with-other-domains"
+  ],
+  "missingMotivationDomainIds": [],
+  "extraMotivationDomainIds": [],
+  "complete": true
+}
