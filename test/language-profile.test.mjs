@@ -1403,6 +1403,74 @@ test('archimate 4 implementation status exposes C260 appendix E version changes 
   assert.match(plan, /Appendix E version changes coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix F acronym coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixFAcronymsCatalog = profile.conformance.appendixFAcronymsCoverageCatalog;
+  const appendixFAcronymsCoverage = profile.conformance.appendixFAcronymsCoverage;
+  const expectedAppendixFAcronymIds = [
+    'abb',
+    'adm',
+    'ai',
+    'ascii',
+    'b2b',
+    'bmm',
+    'bpmn',
+    'ceo',
+    'cfo',
+    'cio',
+    'cmo',
+    'crm',
+    'dr',
+    'erd',
+    'gui',
+    'html',
+    'iaas',
+    'ict',
+    'iot',
+    'lan',
+    'jee',
+    'pdf',
+    'pdr',
+    'rtf',
+    'sbb',
+    'swot',
+    'uml',
+    'vpn',
+    'wan',
+    'wlan',
+    'xml'
+  ];
+
+  assert.equal(appendixFAcronymsCatalog.status, 'c260-acronym-token-derived');
+  assert.equal(
+    appendixFAcronymsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt'
+  );
+  assert.equal(appendixFAcronymsCatalog.expectedCount, expectedAppendixFAcronymIds.length);
+  assert.deepEqual(appendixFAcronymsCatalog.expectedIds, expectedAppendixFAcronymIds);
+  assert.deepEqual(
+    appendixFAcronymsCoverage.map((appendixFAcronymItem) => appendixFAcronymItem.id),
+    expectedAppendixFAcronymIds
+  );
+  assert.equal(
+    appendixFAcronymsCoverage.every((appendixFAcronymItem) => appendixFAcronymItem.c260Section && appendixFAcronymItem.acronym),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixFAcronymsCoverage/);
+  assert.match(languageIndex, /appendixFAcronymsCoverage: appendixFAcronymsCoverage/);
+  assert.match(languageIndex, /missingAppendixFAcronymIds/);
+  assert.match(readme, /appendixFAcronymsCoverage\.expectedIds/);
+  assert.match(sources, /appendixFAcronymsCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixFAcronymsCoverage\.missingAppendixFAcronymIds/);
+  assert.match(plan, /Appendix F acronym coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
@@ -1700,7 +1768,9 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
     'appendix-a-notation',
     'appendix-b-relationships',
     'appendix-c-example-viewpoints',
-    'appendix-e-version-changes'
+    'appendix-d-standards-guidance',
+    'appendix-e-version-changes',
+    'appendix-f-acronyms'
   ];
   const expectedRequirementIds = [
     'language-structure',

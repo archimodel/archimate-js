@@ -1,0 +1,507 @@
+(node:73376) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "sectionCoverage": {
+    "status": "c260-outline-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+    "expectedCount": 20,
+    "expectedIds": [
+      "introduction-and-conformance",
+      "definitions",
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-a-notation",
+      "appendix-b-relationships",
+      "appendix-c-example-viewpoints",
+      "appendix-d-standards-guidance",
+      "appendix-e-version-changes",
+      "appendix-f-acronyms"
+    ],
+    "expectedRequirementIds": [
+      "language-structure",
+      "viewpoint-mechanism",
+      "language-customization",
+      "standard-iconography",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "expectedExternalBlockerIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "items": [
+      {
+        "id": "introduction-and-conformance",
+        "c260Section": "1",
+        "status": "tracked",
+        "evidence": "source status, conformance requirement map, source coverage, conformance readiness, and external blocker catalog"
+      },
+      {
+        "id": "definitions",
+        "c260Section": "2",
+        "status": "implemented-as-profile-vocabulary",
+        "evidence": "domain, aspect, element, relationship, viewpoint, attribute, and conformance vocabulary metadata"
+      },
+      {
+        "id": "language-structure",
+        "c260Section": "3",
+        "status": "implemented",
+        "requirementId": "language-structure",
+        "evidence": "versioned language profile, domain/aspect metadata, and active profile services"
+      },
+      {
+        "id": "common-domain",
+        "c260Section": "4",
+        "status": "implemented",
+        "evidence": "Role, Collaboration, Path, Service, Process, Function, Event, Grouping, and Location profile entries"
+      },
+      {
+        "id": "relationships-and-junctions",
+        "c260Section": "5",
+        "status": "implemented-with-external-profile-boundary",
+        "evidence": "relationship metadata, junction connectors, multiplicity, options, and external Appendix B profile loader"
+      },
+      {
+        "id": "motivation-domain",
+        "c260Section": "6",
+        "status": "implemented",
+        "evidence": "Motivation profile entries and local notation renderer paths"
+      },
+      {
+        "id": "strategy-domain",
+        "c260Section": "7",
+        "status": "implemented",
+        "evidence": "Strategy profile entries and standard display labels"
+      },
+      {
+        "id": "business-domain",
+        "c260Section": "8",
+        "status": "implemented",
+        "evidence": "Business profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "application-domain",
+        "c260Section": "9",
+        "status": "implemented",
+        "evidence": "Application profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "technology-domain",
+        "c260Section": "10",
+        "status": "implemented",
+        "evidence": "Technology profile entries including Equipment, Facility, Distribution Network, and Material"
+      },
+      {
+        "id": "relationships-between-core-domains",
+        "c260Section": "11",
+        "status": "implemented-through-active-profile",
+        "evidence": "relationship validation resolves current element metadata and host-supplied Appendix B profile data"
+      },
+      {
+        "id": "implementation-and-migration-domain",
+        "c260Section": "12",
+        "status": "implemented",
+        "evidence": "Work Package, Deliverable, and Plateau profile entries and renderer paths"
+      },
+      {
+        "id": "viewpoint-mechanism",
+        "c260Section": "13",
+        "status": "implemented",
+        "requirementId": "viewpoint-mechanism",
+        "evidence": "viewpoint metadata, viewpoint definitions, and active-profile type validation"
+      },
+      {
+        "id": "language-customization",
+        "c260Section": "14",
+        "status": "implementation-defined",
+        "requirementId": "language-customization",
+        "evidence": "custom profile domains, concepts, relationships, profile attributes, and viewpoint definitions"
+      },
+      {
+        "id": "appendix-a-notation",
+        "c260Section": "Appendix A",
+        "status": "local-renderer-coverage",
+        "requirementId": "standard-iconography",
+        "externalBlocker": "exactAppendixAArtworkRights",
+        "evidence": "local renderer and palette paths; exact Appendix A vector redistribution remains unconfirmed"
+      },
+      {
+        "id": "appendix-b-relationships",
+        "c260Section": "Appendix B",
+        "status": "external-profile-required",
+        "requirementId": "appendix-b-relationships",
+        "externalBlocker": "officialAppendixBRelationshipMatrix",
+        "evidence": "relationship derivation helpers and profile loader are implemented; redistributable table data is not embedded"
+      },
+      {
+        "id": "appendix-c-example-viewpoints",
+        "c260Section": "Appendix C",
+        "status": "optional-informative",
+        "optional": true,
+        "requirementId": "example-viewpoints",
+        "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"
+      },
+      {
+        "id": "appendix-d-standards-guidance",
+        "c260Section": "Appendix D",
+        "status": "tracked",
+        "evidence": "standards and guidance relationship appendix headings are tracked without copying Appendix D prose"
+      },
+      {
+        "id": "appendix-e-version-changes",
+        "c260Section": "Appendix E.4",
+        "status": "implemented-with-migration-warnings",
+        "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
+      },
+      {
+        "id": "appendix-f-acronyms",
+        "c260Section": "Appendix F",
+        "status": "tracked-as-acronym-vocabulary",
+        "evidence": "acronym tokens are tracked without copying Appendix F expansions or prose"
+      }
+    ],
+    "actualIds": [
+      "introduction-and-conformance",
+      "definitions",
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-a-notation",
+      "appendix-b-relationships",
+      "appendix-c-example-viewpoints",
+      "appendix-d-standards-guidance",
+      "appendix-e-version-changes",
+      "appendix-f-acronyms"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "requirementIds": [
+      "language-structure",
+      "viewpoint-mechanism",
+      "language-customization",
+      "standard-iconography",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "missingRequirementIds": [],
+    "extraRequirementIds": [],
+    "missingRequirementReferenceIds": [],
+    "externalBlockerIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "missingExternalBlockerIds": [],
+    "extraExternalBlockerIds": [],
+    "missingExternalBlockerReferenceIds": [],
+    "externalDependentIds": [
+      "appendix-a-notation",
+      "appendix-b-relationships"
+    ],
+    "optionalIds": [
+      "appendix-c-example-viewpoints"
+    ],
+    "implementedIds": [
+      "definitions",
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-e-version-changes"
+    ],
+    "complete": true
+  },
+  "appendixFAcronymsCoverage": {
+    "status": "c260-acronym-token-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+    "expectedCount": 31,
+    "expectedIds": [
+      "abb",
+      "adm",
+      "ai",
+      "ascii",
+      "b2b",
+      "bmm",
+      "bpmn",
+      "ceo",
+      "cfo",
+      "cio",
+      "cmo",
+      "crm",
+      "dr",
+      "erd",
+      "gui",
+      "html",
+      "iaas",
+      "ict",
+      "iot",
+      "lan",
+      "jee",
+      "pdf",
+      "pdr",
+      "rtf",
+      "sbb",
+      "swot",
+      "uml",
+      "vpn",
+      "wan",
+      "wlan",
+      "xml"
+    ],
+    "items": [
+      {
+        "id": "abb",
+        "c260Section": "Appendix F",
+        "acronym": "ABB",
+        "status": "tracked"
+      },
+      {
+        "id": "adm",
+        "c260Section": "Appendix F",
+        "acronym": "ADM",
+        "status": "tracked"
+      },
+      {
+        "id": "ai",
+        "c260Section": "Appendix F",
+        "acronym": "AI",
+        "status": "tracked"
+      },
+      {
+        "id": "ascii",
+        "c260Section": "Appendix F",
+        "acronym": "ASCII",
+        "status": "tracked"
+      },
+      {
+        "id": "b2b",
+        "c260Section": "Appendix F",
+        "acronym": "B2B",
+        "status": "tracked"
+      },
+      {
+        "id": "bmm",
+        "c260Section": "Appendix F",
+        "acronym": "BMM",
+        "status": "tracked"
+      },
+      {
+        "id": "bpmn",
+        "c260Section": "Appendix F",
+        "acronym": "BPMN",
+        "status": "tracked"
+      },
+      {
+        "id": "ceo",
+        "c260Section": "Appendix F",
+        "acronym": "CEO",
+        "status": "tracked"
+      },
+      {
+        "id": "cfo",
+        "c260Section": "Appendix F",
+        "acronym": "CFO",
+        "status": "tracked"
+      },
+      {
+        "id": "cio",
+        "c260Section": "Appendix F",
+        "acronym": "CIO",
+        "status": "tracked"
+      },
+      {
+        "id": "cmo",
+        "c260Section": "Appendix F",
+        "acronym": "CMO",
+        "status": "tracked"
+      },
+      {
+        "id": "crm",
+        "c260Section": "Appendix F",
+        "acronym": "CRM",
+        "status": "tracked"
+      },
+      {
+        "id": "dr",
+        "c260Section": "Appendix F",
+        "acronym": "DR",
+        "status": "tracked"
+      },
+      {
+        "id": "erd",
+        "c260Section": "Appendix F",
+        "acronym": "ERD",
+        "status": "tracked"
+      },
+      {
+        "id": "gui",
+        "c260Section": "Appendix F",
+        "acronym": "GUI",
+        "status": "tracked"
+      },
+      {
+        "id": "html",
+        "c260Section": "Appendix F",
+        "acronym": "HTML",
+        "status": "tracked"
+      },
+      {
+        "id": "iaas",
+        "c260Section": "Appendix F",
+        "acronym": "IaaS",
+        "status": "tracked"
+      },
+      {
+        "id": "ict",
+        "c260Section": "Appendix F",
+        "acronym": "ICT",
+        "status": "tracked"
+      },
+      {
+        "id": "iot",
+        "c260Section": "Appendix F",
+        "acronym": "IoT",
+        "status": "tracked"
+      },
+      {
+        "id": "lan",
+        "c260Section": "Appendix F",
+        "acronym": "LAN",
+        "status": "tracked"
+      },
+      {
+        "id": "jee",
+        "c260Section": "Appendix F",
+        "acronym": "JEE",
+        "status": "tracked"
+      },
+      {
+        "id": "pdf",
+        "c260Section": "Appendix F",
+        "acronym": "PDF",
+        "status": "tracked"
+      },
+      {
+        "id": "pdr",
+        "c260Section": "Appendix F",
+        "acronym": "PDR",
+        "status": "tracked"
+      },
+      {
+        "id": "rtf",
+        "c260Section": "Appendix F",
+        "acronym": "RTF",
+        "status": "tracked"
+      },
+      {
+        "id": "sbb",
+        "c260Section": "Appendix F",
+        "acronym": "SBB",
+        "status": "tracked"
+      },
+      {
+        "id": "swot",
+        "c260Section": "Appendix F",
+        "acronym": "SWOT",
+        "status": "tracked"
+      },
+      {
+        "id": "uml",
+        "c260Section": "Appendix F",
+        "acronym": "UML",
+        "status": "tracked"
+      },
+      {
+        "id": "vpn",
+        "c260Section": "Appendix F",
+        "acronym": "VPN",
+        "status": "tracked"
+      },
+      {
+        "id": "wan",
+        "c260Section": "Appendix F",
+        "acronym": "WAN",
+        "status": "tracked"
+      },
+      {
+        "id": "wlan",
+        "c260Section": "Appendix F",
+        "acronym": "WLAN",
+        "status": "tracked"
+      },
+      {
+        "id": "xml",
+        "c260Section": "Appendix F",
+        "acronym": "XML",
+        "status": "tracked"
+      }
+    ],
+    "actualIds": [
+      "abb",
+      "adm",
+      "ai",
+      "ascii",
+      "b2b",
+      "bmm",
+      "bpmn",
+      "ceo",
+      "cfo",
+      "cio",
+      "cmo",
+      "crm",
+      "dr",
+      "erd",
+      "gui",
+      "html",
+      "iaas",
+      "ict",
+      "iot",
+      "lan",
+      "jee",
+      "pdf",
+      "pdr",
+      "rtf",
+      "sbb",
+      "swot",
+      "uml",
+      "vpn",
+      "wan",
+      "wlan",
+      "xml"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "missingAppendixFAcronymIds": [],
+    "extraAppendixFAcronymIds": [],
+    "actualCount": 31,
+    "complete": true
+  }
+}

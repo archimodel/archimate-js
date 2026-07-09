@@ -136,7 +136,7 @@
     "sectionCoverageCatalog": {
       "status": "c260-outline-derived",
       "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
-      "expectedCount": 18,
+      "expectedCount": 20,
       "expectedIds": [
         "introduction-and-conformance",
         "definitions",
@@ -155,7 +155,9 @@
         "appendix-a-notation",
         "appendix-b-relationships",
         "appendix-c-example-viewpoints",
-        "appendix-e-version-changes"
+        "appendix-d-standards-guidance",
+        "appendix-e-version-changes",
+        "appendix-f-acronyms"
       ],
       "expectedRequirementIds": [
         "language-structure",
@@ -283,10 +285,22 @@
         "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"
       },
       {
+        "id": "appendix-d-standards-guidance",
+        "c260Section": "Appendix D",
+        "status": "tracked",
+        "evidence": "standards and guidance relationship appendix headings are tracked without copying Appendix D prose"
+      },
+      {
         "id": "appendix-e-version-changes",
         "c260Section": "Appendix E.4",
         "status": "implemented-with-migration-warnings",
         "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
+      },
+      {
+        "id": "appendix-f-acronyms",
+        "c260Section": "Appendix F",
+        "status": "tracked-as-acronym-vocabulary",
+        "evidence": "acronym tokens are tracked without copying Appendix F expansions or prose"
       }
     ],
     "introductionCoverageCatalog": {
@@ -903,6 +917,77 @@
       { "id": "changes-from-version-3-0-1-to-version-3-1", "c260Section": "E.2", "heading": "Changes from Version 3.0.1 to Version 3.1", "status": "tracked" },
       { "id": "changes-from-version-3-1-to-version-3-2", "c260Section": "E.3", "heading": "Changes from Version 3.1 to Version 3.2", "status": "tracked" },
       { "id": "changes-from-version-3-2-to-this-document", "c260Section": "E.4", "heading": "Changes from Version 3.2 to This Document", "status": "tracked" }
+    ],
+    "appendixFAcronymsCoverageCatalog": {
+      "status": "c260-acronym-token-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+      "expectedCount": 31,
+      "expectedIds": [
+        "abb",
+        "adm",
+        "ai",
+        "ascii",
+        "b2b",
+        "bmm",
+        "bpmn",
+        "ceo",
+        "cfo",
+        "cio",
+        "cmo",
+        "crm",
+        "dr",
+        "erd",
+        "gui",
+        "html",
+        "iaas",
+        "ict",
+        "iot",
+        "lan",
+        "jee",
+        "pdf",
+        "pdr",
+        "rtf",
+        "sbb",
+        "swot",
+        "uml",
+        "vpn",
+        "wan",
+        "wlan",
+        "xml"
+      ]
+    },
+    "appendixFAcronymsCoverage": [
+      { "id": "abb", "c260Section": "Appendix F", "acronym": "ABB", "status": "tracked" },
+      { "id": "adm", "c260Section": "Appendix F", "acronym": "ADM", "status": "tracked" },
+      { "id": "ai", "c260Section": "Appendix F", "acronym": "AI", "status": "tracked" },
+      { "id": "ascii", "c260Section": "Appendix F", "acronym": "ASCII", "status": "tracked" },
+      { "id": "b2b", "c260Section": "Appendix F", "acronym": "B2B", "status": "tracked" },
+      { "id": "bmm", "c260Section": "Appendix F", "acronym": "BMM", "status": "tracked" },
+      { "id": "bpmn", "c260Section": "Appendix F", "acronym": "BPMN", "status": "tracked" },
+      { "id": "ceo", "c260Section": "Appendix F", "acronym": "CEO", "status": "tracked" },
+      { "id": "cfo", "c260Section": "Appendix F", "acronym": "CFO", "status": "tracked" },
+      { "id": "cio", "c260Section": "Appendix F", "acronym": "CIO", "status": "tracked" },
+      { "id": "cmo", "c260Section": "Appendix F", "acronym": "CMO", "status": "tracked" },
+      { "id": "crm", "c260Section": "Appendix F", "acronym": "CRM", "status": "tracked" },
+      { "id": "dr", "c260Section": "Appendix F", "acronym": "DR", "status": "tracked" },
+      { "id": "erd", "c260Section": "Appendix F", "acronym": "ERD", "status": "tracked" },
+      { "id": "gui", "c260Section": "Appendix F", "acronym": "GUI", "status": "tracked" },
+      { "id": "html", "c260Section": "Appendix F", "acronym": "HTML", "status": "tracked" },
+      { "id": "iaas", "c260Section": "Appendix F", "acronym": "IaaS", "status": "tracked" },
+      { "id": "ict", "c260Section": "Appendix F", "acronym": "ICT", "status": "tracked" },
+      { "id": "iot", "c260Section": "Appendix F", "acronym": "IoT", "status": "tracked" },
+      { "id": "lan", "c260Section": "Appendix F", "acronym": "LAN", "status": "tracked" },
+      { "id": "jee", "c260Section": "Appendix F", "acronym": "JEE", "status": "tracked" },
+      { "id": "pdf", "c260Section": "Appendix F", "acronym": "PDF", "status": "tracked" },
+      { "id": "pdr", "c260Section": "Appendix F", "acronym": "PDR", "status": "tracked" },
+      { "id": "rtf", "c260Section": "Appendix F", "acronym": "RTF", "status": "tracked" },
+      { "id": "sbb", "c260Section": "Appendix F", "acronym": "SBB", "status": "tracked" },
+      { "id": "swot", "c260Section": "Appendix F", "acronym": "SWOT", "status": "tracked" },
+      { "id": "uml", "c260Section": "Appendix F", "acronym": "UML", "status": "tracked" },
+      { "id": "vpn", "c260Section": "Appendix F", "acronym": "VPN", "status": "tracked" },
+      { "id": "wan", "c260Section": "Appendix F", "acronym": "WAN", "status": "tracked" },
+      { "id": "wlan", "c260Section": "Appendix F", "acronym": "WLAN", "status": "tracked" },
+      { "id": "xml", "c260Section": "Appendix F", "acronym": "XML", "status": "tracked" }
     ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",

@@ -178,6 +178,11 @@ It must expose exact C260 Appendix E Changes from Version 2.1 to This Document o
 `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
 `appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds`) so the implementation can track
 version-change coverage by subsection identity.
+It must expose exact C260 Appendix F Acronyms token fields
+(`appendixFAcronymsCoverage.expectedIds`, `appendixFAcronymsCoverage.actualIds`,
+`appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
+`appendixFAcronymsCoverage.extraAppendixFAcronymIds`) so the implementation can track acronym
+coverage by token identity without copying acronym expansions or Appendix F prose.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

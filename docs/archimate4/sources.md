@@ -171,6 +171,12 @@
   `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
   `appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds` so the Appendix E version-change
   outline remains visible by exact subsection identity.
+- `getArchimate4ImplementationStatus().appendixFAcronymsCoverage` reports
+  `appendixFAcronymsCoverage.expectedIds`,
+  `appendixFAcronymsCoverage.actualIds`,
+  `appendixFAcronymsCoverage.missingAppendixFAcronymIds`, and
+  `appendixFAcronymsCoverage.extraAppendixFAcronymIds` so the Appendix F acronym tokens remain
+  visible by exact identity without copying acronym expansions or Appendix F prose.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

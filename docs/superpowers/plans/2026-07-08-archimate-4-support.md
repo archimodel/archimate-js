@@ -117,6 +117,10 @@ silently.
 Appendix E version changes coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixEVersionChangesIds`, and `extraAppendixEVersionChangesIds` for the C260 Appendix E
 outline so version-change subsection headings cannot drift silently.
+Appendix F acronym coverage status reports `expectedIds`, `actualIds`,
+`missingAppendixFAcronymIds`, and `extraAppendixFAcronymIds` for the C260 Appendix F acronym-token
+list so acronym vocabulary cannot drift silently without copying acronym expansions or Appendix F
+prose.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

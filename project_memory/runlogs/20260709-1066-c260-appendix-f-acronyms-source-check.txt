@@ -1,0 +1,9 @@
+command=pdfplumber derived Appendix F acronym-token scan of local C260 PDF
+source=C:/Users/syska/Downloads/978940181474E.pdf
+source_boundary=derived acronym tokens only; no acronym expansions or Appendix F prose stored
+page_indexes=200,201,202
+expected_count=31
+actual_count=31
+missing=
+extra=
+acronym_tokens=ABB,ADM,AI,ASCII,B2B,BMM,BPMN,CEO,CFO,CIO,CMO,CRM,DR,ERD,GUI,HTML,IaaS,ICT,IoT,LAN,JEE,PDF,PDR,RTF,SBB,SWOT,UML,VPN,WAN,WLAN,XML
