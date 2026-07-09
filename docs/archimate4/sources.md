@@ -258,7 +258,7 @@
   `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
   embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
-  references, present `IdObject.id` string values, view node element references, view element `label` string values and geometry, view connection relationship references, endpoint
+  references, relationship option field types, present `IdObject.id` string values, view node element references, view element `label` string values and geometry, view connection relationship references, endpoint
   references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color`
   values, viewpoint
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
@@ -886,7 +886,7 @@
   endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values,
   viewpoint purpose/content and allowed element/relationship type definitions, model-defined and
   profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
-  and `modelingNotes` structure, present IdObject id string values, ViewElement label string values, `BaseObject` name/documentation string fields, reusable
+  and `modelingNotes` structure, relationship option field types, present IdObject id string values, ViewElement label string values, `BaseObject` name/documentation string fields, reusable
   `PropertyDefinition` structure, property-definition references, present property value string
   structure, and profile attribute properties with typed values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active

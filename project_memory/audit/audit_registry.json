@@ -21,7 +21,8 @@
       "artifacts": [
         "project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt",
         "project_memory/runlogs/20260710-0241-view-element-label-test-language.txt",
-        "project_memory/runlogs/20260710-0255-id-object-id-test-language.txt"
+        "project_memory/runlogs/20260710-0255-id-object-id-test-language.txt",
+        "project_memory/runlogs/20260710-0269-relationship-option-fields-test-language.txt"
       ]
     },
     {
@@ -34,7 +35,8 @@
       "artifacts": [
         "project_memory/runlogs/20260710-0228-base-object-fields-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0243-view-element-label-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0257-id-object-id-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0257-id-object-id-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0271-relationship-option-fields-c260-coverage-audit.json"
       ]
     },
     {
@@ -110,7 +112,7 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, present IdObject id string values, view viewpoint references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization identifier references, property definition structure and references, present property value string structure, viewpoint definitions, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, relationship option field types, multiplicity, junction consistency, present IdObject id string values, view viewpoint references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization identifier references, property definition structure and references, present property value string structure, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
@@ -145,7 +147,14 @@
         "project_memory/runlogs/20260710-0252-id-object-id-model-validation-test.txt",
         "project_memory/runlogs/20260710-0254-id-object-id-status-snapshot.json",
         "project_memory/runlogs/20260710-0255-id-object-id-test-language.txt",
-        "project_memory/runlogs/20260710-0256-id-object-id-completion-audit.json"
+        "project_memory/runlogs/20260710-0256-id-object-id-completion-audit.json",
+        "project_memory/runlogs/20260710-0263-relationship-option-fields-red-test.txt",
+        "project_memory/runlogs/20260710-0264-relationship-option-fields-focused-model-test.txt",
+        "project_memory/runlogs/20260710-0265-relationship-option-fields-status-test.txt",
+        "project_memory/runlogs/20260710-0266-relationship-option-fields-model-validation-test.txt",
+        "project_memory/runlogs/20260710-0268-relationship-option-fields-status-snapshot.json",
+        "project_memory/runlogs/20260710-0269-relationship-option-fields-test-language.txt",
+        "project_memory/runlogs/20260710-0270-relationship-option-fields-completion-audit.json"
       ]
     },
     {
@@ -157,7 +166,8 @@
       "expect": { "exit_code": 0 },
       "artifacts": [
         "project_memory/runlogs/20260710-0239-view-element-label-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0253-id-object-id-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0253-id-object-id-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0267-relationship-option-fields-eslint-changed.txt"
       ]
     },
     {

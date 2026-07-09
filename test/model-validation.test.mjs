@@ -272,6 +272,52 @@ test('archimate 4 model validation can call an active relationship validator', (
   assert.equal(findDiagnostic(result, 'disallowed-relationship').relationshipId, 'relationship-1');
 });
 
+test('archimate 4 model validation reports invalid relationship option fields', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [ actor, role ]
+    },
+    relationshipsNode: {
+      relationships: [
+        {
+          id: 'access-1',
+          type: 'Access',
+          source: actor,
+          target: role,
+          accessType: false
+        },
+        {
+          id: 'association-1',
+          type: 'Association',
+          source: actor,
+          target: role,
+          isDirected: 'true'
+        },
+        {
+          id: 'influence-1',
+          type: 'Influence',
+          source: actor,
+          target: role,
+          modifier: 7
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-relationship-access-type'), true);
+  assert.equal(codes.includes('invalid-relationship-is-directed'), true);
+  assert.equal(codes.includes('invalid-relationship-modifier'), true);
+  assert.equal(findDiagnostic(result, 'invalid-relationship-access-type').relationshipId, 'access-1');
+  assert.equal(findDiagnostic(result, 'invalid-relationship-is-directed').field, 'isDirected');
+  assert.equal(findDiagnostic(result, 'invalid-relationship-modifier').valueType, 'number');
+});
+
 test('archimate 4 model validation rejects invalid or junction multiplicity', () => {
   const junction = { id: 'junction-1', type: 'OrJunction' };
   const role = { id: 'role-1', type: 'Role' };
