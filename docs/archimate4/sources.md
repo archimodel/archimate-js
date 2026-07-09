@@ -616,6 +616,12 @@
   `3.1/archimate3_Diagram.xsd`. Tested 4.0 directory and Model/Diagram/View XSD candidate URLs
   returned 404. `archimate4-profile.json` records this check in `sourceCoverage.meff4Xsd` so host
   tooling can audit the exact evidence behind the experimental MEFF 4 status.
+- Refreshed again on 2026-07-09 in
+  `project_memory/runlogs/20260709-731-meff4-xsd-latest-recheck.txt`; the official directory returned
+  200 and still listed only the 3.1 Model, View, and Diagram XSD links. Tested 4.0 directory,
+  Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
+  returned 404. `archimate4-profile.json` now records this latest check in
+  `sourceCoverage.meff4Xsd`.
 
 ## ArchiMate 3.1 XSD Verification
 

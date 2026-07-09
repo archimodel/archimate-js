@@ -239,8 +239,8 @@
         "localSourcePresent": false,
         "required": true,
         "externalBlocker": "officialMeff4Xsd",
-        "lastCheckedAt": "2026-07-09T07:53:55+09:00",
-        "lastRunlogPath": "project_memory/runlogs/20260709-606-meff4-xsd-current-recheck.txt",
+        "lastCheckedAt": "2026-07-09T09:28:39+09:00",
+        "lastRunlogPath": "project_memory/runlogs/20260709-731-meff4-xsd-latest-recheck.txt",
         "directoryStatusCode": 200,
         "official4XsdDiscovered": false,
         "discoveredXsdLinks": [
@@ -252,7 +252,9 @@
           "https://www.opengroup.org/xsd/archimate/4.0/": 404,
           "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
           "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
-          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404
         }
       },
       "appendixAArtworkRights": {

@@ -632,7 +632,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
-  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-606-meff4-xsd-current-recheck.txt');
+  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-731-meff4-xsd-latest-recheck.txt');
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
     '3.1/archimate3_Model.xsd',
     '3.1/archimate3_View.xsd',
@@ -642,6 +642,13 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(
     sourceCoverage.meff4Xsd.candidateStatusCodes[
       'https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd'
+    ],
+    404
+  );
+  assert.equal(sourceCoverage.meff4Xsd.candidateStatusCodes['https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd'], 404);
+  assert.equal(
+    sourceCoverage.meff4Xsd.candidateStatusCodes[
+      'https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd'
     ],
     404
   );
@@ -658,7 +665,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(sources, /sourceCoverage\.actualSourceIds/);
   assert.match(sources, /20260709-626-w262-local-source-search/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
-  assert.match(sources, /20260709-606-meff4-xsd-current-recheck/);
+  assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 

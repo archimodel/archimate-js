@@ -1,0 +1,14 @@
+timestamp=2026-07-09T09:28:39+09:00
+directory=https://www.opengroup.org/xsd/archimate/
+directory_status=200
+discovered_xsd_or_4_links_count=3
+discovered=3.1/archimate3_Diagram.xsd
+discovered=3.1/archimate3_Model.xsd
+discovered=3.1/archimate3_View.xsd
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd
+candidate_status=404 https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd
+official4_xsd_discovered=false
