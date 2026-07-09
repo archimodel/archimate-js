@@ -1,0 +1,38 @@
+url=https://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd
+status=200
+length=23286
+--- local archimate4 descriptor waypoint geometry ---
+Connection: relationshipRef:Relationship@, source:ViewElement@, target:ViewElement@, waypointsNode:Waypoints
+Waypoints: waypoints:Waypoint[]
+Waypoint: original:Point
+Point: x:Integer@, y:Integer@
+--- official 3.1 diagram waypoint/position snippets ---
+--- lines 219-224 ---
+219:
+220:     <xs:attributeGroup name="LocationGroup">
+221:         <xs:attribute name="x" type="xs:nonNegativeInteger" use="required">
+222:             <xs:annotation>
+223:                 <xs:documentation>
+224:                     The x (towards the right, associated with width) attribute from the Top,Left (i.e. 0,0) corner of the diagram to the
+--- lines 227-232 ---
+227:             </xs:annotation>
+228:         </xs:attribute>
+229:         <xs:attribute name="y" type="xs:nonNegativeInteger" use="required">
+230:             <xs:annotation>
+231:                 <xs:documentation>
+232:                     The y (towards the bottom, associated with height) attribute from the Top,Left (i.e. 0,0) corner of the diagram to the
+--- lines 372-377 ---
+372:                 <xs:sequence>
+373:                     <xs:element name="sourceAttachment" type="LocationType" minOccurs="0" maxOccurs="1" />
+374:                     <xs:element name="bendpoint" type="LocationType" minOccurs="0" maxOccurs="unbounded" />
+375:                     <xs:element name="targetAttachment" type="LocationType" minOccurs="0" maxOccurs="1" />
+376:                 </xs:sequence>
+377:
+--- lines 409-414 ---
+409:
+410:                     <xs:element name="sourceAttachment" type="LocationType" minOccurs="0" maxOccurs="1" />
+411:                     <xs:element name="bendpoint" type="LocationType" minOccurs="0" maxOccurs="unbounded" />
+412:                     <xs:element name="targetAttachment" type="LocationType" minOccurs="0" maxOccurs="1" />
+413:                 </xs:sequence>
+414:                 <xs:attributeGroup ref="IdentifierGroup" />
+exitCode=0

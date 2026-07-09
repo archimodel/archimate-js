@@ -1,0 +1,7 @@
+parsed project_memory/state/aria_state.json
+parsed project_memory/audit/audit_registry.json
+parsed lib/metamodel/languages/archimate4-profile.json
+parsed project_memory/runlogs/20260710-0102-status-completion-api-scan.json
+parsed project_memory/runlogs/20260710-0110-archimate4-model-validation-view-connection-waypoint-geometry-completion-audit.json
+parsed project_memory/runlogs/20260710-0111-archimate4-model-validation-view-connection-waypoint-geometry-c260-coverage-audit.json
+exitCode=0

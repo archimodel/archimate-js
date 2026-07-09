@@ -1,0 +1,36 @@
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (1.7043ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.2045ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (1.0597ms)
+✔ archimate 4 model validation can call an active relationship validator (0.262ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.5211ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.2658ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.8268ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.291ms)
+✔ archimate 4 model validation reports invalid viewpoint modeling notes (0.2354ms)
+✔ archimate 4 model validation reports invalid view element references (0.9781ms)
+✔ archimate 4 model validation reports invalid view connection endpoint references (0.2855ms)
+✔ archimate 4 model validation reports view connection endpoint concept mismatches (0.2217ms)
+✔ archimate 4 model validation accepts valid view element references (0.1957ms)
+✔ archimate 4 model validation reports invalid view node geometry (0.2386ms)
+✔ archimate 4 model validation reports invalid view connection waypoint geometry (0.3823ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.4609ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.2467ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (1.2146ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.1239ms)
+✔ archimate 4 model validation reports invalid organization identifier references (0.2791ms)
+✔ archimate 4 model validation accepts organization references to model concepts (0.1403ms)
+✔ archimate 4 model validation reports invalid property definition lists (0.0972ms)
+✔ archimate 4 model validation reports invalid property definition entries (0.18ms)
+✔ archimate 4 model validation reports invalid property definition references (1.2323ms)
+✔ archimate 4 model validation accepts property definition references by id (0.6571ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (1.3745ms)
+✔ archimate 4 model validation is exported from the package root (10.403ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 149.0059
+exitCode=0

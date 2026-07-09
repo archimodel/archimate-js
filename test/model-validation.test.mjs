@@ -655,6 +655,72 @@ test('archimate 4 model validation reports invalid view node geometry', () => {
   assert.equal(findDiagnostic(result, 'invalid-view-node-width').value, 0);
 });
 
+test('archimate 4 model validation reports invalid view connection waypoint geometry', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1'
+              },
+              {
+                id: 'node-role',
+                elementRef: 'role-1'
+              },
+              {
+                id: 'connection-1',
+                relationshipRef: 'relationship-1',
+                source: 'node-actor',
+                target: 'node-role',
+                waypointsNode: {
+                  waypoints: [
+                    { x: -1, y: 'not-a-number' },
+                    { x: 10.5, y: 20 },
+                    { x: 10, y: 20, original: { x: '', y: -4 } }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const codes = diagnosticCodes(result);
+
+  assert.equal(result.valid, false);
+  assert.equal(codes.includes('invalid-view-connection-waypoint-x'), true);
+  assert.equal(codes.includes('invalid-view-connection-waypoint-y'), true);
+  assert.equal(findDiagnostic(result, 'invalid-view-connection-waypoint-x').viewElementId, 'connection-1');
+  assert.equal(findDiagnostic(result, 'invalid-view-connection-waypoint-x').waypointIndex, 0);
+  assert.equal(findDiagnostic(result, 'invalid-view-connection-waypoint-y').value, 'not-a-number');
+});
+
 test('archimate 4 model validation reports view content outside viewpoint allowed types', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };
