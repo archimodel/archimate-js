@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 228,
-  "stage": "demo_relationship_profile_verified",
+  "loop_id": 229,
+  "stage": "demo_example_viewpoint_catalog_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 267,
+    "diff_size": 222,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -265,7 +265,8 @@
       "viewpoint_container_structure_guard",
       "viewpoint_token_field_structure_guard",
       "status_completion_scan_refresh_guard",
-      "demo_relationship_profile_panel"
+      "demo_relationship_profile_panel",
+      "demo_example_viewpoint_catalog_panel"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -559,12 +560,13 @@
       "check_viewpoint_container_structure",
       "check_viewpoint_token_field_structure",
       "check_status_completion_scan_refresh",
-      "check_demo_relationship_profile_panel"
+      "check_demo_relationship_profile_panel",
+      "check_demo_example_viewpoint_catalog"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260710-0468-demo-relationship-profile-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260710-demo-relationship-profile-audit.md",
+    "runlog_path": "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260710-demo-example-viewpoint-catalog-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -814,7 +816,7 @@
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-10T05:59:00+09:00"
+    "updated_at": "2026-07-10T06:26:00+09:00"
   },
   "implemented_items": [
     "validateArchimate4Model() and validateArchimateModel() now validate View Node elementRef values against model-defined elements and connectors, reporting malformed, unknown, relationship-targeted, or unsupported references.",
@@ -867,6 +869,8 @@
     "getArchimate4ImplementationStatus() now accepts implementationCompletionRunlogPath for reproducible scan generation while the default status points at project_memory/runlogs/20260710-0450-status-completion-api-scan.json.",
     "The Editor demo now exposes an Appendix B relationship profile panel in ArchiMate 4 mode, accepting host-supplied JSON or matrix text and requiring complete source-target cell coverage before loading.",
     "The demo relationship profile panel reports active profile source, target-cell coverage, and missing source/cell counts separately from the conformance report so local UI support does not imply the repository bundles the normative Appendix B matrix.",
-    "The Editor demo disables the Appendix B relationship profile import controls in ArchiMate 3.x mode while preserving the 3.x compatibility boundary."
+    "The Editor demo disables the Appendix B relationship profile import controls in ArchiMate 3.x mode while preserving the 3.x compatibility boundary.",
+    "The bundled Viewer and Editor demos now render the Appendix C example viewpoint catalog in ArchiMate 4 mode, showing its informative status, four groups, and 25 viewpoint headings.",
+    "The Appendix C example viewpoint demo panel is marked not applicable in ArchiMate 3.x mode and does not bundle full viewpoint definitions, allowed-type filters, or normative relationship constraints."
   ]
 }

@@ -1,0 +1,2 @@
+project_memory/state/aria_state.json: ok
+project_memory/audit/audit_registry.json: ok

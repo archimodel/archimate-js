@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=4.0",
+      "state": "Informative",
+      "groups": "4 groups",
+      "count": "25 viewpoints",
+      "list": "Basic Viewpoints in the ArchiMate LanguageOrganization Viewpoint, Application Structure Viewpoint, Information Structure Viewpoint, Technology Viewpoint, Layered Viewpoint, Physical Viewpoint, Product Viewpoint, Application Usage Viewpoint, Technology Usage Viewpoint, Process Cooperation Viewpoint, Application Cooperation Viewpoint, Service Realization Viewpoint, Implementation and Deployment ViewpointMotivation ViewpointsStakeholder Viewpoint, Goal Realization Viewpoint, Requirements Realization Viewpoint, Motivation ViewpointStrategy ViewpointsStrategy Viewpoint, Capability Map Viewpoint, Value Stream Viewpoint, Outcome Realization Viewpoint, Resource Map ViewpointImplementation and Migration ViewpointsProject Viewpoint, Migration Viewpoint, Implementation and Migration Viewpoint",
+      "conformance": "Blocked"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/viewer.html?version=4.0",
+      "state": "Informative",
+      "groups": "4 groups",
+      "count": "25 viewpoints",
+      "list": "Basic Viewpoints in the ArchiMate LanguageOrganization Viewpoint, Application Structure Viewpoint, Information Structure Viewpoint, Technology Viewpoint, Layered Viewpoint, Physical Viewpoint, Product Viewpoint, Application Usage Viewpoint, Technology Usage Viewpoint, Process Cooperation Viewpoint, Application Cooperation Viewpoint, Service Realization Viewpoint, Implementation and Deployment ViewpointMotivation ViewpointsStakeholder Viewpoint, Goal Realization Viewpoint, Requirements Realization Viewpoint, Motivation ViewpointStrategy ViewpointsStrategy Viewpoint, Capability Map Viewpoint, Value Stream Viewpoint, Outcome Realization Viewpoint, Resource Map ViewpointImplementation and Migration ViewpointsProject Viewpoint, Migration Viewpoint, Implementation and Migration Viewpoint",
+      "conformance": "Blocked"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=3.2",
+      "state": "Not applicable",
+      "groups": "none",
+      "count": "none",
+      "list": "",
+      "conformance": "Not applicable"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/viewer.html?version=3.2",
+      "state": "Not applicable",
+      "groups": "none",
+      "count": "none",
+      "list": "",
+      "conformance": "Not applicable"
+    }
+  ]
+}

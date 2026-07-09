@@ -1,5 +1,6 @@
 import {
   getArchimate4ConformanceReport,
+  getArchimate4ExampleViewpointCatalog,
   getLanguageProfile,
   normalizeArchimateVersion
 } from '../../lib/metamodel/languages';
@@ -87,6 +88,7 @@ export function applyDemoProfileToDocument(profile, mode) {
   updateVersionLink('#version-3-link', profile.version === DEMO_ARCHIMATE3_VERSION);
   updateVersionLink('#version-4-link', profile.version === DEMO_ARCHIMATE4_VERSION);
   renderConformanceReport(profile);
+  renderExampleViewpointCatalog(profile);
   renderRelationshipProfileStatus(profile);
 }
 
@@ -243,6 +245,48 @@ function renderConformanceReport(profile) {
     companionGapCount ? formatSourceList(report.missingCompanionSources) : 'none'
   );
   renderList(actions, report.requiredBeforeClaim);
+}
+
+function renderExampleViewpointCatalog(profile) {
+  const list = document.querySelector('#example-viewpoint-list');
+
+  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {
+    setText('#example-viewpoint-state', 'Not applicable');
+    setText('#example-viewpoint-groups', 'none');
+    setText('#example-viewpoint-count', 'none');
+    renderList(list, []);
+    return;
+  }
+
+  const catalog = getArchimate4ExampleViewpointCatalog();
+
+  setText('#example-viewpoint-state', 'Informative');
+  setText('#example-viewpoint-groups', catalog.groupCount + ' groups');
+  setText('#example-viewpoint-count', catalog.viewpointCount + ' viewpoints');
+  renderExampleViewpointList(list, catalog.groups);
+}
+
+function renderExampleViewpointList(node, groups) {
+  if (!node) {
+    return;
+  }
+
+  node.innerHTML = '';
+
+  groups.forEach(function(group) {
+    const li = document.createElement('li');
+    const groupHeading = document.createElement('strong');
+    const viewpointSummary = document.createElement('span');
+
+    groupHeading.textContent = group.heading;
+    viewpointSummary.textContent = group.viewpoints.map(function(viewpoint) {
+      return viewpoint.heading;
+    }).join(', ');
+
+    li.appendChild(groupHeading);
+    li.appendChild(viewpointSummary);
+    node.appendChild(li);
+  });
 }
 
 function renderList(node, items) {

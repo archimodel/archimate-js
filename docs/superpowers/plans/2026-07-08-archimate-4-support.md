@@ -51,8 +51,9 @@ Implemented and verified on the current branch:
   descriptors, Appendix C example viewpoint informative catalog, host-supplied Appendix B
   relationship-profile import in the Editor demo, and local Appendix A-derived pictogram paths are
   implemented for ArchiMate 4 mode. The Viewer and Editor demos also surface the host-facing
-  conformance report so official blockers and companion gaps are visible in 4.0 mode, while 3.x mode
-  stays marked as not applicable. The Editor demo profile import path reports source/cell coverage
+  conformance report and the Appendix C example viewpoint catalog so official blockers, companion
+  gaps, and informative example-viewpoint coverage are visible in 4.0 mode, while 3.x mode stays
+  marked as not applicable. The Editor demo profile import path reports source/cell coverage
   separately from the conformance panel and does not embed the normative Appendix B matrix.
 - M5 Release Readiness: README, CHANGELOG, source ledger, implementation specification, runlogs, and
   audit reports document the opt-in status, compatibility behavior, verification commands, and

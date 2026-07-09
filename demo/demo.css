@@ -119,6 +119,12 @@ body {
   border-top: 1px solid #d8dde3;
 }
 
+.demo-example-viewpoints {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #d8dde3;
+}
+
 .demo-relationship-profile {
   margin-top: 18px;
   padding-top: 14px;
@@ -161,6 +167,32 @@ body {
 
 .demo-conformance-actions li + li {
   margin-top: 5px;
+}
+
+.demo-example-viewpoint-list {
+  display: grid;
+  gap: 8px;
+  max-height: 180px;
+  margin: 12px 0 0;
+  padding: 0;
+  overflow: auto;
+  font-size: 11px;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.demo-example-viewpoint-list li {
+  display: grid;
+  gap: 2px;
+}
+
+.demo-example-viewpoint-list strong {
+  font-size: 11px;
+}
+
+.demo-example-viewpoint-list span {
+  color: #5f6b7a;
+  overflow-wrap: anywhere;
 }
 
 .demo-canvas {

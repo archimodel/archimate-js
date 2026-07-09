@@ -48,7 +48,9 @@
         "project_memory/runlogs/20260710-0422-viewpoint-container-structure-test-language.txt",
         "project_memory/runlogs/20260710-0427-viewpoint-container-structure-final-test-language.txt",
         "project_memory/runlogs/20260710-0444-viewpoint-token-field-structure-test-language.txt",
-        "project_memory/runlogs/20260710-0455-status-completion-scan-refresh-test-language.txt"
+        "project_memory/runlogs/20260710-0455-status-completion-scan-refresh-test-language.txt",
+        "project_memory/runlogs/20260710-0484-demo-example-viewpoint-test-language.txt",
+        "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt"
       ]
     },
     {
@@ -83,7 +85,9 @@
         "project_memory/runlogs/20260710-0424-viewpoint-container-structure-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0429-viewpoint-container-structure-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0446-viewpoint-token-field-structure-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0453-status-completion-scan-refresh-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0453-status-completion-scan-refresh-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0486-demo-example-viewpoint-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json"
       ]
     },
     {
@@ -178,6 +182,35 @@
         "project_memory/runlogs/20260710-0199-demo-conformance-panel-browser-smoke.txt",
         "project_memory/runlogs/20260710-0202-demo-conformance-panel-final-focused-test.txt",
         "project_memory/runlogs/20260710-0203-demo-conformance-panel-final-test-language.txt"
+      ]
+    },
+    {
+      "id": "audit.archimate4.demo_example_viewpoint_catalog",
+      "description": "Viewer and Editor demos render the informative Appendix C example viewpoint catalog in ArchiMate 4 mode and keep it not applicable in ArchiMate 3.x mode",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
+      "severity": "blocker",
+      "command": "node --test test/demo-example-viewpoint-catalog.test.mjs",
+      "expect": {
+        "exit_code": 0
+      },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0478-demo-example-viewpoint-catalog-red-test.txt",
+        "project_memory/runlogs/20260710-0479-demo-example-viewpoint-catalog-focused-test.txt",
+        "project_memory/runlogs/20260710-0480-demo-example-viewpoint-focused-tests.txt",
+        "project_memory/runlogs/20260710-0481-demo-example-viewpoint-demo-build.txt",
+        "project_memory/runlogs/20260710-0482-demo-example-viewpoint-browser-smoke.json",
+        "project_memory/runlogs/20260710-0483-demo-example-viewpoint-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0484-demo-example-viewpoint-test-language.txt",
+        "project_memory/runlogs/20260710-0485-demo-example-viewpoint-completion-audit.json",
+        "project_memory/runlogs/20260710-0486-demo-example-viewpoint-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt",
+        "project_memory/runlogs/20260710-0490-demo-example-viewpoint-final-focused-tests.txt",
+        "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
+        "project_memory/runlogs/20260710-0492-demo-example-viewpoint-final-completion-audit.json",
+        "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json"
       ]
     },
     {
@@ -408,7 +441,9 @@
         "project_memory/runlogs/20260710-0401-property-container-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0420-viewpoint-container-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0441-viewpoint-token-field-structure-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0454-status-completion-scan-refresh-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0454-status-completion-scan-refresh-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0483-demo-example-viewpoint-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt"
       ]
     },
     {

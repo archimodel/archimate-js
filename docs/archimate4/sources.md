@@ -182,6 +182,10 @@
 - `getArchimate4ExampleViewpointCatalog()` exposes those Appendix C outline headings as an
   informative-reference catalog grouped by C260 Appendix C subsection. It intentionally does not
   bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.
+- The Viewer and Editor demos render that catalog in ArchiMate 4 mode as a 4-group / 25-viewpoint
+  informative reference panel and mark it not applicable in ArchiMate 3.x mode. This exposes the
+  official example-viewpoint surface without converting Appendix C headings into bundled normative
+  viewpoint definitions.
 - `getArchimate4ImplementationStatus().appendixDStandardsGuidanceCoverage` reports
   `appendixDStandardsGuidanceCoverage.expectedIds`,
   `appendixDStandardsGuidanceCoverage.actualIds`,
@@ -1035,6 +1039,9 @@
   `project_memory/runlogs/20260710-0199-demo-conformance-panel-browser-smoke.txt`; it verifies 4.0
   Viewer/Editor pages show the blocked official conformance state and 3.x pages show the report as
   not applicable.
+- The same demo pages also render the Appendix C example viewpoint catalog through
+  `getArchimate4ExampleViewpointCatalog()` in ArchiMate 4 mode and mark it not applicable in
+  ArchiMate 3.x mode.
 
 ## Verification Notes
 

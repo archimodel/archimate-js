@@ -51,6 +51,10 @@ The status must also expose exact requirement identity fields (`expectedIds`, `a
 The optional Appendix C example viewpoints must remain visible as
 `conformanceRequirements.may.notBundled` without entering `remainingGaps`,
 `conformanceReadiness.blockers`, or required source coverage.
+The bundled Viewer and Editor demos must render the same Appendix C example viewpoint catalog in
+ArchiMate 4 mode as an informative reference and must mark it not applicable in ArchiMate 3.x mode.
+The demo must not imply that full viewpoint definitions, allowed-element filters, or normative
+relationship constraints are bundled.
 
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
 local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B
@@ -932,6 +936,10 @@ Implemented demo notation guard:
 - `assets/palette-icons.css` maps the ArchiMate 4 Common Domain palette entries to dedicated
   Common-colored `common_*.svg` assets. The test suite prevents these entries from regressing to
   old Business or Technology colored palette assets.
+- The same demo pages render the Appendix C example viewpoint catalog from
+  `getArchimate4ExampleViewpointCatalog()` in ArchiMate 4 mode, showing the four groups and 25
+  viewpoint headings as an informative reference while keeping the panel not applicable in
+  ArchiMate 3.x mode.
 
 ## Source Trace
 
