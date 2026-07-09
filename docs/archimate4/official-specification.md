@@ -105,6 +105,12 @@ It must expose exact C260 Chapter 7 Strategy Domain outline fields
 `strategyDomainCoverage.extraStrategyDomainIds`) so the implementation can track Strategy metamodel,
 structure elements, behavior elements, examples, summaries, and other-domain relationship coverage
 by subsection and element-heading identity.
+It must expose exact C260 Chapter 8 Business Domain outline fields
+(`businessDomainCoverage.expectedIds`, `businessDomainCoverage.actualIds`,
+`businessDomainCoverage.missingBusinessDomainIds`, and
+`businessDomainCoverage.extraBusinessDomainIds`) so the implementation can track Business structure
+metamodel, active structure, passive structure, composite elements, examples, and summaries by
+subsection and element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

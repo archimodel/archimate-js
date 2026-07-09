@@ -556,6 +556,39 @@
       { "id": "summary-of-strategy-elements", "c260Section": "7.5", "heading": "Summary of Strategy Elements", "status": "tracked" },
       { "id": "relationships-with-other-domains", "c260Section": "7.6", "heading": "Relationships with Other Domains", "status": "tracked" }
     ],
+    "businessDomainCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 12,
+      "expectedIds": [
+        "business-structure-metamodel",
+        "active-structure-elements",
+        "business-actor",
+        "business-interface",
+        "active-structure-example",
+        "passive-structure-elements",
+        "business-object",
+        "passive-structure-example",
+        "composite-elements",
+        "product",
+        "product-example",
+        "summary-of-business-domain-elements"
+      ]
+    },
+    "businessDomainCoverage": [
+      { "id": "business-structure-metamodel", "c260Section": "8.1", "heading": "Business Structure Metamodel", "status": "tracked" },
+      { "id": "active-structure-elements", "c260Section": "8.2", "heading": "Active Structure Elements", "status": "tracked" },
+      { "id": "business-actor", "c260Section": "8.2.1", "heading": "Business Actor", "status": "tracked" },
+      { "id": "business-interface", "c260Section": "8.2.2", "heading": "Business Interface", "status": "tracked" },
+      { "id": "active-structure-example", "c260Section": "8.2.3", "heading": "Example", "status": "tracked" },
+      { "id": "passive-structure-elements", "c260Section": "8.3", "heading": "Passive Structure Elements", "status": "tracked" },
+      { "id": "business-object", "c260Section": "8.3.1", "heading": "Business Object", "status": "tracked" },
+      { "id": "passive-structure-example", "c260Section": "8.3.2", "heading": "Example", "status": "tracked" },
+      { "id": "composite-elements", "c260Section": "8.4", "heading": "Composite Elements", "status": "tracked" },
+      { "id": "product", "c260Section": "8.4.1", "heading": "Product", "status": "tracked" },
+      { "id": "product-example", "c260Section": "8.4.2", "heading": "Example", "status": "tracked" },
+      { "id": "summary-of-business-domain-elements", "c260Section": "8.5", "heading": "Summary of Business Domain Elements", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

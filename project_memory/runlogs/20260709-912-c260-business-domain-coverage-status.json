@@ -1,0 +1,27 @@
+(node:69092) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 12,
+  "actualCount": 12,
+  "expectedIds": [
+    "business-structure-metamodel",
+    "active-structure-elements",
+    "business-actor",
+    "business-interface",
+    "active-structure-example",
+    "passive-structure-elements",
+    "business-object",
+    "passive-structure-example",
+    "composite-elements",
+    "product",
+    "product-example",
+    "summary-of-business-domain-elements"
+  ],
+  "missingBusinessDomainIds": [],
+  "extraBusinessDomainIds": [],
+  "complete": true
+}
+EXIT_CODE=0

@@ -851,6 +851,49 @@ test('archimate 4 implementation status exposes C260 strategy domain coverage id
   assert.match(plan, /Strategy domain coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 business domain coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const businessDomainCatalog = profile.conformance.businessDomainCoverageCatalog;
+  const businessDomainCoverage = profile.conformance.businessDomainCoverage;
+  const expectedBusinessDomainIds = [
+    'business-structure-metamodel',
+    'active-structure-elements',
+    'business-actor',
+    'business-interface',
+    'active-structure-example',
+    'passive-structure-elements',
+    'business-object',
+    'passive-structure-example',
+    'composite-elements',
+    'product',
+    'product-example',
+    'summary-of-business-domain-elements'
+  ];
+
+  assert.equal(businessDomainCatalog.status, 'c260-outline-derived');
+  assert.equal(businessDomainCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(businessDomainCatalog.expectedCount, expectedBusinessDomainIds.length);
+  assert.deepEqual(businessDomainCatalog.expectedIds, expectedBusinessDomainIds);
+  assert.deepEqual(businessDomainCoverage.map((businessDomainItem) => businessDomainItem.id), expectedBusinessDomainIds);
+  assert.equal(
+    businessDomainCoverage.every((businessDomainItem) => businessDomainItem.c260Section && businessDomainItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeBusinessDomainCoverage/);
+  assert.match(languageIndex, /businessDomainCoverage: businessDomainCoverage/);
+  assert.match(languageIndex, /missingBusinessDomainIds/);
+  assert.match(readme, /businessDomainCoverage\.expectedIds/);
+  assert.match(sources, /businessDomainCoverage\.actualIds/);
+  assert.match(officialSpec, /businessDomainCoverage\.missingBusinessDomainIds/);
+  assert.match(plan, /Business domain coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
