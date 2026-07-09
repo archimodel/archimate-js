@@ -1008,6 +1008,9 @@
   is combined with other font style tokens.
 - `project_memory/runlogs/20260710-0123-c260-color-notation-source-check.json` records sanitized C260
   page/heading evidence for color and notational-cue coverage without storing specification prose.
+- `project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json` records
+  the flattened `getArchimate4ConformanceReport()` output used to verify that official blockers and
+  the W262 companion gap remain visible to host tooling.
 
 ## Verification Notes
 

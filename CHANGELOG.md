@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `DOCS`: added sanitized local ArchiMate PDF inventory evidence for C260 and W262 source classification.
 * `DOCS`: added sanitized ArchiMate 4 license-boundary evidence for Appendix A/B source blockers.
 * `CORE`: exposed the ArchiMate 4 implementation completion scan through `getArchimate4ImplementationStatus()`.
+* `CORE`: exposed `getArchimate4ConformanceReport()` so host tooling can display official-conformance blockers, required-before-claim actions, and companion gaps without misreading local implementation coverage as an official claim.
 * `DOCS`: refreshed the ArchiMate 4 implementation-status completion scan evidence.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 * `CORE`: linked C260 section coverage entries to implementation status API keys so chapter and appendix coverage cannot drift from exposed status summaries.

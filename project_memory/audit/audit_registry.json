@@ -56,6 +56,18 @@
       ]
     },
     {
+      "id": "audit.archimate4.conformance_report",
+      "description": "ArchiMate 4 host-facing conformance report preserves official blockers, missing required sources, required-before-claim actions, and companion gaps from the implementation status",
+      "when": ["post_change", "pre_commit"],
+      "severity": "blocker",
+      "command": "node --test --test-name-pattern \"conformance report\" test/language-profile.test.mjs",
+      "expect": { "exit_code": 0 },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0161-archimate4-conformance-report-focused-test.txt",
+        "project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json"
+      ]
+    },
+    {
       "id": "audit.archimate4.model_validation",
       "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, organization identifier references, property definition structure and references, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],

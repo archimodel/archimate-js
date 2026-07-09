@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
 import {
   createLanguageProfile,
+  getArchimate4ConformanceReport,
   getArchimate4ExampleViewpointCatalog,
   getArchimate4ImplementationStatus,
   getProfileAttributesForConcept
@@ -972,6 +973,7 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.deepEqual(profile.conformance.externalBlockerCatalog.expectedIds, expectedExternalBlockerIds);
 
   assert.match(languageIndex, /export function getArchimate4ImplementationStatus/);
+  assert.match(languageIndex, /export function getArchimate4ConformanceReport/);
   assert.match(languageIndex, /function summarizeElementCatalog/);
   assert.match(languageIndex, /function summarizeRelationshipConnectorCatalog/);
   assert.match(languageIndex, /relationshipConnectors: summarizeRelationshipConnectorCatalog/);
@@ -987,10 +989,12 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(languageIndex, /externalBlockers: externalBlockerCatalog\.actualIds/);
   assert.doesNotMatch(languageIndex, /var externalBlockers = \[/);
   assert.match(entrypoint, /getArchimate4ImplementationStatus/);
+  assert.match(entrypoint, /getArchimate4ConformanceReport/);
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
   assert.match(readme, /elementCatalog\.(expectedTypes|missingTypes|extraTypes)/);
   assert.match(readme, /relationshipConnectors\.(expectedTypes|missingTypes|extraTypes)/);
   assert.match(readme, /exchangeFormat\.internalRoundTripTested/);
+  assert.match(readme, /getArchimate4ConformanceReport\(\)/);
   assert.match(readme, /externalBlockerCatalog\.expectedIds/);
   assert.match(sources, /read\/write\/read coverage/);
   assert.match(sources, /externalBlockerCatalog\.actualIds/);
@@ -999,6 +1003,7 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
   assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
+  assert.match(officialSpec, /getArchimate4ConformanceReport\(\)/);
 });
 
 test('archimate 4 implementation status has no incomplete non-external summaries', () => {
@@ -1019,6 +1024,45 @@ test('archimate 4 implementation status has no incomplete non-external summaries
   assert.deepEqual(status.remainingGaps.unresolvedIds, expectedGapIds);
   assert.deepEqual(status.remainingGaps.missingIds, []);
   assert.deepEqual(status.remainingGaps.extraIds, []);
+});
+
+test('archimate 4 conformance report preserves official blockers and companion gaps', () => {
+  const report = getArchimate4ConformanceReport();
+  const expectedOfficialBlockerIds = [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ];
+
+  assert.equal(report.status, 'blocked');
+  assert.equal(report.officialConformanceClaimable, false);
+  assert.equal(report.externalBoundaryRetained, true);
+  assert.deepEqual(report.blockerIds, expectedOfficialBlockerIds);
+  assert.deepEqual(report.missingRequiredSources, [
+    'appendixBRelationshipMatrix',
+    'meff4Xsd',
+    'appendixAArtworkRights'
+  ]);
+  assert.deepEqual(report.requiredBeforeClaimBlockerIds, expectedOfficialBlockerIds);
+  assert.deepEqual(report.blockers.map((blocker) => blocker.id), expectedOfficialBlockerIds);
+  assert.deepEqual(report.blockers.map((blocker) => blocker.sourceId), report.missingRequiredSources);
+  assert.equal(report.blockers[0].status, 'external-profile-required');
+  assert.equal(report.blockers[0].requirementId, 'appendix-b-relationships');
+  assert.equal(report.blockers[0].missingRequiredSource, true);
+  assert.equal(report.blockers[0].requiredBeforeClaim, 'Load an official or redistributable Appendix B relationship profile');
+  assert.equal(report.blockers[1].status, 'external-source-required');
+  assert.equal(report.blockers[1].requiredBeforeClaim, 'Confirm the official MEFF 4.0 XSD namespace and serialization details');
+  assert.equal(report.blockers[2].status, 'external-rights-required');
+  assert.equal(report.blockers[2].requiredBeforeClaim, 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source');
+  assert.deepEqual(report.remainingGapIds, expectedOfficialBlockerIds.concat('w262CompanionPaper'));
+  assert.deepEqual(report.officialConformanceGapIds, expectedOfficialBlockerIds);
+  assert.deepEqual(report.companionGapIds, [ 'w262CompanionPaper' ]);
+  assert.deepEqual(report.missingCompanionSources, [ 'w262' ]);
+  assert.equal(report.companionGaps[0].sourceId, 'w262');
+  assert.equal(report.companionGaps[0].officialConformanceBlocker, false);
+  assert.equal(report.implementedShallCount, 3);
+  assert.equal(report.externalBlockedShallCount, 2);
+  assert.equal(report.statusRunlogPath, 'project_memory/runlogs/20260710-0127-status-completion-api-scan.json');
 });
 
 test('archimate 4 implementation status exposes model validation coverage', () => {

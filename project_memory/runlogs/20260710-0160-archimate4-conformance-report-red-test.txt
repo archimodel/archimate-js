@@ -1,0 +1,30 @@
+(node:52832) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+file:///D:/github/archimate-js/test/language-profile.test.mjs:8
+  getArchimate4ConformanceReport,
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module '../lib/metamodel/languages/index.js' does not provide an export named 'getArchimate4ConformanceReport'
+    at #asyncInstantiate (node:internal/modules/esm/module_job:302:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:405:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.12.0
+✖ test\language-profile.test.mjs (96.9659ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 106.466
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1:1
+✖ test\language-profile.test.mjs (96.9659ms)
+  'test failed'

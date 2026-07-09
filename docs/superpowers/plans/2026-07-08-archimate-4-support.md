@@ -80,6 +80,10 @@ modeling-note structure, organization identifier references, property definition
 references, and profile attribute property values.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.
+`getArchimate4ConformanceReport()` derives a flattened host-facing report from the same status
+boundary, preserving blocker ids, missing required sources, required-before-claim actions, and
+companion gaps so UI and audit tools do not need to reconstruct official conformance readiness
+manually.
 Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extraIds`, `statusKeyIds`,
 `missingRequirementReferenceIds`, `missingExternalBlockerReferenceIds`, and
 `missingStatusKeyReferenceIds` for the reviewed C260 chapter and appendix outline, including Chapter

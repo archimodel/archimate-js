@@ -20,6 +20,7 @@ export {
 
 export {
   createLanguageProfile,
+  getArchimate4ConformanceReport,
   getArchimate4ExampleViewpointCatalog,
   getArchimate4ImplementationStatus,
   getProfileAttributePropertyName,

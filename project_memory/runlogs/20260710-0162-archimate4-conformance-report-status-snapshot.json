@@ -1,0 +1,93 @@
+{
+  "standard": "ArchiMate 4 Specification C260",
+  "version": "4.0",
+  "status": "blocked",
+  "reason": "external-blockers-remain",
+  "officialConformanceClaimable": false,
+  "externalBoundaryRetained": true,
+  "blockerIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "blockers": [
+    {
+      "id": "officialAppendixBRelationshipMatrix",
+      "status": "external-profile-required",
+      "sourceId": "appendixBRelationshipMatrix",
+      "requirementId": "appendix-b-relationships",
+      "requiredBeforeClaim": "Load an official or redistributable Appendix B relationship profile",
+      "missingRequiredSource": true,
+      "sourceStatus": "external-profile-required",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json",
+      "officialConformanceBlocker": true
+    },
+    {
+      "id": "officialMeff4Xsd",
+      "status": "external-source-required",
+      "sourceId": "meff4Xsd",
+      "requiredBeforeClaim": "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+      "missingRequiredSource": true,
+      "sourceStatus": "external-source-required",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-1174-external-source-current-recheck.json",
+      "officialConformanceBlocker": true
+    },
+    {
+      "id": "exactAppendixAArtworkRights",
+      "status": "external-rights-required",
+      "sourceId": "appendixAArtworkRights",
+      "requirementId": "standard-iconography",
+      "requiredBeforeClaim": "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source",
+      "missingRequiredSource": true,
+      "sourceStatus": "external-rights-required",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json",
+      "officialConformanceBlocker": true
+    }
+  ],
+  "missingRequiredSources": [
+    "appendixBRelationshipMatrix",
+    "meff4Xsd",
+    "appendixAArtworkRights"
+  ],
+  "requiredBeforeClaim": [
+    "Load an official or redistributable Appendix B relationship profile",
+    "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+    "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
+  ],
+  "requiredBeforeClaimBlockerIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "companionGapIds": [
+    "w262CompanionPaper"
+  ],
+  "companionGaps": [
+    {
+      "id": "w262CompanionPaper",
+      "status": "external-download-required",
+      "sourceId": "w262",
+      "missingCompanionSource": true,
+      "sourceStatus": "external-download-required",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-1174-external-source-current-recheck.json",
+      "officialConformanceBlocker": false
+    }
+  ],
+  "missingCompanionSources": [
+    "w262"
+  ],
+  "remainingGapIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ],
+  "officialConformanceGapIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "implementedShallCount": 3,
+  "externalBlockedShallCount": 2,
+  "statusRunlogPath": "project_memory/runlogs/20260710-0127-status-completion-api-scan.json"
+}

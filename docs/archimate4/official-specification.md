@@ -69,6 +69,9 @@ It must expose exact remaining-gap identity fields (`remainingGaps.expectedIds`,
 `remainingGaps.actualIds`, `remainingGaps.missingIds`, and `remainingGaps.extraIds`) and alignment
 fields such as `missingOfficialConformanceGapIds` and `missingCompanionGapSourceIds`, so external
 conformance blockers and companion-source gaps cannot drift silently.
+`getArchimate4ConformanceReport()` must derive a flattened host-facing report from the same status
+object, preserving official blocker ids, missing required source ids, required-before-claim actions,
+remaining gap ids, and companion gaps without changing the official conformance claim boundary.
 It must expose exact C260 section coverage fields (`sectionCoverage.expectedIds`,
 `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
 `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,
