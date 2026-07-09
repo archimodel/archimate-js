@@ -1,0 +1,28 @@
+(node:94276) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/validation/archimate4-model.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (1.3525ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.1999ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (1.2414ms)
+✔ archimate 4 model validation can call an active relationship validator (0.3077ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.5562ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.235ms)
+✔ archimate 4 model validation reports invalid viewpoint definitions (0.7984ms)
+✔ archimate 4 model validation accepts valid viewpoint definitions (0.2447ms)
+✔ archimate 4 model validation reports invalid view element references (0.5103ms)
+✔ archimate 4 model validation accepts valid view element references (0.2869ms)
+✔ archimate 4 model validation reports view content outside viewpoint allowed types (0.4734ms)
+✔ archimate 4 model validation accepts view content allowed by its viewpoint (0.2207ms)
+✔ archimate 4 model validation applies profile viewpoints named by View.viewpoint (1.397ms)
+✔ archimate 4 model validation keeps unknown View.viewpoint names as metadata (0.1206ms)
+✔ archimate 4 model validation reports invalid profile attribute properties (1.3681ms)
+✔ archimate 4 model validation is exported from the package root (9.7383ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.2498

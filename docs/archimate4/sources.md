@@ -259,8 +259,9 @@
   `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
   embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
   references, view node element references, view connection relationship references, viewpoint
-  purpose/content and allowed-type definitions, viewpoint allowed-type application to View contents,
-  viewpoint stakeholder/concern structure, and profile attribute property/value checks.
+  purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
+  allowed-type application to View contents, viewpoint stakeholder/concern structure, and profile
+  attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -274,7 +275,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-1142-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260709-1160-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -573,6 +574,8 @@
   host tooling, with purpose/content token validation.
 - Custom viewpoint definitions validate allowed element and relationship types against the active profile,
   including custom specialized concepts and relationships already merged into that profile.
+- A View can apply a profile-defined viewpoint by using its `viewpoint` name. Unknown `View.viewpoint`
+  names remain preserved metadata and are not treated as errors.
 - Behavioral coverage is recorded in
   `project_memory/runlogs/20260709-1199-viewpoint-customization-behavior-test-language.txt`: a custom
   viewpoint with valid purpose/content and allowed element/relationship types is accepted, while an
@@ -866,9 +869,9 @@
   profile allowance, multiplicity notation, multiplicity on junction-connected ends, mixed
   relationship types at a junction, direct relationship validity for chains through a junction,
   view viewpoint references, view node element references, view connection relationship references,
-  viewpoint purpose/content and allowed element/relationship type definitions, viewpoint
-  allowed-type application to View contents, viewpoint stakeholder/concern structure, and profile
-  attribute properties with typed values.
+  viewpoint purpose/content and allowed element/relationship type definitions, model-defined and
+  profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern
+  structure, and profile attribute properties with typed values.
 - The validator does not embed Appendix B relationship table data. By default it uses the active
   relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
   Appendix B profile outside the repository.
