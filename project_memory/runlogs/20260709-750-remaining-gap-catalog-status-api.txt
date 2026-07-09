@@ -1,0 +1,23 @@
+(node:71320) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+node:internal/modules/esm/assert:88
+        throw new ERR_IMPORT_ATTRIBUTE_MISSING(url, 'type', validType);
+              ^
+
+TypeError [ERR_IMPORT_ATTRIBUTE_MISSING]: Module "file:///D:/github/archimate-js/lib/metamodel/languages/archimate3-profile.json" needs an import attribute of "type: json"
+    at validateAttributes (node:internal/modules/esm/assert:88:15)
+    at defaultLoadSync (node:internal/modules/esm/load:164:3)
+    at #loadAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:795:12)
+    at #loadSync (node:internal/modules/esm/loader:815:49)
+    at ModuleLoader.load (node:internal/modules/esm/loader:780:26)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:526:31)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:571:36)
+    at afterResolve (node:internal/modules/esm/loader:624:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:630:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+  code: 'ERR_IMPORT_ATTRIBUTE_MISSING'
+}
+
+Node.js v24.12.0

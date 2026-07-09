@@ -46,6 +46,8 @@ C260 type-coverage auditing. Relationship connector status reports the same exac
 Conformance readiness reports `requiredBeforeClaimByBlocker`,
 `missingRequiredBeforeClaimBlockerIds`, and `extraRequiredBeforeClaimBlockerIds` so every
 official-claim prerequisite remains aligned to an external blocker id.
+Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
+residual official-conformance blockers plus the W262 companion-source gap.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

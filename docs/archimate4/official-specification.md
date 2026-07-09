@@ -55,6 +55,10 @@ It must expose `conformanceReadiness.requiredBeforeClaimByBlocker`,
 `conformanceReadiness.missingRequiredBeforeClaimBlockerIds`, and
 `conformanceReadiness.extraRequiredBeforeClaimBlockerIds` so every prerequisite for an official
 conformance claim stays aligned to an external blocker id.
+It must expose exact remaining-gap identity fields (`remainingGaps.expectedIds`,
+`remainingGaps.actualIds`, `remainingGaps.missingIds`, and `remainingGaps.extraIds`) and alignment
+fields such as `missingOfficialConformanceGapIds` and `missingCompanionGapSourceIds`, so external
+conformance blockers and companion-source gaps cannot drift silently.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

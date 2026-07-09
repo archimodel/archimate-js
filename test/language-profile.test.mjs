@@ -727,6 +727,40 @@ test('archimate 4 implementation status exposes official conformance readiness',
   assert.deepEqual(Object.keys(profile.conformance.sourceCoverage).filter((key) => profile.conformance.sourceCoverage[key].companion && profile.conformance.sourceCoverage[key].localSourcePresent === false), [ 'w262' ]);
 });
 
+test('archimate 4 implementation status exposes remaining gap identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const gapCatalog = profile.conformance.gapCatalog;
+  const gaps = profile.conformance.gaps;
+  const expectedGapIds = [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights',
+    'w262CompanionPaper'
+  ];
+
+  assert.equal(gapCatalog.status, 'external-source-dependent');
+  assert.deepEqual(gapCatalog.expectedIds, expectedGapIds);
+  assert.deepEqual(gaps.map((gap) => gap.id), expectedGapIds);
+  assert.deepEqual(gaps.filter((gap) => gap.officialConformanceBlocker).map((gap) => gap.id), [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ]);
+  assert.deepEqual(gaps.filter((gap) => gap.companion).map((gap) => gap.sourceId), [ 'w262' ]);
+
+  assert.match(languageIndex, /var remainingGaps = summarizeRemainingGaps/);
+  assert.match(languageIndex, /remainingGaps: remainingGaps/);
+  assert.match(languageIndex, /missingOfficialConformanceGapIds/);
+  assert.match(languageIndex, /missingCompanionGapSourceIds/);
+  assert.match(readme, /remainingGaps\.expectedIds/);
+  assert.match(sources, /remainingGaps\.actualIds/);
+  assert.match(officialSpec, /remainingGaps\.missingIds/);
+});
+
 test('archimate 4 implementation plan records current execution boundary', async () => {
   const plan = await readFile(
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),

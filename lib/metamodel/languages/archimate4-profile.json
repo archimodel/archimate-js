@@ -91,6 +91,45 @@
         "exactAppendixAArtworkRights"
       ]
     },
+    "gapCatalog": {
+      "status": "external-source-dependent",
+      "expectedCount": 4,
+      "expectedIds": [
+        "officialAppendixBRelationshipMatrix",
+        "officialMeff4Xsd",
+        "exactAppendixAArtworkRights",
+        "w262CompanionPaper"
+      ]
+    },
+    "gaps": [
+      {
+        "id": "officialAppendixBRelationshipMatrix",
+        "status": "external-profile-required",
+        "sourceId": "appendixBRelationshipMatrix",
+        "requirementId": "appendix-b-relationships",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "officialMeff4Xsd",
+        "status": "external-source-required",
+        "sourceId": "meff4Xsd",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "exactAppendixAArtworkRights",
+        "status": "external-rights-required",
+        "sourceId": "appendixAArtworkRights",
+        "requirementId": "standard-iconography",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "w262CompanionPaper",
+        "status": "external-download-required",
+        "sourceId": "w262",
+        "companion": true,
+        "officialConformanceBlocker": false
+      }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

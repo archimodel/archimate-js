@@ -1,0 +1,26 @@
+{
+  "gapCatalog": {
+    "status": "external-source-dependent",
+    "expectedCount": 4,
+    "expectedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ]
+  },
+  "actualIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ],
+  "officialConformanceGapIds": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "companionGapSourceIds": [
+    "w262"
+  ]
+}

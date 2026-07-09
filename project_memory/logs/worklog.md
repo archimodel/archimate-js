@@ -1371,3 +1371,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-739-meff4-xsd-latest-repo-lint.txt` with 4383 existing errors.
 - Audit: `project_memory/audit/reports/20260709-meff4-xsd-latest-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 110
+
+- Goal: make the residual ArchiMate 4 implementation gaps auditable as one exact catalog, so official-conformance blockers and the W262 companion-source gap are not confused with implemented C260 requirements.
+- Red test: `project_memory/runlogs/20260709-742-remaining-gap-catalog-red-test.txt` failed because `profile.conformance.gapCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `gapCatalog.expectedIds` and `gaps` for `officialAppendixBRelationshipMatrix`, `officialMeff4Xsd`, `exactAppendixAArtworkRights`, and `w262CompanionPaper`.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().remainingGaps` with expected/actual/missing/extra ids, official-conformance blocker alignment, companion-source gap alignment, and unresolved gap ids.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now guard and describe the exact remaining-gap status boundary.
+- Verification: focused remaining-gap test passed with 159 tests in `project_memory/runlogs/20260709-743-remaining-gap-catalog-focused-test.txt`; `npm run test:language` passed with 159 tests in `project_memory/runlogs/20260709-744-remaining-gap-catalog-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-745-remaining-gap-catalog-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-746-remaining-gap-catalog-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-747-remaining-gap-catalog-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-748-remaining-gap-catalog-demo-build.txt`.
+- Final record checks: JSON parsed in `project_memory/runlogs/20260709-752-remaining-gap-catalog-final-json-check.txt`; `git diff --check` passed with only the existing state JSON line-ending warning in `project_memory/runlogs/20260709-753-remaining-gap-catalog-final-diff-check.txt`.
+- Additional evidence: direct Node ESM import of `lib/metamodel/languages/index.js` failed in `project_memory/runlogs/20260709-750-remaining-gap-catalog-status-api.txt` because existing JSON imports require import attributes under Node 24; profile-level gap identity was verified with CommonJS JSON reading in `project_memory/runlogs/20260709-751-remaining-gap-catalog-profile-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-749-remaining-gap-catalog-repo-lint.txt` with 4383 existing errors.
+- Audit: `project_memory/audit/reports/20260709-remaining-gap-catalog-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
