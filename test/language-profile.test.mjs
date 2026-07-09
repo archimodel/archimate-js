@@ -2536,6 +2536,37 @@ test('archimate 4 source coverage status agrees with external source runlog evid
   );
 });
 
+test('archimate 4 XML exchange stays experimental until official MEFF 4 XSD is present', () => {
+  const status = getArchimate4ImplementationStatus();
+  const exchangeFormat = status.exchangeFormat;
+  const meff4Xsd = status.sourceCoverage.items.meff4Xsd;
+  const meff4Gap = status.remainingGaps.items.find((gap) => gap.id === 'officialMeff4Xsd');
+
+  assert.equal(exchangeFormat.internalRoundTripTested, true);
+  assert.equal(
+    exchangeFormat.internalRoundTripRunlogPath,
+    'project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt'
+  );
+  assert.equal(exchangeFormat.officialXsdRequired, true);
+  assert.equal(exchangeFormat.officialXsdDirectory, meff4Xsd.url);
+  assert.equal(exchangeFormat.status, 'experimental');
+  assert.equal(exchangeFormat.officialConformanceClaimable, false);
+
+  assert.equal(meff4Xsd.required, true);
+  assert.equal(meff4Xsd.localSourcePresent, false);
+  assert.equal(meff4Xsd.official4XsdDiscovered, false);
+  assert.equal(meff4Xsd.externalBlocker, 'officialMeff4Xsd');
+  assert.equal(Object.entries(meff4Xsd.candidateStatusCodes).some(([ url, statusCode ]) => {
+    return url.includes('/4.0/') && statusCode === 200;
+  }), false);
+
+  assert.equal(meff4Gap.sourceId, 'meff4Xsd');
+  assert.equal(meff4Gap.officialConformanceBlocker, true);
+  assert.equal(status.conformanceReadiness.blockers.includes('officialMeff4Xsd'), true);
+  assert.equal(status.conformanceReadiness.missingRequiredSources.includes('meff4Xsd'), true);
+  assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+});
+
 test('archimate 4 Appendix A artwork status agrees with pictogram audit evidence', async () => {
   const status = getArchimate4ImplementationStatus();
   const appendixA = status.sourceCoverage.items.appendixAArtworkRights;

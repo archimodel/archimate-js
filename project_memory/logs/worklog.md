@@ -2111,3 +2111,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1383-conformance-requirement-blocker-source-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1384-conformance-requirement-blocker-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-conformance-requirement-blocker-source-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 163
+
+- Goal: strengthen the MEFF 4.0 XML exchange boundary so internal ArchiMate 4 XML round-trip coverage cannot be mistaken for official XML conformance while the official XSD remains unavailable.
+- Implemented: `test/language-profile.test.mjs` now verifies `exchangeFormat.internalRoundTripTested` and its runlog remain present while `exchangeFormat.status` is `experimental` and `officialConformanceClaimable` is false.
+- Implemented: the guard verifies `sourceCoverage.items.meff4Xsd` still has no local source, no discovered 4.0 XSD candidate, and maps to the `officialMeff4Xsd` blocker in remaining gaps and readiness.
+- Focused verification: `project_memory/runlogs/20260709-1385-xml-exchange-meff4-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 206 tests in `project_memory/runlogs/20260709-1386-xml-exchange-meff4-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1387-xml-exchange-meff4-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1388-xml-exchange-meff4-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1389-xml-exchange-meff4-boundary-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1390-xml-exchange-meff4-boundary-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1391-xml-exchange-meff4-boundary-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-xml-exchange-meff4-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
