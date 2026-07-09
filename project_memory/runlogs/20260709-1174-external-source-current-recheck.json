@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-07-09T23:50:00+09:00",
+  "source": "scripted external source recheck",
+  "meff4Xsd": {
+    "url": "https://www.opengroup.org/xsd/archimate/",
+    "directoryStatusCode": 200,
+    "directoryError": null,
+    "discoveredXsdLinks": [
+      "3.1/archimate3_Diagram.xsd",
+      "3.1/archimate3_Model.xsd",
+      "3.1/archimate3_View.xsd"
+    ],
+    "official4XsdDiscovered": false,
+    "candidateStatusCodes": {
+      "https://www.opengroup.org/xsd/archimate/4.0/": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd": 200
+    }
+  },
+  "w262": {
+    "url": "https://publications.opengroup.org/w262",
+    "publicationPageStatusCode": 200,
+    "publicationPageError": null,
+    "titleDetected": true,
+    "w262Detected": true,
+    "freePdfDetected": true,
+    "loginRequiredDetected": true,
+    "pages22Detected": true,
+    "published20260427Detected": true,
+    "localSearchRoots": [
+      "C:\\Users\\syska\\Downloads",
+      "C:\\Users\\syska\\.codex\\attachments"
+    ],
+    "localSearchPatterns": [
+      "*W262*.pdf",
+      "*w262*.pdf",
+      "*Motivation*ArchiMate*.pdf",
+      "*ArchiMate*Motivation*.pdf",
+      "*Changes*ArchiMate*.pdf"
+    ],
+    "localSearchMatchedFiles": []
+  }
+}

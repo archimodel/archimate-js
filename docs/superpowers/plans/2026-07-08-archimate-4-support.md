@@ -17,8 +17,8 @@ and should not be used alone as current progress. Use the implementation evidenc
 `docs/archimate4/official-specification.md`, `docs/archimate4/sources.md`,
 `project_memory/state/aria_state.json`, `project_memory/logs/worklog.md`, and the branch commits as
 the current source of truth.
-External-source evidence for W262 and MEFF 4.0 XSD was refreshed on 2026-07-09T22:35:00+09:00 in
-`project_memory/runlogs/20260709-1017-external-source-latest-recheck.json`.
+External-source evidence for W262 and MEFF 4.0 XSD was refreshed on 2026-07-09T23:50:00+09:00 in
+`project_memory/runlogs/20260709-1174-external-source-current-recheck.json`.
 Local ArchiMate-related PDF inventory was refreshed on 2026-07-09T21:10:00+09:00 in
 `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies local
 C260 and ArchiMate 4 license PDFs and confirms no W262 candidate among those local PDFs.
@@ -74,7 +74,7 @@ retired ArchiMate 3 concepts, relationship catalog and endpoints, active profile
 multiplicity notation, junction consistency, view viewpoint references, viewpoint definitions,
 view node element references, view connection relationship references, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern structure,
-and profile attribute property values.
+organization identifier references, and profile attribute property values.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.
 Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extraIds`, `statusKeyIds`,
@@ -187,7 +187,7 @@ C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
 `missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
 stays tied to a recorded source-extraction runlog.
 Implementation-status completion API scan evidence is recorded in
-`project_memory/runlogs/20260709-1160-status-completion-api-scan.json`; it currently reports 49
+`project_memory/runlogs/20260709-2200-status-completion-api-scan.json`; it currently reports 49
 top-level status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
 status-key guard arrays including `exampleViewpointCatalog`. The same completion state is exposed directly through
 `getArchimate4ImplementationStatus().implementationCompletion`.

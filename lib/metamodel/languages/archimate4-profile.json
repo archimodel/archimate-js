@@ -90,6 +90,7 @@
         "view-viewpoint-content-application",
         "view-profile-viewpoint-content-application",
         "viewpoint-stakeholder-concern-structure",
+        "organization-identifier-reference",
         "profile-attribute-properties",
         "profile-attribute-values"
       ],
@@ -1667,14 +1668,14 @@
         "companion": true,
         "publicationPageStatusCode": 200,
         "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
-        "lastPublicationPageCheckedAt": "2026-07-09T22:35:00+09:00",
-        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1017-external-source-latest-recheck.json",
+        "lastPublicationPageCheckedAt": "2026-07-09T23:50:00+09:00",
+        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1174-external-source-current-recheck.json",
         "freePdfDetected": true,
         "loginRequiredDetected": true,
         "pages22Detected": true,
         "published20260427Detected": true,
-        "lastLocalSearchAt": "2026-07-09T22:35:00+09:00",
-        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1017-external-source-latest-recheck.json",
+        "lastLocalSearchAt": "2026-07-09T23:50:00+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1174-external-source-current-recheck.json",
         "localSearchRoots": [
           "C:\\Users\\syska\\Downloads",
           "C:\\Users\\syska\\.codex\\attachments"
@@ -1728,8 +1729,8 @@
         "localSourcePresent": false,
         "required": true,
         "externalBlocker": "officialMeff4Xsd",
-        "lastCheckedAt": "2026-07-09T22:35:00+09:00",
-        "lastRunlogPath": "project_memory/runlogs/20260709-1017-external-source-latest-recheck.json",
+        "lastCheckedAt": "2026-07-09T23:50:00+09:00",
+        "lastRunlogPath": "project_memory/runlogs/20260709-1174-external-source-current-recheck.json",
         "directoryStatusCode": 200,
         "official4XsdDiscovered": false,
         "discoveredXsdLinks": [

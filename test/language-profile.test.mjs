@@ -1049,6 +1049,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'view-viewpoint-content-application',
     'view-profile-viewpoint-content-application',
     'viewpoint-stakeholder-concern-structure',
+    'organization-identifier-reference',
     'profile-attribute-properties',
     'profile-attribute-values'
   ]);
@@ -1065,9 +1066,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-1160-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-2200-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-1160-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-2200-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1087,7 +1088,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260709-1160-status-completion-api-scan.json'
+    'project_memory/runlogs/20260709-2200-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1107,7 +1108,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260709-1160-status-completion-api-scan/);
+  assert.match(readme, /20260709-2200-status-completion-api-scan/);
   assert.match(sources, /40 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);
@@ -2817,19 +2818,19 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     sourceCoverage.w262.publicationPageTitle,
     'The Motivation for Changes in the ArchiMate® 4 Specification'
   );
-  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-09T22:35:00+09:00');
+  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-09T23:50:00+09:00');
   assert.equal(
     sourceCoverage.w262.lastPublicationPageRunlogPath,
-    'project_memory/runlogs/20260709-1017-external-source-latest-recheck.json'
+    'project_memory/runlogs/20260709-1174-external-source-current-recheck.json'
   );
   assert.equal(sourceCoverage.w262.freePdfDetected, true);
   assert.equal(sourceCoverage.w262.loginRequiredDetected, true);
   assert.equal(sourceCoverage.w262.pages22Detected, true);
   assert.equal(sourceCoverage.w262.published20260427Detected, true);
-  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T22:35:00+09:00');
+  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T23:50:00+09:00');
   assert.equal(
     sourceCoverage.w262.lastLocalSearchRunlogPath,
-    'project_memory/runlogs/20260709-1017-external-source-latest-recheck.json'
+    'project_memory/runlogs/20260709-1174-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.w262.localSearchRoots, [
     'C:\\Users\\syska\\Downloads',
@@ -2896,7 +2897,7 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
   assert.equal(
     sourceCoverage.meff4Xsd.lastRunlogPath,
-    'project_memory/runlogs/20260709-1017-external-source-latest-recheck.json'
+    'project_memory/runlogs/20260709-1174-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
     '3.1/archimate3_Diagram.xsd',
@@ -2990,10 +2991,10 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(readme, /sourceCoverage\.missingSourceIds/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
   assert.match(sources, /sourceCoverage\.actualSourceIds/);
-  assert.match(sources, /20260709-1017-external-source-latest-recheck/);
+  assert.match(sources, /20260709-1174-external-source-current-recheck/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
-  assert.match(officialSpec, /20260709-1017-external-source-latest-recheck/);
+  assert.match(officialSpec, /20260709-1174-external-source-current-recheck/);
   assert.match(sources, /20260709-1189-appendix-a-artwork-rights-pictogram-audit/);
   assert.match(officialSpec, /locally-authored renderer\s+paths/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);

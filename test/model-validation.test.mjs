@@ -721,6 +721,117 @@ test('archimate 4 model validation keeps unknown View.viewpoint names as metadat
   assert.deepEqual(result.diagnostics, []);
 });
 
+test('archimate 4 model validation reports invalid organization identifier references', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const legacyElement = { id: 'legacy-1', type: 'BusinessInteraction' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role,
+        legacyElement
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    organizationsNode: {
+      organizations: [
+        {
+          id: 'organization-invalid',
+          identifierRef: {}
+        },
+        {
+          id: 'organization-missing',
+          identifierRef: 'missing-concept'
+        },
+        {
+          id: 'organization-relationship',
+          identifierRef: 'relationship-1'
+        },
+        {
+          id: 'organization-parent',
+          organizations: [
+            {
+              id: 'organization-legacy',
+              identifierRef: 'legacy-1'
+            }
+          ]
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidDiagnostic = findDiagnostic(result, 'invalid-organization-identifier-reference');
+  const unknownDiagnostic = findDiagnostic(result, 'unknown-organization-identifier-reference');
+  const unsupportedDiagnostic = findDiagnostic(result, 'unsupported-organization-identifier-reference-type');
+
+  assert.equal(result.valid, false);
+  assert.equal(invalidDiagnostic.organizationId, 'organization-invalid');
+  assert.equal(unknownDiagnostic.organizationId, 'organization-missing');
+  assert.equal(unknownDiagnostic.identifierRefId, 'missing-concept');
+  assert.equal(unsupportedDiagnostic.organizationId, 'organization-legacy');
+  assert.equal(unsupportedDiagnostic.identifierRefId, 'legacy-1');
+  assert.equal(unsupportedDiagnostic.conceptType, 'BusinessInteraction');
+  assert.equal(diagnosticCodes(result).includes('unknown-organization-identifier-reference'), true);
+});
+
+test('archimate 4 model validation accepts organization references to model concepts', () => {
+  const actor = { id: 'actor-1', type: 'BusinessActor' };
+  const role = { id: 'role-1', type: 'Role' };
+  const relationship = {
+    id: 'relationship-1',
+    type: 'Association',
+    source: actor,
+    target: role
+  };
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        actor,
+        role
+      ]
+    },
+    relationshipsNode: {
+      relationships: [
+        relationship
+      ]
+    },
+    organizationsNode: {
+      organizations: [
+        {
+          id: 'organization-actor',
+          identifierRef: 'actor-1',
+          organizations: [
+            {
+              id: 'organization-relationship',
+              identifierRef: relationship
+            }
+          ]
+        },
+        {
+          id: 'organization-unclassified'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, true);
+  assert.deepEqual(result.diagnostics, []);
+});
+
 test('archimate 4 model validation reports invalid profile attribute properties', () => {
   const result = validateArchimate4Model({
     elementsNode: {

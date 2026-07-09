@@ -19,7 +19,7 @@
   specification and source trace, not copied normative prose or verbatim relationship tables.
 - W262 is published by The Open Group as a free PDF download that requires login. The latest
   publication-page and local-source check is recorded in
-  `project_memory/runlogs/20260709-1017-external-source-latest-recheck.json`; it detected the W262
+  `project_memory/runlogs/20260709-1174-external-source-current-recheck.json`; it detected the W262
   title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the
   recursive filename search under `C:\Users\syska\Downloads` and
   `C:\Users\syska\.codex\attachments` still found no local W262 or ArchiMate 4 motivation PDF
@@ -260,8 +260,8 @@
   embedding the Appendix B relationship matrix. The current diagnostics include view viewpoint
   references, view node element references, view connection relationship references, viewpoint
   purpose/content and allowed-type definitions, model-defined and profile-defined viewpoint
-  allowed-type application to View contents, viewpoint stakeholder/concern structure, and profile
-  attribute property/value checks.
+  allowed-type application to View contents, viewpoint stakeholder/concern structure, organization
+  `identifierRef` references, and profile attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -275,7 +275,7 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-1160-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260709-2200-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
@@ -606,6 +606,9 @@
 - Organization entries can be nested and can optionally reference a model concept through
   `identifierRef`. The ArchiMate 4 XML surface remains experimental until the MEFF 4.0 XSD confirms
   exact element names.
+- `validateArchimate4Model()` now checks organization `identifierRef` values against model-defined
+  elements and relationships, including nested organizations, unknown references, malformed
+  references, and active-profile unsupported concept types.
 
 ## Appendix E Migration Correction
 
@@ -952,8 +955,8 @@
   4.0 directory, `archimate4_*`, `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and
   `archimate_*` candidate URLs returned 404, while the 3.1 Model XSD baseline returned 200.
   `archimate4-profile.json` recorded this check in `sourceCoverage.meff4Xsd`.
-- Refreshed again on 2026-07-09T22:35:00+09:00 in
-  `project_memory/runlogs/20260709-1017-external-source-latest-recheck.json` using
+- Refreshed again on 2026-07-09T23:50:00+09:00 in
+  `project_memory/runlogs/20260709-1174-external-source-current-recheck.json` using
   `scripts/check_archimate4_external_sources.mjs`; the official directory returned 200 and still
   listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory, `archimate4_*`,
   `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and `archimate_*` candidate URLs returned

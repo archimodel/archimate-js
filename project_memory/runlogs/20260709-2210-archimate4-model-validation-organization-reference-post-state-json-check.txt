@@ -1,0 +1,7 @@
+project_memory/state/aria_state.json OK
+project_memory/audit/audit_registry.json OK
+lib/metamodel/languages/archimate4-profile.json OK
+project_memory/runlogs/20260709-1174-external-source-current-recheck.json OK
+project_memory/runlogs/20260709-2200-status-completion-api-scan.json OK
+project_memory/runlogs/20260709-2207-archimate4-model-validation-organization-reference-completion-audit.json OK
+project_memory/runlogs/20260709-2208-archimate4-model-validation-organization-reference-c260-coverage-audit.json OK
