@@ -1,0 +1,8 @@
+json ok lib/metamodel/languages/archimate4-profile.json
+json ok project_memory/state/aria_state.json
+json ok project_memory/audit/audit_registry.json
+json ok project_memory/runlogs/20260710-0381-concept-container-structure-status-snapshot.json
+json ok project_memory/runlogs/20260710-0383-concept-container-structure-completion-audit.json
+json ok project_memory/runlogs/20260710-0384-concept-container-structure-c260-coverage-audit.json
+json ok project_memory/runlogs/20260710-0389-concept-container-structure-final-completion-audit.json
+json ok project_memory/runlogs/20260710-0390-concept-container-structure-final-c260-coverage-audit.json

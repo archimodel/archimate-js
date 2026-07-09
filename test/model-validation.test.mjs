@@ -293,6 +293,77 @@ test('archimate 4 model validation reports unsupported relationship types and en
   assert.equal(findDiagnostic(result, 'unsupported-relationship-endpoint-type').endpoint, 'target');
 });
 
+test('archimate 4 model validation reports invalid concept container structure', () => {
+  const invalidElementsNodeResult = validateArchimate4Model({
+    elementsNode: 'not-an-elements-node'
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidElementListResult = validateArchimate4Model({
+    elementsNode: {
+      baseElements: 'not-an-element-list'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidElementEntryResult = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        null,
+        'not-an-element'
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidRelationshipsNodeResult = validateArchimate4Model({
+    relationshipsNode: 'not-a-relationships-node'
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidRelationshipListResult = validateArchimate4Model({
+    relationshipsNode: {
+      relationships: 'not-a-relationship-list'
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidRelationshipEntryResult = validateArchimate4Model({
+    relationshipsNode: {
+      relationships: [
+        null,
+        'not-a-relationship'
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(invalidElementsNodeResult.valid, false);
+  assert.equal(diagnosticCodes(invalidElementsNodeResult).includes('invalid-elements-node'), true);
+
+  assert.equal(invalidElementListResult.valid, false);
+  assert.equal(diagnosticCodes(invalidElementListResult).includes('invalid-element-list'), true);
+
+  assert.equal(invalidElementEntryResult.valid, false);
+  assert.equal(diagnosticCodes(invalidElementEntryResult).includes('invalid-element-entry'), true);
+  assert.equal(invalidElementEntryResult.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-element-entry';
+  }).length, 2);
+
+  assert.equal(invalidRelationshipsNodeResult.valid, false);
+  assert.equal(diagnosticCodes(invalidRelationshipsNodeResult).includes('invalid-relationships-node'), true);
+
+  assert.equal(invalidRelationshipListResult.valid, false);
+  assert.equal(diagnosticCodes(invalidRelationshipListResult).includes('invalid-relationship-list'), true);
+
+  assert.equal(invalidRelationshipEntryResult.valid, false);
+  assert.equal(diagnosticCodes(invalidRelationshipEntryResult).includes('invalid-relationship-entry'), true);
+  assert.equal(invalidRelationshipEntryResult.diagnostics.filter((diagnostic) => {
+    return diagnostic.code === 'invalid-relationship-entry';
+  }).length, 2);
+});
+
 test('archimate 4 model validation reports invalid and unknown relationship endpoint references', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

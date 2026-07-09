@@ -1077,6 +1077,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
   assert.deepEqual(modelValidation.extraCheckIds, []);
   assert.deepEqual(modelValidation.actualCheckIds, [
     'element-catalog',
+    'concept-container-structure',
     'retired-archimate3-concepts',
     'relationship-catalog',
     'relationship-endpoint-reference',

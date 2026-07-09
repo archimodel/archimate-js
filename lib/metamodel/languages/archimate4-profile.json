@@ -74,6 +74,7 @@
       "status": "implemented",
       "expectedCheckIds": [
         "element-catalog",
+        "concept-container-structure",
         "retired-archimate3-concepts",
         "relationship-catalog",
         "relationship-endpoint-reference",

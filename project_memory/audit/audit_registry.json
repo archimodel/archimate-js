@@ -5,19 +5,29 @@
     {
       "id": "audit.git.status",
       "description": "実行前後に git status を確認する",
-      "when": ["pre_loop", "pre_commit"],
+      "when": [
+        "pre_loop",
+        "pre_commit"
+      ],
       "severity": "major",
       "command": "git status --short --branch",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": []
     },
     {
       "id": "audit.tests.language",
       "description": "ArchiMate language profile and migration tests pass",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "npm run test:language",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt",
         "project_memory/runlogs/20260710-0241-view-element-label-test-language.txt",
@@ -30,16 +40,23 @@
         "project_memory/runlogs/20260710-0341-organization-tree-structure-test-language.txt",
         "project_memory/runlogs/20260710-0348-organization-tree-structure-final-test-language.txt",
         "project_memory/runlogs/20260710-0362-view-tree-structure-test-language.txt",
-        "project_memory/runlogs/20260710-0372-view-tree-structure-final-test-language.txt"
+        "project_memory/runlogs/20260710-0372-view-tree-structure-final-test-language.txt",
+        "project_memory/runlogs/20260710-0382-concept-container-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt"
       ]
     },
     {
       "id": "audit.archimate4.c260_coverage",
       "description": "C260 book-derived section, aggregate, outline, and source-runlog coverage audit passes",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-10T05:36:00+09:00",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0228-base-object-fields-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0243-view-element-label-c260-coverage-audit.json",
@@ -52,16 +69,23 @@
         "project_memory/runlogs/20260710-0343-organization-tree-structure-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0350-organization-tree-structure-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0364-view-tree-structure-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0368-view-tree-structure-final-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0368-view-tree-structure-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0384-concept-container-structure-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0390-concept-container-structure-final-c260-coverage-audit.json"
       ]
     },
     {
       "id": "audit.archimate4.appendix_c_viewpoint_catalog",
       "description": "Appendix C example viewpoint headings remain exposed as an informative catalog without bundling normative viewpoint definitions",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test --test-name-pattern \"Appendix C example viewpoints as an informative catalog\" test/language-profile.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260709-1052-archimate4-appendix-c-viewpoint-catalog-focused-test.txt",
         "project_memory/runlogs/20260709-1054-archimate4-appendix-c-viewpoint-catalog-api.json"
@@ -70,10 +94,15 @@
     {
       "id": "audit.archimate4.example_viewpoint_status",
       "description": "Appendix C informative viewpoint catalog is exposed through implementation status and the completion scan",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test --test-name-pattern \"completion scan|informative catalog|section coverage\" test/language-profile.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260709-1061-status-completion-api-scan.json",
         "project_memory/runlogs/20260709-1062-archimate4-example-viewpoint-status-focused-test.txt"
@@ -82,10 +111,15 @@
     {
       "id": "audit.archimate4.conformance_report",
       "description": "ArchiMate 4 host-facing conformance report preserves official blockers, missing required sources, required-before-claim actions, and companion gaps from the implementation status",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test --test-name-pattern \"conformance report\" test/language-profile.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0161-archimate4-conformance-report-focused-test.txt",
         "project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json"
@@ -94,10 +128,15 @@
     {
       "id": "audit.archimate4.demo_conformance_panel",
       "description": "Viewer and Editor demos render the flattened ArchiMate 4 conformance report while keeping ArchiMate 3.x marked as not applicable",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test test/demo-conformance-panel.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0191-demo-conformance-panel-focused-test.txt",
         "project_memory/runlogs/20260710-0193-demo-conformance-panel-demo-build.txt",
@@ -109,10 +148,15 @@
     {
       "id": "audit.archimate4.external_source_current_recheck",
       "description": "Current W262 and MEFF 4.0 XSD source evidence stays aligned with archimate4-profile sourceCoverage and the host-facing conformance report",
-      "when": ["post_change", "pre_commit"],
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test --test-name-pattern \"source coverage|external source|MEFF 4 XSD|3.1 XSD evidence|conformance report\" test/language-profile.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0173-external-source-current-recheck.json",
         "project_memory/runlogs/20260710-0174-external-source-current-recheck-focused-test.txt",
@@ -128,11 +172,16 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, relationship endpoint references, relationship option field types, multiplicity, junction consistency, present IdObject id and xsi:type string values, view tree structure, view viewpoint string attributes and references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier references, property definition structure and references, present property value string structure, viewpoint definitions including allowed-type string entries, and profile attribute property values",
-      "when": ["post_change", "pre_commit"],
+      "description": "ArchiMate model validation diagnostics cover concept container structure, profile mismatch, retired concepts, relationship rules, relationship endpoint references, relationship option field types, multiplicity, junction consistency, present IdObject id and xsi:type string values, view tree structure, view viewpoint string attributes and references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier references, property definition structure and references, present property value string structure, viewpoint definitions including allowed-type string entries, and profile attribute property values",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0144-official-diagram-font-style-source-check.json",
         "project_memory/runlogs/20260710-0147-archimate4-model-validation-font-style-plain-full-model-test.txt",
@@ -217,16 +266,35 @@
         "project_memory/runlogs/20260710-0367-view-tree-structure-final-completion-audit.json",
         "project_memory/runlogs/20260710-0370-view-tree-structure-final-focused-tests.txt",
         "project_memory/runlogs/20260710-0372-view-tree-structure-final-test-language.txt",
-        "project_memory/runlogs/20260710-0373-view-tree-structure-final-json-check.txt"
+        "project_memory/runlogs/20260710-0373-view-tree-structure-final-json-check.txt",
+        "project_memory/runlogs/20260710-0375-concept-container-structure-current-gap.txt",
+        "project_memory/runlogs/20260710-0376-concept-container-structure-red-test.txt",
+        "project_memory/runlogs/20260710-0377-concept-container-structure-focused-model-test.txt",
+        "project_memory/runlogs/20260710-0378-concept-container-structure-status-test.txt",
+        "project_memory/runlogs/20260710-0379-concept-container-structure-model-validation-test.txt",
+        "project_memory/runlogs/20260710-0381-concept-container-structure-status-snapshot.json",
+        "project_memory/runlogs/20260710-0382-concept-container-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0383-concept-container-structure-completion-audit.json",
+        "project_memory/runlogs/20260710-0385-concept-container-structure-json-check.txt",
+        "project_memory/runlogs/20260710-0386-concept-container-structure-diff-check.txt",
+        "project_memory/runlogs/20260710-0387-concept-container-structure-final-focused-tests.txt",
+        "project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt",
+        "project_memory/runlogs/20260710-0389-concept-container-structure-final-completion-audit.json",
+        "project_memory/runlogs/20260710-0391-concept-container-structure-final-json-check.txt",
+        "project_memory/runlogs/20260710-0392-concept-container-structure-final-diff-check.txt"
       ]
     },
     {
       "id": "audit.lint.changed_files",
       "description": "ESLint passes for ArchiMate 4 implementation files",
-      "when": ["pre_commit"],
+      "when": [
+        "pre_commit"
+      ],
       "severity": "blocker",
       "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js test/*.test.mjs",
-      "expect": { "exit_code": 0 },
+      "expect": {
+        "exit_code": 0
+      },
       "artifacts": [
         "project_memory/runlogs/20260710-0239-view-element-label-eslint-changed.txt",
         "project_memory/runlogs/20260710-0253-id-object-id-eslint-changed.txt",
@@ -235,16 +303,21 @@
         "project_memory/runlogs/20260710-0302-xsi-type-fields-eslint-changed.txt",
         "project_memory/runlogs/20260710-0320-relationship-endpoint-reference-eslint-changed.txt",
         "project_memory/runlogs/20260710-0340-organization-tree-structure-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0360-view-tree-structure-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0360-view-tree-structure-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0380-concept-container-structure-eslint-changed.txt"
       ]
     },
     {
       "id": "audit.lint.repo_legacy",
       "description": "Repository-wide ESLint status is recorded; legacy failures remain outside this feature gate",
-      "when": ["pre_commit"],
+      "when": [
+        "pre_commit"
+      ],
       "severity": "major",
       "command": "npm run lint",
-      "expect": { "exit_code": 1 },
+      "expect": {
+        "exit_code": 1
+      },
       "artifacts": []
     }
   ]

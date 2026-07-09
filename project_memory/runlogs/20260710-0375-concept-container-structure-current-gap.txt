@@ -1,0 +1,13 @@
+elementsNode-string valid=true codes=
+file:///D:/github/archimate-js/lib/validation/archimate4-model.js:2059
+  (elements || []).forEach(function(element) {
+                   ^
+
+TypeError: (elements || []).forEach is not a function
+    at getModelIdObjects (file:///D:/github/archimate-js/lib/validation/archimate4-model.js:2059:20)
+    at validateArchimateModel (file:///D:/github/archimate-js/lib/validation/archimate4-model.js:58:19)
+    at validateArchimate4Model (file:///D:/github/archimate-js/lib/validation/archimate4-model.js:42:10)
+    at [eval]:1:739
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+
+Node.js v24.12.0

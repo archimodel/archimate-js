@@ -71,7 +71,7 @@ Conformance readiness reports `requiredBeforeClaimByBlocker`,
 `missingRequiredBeforeClaimBlockerIds`, and `extraRequiredBeforeClaimBlockerIds` so every
 official-claim prerequisite remains aligned to an external blocker id.
 Model validation status reports `expectedCheckIds`, `actualCheckIds`, `missingCheckIds`, and
-`extraCheckIds` for the host-callable model diagnostics that cover element catalog membership,
+`extraCheckIds` for the host-callable model diagnostics that cover concept container structure, element catalog membership,
 retired ArchiMate 3 concepts, relationship catalog, endpoint references, and endpoint type support, active profile checks,
 multiplicity notation, junction consistency, view tree structure, view viewpoint string attributes and references, viewpoint
 definitions including allowed-type string entries, relationship option field types, present IdObject

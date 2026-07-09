@@ -1,0 +1,33 @@
+## codex/archimate-4-support
+ M CHANGELOG.md
+ M README.md
+ M docs/archimate4/official-specification.md
+ M docs/archimate4/sources.md
+ M docs/superpowers/plans/2026-07-08-archimate-4-support.md
+ M lib/metamodel/languages/archimate4-profile.json
+ M lib/metamodel/languages/index.js
+ M lib/validation/archimate4-model.js
+ M project_memory/audit/audit_registry.json
+ M project_memory/logs/worklog.md
+ M project_memory/state/aria_state.json
+ M test/language-profile.test.mjs
+ M test/model-validation.test.mjs
+?? .codex-runlogs/
+?? project_memory/audit/reports/20260710-concept-container-structure-audit.md
+?? project_memory/runlogs/20260710-0375-concept-container-structure-current-gap.txt
+?? project_memory/runlogs/20260710-0376-concept-container-structure-red-test.txt
+?? project_memory/runlogs/20260710-0377-concept-container-structure-focused-model-test.txt
+?? project_memory/runlogs/20260710-0378-concept-container-structure-status-test.txt
+?? project_memory/runlogs/20260710-0379-concept-container-structure-model-validation-test.txt
+?? project_memory/runlogs/20260710-0380-concept-container-structure-eslint-changed.txt
+?? project_memory/runlogs/20260710-0381-concept-container-structure-status-snapshot.json
+?? project_memory/runlogs/20260710-0382-concept-container-structure-test-language.txt
+?? project_memory/runlogs/20260710-0383-concept-container-structure-completion-audit.json
+?? project_memory/runlogs/20260710-0384-concept-container-structure-c260-coverage-audit.json
+?? project_memory/runlogs/20260710-0385-concept-container-structure-json-check.txt
+?? project_memory/runlogs/20260710-0386-concept-container-structure-diff-check.txt
+?? project_memory/runlogs/20260710-0387-concept-container-structure-final-focused-tests.txt
+?? project_memory/runlogs/20260710-0388-concept-container-structure-final-test-language.txt
+?? project_memory/runlogs/20260710-0389-concept-container-structure-final-completion-audit.json
+?? project_memory/runlogs/20260710-0390-concept-container-structure-final-c260-coverage-audit.json
+?? project_memory/runlogs/20260710-0391-concept-container-structure-final-json-check.txt
