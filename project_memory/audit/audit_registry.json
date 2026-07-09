@@ -52,7 +52,8 @@
         "project_memory/runlogs/20260710-0484-demo-example-viewpoint-test-language.txt",
         "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
         "project_memory/runlogs/20260710-0502-demo-viewpoint-validation-test-language.txt",
-        "project_memory/runlogs/20260710-0509-demo-viewpoint-validation-final-test-language.txt"
+        "project_memory/runlogs/20260710-0509-demo-viewpoint-validation-final-test-language.txt",
+        "project_memory/runlogs/20260710-0518-external-source-0515-test-language.txt"
       ]
     },
     {
@@ -91,7 +92,9 @@
         "project_memory/runlogs/20260710-0486-demo-example-viewpoint-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0504-demo-viewpoint-validation-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0511-demo-viewpoint-validation-final-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0511-demo-viewpoint-validation-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0520-external-source-0515-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0525-external-source-0515-final-c260-coverage-audit.json"
       ]
     },
     {
@@ -300,7 +303,20 @@
         "project_memory/runlogs/20260710-0184-external-source-current-recheck-post-state-focused-test.txt",
         "project_memory/runlogs/20260710-0185-external-source-current-recheck-post-state-test-language.txt",
         "project_memory/runlogs/20260710-0186-external-source-current-recheck-post-state-completion-audit.json",
-        "project_memory/runlogs/20260710-0187-external-source-current-recheck-post-state-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0187-external-source-current-recheck-post-state-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0515-external-source-current-recheck.json",
+        "project_memory/runlogs/20260710-0516-external-source-0515-focused-test.txt",
+        "project_memory/runlogs/20260710-0517-external-source-0515-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0518-external-source-0515-test-language.txt",
+        "project_memory/runlogs/20260710-0519-external-source-0515-completion-audit.json",
+        "project_memory/runlogs/20260710-0520-external-source-0515-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0521-external-source-0515-conformance-report.json",
+        "project_memory/runlogs/20260710-0522-external-source-0515-json-check.txt",
+        "project_memory/runlogs/20260710-0523-external-source-0515-diff-check.txt",
+        "project_memory/runlogs/20260710-0524-external-source-0515-final-completion-audit.json",
+        "project_memory/runlogs/20260710-0525-external-source-0515-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0526-external-source-0515-prestage-json-check.txt",
+        "project_memory/runlogs/20260710-0527-external-source-0515-prestage-diff-check.txt"
       ]
     },
     {
@@ -482,7 +498,8 @@
         "project_memory/runlogs/20260710-0483-demo-example-viewpoint-eslint-changed.txt",
         "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt",
         "project_memory/runlogs/20260710-0501-demo-viewpoint-validation-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0507-demo-viewpoint-validation-eslint-registry.txt"
+        "project_memory/runlogs/20260710-0507-demo-viewpoint-validation-eslint-registry.txt",
+        "project_memory/runlogs/20260710-0517-external-source-0515-eslint-changed.txt"
       ]
     },
     {
