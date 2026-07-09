@@ -51,8 +51,9 @@ Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extr
 residual official-conformance blockers plus the W262 companion-source gap.
 Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extraIds`,
 `missingRequirementReferenceIds`, and `missingExternalBlockerReferenceIds` for the reviewed C260
-chapter and appendix outline so broad specification coverage and its conformance/blocker references
-cannot drift silently.
+chapter and appendix outline, including Chapter 1 Introduction/Conformance and Chapter 2
+Definitions, so broad specification coverage and its conformance/blocker references cannot drift
+silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

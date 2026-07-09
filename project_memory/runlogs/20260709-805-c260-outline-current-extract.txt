@@ -1,0 +1,264 @@
+pages 207
+1: Cover
+
+4: Title
+
+5: Copyright
+
+6: Table of Contents
+14: Preface
+  14: The Open Group
+  14: This Document
+17: Trademarks
+
+18: Acknowledgements
+20: Referenced Documents
+22: 1. Introduction
+  22: 1.1. Objective
+  22: 1.2. Overview
+  23: 1.3. Conformance
+  23: 1.4. Normative References
+  23: 1.5. Terminology
+  24: 1.6. Future Directions
+25: 2. Definitions
+  25: 2.1. ArchiMate Core Language
+  25: 2.2. ArchiMate Full Language
+  25: 2.3. Architecture Domain
+  25: 2.4. Architecture View
+  25: 2.5. Architecture Viewpoint
+  26: 2.6. Aspect
+  26: 2.7. Attribute
+  26: 2.8. Composite Element
+  26: 2.9. Concept
+  26: 2.10. Conformance
+  26: 2.11. Conforming Implementation
+  26: 2.12. Core Element
+  27: 2.13. Domain
+  27: 2.14. Element
+  27: 2.15. Model
+  27: 2.16. Relationship
+28: 3. Language Structure
+  28: 3.1. Language Design Considerations
+  30: 3.2. The ArchiMate Language
+    30: 3.2.1. Domains of the ArchiMate Language
+    32: 3.2.2. Aspects of the ArchiMate Language
+  32: 3.3. Top-Level Language Structure
+  33: 3.4. Structure and Behavior Elements
+    34: 3.4.1. Active Structure Elements
+    35: 3.4.2. Passive Structure Elements
+    35: 3.4.3. Behavior Elements
+    35: 3.4.4. Example
+  36: 3.5. Abstraction in the ArchiMate Language
+  37: 3.6. Concepts and Their Notation
+  38: 3.7. Use of Nesting
+  38: 3.8. Use of Colors and Notational Cues
+39: 4. Common Domain
+  39: 4.1. Active Structure Elements
+    39: 4.1.1. Role
+    40: 4.1.2. Collaboration
+    41: 4.1.3. Path.
+  41: 4.2. Behavior Elements
+    42: 4.2.1. Service
+
+    42: 4.2.2. Process
+    43: 4.2.3. Function
+    44: 4.2.4. Event
+  45: 4.3. Composite Elements
+    46: 4.3.1. Grouping
+    48: 4.3.2. Location
+  48: 4.4. Summary of Common Domain Elements
+50: 5. Relationships and Junctions
+  51: 5.1. Structural Relationships
+    51: 5.1.1. Aggregation Relationship
+    52: 5.1.2. Composition Relationship
+    53: 5.1.3. Assignment Relationship
+    55: 5.1.4. Realization Relationship
+    56: 5.1.5. Semantics of Structural Relationships
+  57: 5.2. Dependency Relationships
+    58: 5.2.1. Serving Relationship
+    58: 5.2.2. Access Relationship
+    59: 5.2.3. Influence Relationship
+    61: 5.2.4. Association Relationship
+    62: 5.2.5. Semantics of Dependency Relationships
+  63: 5.3. Dynamic Relationships
+    63: 5.3.1. Triggering Relationship
+    64: 5.3.2. Flow Relationship
+    65: 5.3.3. Semantics of Dynamic Relationships
+  65: 5.4. Other Relationships
+    65: 5.4.1. Specialization Relationship
+    66: 5.4.2. Semantics of Other Relationships
+  66: 5.5. Junctions
+    66: 5.5.1. Junction
+  68: 5.6. Multiplicity
+  69: 5.7. Summary of Relationships and Junctions.
+  70: 5.8. Derivation of Relationships
+72: 6. Motivation Domain
+  72: 6.1. Motivation Elements
+  73: 6.2. Motivation Elements Metamodel
+  74: 6.3. Stakeholder, Driver, and Assessment
+
+    74: 6.3.1. Stakeholder
+    74: 6.3.2. Driver
+    75: 6.3.3. Assessment
+    75: 6.3.4. Example
+  76: 6.4. Goal, Outcome, Principle, and Requirement
+    76: 6.4.1. Goal
+    77: 6.4.2. Outcome
+    78: 6.4.3. Principle
+    78: 6.4.4. Requirement
+    79: 6.4.5. Example
+  80: 6.5. Meaning and Value
+    80: 6.5.1. Meaning
+    81: 6.5.2. Value
+    82: 6.5.3. Example
+  83: 6.6. Summary of Motivation Elements
+  84: 6.7. Relationships with Other Domains
+85: 7. Strategy Domain
+  85: 7.1. Strategy Elements Metamodel
+  86: 7.2. Structure Elements
+    86: 7.2.1. Resource
+  86: 7.3. Behavior Elements
+    86: 7.3.1. Capability
+    87: 7.3.2. Value Stream
+
+    89: 7.3.3. Course of Action
+  89: 7.4. Examples
+  92: 7.5. Summary of Strategy Elements
+  92: 7.6. Relationships with Other Domains
+94: 8. Business Domain
+  94: 8.1. Business Structure Metamodel
+  94: 8.2. Active Structure Elements
+    95: 8.2.1. Business Actor
+    96: 8.2.2. Business Interface
+    96: 8.2.3. Example
+  97: 8.3. Passive Structure Elements
+    97: 8.3.1. Business Object
+    98: 8.3.2. Example
+  99: 8.4. Composite Elements
+    99: 8.4.1. Product
+    100: 8.4.2. Example
+  101: 8.5. Summary of Business Domain Elements
+102: 9. Application Domain
+  102: 9.1. Application Structure Metamodel
+  102: 9.2. Active Structure Elements
+    103: 9.2.1. Application Component
+    103: 9.2.2. Application Interface
+    104: 9.2.3. Example
+  104: 9.3. Passive Structure Elements
+    105: 9.3.1. Data Object
+    105: 9.3.2. Example
+  106: 9.4. Summary of Application Domain Elements
+107: 10. Technology Domain
+  107: 10.1. Technology Metamodel
+  108: 10.2. Active Structure Elements
+    109: 10.2.1. Node
+    109: 10.2.2. Technology Interface
+    110: 10.2.3. Device.
+    110: 10.2.4. System Software
+    111: 10.2.5. Equipment
+    112: 10.2.6. Facility
+    112: 10.2.7. Communication Network
+    113: 10.2.8. Distribution Network
+  113: 10.3. Passive Structure Elements
+    114: 10.3.1. Artifact
+    115: 10.3.2. Material
+  116: 10.4. Example
+  116: 10.5. Summary of Technology Domain Elements
+118: 11. Relationships Between Core Domains
+  119: 11.1. Example
+121: 12. Implementation and Migration Domain
+  121: 12.1. Implementation and Migration Elements Metamodel
+  121: 12.2. Implementation and Migration Elements
+    121: 12.2.1. Work Package
+    122: 12.2.2. Deliverable
+    122: 12.2.3. Plateau
+    123: 12.2.4. Example
+  124: 12.3. Summary of Implementation and Migration Elements
+  124: 12.4. Relationships with Domains
+126: 13. Stakeholders, Architecture Views, and Viewpoints
+  126: 13.1. Introduction
+  126: 13.2. Stakeholders and Concerns
+  127: 13.3. Architecture Views and Viewpoints
+  128: 13.4. Viewpoint Mechanism
+    130: 13.4.1. Defining and Classifying Viewpoints
+    131: 13.4.2. Creating the View
+  131: 13.5. Example Viewpoints
+132: 14. Language Customization Mechanisms
+  132: 14.1. Adding Attributes to ArchiMate Concepts
+
+  134: 14.2. Specialization of Concepts
+    135: 14.2.1. Examples of Specializations of Common Domain Elements (Informative)
+    138: 14.2.2. Examples of Specializations of Business Domain Elements (Informative)
+
+    138: 14.2.3. Examples of Specializations of Application Domain Elements (Informative)
+    139: 14.2.4. Examples of Specializations of Technology Domain Elements (Informative)
+    140: 14.2.5. Examples of Specializations of Motivation Elements (Informative)
+    141: 14.2.6. Examples of Specializations of Strategy Elements (Informative)
+    142: 14.2.7. Examples of Specializations of Implementation and Migration Elements (Informative)
+
+    142: 14.2.8. Examples of Specializations of Composite Elements (Informative)
+    143: 14.2.9. Examples of Specializations of Relationships and Junctions (Informative)
+144: Appendix A: Summary of Language Notation
+  144: A.1. Core Elements
+  145: A.2. Motivation, Strategy, Implementation and Migration Elements
+  145: A.3. Relationships and Junctions
+146: Appendix B: Relationships (Normative)
+  146: B.1. Specification of Derivation Rules
+  147: B.2. Derivation Rules for Valid Relationships
+    147: B.2.1. Valid Derivations for Specialization Relationships
+    147: B.2.2. Valid Derivations for Structural Relationships
+    148: B.2.3. Valid Derivations for Dependency Relationships
+    149: B.2.4. Valid Derivations for Dynamic Relationships
+  151: B.3. Derivation Rules for Potential Relationships
+    152: B.3.1. Potential Derivation for Specialization Relationships
+    155: B.3.2. Potential Derivation for Structural and Dependency Relationships
+    156: B.3.3. Potential Derivation for Dependency Relationships
+    157: B.3.4. Potential Derivation for Dynamic Relationships
+    158: B.3.5. Potential Derivation Rule for Grouping
+  158: B.4. Restrictions on Applying Derivation Rules
+  160: B.5. Relationship Tables
+  167: B.6. Grouping, Plateau, and Relationships Between Relationships
+168: Appendix C: Example Viewpoints
+  168: C.1. Basic Viewpoints in the ArchiMate Language
+    170: C.1.1. Organization Viewpoint
+    171: C.1.2. Application Structure Viewpoint
+    172: C.1.3. Information Structure Viewpoint
+    172: C.1.4. Technology Viewpoint
+    173: C.1.5. Layered Viewpoint
+    174: C.1.6. Physical Viewpoint
+    175: C.1.7. Product Viewpoint
+    176: C.1.8. Application Usage Viewpoint
+    176: C.1.9. Technology Usage Viewpoint
+    177: C.1.10. Process Cooperation Viewpoint
+    178: C.1.11. Application Cooperation Viewpoint
+    179: C.1.12. Service Realization Viewpoint
+    180: C.1.13. Implementation and Deployment Viewpoint
+  181: C.2. Motivation Viewpoints
+    182: C.2.1. Stakeholder Viewpoint
+    182: C.2.2. Goal Realization Viewpoint
+    183: C.2.3. Requirements Realization Viewpoint
+    184: C.2.4. Motivation Viewpoint
+  185: C.3. Strategy Viewpoints
+    185: C.3.1. Strategy Viewpoint
+    186: C.3.2. Capability Map Viewpoint
+    186: C.3.3. Value Stream Viewpoint
+    187: C.3.4. Outcome Realization Viewpoint
+    187: C.3.5. Resource Map Viewpoint
+  188: C.4. Implementation and Migration Viewpoints
+    188: C.4.1. Project Viewpoint
+    189: C.4.2. Migration Viewpoint
+    190: C.4.3. Implementation and Migration Viewpoint
+192: Appendix D: Relationship to Other Standards, Specifications, and Guidance Documents
+  192: D.1. The TOGAF Standard
+  193: D.2. The BIZBOK Guide
+  194: D.3. Other Modeling Languages
+  194: D.4. BPMN
+  195: D.5. UML
+  196: D.6. BMM
+197: Appendix E: Changes from Version 2.1 to This Document
+  197: E.1. Changes from Version 2.1 to Version 3.0.1
+  198: E.2. Changes from Version 3.0.1 to Version 3.1
+  199: E.3. Changes from Version 3.1 to Version 3.2
+  199: E.4. Changes from Version 3.2 to This Document
+201: Appendix F: Acronyms
+204: Index

@@ -60,7 +60,9 @@
   `sectionCoverage.missingRequirementReferenceIds`,
   `sectionCoverage.missingExternalBlockerReferenceIds`, `externalDependentIds`, and `optionalIds` so
   C260 chapter and appendix coverage remains visible by exact section identity while rejecting
-  unregistered conformance requirement or external blocker references.
+  unregistered conformance requirement or external blocker references. The exact section list starts
+  at Chapter 1 and includes the Introduction/Conformance and Definitions chapters, not only the
+  implementation-heavy language chapters.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

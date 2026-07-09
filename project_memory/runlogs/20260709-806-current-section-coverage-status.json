@@ -1,0 +1,52 @@
+(node:55124) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "expectedIds": [
+    "language-structure",
+    "common-domain",
+    "relationships-and-junctions",
+    "motivation-domain",
+    "strategy-domain",
+    "business-domain",
+    "application-domain",
+    "technology-domain",
+    "relationships-between-core-domains",
+    "implementation-and-migration-domain",
+    "viewpoint-mechanism",
+    "language-customization",
+    "appendix-a-notation",
+    "appendix-b-relationships",
+    "appendix-c-example-viewpoints",
+    "appendix-e-version-changes"
+  ],
+  "actualIds": [
+    "language-structure",
+    "common-domain",
+    "relationships-and-junctions",
+    "motivation-domain",
+    "strategy-domain",
+    "business-domain",
+    "application-domain",
+    "technology-domain",
+    "relationships-between-core-domains",
+    "implementation-and-migration-domain",
+    "viewpoint-mechanism",
+    "language-customization",
+    "appendix-a-notation",
+    "appendix-b-relationships",
+    "appendix-c-example-viewpoints",
+    "appendix-e-version-changes"
+  ],
+  "missingIds": [],
+  "extraIds": [],
+  "externalDependentIds": [
+    "appendix-a-notation",
+    "appendix-b-relationships"
+  ],
+  "optionalIds": [
+    "appendix-c-example-viewpoints"
+  ],
+  "complete": true
+}

@@ -812,6 +812,8 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
   const requirementIds = profile.conformance.requirements.map((requirement) => requirement.id);
   const externalBlockerIds = profile.conformance.externalBlockerCatalog.expectedIds;
   const expectedSectionIds = [
+    'introduction-and-conformance',
+    'definitions',
     'language-structure',
     'common-domain',
     'relationships-and-junctions',
@@ -849,6 +851,8 @@ test('archimate 4 implementation status exposes C260 section coverage identity',
     .filter(Boolean);
 
   assert.equal(sectionCatalog.status, 'c260-outline-derived');
+  assert.equal(sectionCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(sectionCatalog.expectedCount, expectedSectionIds.length);
   assert.deepEqual(sectionCatalog.expectedIds, expectedSectionIds);
   assert.deepEqual(sectionCatalog.expectedRequirementIds, expectedRequirementIds);
   assert.deepEqual(sectionCatalog.expectedExternalBlockerIds, expectedExternalBlockerIds);

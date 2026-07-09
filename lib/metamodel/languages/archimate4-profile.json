@@ -135,9 +135,11 @@
     ],
     "sectionCoverageCatalog": {
       "status": "c260-outline-derived",
-      "sourceRunlogPath": "project_memory/runlogs/20260709-756-c260-outline-current-audit.txt",
-      "expectedCount": 16,
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 18,
       "expectedIds": [
+        "introduction-and-conformance",
+        "definitions",
         "language-structure",
         "common-domain",
         "relationships-and-junctions",
@@ -169,6 +171,18 @@
       ]
     },
     "sectionCoverage": [
+      {
+        "id": "introduction-and-conformance",
+        "c260Section": "1",
+        "status": "tracked",
+        "evidence": "source status, conformance requirement map, source coverage, conformance readiness, and external blocker catalog"
+      },
+      {
+        "id": "definitions",
+        "c260Section": "2",
+        "status": "implemented-as-profile-vocabulary",
+        "evidence": "domain, aspect, element, relationship, viewpoint, attribute, and conformance vocabulary metadata"
+      },
       {
         "id": "language-structure",
         "c260Section": "3",

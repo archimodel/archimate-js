@@ -1440,3 +1440,16 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-798-status-api-node-esm-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-status-api-node-esm-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 115
+
+- Goal: make exact C260 section coverage start at the actual reviewed C260 outline, including Chapter 1 Introduction/Conformance and Chapter 2 Definitions rather than only Chapter 3 and later implementation-heavy chapters.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` re-extracted the current local C260 PDF outline and confirmed Chapter 1 Introduction and Chapter 2 Definitions before Chapter 3 Language Structure.
+- Red test: `project_memory/runlogs/20260709-807-c260-preface-section-coverage-red-test.txt` failed because `sectionCoverageCatalog.expectedIds` did not include `introduction-and-conformance` or `definitions`.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now sets `sectionCoverageCatalog.sourceRunlogPath` to the current outline extraction, raises `expectedCount` to 18, and tracks `introduction-and-conformance` and `definitions` as explicit section coverage entries.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now describe and guard the Chapter 1/2 section coverage boundary.
+- Focused verification: `project_memory/runlogs/20260709-808-c260-preface-section-coverage-focused-test.txt` passed for the section coverage identity test; `project_memory/runlogs/20260709-809-c260-preface-section-coverage-status.json` shows expectedCount 18, no missing ids, no extra ids, and complete true.
+- Verification: `npm run test:language` passed with 163 tests in `project_memory/runlogs/20260709-810-c260-preface-section-coverage-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-811-c260-preface-section-coverage-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-812-c260-preface-section-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-813-c260-preface-section-coverage-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-814-c260-preface-section-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-815-c260-preface-section-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-preface-section-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

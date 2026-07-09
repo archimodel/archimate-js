@@ -1,0 +1,741 @@
+(node:81016) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "version": "4.0",
+  "standard": "ArchiMate 4 Specification C260",
+  "experimental": true,
+  "namespace": "http://www.opengroup.org/xsd/archimate/4.0/",
+  "schemaLocation": "",
+  "elementCatalog": {
+    "status": "implemented",
+    "expectedCount": 42,
+    "expectedTypes": [
+      "Role",
+      "Collaboration",
+      "Path",
+      "Service",
+      "Process",
+      "Function",
+      "Event",
+      "Grouping",
+      "Location",
+      "Stakeholder",
+      "Driver",
+      "Assessment",
+      "Goal",
+      "Outcome",
+      "Principle",
+      "Requirement",
+      "Meaning",
+      "Value",
+      "Resource",
+      "Capability",
+      "ValueStream",
+      "CourseOfAction",
+      "BusinessActor",
+      "BusinessInterface",
+      "BusinessObject",
+      "Product",
+      "ApplicationComponent",
+      "ApplicationInterface",
+      "DataObject",
+      "Node",
+      "TechnologyInterface",
+      "Device",
+      "SystemSoftware",
+      "Equipment",
+      "Facility",
+      "CommunicationNetwork",
+      "DistributionNetwork",
+      "Artifact",
+      "Material",
+      "WorkPackage",
+      "Deliverable",
+      "Plateau"
+    ],
+    "actualCount": 42,
+    "actualTypes": [
+      "Role",
+      "Collaboration",
+      "Path",
+      "Service",
+      "Process",
+      "Function",
+      "Event",
+      "Grouping",
+      "Location",
+      "Stakeholder",
+      "Driver",
+      "Assessment",
+      "Goal",
+      "Outcome",
+      "Principle",
+      "Requirement",
+      "Meaning",
+      "Value",
+      "Resource",
+      "Capability",
+      "ValueStream",
+      "CourseOfAction",
+      "BusinessActor",
+      "BusinessInterface",
+      "BusinessObject",
+      "Product",
+      "ApplicationComponent",
+      "ApplicationInterface",
+      "DataObject",
+      "Node",
+      "TechnologyInterface",
+      "Device",
+      "SystemSoftware",
+      "CommunicationNetwork",
+      "Artifact",
+      "DistributionNetwork",
+      "Equipment",
+      "Facility",
+      "Material",
+      "WorkPackage",
+      "Deliverable",
+      "Plateau"
+    ],
+    "missingTypes": [],
+    "extraTypes": [],
+    "complete": true
+  },
+  "relationshipConnectors": {
+    "status": "implemented-experimental-exchange",
+    "expectedCount": 2,
+    "expectedTypes": [
+      "AndJunction",
+      "OrJunction"
+    ],
+    "catalogBoundary": "outside-element-catalog",
+    "meff4Representation": "external-source-required",
+    "actualCount": 2,
+    "actualTypes": [
+      "AndJunction",
+      "OrJunction"
+    ],
+    "missingTypes": [],
+    "extraTypes": [],
+    "complete": true,
+    "types": [
+      "AndJunction",
+      "OrJunction"
+    ]
+  },
+  "relationshipMatrix": {
+    "status": "external-profile-required",
+    "reason": "Appendix B table data is normative and is not embedded without redistribution rights.",
+    "redistributableProfilePresent": false,
+    "externalProfileLoaderImplemented": true,
+    "coverageReportImplemented": true
+  },
+  "relationshipProfile": {
+    "source": "compatibility-fallback",
+    "sourceCount": 55,
+    "relationshipCount": 3025,
+    "targetCellCount": 3025,
+    "missingSourceCount": 0,
+    "missingTargetCellCount": 0,
+    "conceptCount": 55,
+    "expectedTargetCellCount": 3025,
+    "requireComplete": false,
+    "requireCompleteTargets": false,
+    "completeSourceCoverage": true,
+    "completeTargetCoverage": true
+  },
+  "exchangeFormat": {
+    "status": "experimental",
+    "officialXsdRequired": true,
+    "officialXsdDirectory": "https://www.opengroup.org/xsd/archimate/",
+    "internalRoundTripTested": true,
+    "internalRoundTripRunlogPath": "project_memory/runlogs/20260709-781-xml-roundtrip-exchange-format-test.txt",
+    "officialConformanceClaimable": false
+  },
+  "iconography": {
+    "status": "local-renderer-coverage",
+    "profilePictogramCoverage": "dedicated-local-paths",
+    "genericObjectAliasCount": 0,
+    "legacyCompatibilityAliases": [
+      "PICTO_DELIVRABLE",
+      "PICTO_STAKHOLDER"
+    ],
+    "exactAppendixAVectorsConfirmed": false
+  },
+  "conformanceRequirements": {
+    "status": "implemented-with-external-blockers",
+    "expectedCount": 6,
+    "expectedShallCount": 5,
+    "expectedMayCount": 1,
+    "expectedShallIds": [
+      "language-structure",
+      "standard-iconography",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-b-relationships"
+    ],
+    "expectedMayIds": [
+      "example-viewpoints"
+    ],
+    "items": [
+      {
+        "id": "language-structure",
+        "level": "shall",
+        "status": "implemented"
+      },
+      {
+        "id": "standard-iconography",
+        "level": "shall",
+        "status": "local-renderer-coverage",
+        "externalBlocker": "exactAppendixAArtworkRights"
+      },
+      {
+        "id": "viewpoint-mechanism",
+        "level": "shall",
+        "status": "implemented"
+      },
+      {
+        "id": "language-customization",
+        "level": "shall",
+        "status": "implemented",
+        "implementationDefined": true
+      },
+      {
+        "id": "appendix-b-relationships",
+        "level": "shall",
+        "status": "external-profile-required",
+        "externalBlocker": "officialAppendixBRelationshipMatrix"
+      },
+      {
+        "id": "example-viewpoints",
+        "level": "may",
+        "status": "not-bundled-informative",
+        "optional": true
+      }
+    ],
+    "expectedIds": [
+      "language-structure",
+      "standard-iconography",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "actualIds": [
+      "language-structure",
+      "standard-iconography",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "complete": true,
+    "shall": {
+      "total": 5,
+      "expectedCount": 5,
+      "expectedIds": [
+        "language-structure",
+        "standard-iconography",
+        "viewpoint-mechanism",
+        "language-customization",
+        "appendix-b-relationships"
+      ],
+      "actualIds": [
+        "language-structure",
+        "standard-iconography",
+        "viewpoint-mechanism",
+        "language-customization",
+        "appendix-b-relationships"
+      ],
+      "missingIds": [],
+      "extraIds": [],
+      "complete": true,
+      "implemented": 3,
+      "externalBlocked": 2
+    },
+    "may": {
+      "total": 1,
+      "expectedCount": 1,
+      "expectedIds": [
+        "example-viewpoints"
+      ],
+      "actualIds": [
+        "example-viewpoints"
+      ],
+      "missingIds": [],
+      "extraIds": [],
+      "complete": true,
+      "bundled": 0
+    }
+  },
+  "sourceCoverage": {
+    "status": "implemented-with-external-blockers",
+    "expectedCount": 6,
+    "expectedSourceIds": [
+      "c260",
+      "w262",
+      "launchTranscript",
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "requiredSourceIds": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "companionSourceIds": [
+      "w262"
+    ],
+    "items": {
+      "c260": {
+        "document": "C260",
+        "status": "local-licensed-source-reviewed",
+        "localSourcePresent": true
+      },
+      "w262": {
+        "document": "W262",
+        "status": "external-download-required",
+        "url": "https://publications.opengroup.org/w262",
+        "localSourcePresent": false,
+        "companion": true,
+        "publicationPageStatusCode": 200,
+        "lastLocalSearchAt": "2026-07-09T08:10:22+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-626-w262-local-source-search.txt",
+        "localSearchRoots": [
+          "C:\\Users\\syska\\Downloads",
+          "C:\\Users\\syska\\.codex\\attachments"
+        ],
+        "localSearchPatterns": [
+          "*W262*.pdf",
+          "*w262*.pdf",
+          "*Motivation*ArchiMate*.pdf",
+          "*ArchiMate*Motivation*.pdf",
+          "*Changes*ArchiMate*.pdf"
+        ],
+        "localSearchMatchedFiles": []
+      },
+      "launchTranscript": {
+        "status": "local-transcript-reviewed",
+        "localSourcePresent": true
+      },
+      "appendixBRelationshipMatrix": {
+        "status": "external-profile-required",
+        "localSourcePresent": false,
+        "localSourceMeaning": "redistributable Appendix B profile artifact",
+        "localC260SourceReviewed": true,
+        "redistributableProfilePresent": false,
+        "externalProfileLoaderImplemented": true,
+        "coverageReportImplemented": true,
+        "relationshipProfileStatusApi": "getArchimate4RelationshipProfileStatus",
+        "relationshipProfileCoverageApi": "getArchimate4RelationshipProfileCoverageReport",
+        "sourceLedgerPath": "docs/archimate4/sources.md",
+        "required": true,
+        "externalBlocker": "officialAppendixBRelationshipMatrix"
+      },
+      "meff4Xsd": {
+        "status": "external-source-required",
+        "url": "https://www.opengroup.org/xsd/archimate/",
+        "localSourcePresent": false,
+        "required": true,
+        "externalBlocker": "officialMeff4Xsd",
+        "lastCheckedAt": "2026-07-09T09:28:39+09:00",
+        "lastRunlogPath": "project_memory/runlogs/20260709-731-meff4-xsd-latest-recheck.txt",
+        "directoryStatusCode": 200,
+        "official4XsdDiscovered": false,
+        "discoveredXsdLinks": [
+          "3.1/archimate3_Model.xsd",
+          "3.1/archimate3_View.xsd",
+          "3.1/archimate3_Diagram.xsd"
+        ],
+        "candidateStatusCodes": {
+          "https://www.opengroup.org/xsd/archimate/4.0/": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+          "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404
+        }
+      },
+      "appendixAArtworkRights": {
+        "status": "external-rights-required",
+        "localSourcePresent": false,
+        "required": true,
+        "externalBlocker": "exactAppendixAArtworkRights"
+      }
+    },
+    "actualSourceIds": [
+      "c260",
+      "w262",
+      "launchTranscript",
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingSourceIds": [],
+    "extraSourceIds": [],
+    "total": 6,
+    "complete": true,
+    "localSourceCount": 2,
+    "externalSourceCount": 4,
+    "missingRequiredSources": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingCompanionSources": [
+      "w262"
+    ]
+  },
+  "conformanceReadiness": {
+    "officialConformanceClaimable": false,
+    "reason": "external-blockers-remain",
+    "blockers": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "requiredBeforeClaim": [
+      "Load an official or redistributable Appendix B relationship profile",
+      "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+      "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
+    ],
+    "requiredBeforeClaimBlockerIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "requiredBeforeClaimByBlocker": {
+      "officialAppendixBRelationshipMatrix": "Load an official or redistributable Appendix B relationship profile",
+      "officialMeff4Xsd": "Confirm the official MEFF 4.0 XSD namespace and serialization details",
+      "exactAppendixAArtworkRights": "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
+    },
+    "actualRequiredBeforeClaimBlockerIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingRequiredBeforeClaimBlockerIds": [],
+    "extraRequiredBeforeClaimBlockerIds": [],
+    "implementedShallCount": 3,
+    "externalBlockedShallCount": 2,
+    "missingRequiredSources": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingCompanionSources": [
+      "w262"
+    ]
+  },
+  "remainingGaps": {
+    "status": "external-source-dependent",
+    "expectedCount": 4,
+    "expectedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "items": [
+      {
+        "id": "officialAppendixBRelationshipMatrix",
+        "status": "external-profile-required",
+        "sourceId": "appendixBRelationshipMatrix",
+        "requirementId": "appendix-b-relationships",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "officialMeff4Xsd",
+        "status": "external-source-required",
+        "sourceId": "meff4Xsd",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "exactAppendixAArtworkRights",
+        "status": "external-rights-required",
+        "sourceId": "appendixAArtworkRights",
+        "requirementId": "standard-iconography",
+        "officialConformanceBlocker": true
+      },
+      {
+        "id": "w262CompanionPaper",
+        "status": "external-download-required",
+        "sourceId": "w262",
+        "companion": true,
+        "officialConformanceBlocker": false
+      }
+    ],
+    "actualIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "unresolvedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights",
+      "w262CompanionPaper"
+    ],
+    "officialConformanceGapIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingOfficialConformanceGapIds": [],
+    "extraOfficialConformanceGapIds": [],
+    "companionGapSourceIds": [
+      "w262"
+    ],
+    "missingCompanionGapSourceIds": [],
+    "extraCompanionGapSourceIds": [],
+    "complete": true
+  },
+  "sectionCoverage": {
+    "status": "c260-outline-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-756-c260-outline-current-audit.txt",
+    "expectedCount": 16,
+    "expectedIds": [
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-a-notation",
+      "appendix-b-relationships",
+      "appendix-c-example-viewpoints",
+      "appendix-e-version-changes"
+    ],
+    "expectedRequirementIds": [
+      "language-structure",
+      "viewpoint-mechanism",
+      "language-customization",
+      "standard-iconography",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "expectedExternalBlockerIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "items": [
+      {
+        "id": "language-structure",
+        "c260Section": "3",
+        "status": "implemented",
+        "requirementId": "language-structure",
+        "evidence": "versioned language profile, domain/aspect metadata, and active profile services"
+      },
+      {
+        "id": "common-domain",
+        "c260Section": "4",
+        "status": "implemented",
+        "evidence": "Role, Collaboration, Path, Service, Process, Function, Event, Grouping, and Location profile entries"
+      },
+      {
+        "id": "relationships-and-junctions",
+        "c260Section": "5",
+        "status": "implemented-with-external-profile-boundary",
+        "evidence": "relationship metadata, junction connectors, multiplicity, options, and external Appendix B profile loader"
+      },
+      {
+        "id": "motivation-domain",
+        "c260Section": "6",
+        "status": "implemented",
+        "evidence": "Motivation profile entries and local notation renderer paths"
+      },
+      {
+        "id": "strategy-domain",
+        "c260Section": "7",
+        "status": "implemented",
+        "evidence": "Strategy profile entries and standard display labels"
+      },
+      {
+        "id": "business-domain",
+        "c260Section": "8",
+        "status": "implemented",
+        "evidence": "Business profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "application-domain",
+        "c260Section": "9",
+        "status": "implemented",
+        "evidence": "Application profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "technology-domain",
+        "c260Section": "10",
+        "status": "implemented",
+        "evidence": "Technology profile entries including Equipment, Facility, Distribution Network, and Material"
+      },
+      {
+        "id": "relationships-between-core-domains",
+        "c260Section": "11",
+        "status": "implemented-through-active-profile",
+        "evidence": "relationship validation resolves current element metadata and host-supplied Appendix B profile data"
+      },
+      {
+        "id": "implementation-and-migration-domain",
+        "c260Section": "12",
+        "status": "implemented",
+        "evidence": "Work Package, Deliverable, and Plateau profile entries and renderer paths"
+      },
+      {
+        "id": "viewpoint-mechanism",
+        "c260Section": "13",
+        "status": "implemented",
+        "requirementId": "viewpoint-mechanism",
+        "evidence": "viewpoint metadata, viewpoint definitions, and active-profile type validation"
+      },
+      {
+        "id": "language-customization",
+        "c260Section": "14",
+        "status": "implementation-defined",
+        "requirementId": "language-customization",
+        "evidence": "custom profile domains, concepts, relationships, profile attributes, and viewpoint definitions"
+      },
+      {
+        "id": "appendix-a-notation",
+        "c260Section": "Appendix A",
+        "status": "local-renderer-coverage",
+        "requirementId": "standard-iconography",
+        "externalBlocker": "exactAppendixAArtworkRights",
+        "evidence": "local renderer and palette paths; exact Appendix A vector redistribution remains unconfirmed"
+      },
+      {
+        "id": "appendix-b-relationships",
+        "c260Section": "Appendix B",
+        "status": "external-profile-required",
+        "requirementId": "appendix-b-relationships",
+        "externalBlocker": "officialAppendixBRelationshipMatrix",
+        "evidence": "relationship derivation helpers and profile loader are implemented; redistributable table data is not embedded"
+      },
+      {
+        "id": "appendix-c-example-viewpoints",
+        "c260Section": "Appendix C",
+        "status": "optional-informative",
+        "optional": true,
+        "requirementId": "example-viewpoints",
+        "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"
+      },
+      {
+        "id": "appendix-e-version-changes",
+        "c260Section": "Appendix E.4",
+        "status": "implemented-with-migration-warnings",
+        "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
+      }
+    ],
+    "actualIds": [
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-a-notation",
+      "appendix-b-relationships",
+      "appendix-c-example-viewpoints",
+      "appendix-e-version-changes"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "requirementIds": [
+      "language-structure",
+      "viewpoint-mechanism",
+      "language-customization",
+      "standard-iconography",
+      "appendix-b-relationships",
+      "example-viewpoints"
+    ],
+    "missingRequirementIds": [],
+    "extraRequirementIds": [],
+    "missingRequirementReferenceIds": [],
+    "externalBlockerIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "missingExternalBlockerIds": [],
+    "extraExternalBlockerIds": [],
+    "missingExternalBlockerReferenceIds": [],
+    "externalDependentIds": [
+      "appendix-a-notation",
+      "appendix-b-relationships"
+    ],
+    "optionalIds": [
+      "appendix-c-example-viewpoints"
+    ],
+    "implementedIds": [
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-e-version-changes"
+    ],
+    "complete": true
+  },
+  "externalBlockerCatalog": {
+    "status": "external-source-dependent",
+    "expectedCount": 3,
+    "expectedIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "actualIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "readinessIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "requirementIds": [
+      "exactAppendixAArtworkRights",
+      "officialAppendixBRelationshipMatrix"
+    ],
+    "sourceCoverageIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "complete": true
+  },
+  "externalBlockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ]
+}

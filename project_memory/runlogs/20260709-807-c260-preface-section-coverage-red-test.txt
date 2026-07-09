@@ -1,0 +1,36 @@
+✖ archimate 4 implementation status exposes C260 section coverage identity (11.3948ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.2986
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:803:1
+✖ archimate 4 implementation status exposes C260 section coverage identity (11.3948ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  -   'introduction-and-conformance',
+  -   'definitions',
+      'language-structure',
+      'common-domain',
+      'relationships-and-junctions',
+      'motivation-domain',
+      'strategy-domain',
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:854:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'language-structure', 'common-domain', 'relationships-and-junctions', 'motivation-domain', 'strategy-domain', 'business-domain', 'application-domain', 'technology-domain', 'relationships-between-core-domains', 'implementation-and-migration-domain', 'viewpoint-mechanism', 'language-customization', 'appendix-a-notation', 'appendix-b-relationships', 'appendix-c-example-viewpoints', 'appendix-e-version-changes' ],
+    expected: [ 'introduction-and-conformance', 'definitions', 'language-structure', 'common-domain', 'relationships-and-junctions', 'motivation-domain', 'strategy-domain', 'business-domain', 'application-domain', 'technology-domain', 'relationships-between-core-domains', 'implementation-and-migration-domain', 'viewpoint-mechanism', 'language-customization', 'appendix-a-notation', 'appendix-b-relationships', 'appendix-c-example-viewpoints', 'appendix-e-version-changes' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
