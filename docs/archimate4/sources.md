@@ -63,6 +63,11 @@
   unregistered conformance requirement or external blocker references. The exact section list starts
   at Chapter 1 and includes the Introduction/Conformance and Definitions chapters, not only the
   implementation-heavy language chapters.
+- `getArchimate4ImplementationStatus().definitionCoverage` reports
+  `definitionCoverage.expectedIds`, `definitionCoverage.actualIds`,
+  `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the
+  Chapter 2 definition vocabulary remains visible by exact term identity without copying the
+  definition prose.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

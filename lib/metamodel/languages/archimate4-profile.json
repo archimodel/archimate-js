@@ -289,6 +289,47 @@
         "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
       }
     ],
+    "definitionCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 16,
+      "expectedIds": [
+        "archimate-core-language",
+        "archimate-full-language",
+        "architecture-domain",
+        "architecture-view",
+        "architecture-viewpoint",
+        "aspect",
+        "attribute",
+        "composite-element",
+        "concept",
+        "conformance",
+        "conforming-implementation",
+        "core-element",
+        "domain",
+        "element",
+        "model",
+        "relationship"
+      ]
+    },
+    "definitionCoverage": [
+      { "id": "archimate-core-language", "c260Section": "2.1", "term": "ArchiMate Core Language", "status": "tracked" },
+      { "id": "archimate-full-language", "c260Section": "2.2", "term": "ArchiMate Full Language", "status": "tracked" },
+      { "id": "architecture-domain", "c260Section": "2.3", "term": "Architecture Domain", "status": "tracked" },
+      { "id": "architecture-view", "c260Section": "2.4", "term": "Architecture View", "status": "tracked" },
+      { "id": "architecture-viewpoint", "c260Section": "2.5", "term": "Architecture Viewpoint", "status": "tracked" },
+      { "id": "aspect", "c260Section": "2.6", "term": "Aspect", "status": "tracked" },
+      { "id": "attribute", "c260Section": "2.7", "term": "Attribute", "status": "tracked" },
+      { "id": "composite-element", "c260Section": "2.8", "term": "Composite Element", "status": "tracked" },
+      { "id": "concept", "c260Section": "2.9", "term": "Concept", "status": "tracked" },
+      { "id": "conformance", "c260Section": "2.10", "term": "Conformance", "status": "tracked" },
+      { "id": "conforming-implementation", "c260Section": "2.11", "term": "Conforming Implementation", "status": "tracked" },
+      { "id": "core-element", "c260Section": "2.12", "term": "Core Element", "status": "tracked" },
+      { "id": "domain", "c260Section": "2.13", "term": "Domain", "status": "tracked" },
+      { "id": "element", "c260Section": "2.14", "term": "Element", "status": "tracked" },
+      { "id": "model", "c260Section": "2.15", "term": "Model", "status": "tracked" },
+      { "id": "relationship", "c260Section": "2.16", "term": "Relationship", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

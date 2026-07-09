@@ -574,6 +574,48 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
 });
 
+test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const definitionCatalog = profile.conformance.definitionCoverageCatalog;
+  const definitions = profile.conformance.definitionCoverage;
+  const expectedDefinitionIds = [
+    'archimate-core-language',
+    'archimate-full-language',
+    'architecture-domain',
+    'architecture-view',
+    'architecture-viewpoint',
+    'aspect',
+    'attribute',
+    'composite-element',
+    'concept',
+    'conformance',
+    'conforming-implementation',
+    'core-element',
+    'domain',
+    'element',
+    'model',
+    'relationship'
+  ];
+
+  assert.equal(definitionCatalog.status, 'c260-outline-derived');
+  assert.equal(definitionCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(definitionCatalog.expectedCount, expectedDefinitionIds.length);
+  assert.deepEqual(definitionCatalog.expectedIds, expectedDefinitionIds);
+  assert.deepEqual(definitions.map((definition) => definition.id), expectedDefinitionIds);
+  assert.equal(definitions.every((definition) => definition.c260Section && definition.term), true);
+
+  assert.match(languageIndex, /function summarizeDefinitionCoverage/);
+  assert.match(languageIndex, /definitionCoverage: definitionCoverage/);
+  assert.match(languageIndex, /missingDefinitionIds/);
+  assert.match(readme, /definitionCoverage\.expectedIds/);
+  assert.match(sources, /definitionCoverage\.actualIds/);
+  assert.match(officialSpec, /definitionCoverage\.missingDefinitionIds/);
+});
+
 test('archimate 4 implementation status API can be imported directly by Node ESM', async () => {
   const { stdout } = await runNodeModule(`
     import { getArchimate4ImplementationStatus } from './lib/metamodel/languages/index.js';

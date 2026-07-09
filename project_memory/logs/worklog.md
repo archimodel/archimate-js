@@ -1453,3 +1453,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-815-c260-preface-section-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-preface-section-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 116
+
+- Goal: make C260 Chapter 2 Definitions auditable by exact vocabulary identity rather than only by the broad `definitions` section id.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` already confirms the 16 Chapter 2 definition headings from 2.1 through 2.16.
+- Red test: `project_memory/runlogs/20260709-820-c260-definition-vocabulary-red-test.txt` failed because `definitionCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `definitionCoverageCatalog` and `definitionCoverage` for the 16 Chapter 2 definition headings without copying definition prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().definitionCoverage` with expected/actual/missing/extra ids, `missingDefinitionIds`, `extraDefinitionIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 2 vocabulary boundary.
+- Focused verification: `project_memory/runlogs/20260709-821-c260-definition-vocabulary-focused-test.txt` passed for the definition vocabulary identity test; `project_memory/runlogs/20260709-822-c260-definition-vocabulary-status.json` shows expectedCount 16, actualCount 16, no missing definition ids, no extra definition ids, and complete true.
+- Verification: `npm run test:language` passed with 164 tests in `project_memory/runlogs/20260709-823-c260-definition-vocabulary-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-824-c260-definition-vocabulary-eslint-registry.txt`; JSON parse check passed in `project_memory/runlogs/20260709-825-c260-definition-vocabulary-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-826-c260-definition-vocabulary-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-827-c260-definition-vocabulary-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-828-c260-definition-vocabulary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-definition-vocabulary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
