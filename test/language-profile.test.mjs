@@ -2688,6 +2688,13 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.deepEqual(sourceCoverageCatalog.companionSourceIds, [ 'w262' ]);
   assert.deepEqual(Object.keys(sourceCoverage), expectedSourceIds);
   assert.equal(sourceCoverage.c260.status, 'local-licensed-source-reviewed');
+  assert.equal(sourceCoverage.c260.localPdfTitle, 'ArchiMate 4 Specification');
+  assert.equal(sourceCoverage.c260.localPdfPages, 207);
+  assert.equal(sourceCoverage.c260.localPdfAuthor, 'The Open Group');
+  assert.equal(
+    sourceCoverage.c260.localPdfInventoryRunlogPath,
+    'project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json'
+  );
   assert.equal(sourceCoverage.w262.status, 'external-download-required');
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
@@ -2715,6 +2722,27 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     'C:\\Users\\syska\\.codex\\attachments'
   ]);
   assert.deepEqual(sourceCoverage.w262.localSearchMatchedFiles, []);
+  assert.equal(sourceCoverage.w262.localCandidateInventoryCheckedAt, '2026-07-09T21:10:00+09:00');
+  assert.equal(
+    sourceCoverage.w262.localCandidateInventoryRunlogPath,
+    'project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json'
+  );
+  assert.equal(sourceCoverage.w262.localCandidateInventoryW262Matched, false);
+  assert.deepEqual(sourceCoverage.w262.localCandidateInventoryClassifications, [
+    'c260-specification',
+    'c260-sample',
+    'archimate4-non-commercial-license'
+  ]);
+  const localPdfInventory = await readJson('../project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json');
+  const localPdfClassifications = new Set(localPdfInventory.items.map((item) => item.classification));
+  assert.equal(localPdfInventory.checkedAt, sourceCoverage.w262.localCandidateInventoryCheckedAt);
+  assert.equal(localPdfInventory.w262Matched, sourceCoverage.w262.localCandidateInventoryW262Matched);
+  assert.equal(localPdfInventory.items.some((item) => {
+    return item.classification === 'c260-specification' && item.pages === sourceCoverage.c260.localPdfPages;
+  }), true);
+  assert.equal(localPdfClassifications.has('c260-specification'), true);
+  assert.equal(localPdfClassifications.has('archimate4-non-commercial-license'), true);
+  assert.equal(localPdfClassifications.has('w262-candidate'), false);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.status, 'external-profile-required');
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localC260SourceReviewed, true);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localSourceMeaning, 'redistributable Appendix B profile artifact');

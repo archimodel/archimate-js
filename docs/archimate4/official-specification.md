@@ -16,6 +16,9 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
   Downloads/attachments check is recorded in
   `project_memory/runlogs/20260709-201226-external-source-current-recheck.json`; it detected the W262
   title, 22-page metadata, 2026-04-27 publication metadata, and found no matching local W262 PDF.
+- Local ArchiMate PDF inventory status: `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`
+  identifies the local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files,
+  and records no W262 candidate among those local PDFs.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
 - Appendix B source status is split deliberately: the licensed local C260 source has been reviewed,

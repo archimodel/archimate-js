@@ -24,6 +24,10 @@
   recursive filename search under `C:\Users\syska\Downloads` and
   `C:\Users\syska\.codex\attachments` still found no local W262 or ArchiMate 4 motivation PDF
   candidates.
+- A local ArchiMate-related PDF inventory is recorded in
+  `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies the
+  local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files, and confirms no
+  W262 candidate among those local PDFs.
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
 - Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.
@@ -894,6 +898,16 @@
   4.0 directory, `archimate4_*`, `archimate4.xsd`, `archimate4_ModelExchangeFile.xsd`, and
   `archimate_*` candidate URLs returned 404, while the 3.1 Model XSD baseline returned 200.
   `archimate4-profile.json` records this latest check in `sourceCoverage.meff4Xsd`.
+
+## Local ArchiMate PDF Inventory
+
+- `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json` records a sanitized
+  local PDF inventory for ArchiMate-related files under Downloads.
+- The inventory classifies the full local C260 file as the 207-page `ArchiMate 4 Specification`,
+  records the local C260 sample files separately, and classifies the `ArchiMate4_NCLv.1_ff` PDFs as
+  ArchiMate 4 Non-Commercial License documents.
+- The same inventory records `w262Matched: false`, so the current W262 companion gap is not caused by
+  misclassifying the local C260 or license PDFs.
 
 ## ArchiMate 3.1 XSD Verification
 

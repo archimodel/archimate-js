@@ -1,0 +1,54 @@
+{
+  "c260": {
+    "document": "C260",
+    "status": "local-licensed-source-reviewed",
+    "localSourcePresent": true,
+    "localPdfTitle": "ArchiMate 4 Specification",
+    "localPdfPages": 207,
+    "localPdfAuthor": "The Open Group",
+    "localPdfInventoryRunlogPath": "project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json"
+  },
+  "w262": {
+    "document": "W262",
+    "status": "external-download-required",
+    "url": "https://publications.opengroup.org/w262",
+    "localSourcePresent": false,
+    "companion": true,
+    "publicationPageStatusCode": 200,
+    "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+    "lastPublicationPageCheckedAt": "2026-07-09T20:12:26+09:00",
+    "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-201226-external-source-current-recheck.json",
+    "freePdfDetected": true,
+    "loginRequiredDetected": true,
+    "pages22Detected": true,
+    "published20260427Detected": true,
+    "lastLocalSearchAt": "2026-07-09T20:12:26+09:00",
+    "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-201226-external-source-current-recheck.json",
+    "localSearchRoots": [
+      "C:\\Users\\syska\\Downloads",
+      "C:\\Users\\syska\\.codex\\attachments"
+    ],
+    "localSearchPatterns": [
+      "*W262*.pdf",
+      "*w262*.pdf",
+      "*Motivation*ArchiMate*.pdf",
+      "*ArchiMate*Motivation*.pdf",
+      "*Changes*ArchiMate*.pdf"
+    ],
+    "localSearchMatchedFiles": [],
+    "localCandidateInventoryCheckedAt": "2026-07-09T21:10:00+09:00",
+    "localCandidateInventoryRunlogPath": "project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json",
+    "localCandidateInventoryW262Matched": false,
+    "localCandidateInventoryClassifications": [
+      "c260-specification",
+      "c260-sample",
+      "archimate4-non-commercial-license"
+    ]
+  },
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}

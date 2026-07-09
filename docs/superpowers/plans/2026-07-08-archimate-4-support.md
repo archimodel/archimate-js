@@ -19,6 +19,9 @@ and should not be used alone as current progress. Use the implementation evidenc
 the current source of truth.
 External-source evidence for W262 and MEFF 4.0 XSD was refreshed on 2026-07-09T20:12:26+09:00 in
 `project_memory/runlogs/20260709-201226-external-source-current-recheck.json`.
+Local ArchiMate-related PDF inventory was refreshed on 2026-07-09T21:10:00+09:00 in
+`project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies local
+C260 and ArchiMate 4 license PDFs and confirms no W262 candidate among those local PDFs.
 
 Implemented and verified on the current branch:
 

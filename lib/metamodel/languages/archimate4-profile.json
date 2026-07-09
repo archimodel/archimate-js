@@ -1498,7 +1498,11 @@
       "c260": {
         "document": "C260",
         "status": "local-licensed-source-reviewed",
-        "localSourcePresent": true
+        "localSourcePresent": true,
+        "localPdfTitle": "ArchiMate 4 Specification",
+        "localPdfPages": 207,
+        "localPdfAuthor": "The Open Group",
+        "localPdfInventoryRunlogPath": "project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json"
       },
       "w262": {
         "document": "W262",
@@ -1527,7 +1531,15 @@
           "*ArchiMate*Motivation*.pdf",
           "*Changes*ArchiMate*.pdf"
         ],
-        "localSearchMatchedFiles": []
+        "localSearchMatchedFiles": [],
+        "localCandidateInventoryCheckedAt": "2026-07-09T21:10:00+09:00",
+        "localCandidateInventoryRunlogPath": "project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json",
+        "localCandidateInventoryW262Matched": false,
+        "localCandidateInventoryClassifications": [
+          "c260-specification",
+          "c260-sample",
+          "archimate4-non-commercial-license"
+        ]
       },
       "launchTranscript": {
         "status": "local-transcript-reviewed",

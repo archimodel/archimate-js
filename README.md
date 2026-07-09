@@ -46,7 +46,7 @@ For Node-based audit tooling that does not load the browser viewer bundle, impor
 
 The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
 
-The W262 source-coverage entry records the latest local Downloads/attachments search and publication-page status so hosts can distinguish a missing companion paper from missing C260 implementation evidence.
+The W262 source-coverage entry records the latest local Downloads/attachments search, local ArchiMate PDF inventory, and publication-page status so hosts can distinguish a missing companion paper from local C260 specification or license files.
 
 Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept. Profile attributes require a supported ArchiMate concept and typed value definition. Host tooling can use `getProfileAttributesForConcept()`, `normalizeProfileAttributeValue()`, and `isProfileAttributeValueValid()` to retrieve applicable profile attributes and validate implementation-supported typed values. Profile attribute values can also be stored as model `Properties` through `setProfileAttributePropertyValue()` and read back through `getProfileAttributePropertyValue()`.
 

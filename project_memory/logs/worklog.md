@@ -2367,3 +2367,16 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2058-status-completion-scan-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-status-completion-scan-2052-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 184
+
+- Goal: strengthen the local-source evidence for C260 and W262 by inventorying local ArchiMate-related PDFs without committing copied specification prose or Appendix B tables.
+- Observation: `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json` identifies local C260 specification PDFs, local C260 sample PDFs, and ArchiMate 4 Non-Commercial License PDFs; it records `w262Matched: false`.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now exposes C260 local PDF metadata and W262 local candidate inventory metadata through `sourceCoverage`.
+- Implemented: `test/language-profile.test.mjs` now verifies the local PDF inventory runlog, C260 207-page source identity, local PDF classifications, and the absence of W262 candidates.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now cite the sanitized local ArchiMate PDF inventory.
+- Focused verification: JSON parse passed in `project_memory/runlogs/20260709-2111-local-pdf-inventory-json-check.txt`; source-coverage focused test passed in `project_memory/runlogs/20260709-2112-local-pdf-inventory-source-coverage-focused-test.txt`; status API sample recorded in `project_memory/runlogs/20260709-2113-local-pdf-inventory-status-api.json`.
+- Verification: final JSON parse passed in `project_memory/runlogs/20260709-2114-local-pdf-inventory-final-json-check.txt`; `npm run test:language` passed with 223 tests in `project_memory/runlogs/20260709-2117-local-pdf-inventory-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-2115-local-pdf-inventory-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-2116-local-pdf-inventory-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2118-local-pdf-inventory-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-local-archimate-pdf-inventory-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

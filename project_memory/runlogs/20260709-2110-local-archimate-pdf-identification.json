@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-07-09T21:10:00+09:00",
+  "scope": "local ArchiMate-related PDFs in Downloads",
+  "w262Matched": false,
+  "items": [
+    {
+      "name": "978940181474E.pdf",
+      "bytes": 14482364,
+      "pages": 207,
+      "metadataTitle": "ArchiMate 4 Specification",
+      "metadataAuthor": "The Open Group",
+      "classification": "c260-specification",
+      "mentionsW262": false
+    },
+    {
+      "name": "978940181474E (1).pdf",
+      "bytes": 14482312,
+      "pages": 207,
+      "metadataTitle": "ArchiMate 4 Specification",
+      "metadataAuthor": "The Open Group",
+      "classification": "c260-specification",
+      "mentionsW262": false
+    },
+    {
+      "name": "978940181474C_SMPL.pdf",
+      "bytes": 8052197,
+      "pages": 15,
+      "metadataTitle": "ArchiMate 4 Specification",
+      "metadataAuthor": "The Open Group",
+      "classification": "c260-sample",
+      "mentionsW262": false
+    },
+    {
+      "name": "978940181474C_SMPL (1).pdf",
+      "bytes": 8052197,
+      "pages": 15,
+      "metadataTitle": "ArchiMate 4 Specification",
+      "metadataAuthor": "The Open Group",
+      "classification": "c260-sample",
+      "mentionsW262": false
+    },
+    {
+      "name": "ArchiMate4_NCLv.1_ff.pdf",
+      "bytes": 199995,
+      "pages": 4,
+      "metadataTitle": "",
+      "metadataAuthor": "",
+      "classification": "archimate4-non-commercial-license",
+      "mentionsW262": false
+    },
+    {
+      "name": "ArchiMate4_NCLv.1_ff (1).pdf",
+      "bytes": 199995,
+      "pages": 4,
+      "metadataTitle": "",
+      "metadataAuthor": "",
+      "classification": "archimate4-non-commercial-license",
+      "mentionsW262": false
+    },
+    {
+      "name": "ArchiMate4_NCLv.1_ff_署名済み.pdf",
+      "bytes": 212413,
+      "pages": 4,
+      "metadataTitle": "",
+      "metadataAuthor": "",
+      "classification": "archimate4-non-commercial-license",
+      "mentionsW262": false
+    }
+  ]
+}
