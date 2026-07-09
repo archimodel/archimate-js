@@ -1,0 +1,1 @@
+PASS: npx eslint test/language-profile.test.mjs

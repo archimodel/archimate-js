@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-07-09T20:12:26+09:00",
+  "source": "goal-continuation external source recheck",
+  "meff4Xsd": {
+    "url": "https://www.opengroup.org/xsd/archimate/",
+    "directoryStatusCode": 200,
+    "directoryContentType": "text/html; charset=UTF-8",
+    "directoryContentLength": 3056,
+    "directoryError": null,
+    "discoveredXsdLinks": [
+      "3.1/archimate3_Diagram.xsd",
+      "3.1/archimate3_Model.xsd",
+      "3.1/archimate3_View.xsd"
+    ],
+    "official4XsdDiscovered": false,
+    "candidateStatusCodes": {
+      "https://www.opengroup.org/xsd/archimate/4.0/": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Diagram.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_View.xsd": 404,
+      "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd": 200
+    },
+    "candidateResults": {
+      "https://www.opengroup.org/xsd/archimate/4.0/": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Model.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_Diagram.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_View.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Model.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_Diagram.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/4.0/archimate_View.xsd": {
+        "statusCode": 404,
+        "contentType": null,
+        "contentLength": 0,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "looksLikeXsd": false
+      },
+      "https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd": {
+        "statusCode": 200,
+        "contentType": "text/xml",
+        "contentLength": 49107,
+        "error": null,
+        "looksLikeXsd": true
+      }
+    }
+  },
+  "w262": {
+    "url": "https://publications.opengroup.org/w262",
+    "publicationPageStatusCode": 200,
+    "publicationPageContentType": "text/html; charset=UTF-8",
+    "publicationPageContentLength": 668766,
+    "publicationPageError": null,
+    "titleDetected": true,
+    "freePdfDetected": true,
+    "loginRequiredDetected": true,
+    "pages22Detected": true,
+    "published20260427Detected": true,
+    "localSearchRoots": [
+      "C:\\Users\\syska\\Downloads",
+      "C:\\Users\\syska\\.codex\\attachments"
+    ],
+    "localSearchPatterns": [
+      "*W262*.pdf",
+      "*w262*.pdf",
+      "*Motivation*ArchiMate*.pdf",
+      "*ArchiMate*Motivation*.pdf",
+      "*Changes*ArchiMate*.pdf"
+    ],
+    "localSearchMatchedFiles": []
+  }
+}

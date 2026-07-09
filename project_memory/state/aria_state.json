@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 181,
-  "stage": "appendix_e_version_change_boundary_verified",
+  "loop_id": 182,
+  "stage": "external_source_201226_current_recheck_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "test",
-    "diff_size": 130,
+    "diff_size": 96,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -199,7 +199,8 @@
       "example_viewpoints_optional_boundary_guard",
       "appendix_d_reference_boundary_guard",
       "appendix_f_vocabulary_boundary_guard",
-      "appendix_e_version_change_boundary_guard"
+      "appendix_e_version_change_boundary_guard",
+      "external_source_201226_current_recheck"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -410,19 +411,20 @@
       "check_optional_example_viewpoints_stay_outside_conformance_blockers",
       "check_appendix_d_reference_boundary",
       "check_appendix_f_vocabulary_boundary",
-      "check_appendix_e_version_change_boundary"
+      "check_appendix_e_version_change_boundary",
+      "check_external_source_201226_current_recheck"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-2041-appendix-e-version-change-boundary-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-appendix-e-version-change-boundary-audit.md",
-    "result": "pass_with_known_legacy_lint_and_external_blockers"
+    "runlog_path": "project_memory/runlogs/20260709-201226-external-source-current-recheck.json",
+    "audit_report_path": "project_memory/audit/reports/20260709-external-source-201226-current-recheck-audit.md",
+    "result": "pass_with_external_blockers_unchanged"
   },
   "open_issues": [
     "officialAppendixBRelationshipMatrix remains external-source/redistribution dependent",
-    "officialMeff4Xsd remains unavailable after 2026-07-09T18:55:21+09:00 official directory and candidate URL recheck",
+    "officialMeff4Xsd remains unavailable after 2026-07-09T20:12:26+09:00 official directory and candidate URL recheck",
     "exactAppendixAArtworkRights remains external-rights dependent",
-    "w262CompanionPaper remains unavailable locally after 2026-07-09T18:55:21+09:00 publication-page and local-source recheck"
+    "w262CompanionPaper remains unavailable locally after 2026-07-09T20:12:26+09:00 publication-page and local-source recheck"
   ],
   "assumptions": [
     "C260 can be used as a local source for derived implementation requirements, but copied normative prose and Appendix B tables should not be committed without explicit redistribution rights.",
@@ -614,10 +616,12 @@
     "getArchimate4ImplementationStatus().appendixFAcronymsCoverage now exposes Appendix F vocabularyOnlyIds with no missing or extra vocabulary-only ids, backed by project_memory/runlogs/20260709-2018-c260-appendix-f-vocabulary-boundary-check.json.",
     "C260 Appendix F acronym tokens are now regression-tested as vocabulary-only coverage outside section coverage, source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids.",
     "getArchimate4ImplementationStatus().appendixEVersionChangesCoverage now exposes historicalReferenceIds and migrationSourceIds with no missing or extra ids, backed by project_memory/runlogs/20260709-2037-c260-appendix-e-version-change-boundary-check.json.",
-    "C260 Appendix E.1-E.3 version-change headings are now regression-tested as historical references while E.4 is regression-tested as the ArchiMate 4 migration source boundary outside source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids."
+    "C260 Appendix E.1-E.3 version-change headings are now regression-tested as historical references while E.4 is regression-tested as the ArchiMate 4 migration source boundary outside source coverage, remaining gaps, conformance readiness blockers, and external blocker catalog ids.",
+    "MEFF 4.0 XSD and W262 source status were refreshed on 2026-07-09T20:12:26+09:00: official XSD directory still exposes only 3.1 links, 4.0 candidates return 404, W262 publication metadata is visible, and no local W262 PDF is present.",
+    "getArchimate4ImplementationStatus().sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260709-201226-external-source-current-recheck.json as the current external-source evidence."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T20:43:00+09:00"
+    "updated_at": "2026-07-09T20:45:00+09:00"
   }
 }

@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: classified C260 Appendix D standards and guidance headings as reference-only coverage outside ArchiMate 4 source gaps and conformance blockers.
 * `CORE`: classified C260 Appendix E version-change headings as historical references and the ArchiMate 4 migration source boundary.
 * `CORE`: classified C260 Appendix F acronym tokens as vocabulary-only coverage outside ArchiMate 4 section coverage, source gaps, and conformance blockers.
+* `DOCS`: refreshed current W262 and MEFF 4.0 XSD source evidence while keeping official conformance blocked on missing external sources.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 
 ## 0.0.4
