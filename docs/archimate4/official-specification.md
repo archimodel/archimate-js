@@ -632,6 +632,12 @@ Latest official XSD recheck:
   Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
   returned 404. The ArchiMate 4 implementation status now records this latest evidence in
   `sourceCoverage.meff4Xsd`.
+- On 2026-07-09T15:09:21+09:00, the official directory evidence was refreshed again in
+  `project_memory/runlogs/20260709-1167-meff4-xsd-continuation-recheck.json`. The directory returned
+  200 and still listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory,
+  Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
+  returned 404, while the 3.1 Model XSD baseline returned 200. The ArchiMate 4 implementation status
+  records this latest evidence in `sourceCoverage.meff4Xsd`.
 
 ## Implementation Status And Remaining Gaps
 

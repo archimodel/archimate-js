@@ -1920,11 +1920,14 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
-  assert.equal(sourceCoverage.meff4Xsd.lastRunlogPath, 'project_memory/runlogs/20260709-1079-meff4-xsd-latest-recheck.txt');
+  assert.equal(
+    sourceCoverage.meff4Xsd.lastRunlogPath,
+    'project_memory/runlogs/20260709-1167-meff4-xsd-continuation-recheck.json'
+  );
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
+    '3.1/archimate3_Diagram.xsd',
     '3.1/archimate3_Model.xsd',
-    '3.1/archimate3_View.xsd',
-    '3.1/archimate3_Diagram.xsd'
+    '3.1/archimate3_View.xsd'
   ]);
   assert.equal(sourceCoverage.meff4Xsd.candidateStatusCodes['https://www.opengroup.org/xsd/archimate/4.0/'], 404);
   assert.equal(
@@ -1939,6 +1942,12 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
       'https://www.opengroup.org/xsd/archimate/4.0/archimate4_ModelExchangeFile.xsd'
     ],
     404
+  );
+  assert.equal(
+    sourceCoverage.meff4Xsd.candidateStatusCodes[
+      'https://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd'
+    ],
+    200
   );
 
   assert.match(languageIndex, /var sourceCoverage = summarizeSourceCoverage\(\s*conformance\.sourceCoverage \|\| \{\},\s*conformance\.sourceCoverageCatalog \|\| \{\}/);

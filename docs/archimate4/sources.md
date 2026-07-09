@@ -789,6 +789,12 @@
   3.1 directory returned 200, while tested 4.0 directory, Model/Diagram/View XSD, `archimate4.xsd`,
   and `archimate4_ModelExchangeFile.xsd` candidate URLs returned 404. `archimate4-profile.json`
   records this latest check in `sourceCoverage.meff4Xsd`.
+- Refreshed again on 2026-07-09T15:09:21+09:00 in
+  `project_memory/runlogs/20260709-1167-meff4-xsd-continuation-recheck.json`; the official directory
+  returned 200 and listed only the 3.1 Diagram, Model, and View XSD links. Tested 4.0 directory,
+  Model/Diagram/View XSD, `archimate4.xsd`, and `archimate4_ModelExchangeFile.xsd` candidate URLs
+  returned 404, while the 3.1 Model XSD baseline returned 200. `archimate4-profile.json` records
+  this latest check in `sourceCoverage.meff4Xsd`.
 
 ## ArchiMate 3.1 XSD Verification
 
