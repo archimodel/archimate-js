@@ -173,6 +173,11 @@ Documents outline fields (`appendixDStandardsGuidanceCoverage.expectedIds`,
 `appendixDStandardsGuidanceCoverage.missingAppendixDStandardsGuidanceIds`, and
 `appendixDStandardsGuidanceCoverage.extraAppendixDStandardsGuidanceIds`) so the implementation can
 track standards and guidance relationship coverage by subsection identity.
+It must expose exact C260 Appendix E Changes from Version 2.1 to This Document outline fields
+(`appendixEVersionChangesCoverage.expectedIds`, `appendixEVersionChangesCoverage.actualIds`,
+`appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
+`appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds`) so the implementation can track
+version-change coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

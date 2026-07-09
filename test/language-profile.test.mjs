@@ -1362,6 +1362,47 @@ test('archimate 4 implementation status exposes C260 appendix D standards guidan
   assert.match(plan, /Appendix D standards guidance coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix E version changes coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixEVersionChangesCatalog = profile.conformance.appendixEVersionChangesCoverageCatalog;
+  const appendixEVersionChangesCoverage = profile.conformance.appendixEVersionChangesCoverage;
+  const expectedAppendixEVersionChangesIds = [
+    'changes-from-version-2-1-to-version-3-0-1',
+    'changes-from-version-3-0-1-to-version-3-1',
+    'changes-from-version-3-1-to-version-3-2',
+    'changes-from-version-3-2-to-this-document'
+  ];
+
+  assert.equal(appendixEVersionChangesCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    appendixEVersionChangesCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(appendixEVersionChangesCatalog.expectedCount, expectedAppendixEVersionChangesIds.length);
+  assert.deepEqual(appendixEVersionChangesCatalog.expectedIds, expectedAppendixEVersionChangesIds);
+  assert.deepEqual(
+    appendixEVersionChangesCoverage.map((appendixEVersionChangesItem) => appendixEVersionChangesItem.id),
+    expectedAppendixEVersionChangesIds
+  );
+  assert.equal(
+    appendixEVersionChangesCoverage.every((appendixEVersionChangesItem) => appendixEVersionChangesItem.c260Section && appendixEVersionChangesItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixEVersionChangesCoverage/);
+  assert.match(languageIndex, /appendixEVersionChangesCoverage: appendixEVersionChangesCoverage/);
+  assert.match(languageIndex, /missingAppendixEVersionChangesIds/);
+  assert.match(readme, /appendixEVersionChangesCoverage\.expectedIds/);
+  assert.match(sources, /appendixEVersionChangesCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixEVersionChangesCoverage\.missingAppendixEVersionChangesIds/);
+  assert.match(plan, /Appendix E version changes coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

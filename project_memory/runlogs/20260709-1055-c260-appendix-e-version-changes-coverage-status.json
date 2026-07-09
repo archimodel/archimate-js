@@ -1,0 +1,53 @@
+(node:62496) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "status": "c260-outline-derived",
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 4,
+  "expectedIds": [
+    "changes-from-version-2-1-to-version-3-0-1",
+    "changes-from-version-3-0-1-to-version-3-1",
+    "changes-from-version-3-1-to-version-3-2",
+    "changes-from-version-3-2-to-this-document"
+  ],
+  "items": [
+    {
+      "id": "changes-from-version-2-1-to-version-3-0-1",
+      "c260Section": "E.1",
+      "heading": "Changes from Version 2.1 to Version 3.0.1",
+      "status": "tracked"
+    },
+    {
+      "id": "changes-from-version-3-0-1-to-version-3-1",
+      "c260Section": "E.2",
+      "heading": "Changes from Version 3.0.1 to Version 3.1",
+      "status": "tracked"
+    },
+    {
+      "id": "changes-from-version-3-1-to-version-3-2",
+      "c260Section": "E.3",
+      "heading": "Changes from Version 3.1 to Version 3.2",
+      "status": "tracked"
+    },
+    {
+      "id": "changes-from-version-3-2-to-this-document",
+      "c260Section": "E.4",
+      "heading": "Changes from Version 3.2 to This Document",
+      "status": "tracked"
+    }
+  ],
+  "actualIds": [
+    "changes-from-version-2-1-to-version-3-0-1",
+    "changes-from-version-3-0-1-to-version-3-1",
+    "changes-from-version-3-1-to-version-3-2",
+    "changes-from-version-3-2-to-this-document"
+  ],
+  "missingIds": [],
+  "extraIds": [],
+  "missingAppendixEVersionChangesIds": [],
+  "extraAppendixEVersionChangesIds": [],
+  "actualCount": 4,
+  "complete": true
+}

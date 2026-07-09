@@ -114,6 +114,9 @@ Appendix D standards guidance coverage status reports `expectedIds`, `actualIds`
 `missingAppendixDStandardsGuidanceIds`, and `extraAppendixDStandardsGuidanceIds` for the C260
 Appendix D outline so related-standards and guidance-document subsection headings cannot drift
 silently.
+Appendix E version changes coverage status reports `expectedIds`, `actualIds`,
+`missingAppendixEVersionChangesIds`, and `extraAppendixEVersionChangesIds` for the C260 Appendix E
+outline so version-change subsection headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

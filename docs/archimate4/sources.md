@@ -165,6 +165,12 @@
   `appendixDStandardsGuidanceCoverage.extraAppendixDStandardsGuidanceIds` so the Appendix D
   Relationship to Other Standards, Specifications, and Guidance Documents outline remains visible by
   exact subsection identity.
+- `getArchimate4ImplementationStatus().appendixEVersionChangesCoverage` reports
+  `appendixEVersionChangesCoverage.expectedIds`,
+  `appendixEVersionChangesCoverage.actualIds`,
+  `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
+  `appendixEVersionChangesCoverage.extraAppendixEVersionChangesIds` so the Appendix E version-change
+  outline remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
