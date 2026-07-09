@@ -1,0 +1,452 @@
+{
+  "checkedAt": "2026-07-09T19:10:00+09:00",
+  "topKeys": [
+    "version",
+    "standard",
+    "experimental",
+    "namespace",
+    "schemaLocation",
+    "elementCatalog",
+    "relationshipConnectors",
+    "relationshipMatrix",
+    "relationshipProfile",
+    "exchangeFormat",
+    "iconography",
+    "profileAttributeTypes",
+    "viewpointClassification",
+    "viewpointMechanism",
+    "stakeholderConcerns",
+    "conformanceRequirements",
+    "sourceCoverage",
+    "conformanceReadiness",
+    "remainingGaps",
+    "sectionCoverage",
+    "introductionCoverage",
+    "definitionCoverage",
+    "languageStructureCoverage",
+    "commonDomainCoverage",
+    "relationshipsAndJunctionsCoverage",
+    "motivationDomainCoverage",
+    "strategyDomainCoverage",
+    "businessDomainCoverage",
+    "applicationDomainCoverage",
+    "technologyDomainCoverage",
+    "relationshipsBetweenCoreDomainsCoverage",
+    "implementationAndMigrationDomainCoverage",
+    "stakeholdersArchitectureViewsViewpointsCoverage",
+    "languageCustomizationMechanismsCoverage",
+    "appendixANotationCoverage",
+    "appendixBRelationshipsCoverage",
+    "appendixCExampleViewpointsCoverage",
+    "appendixDStandardsGuidanceCoverage",
+    "appendixEVersionChangesCoverage",
+    "appendixFAcronymsCoverage",
+    "documentArtifactCoverage",
+    "c260CoverageAggregate",
+    "c260SourceAlignment",
+    "c260CoverageSourceEvidence",
+    "externalBlockerCatalog",
+    "externalBlockers"
+  ],
+  "completeSummaryCount": 37,
+  "incompleteSummaries": [],
+  "completeSummaries": [
+    {
+      "path": "elementCatalog",
+      "complete": true,
+      "status": "implemented",
+      "missingFields": {
+        "missingTypes": [],
+        "extraTypes": []
+      }
+    },
+    {
+      "path": "relationshipConnectors",
+      "complete": true,
+      "status": "implemented-experimental-exchange",
+      "missingFields": {
+        "missingTypes": [],
+        "extraTypes": []
+      }
+    },
+    {
+      "path": "profileAttributeTypes",
+      "complete": true,
+      "status": "implemented",
+      "missingFields": {
+        "missingC260TypeNames": [],
+        "missingAdditionalTypeNames": []
+      }
+    },
+    {
+      "path": "viewpointClassification",
+      "complete": true,
+      "status": "implemented",
+      "missingFields": {
+        "missingPurposeNames": [],
+        "missingContentNames": []
+      }
+    },
+    {
+      "path": "viewpointMechanism",
+      "complete": true,
+      "status": "implemented",
+      "missingFields": {
+        "missingFeatureIds": [],
+        "extraFeatureIds": []
+      }
+    },
+    {
+      "path": "stakeholderConcerns",
+      "complete": true,
+      "status": "implemented",
+      "missingFields": {
+        "missingFeatureIds": [],
+        "extraFeatureIds": []
+      }
+    },
+    {
+      "path": "conformanceRequirements",
+      "complete": true,
+      "status": "implemented-with-external-blockers",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": []
+      }
+    },
+    {
+      "path": "conformanceRequirements.shall",
+      "complete": true,
+      "status": null,
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": []
+      }
+    },
+    {
+      "path": "conformanceRequirements.may",
+      "complete": true,
+      "status": null,
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": []
+      }
+    },
+    {
+      "path": "sourceCoverage",
+      "complete": true,
+      "status": "implemented-with-external-blockers",
+      "missingFields": {
+        "missingSourceIds": [],
+        "extraSourceIds": [],
+        "missingRequiredSources": [
+          "appendixBRelationshipMatrix",
+          "meff4Xsd",
+          "appendixAArtworkRights"
+        ],
+        "missingCompanionSources": [
+          "w262"
+        ]
+      }
+    },
+    {
+      "path": "remainingGaps",
+      "complete": true,
+      "status": "external-source-dependent",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingOfficialConformanceGapIds": [],
+        "extraOfficialConformanceGapIds": [],
+        "missingCompanionGapSourceIds": [],
+        "extraCompanionGapSourceIds": []
+      }
+    },
+    {
+      "path": "sectionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingRequirementIds": [],
+        "extraRequirementIds": [],
+        "missingRequirementReferenceIds": [],
+        "missingExternalBlockerIds": [],
+        "extraExternalBlockerIds": [],
+        "missingExternalBlockerReferenceIds": []
+      }
+    },
+    {
+      "path": "introductionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingIntroductionIds": [],
+        "extraIntroductionIds": []
+      }
+    },
+    {
+      "path": "definitionCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingDefinitionIds": [],
+        "extraDefinitionIds": []
+      }
+    },
+    {
+      "path": "languageStructureCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingLanguageStructureIds": [],
+        "extraLanguageStructureIds": []
+      }
+    },
+    {
+      "path": "commonDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingCommonDomainIds": [],
+        "extraCommonDomainIds": []
+      }
+    },
+    {
+      "path": "relationshipsAndJunctionsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingRelationshipsAndJunctionsIds": [],
+        "extraRelationshipsAndJunctionsIds": []
+      }
+    },
+    {
+      "path": "motivationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingMotivationDomainIds": [],
+        "extraMotivationDomainIds": []
+      }
+    },
+    {
+      "path": "strategyDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingStrategyDomainIds": [],
+        "extraStrategyDomainIds": []
+      }
+    },
+    {
+      "path": "businessDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingBusinessDomainIds": [],
+        "extraBusinessDomainIds": []
+      }
+    },
+    {
+      "path": "applicationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingApplicationDomainIds": [],
+        "extraApplicationDomainIds": []
+      }
+    },
+    {
+      "path": "technologyDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingTechnologyDomainIds": [],
+        "extraTechnologyDomainIds": []
+      }
+    },
+    {
+      "path": "relationshipsBetweenCoreDomainsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingRelationshipsBetweenCoreDomainsIds": [],
+        "extraRelationshipsBetweenCoreDomainsIds": []
+      }
+    },
+    {
+      "path": "implementationAndMigrationDomainCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingImplementationAndMigrationDomainIds": [],
+        "extraImplementationAndMigrationDomainIds": []
+      }
+    },
+    {
+      "path": "stakeholdersArchitectureViewsViewpointsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingStakeholdersArchitectureViewsViewpointsIds": [],
+        "extraStakeholdersArchitectureViewsViewpointsIds": []
+      }
+    },
+    {
+      "path": "languageCustomizationMechanismsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingLanguageCustomizationMechanismsIds": [],
+        "extraLanguageCustomizationMechanismsIds": []
+      }
+    },
+    {
+      "path": "appendixANotationCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixANotationIds": [],
+        "extraAppendixANotationIds": []
+      }
+    },
+    {
+      "path": "appendixBRelationshipsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixBRelationshipsIds": [],
+        "extraAppendixBRelationshipsIds": []
+      }
+    },
+    {
+      "path": "appendixCExampleViewpointsCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixCExampleViewpointsIds": [],
+        "extraAppendixCExampleViewpointsIds": []
+      }
+    },
+    {
+      "path": "appendixDStandardsGuidanceCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixDStandardsGuidanceIds": [],
+        "extraAppendixDStandardsGuidanceIds": []
+      }
+    },
+    {
+      "path": "appendixEVersionChangesCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixEVersionChangesIds": [],
+        "extraAppendixEVersionChangesIds": []
+      }
+    },
+    {
+      "path": "appendixFAcronymsCoverage",
+      "complete": true,
+      "status": "c260-acronym-token-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingAppendixFAcronymIds": [],
+        "extraAppendixFAcronymIds": []
+      }
+    },
+    {
+      "path": "documentArtifactCoverage",
+      "complete": true,
+      "status": "c260-outline-derived",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": [],
+        "missingDocumentArtifactIds": [],
+        "extraDocumentArtifactIds": []
+      }
+    },
+    {
+      "path": "c260CoverageAggregate",
+      "complete": true,
+      "status": "c260-coverage-aggregate-derived",
+      "missingFields": {
+        "missingCoverageIds": [],
+        "extraCoverageIds": [],
+        "incompleteCoverageIds": []
+      }
+    },
+    {
+      "path": "c260SourceAlignment",
+      "complete": true,
+      "status": "c260-pdf-outline-and-derived-token-aligned",
+      "missingFields": {
+        "missingOutlineCoverageIds": [],
+        "extraOutlineCoverageIds": [],
+        "incompleteOutlineCoverageIds": [],
+        "missingOutlineCoverageCountIds": [],
+        "extraOutlineCoverageCountIds": []
+      }
+    },
+    {
+      "path": "c260CoverageSourceEvidence",
+      "complete": true,
+      "status": "c260-coverage-source-evidence-aligned",
+      "missingFields": {
+        "missingSourceRunlogCoverageIds": [],
+        "extraSourceRunlogCoverageIds": []
+      }
+    },
+    {
+      "path": "externalBlockerCatalog",
+      "complete": true,
+      "status": "external-source-dependent",
+      "missingFields": {
+        "missingIds": [],
+        "extraIds": []
+      }
+    }
+  ]
+}

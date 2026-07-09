@@ -2238,3 +2238,15 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1451-external-source-current-recheck-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-external-source-current-recheck-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 174
+
+- Goal: strengthen the implementation-status completion audit so C260 coverage completeness and external blocker boundaries are backed by a parseable machine-readable runlog.
+- Observation: `project_memory/runlogs/20260709-1453-status-completion-scan.json` records 46 top-level `getArchimate4ImplementationStatus()` keys, 37 `complete` summaries, and zero incomplete summaries; the companion stderr log is empty.
+- Implemented: `test/language-profile.test.mjs` now verifies the completion-scan runlog parses cleanly, matches the live status API top-level keys and completion summary identities, and is documented in README, sources, official specification notes, and the implementation plan.
+- Documentation: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now point to the status-completion scan evidence.
+- Focused verification: `project_memory/runlogs/20260709-1454-status-completion-scan-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 216 tests in `project_memory/runlogs/20260709-1455-status-completion-scan-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1456-status-completion-scan-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1457-status-completion-scan-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1458-status-completion-scan-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-status-completion-scan-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
