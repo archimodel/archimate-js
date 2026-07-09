@@ -1062,7 +1062,7 @@ test('archimate 4 conformance report preserves official blockers and companion g
   assert.equal(report.companionGaps[0].officialConformanceBlocker, false);
   assert.equal(report.implementedShallCount, 3);
   assert.equal(report.externalBlockedShallCount, 2);
-  assert.equal(report.statusRunlogPath, 'project_memory/runlogs/20260710-0127-status-completion-api-scan.json');
+  assert.equal(report.statusRunlogPath, 'project_memory/runlogs/20260710-0450-status-completion-api-scan.json');
 });
 
 test('archimate 4 implementation status exposes model validation coverage', () => {
@@ -1132,9 +1132,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260710-0127-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260710-0450-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260710-0127-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260710-0450-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1154,7 +1154,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260710-0127-status-completion-api-scan.json'
+    'project_memory/runlogs/20260710-0450-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1174,10 +1174,44 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260710-0127-status-completion-api-scan/);
+  assert.match(readme, /20260710-0450-status-completion-api-scan/);
   assert.match(sources, /40 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);
+});
+
+test('archimate 4 status completion scan writer emits current summaries', async () => {
+  const { stdout, stderr } = await execFileAsync(
+    process.execPath,
+    [
+      'scripts/write_archimate4_status_completion_scan.mjs',
+      '--checked-at',
+      '2026-07-10T12:00:00+09:00',
+      '--source-runlog-path',
+      'project_memory/runlogs/generated-status-completion-api-scan.json'
+    ],
+    {
+      cwd: new URL('..', import.meta.url),
+      env: Object.assign({}, process.env, { NODE_NO_WARNINGS: '1' })
+    }
+  );
+  const generated = JSON.parse(stdout);
+  const status = getArchimate4ImplementationStatus({
+    implementationCompletionRunlogPath: 'project_memory/runlogs/generated-status-completion-api-scan.json'
+  });
+  const summaries = collectCompleteStatusSummaries(status);
+
+  assert.equal(stderr, '');
+  assert.equal(generated.checkedAt, '2026-07-10T12:00:00+09:00');
+  assert.equal(generated.generator, 'scripts/write_archimate4_status_completion_scan.mjs');
+  assert.deepEqual(generated.topKeys, Object.keys(status));
+  assert.equal(
+    generated.implementationCompletion.sourceRunlogPath,
+    'project_memory/runlogs/generated-status-completion-api-scan.json'
+  );
+  assert.equal(generated.completeSummaryCount, summaries.length);
+  assert.equal(generated.incompleteSummaryCount, 0);
+  assert.deepEqual(generated.sectionCoverageStatusKeys, status.sectionCoverage.statusKeyIds);
 });
 
 test('archimate 4 implementation status runlog references resolve to committed evidence', async () => {

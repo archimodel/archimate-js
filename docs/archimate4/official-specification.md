@@ -266,12 +266,15 @@ allowed-type application to View contents, stakeholder/concern and `modelingNote
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
 status API to the plan's M0-M5 milestones and verify that status runlog references resolve, while
 preserving the official-conformance blockers for missing external sources and rights.
+The repository status completion scan script `scripts/write_archimate4_status_completion_scan.mjs`
+must regenerate the completion scan from `getArchimate4ImplementationStatus()` so the committed
+scan evidence can be refreshed without hand-written JSON.
 The repository C260 coverage audit script `scripts/audit_archimate4_c260_coverage.mjs` must verify
 the book-derived coverage ledger directly: 20 section groups, 22 tracked coverage groups, 284
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260710-0127-status-completion-api-scan.json`; it records 49 top-level
+`project_memory/runlogs/20260710-0450-status-completion-api-scan.json`; it records 49 top-level
 status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
 guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,

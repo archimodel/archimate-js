@@ -47,7 +47,8 @@
         "project_memory/runlogs/20260710-0408-property-container-structure-final-test-language.txt",
         "project_memory/runlogs/20260710-0422-viewpoint-container-structure-test-language.txt",
         "project_memory/runlogs/20260710-0427-viewpoint-container-structure-final-test-language.txt",
-        "project_memory/runlogs/20260710-0444-viewpoint-token-field-structure-test-language.txt"
+        "project_memory/runlogs/20260710-0444-viewpoint-token-field-structure-test-language.txt",
+        "project_memory/runlogs/20260710-0455-status-completion-scan-refresh-test-language.txt"
       ]
     },
     {
@@ -81,7 +82,8 @@
         "project_memory/runlogs/20260710-0410-property-container-structure-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0424-viewpoint-container-structure-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0429-viewpoint-container-structure-final-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0446-viewpoint-token-field-structure-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0446-viewpoint-token-field-structure-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0453-status-completion-scan-refresh-c260-coverage-audit.json"
       ]
     },
     {
@@ -116,6 +118,29 @@
       "artifacts": [
         "project_memory/runlogs/20260709-1061-status-completion-api-scan.json",
         "project_memory/runlogs/20260709-1062-archimate4-example-viewpoint-status-focused-test.txt"
+      ]
+    },
+    {
+      "id": "audit.archimate4.status_completion_scan",
+      "description": "ArchiMate 4 implementation-status completion scan can be regenerated from getArchimate4ImplementationStatus and remains aligned with the committed runlog evidence",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
+      "severity": "blocker",
+      "command": "node --test --test-name-pattern \"status completion scan\" test/language-profile.test.mjs",
+      "expect": {
+        "exit_code": 0
+      },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0450-status-completion-scan-refresh-red-test.txt",
+        "project_memory/runlogs/20260710-0450-status-completion-api-scan.json",
+        "project_memory/runlogs/20260710-0450-status-completion-api-scan.stderr.txt",
+        "project_memory/runlogs/20260710-0451-status-completion-scan-refresh-focused-test.txt",
+        "project_memory/runlogs/20260710-0452-status-completion-scan-refresh-completion-audit.json",
+        "project_memory/runlogs/20260710-0456-status-completion-scan-refresh-status-snapshot.json",
+        "project_memory/runlogs/20260710-0457-status-completion-scan-refresh-json-check.txt",
+        "project_memory/runlogs/20260710-0458-status-completion-scan-refresh-diff-check.txt"
       ]
     },
     {
@@ -354,7 +379,8 @@
         "project_memory/runlogs/20260710-0380-concept-container-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0401-property-container-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0420-viewpoint-container-structure-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0441-viewpoint-token-field-structure-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0441-viewpoint-token-field-structure-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0454-status-completion-scan-refresh-eslint-changed.txt"
       ]
     },
     {

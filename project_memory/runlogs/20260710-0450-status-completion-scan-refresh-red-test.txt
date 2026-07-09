@@ -1,0 +1,67 @@
+(node:88264) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ archimate 4 implementation status completion scan stays parseable (16.133ms)
+✖ archimate 4 status completion scan writer emits current summaries (49.2958ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 188.3236
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1125:1
+✖ archimate 4 implementation status completion scan stays parseable (16.133ms)
+  Error: ENOENT: no such file or directory, open 'D:\github\archimate-js\project_memory\runlogs\20260710-0450-status-completion-api-scan.json'
+      at async open (node:internal/fs/promises:642:25)
+      at async readFile (node:internal/fs/promises:1279:14)
+      at async readJson (file:///D:/github/archimate-js/test/language-profile.test.mjs:17:16)
+      at async TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1135:18)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'D:\\github\\archimate-js\\project_memory\\runlogs\\20260710-0450-status-completion-api-scan.json'
+  }
+
+test at test\language-profile.test.mjs:1183:1
+✖ archimate 4 status completion scan writer emits current summaries (49.2958ms)
+  Error: Command failed: C:\Program Files\nodejs\node.exe scripts/write_archimate4_status_completion_scan.mjs --checked-at 2026-07-10T12:00:00+09:00 --source-runlog-path project_memory/runlogs/generated-status-completion-api-scan.json
+  node:internal/modules/cjs/loader:1424
+    throw err;
+    ^
+
+  Error: Cannot find module 'D:\github\archimate-js\scripts\write_archimate4_status_completion_scan.mjs'
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+      at Module._load (node:internal/modules/cjs/loader:1227:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+      at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+      at node:internal/main/run_main_module:33:47 {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: []
+  }
+
+  Node.js v24.12.0
+
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1101:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:305:5) {
+    code: 1,
+    killed: false,
+    signal: null,
+    cmd: 'C:\\Program Files\\nodejs\\node.exe scripts/write_archimate4_status_completion_scan.mjs --checked-at 2026-07-10T12:00:00+09:00 --source-runlog-path project_memory/runlogs/generated-status-completion-api-scan.json',
+    stdout: '',
+    stderr: "node:internal/modules/cjs/loader:1424\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'D:\\github\\archimate-js\\scripts\\write_archimate4_status_completion_scan.mjs'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)\r\n    at Module._load (node:internal/modules/cjs/loader:1227:37)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v24.12.0\r\n"
+  }

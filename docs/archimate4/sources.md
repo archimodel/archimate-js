@@ -275,13 +275,16 @@
   `getArchimate4ImplementationStatus()` output to the plan's M0-M5 milestones, verifies referenced
   runlog paths resolve, and leaves official conformance unclaimable while the external source and
   rights blockers remain present.
+- `scripts/write_archimate4_status_completion_scan.mjs` regenerates the implementation-status
+  completion scan from `getArchimate4ImplementationStatus()` and can bind the emitted status to a
+  caller-supplied runlog path for reproducible evidence refreshes.
 - `scripts/audit_archimate4_c260_coverage.mjs` verifies the C260 book-derived coverage ledger
   independently from the milestone audit. It checks the 20 section groups, 22 tracked coverage
   groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260710-0127-status-completion-api-scan.json`; it records 49 top-level
+  `project_memory/runlogs/20260710-0450-status-completion-api-scan.json`; it records 49 top-level
   status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
