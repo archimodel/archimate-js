@@ -1,0 +1,50 @@
+{
+  "catalog": {
+    "status": "c260-outline-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-756-c260-outline-current-audit.txt",
+    "expectedCount": 16,
+    "expectedIds": [
+      "language-structure",
+      "common-domain",
+      "relationships-and-junctions",
+      "motivation-domain",
+      "strategy-domain",
+      "business-domain",
+      "application-domain",
+      "technology-domain",
+      "relationships-between-core-domains",
+      "implementation-and-migration-domain",
+      "viewpoint-mechanism",
+      "language-customization",
+      "appendix-a-notation",
+      "appendix-b-relationships",
+      "appendix-c-example-viewpoints",
+      "appendix-e-version-changes"
+    ]
+  },
+  "actualIds": [
+    "language-structure",
+    "common-domain",
+    "relationships-and-junctions",
+    "motivation-domain",
+    "strategy-domain",
+    "business-domain",
+    "application-domain",
+    "technology-domain",
+    "relationships-between-core-domains",
+    "implementation-and-migration-domain",
+    "viewpoint-mechanism",
+    "language-customization",
+    "appendix-a-notation",
+    "appendix-b-relationships",
+    "appendix-c-example-viewpoints",
+    "appendix-e-version-changes"
+  ],
+  "externalDependentIds": [
+    "appendix-a-notation",
+    "appendix-b-relationships"
+  ],
+  "optionalIds": [
+    "appendix-c-example-viewpoints"
+  ]
+}

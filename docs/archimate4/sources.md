@@ -52,6 +52,10 @@
   `remainingGaps.actualIds`, `remainingGaps.missingIds`, `remainingGaps.extraIds`,
   `missingOfficialConformanceGapIds`, and `missingCompanionGapSourceIds` so unresolved official
   conformance blockers and companion-source gaps remain visible in one exact residual gap catalog.
+- `getArchimate4ImplementationStatus().sectionCoverage` reports `sectionCoverage.expectedIds`,
+  `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,
+  `externalDependentIds`, and `optionalIds` so C260 chapter and appendix coverage remains visible by
+  exact section identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

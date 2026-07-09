@@ -761,6 +761,55 @@ test('archimate 4 implementation status exposes remaining gap identity', async (
   assert.match(officialSpec, /remainingGaps\.missingIds/);
 });
 
+test('archimate 4 implementation status exposes C260 section coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const sectionCatalog = profile.conformance.sectionCoverageCatalog;
+  const sections = profile.conformance.sectionCoverage;
+  const expectedSectionIds = [
+    'language-structure',
+    'common-domain',
+    'relationships-and-junctions',
+    'motivation-domain',
+    'strategy-domain',
+    'business-domain',
+    'application-domain',
+    'technology-domain',
+    'relationships-between-core-domains',
+    'implementation-and-migration-domain',
+    'viewpoint-mechanism',
+    'language-customization',
+    'appendix-a-notation',
+    'appendix-b-relationships',
+    'appendix-c-example-viewpoints',
+    'appendix-e-version-changes'
+  ];
+
+  assert.equal(sectionCatalog.status, 'c260-outline-derived');
+  assert.deepEqual(sectionCatalog.expectedIds, expectedSectionIds);
+  assert.deepEqual(sections.map((section) => section.id), expectedSectionIds);
+  assert.equal(sections.every((section) => section.c260Section), true);
+  assert.deepEqual(sections.filter((section) => section.externalBlocker).map((section) => section.id), [
+    'appendix-a-notation',
+    'appendix-b-relationships'
+  ]);
+  assert.deepEqual(sections.filter((section) => section.optional).map((section) => section.id), [
+    'appendix-c-example-viewpoints'
+  ]);
+
+  assert.match(languageIndex, /var sectionCoverage = summarizeSectionCoverage/);
+  assert.match(languageIndex, /sectionCoverage: sectionCoverage/);
+  assert.match(languageIndex, /externalDependentIds/);
+  assert.match(readme, /sectionCoverage\.expectedIds/);
+  assert.match(sources, /sectionCoverage\.actualIds/);
+  assert.match(officialSpec, /sectionCoverage\.missingIds/);
+  assert.match(plan, /Section coverage status reports/);
+});
+
 test('archimate 4 implementation plan records current execution boundary', async () => {
   const plan = await readFile(
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),

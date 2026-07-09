@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 110,
-  "stage": "remaining_gap_catalog_verified",
+  "loop_id": 111,
+  "stage": "section_coverage_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 159,
+    "diff_size": 238,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -128,7 +128,8 @@
       "external_blocker_exact_status_guard",
       "readiness_action_exact_status_guard",
       "meff4_xsd_latest_recheck",
-      "remaining_gap_catalog"
+      "remaining_gap_catalog",
+      "c260_section_coverage_status"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -268,12 +269,13 @@
       "check_archimate4_external_blocker_exact_status",
       "check_archimate4_readiness_action_exact_status",
       "check_meff4_xsd_latest_recheck",
-      "check_archimate4_remaining_gap_catalog"
+      "check_archimate4_remaining_gap_catalog",
+      "check_archimate4_section_coverage_status"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-744-remaining-gap-catalog-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-remaining-gap-catalog-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-759-section-coverage-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-section-coverage-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -393,10 +395,11 @@
     "getArchimate4ImplementationStatus().sourceCoverage now exposes expectedSourceIds, actualSourceIds, missingSourceIds, and extraSourceIds for the ArchiMate 4 source-evidence ledger.",
     "getArchimate4ImplementationStatus().externalBlockerCatalog now exposes expectedIds, actualIds, missingIds, and extraIds so external blocker identity stays aligned across readiness, requirements, and source coverage.",
     "getArchimate4ImplementationStatus().conformanceReadiness now exposes requiredBeforeClaimByBlocker, actualRequiredBeforeClaimBlockerIds, missingRequiredBeforeClaimBlockerIds, and extraRequiredBeforeClaimBlockerIds so every official-claim prerequisite has a matching external blocker id.",
-    "getArchimate4ImplementationStatus().remainingGaps now exposes exact residual gap identity for the three official conformance blockers plus the W262 companion-source gap."
+    "getArchimate4ImplementationStatus().remainingGaps now exposes exact residual gap identity for the three official conformance blockers plus the W262 companion-source gap.",
+    "getArchimate4ImplementationStatus().sectionCoverage now exposes exact C260 chapter and appendix coverage identity, with external-dependent and optional section ids separated."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T11:15:00+09:00"
+    "updated_at": "2026-07-09T11:30:00+09:00"
   }
 }

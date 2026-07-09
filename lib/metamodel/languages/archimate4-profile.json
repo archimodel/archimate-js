@@ -130,6 +130,135 @@
         "officialConformanceBlocker": false
       }
     ],
+    "sectionCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-756-c260-outline-current-audit.txt",
+      "expectedCount": 16,
+      "expectedIds": [
+        "language-structure",
+        "common-domain",
+        "relationships-and-junctions",
+        "motivation-domain",
+        "strategy-domain",
+        "business-domain",
+        "application-domain",
+        "technology-domain",
+        "relationships-between-core-domains",
+        "implementation-and-migration-domain",
+        "viewpoint-mechanism",
+        "language-customization",
+        "appendix-a-notation",
+        "appendix-b-relationships",
+        "appendix-c-example-viewpoints",
+        "appendix-e-version-changes"
+      ]
+    },
+    "sectionCoverage": [
+      {
+        "id": "language-structure",
+        "c260Section": "3",
+        "status": "implemented",
+        "evidence": "versioned language profile, domain/aspect metadata, and active profile services"
+      },
+      {
+        "id": "common-domain",
+        "c260Section": "4",
+        "status": "implemented",
+        "evidence": "Role, Collaboration, Path, Service, Process, Function, Event, Grouping, and Location profile entries"
+      },
+      {
+        "id": "relationships-and-junctions",
+        "c260Section": "5",
+        "status": "implemented-with-external-profile-boundary",
+        "evidence": "relationship metadata, junction connectors, multiplicity, options, and external Appendix B profile loader"
+      },
+      {
+        "id": "motivation-domain",
+        "c260Section": "6",
+        "status": "implemented",
+        "evidence": "Motivation profile entries and local notation renderer paths"
+      },
+      {
+        "id": "strategy-domain",
+        "c260Section": "7",
+        "status": "implemented",
+        "evidence": "Strategy profile entries and standard display labels"
+      },
+      {
+        "id": "business-domain",
+        "c260Section": "8",
+        "status": "implemented",
+        "evidence": "Business profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "application-domain",
+        "c260Section": "9",
+        "status": "implemented",
+        "evidence": "Application profile entries with domain-specific interface retained"
+      },
+      {
+        "id": "technology-domain",
+        "c260Section": "10",
+        "status": "implemented",
+        "evidence": "Technology profile entries including Equipment, Facility, Distribution Network, and Material"
+      },
+      {
+        "id": "relationships-between-core-domains",
+        "c260Section": "11",
+        "status": "implemented-through-active-profile",
+        "evidence": "relationship validation resolves current element metadata and host-supplied Appendix B profile data"
+      },
+      {
+        "id": "implementation-and-migration-domain",
+        "c260Section": "12",
+        "status": "implemented",
+        "evidence": "Work Package, Deliverable, and Plateau profile entries and renderer paths"
+      },
+      {
+        "id": "viewpoint-mechanism",
+        "c260Section": "13",
+        "status": "implemented",
+        "requirementId": "viewpoint-mechanism",
+        "evidence": "viewpoint metadata, viewpoint definitions, and active-profile type validation"
+      },
+      {
+        "id": "language-customization",
+        "c260Section": "14",
+        "status": "implementation-defined",
+        "requirementId": "language-customization",
+        "evidence": "custom profile domains, concepts, relationships, profile attributes, and viewpoint definitions"
+      },
+      {
+        "id": "appendix-a-notation",
+        "c260Section": "Appendix A",
+        "status": "local-renderer-coverage",
+        "requirementId": "standard-iconography",
+        "externalBlocker": "exactAppendixAArtworkRights",
+        "evidence": "local renderer and palette paths; exact Appendix A vector redistribution remains unconfirmed"
+      },
+      {
+        "id": "appendix-b-relationships",
+        "c260Section": "Appendix B",
+        "status": "external-profile-required",
+        "requirementId": "appendix-b-relationships",
+        "externalBlocker": "officialAppendixBRelationshipMatrix",
+        "evidence": "relationship derivation helpers and profile loader are implemented; redistributable table data is not embedded"
+      },
+      {
+        "id": "appendix-c-example-viewpoints",
+        "c260Section": "Appendix C",
+        "status": "optional-informative",
+        "optional": true,
+        "requirementId": "example-viewpoints",
+        "evidence": "example viewpoints are informative; model-defined viewpoint mechanism is implemented"
+      },
+      {
+        "id": "appendix-e-version-changes",
+        "c260Section": "Appendix E.4",
+        "status": "implemented-with-migration-warnings",
+        "evidence": "3.x to 4.0 migration table, preservation metadata, alternatives, and validation hooks"
+      }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,
