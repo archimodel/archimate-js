@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: added ArchiMate 4 junction relationship type and endpoint-chain guards for popup choices and reconnect validation.
 * `CORE`: preserved ArchiMate 4 domain metadata on created shapes while retaining the legacy `layer` compatibility attribute.
 * `CORE`: added ArchiMate 4 language customization, viewpoint metadata, and pictogram coverage guards.
+* `CORE`: classified C260 Appendix D standards and guidance headings as reference-only coverage outside ArchiMate 4 source gaps and conformance blockers.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 
 ## 0.0.4

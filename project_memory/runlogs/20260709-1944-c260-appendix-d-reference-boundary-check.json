@@ -1,0 +1,64 @@
+{
+  "source": "C:\\Users\\syska\\Downloads\\978940181474E.pdf",
+  "checkedAt": "2026-07-09T19:45:00+09:00",
+  "purpose": "Confirm Appendix D outline headings used as reference-only standards and guidance coverage, not implementation requirements or conformance blockers.",
+  "expectedSubsectionTitles": [
+    "D.1 The TOGAF Standard",
+    "D.2 The BIZBOK Guide",
+    "D.3 Other Modeling Languages",
+    "D.4 BPMN",
+    "D.5 UML",
+    "D.6 BMM"
+  ],
+  "actualSubsectionTitles": [
+    "D.1 The TOGAF Standard",
+    "D.2 The BIZBOK Guide",
+    "D.3 Other Modeling Languages",
+    "D.4 BPMN",
+    "D.5 UML",
+    "D.6 BMM"
+  ],
+  "actualOutlineItems": [
+    {
+      "title": "D.1. The TOGAF Standard",
+      "normalizedTitle": "D.1 The TOGAF Standard",
+      "pdfPage": 192,
+      "depth": 1
+    },
+    {
+      "title": "D.2. The BIZBOK Guide",
+      "normalizedTitle": "D.2 The BIZBOK Guide",
+      "pdfPage": 193,
+      "depth": 1
+    },
+    {
+      "title": "D.3. Other Modeling Languages",
+      "normalizedTitle": "D.3 Other Modeling Languages",
+      "pdfPage": 194,
+      "depth": 1
+    },
+    {
+      "title": "D.4. BPMN",
+      "normalizedTitle": "D.4 BPMN",
+      "pdfPage": 194,
+      "depth": 1
+    },
+    {
+      "title": "D.5. UML",
+      "normalizedTitle": "D.5 UML",
+      "pdfPage": 195,
+      "depth": 1
+    },
+    {
+      "title": "D.6. BMM",
+      "normalizedTitle": "D.6 BMM",
+      "pdfPage": 196,
+      "depth": 1
+    }
+  ],
+  "missingExpectedTitles": [],
+  "extraDSubsectionTitles": [],
+  "classification": "reference-only",
+  "copiesNormativeProse": false,
+  "complete": true
+}

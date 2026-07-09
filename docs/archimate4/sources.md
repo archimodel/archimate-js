@@ -173,6 +173,12 @@
   `appendixDStandardsGuidanceCoverage.extraAppendixDStandardsGuidanceIds` so the Appendix D
   Relationship to Other Standards, Specifications, and Guidance Documents outline remains visible by
   exact subsection identity.
+- The same status reports `appendixDStandardsGuidanceCoverage.referenceOnlyIds` and
+  `appendixDStandardsGuidanceCoverage.missingReferenceOnlyIds` so Appendix D related-standard and
+  guidance references remain visible without becoming source coverage entries, remaining gaps,
+  readiness blockers, or official conformance blockers. The Appendix D reference boundary was
+  rechecked from the local C260 PDF in
+  `project_memory/runlogs/20260709-1944-c260-appendix-d-reference-boundary-check.json`.
 - `getArchimate4ImplementationStatus().appendixEVersionChangesCoverage` reports
   `appendixEVersionChangesCoverage.expectedIds`,
   `appendixEVersionChangesCoverage.actualIds`,

@@ -1934,8 +1934,13 @@ test('archimate 4 implementation status exposes C260 appendix D standards guidan
     appendixDStandardsGuidanceCatalog.sourceRunlogPath,
     'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
   );
+  assert.equal(
+    appendixDStandardsGuidanceCatalog.referenceBoundaryRunlogPath,
+    'project_memory/runlogs/20260709-1944-c260-appendix-d-reference-boundary-check.json'
+  );
   assert.equal(appendixDStandardsGuidanceCatalog.expectedCount, expectedAppendixDStandardsGuidanceIds.length);
   assert.deepEqual(appendixDStandardsGuidanceCatalog.expectedIds, expectedAppendixDStandardsGuidanceIds);
+  assert.deepEqual(appendixDStandardsGuidanceCatalog.expectedReferenceOnlyIds, expectedAppendixDStandardsGuidanceIds);
   assert.deepEqual(
     appendixDStandardsGuidanceCoverage.map((appendixDStandardsGuidanceItem) => appendixDStandardsGuidanceItem.id),
     expectedAppendixDStandardsGuidanceIds
@@ -1944,14 +1949,50 @@ test('archimate 4 implementation status exposes C260 appendix D standards guidan
     appendixDStandardsGuidanceCoverage.every((appendixDStandardsGuidanceItem) => appendixDStandardsGuidanceItem.c260Section && appendixDStandardsGuidanceItem.heading),
     true
   );
+  assert.equal(
+    appendixDStandardsGuidanceCoverage.every((appendixDStandardsGuidanceItem) => appendixDStandardsGuidanceItem.referenceOnly),
+    true
+  );
+
+  const status = getArchimate4ImplementationStatus();
+
+  assert.deepEqual(status.appendixDStandardsGuidanceCoverage.referenceOnlyIds, expectedAppendixDStandardsGuidanceIds);
+  assert.deepEqual(status.appendixDStandardsGuidanceCoverage.missingReferenceOnlyIds, []);
+  assert.deepEqual(status.appendixDStandardsGuidanceCoverage.extraReferenceOnlyIds, []);
+  assert.equal(status.appendixDStandardsGuidanceCoverage.complete, true);
 
   assert.match(languageIndex, /function summarizeAppendixDStandardsGuidanceCoverage/);
   assert.match(languageIndex, /appendixDStandardsGuidanceCoverage: appendixDStandardsGuidanceCoverage/);
   assert.match(languageIndex, /missingAppendixDStandardsGuidanceIds/);
+  assert.match(languageIndex, /missingReferenceOnlyIds/);
   assert.match(readme, /appendixDStandardsGuidanceCoverage\.expectedIds/);
+  assert.match(readme, /appendixDStandardsGuidanceCoverage\.referenceOnlyIds/);
   assert.match(sources, /appendixDStandardsGuidanceCoverage\.actualIds/);
+  assert.match(sources, /appendixDStandardsGuidanceCoverage\.missingReferenceOnlyIds/);
   assert.match(officialSpec, /appendixDStandardsGuidanceCoverage\.missingAppendixDStandardsGuidanceIds/);
+  assert.match(officialSpec, /appendixDStandardsGuidanceCoverage\.missingReferenceOnlyIds/);
   assert.match(plan, /Appendix D standards guidance coverage status reports/);
+  assert.match(plan, /appendixDStandardsGuidanceCoverage\.referenceOnlyIds/);
+});
+
+test('archimate 4 appendix D standards guidance stays outside conformance blockers', () => {
+  const status = getArchimate4ImplementationStatus();
+  const referenceOnlyIds = status.appendixDStandardsGuidanceCoverage.referenceOnlyIds;
+
+  assert.deepEqual(referenceOnlyIds, status.appendixDStandardsGuidanceCoverage.expectedIds);
+  assert.deepEqual(status.appendixDStandardsGuidanceCoverage.missingReferenceOnlyIds, []);
+  assert.deepEqual(status.appendixDStandardsGuidanceCoverage.extraReferenceOnlyIds, []);
+
+  for (const referenceOnlyId of referenceOnlyIds) {
+    assert.equal(status.sourceCoverage.actualSourceIds.includes(referenceOnlyId), false);
+    assert.equal(status.sourceCoverage.missingRequiredSources.includes(referenceOnlyId), false);
+    assert.equal(status.sourceCoverage.missingCompanionSources.includes(referenceOnlyId), false);
+    assert.equal(status.remainingGaps.actualIds.includes(referenceOnlyId), false);
+    assert.equal(status.remainingGaps.unresolvedIds.includes(referenceOnlyId), false);
+    assert.equal(status.conformanceReadiness.blockers.includes(referenceOnlyId), false);
+    assert.equal(status.conformanceReadiness.requiredBeforeClaimBlockerIds.includes(referenceOnlyId), false);
+    assert.equal(status.externalBlockerCatalog.actualIds.includes(referenceOnlyId), false);
+  }
 });
 
 test('archimate 4 implementation status exposes C260 appendix E version changes coverage identity', async () => {

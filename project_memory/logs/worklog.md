@@ -2300,3 +2300,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1954-document-artifact-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-document-artifact-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 179
+
+- Goal: strengthen the C260 Appendix D standards/guidance boundary so related-standard and guidance-document headings remain visible without becoming implementation requirements, source gaps, remaining gaps, or official conformance blockers.
+- Observation: `project_memory/runlogs/20260709-1944-c260-appendix-d-reference-boundary-check.json` confirms the local C260 PDF outline contains D.1 through D.6 for TOGAF, BIZBOK, Other Modeling Languages, BPMN, UML, and BMM; the check copies headings only and no normative prose.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `expectedReferenceOnlyIds` and `referenceBoundaryRunlogPath` for Appendix D, and marks the six Appendix D coverage items as `referenceOnly`.
+- Implemented: `lib/metamodel/languages/index.js` now reports `appendixDStandardsGuidanceCoverage.referenceOnlyIds`, `missingReferenceOnlyIds`, and `extraReferenceOnlyIds`, and includes them in the completion check.
+- Implemented: `test/language-profile.test.mjs` now verifies Appendix D reference-only ids stay out of `sourceCoverage`, `remainingGaps`, `conformanceReadiness`, and `externalBlockerCatalog`.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the Appendix D reference-only boundary.
+- Focused verification: `node --test test/language-profile.test.mjs --test-name-pattern "appendix D"` passed with the language-profile test file in `project_memory/runlogs/20260709-1945-appendix-d-reference-boundary-focused-test.txt`; full verification is the authoritative pass below.
+- Verification: `npm run test:language` passed with 221 tests in `project_memory/runlogs/20260709-1946-appendix-d-reference-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1947-appendix-d-reference-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1948-appendix-d-reference-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1950-appendix-d-reference-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-d-reference-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

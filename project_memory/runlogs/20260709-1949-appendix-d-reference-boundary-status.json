@@ -1,0 +1,47 @@
+{
+  "appendixDStandardsGuidanceCoverage": {
+    "expectedIds": [
+      "togaf-standard",
+      "bizbok-guide",
+      "other-modeling-languages",
+      "bpmn",
+      "uml",
+      "bmm"
+    ],
+    "actualIds": [
+      "togaf-standard",
+      "bizbok-guide",
+      "other-modeling-languages",
+      "bpmn",
+      "uml",
+      "bmm"
+    ],
+    "referenceOnlyIds": [
+      "togaf-standard",
+      "bizbok-guide",
+      "other-modeling-languages",
+      "bpmn",
+      "uml",
+      "bmm"
+    ],
+    "missingReferenceOnlyIds": [],
+    "extraReferenceOnlyIds": [],
+    "complete": true
+  },
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ],
+  "blockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "externalBlockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ]
+}

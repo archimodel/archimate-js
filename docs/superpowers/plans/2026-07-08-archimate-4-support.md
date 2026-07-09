@@ -127,9 +127,11 @@ Appendix C example viewpoints coverage status reports `expectedIds`, `actualIds`
 `missingAppendixCExampleViewpointsIds`, and `extraAppendixCExampleViewpointsIds` for the C260
 Appendix C outline so example viewpoint subsection headings cannot drift silently.
 Appendix D standards guidance coverage status reports `expectedIds`, `actualIds`,
-`missingAppendixDStandardsGuidanceIds`, and `extraAppendixDStandardsGuidanceIds` for the C260
-Appendix D outline so related-standards and guidance-document subsection headings cannot drift
-silently.
+`missingAppendixDStandardsGuidanceIds`, `extraAppendixDStandardsGuidanceIds`,
+`appendixDStandardsGuidanceCoverage.referenceOnlyIds`, and
+`appendixDStandardsGuidanceCoverage.missingReferenceOnlyIds` for the C260 Appendix D outline so
+related-standards and guidance-document subsection headings cannot drift silently or be confused
+with source gaps, remaining gaps, readiness blockers, or official conformance blockers.
 Appendix E version changes coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixEVersionChangesIds`, and `extraAppendixEVersionChangesIds` for the C260 Appendix E
 outline so version-change subsection headings cannot drift silently.

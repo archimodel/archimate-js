@@ -1001,8 +1001,17 @@
     "appendixDStandardsGuidanceCoverageCatalog": {
       "status": "c260-outline-derived",
       "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "referenceBoundaryRunlogPath": "project_memory/runlogs/20260709-1944-c260-appendix-d-reference-boundary-check.json",
       "expectedCount": 6,
       "expectedIds": [
+        "togaf-standard",
+        "bizbok-guide",
+        "other-modeling-languages",
+        "bpmn",
+        "uml",
+        "bmm"
+      ],
+      "expectedReferenceOnlyIds": [
         "togaf-standard",
         "bizbok-guide",
         "other-modeling-languages",
@@ -1012,12 +1021,12 @@
       ]
     },
     "appendixDStandardsGuidanceCoverage": [
-      { "id": "togaf-standard", "c260Section": "D.1", "heading": "The TOGAF Standard", "status": "tracked" },
-      { "id": "bizbok-guide", "c260Section": "D.2", "heading": "The BIZBOK Guide", "status": "tracked" },
-      { "id": "other-modeling-languages", "c260Section": "D.3", "heading": "Other Modeling Languages", "status": "tracked" },
-      { "id": "bpmn", "c260Section": "D.4", "heading": "BPMN", "status": "tracked" },
-      { "id": "uml", "c260Section": "D.5", "heading": "UML", "status": "tracked" },
-      { "id": "bmm", "c260Section": "D.6", "heading": "BMM", "status": "tracked" }
+      { "id": "togaf-standard", "c260Section": "D.1", "heading": "The TOGAF Standard", "status": "tracked", "referenceOnly": true },
+      { "id": "bizbok-guide", "c260Section": "D.2", "heading": "The BIZBOK Guide", "status": "tracked", "referenceOnly": true },
+      { "id": "other-modeling-languages", "c260Section": "D.3", "heading": "Other Modeling Languages", "status": "tracked", "referenceOnly": true },
+      { "id": "bpmn", "c260Section": "D.4", "heading": "BPMN", "status": "tracked", "referenceOnly": true },
+      { "id": "uml", "c260Section": "D.5", "heading": "UML", "status": "tracked", "referenceOnly": true },
+      { "id": "bmm", "c260Section": "D.6", "heading": "BMM", "status": "tracked", "referenceOnly": true }
     ],
     "appendixEVersionChangesCoverageCatalog": {
       "status": "c260-outline-derived",

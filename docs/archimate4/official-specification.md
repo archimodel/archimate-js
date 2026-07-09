@@ -182,6 +182,10 @@ Documents outline fields (`appendixDStandardsGuidanceCoverage.expectedIds`,
 `appendixDStandardsGuidanceCoverage.missingAppendixDStandardsGuidanceIds`, and
 `appendixDStandardsGuidanceCoverage.extraAppendixDStandardsGuidanceIds`) so the implementation can
 track standards and guidance relationship coverage by subsection identity.
+It must expose `appendixDStandardsGuidanceCoverage.referenceOnlyIds` and
+`appendixDStandardsGuidanceCoverage.missingReferenceOnlyIds` so Appendix D related-standard and
+guidance references are tracked as reference-only coverage rather than source coverage,
+remaining gaps, readiness blockers, or official conformance blockers.
 It must expose exact C260 Appendix E Changes from Version 2.1 to This Document outline fields
 (`appendixEVersionChangesCoverage.expectedIds`, `appendixEVersionChangesCoverage.actualIds`,
 `appendixEVersionChangesCoverage.missingAppendixEVersionChangesIds`, and
