@@ -1803,3 +1803,17 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1133-c260-source-alignment-staged-diff-check.txt` first failed on a trailing blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1134-c260-source-alignment-staged-diff-check.txt` passed after trimming that EOF blank line.
 - Audit: `project_memory/audit/reports/20260709-c260-source-alignment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 140
+
+- Goal: strengthen C260 PDF outline coverage auditing from total-count reconciliation to per-coverage-group assignment counts.
+- Red test: `project_memory/runlogs/20260709-1136-c260-outline-assignment-red-test.txt` failed because `c260SourceAlignmentCatalog.expectedOutlineCoverageCounts` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records expected outline-derived coverage counts for all 21 C260 outline coverage groups.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `expectedOutlineCoverageCounts`, `actualOutlineCoverageCounts`, `missingOutlineCoverageCountIds`, `extraOutlineCoverageCountIds`, `outlineCoverageCountDeltas`, `expectedOutlineAssignedItemCount`, `actualOutlineAssignedItemCount`, and `outlineAssignmentComplete` through `getArchimate4ImplementationStatus().c260SourceAlignment`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe per-group C260 outline assignment counts.
+- Focused verification: `project_memory/runlogs/20260709-1137-c260-outline-assignment-focused-test.txt` passed with 187 tests; `project_memory/runlogs/20260709-1138-c260-outline-assignment-status.json` shows expected and actual outline coverage counts match for all groups, no missing/extra count ids, no count deltas, and 253 assigned outline items.
+- Verification: `npm run test:language` passed with 187 tests in `project_memory/runlogs/20260709-1142-c260-outline-assignment-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1141-c260-outline-assignment-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-1139-c260-outline-assignment-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1140-c260-outline-assignment-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1143-c260-outline-assignment-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1144-c260-outline-assignment-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1148-c260-outline-assignment-staged-diff-check.txt` and `project_memory/runlogs/20260709-1149-c260-outline-assignment-staged-diff-check.txt` first failed on runlog whitespace; `project_memory/runlogs/20260709-1150-c260-outline-assignment-final-staged-diff-check.txt` passed after trimming those runlog files.
+- Audit: `project_memory/audit/reports/20260709-c260-outline-assignment-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

@@ -1157,6 +1157,29 @@
         "appendixEVersionChangesCoverage",
         "documentArtifactCoverage"
       ],
+      "expectedOutlineCoverageCounts": {
+        "sectionCoverage": 20,
+        "introductionCoverage": 6,
+        "definitionCoverage": 16,
+        "languageStructureCoverage": 14,
+        "commonDomainCoverage": 13,
+        "relationshipsAndJunctionsCoverage": 24,
+        "motivationDomainCoverage": 19,
+        "strategyDomainCoverage": 10,
+        "businessDomainCoverage": 12,
+        "applicationDomainCoverage": 9,
+        "technologyDomainCoverage": 15,
+        "relationshipsBetweenCoreDomainsCoverage": 1,
+        "implementationAndMigrationDomainCoverage": 8,
+        "stakeholdersArchitectureViewsViewpointsCoverage": 7,
+        "languageCustomizationMechanismsCoverage": 11,
+        "appendixANotationCoverage": 3,
+        "appendixBRelationshipsCoverage": 15,
+        "appendixCExampleViewpointsCoverage": 29,
+        "appendixDStandardsGuidanceCoverage": 6,
+        "appendixEVersionChangesCoverage": 4,
+        "documentArtifactCoverage": 11
+      },
       "nonOutlineDerivedCoverageIds": [
         "appendixFAcronymsCoverage"
       ],

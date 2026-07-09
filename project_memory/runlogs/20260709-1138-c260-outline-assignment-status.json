@@ -1,0 +1,59 @@
+(node:75092) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "expectedOutlineCoverageCounts": {
+    "sectionCoverage": 20,
+    "introductionCoverage": 6,
+    "definitionCoverage": 16,
+    "languageStructureCoverage": 14,
+    "commonDomainCoverage": 13,
+    "relationshipsAndJunctionsCoverage": 24,
+    "motivationDomainCoverage": 19,
+    "strategyDomainCoverage": 10,
+    "businessDomainCoverage": 12,
+    "applicationDomainCoverage": 9,
+    "technologyDomainCoverage": 15,
+    "relationshipsBetweenCoreDomainsCoverage": 1,
+    "implementationAndMigrationDomainCoverage": 8,
+    "stakeholdersArchitectureViewsViewpointsCoverage": 7,
+    "languageCustomizationMechanismsCoverage": 11,
+    "appendixANotationCoverage": 3,
+    "appendixBRelationshipsCoverage": 15,
+    "appendixCExampleViewpointsCoverage": 29,
+    "appendixDStandardsGuidanceCoverage": 6,
+    "appendixEVersionChangesCoverage": 4,
+    "documentArtifactCoverage": 11
+  },
+  "actualOutlineCoverageCounts": {
+    "sectionCoverage": 20,
+    "introductionCoverage": 6,
+    "definitionCoverage": 16,
+    "languageStructureCoverage": 14,
+    "commonDomainCoverage": 13,
+    "relationshipsAndJunctionsCoverage": 24,
+    "motivationDomainCoverage": 19,
+    "strategyDomainCoverage": 10,
+    "businessDomainCoverage": 12,
+    "applicationDomainCoverage": 9,
+    "technologyDomainCoverage": 15,
+    "relationshipsBetweenCoreDomainsCoverage": 1,
+    "implementationAndMigrationDomainCoverage": 8,
+    "stakeholdersArchitectureViewsViewpointsCoverage": 7,
+    "languageCustomizationMechanismsCoverage": 11,
+    "appendixANotationCoverage": 3,
+    "appendixBRelationshipsCoverage": 15,
+    "appendixCExampleViewpointsCoverage": 29,
+    "appendixDStandardsGuidanceCoverage": 6,
+    "appendixEVersionChangesCoverage": 4,
+    "documentArtifactCoverage": 11
+  },
+  "missingOutlineCoverageCountIds": [],
+  "extraOutlineCoverageCountIds": [],
+  "outlineCoverageCountDeltas": [],
+  "expectedOutlineAssignedItemCount": 253,
+  "actualOutlineAssignedItemCount": 253,
+  "outlineAssignmentComplete": true,
+  "complete": true
+}

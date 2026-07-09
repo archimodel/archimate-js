@@ -1,0 +1,4 @@
+project_memory/runlogs/20260709-1148-c260-outline-assignment-staged-diff-check.txt:2: trailing whitespace.
+++
+project_memory/runlogs/20260709-1148-c260-outline-assignment-staged-diff-check.txt:4: trailing whitespace.
+++

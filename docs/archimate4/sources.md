@@ -197,6 +197,11 @@
   `c260SourceAlignment.aggregateItemCountDelta` so the 253-entry C260 PDF outline source remains
   reconciled with the aggregate 284-item coverage total through the 31 Appendix F derived acronym
   tokens.
+- `getArchimate4ImplementationStatus().c260SourceAlignment` also reports
+  `c260SourceAlignment.expectedOutlineCoverageCounts`,
+  `c260SourceAlignment.actualOutlineCoverageCounts`, and
+  `c260SourceAlignment.outlineCoverageCountDeltas` so each PDF-outline-derived coverage group is
+  checked against its assigned source count rather than only the aggregate total.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

@@ -1665,6 +1665,61 @@ test('archimate 4 implementation status reconciles C260 PDF outline source with 
   assert.match(plan, /C260 source alignment status reports/);
 });
 
+test('archimate 4 implementation status audits C260 outline assignment counts by coverage group', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const { getArchimate4ImplementationStatus } = await import('../lib/metamodel/languages/index.js');
+  const status = getArchimate4ImplementationStatus();
+  const alignment = status.c260SourceAlignment;
+  const expectedOutlineCoverageCounts = {
+    sectionCoverage: 20,
+    introductionCoverage: 6,
+    definitionCoverage: 16,
+    languageStructureCoverage: 14,
+    commonDomainCoverage: 13,
+    relationshipsAndJunctionsCoverage: 24,
+    motivationDomainCoverage: 19,
+    strategyDomainCoverage: 10,
+    businessDomainCoverage: 12,
+    applicationDomainCoverage: 9,
+    technologyDomainCoverage: 15,
+    relationshipsBetweenCoreDomainsCoverage: 1,
+    implementationAndMigrationDomainCoverage: 8,
+    stakeholdersArchitectureViewsViewpointsCoverage: 7,
+    languageCustomizationMechanismsCoverage: 11,
+    appendixANotationCoverage: 3,
+    appendixBRelationshipsCoverage: 15,
+    appendixCExampleViewpointsCoverage: 29,
+    appendixDStandardsGuidanceCoverage: 6,
+    appendixEVersionChangesCoverage: 4,
+    documentArtifactCoverage: 11
+  };
+
+  assert.deepEqual(
+    profile.conformance.c260SourceAlignmentCatalog.expectedOutlineCoverageCounts,
+    expectedOutlineCoverageCounts
+  );
+  assert.deepEqual(alignment.expectedOutlineCoverageCounts, expectedOutlineCoverageCounts);
+  assert.deepEqual(alignment.actualOutlineCoverageCounts, expectedOutlineCoverageCounts);
+  assert.deepEqual(alignment.missingOutlineCoverageCountIds, []);
+  assert.deepEqual(alignment.extraOutlineCoverageCountIds, []);
+  assert.deepEqual(alignment.outlineCoverageCountDeltas, []);
+  assert.equal(alignment.expectedOutlineAssignedItemCount, 253);
+  assert.equal(alignment.actualOutlineAssignedItemCount, 253);
+  assert.equal(alignment.outlineAssignmentComplete, true);
+  assert.equal(alignment.complete, true);
+
+  assert.match(languageIndex, /outlineCoverageCountDeltas/);
+  assert.match(readme, /c260SourceAlignment\.outlineCoverageCountDeltas/);
+  assert.match(sources, /c260SourceAlignment\.expectedOutlineCoverageCounts/);
+  assert.match(officialSpec, /c260SourceAlignment\.missingOutlineCoverageCountIds/);
+  assert.match(plan, /C260 outline assignment status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

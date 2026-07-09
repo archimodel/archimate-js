@@ -197,6 +197,12 @@ It must expose C260 source alignment fields (`c260SourceAlignment.outlineSourceI
 `c260SourceAlignment.nonOutlineDerivedCoverageIds`, and `c260SourceAlignment.aggregateItemCountDelta`)
 so the full PDF outline source count remains reconciled with derived non-outline coverage such as
 Appendix F acronym tokens.
+It must expose C260 outline assignment fields
+(`c260SourceAlignment.expectedOutlineCoverageCounts`,
+`c260SourceAlignment.actualOutlineCoverageCounts`,
+`c260SourceAlignment.missingOutlineCoverageCountIds`, and
+`c260SourceAlignment.outlineCoverageCountDeltas`) so each outline-derived coverage group is checked
+against its source-assigned count.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot
