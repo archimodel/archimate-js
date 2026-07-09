@@ -79,7 +79,7 @@ id and xsi:type string values, view node element references, view element label 
 endpoint-to-relationship alignment, waypoint geometry, and view `style`/`font`/`color` values including invalid
 `font.style` `plain` combinations, model-defined and
 profile-defined viewpoint allowed-type application to View contents, stakeholder/concern and
-modeling-note structure, BaseObject name/documentation string fields, organization identifier
+modeling-note structure, BaseObject name/documentation string fields, organization tree structure and identifier
 references, property definition structure and references, present property value string structure, and
 profile attribute property values.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the

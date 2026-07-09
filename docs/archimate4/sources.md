@@ -264,7 +264,7 @@
   values, viewpoint
   purpose/content and allowed-type string-entry definitions, model-defined and profile-defined viewpoint
   allowed-type application to View contents, viewpoint stakeholder/concern and `modelingNotes`
-  structure, `BaseObject` `name` / `documentation` string fields, organization `identifierRef`
+  structure, `BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef`
   references, reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references,
   present `Property.value` string structure, and profile attribute property/value checks.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
@@ -618,7 +618,7 @@
 - Organization entries can be nested and can optionally reference a model concept through
   `identifierRef`. The ArchiMate 4 XML surface remains experimental until the MEFF 4.0 XSD confirms
   exact element names.
-- `validateArchimate4Model()` now checks organization `identifierRef` values against model-defined
+- `validateArchimate4Model()` now checks the organization container/list/entry shape and organization `identifierRef` values against model-defined
   elements and relationships, including nested organizations, unknown references, malformed
   references, and active-profile unsupported concept types.
 

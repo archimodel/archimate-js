@@ -1503,6 +1503,36 @@ test('archimate 4 model validation reports invalid organization identifier refer
   assert.equal(diagnosticCodes(result).includes('unknown-organization-identifier-reference'), true);
 });
 
+test('archimate 4 model validation reports invalid organization tree structure', () => {
+  const invalidNodeResult = validateArchimate4Model({
+    organizationsNode: 'not-an-organizations-node'
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidEntryResult = validateArchimate4Model({
+    organizationsNode: {
+      organizations: [
+        'not-an-organization',
+        {
+          id: 'organization-parent',
+          organizations: 'not-an-organization-list'
+        }
+      ]
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+  const invalidNodeDiagnostic = findDiagnostic(invalidNodeResult, 'invalid-organizations-node');
+  const invalidEntryCodes = diagnosticCodes(invalidEntryResult);
+
+  assert.equal(invalidNodeResult.valid, false);
+  assert.equal(invalidNodeDiagnostic.valueType, 'string');
+  assert.equal(invalidEntryResult.valid, false);
+  assert.equal(invalidEntryCodes.includes('invalid-organization-entry'), true);
+  assert.equal(invalidEntryCodes.includes('invalid-organization-list'), true);
+  assert.equal(findDiagnostic(invalidEntryResult, 'invalid-organization-list').parentOrganizationId, 'organization-parent');
+});
+
 test('archimate 4 model validation accepts organization references to model concepts', () => {
   const actor = { id: 'actor-1', type: 'BusinessActor' };
   const role = { id: 'role-1', type: 'Role' };

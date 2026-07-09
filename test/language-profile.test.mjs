@@ -1106,6 +1106,7 @@ test('archimate 4 implementation status exposes model validation coverage', () =
     'viewpoint-stakeholder-concern-structure',
     'viewpoint-modeling-note-structure',
     'base-object-fields',
+    'organization-tree-structure',
     'organization-identifier-reference',
     'property-definition-structure',
     'property-definition-reference',

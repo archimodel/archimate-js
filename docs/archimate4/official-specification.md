@@ -260,7 +260,7 @@ string attributes and `viewpointRef` references, view node element references, v
 relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, and view
 `style`/`font`/`color` values, viewpoint definitions including allowed-type string entries, model-defined and profile-defined viewpoint
 allowed-type application to View contents, stakeholder/concern and `modelingNotes` structure,
-`BaseObject` `name` / `documentation` string fields, organization `identifierRef` references,
+`BaseObject` `name` / `documentation` string fields, organization tree structure and `identifierRef` references,
 reusable `PropertyDefinition` structure, `Property.propertyDefinitionRef` references, present
 `Property.value` string structure, and profile attribute property values.
 The repository completion audit script `scripts/audit_archimate4_completion.mjs` must map the current
@@ -436,7 +436,7 @@ Implemented support:
 - `Organizations` can contain repeated `Organization` entries.
 - `Organization` can carry a name, documentation, nested organizations, and an optional
   `identifierRef` reference to a model concept.
-- `validateArchimate4Model()` checks organization `identifierRef` values against model-defined
+- `validateArchimate4Model()` checks the organization container/list/entry shape and organization `identifierRef` values against model-defined
   elements and relationships, including nested organizations, unknown references, malformed
   references, and active-profile unsupported concept types.
 
@@ -827,7 +827,7 @@ In particular:
   relationship option field structure, view connection endpoint-alignment, view connection waypoint-geometry,
   IdObject id and `xsi:type` structure, view element label structure, view style-structure, viewpoint definition, viewpoint
   allowed-type application from model-defined or profile-defined viewpoints, stakeholder/concern and
-  modeling-note structure, BaseObject field structure, organization identifier-reference,
+  modeling-note structure, BaseObject field structure, organization tree structure and identifier-reference,
   property-definition structure and reference, property value string-structure, or profile attribute
   property coverage.
 
