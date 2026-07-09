@@ -1845,3 +1845,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1177-meff4-xsd-continuation-staged-diff-check.txt` passed after trimming the trailing EOF blank line from the repository-lint runlog.
 - Audit: `project_memory/audit/reports/20260709-meff4-xsd-continuation-recheck-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 143
+
+- Goal: refresh W262 companion-paper source evidence so ArchiMate 4 implementation status cannot confuse a missing companion paper with missing C260 implementation coverage.
+- Source recheck: `project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json` confirmed the W262 publication page returned HTTP 200, detected the W262 title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, and found no matching W262 or ArchiMate 4 motivation PDF under `C:\Users\syska\Downloads` or `C:\Users\syska\.codex\attachments`.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records refreshed `sourceCoverage.w262` publication-page evidence, local-search timestamp, runlog path, and metadata flags while keeping `localSourcePresent: false`.
+- Tests/docs: `test/language-profile.test.mjs`, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now assert and document the refreshed W262 source evidence.
+- Verification: JSON parse passed in `project_memory/runlogs/20260709-1179-w262-continuation-json-check.txt`; `npm run test:language` passed with 188 tests in `project_memory/runlogs/20260709-1180-w262-continuation-test-language.txt`; status evidence is recorded in `project_memory/runlogs/20260709-1181-w262-continuation-status.json`; changed-file ESLint passed in `project_memory/runlogs/20260709-1182-w262-continuation-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1183-w262-continuation-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1184-w262-continuation-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1185-w262-continuation-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1188-w262-continuation-staged-diff-check.txt` passed after trimming the trailing EOF blank line from the repository-lint runlog.
+- Audit: `project_memory/audit/reports/20260709-w262-continuation-source-recheck-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

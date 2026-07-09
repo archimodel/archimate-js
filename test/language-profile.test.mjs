@@ -1896,8 +1896,24 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
   assert.equal(sourceCoverage.w262.publicationPageStatusCode, 200);
-  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T08:10:22+09:00');
-  assert.equal(sourceCoverage.w262.lastLocalSearchRunlogPath, 'project_memory/runlogs/20260709-626-w262-local-source-search.txt');
+  assert.equal(
+    sourceCoverage.w262.publicationPageTitle,
+    'The Motivation for Changes in the ArchiMate® 4 Specification'
+  );
+  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-09T15:19:25+09:00');
+  assert.equal(
+    sourceCoverage.w262.lastPublicationPageRunlogPath,
+    'project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json'
+  );
+  assert.equal(sourceCoverage.w262.freePdfDetected, true);
+  assert.equal(sourceCoverage.w262.loginRequiredDetected, true);
+  assert.equal(sourceCoverage.w262.pages22Detected, true);
+  assert.equal(sourceCoverage.w262.published20260427Detected, true);
+  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-09T15:19:25+09:00');
+  assert.equal(
+    sourceCoverage.w262.lastLocalSearchRunlogPath,
+    'project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json'
+  );
   assert.deepEqual(sourceCoverage.w262.localSearchRoots, [
     'C:\\Users\\syska\\Downloads',
     'C:\\Users\\syska\\.codex\\attachments'
@@ -1960,9 +1976,10 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(readme, /sourceCoverage\.missingSourceIds/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
   assert.match(sources, /sourceCoverage\.actualSourceIds/);
-  assert.match(sources, /20260709-626-w262-local-source-search/);
+  assert.match(sources, /20260709-1178-w262-continuation-source-recheck/);
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
+  assert.match(officialSpec, /20260709-1178-w262-continuation-source-recheck/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 

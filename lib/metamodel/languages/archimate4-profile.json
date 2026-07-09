@@ -1323,8 +1323,15 @@
         "localSourcePresent": false,
         "companion": true,
         "publicationPageStatusCode": 200,
-        "lastLocalSearchAt": "2026-07-09T08:10:22+09:00",
-        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-626-w262-local-source-search.txt",
+        "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+        "lastPublicationPageCheckedAt": "2026-07-09T15:19:25+09:00",
+        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json",
+        "freePdfDetected": true,
+        "loginRequiredDetected": true,
+        "pages22Detected": true,
+        "published20260427Detected": true,
+        "lastLocalSearchAt": "2026-07-09T15:19:25+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json",
         "localSearchRoots": [
           "C:\\Users\\syska\\Downloads",
           "C:\\Users\\syska\\.codex\\attachments"

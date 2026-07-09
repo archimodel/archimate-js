@@ -17,13 +17,13 @@
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
 - C260 is a licensed copyrighted publication; this repository records a derived implementation
   specification and source trace, not copied normative prose or verbatim relationship tables.
-- W262 is published by The Open Group as a free PDF download that requires login. The current
-  publication-page check is recorded in `project_memory/runlogs/20260709-210-w262-publication-status-check.txt`.
-  The W262 PDF itself is still not present in this workspace.
-- W262 local availability was rechecked on 2026-07-09 in
-  `project_memory/runlogs/20260709-626-w262-local-source-search.txt`: recursive filename search under
-  `C:\Users\syska\Downloads` and `C:\Users\syska\.codex\attachments` found no W262 or ArchiMate 4
-  motivation PDF candidates, while the publication page returned HTTP 200.
+- W262 is published by The Open Group as a free PDF download that requires login. The latest
+  publication-page and local-source check is recorded in
+  `project_memory/runlogs/20260709-1178-w262-continuation-source-recheck.json`; it detected the W262
+  title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the
+  recursive filename search under `C:\Users\syska\Downloads` and
+  `C:\Users\syska\.codex\attachments` still found no local W262 or ArchiMate 4 motivation PDF
+  candidates.
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
 - Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.

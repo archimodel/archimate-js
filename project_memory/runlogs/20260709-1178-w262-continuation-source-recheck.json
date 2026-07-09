@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-07-09T15:19:25+09:00",
+  "document": "W262",
+  "url": "https://publications.opengroup.org/w262",
+  "publicationPageStatusCode": 200,
+  "publicationPageError": null,
+  "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+  "titleDetected": true,
+  "documentIdDetected": true,
+  "freePdfDetected": true,
+  "loginRequiredDetected": true,
+  "pages22Detected": true,
+  "published20260427Detected": true,
+  "localSearchRoots": [
+    "C:\\Users\\syska\\Downloads",
+    "C:\\Users\\syska\\.codex\\attachments"
+  ],
+  "localSearchPatterns": [
+    "*W262*.pdf",
+    "*w262*.pdf",
+    "*Motivation*ArchiMate*.pdf",
+    "*ArchiMate*Motivation*.pdf",
+    "*Changes*ArchiMate*.pdf"
+  ],
+  "localSearchMatchedFiles": [],
+  "localSourcePresent": false
+}
