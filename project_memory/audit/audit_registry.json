@@ -50,7 +50,9 @@
         "project_memory/runlogs/20260710-0444-viewpoint-token-field-structure-test-language.txt",
         "project_memory/runlogs/20260710-0455-status-completion-scan-refresh-test-language.txt",
         "project_memory/runlogs/20260710-0484-demo-example-viewpoint-test-language.txt",
-        "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt"
+        "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
+        "project_memory/runlogs/20260710-0502-demo-viewpoint-validation-test-language.txt",
+        "project_memory/runlogs/20260710-0509-demo-viewpoint-validation-final-test-language.txt"
       ]
     },
     {
@@ -87,7 +89,9 @@
         "project_memory/runlogs/20260710-0446-viewpoint-token-field-structure-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0453-status-completion-scan-refresh-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0486-demo-example-viewpoint-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0504-demo-viewpoint-validation-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0511-demo-viewpoint-validation-final-c260-coverage-audit.json"
       ]
     },
     {
@@ -211,6 +215,39 @@
         "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
         "project_memory/runlogs/20260710-0492-demo-example-viewpoint-final-completion-audit.json",
         "project_memory/runlogs/20260710-0493-demo-example-viewpoint-final-c260-coverage-audit.json"
+      ]
+    },
+    {
+      "id": "audit.archimate4.demo_viewpoint_validation_panel",
+      "description": "Viewer and Editor demos render model-defined ArchiMate 4 Viewpoint validation status and keep it not applicable in ArchiMate 3.x mode",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
+      "severity": "blocker",
+      "command": "node --test test/demo-viewpoint-validation-panel.test.mjs",
+      "expect": {
+        "exit_code": 0
+      },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0496-demo-viewpoint-validation-red-test.txt",
+        "project_memory/runlogs/20260710-0497-demo-viewpoint-validation-focused-test.txt",
+        "project_memory/runlogs/20260710-0498-demo-viewpoint-validation-focused-tests.txt",
+        "project_memory/runlogs/20260710-0499-demo-viewpoint-validation-demo-build.txt",
+        "project_memory/runlogs/20260710-0500-demo-viewpoint-validation-browser-smoke.json",
+        "project_memory/runlogs/20260710-0501-demo-viewpoint-validation-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0502-demo-viewpoint-validation-test-language.txt",
+        "project_memory/runlogs/20260710-0503-demo-viewpoint-validation-completion-audit.json",
+        "project_memory/runlogs/20260710-0504-demo-viewpoint-validation-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0505-demo-viewpoint-validation-json-check.txt",
+        "project_memory/runlogs/20260710-0506-demo-viewpoint-validation-diff-check.txt",
+        "project_memory/runlogs/20260710-0507-demo-viewpoint-validation-eslint-registry.txt",
+        "project_memory/runlogs/20260710-0508-demo-viewpoint-validation-final-focused-tests.txt",
+        "project_memory/runlogs/20260710-0509-demo-viewpoint-validation-final-test-language.txt",
+        "project_memory/runlogs/20260710-0510-demo-viewpoint-validation-final-completion-audit.json",
+        "project_memory/runlogs/20260710-0511-demo-viewpoint-validation-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0512-demo-viewpoint-validation-final-json-check.txt",
+        "project_memory/runlogs/20260710-0513-demo-viewpoint-validation-final-diff-check.txt"
       ]
     },
     {
@@ -424,7 +461,7 @@
         "pre_commit"
       ],
       "severity": "blocker",
-      "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js test/*.test.mjs",
+      "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js demo/src/sample-canvas.js test/*.test.mjs",
       "expect": {
         "exit_code": 0
       },
@@ -443,7 +480,9 @@
         "project_memory/runlogs/20260710-0441-viewpoint-token-field-structure-eslint-changed.txt",
         "project_memory/runlogs/20260710-0454-status-completion-scan-refresh-eslint-changed.txt",
         "project_memory/runlogs/20260710-0483-demo-example-viewpoint-eslint-changed.txt",
-        "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt"
+        "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt",
+        "project_memory/runlogs/20260710-0501-demo-viewpoint-validation-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0507-demo-viewpoint-validation-eslint-registry.txt"
       ]
     },
     {

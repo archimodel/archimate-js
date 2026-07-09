@@ -78,6 +78,9 @@ object, preserving official blocker ids, missing required source ids, required-b
 remaining gap ids, and companion gaps without changing the official conformance claim boundary.
 The bundled Viewer and Editor demos must render that report in ArchiMate 4 mode so the official
 blockers are visible to evaluators; in ArchiMate 3.x mode the report must remain not applicable.
+The same demos must also expose a model-defined Viewpoint validation sample in ArchiMate 4 mode, so
+the viewpoint mechanism can be observed through a current diagnostic result rather than only through
+API documentation. In ArchiMate 3.x mode this sample remains not applicable.
 The Editor demo must also expose a host-supplied Appendix B relationship profile import path for
 JSON or matrix text input. That path must require complete source-target cell coverage before loading
 the profile in ArchiMate 4 mode, show relationship-profile source and cell coverage separately from
@@ -940,6 +943,10 @@ Implemented demo notation guard:
   `getArchimate4ExampleViewpointCatalog()` in ArchiMate 4 mode, showing the four groups and 25
   viewpoint headings as an informative reference while keeping the panel not applicable in
   ArchiMate 3.x mode.
+- The same demo pages render a model-defined Viewpoint validation sample from
+  `validateArchimate4Model()` in ArchiMate 4 mode, showing that Viewpoint purpose/content,
+  concern/stakeholder metadata, and allowed element/relationship type constraints validate with zero
+  errors for a small sample View.
 
 ## Source Trace
 

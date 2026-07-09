@@ -1,0 +1,22 @@
+(node:88304) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ demo viewer and editor expose the ArchiMate 4 conformance report panel (0.7679ms)
+✔ demo conformance panel source stays aligned with the flattened report boundary (11.4853ms)
+(node:8788) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ demo viewer and editor expose the Appendix C example viewpoint catalog (0.7753ms)
+✔ Appendix C example viewpoint catalog remains informative only (0.4069ms)
+✔ editor demo exposes an Appendix B relationship profile import panel (0.819ms)
+✔ demo viewer and editor expose model-defined viewpoint validation (0.7829ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.7993

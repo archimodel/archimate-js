@@ -44,7 +44,7 @@ Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 imp
 
 Use `getArchimate4ConformanceReport()` when a host needs a flattened official-conformance report. It preserves the Appendix B profile, MEFF 4.0 XSD, and Appendix A artwork-rights blockers, separates the W262 companion gap, and lists the required action for each blocker without allowing local implementation coverage to be mistaken for an official conformance claim.
 
-The bundled Viewer and Editor demos display the same flattened report in ArchiMate 4 mode. In ArchiMate 3.x mode the panel is marked not applicable, preserving the existing 3.x compatibility boundary. The demos also display the Appendix C example viewpoint catalog as an informative 4.0-only reference. The Editor demo includes an Appendix B relationship profile import panel for host-supplied JSON, CSV, or TSV profile data; it requires complete source-target cell coverage before replacing the compatibility fallback and remains disabled in 3.x mode.
+The bundled Viewer and Editor demos display the same flattened report in ArchiMate 4 mode. In ArchiMate 3.x mode the panel is marked not applicable, preserving the existing 3.x compatibility boundary. The demos also display the Appendix C example viewpoint catalog as an informative 4.0-only reference and show a model-defined Viewpoint validation sample for the ArchiMate 4 viewpoint mechanism. The Editor demo includes an Appendix B relationship profile import panel for host-supplied JSON, CSV, or TSV profile data; it requires complete source-target cell coverage before replacing the compatibility fallback and remains disabled in 3.x mode.
 
 For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` or `getArchimate4ConformanceReport()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
 
@@ -210,4 +210,5 @@ Editor demos load an ArchiMate 4 sample with Common Domain `Role`, `Service`, `P
 notation. The Editor palette uses dedicated Common Domain icons instead of the old Business or
 Technology colored assets for those consolidated ArchiMate 4 concepts. Both demos show the
 host-facing conformance report and the informative Appendix C example viewpoint catalog in 4.0 mode,
-while preserving not-applicable status for those panels in 3.x mode.
+plus a model-defined Viewpoint validation sample that applies allowed element and relationship types
+to a small view. Those panels preserve not-applicable status in 3.x mode.

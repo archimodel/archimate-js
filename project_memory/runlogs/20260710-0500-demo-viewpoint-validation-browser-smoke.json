@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=4.0",
+      "state": "Valid",
+      "definition": "Demo Viewpoint",
+      "scope": "2 elements, 1 relationship",
+      "diagnostics": "0 errors",
+      "exampleState": "Informative"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/viewer.html?version=4.0",
+      "state": "Valid",
+      "definition": "Demo Viewpoint",
+      "scope": "2 elements, 1 relationship",
+      "diagnostics": "0 errors",
+      "exampleState": "Informative"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/editor.html?version=3.2",
+      "state": "Not applicable",
+      "definition": "ArchiMate 3.x compatibility mode",
+      "scope": "none",
+      "diagnostics": "none",
+      "exampleState": "Not applicable"
+    },
+    {
+      "url": "http://127.0.0.1:4174/demo/viewer.html?version=3.2",
+      "state": "Not applicable",
+      "definition": "ArchiMate 3.x compatibility mode",
+      "scope": "none",
+      "diagnostics": "none",
+      "exampleState": "Not applicable"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+✖ demo viewer and editor expose model-defined viewpoint validation (2.5857ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78.6458
+
+✖ failing tests:
+
+test at test\demo-viewpoint-validation-panel.test.mjs:10:1
+✖ demo viewer and editor expose model-defined viewpoint validation (2.5857ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /validateArchimate4Model/. Input:
+
+  'import {\n' +
+    '  getArchimate4ConformanceReport,\n' +
+    '  getArchimate4ExampleViewpointCatalog,\n' +
+    '  getLanguageProfile,\n' +
+    '  normalizeArchimateVersion\n' +
+    "} from '../../lib/metamodel/languages';\n" +
+    'import {\n' +
+    '  getArchimate4RelationshipProfileStatus\n' +
+    "} from '../../lib/metamodel/languages/archimate4-relationships';\n" +
+    '\n' +
+    "export const DEMO_ARCHIMATE3_VERSION = '3.2';\n" +
+    "export const DEMO_ARCHIMATE4_VERSION = '4.0';\n" +
+    "export const EMPTY_ARCHIMATE3_XML = createEmptyXml(DEMO_ARCHIMATE3_VERSION, 'Demo ArchiMate 3 model');\n" +
+    "export const EMPTY_ARCHIMATE4_XML = createEmptyXml(DEMO_ARCHIMATE4_VERSION, 'Demo ArchiMate 4 model');\n" +
+    '\n' +
+    'const SAMPLE_PROFILES = {\n' +
+    '  [DEMO_ARCHIMATE3_VERSION]: {\n' +
+    '    version: DEMO_ARCHIMATE3_VERSION,\n' +
+    "    label: 'ArchiMate 3.x',\n" +
+    "    profileSummary: 'Standard 3.x compatibility profile',\n" +
+    "    paletteSummary: '3.x palette; 4.0-only concepts are rejected',\n" +
+    "    editingSummary: '3.x editor validation',\n" +
+    '    emptyXml: EMPTY_ARCHIMATE3_XML,\n' +
+    '    shapes: [\n' +
+    "      { key: 'role', type: 'BusinessRole', name: 'Customer Role', x: 170, y: 92, width: 150, height: 76 },\n" +
+    "      { key: 'service', type: 'BusinessService', name: 'Digital Service', x: 430, y: 92, width: 170, height: 76 },\n" +
+    "      { key: 'application', type: 'ApplicationComponent', name: 'Experience App', x: 720, y: 92, width: 190, height: 76 },\n" +
+    "      { key: 'path', type: 'Path', name: 'Technology Path', x: 170, y: 335, width: 150, height: 76 },\n" +
+    "      { key: 'object', type: 'BusinessObject', name: 'Shared Object', x: 430, y: 260, width: 170, height: 76 },\n" +
+    "      { key: 'junction', type: 'AndJunction', name: '', x: 632, y: 277, width: 42, height: 42 },\n" +
+    "      { key: 'technology', type: 'Device', name: 'Edge Device', x: 720, y: 260, width: 190, height: 76 }\n" +
+    '    ],\n' +
+    '    connections: [\n' +
+    "      { source: 'role', target: 'service', type: 'Serving', waypoints: [ { x: 320, y: 130 }, { x: 430, y: 130 } ] },\n" +
+    "      { source: 'service', target: 'application', type: 'Realization', waypoints: [ { x: 600, y: 130 }, { x: 720, y: 130 } ] },\n" +
+    "      { source: 'service', target: 'junction', type: 'Flow', waypoints: [ { x: 515, y: 168 }, { x: 653, y: 277 } ] },\n" +
+    "      { source: 'path', target: 'junction', type: 'Flow', waypoints: [ { x: 320, y: 373 }, { x: 653, y: 373 }, { x: 653, y: 319 } ] },\n" +
+    "      { source: 'junction', target: 'technology', type: 'Flow', waypoints: [ { x: 674, y: 298 }, { x: 720, y: 298 } ] },\n" +
+    "      { source: 'object', target: 'service', type: 'Aggregation', waypoints: [ { x: 515, y: 260 }, { x: 515, y: 168 } ] }\n" +
+    '    ]\n' +
+    '  },\n' +
+    '  [DEMO_ARCHIMATE4_VERSION]: {\n' +
+    '    version: DEMO_ARCHIMATE4_VERSION,\n' +
+    "    label: 'ArchiMate 4.0',\n" +
+    "    profileSummary: 'ArchiMate 4.0 profile',\n" +
+    "    paletteSummary: '4.0 palette; retired 3.x concepts are rejected',\n" +
+    "    editingSummary: '4.0 editor validation',\n" +
+    '    emptyXml: EMPTY_ARCHIMATE4_XML,\n' +
+    '    shapes: [\n' +
+    "      { key: 'role', type: 'Role', name: 'Customer Role', x: 170, y: 92, width: 150, height: 76 },\n" +
+    "      { key: 'service', type: 'Service', name: 'Digital Service', x: 430, y: 92, width: 170, height: 76 },\n" +
+    "      { key: 'application', type: 'ApplicationComponent', name: 'Experience App', x: 720, y: 92, width: 190, height: 76 },\n" +
+    "      { key: 'path', type: 'Path', name: 'Experience Path', x: 170, y: 335, width: 150, height: 76 },\n" +
+    "      { key: 'grouping', type: 'Grouping', name: 'Shared Context', x: 430, y: 260, width: 170, height: 76 },\n" +
+    "      { key: 'junction', type: 'AndJunction', name: '', x: 632, y: 277, width: 42, height: 42 },\n" +
+    "      { key: 'technology', type: 'Equipment', name: 'Edge Equipment', x: 720, y: 260, width: 190, height: 76 }\n" +
+    '    ],\n' +
+    '    connections: [\n' +
+    "      { source: 'role', target: 'service', type: 'Serving', waypoints: [ { x: 320, y: 130 }, { x: 430, y: 130 } ] },\n" +
+    "      { source: 'service', target: 'application', type: 'Realization', waypoints: [ { x: 600, y: 130 }, { x: 720, y: 130 } ] },\n" +
+    "      { source: 'service', target: 'junction', type: 'Flow', waypoints: [ { x: 515, y: 168 }, { x: 653, y: 277 } ] },\n" +
+    "      { source: 'path', target: 'junction', type: 'Flow', waypoints: [ { x: 320, y: 373 }, { x: 653, y: 373 }, { x: 653, y: 319 } ] },\n" +
+    "      { source: 'junction', target: 'technology', type: 'Flow', waypoints: [ { x: 674, y: 298 }, { x: 720, y: 298 } ] },\n" +
+    "      { source: 'grouping', target: 'service', type: 'Aggregation', waypoints: [ { x: 515, y: 260 }, { x: 515, y: 168 } ] }\n" +
+    '    ]\n' +
+    '  }\n' +
+    '};\n' +
+    '\n' +
+    'export function getDemoProfile() {\n' +
+    "  var requestedVersion = getSearchParam('version');\n" +
+    '  var normalizedVersion = normalizeDemoVersion(requestedVersion);\n' +
+    '\n' +
+    '  return SAMPLE_PROFILES[normalizedVersion];\n' +
+    '}\n' +
+    '\n' +
+    'export function applyDemoProfileToDocument(profile, mode) {\n' +
+    "  document.documentElement.setAttribute('data-archimate-version', profile.version);\n" +
+    "  document.body.setAttribute('data-archimate-version', profile.version);\n" +
+    '\n' +
+    "  setText('#profile-mode', mode);\n" +
+    "  setText('#profile-version', profile.label);\n" +
+    "  setText('#profile-summary', profile.profileSummary);\n" +
+    "  setText('#palette-summary', profile.paletteSummary);\n" +
+    "  setText('#editing-summary', mode === 'Viewer' ? 'Read-only display validation' : profile.editingSummary);\n" +
+    '\n' +
+    "  updateDemoLink('#viewer-link', './viewer.html?version=' + profile.version);\n" +
+    "  updateDemoLink('#editor-link', './editor.html?version=' + profile.version);\n" +
+    "  updateVersionLink('#version-3-link', profile.version === DEMO_ARCHIMATE3_VERSION);\n" +
+    "  updateVersionLink('#version-4-link', profile.version === DEMO_ARCHIMATE4_VERSION);\n" +
+    '  renderConformanceReport(profile);\n' +
+    '  renderExampleViewpointCatalog(profile);\n' +
+    '  renderRelationshipProfileStatus(profile);\n' +
+    '}\n' +
+    '\n' +
+    'export function setStatus(message) {\n' +
+    "  const status = document.querySelector('#status');\n" +
+    '\n' +
+    '  if (status) {\n' +
+    '    status.textContent = message;\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'export function renderRelationshipProfileStatus(profile, message) {\n' +
+    '  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {\n' +
+    "    setText('#relationship-profile-state', 'Not applicable');\n" +
+    "    setText('#relationship-profile-source', 'ArchiMate 3.x compatibility mode');\n" +
+    "    setText('#relationship-profile-cells', 'none');\n" +
+    "    setText('#relationship-profile-missing', 'none');\n" +
+    "    setText('#relationship-profile-message', message || 'not applicable');\n" +
+    '    return;\n' +
+    '  }\n' +
+    '\n' +
+    '  const status = getArchimate4RelationshipProfileStatus();\n' +
+    "  const sourceLabel = status.source === 'external' ? 'External' : 'Compatibility fallback';\n" +
+    '  const sourceMetadata = status.sourceMetadata && status.sourceMetadata.sourceId ?\n' +
+    "    ' (' + status.sourceMetadata.sourceId + ')' :\n" +
+    "    '';\n" +
+    '\n' +
+    "  setText('#relationship-profile-state', status.source === 'external' ? 'Loaded' : 'Fallback');\n" +
+    "  setText('#relationship-profile-source', sourceLabel + sourceMetadata);\n" +
+    '  setText(\n' +
+    "    '#relationship-profile-cells',\n" +
+    "    status.targetCellCount + ' / ' + status.expectedTargetCellCount\n" +
+    '  );\n' +
+    '  setText(\n' +
+    "    '#relationship-profile-missing',\n" +
+    "    status.missingSourceCount + ' source, ' + status.missingTargetCellCount + ' cells'\n" +
+    '  );\n' +
+    "  setText('#relationship-profile-message', message || 'ready');\n" +
+    '}\n' +
+    '\n' +
+    'export function seedSampleCanvas(instance, version) {\n' +
+    '  const profile = SAMPLE_PROFILES[normalizeDemoVersion(version)];\n' +
+    "  const canvas = instance.get('canvas');\n" +
+    "  const elementFactory = instance.get('elementFactory');\n" +
+    '  const root = canvas.getRootElement();\n' +
+    '  const shapes = {};\n' +
+    '\n' +
+    '  profile.shapes.forEach(function(attrs) {\n' +
+    '    shapes[attrs.key] = addShape(canvas, elementFactory, root, attrs);\n' +
+    '  });\n' +
+    '\n' +
+    '  profile.connections.forEach(function(connection) {\n' +
+    '    addConnection(\n' +
+    '      canvas,\n' +
+    '      elementFactory,\n' +
+    '      root,\n' +
+    '      shapes[connection.source],\n' +
+    '      shapes[connection.target],\n' +
+    '      connection.type,\n' +
+    '      connection.waypoints\n' +
+    '    );\n' +
+    '  });\n' +
+    '\n' +
+    "  canvas.zoom('fit-viewport');\n" +
+    '}\n' +
+    '\n' +
+    'function createEmptyXml(version, name) {\n' +
+    '  const profile = getLanguageProfile(version);\n' +
+    '  const schemaLocation = profile.schemaLocation ?\n' +
+    `    ' xsi:schemaLocation="' + profile.namespace + ' ' + profile.schemaLocation + '"' :\n` +
+    "    '';\n" +
+    '\n' +
+    '  return `<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<archimate:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="${profile.namespace}"${schemaLocation}>\n' +
+    '  <name>${name}</name>\n' +
+    '  <documentation></documentation>\n' +
+    '  <archimate:Elements></archimate:Elements>\n' +
+    '  <archimate:Views>\n' +
+    '    <archimate:Diagrams>\n' +
+    '      <archimate:View id="view-demo-${profile.version.replace(\'.\', \'-\')}">\n' +
+    '        <name>Demo View</name>\n' +
+    '        <documentation></documentation>\n' +
+    '      </archimate:View>\n' +
+    '    </archimate:Diagrams>\n' +
+    '  </archimate:Views>\n' +
+    '  <archimate:PropertyDefinitions></archimate:PropertyDefinitions>\n' +
+    '</archimate:Model>`;\n' +
+    '}\n' +
+    '\n' +
+    'function getSearchParam(name) {\n' +
+    '  return new URLSearchParams(window.location.search).get(name);\n' +
+    '}\n' +
+    '\n' +
+    'function normalizeDemoVersion(version) {\n' +
+    '  try {\n' +
+    '    const normalizedVersion = normalizeArchimateVersion(version || DEMO_ARCHIMATE4_VERSION);\n' +
+    '\n' +
+    '    return normalizedVersion === DEMO_ARCHIMATE4_VERSION ?\n' +
+    '      DEMO_ARCHIMATE4_VERSION :\n' +
+    '      DEMO_ARCHIMATE3_VERSION;\n' +
+    '  } catch (error) {\n' +
+    '    console.warn(error);\n' +
+    '\n' +
+    '    return DEMO_ARCHIMATE4_VERSION;\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'function updateDemoLink(selector, href) {\n' +
+    '  const link = document.querySelector(selector);\n' +
+    '\n' +
+    '  if (link) {\n' +
+    '    link.href = href;\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'function updateVersionLink(selector, active) {\n' +
+    '  const link = document.querySelector(selector);\n' +
+    '\n' +
+    '  if (!link) {\n' +
+    '    return;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (active) {\n' +
+    "    link.setAttribute('aria-current', 'true');\n" +
+    '  } else {\n' +
+    "    link.removeAttribute('aria-current');\n" +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'function renderConformanceReport(profile) {\n' +
+    "  const actions = document.querySelector('#conformance-actions');\n" +
+    '\n' +
+    '  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {\n' +
+    "    setText('#conformance-state', 'Not applicable');\n" +
+    "    setText('#conformance-summary', 'ArchiMate 3.x compatibility mode');\n" +
+    "    setText('#conformance-required', 'none');\n" +
+    "    setText('#conformance-companion', 'none');\n" +
+    '    renderList(actions, []);\n' +
+    '    return;\n' +
+    '  }\n' +
+    '\n' +
+    '  const report = getArchimate4ConformanceReport();\n' +
+    '  const officialBlockerCount = report.blockerIds.length;\n' +
+    '  const companionGapCount = report.companionGapIds.length;\n' +
+    '\n' +
+    "  setText('#conformance-state', report.officialConformanceClaimable ? 'Claimable' : 'Blocked');\n" +
+    '  setText(\n' +
+    "    '#conformance-summary',\n" +
+    '    '... 2684 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/demo-viewpoint-validation-panel.test.mjs:11:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import {\n  getArchimate4ConformanceReport,\n  getArchimate4ExampleViewpointCatalog,\n  getLanguageProfile,\n  normalizeArchimateVersion\n} from \'../../lib/metamodel/languages\';\nimport {\n  getArchimate4RelationshipProfileStatus\n} from \'../../lib/metamodel/languages/archimate4-relationships\';\n\nexport const DEMO_ARCHIMATE3_VERSION = \'3.2\';\nexport const DEMO_ARCHIMATE4_VERSION = \'4.0\';\nexport const EMPTY_ARCHIMATE3_XML = createEmptyXml(DEMO_ARCHIMATE3_VERSION, \'Demo ArchiMate 3 model\');\nexport const EMPTY_ARCHIMATE4_XML = createEmptyXml(DEMO_ARCHIMATE4_VERSION, \'Demo ArchiMate 4 model\');\n\nconst SAMPLE_PROFILES = {\n  [DEMO_ARCHIMATE3_VERSION]: {\n    version: DEMO_ARCHIMATE3_VERSION,\n    label: \'ArchiMate 3.x\',\n    profileSummary: \'Standard 3.x compatibility profile\',\n    paletteSummary: \'3.x palette; 4.0-only concepts are rejected\',\n    editingSummary: \'3.x editor validation\',\n    emptyXml: EMPTY_ARCHIMATE3_XML,\n    shapes: [\n      { key: \'role\', type: \'BusinessRole\', name: \'Customer Role\', x: 170, y: 92, width: 150, height: 76 },\n      { key: \'service\', type: \'BusinessService\', name: \'Digital Service\', x: 430, y: 92, width: 170, height: 76 },\n      { key: \'application\', type: \'ApplicationComponent\', name: \'Experience App\', x: 720, y: 92, width: 190, height: 76 },\n      { key: \'path\', type: \'Path\', name: \'Technology Path\', x: 170, y: 335, width: 150, height: 76 },\n      { key: \'object\', type: \'BusinessObject\', name: \'Shared Object\', x: 430, y: 260, width: 170, height: 76 },\n      { key: \'junction\', type: \'AndJunction\', name: \'\', x: 632, y: 277, width: 42, height: 42 },\n      { key: \'technology\', type: \'Device\', name: \'Edge Device\', x: 720, y: 260, width: 190, height: 76 }\n    ],\n    connections: [\n      { source: \'role\', target: \'service\', type: \'Serving\', waypoints: [ { x: 320, y: 130 }, { x: 430, y: 130 } ] },\n      { source: \'service\', target: \'application\', type: \'Realization\', waypoints: [ { x: 600, y: 130 }, { x: 720, y: 130 } ] },\n      { source: \'service\', target: \'junction\', type: \'Flow\', waypoints: [ { x: 515, y: 168 }, { x: 653, y: 277 } ] },\n      { source: \'path\', target: \'junction\', type: \'Flow\', waypoints: [ { x: 320, y: 373 }, { x: 653, y: 373 }, { x: 653, y: 319 } ] },\n      { source: \'junction\', target: \'technology\', type: \'Flow\', waypoints: [ { x: 674, y: 298 }, { x: 720, y: 298 } ] },\n      { source: \'object\', target: \'service\', type: \'Aggregation\', waypoints: [ { x: 515, y: 260 }, { x: 515, y: 168 } ] }\n    ]\n  },\n  [DEMO_ARCHIMATE4_VERSION]: {\n    version: DEMO_ARCHIMATE4_VERSION,\n    label: \'ArchiMate 4.0\',\n    profileSummary: \'ArchiMate 4.0 profile\',\n    paletteSummary: \'4.0 palette; retired 3.x concepts are rejected\',\n    editingSummary: \'4.0 editor validation\',\n    emptyXml: EMPTY_ARCHIMATE4_XML,\n    shapes: [\n      { key: \'role\', type: \'Role\', name: \'Customer Role\', x: 170, y: 92, width: 150, height: 76 },\n      { key: \'service\', type: \'Service\', name: \'Digital Service\', x: 430, y: 92, width: 170, height: 76 },\n      { key: \'application\', type: \'ApplicationComponent\', name: \'Experience App\', x: 720, y: 92, width: 190, height: 76 },\n      { key: \'path\', type: \'Path\', name: \'Experience Path\', x: 170, y: 335, width: 150, height: 76 },\n      { key: \'grouping\', type: \'Grouping\', name: \'Shared Context\', x: 430, y: 260, width: 170, height: 76 },\n      { key: \'junction\', type: \'AndJunction\', name: \'\', x: 632, y: 277, width: 42, height: 42 },\n      { key: \'technology\', type: \'Equipment\', name: \'Edge Equipment\', x: 720, y: 260, width: 190, height: 76 }\n    ],\n    connections: [\n      { source: \'role\', target: \'service\', type: \'Serving\', waypoints: [ { x: 320, y: 130 }, { x: 430, y: 130 } ] },\n      { source: \'service\', target: \'application\', type: \'Realization\', waypoints: [ { x: 600, y: 130 }, { x: 720, y: 130 } ] },\n      { source: \'service\', target: \'junction\', type: \'Flow\', waypoints: [ { x: 515, y: 168 }, { x: 653, y: 277 } ] },\n      { source: \'path\', target: \'junction\', type: \'Flow\', waypoints: [ { x: 320, y: 373 }, { x: 653, y: 373 }, { x: 653, y: 319 } ] },\n      { source: \'junction\', target: \'technology\', type: \'Flow\', waypoints: [ { x: 674, y: 298 }, { x: 720, y: 298 } ] },\n      { source: \'grouping\', target: \'service\', type: \'Aggregation\', waypoints: [ { x: 515, y: 260 }, { x: 515, y: 168 } ] }\n    ]\n  }\n};\n\nexport function getDemoProfile() {\n  var requestedVersion = getSearchParam(\'version\');\n  var normalizedVersion = normalizeDemoVersion(requestedVersion);\n\n  return SAMPLE_PROFILES[normalizedVersion];\n}\n\nexport function applyDemoProfileToDocument(profile, mode) {\n  document.documentElement.setAttribute(\'data-archimate-version\', profile.version);\n  document.body.setAttribute(\'data-archimate-version\', profile.version);\n\n  setText(\'#profile-mode\', mode);\n  setText(\'#profile-version\', profile.label);\n  setText(\'#profile-summary\', profile.profileSummary);\n  setText(\'#palette-summary\', profile.paletteSummary);\n  setText(\'#editing-summary\', mode === \'Viewer\' ? \'Read-only display validation\' : profile.editingSummary);\n\n  updateDemoLink(\'#viewer-link\', \'./viewer.html?version=\' + profile.version);\n  updateDemoLink(\'#editor-link\', \'./editor.html?version=\' + profile.version);\n  updateVersionLink(\'#version-3-link\', profile.version === DEMO_ARCHIMATE3_VERSION);\n  updateVersionLink(\'#version-4-link\', profile.version === DEMO_ARCHIMATE4_VERSION);\n  renderConformanceReport(profile);\n  renderExampleViewpointCatalog(profile);\n  renderRelationshipProfileStatus(profile);\n}\n\nexport function setStatus(message) {\n  const status = document.querySelector(\'#status\');\n\n  if (status) {\n    status.textContent = message;\n  }\n}\n\nexport function renderRelationshipProfileStatus(profile, message) {\n  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {\n    setText(\'#relationship-profile-state\', \'Not applicable\');\n    setText(\'#relationship-profile-source\', \'ArchiMate 3.x compatibility mode\');\n    setText(\'#relationship-profile-cells\', \'none\');\n    setText(\'#relationship-profile-missing\', \'none\');\n    setText(\'#relationship-profile-message\', message || \'not applicable\');\n    return;\n  }\n\n  const status = getArchimate4RelationshipProfileStatus();\n  const sourceLabel = status.source === \'external\' ? \'External\' : \'Compatibility fallback\';\n  const sourceMetadata = status.sourceMetadata && status.sourceMetadata.sourceId ?\n    \' (\' + status.sourceMetadata.sourceId + \')\' :\n    \'\';\n\n  setText(\'#relationship-profile-state\', status.source === \'external\' ? \'Loaded\' : \'Fallback\');\n  setText(\'#relationship-profile-source\', sourceLabel + sourceMetadata);\n  setText(\n    \'#relationship-profile-cells\',\n    status.targetCellCount + \' / \' + status.expectedTargetCellCount\n  );\n  setText(\n    \'#relationship-profile-missing\',\n    status.missingSourceCount + \' source, \' + status.missingTargetCellCount + \' cells\'\n  );\n  setText(\'#relationship-profile-message\', message || \'ready\');\n}\n\nexport function seedSampleCanvas(instance, version) {\n  const profile = SAMPLE_PROFILES[normalizeDemoVersion(version)];\n  const canvas = instance.get(\'canvas\');\n  const elementFactory = instance.get(\'elementFactory\');\n  const root = canvas.getRootElement();\n  const shapes = {};\n\n  profile.shapes.forEach(function(attrs) {\n    shapes[attrs.key] = addShape(canvas, elementFactory, root, attrs);\n  });\n\n  profile.connections.forEach(function(connection) {\n    addConnection(\n      canvas,\n      elementFactory,\n      root,\n      shapes[connection.source],\n      shapes[connection.target],\n      connection.type,\n      connection.waypoints\n    );\n  });\n\n  canvas.zoom(\'fit-viewport\');\n}\n\nfunction createEmptyXml(version, name) {\n  const profile = getLanguageProfile(version);\n  const schemaLocation = profile.schemaLocation ?\n    \' xsi:schemaLocation="\' + profile.namespace + \' \' + profile.schemaLocation + \'"\' :\n    \'\';\n\n  return `<?xml version="1.0" encoding="UTF-8"?>\n<archimate:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="${profile.namespace}"${schemaLocation}>\n  <name>${name}</name>\n  <documentation></documentation>\n  <archimate:Elements></archimate:Elements>\n  <archimate:Views>\n    <archimate:Diagrams>\n      <archimate:View id="view-demo-${profile.version.replace(\'.\', \'-\')}">\n        <name>Demo View</name>\n        <documentation></documentation>\n      </archimate:View>\n    </archimate:Diagrams>\n  </archimate:Views>\n  <archimate:PropertyDefinitions></archimate:PropertyDefinitions>\n</archimate:Model>`;\n}\n\nfunction getSearchParam(name) {\n  return new URLSearchParams(window.location.search).get(name);\n}\n\nfunction normalizeDemoVersion(version) {\n  try {\n    const normalizedVersion = normalizeArchimateVersion(version || DEMO_ARCHIMATE4_VERSION);\n\n    return normalizedVersion === DEMO_ARCHIMATE4_VERSION ?\n      DEMO_ARCHIMATE4_VERSION :\n      DEMO_ARCHIMATE3_VERSION;\n  } catch (error) {\n    console.warn(error);\n\n    return DEMO_ARCHIMATE4_VERSION;\n  }\n}\n\nfunction updateDemoLink(selector, href) {\n  const link = document.querySelector(selector);\n\n  if (link) {\n    link.href = href;\n  }\n}\n\nfunction updateVersionLink(selector, active) {\n  const link = document.querySelector(selector);\n\n  if (!link) {\n    return;\n  }\n\n  if (active) {\n    link.setAttribute(\'aria-current\', \'true\');\n  } else {\n    link.removeAttribute(\'aria-current\');\n  }\n}\n\nfunction renderConformanceReport(profile) {\n  const actions = document.querySelector(\'#conformance-actions\');\n\n  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {\n    setText(\'#conformance-state\', \'Not applicable\');\n    setText(\'#conformance-summary\', \'ArchiMate 3.x compatibility mode\');\n    setText(\'#conformance-required\', \'none\');\n    setText(\'#conformance-companion\', \'none\');\n    renderList(actions, []);\n    return;\n  }\n\n  const report = getArchimate4ConformanceReport();\n  const officialBlockerCount = report.blockerIds.length;\n  const companionGapCount = report.companionGapIds.length;\n\n  setText(\'#conformance-state\', report.officialConformanceClaimable ? \'Claimable\' : \'Blocked\');\n  setText(\n    \'#conformance-summary\',\n    '... 2684 more characters,
+    expected: /validateArchimate4Model/,
+    operator: 'match',
+    diff: 'simple'
+  }

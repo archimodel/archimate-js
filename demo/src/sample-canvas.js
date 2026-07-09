@@ -7,6 +7,9 @@ import {
 import {
   getArchimate4RelationshipProfileStatus
 } from '../../lib/metamodel/languages/archimate4-relationships';
+import {
+  validateArchimate4Model
+} from '../../lib/validation/archimate4-model';
 
 export const DEMO_ARCHIMATE3_VERSION = '3.2';
 export const DEMO_ARCHIMATE4_VERSION = '4.0';
@@ -89,6 +92,7 @@ export function applyDemoProfileToDocument(profile, mode) {
   updateVersionLink('#version-4-link', profile.version === DEMO_ARCHIMATE4_VERSION);
   renderConformanceReport(profile);
   renderExampleViewpointCatalog(profile);
+  renderViewpointValidation(profile);
   renderRelationshipProfileStatus(profile);
 }
 
@@ -287,6 +291,92 @@ function renderExampleViewpointList(node, groups) {
     li.appendChild(viewpointSummary);
     node.appendChild(li);
   });
+}
+
+function renderViewpointValidation(profile) {
+  if (profile.version !== DEMO_ARCHIMATE4_VERSION) {
+    setText('#viewpoint-validation-state', 'Not applicable');
+    setText('#viewpoint-validation-definition', 'ArchiMate 3.x compatibility mode');
+    setText('#viewpoint-validation-scope', 'none');
+    setText('#viewpoint-validation-diagnostics', 'none');
+    return;
+  }
+
+  const model = createDemoViewpointValidationModel();
+  const result = validateArchimate4Model(model, {
+    validateRelationshipRules: false
+  });
+
+  setText('#viewpoint-validation-state', result.valid ? 'Valid' : 'Invalid');
+  setText('#viewpoint-validation-definition', 'Demo Viewpoint');
+  setText('#viewpoint-validation-scope', '2 elements, 1 relationship');
+  setText('#viewpoint-validation-diagnostics', result.errorCount + ' errors');
+}
+
+function createDemoViewpointValidationModel() {
+  const role = { id: 'demo-role', type: 'Role' };
+  const service = { id: 'demo-service', type: 'Service' };
+  const serving = {
+    id: 'demo-serving',
+    type: 'Serving',
+    source: service,
+    target: role
+  };
+
+  return {
+    elementsNode: {
+      baseElements: [ role, service ]
+    },
+    relationshipsNode: {
+      relationships: [ serving ]
+    },
+    views: {
+      viewpointsNode: {
+        viewpoints: [
+          {
+            id: 'demo-viewpoint',
+            name: 'Demo Viewpoint',
+            viewpointPurpose: 'Deciding',
+            viewpointContent: 'Overview',
+            allowedElementTypes: [ 'Role', 'Service' ],
+            allowedRelationshipTypes: [ 'Serving' ],
+            concerns: [
+              {
+                label: 'Service fit',
+                stakeholdersNode: {
+                  stakeholders: [
+                    { label: 'Architecture reviewer' }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      diagrams: {
+        viewsList: [
+          {
+            id: 'demo-view',
+            viewpointRef: 'demo-viewpoint',
+            viewElements: [
+              {
+                id: 'node-role',
+                elementRef: 'demo-role'
+              },
+              {
+                id: 'node-service',
+                elementRef: 'demo-service'
+              },
+              {
+                id: 'connection-serving',
+                relationshipRef: 'demo-serving'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  };
 }
 
 function renderList(node, items) {

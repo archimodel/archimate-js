@@ -1042,6 +1042,11 @@
 - The same demo pages also render the Appendix C example viewpoint catalog through
   `getArchimate4ExampleViewpointCatalog()` in ArchiMate 4 mode and mark it not applicable in
   ArchiMate 3.x mode.
+- The demo pages also run a model-defined Viewpoint validation sample through
+  `validateArchimate4Model()` in ArchiMate 4 mode. The sample applies a Viewpoint with purpose,
+  content, concern/stakeholder metadata, allowed element types, and allowed relationship types to a
+  small View and reports the diagnostic count; the same panel is marked not applicable in ArchiMate
+  3.x mode.
 
 ## Verification Notes
 
