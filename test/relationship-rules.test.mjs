@@ -460,6 +460,62 @@ test('archimate 4 implementation status includes active relationship profile sou
   assert.equal(resetStatus.relationshipProfile.sourceMetadata, null);
 });
 
+test('archimate 4 external relationship profile metadata stays separate from Appendix B source coverage', () => {
+  try {
+    setArchimate4RelationshipProfile({
+      sourceMetadata: {
+        sourceId: 'appendix-b-runtime-profile',
+        sourceHash: 'sha256:runtime-profile',
+        copiedNormativeText: {
+          mustNotLeakIntoStatus: true
+        }
+      },
+      sources: {
+        BusinessActor: {
+          Role: 'Assignment'
+        }
+      }
+    }, {
+      requireComplete: false,
+      requireCompleteTargets: false,
+      sourceMetadata: {
+        suppliedBy: 'host-application'
+      }
+    });
+
+    const status = getArchimate4ImplementationStatus();
+    const appendixB = status.sourceCoverage.items.appendixBRelationshipMatrix;
+    const appendixBGap = status.remainingGaps.items.find((gap) => {
+      return gap.id === 'officialAppendixBRelationshipMatrix';
+    });
+
+    assert.equal(status.relationshipProfile.source, 'external');
+    assert.equal(status.relationshipProfile.sourceScope, 'global');
+    assert.deepEqual(status.relationshipProfile.sourceMetadata, {
+      sourceId: 'appendix-b-runtime-profile',
+      sourceHash: 'sha256:runtime-profile',
+      suppliedBy: 'host-application'
+    });
+    assert.equal(status.relationshipProfile.sourceMetadata.copiedNormativeText, undefined);
+
+    assert.equal(appendixB.status, 'external-profile-required');
+    assert.equal(appendixB.localSourcePresent, false);
+    assert.equal(appendixB.redistributableProfilePresent, false);
+    assert.equal(appendixB.externalBlocker, 'officialAppendixBRelationshipMatrix');
+
+    assert.equal(appendixBGap.sourceId, 'appendixBRelationshipMatrix');
+    assert.equal(appendixBGap.officialConformanceBlocker, true);
+    assert.equal(status.conformanceReadiness.missingRequiredSources.includes('appendixBRelationshipMatrix'), true);
+    assert.equal(
+      status.conformanceReadiness.requiredBeforeClaimByBlocker.officialAppendixBRelationshipMatrix,
+      'Load an official or redistributable Appendix B relationship profile'
+    );
+    assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
+});
+
 test('archimate 4 default relationship fallback does not satisfy Appendix B source coverage', () => {
   resetArchimate4RelationshipProfileForTests();
 

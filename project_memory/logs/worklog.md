@@ -2134,3 +2134,14 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1396-appendix-b-fallback-boundary-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-appendix-b-fallback-boundary-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 165
+
+- Goal: strengthen the Appendix B source boundary when a host supplies an external relationship profile at runtime.
+- Observation: a direct status probe showed `relationshipProfile.source` becomes `external`, sanitized `sourceMetadata` is exposed, and `sourceCoverage.items.appendixBRelationshipMatrix` remains `external-profile-required` with no local redistributable profile artifact.
+- Implemented: `test/relationship-rules.test.mjs` now verifies externally supplied profile metadata stays separate from repository source coverage, does not leak copied normative metadata, and keeps `officialAppendixBRelationshipMatrix` in readiness until an official or redistributable profile source is supplied.
+- Focused verification: `project_memory/runlogs/20260709-1398-appendix-b-external-profile-source-boundary-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 208 tests in `project_memory/runlogs/20260709-1399-appendix-b-external-profile-source-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1400-appendix-b-external-profile-source-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1401-appendix-b-external-profile-source-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1402-appendix-b-external-profile-source-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-appendix-b-external-profile-source-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
