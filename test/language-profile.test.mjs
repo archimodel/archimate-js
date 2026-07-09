@@ -2770,6 +2770,13 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     'getArchimate4RelationshipProfileStatus().sourceScope'
   );
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.viewerScopedProfileResetImplemented, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryCheckedAt, '2026-07-09T21:25:00+09:00');
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryRunlogPath,
+    'project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json'
+  );
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryClearsBlocker, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.explicitAppendixBProfileRedistributionApprovalDetected, false);
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
@@ -2826,6 +2833,25 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.equal(sourceCoverage.appendixAArtworkRights.localDedicatedPathCoverageComplete, true);
   assert.equal(sourceCoverage.appendixAArtworkRights.officialAppendixAArtworkCommitted, false);
   assert.equal(sourceCoverage.appendixAArtworkRights.exactArtworkRedistributionRightsConfirmed, false);
+  assert.equal(sourceCoverage.appendixAArtworkRights.localLicenseBoundaryCheckedAt, '2026-07-09T21:25:00+09:00');
+  assert.equal(
+    sourceCoverage.appendixAArtworkRights.localLicenseBoundaryRunlogPath,
+    'project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json'
+  );
+  assert.equal(sourceCoverage.appendixAArtworkRights.localLicenseBoundaryClearsBlocker, false);
+  assert.equal(sourceCoverage.appendixAArtworkRights.explicitAppendixAArtworkRedistributionApprovalDetected, false);
+  const localLicenseBoundary = await readJson('../project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json');
+  assert.equal(localLicenseBoundary.checkedAt, sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryCheckedAt);
+  assert.equal(localLicenseBoundary.containsRawLicenseText, false);
+  assert.equal(localLicenseBoundary.clearsRedistributableProfileBlocker, false);
+  assert.equal(localLicenseBoundary.clearsExactArtworkRightsBlocker, false);
+  assert.equal(localLicenseBoundary.explicitAppendixBProfileRedistributionApprovalDetected, false);
+  assert.equal(localLicenseBoundary.explicitAppendixAArtworkRedistributionApprovalDetected, false);
+  assert.equal(localLicenseBoundary.aggregateKeywordPresence.appendixBTerm, false);
+  assert.equal(localLicenseBoundary.aggregateKeywordPresence.relationshipMatrixTerm, false);
+  assert.equal(localLicenseBoundary.aggregateKeywordPresence.artworkTerm, false);
+  assert.equal(localLicenseBoundary.aggregateKeywordPresence.vectorTerm, false);
+  assert.equal(localLicenseBoundary.aggregateKeywordPresence.mitLicenseName, false);
   assert.equal(
     sourceCoverage.appendixAArtworkRights.lastPictogramAuditRunlogPath,
     'project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json'

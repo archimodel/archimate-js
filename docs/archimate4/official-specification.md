@@ -24,6 +24,10 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
 - Appendix B source status is split deliberately: the licensed local C260 source has been reviewed,
   the external relationship profile loader and coverage report APIs are implemented, and no
   redistributable Appendix B profile artifact is committed.
+- Local ArchiMate 4 Non-Commercial License boundary status:
+  `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json` records sanitized
+  keyword facts only and does not clear the Appendix B redistributable-profile blocker or the Appendix
+  A exact-artwork-rights blocker.
 
 ## Conformance Requirements For This Repository
 

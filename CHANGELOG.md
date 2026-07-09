@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: classified C260 Appendix F acronym tokens as vocabulary-only coverage outside ArchiMate 4 section coverage, source gaps, and conformance blockers.
 * `DOCS`: refreshed current W262 and MEFF 4.0 XSD source evidence while keeping official conformance blocked on missing external sources.
 * `DOCS`: added sanitized local ArchiMate PDF inventory evidence for C260 and W262 source classification.
+* `DOCS`: added sanitized ArchiMate 4 license-boundary evidence for Appendix A/B source blockers.
 * `DOCS`: refreshed the ArchiMate 4 implementation-status completion scan evidence.
 * `DOCS`: documented the experimental XML/relationship conformance boundary until official C260/MEFF 4 source data is supplied.
 

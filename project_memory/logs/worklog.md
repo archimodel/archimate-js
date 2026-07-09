@@ -2380,3 +2380,16 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2118-local-pdf-inventory-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-local-archimate-pdf-inventory-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 185
+
+- Goal: strengthen the Appendix B and Appendix A source-boundary evidence by recording whether the local ArchiMate 4 Non-Commercial License PDFs clear redistribution blockers.
+- Observation: `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json` records keyword-presence booleans only, contains no raw license text, classifies the local files as ArchiMate 4 Non-Commercial License documents, and leaves both blocker-clearing flags false.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now exposes `localLicenseBoundaryRunlogPath`, `localLicenseBoundaryClearsBlocker`, and explicit approval flags for `appendixBRelationshipMatrix` and `appendixAArtworkRights`.
+- Implemented: `test/language-profile.test.mjs` now verifies the local NCL boundary runlog and confirms it does not clear Appendix B or Appendix A blockers.
+- Documentation: README, CHANGELOG, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `docs/superpowers/plans/2026-07-08-archimate-4-support.md` now document the local NCL boundary.
+- Focused verification: JSON parse passed in `project_memory/runlogs/20260709-2126-ncl-license-boundary-json-check.txt`; source-coverage focused test passed in `project_memory/runlogs/20260709-2127-ncl-license-boundary-source-coverage-focused-test.txt`; status API sample recorded in `project_memory/runlogs/20260709-2128-ncl-license-boundary-status-api.json`.
+- Verification: final JSON parse passed in `project_memory/runlogs/20260709-2129-ncl-license-boundary-final-json-check.txt`; `npm run test:language` passed with 223 tests in `project_memory/runlogs/20260709-2132-ncl-license-boundary-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-2130-ncl-license-boundary-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-2131-ncl-license-boundary-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-2133-ncl-license-boundary-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-ncl-license-boundary-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

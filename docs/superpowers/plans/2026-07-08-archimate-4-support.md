@@ -22,6 +22,9 @@ External-source evidence for W262 and MEFF 4.0 XSD was refreshed on 2026-07-09T2
 Local ArchiMate-related PDF inventory was refreshed on 2026-07-09T21:10:00+09:00 in
 `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies local
 C260 and ArchiMate 4 license PDFs and confirms no W262 candidate among those local PDFs.
+Local ArchiMate 4 Non-Commercial License boundary evidence was recorded on 2026-07-09T21:25:00+09:00
+in `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`; it is sanitized and
+does not clear the Appendix B redistributable-profile blocker or Appendix A exact-artwork-rights blocker.
 
 Implemented and verified on the current branch:
 

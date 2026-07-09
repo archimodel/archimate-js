@@ -38,6 +38,10 @@
   Appendix B profile artifact is still not present in this repository.
   `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable
   profile artifact present", not "licensed C260 source reviewed".
+- A sanitized local ArchiMate 4 Non-Commercial License keyword boundary is recorded in
+  `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`. It does not contain raw
+  license text and does not clear the Appendix B redistributable-profile blocker or the Appendix A
+  exact-artwork-rights blocker.
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
 - Node-based audit tooling can import `getArchimate4ImplementationStatus()` directly from
@@ -908,6 +912,15 @@
   ArchiMate 4 Non-Commercial License documents.
 - The same inventory records `w262Matched: false`, so the current W262 companion gap is not caused by
   misclassifying the local C260 or license PDFs.
+
+## Local ArchiMate 4 License Boundary
+
+- `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json` records sanitized
+  keyword presence for local ArchiMate 4 Non-Commercial License PDFs without storing license prose.
+- The boundary keeps `sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryClearsBlocker`
+  and `sourceCoverage.appendixAArtworkRights.localLicenseBoundaryClearsBlocker` false.
+- Therefore the local NCL files are tracked as license context, not as a redistributable Appendix B
+  relationship profile or an approved Appendix A artwork source.
 
 ## ArchiMate 3.1 XSD Verification
 

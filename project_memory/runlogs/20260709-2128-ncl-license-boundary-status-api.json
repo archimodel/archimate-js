@@ -1,0 +1,16 @@
+{
+  "appendixB": {
+    "licenseRunlog": "project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json",
+    "clears": false
+  },
+  "appendixA": {
+    "licenseRunlog": "project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json",
+    "clears": false
+  },
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}

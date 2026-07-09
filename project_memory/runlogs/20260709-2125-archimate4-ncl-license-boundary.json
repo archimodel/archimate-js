@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-07-09T21:25:00+09:00",
+  "scope": "local ArchiMate 4 Non-Commercial License PDFs",
+  "containsRawLicenseText": false,
+  "documents": [
+    {
+      "label": "ncl-template",
+      "bytes": 199995,
+      "pages": 4,
+      "classification": "archimate4-non-commercial-license",
+      "keywordPresence": {
+        "nonCommercial": true,
+        "allRightsReserved": true,
+        "licenseTerm": true,
+        "redistributeTerm": true,
+        "redistributionTerm": true,
+        "appendixBTerm": false,
+        "relationshipMatrixTerm": false,
+        "relationshipTableTerm": false,
+        "artworkTerm": false,
+        "vectorTerm": false,
+        "sourceCodeTerm": false,
+        "mitLicenseName": false
+      }
+    },
+    {
+      "label": "ncl-template-copy",
+      "bytes": 199995,
+      "pages": 4,
+      "classification": "archimate4-non-commercial-license",
+      "keywordPresence": {
+        "nonCommercial": true,
+        "allRightsReserved": true,
+        "licenseTerm": true,
+        "redistributeTerm": true,
+        "redistributionTerm": true,
+        "appendixBTerm": false,
+        "relationshipMatrixTerm": false,
+        "relationshipTableTerm": false,
+        "artworkTerm": false,
+        "vectorTerm": false,
+        "sourceCodeTerm": false,
+        "mitLicenseName": false
+      }
+    },
+    {
+      "label": "ncl-signed-local",
+      "bytes": 212413,
+      "pages": 4,
+      "classification": "archimate4-non-commercial-license",
+      "keywordPresence": {
+        "nonCommercial": true,
+        "allRightsReserved": true,
+        "licenseTerm": true,
+        "redistributeTerm": true,
+        "redistributionTerm": true,
+        "appendixBTerm": false,
+        "relationshipMatrixTerm": false,
+        "relationshipTableTerm": false,
+        "artworkTerm": false,
+        "vectorTerm": false,
+        "sourceCodeTerm": false,
+        "mitLicenseName": false
+      }
+    }
+  ],
+  "aggregateKeywordPresence": {
+    "nonCommercial": true,
+    "allRightsReserved": true,
+    "licenseTerm": true,
+    "redistributeTerm": true,
+    "redistributionTerm": true,
+    "appendixBTerm": false,
+    "relationshipMatrixTerm": false,
+    "relationshipTableTerm": false,
+    "artworkTerm": false,
+    "vectorTerm": false,
+    "sourceCodeTerm": false,
+    "mitLicenseName": false
+  },
+  "explicitAppendixBProfileRedistributionApprovalDetected": false,
+  "explicitAppendixAArtworkRedistributionApprovalDetected": false,
+  "clearsRedistributableProfileBlocker": false,
+  "clearsExactArtworkRightsBlocker": false
+}
