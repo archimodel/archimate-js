@@ -399,6 +399,11 @@ Implementation notes:
   folder pictogram fallback.
 - `Grouping` must use a dashed-rectangle renderer pictogram in ArchiMate 4 mode, not the generic
   object pictogram fallback.
+- `sourceCoverage.appendixAArtworkRights` must keep the difference between locally-authored renderer
+  paths and exact Appendix A vector artwork explicit. The latest local pictogram audit is recorded in
+  `project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json`; local
+  dedicated path coverage is complete, no profile pictogram is implemented as a `PICTO_OBJECT` alias,
+  and exact Appendix A artwork redistribution rights remain unconfirmed.
 - In ArchiMate 4 mode, the renderer must draw `Grouping` as a dashed, unfilled outline. ArchiMate
   3.x rendering remains unchanged, and exact Appendix A vector artwork remains outside the repository
   until the source and redistribution boundary is resolved.

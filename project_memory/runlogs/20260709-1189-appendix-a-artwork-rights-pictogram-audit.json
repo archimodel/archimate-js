@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-07-09T15:27:51+09:00",
+  "sourceCoverageId": "appendixAArtworkRights",
+  "externalBlocker": "exactAppendixAArtworkRights",
+  "exactArtworkRedistributionRightsConfirmed": false,
+  "exactArtworkRedistributionRightsRequired": true,
+  "localArtworkPolicy": "locally-authored-renderer-paths",
+  "profilePictogramCoverage": "dedicated-local-paths",
+  "genericObjectAliasCount": 0,
+  "profileConceptAndConnectorCount": 44,
+  "profilePictogramRefCount": 41,
+  "objectPictoRefConceptTypes": [
+    "BusinessObject",
+    "DataObject"
+  ],
+  "nonObjectPictoRefCount": 40,
+  "missingPathMapRefs": [],
+  "objectAliasRefs": [],
+  "legacyCompatibilityAliases": [
+    {
+      "alias": "PICTO_STAKHOLDER",
+      "target": "PICTO_STAKEHOLDER"
+    },
+    {
+      "alias": "PICTO_DELIVRABLE",
+      "target": "PICTO_DELIVERABLE"
+    }
+  ],
+  "localDedicatedPathCoverageComplete": true,
+  "officialAppendixAArtworkCommitted": false
+}

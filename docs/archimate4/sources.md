@@ -279,6 +279,11 @@
 - `getArchimate4ImplementationStatus()` exposes `profilePictogramCoverage`,
   `genericObjectAliasCount`, and legacy compatibility aliases in the iconography status so callers can
   distinguish local renderer coverage from exact Appendix A vector-artwork confirmation.
+- `sourceCoverage.appendixAArtworkRights` records the latest local pictogram audit in
+  `project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json`: all
+  non-`PICTO_OBJECT` profile pictogram references have local `PathMap` entries, no profile pictogram
+  is implemented as a `PICTO_OBJECT` alias, and exact Appendix A artwork redistribution rights remain
+  unconfirmed.
 - The ArchiMate 4 `Deliverable` profile entry uses the correctly spelled `PICTO_DELIVERABLE`
   reference. The older misspelled `PICTO_DELIVRABLE` key remains in `PathMap` only as a legacy
   compatibility alias for existing 3.x profile metadata.

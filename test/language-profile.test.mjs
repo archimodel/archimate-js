@@ -1965,6 +1965,25 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     ],
     200
   );
+  assert.equal(sourceCoverage.appendixAArtworkRights.status, 'external-rights-required');
+  assert.equal(sourceCoverage.appendixAArtworkRights.localSourcePresent, false);
+  assert.equal(sourceCoverage.appendixAArtworkRights.localArtworkPolicy, 'locally-authored-renderer-paths');
+  assert.equal(sourceCoverage.appendixAArtworkRights.localDedicatedPathCoverageComplete, true);
+  assert.equal(sourceCoverage.appendixAArtworkRights.officialAppendixAArtworkCommitted, false);
+  assert.equal(sourceCoverage.appendixAArtworkRights.exactArtworkRedistributionRightsConfirmed, false);
+  assert.equal(
+    sourceCoverage.appendixAArtworkRights.lastPictogramAuditRunlogPath,
+    'project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json'
+  );
+  assert.equal(sourceCoverage.appendixAArtworkRights.profileConceptAndConnectorCount, 44);
+  assert.equal(sourceCoverage.appendixAArtworkRights.profilePictogramRefCount, 41);
+  assert.equal(sourceCoverage.appendixAArtworkRights.nonObjectPictoRefCount, 40);
+  assert.deepEqual(sourceCoverage.appendixAArtworkRights.objectPictoRefConceptTypes, [
+    'BusinessObject',
+    'DataObject'
+  ]);
+  assert.deepEqual(sourceCoverage.appendixAArtworkRights.missingPathMapRefs, []);
+  assert.deepEqual(sourceCoverage.appendixAArtworkRights.objectAliasRefs, []);
 
   assert.match(languageIndex, /var sourceCoverage = summarizeSourceCoverage\(\s*conformance\.sourceCoverage \|\| \{\},\s*conformance\.sourceCoverageCatalog \|\| \{\}/);
   assert.match(languageIndex, /actualSourceIds/);
@@ -1980,6 +1999,8 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
   assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
   assert.match(officialSpec, /20260709-1178-w262-continuation-source-recheck/);
+  assert.match(sources, /20260709-1189-appendix-a-artwork-rights-pictogram-audit/);
+  assert.match(officialSpec, /locally-authored renderer\s+paths/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
 });
 

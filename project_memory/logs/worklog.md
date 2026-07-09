@@ -1857,3 +1857,17 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1188-w262-continuation-staged-diff-check.txt` passed after trimming the trailing EOF blank line from the repository-lint runlog.
 - Audit: `project_memory/audit/reports/20260709-w262-continuation-source-recheck-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 144
+
+- Goal: make the Appendix A exact-artwork rights boundary machine-auditable while preserving local ArchiMate 4 pictogram renderer coverage.
+- Source audit: `project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json` confirmed 44 profile concepts/connectors, 41 pictogram references, 40 non-`PICTO_OBJECT` references, no missing `PathMap` references, and no profile pictogram implemented as a generic `PICTO_OBJECT` alias.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `sourceCoverage.appendixAArtworkRights` fields for locally-authored renderer paths, dedicated local path coverage, absence of exact Appendix A artwork commits, unconfirmed redistribution rights, audit runlog path, pictogram counts, and alias checks.
+- Tests/docs: `test/language-profile.test.mjs`, `docs/archimate4/sources.md`, and `docs/archimate4/official-specification.md` now guard and document the local renderer path boundary versus exact Appendix A vector artwork rights.
+- Red test evidence: `project_memory/runlogs/20260709-1191-appendix-a-artwork-rights-test-language.txt` failed only because the assertion did not tolerate a Markdown line break between `renderer` and `paths`; the test was corrected to match whitespace.
+- Verification: JSON parse passed in `project_memory/runlogs/20260709-1190-appendix-a-artwork-rights-json-check.txt`; `npm run test:language` passed with 188 tests in `project_memory/runlogs/20260709-1192-appendix-a-artwork-rights-test-language-pass.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1193-appendix-a-artwork-rights-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1194-appendix-a-artwork-rights-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1195-appendix-a-artwork-rights-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1197-appendix-a-artwork-rights-status.json` shows `localArtworkPolicy: locally-authored-renderer-paths`, `localDedicatedPathCoverageComplete: true`, `officialAppendixAArtworkCommitted: false`, `exactArtworkRedistributionRightsConfirmed: false`, no missing `PathMap` refs, and no profile `PICTO_OBJECT` alias refs.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1196-appendix-a-artwork-rights-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1198-appendix-a-artwork-rights-staged-diff-check.txt` passed after trimming saved failure-log trailing whitespace.
+- Audit: `project_memory/audit/reports/20260709-appendix-a-artwork-rights-pictogram-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

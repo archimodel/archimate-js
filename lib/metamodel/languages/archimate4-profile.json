@@ -1391,6 +1391,21 @@
       "appendixAArtworkRights": {
         "status": "external-rights-required",
         "localSourcePresent": false,
+        "localArtworkPolicy": "locally-authored-renderer-paths",
+        "localDedicatedPathCoverageComplete": true,
+        "officialAppendixAArtworkCommitted": false,
+        "exactArtworkRedistributionRightsConfirmed": false,
+        "lastPictogramAuditAt": "2026-07-09T15:27:51+09:00",
+        "lastPictogramAuditRunlogPath": "project_memory/runlogs/20260709-1189-appendix-a-artwork-rights-pictogram-audit.json",
+        "profileConceptAndConnectorCount": 44,
+        "profilePictogramRefCount": 41,
+        "nonObjectPictoRefCount": 40,
+        "objectPictoRefConceptTypes": [
+          "BusinessObject",
+          "DataObject"
+        ],
+        "missingPathMapRefs": [],
+        "objectAliasRefs": [],
         "required": true,
         "externalBlocker": "exactAppendixAArtworkRights"
       }
