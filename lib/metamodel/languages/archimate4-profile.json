@@ -85,6 +85,8 @@
         "viewpoint-purpose-content",
         "viewpoint-allowed-types",
         "view-viewpoint-reference",
+        "view-node-element-reference",
+        "view-connection-relationship-reference",
         "viewpoint-stakeholder-concern-structure",
         "profile-attribute-properties",
         "profile-attribute-values"

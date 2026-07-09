@@ -1,0 +1,146 @@
+(node:94440) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 implementation status exposes model validation coverage (12.6654ms)
+✖ archimate 4 implementation status completion scan stays parseable (14.7016ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 159.1854
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1056:1
+✖ archimate 4 implementation status completion scan stays parseable (14.7016ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /20260709-1125-status-completion-api-scan/. Input:
+
+  '# archimate-js\n' +
+    '\n' +
+    'Create an ArchiMate® diagrams modeler builds on [diagram-js](https://github.com/bpmn-io/diagram-js) modeler engine from [bpmn.io](https://bpmn.io/) project.\n' +
+    '\n' +
+    'ArchiMate® is a registered trademark of [The Open Group](https://www.opengroup.org/archimate-forum/archimate-overview).\n' +
+    '\n' +
+    '## Features\n' +
+    '\n' +
+    '* Create/modify ArchiMate® models and views\n' +
+    '* Import/export ArchiMate® model in XML format\n' +
+    '\n' +
+    '## ArchiMate Version Selection\n' +
+    '\n' +
+    '`archimate-js` defaults to the existing ArchiMate 3.x behavior.\n' +
+    '\n' +
+    '```js\n' +
+    "import Modeler from 'archimate-js/lib/Modeler';\n" +
+    '\n' +
+    'const modeler = new Modeler({\n' +
+    "  container: document.querySelector('#canvas'),\n" +
+    "  archimateVersion: '4.0'\n" +
+    '});\n' +
+    '```\n' +
+    '\n' +
+    "Use `archimateVersion: '4.0'` to create and edit ArchiMate 4 models. Existing 3.x models continue to import without requiring migration.\n" +
+    '\n' +
+    'If you have a licensed ArchiMate 4 Appendix B relationship profile, pass it when constructing the viewer or modeler:\n' +
+    '\n' +
+    '```js\n' +
+    'const modeler = new Modeler({\n' +
+    "  container: document.querySelector('#canvas'),\n" +
+    "  archimateVersion: '4.0',\n" +
+    '  archimate4RelationshipProfile: appendixBRelationshipProfile\n' +
+    '});\n' +
+    '```\n' +
+    '\n' +
+    'The supplied profile may be an object, a JSON string, a row array, a header-row matrix array, or `{ matrixText }` CSV/TSV text loaded by the host application. It is validated against the ArchiMate 4 concept set, including elements, relationship connectors, and relationship types, before replacing the bundled compatibility fallback. Complete profiles must include every source-target cell, using an empty value for cells with no allowed relationship.\n' +
+    '\n' +
+    'Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation. The status includes `targetCellCount`, `expectedTargetCellCount`, `missingSourceCount`, `missingTargetCellCount`, and optional `sourceMetadata` so hosts can audit that blank Appendix B cells were explicitly supplied rather than omitted and tie the loaded data to a host-controlled source id or hash. Use `getArchimate4RelationshipProfileCoverageReport()` when the host needs the specific missing source types or source-target cells.\n' +
+    '\n' +
+    'Profiles passed through the `archimate4RelationshipProfile` constructor option are viewer/modeler scoped. A later ArchiMate 4 viewer or modeler created without that option resets any previous constructor-scoped profile to the compatibility fallback, so the default 4.0 editor does not inherit a previous licensed profile by accident. Hosts that intentionally want a process-wide active profile can call `setArchimate4RelationshipProfile(profile)` directly and can clear it with `resetArchimate4RelationshipProfile()`.\n' +
+    '\n' +
+    'Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, C260 section coverage status, Appendix C example viewpoint catalog status, source coverage status, conformance readiness, remaining gap identity, and the external blockers that must be resolved before official conformance can be claimed.\n' +
+    '\n' +
+    'For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.\n' +
+    '\n' +
+    'Use `getArchimate4ExampleViewpointCatalog()` to list the C260 Appendix C example viewpoint groups and viewpoint names as an informative reference catalog. It exposes the Appendix C outline headings only; it does not bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.\n' +
+    '\n' +
+    "Run `node scripts/audit_archimate4_completion.mjs --out project_memory/runlogs/<file>.json` to map the current status API to the plan's M0-M5 milestones and to verify that referenced runlogs resolve. The audit is expected to pass while still reporting the official Appendix B, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 companion-source gaps.\n" +
+    '\n' +
+    'Run `node scripts/audit_archimate4_c260_coverage.mjs --out project_memory/runlogs/<file>.json` to verify the C260 book-derived coverage ledger specifically. It checks the 20 section groups, 22 tracked coverage groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived tokens, and the recorded source-extraction runlogs without copying specification prose or Appendix B relationship tables.\n' +
+    '\n' +
+    'The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.\n' +
+    '\n' +
+    'The W262 source-coverage entry records the latest scripted local Downloads/attachments search, local ArchiMate PDF inventory, and publication-page status so hosts can distinguish a missing companion paper from local C260 specification or license files.\n' +
+    '\n' +
+    'The local ArchiMate 4 Non-Commercial License files are tracked as license-boundary context only. They do not clear the Appendix B redistributable-profile blocker or the Appendix A exact-artwork-rights blocker.\n' +
+    '\n' +
+    'Implementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept. Profile attributes require a supported ArchiMate concept and typed value definition. Host tooling can use `getProfileAttributesForConcept()`, `normalizeProfileAttributeValue()`, and `isProfileAttributeValueValid()` to retrieve applicable profile attributes and validate implementation-supported typed values. Profile attribute values can also be stored as model `Properties` through `setProfileAttributePropertyValue()` and read back through `getProfileAttributePropertyValue()`.\n' +
+    '\n' +
+    '```js\n' +
+    'const modeler = new Modeler({\n' +
+    "  container: document.querySelector('#canvas'),\n" +
+    "  archimateVersion: '4.0',\n" +
+    '  archimateLanguageProfile: {\n' +
+    "    version: '4.0',\n" +
+    '    domains: [\n' +
+    "      { name: 'Risk', color: '#E8D7FF' }\n" +
+    '    ],\n' +
+    '    elements: [\n' +
+    '      {\n' +
+    "        type: 'RiskEvent',\n" +
+    "        specializes: 'Event',\n" +
+    "        domain: 'Risk',\n" +
+    "        aspect: 'Behavior',\n" +
+    "        typeName: 'Risk Event',\n" +
+    "        className: 'archimate-risk-event',\n" +
+    "        pictoRef: 'PICTO_EVENT'\n" +
+    '      }\n' +
+    '    ],\n' +
+    '    attributes: [\n' +
+    "      { concept: 'RiskEvent', name: 'severity', type: 'String' }\n" +
+    '    ],\n' +
+    '    viewpoints: [\n' +
+    '      {\n' +
+    "        id: 'risk-summary',\n" +
+    "        name: 'Risk Summary',\n" +
+    "        viewpointPurpose: [ 'Deciding' ],\n" +
+    "        viewpointContent: [ 'Overview' ],\n" +
+    "        allowedElementTypes: [ 'RiskEvent', 'Assessment' ],\n" +
+    "        allowedRelationshipTypes: [ 'Association', 'Influence' ]\n" +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '});\n' +
+    '```\n' +
+    '\n' +
+    '## ArchiMate 4 Notes\n' +
+    '\n' +
+    '* ArchiMate 4 support uses versioned language profiles.\n' +
+    '* Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.\n' +
+    '* Profile attributes require `concept`, `name`, and `type`; the concept must resolve to an active element, connector, or relationship in the customized profile.\n' +
+    '* Profile attribute values can be normalized and validated for the implementation-supported types `String`, `Number`, `Integer`, `Real`, `Boolean`, `Currency`, `Date`, `URL`, `Time`, and `Structure`.\n' +
+    '* Implementation status includes `profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`, `profileAttributeTypes.missingC260TypeNames`, and `profileAttributeTypes.unexpectedAdditionalTypeNames` so the C260 basic/example profile attribute types and implementation-defined additions are audited explicitly.\n' +
+    '* Profile attribute value helpers store values as reusable model `PropertyDefinition` entries named `archimate-js:profileAttribute:<concept>:<name>` plus per-concept `Properties`, preserving typed values without adding non-standard element fields.\n' +
+    '* Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.\n' +
+    '* Implementation status includes `viewpointMechanism.expectedFeatureIds`, `viewpointMechanism.actualFeatureIds`, `viewpointMechanism.missingFeatureIds`, and `viewpointMechanism.extraFeatureIds` so the C260 viewpoint mechanism support surface is audited by exact feature identity.\n' +
+    '* Implementation status includes `stakeholderConcerns.expectedFeatureIds`, `stakeholderConcerns.actualFeatureIds`, `stakeholderConcerns.missingFeatureIds`, and `stakeholderConcerns.extraFeatureIds` so C260 stakeholder/concern support is audited from the descriptor surface.\n' +
+    '* Implementation status includes `viewpointClassification.expectedPurposeNames`, `viewpointClassification.actualPurposeNames`, `viewpointClassification.missingPurposeNames`, `viewpointClassification.expectedContentNames`, `viewpointClassification.actualContentNames`, and `viewpointClassification.missingContentNames` so C260 viewpoint purpose/content classification tokens are audited explicitly.\n' +
+    '* View node nesting is preserved during import and editing by adding nested `Node` view elements under their parent diagram shape.\n' +
+    '* Model organization trees can be retained through `organizationsNode`, with nested `Organization` entries and optional references back to model concepts.\n' +
+    '* Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.\n' +
+    '* 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.\n' +
+    '* 3.x Physical concepts are re'... 22124 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1108:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "# archimate-js\n\nCreate an ArchiMate® diagrams modeler builds on [diagram-js](https://github.com/bpmn-io/diagram-js) modeler engine from [bpmn.io](https://bpmn.io/) project.\n\nArchiMate® is a registered trademark of [The Open Group](https://www.opengroup.org/archimate-forum/archimate-overview).\n\n## Features\n\n* Create/modify ArchiMate® models and views\n* Import/export ArchiMate® model in XML format\n\n## ArchiMate Version Selection\n\n`archimate-js` defaults to the existing ArchiMate 3.x behavior.\n\n```js\nimport Modeler from 'archimate-js/lib/Modeler';\n\nconst modeler = new Modeler({\n  container: document.querySelector('#canvas'),\n  archimateVersion: '4.0'\n});\n```\n\nUse `archimateVersion: '4.0'` to create and edit ArchiMate 4 models. Existing 3.x models continue to import without requiring migration.\n\nIf you have a licensed ArchiMate 4 Appendix B relationship profile, pass it when constructing the viewer or modeler:\n\n```js\nconst modeler = new Modeler({\n  container: document.querySelector('#canvas'),\n  archimateVersion: '4.0',\n  archimate4RelationshipProfile: appendixBRelationshipProfile\n});\n```\n\nThe supplied profile may be an object, a JSON string, a row array, a header-row matrix array, or `{ matrixText }` CSV/TSV text loaded by the host application. It is validated against the ArchiMate 4 concept set, including elements, relationship connectors, and relationship types, before replacing the bundled compatibility fallback. Complete profiles must include every source-target cell, using an empty value for cells with no allowed relationship.\n\nUse `getArchimate4RelationshipProfileStatus()` to confirm whether the active relationship profile is still the compatibility fallback or an external profile that passed complete source and target-cell validation. The status includes `targetCellCount`, `expectedTargetCellCount`, `missingSourceCount`, `missingTargetCellCount`, and optional `sourceMetadata` so hosts can audit that blank Appendix B cells were explicitly supplied rather than omitted and tie the loaded data to a host-controlled source id or hash. Use `getArchimate4RelationshipProfileCoverageReport()` when the host needs the specific missing source types or source-target cells.\n\nProfiles passed through the `archimate4RelationshipProfile` constructor option are viewer/modeler scoped. A later ArchiMate 4 viewer or modeler created without that option resets any previous constructor-scoped profile to the compatibility fallback, so the default 4.0 editor does not inherit a previous licensed profile by accident. Hosts that intentionally want a process-wide active profile can call `setArchimate4RelationshipProfile(profile)` directly and can clear it with `resetArchimate4RelationshipProfile()`.\n\nUse `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, C260 section coverage status, Appendix C example viewpoint catalog status, source coverage status, conformance readiness, remaining gap identity, and the external blockers that must be resolved before official conformance can be claimed.\n\nFor Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.\n\nUse `getArchimate4ExampleViewpointCatalog()` to list the C260 Appendix C example viewpoint groups and viewpoint names as an informative reference catalog. It exposes the Appendix C outline headings only; it does not bundle full viewpoint definitions, allowed-element filters, or normative relationship constraints.\n\nRun `node scripts/audit_archimate4_completion.mjs --out project_memory/runlogs/<file>.json` to map the current status API to the plan's M0-M5 milestones and to verify that referenced runlogs resolve. The audit is expected to pass while still reporting the official Appendix B, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 companion-source gaps.\n\nRun `node scripts/audit_archimate4_c260_coverage.mjs --out project_memory/runlogs/<file>.json` to verify the C260 book-derived coverage ledger specifically. It checks the 20 section groups, 22 tracked coverage groups, 284 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived tokens, and the recorded source-extraction runlogs without copying specification prose or Appendix B relationship tables.\n\nThe Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.\n\nThe W262 source-coverage entry records the latest scripted local Downloads/attachments search, local ArchiMate PDF inventory, and publication-page status so hosts can distinguish a missing companion paper from local C260 specification or license files.\n\nThe local ArchiMate 4 Non-Commercial License files are tracked as license-boundary context only. They do not clear the Appendix B redistributable-profile blocker or the Appendix A exact-artwork-rights blocker.\n\nImplementation-defined ArchiMate language customization can be supplied with `archimateLanguageProfile`. New custom concepts must declare the standard concept they specialize so relationship rules can fall back to the base concept. Profile attributes require a supported ArchiMate concept and typed value definition. Host tooling can use `getProfileAttributesForConcept()`, `normalizeProfileAttributeValue()`, and `isProfileAttributeValueValid()` to retrieve applicable profile attributes and validate implementation-supported typed values. Profile attribute values can also be stored as model `Properties` through `setProfileAttributePropertyValue()` and read back through `getProfileAttributePropertyValue()`.\n\n```js\nconst modeler = new Modeler({\n  container: document.querySelector('#canvas'),\n  archimateVersion: '4.0',\n  archimateLanguageProfile: {\n    version: '4.0',\n    domains: [\n      { name: 'Risk', color: '#E8D7FF' }\n    ],\n    elements: [\n      {\n        type: 'RiskEvent',\n        specializes: 'Event',\n        domain: 'Risk',\n        aspect: 'Behavior',\n        typeName: 'Risk Event',\n        className: 'archimate-risk-event',\n        pictoRef: 'PICTO_EVENT'\n      }\n    ],\n    attributes: [\n      { concept: 'RiskEvent', name: 'severity', type: 'String' }\n    ],\n    viewpoints: [\n      {\n        id: 'risk-summary',\n        name: 'Risk Summary',\n        viewpointPurpose: [ 'Deciding' ],\n        viewpointContent: [ 'Overview' ],\n        allowedElementTypes: [ 'RiskEvent', 'Assessment' ],\n        allowedRelationshipTypes: [ 'Association', 'Influence' ]\n      }\n    ]\n  }\n});\n```\n\n## ArchiMate 4 Notes\n\n* ArchiMate 4 support uses versioned language profiles.\n* Implementation-defined language customization can add domains, attributes, and specialized concepts through `archimateLanguageProfile`.\n* Profile attributes require `concept`, `name`, and `type`; the concept must resolve to an active element, connector, or relationship in the customized profile.\n* Profile attribute values can be normalized and validated for the implementation-supported types `String`, `Number`, `Integer`, `Real`, `Boolean`, `Currency`, `Date`, `URL`, `Time`, and `Structure`.\n* Implementation status includes `profileAttributeTypes.expectedC260TypeNames`, `profileAttributeTypes.actualC260TypeNames`, `profileAttributeTypes.missingC260TypeNames`, and `profileAttributeTypes.unexpectedAdditionalTypeNames` so the C260 basic/example profile attribute types and implementation-defined additions are audited explicitly.\n* Profile attribute value helpers store values as reusable model `PropertyDefinition` entries named `archimate-js:profileAttribute:<concept>:<name>` plus per-concept `Properties`, preserving typed values without adding non-standard element fields.\n* Viewpoint metadata can be retained on views through `viewpoint` or `viewpointRef`, and custom viewpoint definitions can be supplied in `archimateLanguageProfile.viewpoints`; viewpoint purpose/content values and allowed element/relationship types are validated against the active profile.\n* Implementation status includes `viewpointMechanism.expectedFeatureIds`, `viewpointMechanism.actualFeatureIds`, `viewpointMechanism.missingFeatureIds`, and `viewpointMechanism.extraFeatureIds` so the C260 viewpoint mechanism support surface is audited by exact feature identity.\n* Implementation status includes `stakeholderConcerns.expectedFeatureIds`, `stakeholderConcerns.actualFeatureIds`, `stakeholderConcerns.missingFeatureIds`, and `stakeholderConcerns.extraFeatureIds` so C260 stakeholder/concern support is audited from the descriptor surface.\n* Implementation status includes `viewpointClassification.expectedPurposeNames`, `viewpointClassification.actualPurposeNames`, `viewpointClassification.missingPurposeNames`, `viewpointClassification.expectedContentNames`, `viewpointClassification.actualContentNames`, and `viewpointClassification.missingContentNames` so C260 viewpoint purpose/content classification tokens are audited explicitly.\n* View node nesting is preserved during import and editing by adding nested `Node` view elements under their parent diagram shape.\n* Model organization trees can be retained through `organizationsNode`, with nested `Organization` entries and optional references back to model concepts.\n* Retired 3.x concepts are hidden from the 4.0 palette, while all 42 standard ArchiMate 4 elements remain available.\n* 3.x to 4.0 migration preserves original type and original domain information when the replacement would otherwise lose modeling intent.\n* 3.x Physical concepts are re"... 22124 more characters,
+    expected: /20260709-1125-status-completion-api-scan/,
+    operator: 'match',
+    diff: 'simple'
+  }

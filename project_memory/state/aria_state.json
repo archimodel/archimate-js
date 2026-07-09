@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 196,
-  "stage": "archimate4_model_validation_view_reference_verified",
+  "loop_id": 197,
+  "stage": "archimate4_model_validation_view_element_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature_validation",
-    "diff_size": 305,
+    "diff_size": 375,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -458,8 +458,8 @@
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1115-archimate4-model-validation-view-reference-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-model-validation-view-reference-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-1130-archimate4-model-validation-view-element-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-archimate4-model-validation-view-element-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -680,9 +680,9 @@
     "updated_at": "2026-07-09T23:59:59+09:00"
   },
   "implemented_items": [
-    "validateArchimate4Model() and validateArchimateModel() now validate View viewpointRef references against model-defined Viewpoint ids and report malformed or unknown references.",
-    "validateArchimate4Model() and validateArchimateModel() now validate Viewpoint concern/stakeholder structural entries while keeping optional labels and documentation optional.",
-    "getArchimate4ImplementationStatus().modelValidation now exposes view-viewpoint-reference and viewpoint-stakeholder-concern-structure check ids in addition to the existing catalog, relationship, multiplicity, junction, viewpoint definition, and profile attribute checks.",
-    "The implementation-status completion API scan now points at project_memory/runlogs/20260709-1109-status-completion-api-scan.json and records 49 top-level status keys, 40 complete summaries, and no incomplete summaries."
+    "validateArchimate4Model() and validateArchimateModel() now validate View Node elementRef values against model-defined elements and connectors, reporting malformed, unknown, relationship-targeted, or unsupported references.",
+    "validateArchimate4Model() and validateArchimateModel() now validate View Connection relationshipRef values against model-defined relationships, reporting malformed, unknown, element-targeted, or unsupported references.",
+    "getArchimate4ImplementationStatus().modelValidation now exposes view-node-element-reference and view-connection-relationship-reference check ids in addition to the existing catalog, relationship, multiplicity, junction, viewpoint, stakeholder/concern, and profile attribute checks.",
+    "The implementation-status completion API scan now points at project_memory/runlogs/20260709-1125-status-completion-api-scan.json and records 49 top-level status keys, 40 complete summaries, and no incomplete summaries."
   ]
 }
