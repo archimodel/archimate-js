@@ -1,0 +1,518 @@
+
+> archimate-js@0.0.4 test:language
+> node --test test/*.test.mjs --test-name-pattern implementation status is machine-readable|official conformance readiness|implementation plan records current
+
+✔ archimate 3 profile matches official 3.1 ElementTypeEnum (9.5933ms)
+✔ archimate 3 profile exposes relationship junction connector elements (2.0835ms)
+✔ junction implementation uses official xsd element names as model types (11.1337ms)
+(node:73880) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/DerivedRelationshipUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ derived relationship DR1 applies specialization transitivity (1.9397ms)
+✔ derived relationship DR2 returns the weakest structural relationship (0.2145ms)
+✔ derived relationship preserves source and target across a relationship chain (1.082ms)
+✔ derived relationship rejects non-chain endpoints (0.1823ms)
+✔ derived relationship resolves custom relationship specializations to base types (0.1785ms)
+✔ derived relationship DR3 to DR8 derive dependency and dynamic relationships (0.3073ms)
+✔ derived relationship applies inline structural dependency and dynamic rules (0.2309ms)
+✔ derived relationship applies opposing structural dependency and flow rules (0.2844ms)
+✔ derived relationship applies triggering in-line rules (2.1089ms)
+✔ potential derived relationship exposes dependency strength order (0.5074ms)
+✔ potential derived relationship applies PDR1 to PDR4 specialization rules (0.8735ms)
+✔ potential derived relationship applies PDR5 to PDR7 dependency rules (0.2359ms)
+✔ potential derived relationship applies PDR8 to PDR11 dynamic rules (0.2472ms)
+✔ potential derived relationship applies PDR12 grouping rule only when allowed (0.4272ms)
+✔ derived relationship chain collapses structural chains to the weakest relationship (0.3098ms)
+✔ derived relationship chain transfers dependency and triggering through structural chains (0.2652ms)
+✔ derived relationship chain rejects incomplete chains (0.1374ms)
+✔ derived relationships apply C260 Appendix B.4 source and target restrictions when profile metadata is present (0.8181ms)
+✔ derived relationships apply C260 Appendix B.4 third-element restrictions when profile metadata is present (0.3159ms)
+✔ derived relationships apply C260 Appendix B.4 relationship-domain restrictions when profile metadata is present (0.3475ms)
+✔ potential derived relationships apply C260 Appendix B.4 restrictions when profile metadata is present (0.4704ms)
+✔ importer preserves nested view nodes as diagram parent-child shapes (7.3624ms)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (13.2544ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.9235ms)
+✔ archimate 4 profile exposes Common Domain (1.4207ms)
+✔ archimate 4 profile matches the C260 element catalog (7.6272ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (3.8128ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (1.9036ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (4.223ms)
+✔ profile-aware metadata and palette include relationship junction connectors (2.8576ms)
+✔ archimate 4 palette exposes every standard element (3.939ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (10.0417ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (13.0464ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (1.8921ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.7701ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (2.539ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (57.7217ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (3.5752ms)
+✔ active profile rejects concepts and relationships outside the selected version (4.8593ms)
+✔ renderer uses active language profile pictogram refs (1.2067ms)
+✔ language profile customization supports C260 specialization profiles (2.5174ms)
+✔ language profile customization validates C260 profile attribute definitions (4.1668ms)
+✔ language profile customization supports relationship specializations (3.936ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (4.4299ms)
+✔ archimate 4 shape metadata preserves domain terminology (2.2643ms)
+✔ language profile customization supports viewpoint definitions (3.912ms)
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (10.3279ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (3.935ms)
+✔ archimate 4 implementation status exposes source coverage boundaries (5.3474ms)
+✔ archimate 4 implementation status exposes official conformance readiness (5.0092ms)
+✔ archimate 4 implementation plan records current execution boundary (2.1557ms)
+✔ archimate 4 conformance requirements are tracked per C260 shall and may clauses (4.7062ms)
+(node:51120) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migration table covers retired public ArchiMate 4 concepts (12.2274ms)
+✔ migration table covers every ArchiMate 3 profile type absent from the ArchiMate 4 catalog (5.3172ms)
+✔ migration table replacements resolve to ArchiMate 4 profile types (3.1338ms)
+✔ migration table preserves ArchiMate 4 domain-specific interfaces (1.8417ms)
+✔ migration table does not introduce a generic ArchiMate 4 Interface element (1.5108ms)
+✔ migration utility preserves specialization information (1.6426ms)
+✔ migration table records C260-derived ambiguous replacement candidates (0.4054ms)
+✔ migration table records original domains for merged common-domain concepts (0.1536ms)
+✔ migration utility reports alternative replacement types for ambiguous C260 rows (1.0195ms)
+✔ migration utility stores specialization profile metadata as model properties (0.4558ms)
+✔ migration utility stores original domain for merged behavior concepts (0.2832ms)
+✔ migration utility preserves original physical domain for technology-domain concepts (0.3304ms)
+✔ migration utility converts Path aggregation to technology internal active structure into reversed realization (0.3941ms)
+✔ migration utility applies Path aggregation correction to technology collaborations only (0.2152ms)
+✔ migration utility warns for cross-domain service realization alternatives (0.2635ms)
+✔ migration utility does not warn for same-domain service realization or disabled service warnings (0.2577ms)
+✔ migration utility can replace invalid relationships with an external profile validator (0.3593ms)
+✔ migration utility can warn without replacing invalid relationships (0.2202ms)
+✔ migration utility can skip specialization profile metadata (0.1484ms)
+(node:49144) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/JunctionUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ relationship descriptor contains multiplicity attributes (12.1273ms)
+✔ element factory carries multiplicity from relationship refs (1.747ms)
+✔ connection updater persists relationship multiplicity fields (1.2134ms)
+✔ relationship replacement preserves editable multiplicity properties (1.2303ms)
+✔ connection popup exposes ArchiMate 4 multiplicity actions (2.3667ms)
+✔ connection popup validates custom ArchiMate 4 multiplicity input (3.1288ms)
+✔ connection popup hides multiplicity actions on junction-connected relationships (1.4938ms)
+✔ renderer displays relationship end multiplicities (1.3899ms)
+✔ relationship multiplicity notation follows the C260-derived subset (0.9467ms)
+✔ junction-connected relationships cannot carry multiplicity (0.373ms)
+✔ archimate 4 grouping, location and plateau aggregate relationship concepts (0.3379ms)
+✔ junction relationship candidates follow existing relationship type (1.3818ms)
+✔ junction endpoint chain allows candidates only when direct endpoints allow the same relationship (0.5634ms)
+✔ junction endpoint chain rejects candidates when direct endpoints disallow the same relationship (0.2352ms)
+✔ junction endpoint chain validates outgoing candidates against incoming endpoints (0.271ms)
+✔ junction relationship candidates prefer relationshipRef type over generic connection type (0.2107ms)
+✔ junction relationship candidates reject mixed existing relationship types (0.1512ms)
+✔ multiplicity is suppressed across import, replacement, and rendering for junction ends (8.2461ms)
+(node:67212) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/util/ProfileAttributeUtil.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ profile attribute values normalize implementation-supported C260 basic types (4.5888ms)
+✔ profile attribute values reject values outside their declared type (0.5418ms)
+✔ profile attribute values can be stored as model properties (3.2842ms)
+✔ structured profile attribute values are stored as JSON property values (0.2787ms)
+(node:81644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (11.4689ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.1658ms)
+✔ connection rules evaluate relationships through the active language profile (0.9537ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (1.1466ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (1.3086ms)
+✔ connection popup labels relationships with C260 role names (1.4485ms)
+✔ connection popup exposes influence modifier actions (1.4965ms)
+✔ connection popup exposes explicit Access type actions (1.8544ms)
+✔ connection popup exposes explicit Association direction actions (1.6577ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (2.6744ms)
+✔ renderer displays influence modifier labels (1.3854ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (4.6899ms)
+✔ renderer preserves optional junction names outside the marker (1.5375ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.1751ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.132ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.4318ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2177ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.3024ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.4811ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.1924ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.7557ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (4.3226ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.519ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.1719ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (2.0081ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.43ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1982ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.2693ms)
+✔ renderer draws ArchiMate 4 Grouping as a dashed unfilled outline (11.3328ms)
+✔ renderer uses a dedicated ArchiMate 4 Grouping dashed-rectangle pictogram path (1.5197ms)
+✔ renderer draws ArchiMate 4 junction connectors as dot and ring markers (1.624ms)
+✔ renderer draws ArchiMate 4 Motivation elements with chamfered bodies (1.6926ms)
+✔ renderer uses a dedicated ArchiMate 4 Location pin pictogram path (0.8642ms)
+✔ renderer uses a dedicated ArchiMate 4 Distribution Network arrow pictogram path (0.8616ms)
+✔ renderer uses a dedicated ArchiMate 4 Material hexagon pictogram path (0.7976ms)
+✔ renderer uses a dedicated ArchiMate 4 Facility factory pictogram path (0.9146ms)
+✔ renderer uses a dedicated ArchiMate 4 Equipment gear pictogram path (1.0272ms)
+✔ renderer uses a dedicated ArchiMate 4 Work Package loop-arrow pictogram path (1.2098ms)
+✔ renderer uses a dedicated ArchiMate 4 Deliverable wavy-bottom pictogram path (1.5499ms)
+✔ renderer uses a dedicated ArchiMate 4 Plateau stacked-bars pictogram path (1.0959ms)
+✔ renderer uses a dedicated ArchiMate 4 Stakeholder cylinder pictogram path (1.2876ms)
+✔ renderer uses a dedicated ArchiMate 4 Driver wheel pictogram path (1.5698ms)
+✔ renderer uses a dedicated ArchiMate 4 Assessment magnifying-glass pictogram path (1.0304ms)
+✔ renderer uses a dedicated ArchiMate 4 Goal target pictogram path (2.3465ms)
+✔ renderer uses a dedicated ArchiMate 4 Outcome target-arrow pictogram path (1.1026ms)
+✔ renderer uses a dedicated ArchiMate 4 Principle exclamation pictogram path (1.044ms)
+✔ renderer uses a dedicated ArchiMate 4 Requirement parallelogram pictogram path (1.1968ms)
+✔ renderer uses a dedicated ArchiMate 4 Value oval pictogram path (1.0555ms)
+✔ renderer uses a dedicated ArchiMate 4 Meaning thought-cloud pictogram path (0.8845ms)
+✔ attachment behavior persists visual nesting without duplicate view nodes (6.3435ms)
+✔ archimate 3 fixture keeps current namespace (8.9595ms)
+✔ archimate 4 fixture uses archimate 4 namespace (1.5503ms)
+✔ archimate 4 descriptor stores relationship multiplicity fields (1.4221ms)
+✔ archimate 4 descriptor allows relationships between relationship concepts (2.1658ms)
+✔ archimate 4 descriptor allows connections to relationship view elements (1.372ms)
+✔ archimate 4 descriptor stores viewpoint definitions and view references (1.3368ms)
+✔ archimate descriptors resolve every declared complex type reference (3.0579ms)
+✔ archimate 4 descriptor stores organization trees (2.3869ms)
+✔ archimate 4 organization trees resolve through moddle xml (9.2702ms)
+✔ archimate 4 viewpoint references resolve through moddle xml (6.2431ms)
+✔ archimate 3 descriptor keeps existing endpoint constraints (1.1821ms)
+✔ archimate 3 descriptor also preserves optional viewpoint metadata (0.9303ms)
+ℹ tests 158
+ℹ suites 0
+ℹ pass 157
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 406.876
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:505:1
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (10.3279ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /officialAppendixBRelationshipMatrix/. Input:
+
+  "import archimate3Profile from './archimate3-profile.json';\n" +
+    "import archimate4Profile from './archimate4-profile.json';\n" +
+    "import { getArchimate3RelationshipMap } from './archimate3-relationships';\n" +
+    'import {\n' +
+    '  getArchimate4RelationshipMap,\n' +
+    '  getArchimate4RelationshipProfileStatus\n' +
+    "} from './archimate4-relationships';\n" +
+    'import {\n' +
+    '  PROFILE_ATTRIBUTE_TYPES,\n' +
+    '  getProfileAttributePropertyName,\n' +
+    '  getProfileAttributePropertyValue,\n' +
+    '  isProfileAttributeValueValid,\n' +
+    '  normalizeProfileAttributeValue,\n' +
+    '  parseProfileAttributePropertyValue,\n' +
+    '  serializeProfileAttributePropertyValue,\n' +
+    '  setProfileAttributePropertyValue\n' +
+    "} from '../../util/ProfileAttributeUtil';\n" +
+    '\n' +
+    'export {\n' +
+    '  PROFILE_ATTRIBUTE_TYPES,\n' +
+    '  getProfileAttributePropertyName,\n' +
+    '  getProfileAttributePropertyValue,\n' +
+    '  isProfileAttributeValueValid,\n' +
+    '  normalizeProfileAttributeValue,\n' +
+    '  parseProfileAttributePropertyValue,\n' +
+    '  serializeProfileAttributePropertyValue,\n' +
+    '  setProfileAttributePropertyValue\n' +
+    '};\n' +
+    '\n' +
+    "export const DEFAULT_ARCHIMATE_VERSION = '3.2';\n" +
+    "export const VIEWPOINT_PURPOSES = [ 'Designing', 'Deciding', 'Informing' ];\n" +
+    "export const VIEWPOINT_CONTENT_TYPES = [ 'Details', 'Coherence', 'Overview' ];\n" +
+    '\n' +
+    'const PROFILES = new Map([\n' +
+    "  [ '3', archimate3Profile ],\n" +
+    "  [ '3.0', archimate3Profile ],\n" +
+    "  [ '3.1', archimate3Profile ],\n" +
+    "  [ '3.2', archimate3Profile ],\n" +
+    "  [ '4', archimate4Profile ],\n" +
+    "  [ '4.0', archimate4Profile ]\n" +
+    ']);\n' +
+    '\n' +
+    'export function normalizeArchimateVersion(version) {\n' +
+    "  if (version === undefined || version === null || version === '') {\n" +
+    '    return DEFAULT_ARCHIMATE_VERSION;\n' +
+    '  }\n' +
+    '\n' +
+    '  const normalized = String(version);\n' +
+    '\n' +
+    '  if (!PROFILES.has(normalized)) {\n' +
+    "    throw new Error('Unsupported ArchiMate version: ' + normalized);\n" +
+    '  }\n' +
+    '\n' +
+    '  return PROFILES.get(normalized).version;\n' +
+    '}\n' +
+    '\n' +
+    'export function getLanguageProfile(version) {\n' +
+    '  const normalized = normalizeArchimateVersion(version);\n' +
+    '\n' +
+    '  return PROFILES.get(normalized);\n' +
+    '}\n' +
+    '\n' +
+    'export function createLanguageProfile(version, customization) {\n' +
+    '  var profile = cloneProfile(getLanguageProfile(version));\n' +
+    '  var customProfile = parseLanguageProfileCustomization(customization);\n' +
+    '\n' +
+    '  if (!customProfile) {\n' +
+    '    return profile;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (customProfile.version && normalizeArchimateVersion(customProfile.version) !== profile.version) {\n' +
+    "    throw new Error('Custom ArchiMate language profile version does not match ' + profile.version);\n" +
+    '  }\n' +
+    '\n' +
+    "  mergeNamedItems(profile, customProfile, 'domains', 'name');\n" +
+    "  mergeConcepts(profile, customProfile, 'elements');\n" +
+    "  mergeConcepts(profile, customProfile, 'connectors');\n" +
+    '  mergeRelationshipNames(profile, customProfile);\n' +
+    '  mergeAttributes(profile, customProfile);\n' +
+    '  mergeViewpoints(profile, customProfile);\n' +
+    '\n' +
+    '  profile.customized = true;\n' +
+    '\n' +
+    '  return profile;\n' +
+    '}\n' +
+    '\n' +
+    'export function getBaseConceptTypeForProfile(elementType, profile) {\n' +
+    '  var currentType = elementType;\n' +
+    '  var visited = new Set();\n' +
+    '\n' +
+    '  while (currentType && !visited.has(currentType)) {\n' +
+    '    visited.add(currentType);\n' +
+    '\n' +
+    '    var concept = getProfileConcept(currentType, profile);\n' +
+    '\n' +
+    '    if (!concept || !concept.specializes) {\n' +
+    '      return currentType;\n' +
+    '    }\n' +
+    '\n' +
+    '    currentType = concept.specializes;\n' +
+    '  }\n' +
+    '\n' +
+    '  return elementType;\n' +
+    '}\n' +
+    '\n' +
+    'export function getBaseRelationshipTypeForProfile(relationshipType, profile) {\n' +
+    '  var currentType = relationshipType;\n' +
+    '  var visited = new Set();\n' +
+    '\n' +
+    '  while (currentType && !visited.has(currentType)) {\n' +
+    '    visited.add(currentType);\n' +
+    '\n' +
+    '    var relationship = getProfileRelationship(currentType, profile);\n' +
+    '\n' +
+    '    if (!relationship || !relationship.specializes) {\n' +
+    '      return currentType;\n' +
+    '    }\n' +
+    '\n' +
+    '    currentType = relationship.specializes;\n' +
+    '  }\n' +
+    '\n' +
+    '  return relationshipType;\n' +
+    '}\n' +
+    '\n' +
+    'export function getProfileConcept(elementType, profile) {\n' +
+    '  var concepts = (profile && profile.elements || []).concat(profile && profile.connectors || []);\n' +
+    '\n' +
+    '  for (const concept of concepts) {\n' +
+    '    if (concept.type === elementType) {\n' +
+    '      return concept;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  return null;\n' +
+    '}\n' +
+    '\n' +
+    'export function getProfileRelationship(relationshipType, profile) {\n' +
+    '  var relationships = profile && profile.relationships || [];\n' +
+    '\n' +
+    '  for (const relationship of relationships) {\n' +
+    '    var normalizedRelationship = normalizeRelationshipDefinition(relationship);\n' +
+    '\n' +
+    '    if (normalizedRelationship.type === relationshipType) {\n' +
+    '      return normalizedRelationship;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  return null;\n' +
+    '}\n' +
+    '\n' +
+    'export function getSpecializedRelationshipTypesForProfile(baseRelationshipType, profile) {\n' +
+    '  var relationships = profile && profile.relationships || [];\n' +
+    '  var specializedTypes = [];\n' +
+    '\n' +
+    '  relationships.forEach(function(relationship) {\n' +
+    '    var relationshipDefinition = normalizeRelationshipDefinition(relationship);\n' +
+    '\n' +
+    '    if (relationshipDefinition.type === baseRelationshipType) {\n' +
+    '      return;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (getBaseRelationshipTypeForProfile(relationshipDefinition.type, profile) === baseRelationshipType) {\n' +
+    '      specializedTypes.push(relationshipDefinition.type);\n' +
+    '    }\n' +
+    '  });\n' +
+    '\n' +
+    '  return specializedTypes;\n' +
+    '}\n' +
+    '\n' +
+    'export function getProfileAttributesForConcept(conceptType, profile) {\n' +
+    '  var attributes = profile && profile.attributes || [];\n' +
+    '  var lineage = getProfileTypeLineage(conceptType, profile);\n' +
+    '\n' +
+    '  return attributes.filter(function(attribute) {\n' +
+    '    return lineage.indexOf(attribute.concept) !== -1;\n' +
+    '  });\n' +
+    '}\n' +
+    '\n' +
+    'export function hasProfileConcept(elementType, profile) {\n' +
+    '  return Boolean(getProfileConcept(elementType, profile));\n' +
+    '}\n' +
+    '\n' +
+    'export function hasProfileRelationship(relationshipType, profile) {\n' +
+    '  if (!profile || !profile.relationships) {\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  return Boolean(getProfileRelationship(relationshipType, profile));\n' +
+    '}\n' +
+    '\n' +
+    'export function getRelationshipMapForProfile(elementType, profile) {\n' +
+    '  var relationshipType = getBaseConceptTypeForProfile(elementType, profile);\n' +
+    '\n' +
+    "  if (profile && profile.version === '4.0') {\n" +
+    '    return getArchimate4RelationshipMap(relationshipType);\n' +
+    '  }\n' +
+    '\n' +
+    '  return getArchimate3RelationshipMap(relationshipType);\n' +
+    '}\n' +
+    '\n' +
+    'export function getArchimate4ImplementationStatus() {\n' +
+    "  var profile = getLanguageProfile('4.0');\n" +
+    '  var conformance = cloneProfile(profile.conformance || {});\n' +
+    '  var conformanceRequirements = summarizeConformanceRequirements(\n' +
+    '    conformance.requirements || [],\n' +
+    '    conformance.requirementCatalog || {}\n' +
+    '  );\n' +
+    '  var sourceCoverage = summarizeSourceCoverage(\n' +
+    '    conformance.sourceCoverage || {},\n' +
+    '    conformance.sourceCoverageCatalog || {}\n' +
+    '  );\n' +
+    '  var externalBlockerCatalog = summarizeExternalBlockers(\n' +
+    '    conformance.externalBlockerCatalog || {},\n' +
+    '    conformance.readiness || {},\n' +
+    '    sourceCoverage,\n' +
+    '    conformanceRequirements\n' +
+    '  );\n' +
+    '\n' +
+    '  return {\n' +
+    '    version: profile.version,\n' +
+    '    standard: conformance.standard,\n' +
+    '    experimental: !!profile.experimental,\n' +
+    '    namespace: profile.namespace,\n' +
+    "    schemaLocation: profile.schemaLocation || '',\n" +
+    '    elementCatalog: summarizeElementCatalog(conformance.elementCatalog || {}, profile),\n' +
+    '    relationshipConnectors: summarizeRelationshipConnectorCatalog(\n' +
+    '      conformance.relationshipConnectors || {},\n' +
+    '      profile\n' +
+    '    ),\n' +
+    '    relationshipMatrix: conformance.relationshipMatrix,\n' +
+    '    relationshipProfile: getArchimate4RelationshipProfileStatus(),\n' +
+    '    exchangeFormat: conformance.exchangeFormat,\n' +
+    '    iconography: conformance.iconography,\n' +
+    '    conformanceRequirements: conformanceRequirements,\n' +
+    '    sourceCoverage: sourceCoverage,\n' +
+    '    conformanceReadiness: summarizeConformanceReadiness(\n' +
+    '      conformance.readiness || {},\n' +
+    '      conformanceRequirements,\n' +
+    '      sourceCoverage,\n' +
+    '      externalBlockerCatalog.actualIds\n' +
+    '    ),\n' +
+    '    externalBlockerCatalog: externalBlockerCatalog,\n' +
+    '    externalBlockers: externalBlockerCatalog.actualIds\n' +
+    '  };\n' +
+    '}\n' +
+    '\n' +
+    'function summarizeElementCatalog(elementCatalog, profile) {\n' +
+    '  return summarizeTypeCatalog(elementCatalog, profile.elements || []);\n' +
+    '}\n' +
+    '\n' +
+    'function summarizeRelationshipConnectorCatalog(relationshipConnectors, profile) {\n' +
+    '  var summary = summarizeTypeCatalog(relationshipConnectors, profile.connectors || []);\n' +
+    '\n' +
+    '  return Object.assign({}, summary, {\n' +
+    '    types: summary.actualTypes\n' +
+    '  });\n' +
+    '}\n' +
+    '\n' +
+    'function summarizeTypeCatalog(typeCatalog, concepts) {\n' +
+    '  var expectedTypes = typeCatalog.expectedTypes || [];\n' +
+    '  var actualTypes = concepts.map(function(concept) {\n' +
+    '    return concept.type;\n' +
+    '  });\n' +
+    '  var actualTypeSet = new Set(actualTypes);\n' +
+    '  var expectedTypeSet = new Set(expectedTypes);\n' +
+    '  var missingTypes = expectedTypes.filter(function(type) {\n' +
+    '    return !actualTypeSet.has(type);\n' +
+    '  });\n' +
+    '  var extraTypes = expectedTypes.length ? actualTypes.filter(function(type) {\n' +
+    '    return !expectedTypeSet.has(type);\n' +
+    '  }) : [];\n' +
+    '  var expectedCount = typeCatalog.expectedCount || expectedTypes.length;\n' +
+    '\n' +
+    '  return Object.assign({}, typeCatalog, {\n' +
+    '    actualCount: actualTypes.length,\n' +
+    '    actualTypes: actualTypes,\n' +
+    '    missingTypes: missingTypes,\n' +
+    '    extraTypes: extraTypes,\n' +
+    '    complete: actualTypes.length === expectedCount && missingTypes.length === 0 && extraTypes.length === 0\n' +
+    '  });\n' +
+    '}\n' +
+    '\n' +
+    'function summarizeSourceCoverage(sourceCoverage, sourceCoverageCatalog) {\n' +
+    '  var items = cloneProfile(sourceCoverage || {});\n' +
+    '  var sourceKeys = Object.keys(items);\n' +
+    '  var expectedSourceIds = sourceCoverageCatalog.expectedSourceIds || [];\n' +
+    '  var expectedSourceIdSet = new Set(expectedSourceIds);\n' +
+    '  var actualSourceIdSet = new Set(sourceKeys);\n' +
+    '  var missingSourceIds = expectedSourceIds.filter(function(id) {\n' +
+    '    return !actualSourceIdSet.has(id);\n' +
+    '  });\n' +
+    '  var extraSourceIds = expectedSourceIds.length ? sourceKeys.filter(function(id) {\n' +
+    '    return !expectedSourceIdSet.has(id);\n' +
+    '  }) : [];\n' +
+    '  var expectedCount = sourceCoverageCatalog.expectedCount || expectedSourceIds.length;\n' +
+    '\n' +
+    '  return Object.assign({}, sourceCoverageCatalog, {\n' +
+    '    items: items,\n' +
+    '    expectedSourceIds: expectedSourceIds,\n' +
+    '    actualSourceIds: sourceKeys,\n' +
+    '    missingSourceIds: missingSourceIds,\n' +
+    '    extraSourceIds: extraSourceIds,\n' +
+    '    total: sourceKeys.length,\n' +
+    '    expectedCount: expectedCount,\n' +
+    '    complete: sourceKeys.length === expectedCount && missingSourceIds.length === 0 && extraSourceIds.length === 0,\n' +
+    '    localSourceCount: sourceKeys.filter(function(key) {\n' +
+    '      return items[key].localSourcePresent === true;\n' +
+    '    }).length,\n' +
+    '    externalSourceCount: sourceKeys.filter(function(key) {\n' +
+    '      return items[key].localSourcePresent =='... 15070 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:545:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import archimate3Profile from './archimate3-profile.json';\nimport archimate4Profile from './archimate4-profile.json';\nimport { getArchimate3RelationshipMap } from './archimate3-relationships';\nimport {\n  getArchimate4RelationshipMap,\n  getArchimate4RelationshipProfileStatus\n} from './archimate4-relationships';\nimport {\n  PROFILE_ATTRIBUTE_TYPES,\n  getProfileAttributePropertyName,\n  getProfileAttributePropertyValue,\n  isProfileAttributeValueValid,\n  normalizeProfileAttributeValue,\n  parseProfileAttributePropertyValue,\n  serializeProfileAttributePropertyValue,\n  setProfileAttributePropertyValue\n} from '../../util/ProfileAttributeUtil';\n\nexport {\n  PROFILE_ATTRIBUTE_TYPES,\n  getProfileAttributePropertyName,\n  getProfileAttributePropertyValue,\n  isProfileAttributeValueValid,\n  normalizeProfileAttributeValue,\n  parseProfileAttributePropertyValue,\n  serializeProfileAttributePropertyValue,\n  setProfileAttributePropertyValue\n};\n\nexport const DEFAULT_ARCHIMATE_VERSION = '3.2';\nexport const VIEWPOINT_PURPOSES = [ 'Designing', 'Deciding', 'Informing' ];\nexport const VIEWPOINT_CONTENT_TYPES = [ 'Details', 'Coherence', 'Overview' ];\n\nconst PROFILES = new Map([\n  [ '3', archimate3Profile ],\n  [ '3.0', archimate3Profile ],\n  [ '3.1', archimate3Profile ],\n  [ '3.2', archimate3Profile ],\n  [ '4', archimate4Profile ],\n  [ '4.0', archimate4Profile ]\n]);\n\nexport function normalizeArchimateVersion(version) {\n  if (version === undefined || version === null || version === '') {\n    return DEFAULT_ARCHIMATE_VERSION;\n  }\n\n  const normalized = String(version);\n\n  if (!PROFILES.has(normalized)) {\n    throw new Error('Unsupported ArchiMate version: ' + normalized);\n  }\n\n  return PROFILES.get(normalized).version;\n}\n\nexport function getLanguageProfile(version) {\n  const normalized = normalizeArchimateVersion(version);\n\n  return PROFILES.get(normalized);\n}\n\nexport function createLanguageProfile(version, customization) {\n  var profile = cloneProfile(getLanguageProfile(version));\n  var customProfile = parseLanguageProfileCustomization(customization);\n\n  if (!customProfile) {\n    return profile;\n  }\n\n  if (customProfile.version && normalizeArchimateVersion(customProfile.version) !== profile.version) {\n    throw new Error('Custom ArchiMate language profile version does not match ' + profile.version);\n  }\n\n  mergeNamedItems(profile, customProfile, 'domains', 'name');\n  mergeConcepts(profile, customProfile, 'elements');\n  mergeConcepts(profile, customProfile, 'connectors');\n  mergeRelationshipNames(profile, customProfile);\n  mergeAttributes(profile, customProfile);\n  mergeViewpoints(profile, customProfile);\n\n  profile.customized = true;\n\n  return profile;\n}\n\nexport function getBaseConceptTypeForProfile(elementType, profile) {\n  var currentType = elementType;\n  var visited = new Set();\n\n  while (currentType && !visited.has(currentType)) {\n    visited.add(currentType);\n\n    var concept = getProfileConcept(currentType, profile);\n\n    if (!concept || !concept.specializes) {\n      return currentType;\n    }\n\n    currentType = concept.specializes;\n  }\n\n  return elementType;\n}\n\nexport function getBaseRelationshipTypeForProfile(relationshipType, profile) {\n  var currentType = relationshipType;\n  var visited = new Set();\n\n  while (currentType && !visited.has(currentType)) {\n    visited.add(currentType);\n\n    var relationship = getProfileRelationship(currentType, profile);\n\n    if (!relationship || !relationship.specializes) {\n      return currentType;\n    }\n\n    currentType = relationship.specializes;\n  }\n\n  return relationshipType;\n}\n\nexport function getProfileConcept(elementType, profile) {\n  var concepts = (profile && profile.elements || []).concat(profile && profile.connectors || []);\n\n  for (const concept of concepts) {\n    if (concept.type === elementType) {\n      return concept;\n    }\n  }\n\n  return null;\n}\n\nexport function getProfileRelationship(relationshipType, profile) {\n  var relationships = profile && profile.relationships || [];\n\n  for (const relationship of relationships) {\n    var normalizedRelationship = normalizeRelationshipDefinition(relationship);\n\n    if (normalizedRelationship.type === relationshipType) {\n      return normalizedRelationship;\n    }\n  }\n\n  return null;\n}\n\nexport function getSpecializedRelationshipTypesForProfile(baseRelationshipType, profile) {\n  var relationships = profile && profile.relationships || [];\n  var specializedTypes = [];\n\n  relationships.forEach(function(relationship) {\n    var relationshipDefinition = normalizeRelationshipDefinition(relationship);\n\n    if (relationshipDefinition.type === baseRelationshipType) {\n      return;\n    }\n\n    if (getBaseRelationshipTypeForProfile(relationshipDefinition.type, profile) === baseRelationshipType) {\n      specializedTypes.push(relationshipDefinition.type);\n    }\n  });\n\n  return specializedTypes;\n}\n\nexport function getProfileAttributesForConcept(conceptType, profile) {\n  var attributes = profile && profile.attributes || [];\n  var lineage = getProfileTypeLineage(conceptType, profile);\n\n  return attributes.filter(function(attribute) {\n    return lineage.indexOf(attribute.concept) !== -1;\n  });\n}\n\nexport function hasProfileConcept(elementType, profile) {\n  return Boolean(getProfileConcept(elementType, profile));\n}\n\nexport function hasProfileRelationship(relationshipType, profile) {\n  if (!profile || !profile.relationships) {\n    return true;\n  }\n\n  return Boolean(getProfileRelationship(relationshipType, profile));\n}\n\nexport function getRelationshipMapForProfile(elementType, profile) {\n  var relationshipType = getBaseConceptTypeForProfile(elementType, profile);\n\n  if (profile && profile.version === '4.0') {\n    return getArchimate4RelationshipMap(relationshipType);\n  }\n\n  return getArchimate3RelationshipMap(relationshipType);\n}\n\nexport function getArchimate4ImplementationStatus() {\n  var profile = getLanguageProfile('4.0');\n  var conformance = cloneProfile(profile.conformance || {});\n  var conformanceRequirements = summarizeConformanceRequirements(\n    conformance.requirements || [],\n    conformance.requirementCatalog || {}\n  );\n  var sourceCoverage = summarizeSourceCoverage(\n    conformance.sourceCoverage || {},\n    conformance.sourceCoverageCatalog || {}\n  );\n  var externalBlockerCatalog = summarizeExternalBlockers(\n    conformance.externalBlockerCatalog || {},\n    conformance.readiness || {},\n    sourceCoverage,\n    conformanceRequirements\n  );\n\n  return {\n    version: profile.version,\n    standard: conformance.standard,\n    experimental: !!profile.experimental,\n    namespace: profile.namespace,\n    schemaLocation: profile.schemaLocation || '',\n    elementCatalog: summarizeElementCatalog(conformance.elementCatalog || {}, profile),\n    relationshipConnectors: summarizeRelationshipConnectorCatalog(\n      conformance.relationshipConnectors || {},\n      profile\n    ),\n    relationshipMatrix: conformance.relationshipMatrix,\n    relationshipProfile: getArchimate4RelationshipProfileStatus(),\n    exchangeFormat: conformance.exchangeFormat,\n    iconography: conformance.iconography,\n    conformanceRequirements: conformanceRequirements,\n    sourceCoverage: sourceCoverage,\n    conformanceReadiness: summarizeConformanceReadiness(\n      conformance.readiness || {},\n      conformanceRequirements,\n      sourceCoverage,\n      externalBlockerCatalog.actualIds\n    ),\n    externalBlockerCatalog: externalBlockerCatalog,\n    externalBlockers: externalBlockerCatalog.actualIds\n  };\n}\n\nfunction summarizeElementCatalog(elementCatalog, profile) {\n  return summarizeTypeCatalog(elementCatalog, profile.elements || []);\n}\n\nfunction summarizeRelationshipConnectorCatalog(relationshipConnectors, profile) {\n  var summary = summarizeTypeCatalog(relationshipConnectors, profile.connectors || []);\n\n  return Object.assign({}, summary, {\n    types: summary.actualTypes\n  });\n}\n\nfunction summarizeTypeCatalog(typeCatalog, concepts) {\n  var expectedTypes = typeCatalog.expectedTypes || [];\n  var actualTypes = concepts.map(function(concept) {\n    return concept.type;\n  });\n  var actualTypeSet = new Set(actualTypes);\n  var expectedTypeSet = new Set(expectedTypes);\n  var missingTypes = expectedTypes.filter(function(type) {\n    return !actualTypeSet.has(type);\n  });\n  var extraTypes = expectedTypes.length ? actualTypes.filter(function(type) {\n    return !expectedTypeSet.has(type);\n  }) : [];\n  var expectedCount = typeCatalog.expectedCount || expectedTypes.length;\n\n  return Object.assign({}, typeCatalog, {\n    actualCount: actualTypes.length,\n    actualTypes: actualTypes,\n    missingTypes: missingTypes,\n    extraTypes: extraTypes,\n    complete: actualTypes.length === expectedCount && missingTypes.length === 0 && extraTypes.length === 0\n  });\n}\n\nfunction summarizeSourceCoverage(sourceCoverage, sourceCoverageCatalog) {\n  var items = cloneProfile(sourceCoverage || {});\n  var sourceKeys = Object.keys(items);\n  var expectedSourceIds = sourceCoverageCatalog.expectedSourceIds || [];\n  var expectedSourceIdSet = new Set(expectedSourceIds);\n  var actualSourceIdSet = new Set(sourceKeys);\n  var missingSourceIds = expectedSourceIds.filter(function(id) {\n    return !actualSourceIdSet.has(id);\n  });\n  var extraSourceIds = expectedSourceIds.length ? sourceKeys.filter(function(id) {\n    return !expectedSourceIdSet.has(id);\n  }) : [];\n  var expectedCount = sourceCoverageCatalog.expectedCount || expectedSourceIds.length;\n\n  return Object.assign({}, sourceCoverageCatalog, {\n    items: items,\n    expectedSourceIds: expectedSourceIds,\n    actualSourceIds: sourceKeys,\n    missingSourceIds: missingSourceIds,\n    extraSourceIds: extraSourceIds,\n    total: sourceKeys.length,\n    expectedCount: expectedCount,\n    complete: sourceKeys.length === expectedCount && missingSourceIds.length === 0 && extraSourceIds.length === 0,\n    localSourceCount: sourceKeys.filter(function(key) {\n      return items[key].localSourcePresent === true;\n    }).length,\n    externalSourceCount: sourceKeys.filter(function(key) {\n      return items[key].localSourcePresent =="... 15070 more characters,
+    expected: /officialAppendixBRelationshipMatrix/,
+    operator: 'match',
+    diff: 'simple'
+  }

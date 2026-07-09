@@ -82,6 +82,15 @@
       "legacyCompatibilityAliases": [ "PICTO_DELIVRABLE", "PICTO_STAKHOLDER" ],
       "exactAppendixAVectorsConfirmed": false
     },
+    "externalBlockerCatalog": {
+      "status": "external-source-dependent",
+      "expectedCount": 3,
+      "expectedIds": [
+        "officialAppendixBRelationshipMatrix",
+        "officialMeff4Xsd",
+        "exactAppendixAArtworkRights"
+      ]
+    },
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

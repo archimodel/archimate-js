@@ -1,0 +1,2 @@
+warning: in the working copy of 'project_memory/state/aria_state.json', CRLF will be replaced by LF the next time Git touches it
+git diff --check passed

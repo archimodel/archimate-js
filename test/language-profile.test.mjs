@@ -510,6 +510,11 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
   const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
   const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const expectedExternalBlockerIds = [
+    'officialAppendixBRelationshipMatrix',
+    'officialMeff4Xsd',
+    'exactAppendixAArtworkRights'
+  ];
 
   assert.equal(profile.conformance.standard, 'ArchiMate 4 Specification C260');
   assert.equal(profile.conformance.elementCatalog.expectedCount, 42);
@@ -520,6 +525,8 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.equal(profile.conformance.exchangeFormat.officialXsdRequired, true);
   assert.equal(profile.conformance.iconography.status, 'local-renderer-coverage');
   assert.equal(profile.conformance.iconography.exactAppendixAVectorsConfirmed, false);
+  assert.equal(profile.conformance.externalBlockerCatalog.status, 'external-source-dependent');
+  assert.deepEqual(profile.conformance.externalBlockerCatalog.expectedIds, expectedExternalBlockerIds);
 
   assert.match(languageIndex, /export function getArchimate4ImplementationStatus/);
   assert.match(languageIndex, /function summarizeElementCatalog/);
@@ -531,18 +538,20 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(languageIndex, /missingTypes/);
   assert.match(languageIndex, /extraTypes/);
   assert.match(languageIndex, /relationshipProfile: getArchimate4RelationshipProfileStatus\(\)/);
-  assert.match(languageIndex, /var externalBlockers = \[/);
-  assert.match(languageIndex, /externalBlockers: externalBlockers/);
-  assert.match(languageIndex, /officialAppendixBRelationshipMatrix/);
-  assert.match(languageIndex, /officialMeff4Xsd/);
-  assert.match(languageIndex, /exactAppendixAArtworkRights/);
+  assert.match(languageIndex, /var externalBlockerCatalog = summarizeExternalBlockers/);
+  assert.match(languageIndex, /externalBlockerCatalog: externalBlockerCatalog/);
+  assert.match(languageIndex, /externalBlockers: externalBlockerCatalog\.actualIds/);
+  assert.doesNotMatch(languageIndex, /var externalBlockers = \[/);
   assert.match(entrypoint, /getArchimate4ImplementationStatus/);
   assert.match(sources, /getArchimate4ImplementationStatus\(\)/);
   assert.match(readme, /elementCatalog\.(expectedTypes|missingTypes|extraTypes)/);
   assert.match(readme, /relationshipConnectors\.(expectedTypes|missingTypes|extraTypes)/);
+  assert.match(readme, /externalBlockerCatalog\.expectedIds/);
+  assert.match(sources, /externalBlockerCatalog\.actualIds/);
   assert.match(officialSpec, /expectedTypes/);
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
+  assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
 });
 
 test('archimate 4 implementation status tracks dedicated local pictogram coverage', async () => {

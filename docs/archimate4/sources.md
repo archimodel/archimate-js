@@ -44,6 +44,10 @@
 - `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including
   `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing
   companion source ids while external sources remain unresolved.
+- `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
+  `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
+  `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
+  requirement, and source-coverage blocker ids remain aligned.
 - C260 conformance requirements are represented per shall/may clause in the ArchiMate 4 profile
   metadata so required, optional, implemented, and externally blocked support can be audited without
   treating fallback data as final conformance.
