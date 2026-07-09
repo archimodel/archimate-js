@@ -1,0 +1,19 @@
+(node:96696) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/validation/archimate4-model.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 model validation reports retired ArchiMate 3 element types (1.7193ms)
+✔ archimate model validation can detect 4.0 concepts in a 3.x profile (0.3915ms)
+✔ archimate 4 model validation reports unsupported relationship types and endpoints (1.5105ms)
+✔ archimate 4 model validation can call an active relationship validator (0.4183ms)
+✔ archimate 4 model validation rejects invalid or junction multiplicity (0.7811ms)
+✔ archimate 4 model validation reports mixed relationship types at a junction (0.3232ms)
+✔ archimate 4 model validation is exported from the package root (9.1616ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.7096

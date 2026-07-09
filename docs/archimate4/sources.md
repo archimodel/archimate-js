@@ -254,6 +254,10 @@
   `implementationCompletion.topKeys`, `implementationCompletion.completeSummaryCount`,
   `implementationCompletion.incompleteSummaryCount`, and
   `implementationCompletion.incompleteSummaryPaths` so the API exposes its own completion scan.
+- `getArchimate4ImplementationStatus().modelValidation` reports `modelValidation.expectedCheckIds`,
+  `modelValidation.actualCheckIds`, `modelValidation.missingCheckIds`, and
+  `modelValidation.extraCheckIds` so model-level validation coverage remains auditable without
+  embedding the Appendix B relationship matrix.
 - `getArchimate4ImplementationStatus().exampleViewpointCatalog` reports the Appendix C informative
   reference catalog with expected/actual group and viewpoint counts, while keeping bundled viewpoint
   definitions and normative relationship constraints explicitly false.
@@ -267,8 +271,8 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260709-1061-status-completion-api-scan.json`; it records 48 top-level
-  status keys, 39 `complete` summaries, no incomplete summaries, and the section coverage
+  `project_memory/runlogs/20260709-1080-status-completion-api-scan.json`; it records 49 top-level
+  status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
   status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
   the runlog can be parsed by audit tooling without warning-text cleanup.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
@@ -848,6 +852,21 @@
   is ignored without changing the relationship.
 - `1..*` and other non-zero unbounded range forms remain rejected until MEFF 4.0 or another normative
   source confirms they are valid exchange values.
+
+## Model Validation Diagnostics
+
+- `lib/validation/archimate4-model.js` exposes `validateArchimate4Model(model, options)` and
+  `validateArchimateModel(model, options)` for host tooling that needs a structured diagnostic pass
+  before import, editing, migration review, or export.
+- The validator checks element catalog membership, ArchiMate 3 concepts retired or merged in
+  ArchiMate 4, relationship type membership, relationship endpoint membership, active relationship
+  profile allowance, multiplicity notation, multiplicity on junction-connected ends, mixed
+  relationship types at a junction, and direct relationship validity for chains through a junction.
+- The validator does not embed Appendix B relationship table data. By default it uses the active
+  relationship profile path; hosts can pass `isRelationshipAllowed` when validating against a licensed
+  Appendix B profile outside the repository.
+- The 3.x path remains available through `validateArchimateModel(model, { archimateVersion: '3.2' })`
+  so 4.0-only concepts can be reported when a model is intentionally checked against ArchiMate 3.x.
 
 ## XML Exchange Decision
 

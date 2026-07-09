@@ -44,7 +44,8 @@ Implemented and verified on the current branch:
 - M3 Semantics: relationship validation routes through the active profile; host-supplied Appendix B
   profiles are supported as nested data, rows, matrices, CSV/TSV text, or JSON strings; migration and
   derivation helpers are implemented from non-verbatim C260-derived requirements where redistribution
-  permits.
+  permits; model-level diagnostics now check catalog/profile/multiplicity/junction consistency
+  without embedding Appendix B table data.
 - M4 Modeling UX: the palette, renderer, relationship options, multiplicity editing/persistence,
   junction behavior, profile customization, viewpoint metadata, nested view nodes, organization tree
   descriptors, Appendix C example viewpoint informative catalog, and local Appendix A-derived
@@ -67,6 +68,10 @@ constructor-scoped profile back to fallback.
 Conformance readiness reports `requiredBeforeClaimByBlocker`,
 `missingRequiredBeforeClaimBlockerIds`, and `extraRequiredBeforeClaimBlockerIds` so every
 official-claim prerequisite remains aligned to an external blocker id.
+Model validation status reports `expectedCheckIds`, `actualCheckIds`, `missingCheckIds`, and
+`extraCheckIds` for the host-callable model diagnostics that cover element catalog membership,
+retired ArchiMate 3 concepts, relationship catalog and endpoints, active profile checks,
+multiplicity notation, and junction consistency.
 Remaining gap status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for the
 residual official-conformance blockers plus the W262 companion-source gap.
 Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extraIds`, `statusKeyIds`,
@@ -179,8 +184,8 @@ C260 coverage source evidence status reports `coverageSourceRunlogPaths`,
 `missingSourceRunlogCoverageIds`, and `sourceRunlogPathDeltas` so every tracked C260 coverage group
 stays tied to a recorded source-extraction runlog.
 Implementation-status completion API scan evidence is recorded in
-`project_memory/runlogs/20260709-1061-status-completion-api-scan.json`; it currently reports 48
-top-level status keys, 39 `complete` summaries, no incomplete summaries, and the section coverage
+`project_memory/runlogs/20260709-1080-status-completion-api-scan.json`; it currently reports 49
+top-level status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
 status-key guard arrays including `exampleViewpointCatalog`. The same completion state is exposed directly through
 `getArchimate4ImplementationStatus().implementationCompletion`.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact

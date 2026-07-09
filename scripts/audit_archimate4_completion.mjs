@@ -45,6 +45,7 @@ const implementationFiles = [
   'lib/metamodel/languages/archimate4-relationships.js',
   'lib/metamodel/languages/relationship-profile-loader.js',
   'lib/migration/archimate3-to-4.js',
+  'lib/validation/archimate4-model.js',
   'lib/moddle/resources/archimate4.json',
   'lib/features/palette/PaletteProvider.js',
   'lib/draw/ArchimateRenderer.js',
@@ -105,6 +106,9 @@ const milestones = [
     check('m3.conformanceRequirements.shall.complete', status.conformanceRequirements.shall.complete === true),
     check('m3.relationshipProfile.completeSourceCoverage', status.relationshipProfile.completeSourceCoverage === true),
     check('m3.relationshipProfile.completeTargetCoverage', status.relationshipProfile.completeTargetCoverage === true),
+    check('m3.modelValidation.complete', status.modelValidation.complete === true),
+    checkArray('m3.modelValidation.missingCheckIds', status.modelValidation.missingCheckIds, []),
+    checkArray('m3.modelValidation.extraCheckIds', status.modelValidation.extraCheckIds, []),
     check(
       'm3.appendixB.externalProfileLoaderImplemented',
       status.sourceCoverage.items.appendixBRelationshipMatrix.externalProfileLoaderImplemented === true

@@ -1,0 +1,6 @@
+
+D:\github\archimate-js\lib\metamodel\languages\archimate4-profile.json
+  0:0  warning  File ignored because of a matching ignore pattern. Use "--no-ignore" to override
+
+✖ 1 problem (0 errors, 1 warning)
+

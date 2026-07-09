@@ -7,6 +7,11 @@ export {
 } from './lib/migration/archimate3-to-4';
 
 export {
+  validateArchimate4Model,
+  validateArchimateModel
+} from './lib/validation/archimate4-model';
+
+export {
   getArchimate4RelationshipProfileCoverageReport,
   getArchimate4RelationshipProfileStatus,
   resetArchimate4RelationshipProfile,

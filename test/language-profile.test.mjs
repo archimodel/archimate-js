@@ -1021,6 +1021,30 @@ test('archimate 4 implementation status has no incomplete non-external summaries
   assert.deepEqual(status.remainingGaps.extraIds, []);
 });
 
+test('archimate 4 implementation status exposes model validation coverage', () => {
+  const status = getArchimate4ImplementationStatus();
+  const modelValidation = status.modelValidation;
+
+  assert.equal(modelValidation.status, 'implemented');
+  assert.equal(modelValidation.externalAppendixBProfileAware, true);
+  assert.equal(modelValidation.officialMatrixEmbedded, false);
+  assert.equal(modelValidation.validatesArchiMate3Compatibility, true);
+  assert.deepEqual(modelValidation.missingCheckIds, []);
+  assert.deepEqual(modelValidation.extraCheckIds, []);
+  assert.deepEqual(modelValidation.actualCheckIds, [
+    'element-catalog',
+    'retired-archimate3-concepts',
+    'relationship-catalog',
+    'relationship-endpoint-catalog',
+    'active-relationship-profile',
+    'multiplicity-notation',
+    'junction-multiplicity',
+    'junction-relationship-type-consistency',
+    'junction-chain-profile-validation'
+  ]);
+  assert.equal(modelValidation.complete, true);
+});
+
 test('archimate 4 implementation status completion scan stays parseable', async () => {
   const status = getArchimate4ImplementationStatus();
   const completion = status.implementationCompletion;
@@ -1031,9 +1055,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260709-1061-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260709-1080-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260709-1061-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260709-1080-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1053,7 +1077,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260709-1061-status-completion-api-scan.json'
+    'project_memory/runlogs/20260709-1080-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1073,8 +1097,8 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260709-1061-status-completion-api-scan/);
-  assert.match(sources, /39 `complete` summaries/);
+  assert.match(readme, /20260709-1080-status-completion-api-scan/);
+  assert.match(sources, /40 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);
 });

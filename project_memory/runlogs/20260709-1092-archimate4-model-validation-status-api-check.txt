@@ -1,0 +1,47 @@
+{
+  "topKeyCount": 49,
+  "completeSummaryCount": 40,
+  "incompleteSummaryCount": 0,
+  "modelValidation": {
+    "status": "implemented",
+    "expectedCheckIds": [
+      "element-catalog",
+      "retired-archimate3-concepts",
+      "relationship-catalog",
+      "relationship-endpoint-catalog",
+      "active-relationship-profile",
+      "multiplicity-notation",
+      "junction-multiplicity",
+      "junction-relationship-type-consistency",
+      "junction-chain-profile-validation"
+    ],
+    "externalAppendixBProfileAware": true,
+    "officialMatrixEmbedded": false,
+    "validatesArchiMate3Compatibility": true,
+    "actualCheckIds": [
+      "element-catalog",
+      "retired-archimate3-concepts",
+      "relationship-catalog",
+      "relationship-endpoint-catalog",
+      "active-relationship-profile",
+      "multiplicity-notation",
+      "junction-multiplicity",
+      "junction-relationship-type-consistency",
+      "junction-chain-profile-validation"
+    ],
+    "missingCheckIds": [],
+    "extraCheckIds": [],
+    "complete": true
+  },
+  "blockers": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights"
+  ],
+  "gaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}
