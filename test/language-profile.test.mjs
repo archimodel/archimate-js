@@ -642,8 +642,10 @@ test('language profile customization supports viewpoint definitions', async () =
   assert.match(languageIndex, /VIEWPOINT_CONTENT_TYPES/);
   assert.match(languageIndex, /viewpointClassification: viewpointClassification/);
   assert.match(languageIndex, /viewpointMechanism: viewpointMechanism/);
+  assert.match(languageIndex, /stakeholderConcerns: stakeholderConcerns/);
   assert.match(languageIndex, /summarizeViewpointClassification/);
   assert.match(languageIndex, /summarizeViewpointMechanism/);
+  assert.match(languageIndex, /summarizeStakeholderConcerns/);
   assert.match(languageIndex, /mergeViewpoints\(profile, customProfile\)/);
   assert.match(languageIndex, /validateViewpoint\(viewpoint, profile\)/);
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint/);
@@ -655,11 +657,14 @@ test('language profile customization supports viewpoint definitions', async () =
   assert.match(languageIndex, /Unsupported ArchiMate viewpoint ' \+ fieldName \+ ': ' \+ type/);
   assert.match(readme, /viewpoints/);
   assert.match(readme, /viewpointMechanism\.expectedFeatureIds/);
+  assert.match(readme, /stakeholderConcerns\.expectedFeatureIds/);
   assert.match(readme, /viewpointClassification\.expectedPurposeNames/);
   assert.match(sources, /allowed element and relationship types against the active profile/);
   assert.match(sources, /viewpointMechanism\.missingFeatureIds/);
+  assert.match(sources, /stakeholderConcerns\.missingFeatureIds/);
   assert.match(sources, /viewpointClassification\.missingContentNames/);
   assert.match(officialSpec, /viewpointMechanism/);
+  assert.match(officialSpec, /stakeholderConcerns/);
   assert.match(officialSpec, /viewpointClassification/);
 });
 
@@ -792,6 +797,27 @@ test('archimate 4 implementation status exposes C260 viewpoint mechanism feature
   assert.deepEqual(status.viewpointMechanism.sourceRunlogPaths, [
     'project_memory/runlogs/20260709-1284-c260-viewpoint-mechanism-feature-scan.txt',
     'project_memory/runlogs/20260709-1268-c260-viewpoint-classification-token-scan.txt'
+  ]);
+});
+
+test('archimate 4 implementation status exposes C260 stakeholder concern features', () => {
+  const status = getArchimate4ImplementationStatus();
+  const expectedFeatureIds = [
+    'viewpoint-concern-list',
+    'concern-label',
+    'concern-documentation',
+    'concern-stakeholders-container',
+    'stakeholders-stakeholder-list',
+    'stakeholder-label'
+  ];
+
+  assert.deepEqual(status.stakeholderConcerns.expectedFeatureIds, expectedFeatureIds);
+  assert.deepEqual(status.stakeholderConcerns.actualFeatureIds, expectedFeatureIds);
+  assert.deepEqual(status.stakeholderConcerns.missingFeatureIds, []);
+  assert.deepEqual(status.stakeholderConcerns.extraFeatureIds, []);
+  assert.equal(status.stakeholderConcerns.complete, true);
+  assert.deepEqual(status.stakeholderConcerns.sourceRunlogPaths, [
+    'project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt'
   ]);
 });
 

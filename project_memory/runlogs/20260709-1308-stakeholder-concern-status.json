@@ -1,0 +1,25 @@
+{
+  "status": "implemented",
+  "sourceRunlogPaths": [
+    "project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt"
+  ],
+  "expectedFeatureIds": [
+    "viewpoint-concern-list",
+    "concern-label",
+    "concern-documentation",
+    "concern-stakeholders-container",
+    "stakeholders-stakeholder-list",
+    "stakeholder-label"
+  ],
+  "actualFeatureIds": [
+    "viewpoint-concern-list",
+    "concern-label",
+    "concern-documentation",
+    "concern-stakeholders-container",
+    "stakeholders-stakeholder-list",
+    "stakeholder-label"
+  ],
+  "missingFeatureIds": [],
+  "extraFeatureIds": [],
+  "complete": true
+}

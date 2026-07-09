@@ -1993,3 +1993,19 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1297-viewpoint-mechanism-staged-diff-check.txt` first failed on a trailing EOF blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1298-viewpoint-mechanism-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-viewpoint-mechanism-status-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 154
+
+- Goal: make C260 Chapter 13 Stakeholders and Concerns support machine-auditable separately from the broader viewpoint mechanism.
+- Source evidence: `project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt` records Chapter 13 stakeholder/concern token presence by PDF page without copying normative prose.
+- Red test: `project_memory/runlogs/20260709-1300-stakeholder-concern-status-red-test.txt` failed because `getArchimate4ImplementationStatus().stakeholderConcerns` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `stakeholderConcernCatalog` with expected feature ids and the source runlog path.
+- Implemented: `lib/metamodel/languages/index.js` now derives `getArchimate4ImplementationStatus().stakeholderConcerns.actualFeatureIds` from the ArchiMate 4 moddle descriptor for `Viewpoint`, `Concern`, `Stakeholders`, and `Stakeholder`.
+- Docs/tests: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `test/language-profile.test.mjs` now guard and describe the `stakeholderConcerns` status fields.
+- Focused verification: `project_memory/runlogs/20260709-1301-stakeholder-concern-status-focused-test.txt` and `project_memory/runlogs/20260709-1302-stakeholder-concern-status-focused-test-pass.txt` passed after implementation and doc checks.
+- Verification: `npm run test:language` passed with 198 tests in `project_memory/runlogs/20260709-1303-stakeholder-concern-status-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1304-stakeholder-concern-status-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1305-stakeholder-concern-status-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1306-stakeholder-concern-status-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1307-stakeholder-concern-status-demo-build.txt`.
+- Status evidence: `project_memory/runlogs/20260709-1308-stakeholder-concern-status.json` shows six expected and actual stakeholder/concern feature ids, no missing or extra ids, and complete true.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1309-stakeholder-concern-status-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1312-stakeholder-concern-staged-diff-check.txt` first failed on a trailing EOF blank line in the repository-lint runlog; `project_memory/runlogs/20260709-1313-stakeholder-concern-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-stakeholder-concern-status-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

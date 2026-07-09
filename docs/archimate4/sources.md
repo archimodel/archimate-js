@@ -453,6 +453,11 @@
   `viewpointMechanism.missingFeatureIds`, and `viewpointMechanism.extraFeatureIds`, deriving actual
   feature coverage from the ArchiMate 4 moddle descriptor and tying C260 token evidence to
   `project_memory/runlogs/20260709-1284-c260-viewpoint-mechanism-feature-scan.txt`.
+- `getArchimate4ImplementationStatus().stakeholderConcerns` reports
+  `stakeholderConcerns.expectedFeatureIds`, `stakeholderConcerns.actualFeatureIds`,
+  `stakeholderConcerns.missingFeatureIds`, and `stakeholderConcerns.extraFeatureIds`, deriving
+  stakeholder/concern support from the ArchiMate 4 moddle descriptor and tying C260 token evidence to
+  `project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt`.
 - Profile attribute values can also be written to model `Properties` through
   `setProfileAttributePropertyValue()` and read through `getProfileAttributePropertyValue()`. The
   helper creates reusable `PropertyDefinition` entries named

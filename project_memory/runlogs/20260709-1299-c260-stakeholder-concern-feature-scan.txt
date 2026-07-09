@@ -1,0 +1,6 @@
+source=C:\Users\syska\Downloads\978940181474E.pdf
+pages=207
+scope=C260 Chapter 13 stakeholders and concerns token presence only; no normative prose copied
+pdf_page=126; tokens=stakeholder,concern,viewpoint
+pdf_page=127; tokens=stakeholder,concern,viewpoint
+pdf_page=128; tokens=stakeholder,concern,viewpoint

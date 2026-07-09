@@ -142,6 +142,20 @@
         "viewpoint-modeling-notes"
       ]
     },
+    "stakeholderConcernCatalog": {
+      "status": "implemented",
+      "sourceRunlogPaths": [
+        "project_memory/runlogs/20260709-1299-c260-stakeholder-concern-feature-scan.txt"
+      ],
+      "expectedFeatureIds": [
+        "viewpoint-concern-list",
+        "concern-label",
+        "concern-documentation",
+        "concern-stakeholders-container",
+        "stakeholders-stakeholder-list",
+        "stakeholder-label"
+      ]
+    },
     "externalBlockerCatalog": {
       "status": "external-source-dependent",
       "expectedCount": 3,
