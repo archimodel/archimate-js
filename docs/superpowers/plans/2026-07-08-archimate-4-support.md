@@ -91,6 +91,10 @@ Implementation and migration domain coverage status reports `expectedIds`, `actu
 `missingImplementationAndMigrationDomainIds`, and `extraImplementationAndMigrationDomainIds` for
 the C260 Chapter 12 outline so Implementation and Migration subsection and element headings cannot
 drift silently.
+Stakeholders architecture views viewpoints coverage status reports `expectedIds`, `actualIds`,
+`missingStakeholdersArchitectureViewsViewpointsIds`, and
+`extraStakeholdersArchitectureViewsViewpointsIds` for the C260 Chapter 13 outline so stakeholder,
+architecture view, and viewpoint subsection headings cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

@@ -1,0 +1,26 @@
+{
+  "expectedCount": 7,
+  "actualCount": 7,
+  "missingStakeholdersArchitectureViewsViewpointsIds": [],
+  "extraStakeholdersArchitectureViewsViewpointsIds": [],
+  "complete": true,
+  "expectedIds": [
+    "stakeholders-views-viewpoints-introduction",
+    "stakeholders-and-concerns",
+    "architecture-views-and-viewpoints",
+    "viewpoint-mechanism",
+    "defining-and-classifying-viewpoints",
+    "creating-the-view",
+    "example-viewpoints"
+  ],
+  "actualIds": [
+    "stakeholders-views-viewpoints-introduction",
+    "stakeholders-and-concerns",
+    "architecture-views-and-viewpoints",
+    "viewpoint-mechanism",
+    "defining-and-classifying-viewpoints",
+    "creating-the-view",
+    "example-viewpoints"
+  ]
+}
+EXIT_CODE=0

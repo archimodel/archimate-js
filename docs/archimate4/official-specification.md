@@ -136,6 +136,13 @@ It must expose exact C260 Chapter 12 Implementation and Migration Domain outline
 `implementationAndMigrationDomainCoverage.extraImplementationAndMigrationDomainIds`) so the
 implementation can track Implementation and Migration metamodel, element, example, summary, and
 relationship-with-domains coverage by subsection and element-heading identity.
+It must expose exact C260 Chapter 13 Stakeholders, Architecture Views, and Viewpoints outline fields
+(`stakeholdersArchitectureViewsViewpointsCoverage.expectedIds`,
+`stakeholdersArchitectureViewsViewpointsCoverage.actualIds`,
+`stakeholdersArchitectureViewsViewpointsCoverage.missingStakeholdersArchitectureViewsViewpointsIds`,
+and `stakeholdersArchitectureViewsViewpointsCoverage.extraStakeholdersArchitectureViewsViewpointsIds`)
+so the implementation can track stakeholder, architecture view, viewpoint mechanism, and example
+viewpoint coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

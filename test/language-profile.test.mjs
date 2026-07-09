@@ -1069,6 +1069,50 @@ test('archimate 4 implementation status exposes C260 implementation and migratio
   assert.match(plan, /Implementation and migration domain coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 stakeholders architecture views viewpoints coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const stakeholdersArchitectureViewsViewpointsCatalog = profile.conformance.stakeholdersArchitectureViewsViewpointsCoverageCatalog;
+  const stakeholdersArchitectureViewsViewpointsCoverage = profile.conformance.stakeholdersArchitectureViewsViewpointsCoverage;
+  const expectedStakeholdersArchitectureViewsViewpointsIds = [
+    'stakeholders-views-viewpoints-introduction',
+    'stakeholders-and-concerns',
+    'architecture-views-and-viewpoints',
+    'viewpoint-mechanism',
+    'defining-and-classifying-viewpoints',
+    'creating-the-view',
+    'example-viewpoints'
+  ];
+
+  assert.equal(stakeholdersArchitectureViewsViewpointsCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    stakeholdersArchitectureViewsViewpointsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(stakeholdersArchitectureViewsViewpointsCatalog.expectedCount, expectedStakeholdersArchitectureViewsViewpointsIds.length);
+  assert.deepEqual(stakeholdersArchitectureViewsViewpointsCatalog.expectedIds, expectedStakeholdersArchitectureViewsViewpointsIds);
+  assert.deepEqual(
+    stakeholdersArchitectureViewsViewpointsCoverage.map((stakeholdersArchitectureViewsViewpointsItem) => stakeholdersArchitectureViewsViewpointsItem.id),
+    expectedStakeholdersArchitectureViewsViewpointsIds
+  );
+  assert.equal(
+    stakeholdersArchitectureViewsViewpointsCoverage.every((stakeholdersArchitectureViewsViewpointsItem) => stakeholdersArchitectureViewsViewpointsItem.c260Section && stakeholdersArchitectureViewsViewpointsItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeStakeholdersArchitectureViewsViewpointsCoverage/);
+  assert.match(languageIndex, /stakeholdersArchitectureViewsViewpointsCoverage: stakeholdersArchitectureViewsViewpointsCoverage/);
+  assert.match(languageIndex, /missingStakeholdersArchitectureViewsViewpointsIds/);
+  assert.match(readme, /stakeholdersArchitectureViewsViewpointsCoverage\.expectedIds/);
+  assert.match(sources, /stakeholdersArchitectureViewsViewpointsCoverage\.actualIds/);
+  assert.match(officialSpec, /stakeholdersArchitectureViewsViewpointsCoverage\.missingStakeholdersArchitectureViewsViewpointsIds/);
+  assert.match(plan, /Stakeholders architecture views viewpoints coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

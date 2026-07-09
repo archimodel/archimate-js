@@ -691,6 +691,29 @@
       { "id": "summary-of-implementation-and-migration-elements", "c260Section": "12.3", "heading": "Summary of Implementation and Migration Elements", "status": "tracked" },
       { "id": "relationships-with-domains", "c260Section": "12.4", "heading": "Relationships with Domains", "status": "tracked" }
     ],
+    "stakeholdersArchitectureViewsViewpointsCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 7,
+      "expectedIds": [
+        "stakeholders-views-viewpoints-introduction",
+        "stakeholders-and-concerns",
+        "architecture-views-and-viewpoints",
+        "viewpoint-mechanism",
+        "defining-and-classifying-viewpoints",
+        "creating-the-view",
+        "example-viewpoints"
+      ]
+    },
+    "stakeholdersArchitectureViewsViewpointsCoverage": [
+      { "id": "stakeholders-views-viewpoints-introduction", "c260Section": "13.1", "heading": "Introduction", "status": "tracked" },
+      { "id": "stakeholders-and-concerns", "c260Section": "13.2", "heading": "Stakeholders and Concerns", "status": "tracked" },
+      { "id": "architecture-views-and-viewpoints", "c260Section": "13.3", "heading": "Architecture Views and Viewpoints", "status": "tracked" },
+      { "id": "viewpoint-mechanism", "c260Section": "13.4", "heading": "Viewpoint Mechanism", "status": "tracked" },
+      { "id": "defining-and-classifying-viewpoints", "c260Section": "13.4.1", "heading": "Defining and Classifying Viewpoints", "status": "tracked" },
+      { "id": "creating-the-view", "c260Section": "13.4.2", "heading": "Creating the View", "status": "tracked" },
+      { "id": "example-viewpoints", "c260Section": "13.5", "heading": "Example Viewpoints", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

@@ -127,6 +127,13 @@
   `implementationAndMigrationDomainCoverage.extraImplementationAndMigrationDomainIds` so the
   Chapter 12 Implementation and Migration Domain outline remains visible by exact subsection and
   element-heading identity.
+- `getArchimate4ImplementationStatus().stakeholdersArchitectureViewsViewpointsCoverage` reports
+  `stakeholdersArchitectureViewsViewpointsCoverage.expectedIds`,
+  `stakeholdersArchitectureViewsViewpointsCoverage.actualIds`,
+  `stakeholdersArchitectureViewsViewpointsCoverage.missingStakeholdersArchitectureViewsViewpointsIds`,
+  and `stakeholdersArchitectureViewsViewpointsCoverage.extraStakeholdersArchitectureViewsViewpointsIds`
+  so the Chapter 13 Stakeholders, Architecture Views, and Viewpoints outline remains visible by
+  exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
