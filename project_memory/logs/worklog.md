@@ -1537,3 +1537,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-893-c260-motivation-domain-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-motivation-domain-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 122
+
+- Goal: make C260 Chapter 7 Strategy Domain auditable by exact outline identity rather than only by broad Strategy element support.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 7 outline from 7.1 through 7.6, including Resource, Capability, Value Stream, Course of Action, examples, summary, and relationships-with-other-domains headings.
+- Red test: `project_memory/runlogs/20260709-897-c260-strategy-domain-coverage-red-test.txt` failed because `strategyDomainCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `strategyDomainCoverageCatalog` and `strategyDomainCoverage` for the ten Chapter 7 outline headings without copying Strategy Domain prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().strategyDomainCoverage` with expected/actual/missing/extra ids, `missingStrategyDomainIds`, `extraStrategyDomainIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 7 Strategy Domain outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-898-c260-strategy-domain-coverage-focused-test.txt` passed for the Strategy Domain coverage identity test; `project_memory/runlogs/20260709-899-c260-strategy-domain-coverage-status.json` shows expectedCount 10, actualCount 10, no missing Strategy Domain ids, no extra Strategy Domain ids, and complete true.
+- Verification: `npm run test:language` passed with 170 tests in `project_memory/runlogs/20260709-900-c260-strategy-domain-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-901-c260-strategy-domain-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-902-c260-strategy-domain-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-903-c260-strategy-domain-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-904-c260-strategy-domain-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-905-c260-strategy-domain-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-906-c260-strategy-domain-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-strategy-domain-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

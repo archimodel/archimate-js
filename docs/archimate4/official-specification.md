@@ -99,6 +99,12 @@ It must expose exact C260 Chapter 6 Motivation Domain outline fields
 `motivationDomainCoverage.extraMotivationDomainIds`) so the implementation can track Motivation
 metamodel, element groups, individual Motivation elements, examples, summaries, and other-domain
 relationship coverage by subsection and element-heading identity.
+It must expose exact C260 Chapter 7 Strategy Domain outline fields
+(`strategyDomainCoverage.expectedIds`, `strategyDomainCoverage.actualIds`,
+`strategyDomainCoverage.missingStrategyDomainIds`, and
+`strategyDomainCoverage.extraStrategyDomainIds`) so the implementation can track Strategy metamodel,
+structure elements, behavior elements, examples, summaries, and other-domain relationship coverage
+by subsection and element-heading identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

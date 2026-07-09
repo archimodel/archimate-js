@@ -94,6 +94,11 @@
   `motivationDomainCoverage.missingMotivationDomainIds`, and
   `motivationDomainCoverage.extraMotivationDomainIds` so the Chapter 6 Motivation Domain outline
   remains visible by exact subsection and element-heading identity.
+- `getArchimate4ImplementationStatus().strategyDomainCoverage` reports
+  `strategyDomainCoverage.expectedIds`, `strategyDomainCoverage.actualIds`,
+  `strategyDomainCoverage.missingStrategyDomainIds`, and
+  `strategyDomainCoverage.extraStrategyDomainIds` so the Chapter 7 Strategy Domain outline remains
+  visible by exact subsection and element-heading identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

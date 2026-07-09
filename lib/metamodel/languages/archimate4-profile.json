@@ -527,6 +527,35 @@
       { "id": "summary-of-motivation-elements", "c260Section": "6.6", "heading": "Summary of Motivation Elements", "status": "tracked" },
       { "id": "relationships-with-other-domains", "c260Section": "6.7", "heading": "Relationships with Other Domains", "status": "tracked" }
     ],
+    "strategyDomainCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 10,
+      "expectedIds": [
+        "strategy-elements-metamodel",
+        "structure-elements",
+        "resource",
+        "behavior-elements",
+        "capability",
+        "value-stream",
+        "course-of-action",
+        "examples",
+        "summary-of-strategy-elements",
+        "relationships-with-other-domains"
+      ]
+    },
+    "strategyDomainCoverage": [
+      { "id": "strategy-elements-metamodel", "c260Section": "7.1", "heading": "Strategy Elements Metamodel", "status": "tracked" },
+      { "id": "structure-elements", "c260Section": "7.2", "heading": "Structure Elements", "status": "tracked" },
+      { "id": "resource", "c260Section": "7.2.1", "heading": "Resource", "status": "tracked" },
+      { "id": "behavior-elements", "c260Section": "7.3", "heading": "Behavior Elements", "status": "tracked" },
+      { "id": "capability", "c260Section": "7.3.1", "heading": "Capability", "status": "tracked" },
+      { "id": "value-stream", "c260Section": "7.3.2", "heading": "Value Stream", "status": "tracked" },
+      { "id": "course-of-action", "c260Section": "7.3.3", "heading": "Course of Action", "status": "tracked" },
+      { "id": "examples", "c260Section": "7.4", "heading": "Examples", "status": "tracked" },
+      { "id": "summary-of-strategy-elements", "c260Section": "7.5", "heading": "Summary of Strategy Elements", "status": "tracked" },
+      { "id": "relationships-with-other-domains", "c260Section": "7.6", "heading": "Relationships with Other Domains", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,
