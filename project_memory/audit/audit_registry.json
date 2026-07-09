@@ -19,7 +19,8 @@
       "command": "npm run test:language",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt"
+        "project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt",
+        "project_memory/runlogs/20260710-0241-view-element-label-test-language.txt"
       ]
     },
     {
@@ -30,7 +31,8 @@
       "command": "node scripts/audit_archimate4_c260_coverage.mjs --checked-at 2026-07-10T05:36:00+09:00",
       "expect": { "exit_code": 0 },
       "artifacts": [
-        "project_memory/runlogs/20260710-0228-base-object-fields-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0228-base-object-fields-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0243-view-element-label-c260-coverage-audit.json"
       ]
     },
     {
@@ -106,7 +108,7 @@
     },
     {
       "id": "audit.archimate4.model_validation",
-      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization identifier references, property definition structure and references, present property value string structure, viewpoint definitions, and profile attribute property values",
+      "description": "ArchiMate model validation diagnostics cover profile mismatch, retired concepts, relationship rules, multiplicity, junction consistency, view viewpoint references, view node element references, view element labels and geometry, view connection relationship references, endpoint references, endpoint-to-relationship alignment, waypoint geometry, view style/font/color values including invalid font.style plain combinations, model-defined and profile-defined viewpoint allowed-type application to View contents, viewpoint stakeholder/concern and modeling-note structure, BaseObject name/documentation string fields, organization identifier references, property definition structure and references, present property value string structure, viewpoint definitions, and profile attribute property values",
       "when": ["post_change", "pre_commit"],
       "severity": "blocker",
       "command": "node --test test/model-validation.test.mjs",
@@ -127,7 +129,14 @@
         "project_memory/runlogs/20260710-0223-base-object-fields-status-test.txt",
         "project_memory/runlogs/20260710-0225-base-object-fields-status-snapshot.json",
         "project_memory/runlogs/20260710-0226-base-object-fields-test-language.txt",
-        "project_memory/runlogs/20260710-0227-base-object-fields-completion-audit.json"
+        "project_memory/runlogs/20260710-0227-base-object-fields-completion-audit.json",
+        "project_memory/runlogs/20260710-0235-view-element-label-red-test.txt",
+        "project_memory/runlogs/20260710-0236-view-element-label-focused-model-test.txt",
+        "project_memory/runlogs/20260710-0237-view-element-label-status-test.txt",
+        "project_memory/runlogs/20260710-0238-view-element-label-model-validation-test.txt",
+        "project_memory/runlogs/20260710-0240-view-element-label-status-snapshot.json",
+        "project_memory/runlogs/20260710-0241-view-element-label-test-language.txt",
+        "project_memory/runlogs/20260710-0242-view-element-label-completion-audit.json"
       ]
     },
     {
@@ -137,7 +146,9 @@
       "severity": "blocker",
       "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js test/*.test.mjs",
       "expect": { "exit_code": 0 },
-      "artifacts": []
+      "artifacts": [
+        "project_memory/runlogs/20260710-0239-view-element-label-eslint-changed.txt"
+      ]
     },
     {
       "id": "audit.lint.repo_legacy",

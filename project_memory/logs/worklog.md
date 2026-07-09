@@ -2838,3 +2838,16 @@
 - Pre-stage verification: `git diff --check` passed in `project_memory/runlogs/20260710-0234-base-object-fields-prestage-diff-check.txt`.
 - Audit report: `project_memory/audit/reports/20260710-base-object-fields-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-10 loop 215
+
+- Goal: tighten ArchiMate model validation against the local descriptor's `ViewElement.label` string field.
+- Observation: `lib/moddle/resources/archimate4.json` declares `ViewElement.label` as `String`; concern and stakeholder labels were already validated, but generic view element labels were not checked.
+- Red test: `project_memory/runlogs/20260710-0235-view-element-label-red-test.txt` failed as expected before implementation because non-string `ViewElement.label` did not produce `invalid-view-element-label`.
+- Implemented: `validateArchimate4Model()` and `validateArchimateModel()` now report `invalid-view-element-label` when a present view element `label` is not a string, while continuing to tolerate undefined or null labels as absent during partial in-memory editing.
+- Implemented: `getArchimate4ImplementationStatus().modelValidation` now exposes `view-element-label` in expected/actual check ids; README, CHANGELOG, source ledger, implementation specification, execution plan, audit registry, and state now document the check.
+- Verification: focused model validation passed in `project_memory/runlogs/20260710-0236-view-element-label-focused-model-test.txt`; focused status test passed in `project_memory/runlogs/20260710-0237-view-element-label-status-test.txt`; full model validation passed in `project_memory/runlogs/20260710-0238-view-element-label-model-validation-test.txt`; changed-file ESLint passed in `project_memory/runlogs/20260710-0239-view-element-label-eslint-changed.txt`.
+- Verification: status snapshot parse passed in `project_memory/runlogs/20260710-0240-view-element-label-status-snapshot.json`; `npm run test:language` passed with 260 tests in `project_memory/runlogs/20260710-0241-view-element-label-test-language.txt`; completion audit passed with no failures in `project_memory/runlogs/20260710-0242-view-element-label-completion-audit.json`; C260 coverage audit passed with no failures in `project_memory/runlogs/20260710-0243-view-element-label-c260-coverage-audit.json`.
+- Post-state verification: JSON parse passed in `project_memory/runlogs/20260710-0244-view-element-label-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260710-0245-view-element-label-diff-check.txt`; status snapshot saved in `project_memory/runlogs/20260710-0246-view-element-label-status.txt`; final post-stage `git diff --check` passed in `project_memory/runlogs/20260710-0248-view-element-label-final-poststage-diff-check.txt`.
+- Audit report: `project_memory/audit/reports/20260710-view-element-label-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

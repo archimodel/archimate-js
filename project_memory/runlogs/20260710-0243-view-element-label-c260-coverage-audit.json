@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-07-10T06:21:00+09:00",
+  "source": "getArchimate4ImplementationStatus",
+  "complete": true,
+  "coverageGroups": {
+    "expectedCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "actualCoverageIds": [
+      "sectionCoverage",
+      "introductionCoverage",
+      "definitionCoverage",
+      "languageStructureCoverage",
+      "commonDomainCoverage",
+      "relationshipsAndJunctionsCoverage",
+      "motivationDomainCoverage",
+      "strategyDomainCoverage",
+      "businessDomainCoverage",
+      "applicationDomainCoverage",
+      "technologyDomainCoverage",
+      "relationshipsBetweenCoreDomainsCoverage",
+      "implementationAndMigrationDomainCoverage",
+      "stakeholdersArchitectureViewsViewpointsCoverage",
+      "languageCustomizationMechanismsCoverage",
+      "appendixANotationCoverage",
+      "appendixBRelationshipsCoverage",
+      "appendixCExampleViewpointsCoverage",
+      "appendixDStandardsGuidanceCoverage",
+      "appendixEVersionChangesCoverage",
+      "appendixFAcronymsCoverage",
+      "documentArtifactCoverage"
+    ],
+    "expectedCoverageCount": 22,
+    "actualCoverageCount": 22,
+    "incompleteCoverageIds": []
+  },
+  "counts": {
+    "sectionCount": 20,
+    "aggregateItemCount": 284,
+    "outlineSourceItemCount": 253,
+    "outlineCoveredItemCount": 253,
+    "nonOutlineDerivedItemCount": 31,
+    "uniqueSourceRunlogPathCount": 3
+  },
+  "sourceEvidence": {
+    "outlineSourceRunlogPath": "project_memory/runlogs/20260709-1118-c260-full-outline-source-check.txt",
+    "coverageSourceRunlogPaths": {
+      "sectionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "introductionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "definitionCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "languageStructureCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "commonDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "relationshipsAndJunctionsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "motivationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "strategyDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "businessDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "applicationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "technologyDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "relationshipsBetweenCoreDomainsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "implementationAndMigrationDomainCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "stakeholdersArchitectureViewsViewpointsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "languageCustomizationMechanismsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixANotationCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixBRelationshipsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixCExampleViewpointsCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixDStandardsGuidanceCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixEVersionChangesCoverage": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "appendixFAcronymsCoverage": "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+      "documentArtifactCoverage": "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt"
+    },
+    "uniqueSourceRunlogPaths": [
+      "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "project_memory/runlogs/20260709-1066-c260-appendix-f-acronyms-source-check.txt",
+      "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt"
+    ]
+  },
+  "externalBoundariesRetained": {
+    "officialConformanceClaimable": false,
+    "officialBlockerIds": [
+      "officialAppendixBRelationshipMatrix",
+      "officialMeff4Xsd",
+      "exactAppendixAArtworkRights"
+    ],
+    "missingRequiredSources": [
+      "appendixBRelationshipMatrix",
+      "meff4Xsd",
+      "appendixAArtworkRights"
+    ],
+    "missingCompanionSources": [
+      "w262"
+    ]
+  },
+  "checkCount": 70,
+  "failureCount": 0,
+  "failures": []
+}

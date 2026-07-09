@@ -801,6 +801,38 @@ test('archimate 4 model validation reports invalid view connection waypoint geom
   assert.equal(findDiagnostic(result, 'invalid-view-connection-waypoint-y').value, 'not-a-number');
 });
 
+test('archimate 4 model validation reports invalid view element label values', () => {
+  const result = validateArchimate4Model({
+    elementsNode: {
+      baseElements: [
+        { id: 'actor-1', type: 'BusinessActor' }
+      ]
+    },
+    views: {
+      diagrams: {
+        viewsList: [
+          {
+            id: 'view-1',
+            viewElements: [
+              {
+                id: 'node-actor',
+                elementRef: 'actor-1',
+                label: 42
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }, {
+    validateRelationshipRules: false
+  });
+
+  assert.equal(result.valid, false);
+  assert.equal(findDiagnostic(result, 'invalid-view-element-label').viewElementId, 'node-actor');
+  assert.equal(findDiagnostic(result, 'invalid-view-element-label').value, 42);
+});
+
 test('archimate 4 model validation reports invalid view style values', () => {
   const result = validateArchimate4Model({
     elementsNode: {
