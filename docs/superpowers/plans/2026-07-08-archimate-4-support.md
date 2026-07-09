@@ -59,6 +59,9 @@ Introduction coverage status reports `expectedIds`, `actualIds`, `missingIntrodu
 drift silently.
 Definition coverage status reports `expectedIds`, `actualIds`, `missingDefinitionIds`, and
 `extraDefinitionIds` for the C260 Chapter 2 vocabulary without copying definition prose.
+Language structure coverage status reports `expectedIds`, `actualIds`,
+`missingLanguageStructureIds`, and `extraLanguageStructureIds` for the C260 Chapter 3 outline so
+language-structure subsections cannot drift silently.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

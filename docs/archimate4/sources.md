@@ -73,6 +73,11 @@
   `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the
   Chapter 2 definition vocabulary remains visible by exact term identity without copying the
   definition prose.
+- `getArchimate4ImplementationStatus().languageStructureCoverage` reports
+  `languageStructureCoverage.expectedIds`, `languageStructureCoverage.actualIds`,
+  `languageStructureCoverage.missingLanguageStructureIds`, and
+  `languageStructureCoverage.extraLanguageStructureIds` so the Chapter 3 Language Structure outline
+  remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

@@ -76,6 +76,12 @@ It must expose exact C260 Chapter 2 definition vocabulary fields (`definitionCov
 `definitionCoverage.actualIds`, `definitionCoverage.missingDefinitionIds`, and
 `definitionCoverage.extraDefinitionIds`) so the implementation can track the standard terminology
 by term identity without embedding copied definition prose.
+It must expose exact C260 Chapter 3 Language Structure outline fields
+(`languageStructureCoverage.expectedIds`, `languageStructureCoverage.actualIds`,
+`languageStructureCoverage.missingLanguageStructureIds`, and
+`languageStructureCoverage.extraLanguageStructureIds`) so the implementation can track language
+design, domains, aspects, top-level structure, structure/behavior concepts, abstraction, notation,
+nesting, and color/cue coverage by subsection identity.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

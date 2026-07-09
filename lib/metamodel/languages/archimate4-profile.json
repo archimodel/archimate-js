@@ -351,6 +351,43 @@
       { "id": "model", "c260Section": "2.15", "term": "Model", "status": "tracked" },
       { "id": "relationship", "c260Section": "2.16", "term": "Relationship", "status": "tracked" }
     ],
+    "languageStructureCoverageCatalog": {
+      "status": "c260-outline-derived",
+      "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+      "expectedCount": 14,
+      "expectedIds": [
+        "language-design-considerations",
+        "archimate-language",
+        "domains-of-archimate-language",
+        "aspects-of-archimate-language",
+        "top-level-language-structure",
+        "structure-and-behavior-elements",
+        "active-structure-elements",
+        "passive-structure-elements",
+        "behavior-elements",
+        "structure-and-behavior-example",
+        "abstraction-in-archimate-language",
+        "concepts-and-notation",
+        "use-of-nesting",
+        "use-of-colors-and-notational-cues"
+      ]
+    },
+    "languageStructureCoverage": [
+      { "id": "language-design-considerations", "c260Section": "3.1", "heading": "Language Design Considerations", "status": "tracked" },
+      { "id": "archimate-language", "c260Section": "3.2", "heading": "The ArchiMate Language", "status": "tracked" },
+      { "id": "domains-of-archimate-language", "c260Section": "3.2.1", "heading": "Domains of the ArchiMate Language", "status": "tracked" },
+      { "id": "aspects-of-archimate-language", "c260Section": "3.2.2", "heading": "Aspects of the ArchiMate Language", "status": "tracked" },
+      { "id": "top-level-language-structure", "c260Section": "3.3", "heading": "Top-Level Language Structure", "status": "tracked" },
+      { "id": "structure-and-behavior-elements", "c260Section": "3.4", "heading": "Structure and Behavior Elements", "status": "tracked" },
+      { "id": "active-structure-elements", "c260Section": "3.4.1", "heading": "Active Structure Elements", "status": "tracked" },
+      { "id": "passive-structure-elements", "c260Section": "3.4.2", "heading": "Passive Structure Elements", "status": "tracked" },
+      { "id": "behavior-elements", "c260Section": "3.4.3", "heading": "Behavior Elements", "status": "tracked" },
+      { "id": "structure-and-behavior-example", "c260Section": "3.4.4", "heading": "Example", "status": "tracked" },
+      { "id": "abstraction-in-archimate-language", "c260Section": "3.5", "heading": "Abstraction in the ArchiMate Language", "status": "tracked" },
+      { "id": "concepts-and-notation", "c260Section": "3.6", "heading": "Concepts and Their Notation", "status": "tracked" },
+      { "id": "use-of-nesting", "c260Section": "3.7", "heading": "Use of Nesting", "status": "tracked" },
+      { "id": "use-of-colors-and-notational-cues", "c260Section": "3.8", "heading": "Use of Colors and Notational Cues", "status": "tracked" }
+    ],
     "requirementCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,

@@ -1481,3 +1481,17 @@
 - Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-841-c260-introduction-coverage-repo-lint.txt` with 4382 existing errors.
 - Audit: `project_memory/audit/reports/20260709-c260-introduction-coverage-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 118
+
+- Goal: make C260 Chapter 3 Language Structure auditable by exact outline identity rather than only by the broad `language-structure` section id.
+- Source check: `project_memory/runlogs/20260709-805-c260-outline-current-extract.txt` confirms the Chapter 3 outline from 3.1 through 3.8, including the nested 3.2.1/3.2.2 and 3.4.1 through 3.4.4 headings.
+- Red test: `project_memory/runlogs/20260709-845-c260-language-structure-coverage-red-test.txt` failed because `languageStructureCoverageCatalog` was absent.
+- Implemented: `lib/metamodel/languages/archimate4-profile.json` now records `languageStructureCoverageCatalog` and `languageStructureCoverage` for the fourteen Chapter 3 outline headings without copying language-structure prose.
+- Implemented: `lib/metamodel/languages/index.js` now exposes `getArchimate4ImplementationStatus().languageStructureCoverage` with expected/actual/missing/extra ids, `missingLanguageStructureIds`, `extraLanguageStructureIds`, `actualCount`, and `complete`.
+- Tests/docs: `test/language-profile.test.mjs`, README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and the implementation plan now guard and describe the exact Chapter 3 Language Structure outline boundary.
+- Focused verification: `project_memory/runlogs/20260709-846-c260-language-structure-coverage-focused-test.txt` passed for the language structure coverage identity test; `project_memory/runlogs/20260709-847-c260-language-structure-coverage-status.json` shows expectedCount 14, actualCount 14, no missing language-structure ids, no extra language-structure ids, and complete true.
+- Verification: `npm run test:language` passed with 166 tests in `project_memory/runlogs/20260709-848-c260-language-structure-coverage-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-849-c260-language-structure-coverage-eslint-changed.txt`; JSON parse check passed in `project_memory/runlogs/20260709-850-c260-language-structure-coverage-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-851-c260-language-structure-coverage-diff-check.txt`; full registry scoped ESLint passed in `project_memory/runlogs/20260709-852-c260-language-structure-coverage-eslint-registry-full.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-853-c260-language-structure-coverage-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-854-c260-language-structure-coverage-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-c260-language-structure-coverage-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

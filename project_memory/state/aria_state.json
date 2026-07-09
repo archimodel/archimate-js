@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 117,
-  "stage": "c260_introduction_coverage_verified",
+  "loop_id": 118,
+  "stage": "c260_language_structure_coverage_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 19304,
+    "diff_size": 22237,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -135,7 +135,8 @@
       "status_api_node_esm_import",
       "c260_preface_section_coverage",
       "c260_definition_vocabulary",
-      "c260_introduction_coverage"
+      "c260_introduction_coverage",
+      "c260_language_structure_coverage"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -282,12 +283,13 @@
       "check_status_api_node_esm_import",
       "check_c260_preface_section_coverage",
       "check_c260_definition_vocabulary",
-      "check_c260_introduction_coverage"
+      "check_c260_introduction_coverage",
+      "check_c260_language_structure_coverage"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-836-c260-introduction-coverage-test-language.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-c260-introduction-coverage-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-848-c260-language-structure-coverage-test-language.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-c260-language-structure-coverage-audit.md",
     "result": "pass"
   },
   "open_issues": [
@@ -414,10 +416,11 @@
     "lib/metamodel/languages/index.js can now be imported directly by Node ESM audit tooling for getArchimate4ImplementationStatus(), using JSON import attributes and explicit .js import specifiers on the status API dependency path while leaving the package root as the browser/webpack-oriented entry point.",
     "getArchimate4ImplementationStatus().sectionCoverage now starts from the current C260 outline extraction and includes Chapter 1 Introduction/Conformance and Chapter 2 Definitions as exact status-tracked sections before the language implementation chapters.",
     "getArchimate4ImplementationStatus().definitionCoverage now exposes the 16 C260 Chapter 2 definition headings by exact id, with missingDefinitionIds and extraDefinitionIds, without committing copied definition prose.",
-    "getArchimate4ImplementationStatus().introductionCoverage now exposes the six C260 Chapter 1 Introduction/Conformance outline headings by exact id, with missingIntroductionIds and extraIntroductionIds, without committing copied introductory prose."
+    "getArchimate4ImplementationStatus().introductionCoverage now exposes the six C260 Chapter 1 Introduction/Conformance outline headings by exact id, with missingIntroductionIds and extraIntroductionIds, without committing copied introductory prose.",
+    "getArchimate4ImplementationStatus().languageStructureCoverage now exposes the fourteen C260 Chapter 3 Language Structure outline headings by exact id, with missingLanguageStructureIds and extraLanguageStructureIds, without committing copied language-structure prose."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T10:56:43+09:00"
+    "updated_at": "2026-07-09T11:06:38+09:00"
   }
 }

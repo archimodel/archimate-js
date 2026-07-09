@@ -606,6 +606,56 @@ test('archimate 4 implementation status exposes C260 introduction coverage ident
   assert.match(officialSpec, /introductionCoverage\.missingIntroductionIds/);
 });
 
+test('archimate 4 implementation status exposes C260 language structure coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const languageStructureCatalog = profile.conformance.languageStructureCoverageCatalog;
+  const languageStructureCoverage = profile.conformance.languageStructureCoverage;
+  const expectedLanguageStructureIds = [
+    'language-design-considerations',
+    'archimate-language',
+    'domains-of-archimate-language',
+    'aspects-of-archimate-language',
+    'top-level-language-structure',
+    'structure-and-behavior-elements',
+    'active-structure-elements',
+    'passive-structure-elements',
+    'behavior-elements',
+    'structure-and-behavior-example',
+    'abstraction-in-archimate-language',
+    'concepts-and-notation',
+    'use-of-nesting',
+    'use-of-colors-and-notational-cues'
+  ];
+
+  assert.equal(languageStructureCatalog.status, 'c260-outline-derived');
+  assert.equal(languageStructureCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(languageStructureCatalog.expectedCount, expectedLanguageStructureIds.length);
+  assert.deepEqual(languageStructureCatalog.expectedIds, expectedLanguageStructureIds);
+  assert.deepEqual(
+    languageStructureCoverage.map((languageStructureItem) => languageStructureItem.id),
+    expectedLanguageStructureIds
+  );
+  assert.equal(
+    languageStructureCoverage.every((languageStructureItem) => (
+      languageStructureItem.c260Section && languageStructureItem.heading
+    )),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeLanguageStructureCoverage/);
+  assert.match(languageIndex, /languageStructureCoverage: languageStructureCoverage/);
+  assert.match(languageIndex, /missingLanguageStructureIds/);
+  assert.match(readme, /languageStructureCoverage\.expectedIds/);
+  assert.match(sources, /languageStructureCoverage\.actualIds/);
+  assert.match(officialSpec, /languageStructureCoverage\.missingLanguageStructureIds/);
+  assert.match(plan, /Language structure coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
