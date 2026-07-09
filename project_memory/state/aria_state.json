@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 161,
-  "stage": "external_blocker_gap_source_alignment_guard_verified",
+  "loop_id": 162,
+  "stage": "conformance_requirement_blocker_source_guard_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "test",
-    "diff_size": 34,
+    "diff_size": 47,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -182,7 +182,8 @@
       "w262_20260709_1728_recheck",
       "source_coverage_runlog_alignment_guard",
       "appendix_a_runlog_alignment_guard",
-      "external_blocker_gap_source_alignment_guard"
+      "external_blocker_gap_source_alignment_guard",
+      "conformance_requirement_blocker_source_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -376,12 +377,13 @@
       "check_w262_20260709_1728_recheck",
       "check_source_coverage_status_matches_external_runlog",
       "check_appendix_a_artwork_status_matches_pictogram_audit_runlog",
-      "check_external_blocker_gap_source_alignment"
+      "check_external_blocker_gap_source_alignment",
+      "check_conformance_requirement_blocker_source_alignment"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1377-external-blocker-gap-source-final-staged-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-external-blocker-gap-source-alignment-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-1384-conformance-requirement-blocker-source-final-staged-diff-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-conformance-requirement-blocker-source-audit.md",
     "result": "pass_with_external_blockers"
   },
   "open_issues": [
@@ -560,10 +562,11 @@
     "W262 remains unavailable locally after the 2026-07-09T17:28:55+09:00 publication-page and local-source recheck; it is tracked as a missing companion source, not missing C260 implementation evidence.",
     "getArchimate4ImplementationStatus().sourceCoverage is now regression-tested against the external-source runlog JSON so MEFF 4.0 XSD and W262 status metadata cannot drift from the cited evidence.",
     "getArchimate4ImplementationStatus().sourceCoverage.appendixAArtworkRights and iconography status are now regression-tested against the Appendix A pictogram audit runlog JSON so local renderer-path coverage cannot drift from the cited evidence.",
-    "getArchimate4ImplementationStatus().remainingGaps, sourceCoverage, externalBlockerCatalog, and conformanceReadiness are now regression-tested so official conformance blockers cannot drift from their missing required source coverage entries."
+    "getArchimate4ImplementationStatus().remainingGaps, sourceCoverage, externalBlockerCatalog, and conformanceReadiness are now regression-tested so official conformance blockers cannot drift from their missing required source coverage entries.",
+    "getArchimate4ImplementationStatus().conformanceRequirements is now regression-tested so implemented shall requirements stay out of remaining gaps and externally blocked shall requirements map to matching gaps and missing required source coverage."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T18:54:00+09:00"
+    "updated_at": "2026-07-09T19:10:00+09:00"
   }
 }

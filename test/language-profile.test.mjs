@@ -2691,6 +2691,53 @@ test('archimate 4 external blocker gaps map to source coverage and readiness', (
   assert.equal(sourceCoverage.w262.localSourcePresent, false);
 });
 
+test('archimate 4 conformance requirement blockers map to gaps and required sources', () => {
+  const status = getArchimate4ImplementationStatus();
+  const requirements = status.conformanceRequirements.items;
+  const gapsByRequirementId = new Map(
+    status.remainingGaps.items
+      .filter((gap) => gap.requirementId)
+      .map((gap) => [ gap.requirementId, gap ])
+  );
+  const implementedShallRequirements = requirements.filter((requirement) => {
+    return requirement.level === 'shall' && requirement.status === 'implemented';
+  });
+  const externalBlockedShallRequirements = requirements.filter((requirement) => {
+    return requirement.level === 'shall' && requirement.externalBlocker;
+  });
+
+  assert.deepEqual(implementedShallRequirements.map((requirement) => requirement.id), [
+    'language-structure',
+    'viewpoint-mechanism',
+    'language-customization'
+  ]);
+  assert.equal(status.conformanceRequirements.shall.implemented, implementedShallRequirements.length);
+  assert.equal(status.conformanceReadiness.implementedShallCount, implementedShallRequirements.length);
+  assert.equal(implementedShallRequirements.every((requirement) => !gapsByRequirementId.has(requirement.id)), true);
+
+  assert.deepEqual(externalBlockedShallRequirements.map((requirement) => requirement.id), [
+    'standard-iconography',
+    'appendix-b-relationships'
+  ]);
+  assert.deepEqual(
+    status.externalBlockerCatalog.requirementIds,
+    externalBlockedShallRequirements.map((requirement) => requirement.externalBlocker)
+  );
+  assert.equal(status.conformanceRequirements.shall.externalBlocked, externalBlockedShallRequirements.length);
+  assert.equal(status.conformanceReadiness.externalBlockedShallCount, externalBlockedShallRequirements.length);
+
+  for (const requirement of externalBlockedShallRequirements) {
+    const gap = gapsByRequirementId.get(requirement.id);
+    const source = status.sourceCoverage.items[gap.sourceId];
+
+    assert.equal(gap.officialConformanceBlocker, true);
+    assert.equal(gap.id, requirement.externalBlocker);
+    assert.equal(source.required, true);
+    assert.equal(source.localSourcePresent, false);
+    assert.equal(source.externalBlocker, requirement.externalBlocker);
+  }
+});
+
 test('archimate 4 implementation status exposes C260 section coverage identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

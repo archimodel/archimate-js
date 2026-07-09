@@ -2099,3 +2099,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1376-external-blocker-gap-source-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1377-external-blocker-gap-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
 - Audit: `project_memory/audit/reports/20260709-external-blocker-gap-source-alignment-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 162
+
+- Goal: strengthen C260 conformance requirement tracking so implemented and externally blocked `shall` requirements cannot drift from readiness counts, remaining gaps, or required source coverage.
+- Implemented: `test/language-profile.test.mjs` now verifies implemented `shall` requirements (`language-structure`, `viewpoint-mechanism`, `language-customization`) match `implementedShallCount` and do not appear as remaining gaps.
+- Implemented: the guard verifies externally blocked `shall` requirements (`standard-iconography`, `appendix-b-relationships`) match `externalBlockedShallCount`, map to `externalBlockerCatalog.requirementIds`, and connect to matching remaining gaps and missing required source coverage entries.
+- Focused verification: `project_memory/runlogs/20260709-1378-conformance-requirement-blocker-source-focused-test.txt` passed.
+- Verification: `npm run test:language` passed with 205 tests in `project_memory/runlogs/20260709-1379-conformance-requirement-blocker-source-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1380-conformance-requirement-blocker-source-eslint-changed.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1381-conformance-requirement-blocker-source-diff-check.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1382-conformance-requirement-blocker-source-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1383-conformance-requirement-blocker-source-staged-diff-check.txt` first failed on a generated repo-lint EOF blank line; `project_memory/runlogs/20260709-1384-conformance-requirement-blocker-source-final-staged-diff-check.txt` passed after trimming that generated runlog.
+- Audit: `project_memory/audit/reports/20260709-conformance-requirement-blocker-source-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
