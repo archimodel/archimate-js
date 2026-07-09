@@ -36,6 +36,9 @@
   profile artifact present", not "licensed C260 source reviewed".
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
+- Node-based audit tooling can import `getArchimate4ImplementationStatus()` directly from
+  `lib/metamodel/languages/index.js`; the package root remains the browser and webpack-oriented entry
+  point.
 - `getArchimate4ImplementationStatus().elementCatalog` reports expected, actual, missing, and extra
   type lists for the C260-derived 42-element catalog, so hosts can audit exact type coverage rather
   than only the element count.

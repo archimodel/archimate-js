@@ -1,0 +1,9 @@
+✔ archimate 4 implementation status API can be imported directly by Node ESM (137.6144ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 250.5319

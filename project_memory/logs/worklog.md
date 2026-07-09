@@ -1427,3 +1427,16 @@
 - Final record checks: JSON parsed in `project_memory/runlogs/20260709-788-xml-internal-roundtrip-final-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-789-xml-internal-roundtrip-final-diff-check.txt`; staged diff check passed in `project_memory/runlogs/20260709-790-xml-internal-roundtrip-staged-diff-check.txt`.
 - Audit: `project_memory/audit/reports/20260709-xml-internal-roundtrip-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 114
+
+- Goal: make the ArchiMate 4 implementation status API directly executable from Node ESM audit tooling without loading the browser/webpack package root.
+- Red test: `project_memory/runlogs/20260709-791-status-api-node-esm-red-test.txt` failed because the language status API dependency path imported JSON profiles without Node ESM import attributes.
+- Implemented: `lib/metamodel/languages/index.js` and `lib/metamodel/languages/archimate4-relationships.js` now use JSON import attributes for profile JSON imports and explicit `.js` specifiers for local source imports on the status API path.
+- Implemented: `lib/util/ModelUtil.js` and the legacy relationship map modules now use explicit `.js` specifiers where the status API path resolves through the fallback relationship map data; one trailing blank-line whitespace issue in `lib/metamodel/ImpMigRelationshipMap.js` was removed instead of broad generated-map reformatting.
+- Tests/docs: `test/language-profile.test.mjs` now verifies direct Node ESM import of `getArchimate4ImplementationStatus()` from `lib/metamodel/languages/index.js`; README and `docs/archimate4/sources.md` document that Node audit tooling should use that path while the package root remains the browser/webpack-oriented entry point.
+- Focused verification: `project_memory/runlogs/20260709-792-status-api-node-esm-focused-test.txt` passed for the direct Node ESM status API test.
+- Verification: `npm run test:language` passed with 163 tests in `project_memory/runlogs/20260709-793-status-api-node-esm-test-language.txt`; registry scoped ESLint passed in `project_memory/runlogs/20260709-794-status-api-node-esm-eslint-registry.txt`; relationship map syntax lint passed with legacy generated-map indentation disabled in `project_memory/runlogs/20260709-794b-status-api-node-esm-relationship-map-eslint.txt`; JSON parse check passed in `project_memory/runlogs/20260709-795-status-api-node-esm-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-796-status-api-node-esm-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-797-status-api-node-esm-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-798-status-api-node-esm-repo-lint.txt` with 4382 existing errors.
+- Audit: `project_memory/audit/reports/20260709-status-api-node-esm-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

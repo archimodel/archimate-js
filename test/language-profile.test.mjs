@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
+import { promisify } from 'node:util';
+
+const execFileAsync = promisify(execFile);
 
 async function readJson(path) {
   const text = await readFile(new URL(path, import.meta.url), 'utf8');
@@ -13,6 +17,12 @@ function kebab(type) {
     .replace(/[^a-zA-Z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
     .toLowerCase();
+}
+
+async function runNodeModule(source) {
+  return execFileAsync(process.execPath, [ '--input-type=module', '-e', source ], {
+    cwd: new URL('..', import.meta.url)
+  });
 }
 
 test('archimate 3 profile keeps retired 3.x concepts for compatibility', async () => {
@@ -562,6 +572,25 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(officialSpec, /missingTypes/);
   assert.match(officialSpec, /extraTypes/);
   assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
+});
+
+test('archimate 4 implementation status API can be imported directly by Node ESM', async () => {
+  const { stdout } = await runNodeModule(`
+    import { getArchimate4ImplementationStatus } from './lib/metamodel/languages/index.js';
+    const status = getArchimate4ImplementationStatus();
+    console.log(JSON.stringify({
+      version: status.version,
+      sectionCoverageComplete: status.sectionCoverage.complete,
+      officialConformanceClaimable: status.conformanceReadiness.officialConformanceClaimable
+    }));
+  `);
+  const status = JSON.parse(stdout.trim());
+
+  assert.deepEqual(status, {
+    version: '4.0',
+    sectionCoverageComplete: true,
+    officialConformanceClaimable: false
+  });
 });
 
 test('archimate 4 implementation status tracks dedicated local pictogram coverage', async () => {

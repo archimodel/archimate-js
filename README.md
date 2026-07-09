@@ -40,6 +40,8 @@ Use `getArchimate4RelationshipProfileStatus()` to confirm whether the active rel
 
 Use `getArchimate4ImplementationStatus()` to inspect the current ArchiMate 4 implementation boundary. It reports the implemented 42-element catalog, active relationship profile status, experimental MEFF 4 exchange status, local icon coverage including generic object alias count, C260 conformance requirement status, C260 section coverage status, source coverage status, conformance readiness, remaining gap identity, and the external blockers that must be resolved before official conformance can be claimed.
 
+For Node-based audit tooling that does not load the browser viewer bundle, import `getArchimate4ImplementationStatus()` from `archimate-js/lib/metamodel/languages/index.js`. The package root remains the browser and webpack-oriented entry point.
+
 The Appendix B source-coverage entry distinguishes the reviewed local C260 source from the absent redistributable Appendix B profile artifact. The loader, validation, status, and coverage report APIs are implemented; the normative matrix data must still be supplied by the host or by an approved redistributable source package.
 
 The W262 source-coverage entry records the latest local Downloads/attachments search and publication-page status so hosts can distinguish a missing companion paper from missing C260 implementation evidence.

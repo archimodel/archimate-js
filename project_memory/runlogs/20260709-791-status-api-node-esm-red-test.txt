@@ -1,0 +1,60 @@
+✖ archimate 4 implementation status API can be imported directly by Node ESM (64.582ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.981
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:577:1
+✖ archimate 4 implementation status API can be imported directly by Node ESM (64.582ms)
+  Error: Command failed: C:\Program Files\nodejs\node.exe --input-type=module -e
+      import { getArchimate4ImplementationStatus } from './lib/metamodel/languages/index.js';
+      const status = getArchimate4ImplementationStatus();
+      console.log(JSON.stringify({
+        version: status.version,
+        sectionCoverageComplete: status.sectionCoverage.complete,
+        officialConformanceClaimable: status.conformanceReadiness.officialConformanceClaimable
+      }));
+
+  (node:18380) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+  Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+  To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+  (Use `node --trace-warnings ...` to show where the warning was created)
+  node:internal/modules/esm/assert:88
+          throw new ERR_IMPORT_ATTRIBUTE_MISSING(url, 'type', validType);
+                ^
+
+  TypeError [ERR_IMPORT_ATTRIBUTE_MISSING]: Module "file:///D:/github/archimate-js/lib/metamodel/languages/archimate3-profile.json" needs an import attribute of "type: json"
+      at validateAttributes (node:internal/modules/esm/assert:88:15)
+      at defaultLoadSync (node:internal/modules/esm/load:164:3)
+      at #loadAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:795:12)
+      at #loadSync (node:internal/modules/esm/loader:815:49)
+      at ModuleLoader.load (node:internal/modules/esm/loader:780:26)
+      at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:526:31)
+      at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:571:36)
+      at afterResolve (node:internal/modules/esm/loader:624:52)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:630:12)
+      at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {
+    code: 'ERR_IMPORT_ATTRIBUTE_MISSING'
+  }
+
+  Node.js v24.12.0
+
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1101:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:305:5) {
+    code: 1,
+    killed: false,
+    signal: null,
+    cmd: "C:\\Program Files\\nodejs\\node.exe --input-type=module -e \n    import { getArchimate4ImplementationStatus } from './lib/metamodel/languages/index.js';\n    const status = getArchimate4ImplementationStatus();\n    console.log(JSON.stringify({\n      version: status.version,\n      sectionCoverageComplete: status.sectionCoverage.complete,\n      officialConformanceClaimable: status.conformanceReadiness.officialConformanceClaimable\n    }));\n  ",
+    stdout: '',
+    stderr: '(node:18380) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn\'t parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add "type": "module" to D:\\github\\archimate-js\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nnode:internal/modules/esm/assert:88\r\n        throw new ERR_IMPORT_ATTRIBUTE_MISSING(url, \'type\', validType);\r\n              ^\r\n\r\nTypeError [ERR_IMPORT_ATTRIBUTE_MISSING]: Module "file:///D:/github/archimate-js/lib/metamodel/languages/archimate3-profile.json" needs an import attribute of "type: json"\r\n    at validateAttributes (node:internal/modules/esm/assert:88:15)\r\n    at defaultLoadSync (node:internal/modules/esm/load:164:3)\r\n    at #loadAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:795:12)\r\n    at #loadSync (node:internal/modules/esm/loader:815:49)\r\n    at ModuleLoader.load (node:internal/modules/esm/loader:780:26)\r\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:526:31)\r\n    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:571:36)\r\n    at afterResolve (node:internal/modules/esm/loader:624:52)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:630:12)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:143:33) {\r\n  code: \'ERR_IMPORT_ATTRIBUTE_MISSING\'\r\n}\r\n\r\nNode.js v24.12.0\r\n'
+  }
