@@ -155,6 +155,12 @@ It must expose exact C260 Appendix A Summary of Language Notation outline fields
 `appendixANotationCoverage.extraAppendixANotationIds`) so the implementation can track notation
 summary coverage by subsection identity while preserving the external-source boundary for exact
 artwork redistribution rights.
+It must expose exact C260 Appendix B Relationships outline fields
+(`appendixBRelationshipsCoverage.expectedIds`, `appendixBRelationshipsCoverage.actualIds`,
+`appendixBRelationshipsCoverage.missingAppendixBRelationshipsIds`, and
+`appendixBRelationshipsCoverage.extraAppendixBRelationshipsIds`) so the implementation can track
+derivation, restriction, relationship-table, and relationship-between-relationships coverage by
+subsection identity while preserving the external-source boundary for relationship table data.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot

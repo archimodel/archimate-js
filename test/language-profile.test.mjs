@@ -1201,6 +1201,58 @@ test('archimate 4 implementation status exposes C260 appendix A notation coverag
   assert.match(plan, /Appendix A notation coverage status reports/);
 });
 
+test('archimate 4 implementation status exposes C260 appendix B relationships coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const plan = await readFile(new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url), 'utf8');
+  const appendixBRelationshipsCatalog = profile.conformance.appendixBRelationshipsCoverageCatalog;
+  const appendixBRelationshipsCoverage = profile.conformance.appendixBRelationshipsCoverage;
+  const expectedAppendixBRelationshipsIds = [
+    'specification-of-derivation-rules',
+    'derivation-rules-for-valid-relationships',
+    'valid-derivations-for-specialization-relationships',
+    'valid-derivations-for-structural-relationships',
+    'valid-derivations-for-dependency-relationships',
+    'valid-derivations-for-dynamic-relationships',
+    'derivation-rules-for-potential-relationships',
+    'potential-derivation-for-specialization-relationships',
+    'potential-derivation-for-structural-and-dependency-relationships',
+    'potential-derivation-for-dependency-relationships',
+    'potential-derivation-for-dynamic-relationships',
+    'potential-derivation-rule-for-grouping',
+    'restrictions-on-applying-derivation-rules',
+    'relationship-tables',
+    'grouping-plateau-and-relationships-between-relationships'
+  ];
+
+  assert.equal(appendixBRelationshipsCatalog.status, 'c260-outline-derived');
+  assert.equal(
+    appendixBRelationshipsCatalog.sourceRunlogPath,
+    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+  );
+  assert.equal(appendixBRelationshipsCatalog.expectedCount, expectedAppendixBRelationshipsIds.length);
+  assert.deepEqual(appendixBRelationshipsCatalog.expectedIds, expectedAppendixBRelationshipsIds);
+  assert.deepEqual(
+    appendixBRelationshipsCoverage.map((appendixBRelationshipsItem) => appendixBRelationshipsItem.id),
+    expectedAppendixBRelationshipsIds
+  );
+  assert.equal(
+    appendixBRelationshipsCoverage.every((appendixBRelationshipsItem) => appendixBRelationshipsItem.c260Section && appendixBRelationshipsItem.heading),
+    true
+  );
+
+  assert.match(languageIndex, /function summarizeAppendixBRelationshipsCoverage/);
+  assert.match(languageIndex, /appendixBRelationshipsCoverage: appendixBRelationshipsCoverage/);
+  assert.match(languageIndex, /missingAppendixBRelationshipsIds/);
+  assert.match(readme, /appendixBRelationshipsCoverage\.expectedIds/);
+  assert.match(sources, /appendixBRelationshipsCoverage\.actualIds/);
+  assert.match(officialSpec, /appendixBRelationshipsCoverage\.missingAppendixBRelationshipsIds/);
+  assert.match(plan, /Appendix B relationships coverage status reports/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');

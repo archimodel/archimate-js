@@ -103,6 +103,10 @@ Appendix A notation coverage status reports `expectedIds`, `actualIds`,
 `missingAppendixANotationIds`, and `extraAppendixANotationIds` for the C260 Appendix A outline so
 notation summary subsection headings cannot drift silently while exact artwork rights remain
 external.
+Appendix B relationships coverage status reports `expectedIds`, `actualIds`,
+`missingAppendixBRelationshipsIds`, and `extraAppendixBRelationshipsIds` for the C260 Appendix B
+outline so derivation, restriction, table, and relationship-between-relationships subsection
+headings cannot drift silently while relationship table data remains external.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact
 blocker-id auditing across readiness, requirements, and source coverage. The source coverage status
 reports `expectedSourceIds`, `actualSourceIds`, `missingSourceIds`, and `extraSourceIds` for exact

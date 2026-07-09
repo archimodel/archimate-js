@@ -146,6 +146,12 @@
   `appendixANotationCoverage.extraAppendixANotationIds` so the Appendix A Summary of Language
   Notation outline remains visible by exact subsection identity while exact artwork rights remain
   externally source-dependent.
+- `getArchimate4ImplementationStatus().appendixBRelationshipsCoverage` reports
+  `appendixBRelationshipsCoverage.expectedIds`, `appendixBRelationshipsCoverage.actualIds`,
+  `appendixBRelationshipsCoverage.missingAppendixBRelationshipsIds`, and
+  `appendixBRelationshipsCoverage.extraAppendixBRelationshipsIds` so the Appendix B Relationships
+  outline remains visible by exact subsection identity while relationship table data remains
+  externally supplied.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

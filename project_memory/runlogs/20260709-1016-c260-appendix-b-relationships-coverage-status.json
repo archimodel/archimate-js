@@ -1,0 +1,137 @@
+{
+  "status": "c260-outline-derived",
+  "sourceRunlogPath": "project_memory/runlogs/20260709-805-c260-outline-current-extract.txt",
+  "expectedCount": 15,
+  "expectedIds": [
+    "specification-of-derivation-rules",
+    "derivation-rules-for-valid-relationships",
+    "valid-derivations-for-specialization-relationships",
+    "valid-derivations-for-structural-relationships",
+    "valid-derivations-for-dependency-relationships",
+    "valid-derivations-for-dynamic-relationships",
+    "derivation-rules-for-potential-relationships",
+    "potential-derivation-for-specialization-relationships",
+    "potential-derivation-for-structural-and-dependency-relationships",
+    "potential-derivation-for-dependency-relationships",
+    "potential-derivation-for-dynamic-relationships",
+    "potential-derivation-rule-for-grouping",
+    "restrictions-on-applying-derivation-rules",
+    "relationship-tables",
+    "grouping-plateau-and-relationships-between-relationships"
+  ],
+  "items": [
+    {
+      "id": "specification-of-derivation-rules",
+      "c260Section": "B.1",
+      "heading": "Specification of Derivation Rules",
+      "status": "tracked"
+    },
+    {
+      "id": "derivation-rules-for-valid-relationships",
+      "c260Section": "B.2",
+      "heading": "Derivation Rules for Valid Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "valid-derivations-for-specialization-relationships",
+      "c260Section": "B.2.1",
+      "heading": "Valid Derivations for Specialization Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "valid-derivations-for-structural-relationships",
+      "c260Section": "B.2.2",
+      "heading": "Valid Derivations for Structural Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "valid-derivations-for-dependency-relationships",
+      "c260Section": "B.2.3",
+      "heading": "Valid Derivations for Dependency Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "valid-derivations-for-dynamic-relationships",
+      "c260Section": "B.2.4",
+      "heading": "Valid Derivations for Dynamic Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "derivation-rules-for-potential-relationships",
+      "c260Section": "B.3",
+      "heading": "Derivation Rules for Potential Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "potential-derivation-for-specialization-relationships",
+      "c260Section": "B.3.1",
+      "heading": "Potential Derivation for Specialization Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "potential-derivation-for-structural-and-dependency-relationships",
+      "c260Section": "B.3.2",
+      "heading": "Potential Derivation for Structural and Dependency Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "potential-derivation-for-dependency-relationships",
+      "c260Section": "B.3.3",
+      "heading": "Potential Derivation for Dependency Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "potential-derivation-for-dynamic-relationships",
+      "c260Section": "B.3.4",
+      "heading": "Potential Derivation for Dynamic Relationships",
+      "status": "tracked"
+    },
+    {
+      "id": "potential-derivation-rule-for-grouping",
+      "c260Section": "B.3.5",
+      "heading": "Potential Derivation Rule for Grouping",
+      "status": "tracked"
+    },
+    {
+      "id": "restrictions-on-applying-derivation-rules",
+      "c260Section": "B.4",
+      "heading": "Restrictions on Applying Derivation Rules",
+      "status": "tracked"
+    },
+    {
+      "id": "relationship-tables",
+      "c260Section": "B.5",
+      "heading": "Relationship Tables",
+      "status": "external-profile-required"
+    },
+    {
+      "id": "grouping-plateau-and-relationships-between-relationships",
+      "c260Section": "B.6",
+      "heading": "Grouping, Plateau, and Relationships Between Relationships",
+      "status": "tracked"
+    }
+  ],
+  "actualIds": [
+    "specification-of-derivation-rules",
+    "derivation-rules-for-valid-relationships",
+    "valid-derivations-for-specialization-relationships",
+    "valid-derivations-for-structural-relationships",
+    "valid-derivations-for-dependency-relationships",
+    "valid-derivations-for-dynamic-relationships",
+    "derivation-rules-for-potential-relationships",
+    "potential-derivation-for-specialization-relationships",
+    "potential-derivation-for-structural-and-dependency-relationships",
+    "potential-derivation-for-dependency-relationships",
+    "potential-derivation-for-dynamic-relationships",
+    "potential-derivation-rule-for-grouping",
+    "restrictions-on-applying-derivation-rules",
+    "relationship-tables",
+    "grouping-plateau-and-relationships-between-relationships"
+  ],
+  "missingIds": [],
+  "extraIds": [],
+  "missingAppendixBRelationshipsIds": [],
+  "extraAppendixBRelationshipsIds": [],
+  "actualCount": 15,
+  "complete": true
+}

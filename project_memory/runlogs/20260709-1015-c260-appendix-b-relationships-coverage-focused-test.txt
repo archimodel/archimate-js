@@ -1,0 +1,10 @@
+✔ archimate 4 implementation status exposes C260 appendix B relationships coverage identity (17.5316ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 153.1189
+EXIT_CODE=0
