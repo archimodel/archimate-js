@@ -67,6 +67,11 @@ traceable to the reviewed C260 chapter and appendix outline without allowing unr
 requirement or blocker references. The exact section coverage must include Chapter 1
 Introduction/Conformance and Chapter 2 Definitions as status-tracked sections, even though they are
 not element-catalog chapters.
+It must expose exact C260 Chapter 1 Introduction/Conformance outline fields
+(`introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,
+`introductionCoverage.missingIntroductionIds`, and `introductionCoverage.extraIntroductionIds`) so
+the implementation can track introductory, conformance, normative-reference, terminology, and
+future-direction coverage by subsection identity.
 It must expose exact C260 Chapter 2 definition vocabulary fields (`definitionCoverage.expectedIds`,
 `definitionCoverage.actualIds`, `definitionCoverage.missingDefinitionIds`, and
 `definitionCoverage.extraDefinitionIds`) so the implementation can track the standard terminology

@@ -54,6 +54,9 @@ Section coverage status reports `expectedIds`, `actualIds`, `missingIds`, `extra
 chapter and appendix outline, including Chapter 1 Introduction/Conformance and Chapter 2
 Definitions, so broad specification coverage and its conformance/blocker references cannot drift
 silently.
+Introduction coverage status reports `expectedIds`, `actualIds`, `missingIntroductionIds`, and
+`extraIntroductionIds` for the C260 Chapter 1 outline so Introduction/Conformance subsections cannot
+drift silently.
 Definition coverage status reports `expectedIds`, `actualIds`, `missingDefinitionIds`, and
 `extraDefinitionIds` for the C260 Chapter 2 vocabulary without copying definition prose.
 External blocker status reports `expectedIds`, `actualIds`, `missingIds`, and `extraIds` for exact

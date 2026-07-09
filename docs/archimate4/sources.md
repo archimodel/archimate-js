@@ -63,6 +63,11 @@
   unregistered conformance requirement or external blocker references. The exact section list starts
   at Chapter 1 and includes the Introduction/Conformance and Definitions chapters, not only the
   implementation-heavy language chapters.
+- `getArchimate4ImplementationStatus().introductionCoverage` reports
+  `introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,
+  `introductionCoverage.missingIntroductionIds`, and
+  `introductionCoverage.extraIntroductionIds` so the Chapter 1 Introduction/Conformance outline
+  remains visible by exact subsection identity.
 - `getArchimate4ImplementationStatus().definitionCoverage` reports
   `definitionCoverage.expectedIds`, `definitionCoverage.actualIds`,
   `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the

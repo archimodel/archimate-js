@@ -574,6 +574,38 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.match(officialSpec, /externalBlockerCatalog\.missingIds/);
 });
 
+test('archimate 4 implementation status exposes C260 introduction coverage identity', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  const sources = await readFile(new URL('../docs/archimate4/sources.md', import.meta.url), 'utf8');
+  const officialSpec = await readFile(new URL('../docs/archimate4/official-specification.md', import.meta.url), 'utf8');
+  const introductionCatalog = profile.conformance.introductionCoverageCatalog;
+  const introductions = profile.conformance.introductionCoverage;
+  const expectedIntroductionIds = [
+    'objective',
+    'overview',
+    'conformance',
+    'normative-references',
+    'terminology',
+    'future-directions'
+  ];
+
+  assert.equal(introductionCatalog.status, 'c260-outline-derived');
+  assert.equal(introductionCatalog.sourceRunlogPath, 'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt');
+  assert.equal(introductionCatalog.expectedCount, expectedIntroductionIds.length);
+  assert.deepEqual(introductionCatalog.expectedIds, expectedIntroductionIds);
+  assert.deepEqual(introductions.map((introduction) => introduction.id), expectedIntroductionIds);
+  assert.equal(introductions.every((introduction) => introduction.c260Section && introduction.heading), true);
+
+  assert.match(languageIndex, /function summarizeIntroductionCoverage/);
+  assert.match(languageIndex, /introductionCoverage: introductionCoverage/);
+  assert.match(languageIndex, /missingIntroductionIds/);
+  assert.match(readme, /introductionCoverage\.expectedIds/);
+  assert.match(sources, /introductionCoverage\.actualIds/);
+  assert.match(officialSpec, /introductionCoverage\.missingIntroductionIds/);
+});
+
 test('archimate 4 implementation status exposes C260 definition vocabulary identity', async () => {
   const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
   const languageIndex = await readFile(new URL('../lib/metamodel/languages/index.js', import.meta.url), 'utf8');
