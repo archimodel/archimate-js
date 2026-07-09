@@ -181,8 +181,9 @@
   `documentArtifactCoverage.expectedIds`,
   `documentArtifactCoverage.actualIds`,
   `documentArtifactCoverage.missingDocumentArtifactIds`, and
-  `documentArtifactCoverage.extraDocumentArtifactIds` so the C260 Index remains visible as a
-  non-implementation document artifact rather than an ArchiMate language section.
+  `documentArtifactCoverage.extraDocumentArtifactIds` so C260 front matter and Index outline
+  artifacts remain visible as non-implementation document artifacts rather than ArchiMate language
+  sections.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,

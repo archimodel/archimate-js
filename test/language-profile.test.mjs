@@ -1482,13 +1482,23 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
   const documentArtifactCoverage = profile.conformance.documentArtifactCoverage;
   const sectionCatalog = profile.conformance.sectionCoverageCatalog;
   const expectedDocumentArtifactIds = [
+    'cover',
+    'title',
+    'copyright',
+    'table-of-contents',
+    'preface',
+    'the-open-group',
+    'this-document',
+    'trademarks',
+    'acknowledgements',
+    'referenced-documents',
     'index'
   ];
 
   assert.equal(documentArtifactCatalog.status, 'c260-outline-derived');
   assert.equal(
     documentArtifactCatalog.sourceRunlogPath,
-    'project_memory/runlogs/20260709-805-c260-outline-current-extract.txt'
+    'project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt'
   );
   assert.equal(documentArtifactCatalog.expectedCount, expectedDocumentArtifactIds.length);
   assert.deepEqual(documentArtifactCatalog.expectedIds, expectedDocumentArtifactIds);
@@ -1497,7 +1507,13 @@ test('archimate 4 implementation status exposes C260 document artifact boundary'
     expectedDocumentArtifactIds
   );
   assert.equal(documentArtifactCoverage.every((documentArtifactItem) => documentArtifactItem.nonImplementation), true);
+  assert.equal(documentArtifactCoverage.every((documentArtifactItem) => Number.isInteger(documentArtifactItem.pdfPage)), true);
+  assert.deepEqual(documentArtifactCoverage.filter((documentArtifactItem) => documentArtifactItem.depth === 1).map((documentArtifactItem) => documentArtifactItem.id), [
+    'the-open-group',
+    'this-document'
+  ]);
   assert.equal(sectionCatalog.expectedIds.includes('index'), false);
+  assert.equal(sectionCatalog.expectedIds.includes('table-of-contents'), false);
 
   assert.match(languageIndex, /function summarizeDocumentArtifactCoverage/);
   assert.match(languageIndex, /documentArtifactCoverage: documentArtifactCoverage/);

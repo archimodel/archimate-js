@@ -1,0 +1,181 @@
+(node:76116) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "documentArtifactCoverage": {
+    "status": "c260-outline-derived",
+    "sourceRunlogPath": "project_memory/runlogs/20260709-1093-c260-document-artifacts-source-check.txt",
+    "expectedCount": 11,
+    "expectedIds": [
+      "cover",
+      "title",
+      "copyright",
+      "table-of-contents",
+      "preface",
+      "the-open-group",
+      "this-document",
+      "trademarks",
+      "acknowledgements",
+      "referenced-documents",
+      "index"
+    ],
+    "items": [
+      {
+        "id": "cover",
+        "c260Section": "Cover",
+        "heading": "Cover",
+        "pdfPage": 1,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 cover is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "title",
+        "c260Section": "Title",
+        "heading": "Title",
+        "pdfPage": 4,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 title page is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "copyright",
+        "c260Section": "Copyright",
+        "heading": "Copyright",
+        "pdfPage": 5,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 copyright page is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "table-of-contents",
+        "c260Section": "Table of Contents",
+        "heading": "Table of Contents",
+        "pdfPage": 6,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 table of contents is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "preface",
+        "c260Section": "Preface",
+        "heading": "Preface",
+        "pdfPage": 14,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 preface is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "the-open-group",
+        "c260Section": "Preface",
+        "heading": "The Open Group",
+        "pdfPage": 14,
+        "depth": 1,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 preface subsection is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "this-document",
+        "c260Section": "Preface",
+        "heading": "This Document",
+        "pdfPage": 14,
+        "depth": 1,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 preface subsection is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "trademarks",
+        "c260Section": "Trademarks",
+        "heading": "Trademarks",
+        "pdfPage": 17,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 trademarks section is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "acknowledgements",
+        "c260Section": "Acknowledgements",
+        "heading": "Acknowledgements",
+        "pdfPage": 18,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 acknowledgements section is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "referenced-documents",
+        "c260Section": "Referenced Documents",
+        "heading": "Referenced Documents",
+        "pdfPage": 20,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 referenced documents section is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      },
+      {
+        "id": "index",
+        "c260Section": "Index",
+        "heading": "Index",
+        "pdfPage": 204,
+        "depth": 0,
+        "status": "non-implementation-reference",
+        "nonImplementation": true,
+        "evidence": "C260 index is tracked as a document artifact and intentionally excluded from ArchiMate language section coverage."
+      }
+    ],
+    "actualIds": [
+      "cover",
+      "title",
+      "copyright",
+      "table-of-contents",
+      "preface",
+      "the-open-group",
+      "this-document",
+      "trademarks",
+      "acknowledgements",
+      "referenced-documents",
+      "index"
+    ],
+    "missingIds": [],
+    "extraIds": [],
+    "missingDocumentArtifactIds": [],
+    "extraDocumentArtifactIds": [],
+    "nonImplementationIds": [
+      "cover",
+      "title",
+      "copyright",
+      "table-of-contents",
+      "preface",
+      "the-open-group",
+      "this-document",
+      "trademarks",
+      "acknowledgements",
+      "referenced-documents",
+      "index"
+    ],
+    "actualCount": 11,
+    "complete": true
+  },
+  "sectionCoverage": {
+    "expectedCount": 20,
+    "missing": [],
+    "extra": [],
+    "forbiddenArtifacts": []
+  },
+  "officialClaimable": false,
+  "remainingGaps": [
+    "officialAppendixBRelationshipMatrix",
+    "officialMeff4Xsd",
+    "exactAppendixAArtworkRights",
+    "w262CompanionPaper"
+  ]
+}
