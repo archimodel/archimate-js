@@ -603,6 +603,9 @@ External profile contract:
 - Profile status must also report missing source and target-cell counts. Detailed missing source rows
   and source-target cells are available through `getArchimate4RelationshipProfileCoverageReport()` so
   a host can audit a licensed Appendix B transcription without this repository embedding the table.
+- Profile status must expose optional scalar `sourceMetadata` for host-controlled source ids, version,
+  URI, hash, generation time, and supplier values while ignoring nested metadata, so a loaded
+  licensed Appendix B artifact remains auditable without copying table text into status output.
 - Unknown elements such as generic `Interface` or retired 3.x concepts must be rejected.
 
 ## XML And MEFF Requirements

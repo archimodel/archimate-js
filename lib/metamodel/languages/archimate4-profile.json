@@ -1359,6 +1359,7 @@
         "coverageReportImplemented": true,
         "relationshipProfileStatusApi": "getArchimate4RelationshipProfileStatus",
         "relationshipProfileCoverageApi": "getArchimate4RelationshipProfileCoverageReport",
+        "relationshipProfileSourceMetadataField": "getArchimate4RelationshipProfileStatus().sourceMetadata",
         "sourceLedgerPath": "docs/archimate4/sources.md",
         "required": true,
         "externalBlocker": "officialAppendixBRelationshipMatrix"

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 146,
-  "stage": "profile_attribute_customization_behavior_verified",
+  "loop_id": 147,
+  "stage": "relationship_profile_source_metadata_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,7 +9,7 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 115,
+    "diff_size": 153,
     "touches_dependency_manifest": false
   },
   "ckogate": {
@@ -165,7 +165,8 @@
       "w262_continuation_source_recheck",
       "appendix_a_artwork_rights_pictogram_audit",
       "viewpoint_customization_behavior_guard",
-      "profile_attribute_customization_behavior_guard"
+      "profile_attribute_customization_behavior_guard",
+      "relationship_profile_source_metadata_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -342,12 +343,13 @@
       "check_w262_continuation_source_recheck",
       "check_appendix_a_artwork_rights_pictogram_audit",
       "check_viewpoint_customization_behavior",
-      "check_profile_attribute_customization_behavior"
+      "check_profile_attribute_customization_behavior",
+      "check_relationship_profile_source_metadata"
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260709-1212-profile-attribute-customization-staged-diff-check.txt",
-    "audit_report_path": "project_memory/audit/reports/20260709-profile-attribute-customization-behavior-audit.md",
+    "runlog_path": "project_memory/runlogs/20260709-1220-relationship-profile-source-metadata-staged-diff-check.txt",
+    "audit_report_path": "project_memory/audit/reports/20260709-relationship-profile-source-metadata-audit.md",
     "result": "pass_with_external_blockers"
   },
   "open_issues": [
@@ -510,10 +512,11 @@
     "W262 remains unavailable locally after the 2026-07-09T15:19:25+09:00 publication-page and local-source recheck; it is tracked as a missing companion source, not missing C260 implementation evidence.",
     "Appendix A exact vector artwork redistribution rights remain unconfirmed; ArchiMate 4 profile pictograms use locally-authored renderer paths with complete non-object PathMap coverage and no PICTO_OBJECT alias fallback.",
     "C260 viewpoint mechanism customization is behavior-tested through archimateLanguageProfile.viewpoints: supported purpose/content tokens and active-profile element/relationship type boundaries are enforced, while example viewpoints remain informative and unbundled.",
-    "C260 language customization profile attributes are behavior-tested through archimateLanguageProfile.attributes: active standard and specialized element/relationship concepts are accepted and resolved through specialization lineage, while retired concepts, unsupported types, and missing names are rejected."
+    "C260 language customization profile attributes are behavior-tested through archimateLanguageProfile.attributes: active standard and specialized element/relationship concepts are accepted and resolved through specialization lineage, while retired concepts, unsupported types, and missing names are rejected.",
+    "Externally supplied ArchiMate 4 Appendix B relationship profiles now expose scalar source metadata through getArchimate4RelationshipProfileStatus().sourceMetadata so host-controlled source ids and hashes can be audited without copying licensed matrix text into repository or status output."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-09T15:49:37+09:00"
+    "updated_at": "2026-07-09T15:56:18+09:00"
   }
 }

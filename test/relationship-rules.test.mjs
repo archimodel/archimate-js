@@ -2,6 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
+  getArchimate4RelationshipProfileStatus,
+  resetArchimate4RelationshipProfileForTests,
+  setArchimate4RelationshipProfile
+} from '../lib/metamodel/languages/archimate4-relationships.js';
+import {
   getRelationshipProfileCoverageReport,
   getRelationshipProfileCoverageStats,
   getRelationshipProfileStats,
@@ -50,6 +55,8 @@ test('archimate 4 relationship fallback is compatibility-derived and replaceable
   assert.match(source, /expectedTargetCellCount/);
   assert.match(source, /completeSourceCoverage/);
   assert.match(source, /completeTargetCoverage/);
+  assert.match(source, /sourceMetadata/);
+  assert.match(source, /hasSourceMetadata/);
   assert.doesNotMatch(source, /completeTargetCoverage:\s*RELATIONSHIP_PROFILE_OPTIONS\.requireCompleteTargets/);
   assert.match(source, /toArchimate4Type/);
   assert.match(entrypoint, /setArchimate4RelationshipProfile/);
@@ -281,6 +288,63 @@ test('archimate 4 relationship profile loader accepts JSON string profiles', () 
   const maps = normalizeRelationshipProfile(profileText, validTypes, { requireComplete: true });
 
   assert.equal(maps.get('BusinessActor').get('Role'), 'i');
+});
+
+test('archimate 4 relationship profile status exposes external source metadata', () => {
+  try {
+    setArchimate4RelationshipProfile(JSON.stringify({
+      sourceMetadata: {
+        sourceId: 'c260-appendix-b-local-profile',
+        sourceName: 'Host supplied Appendix B profile',
+        sourceVersion: 'C260',
+        sourceHash: 'sha256:test-profile',
+        sourceHashAlgorithm: 'sha256',
+        copiedNormativeText: {
+          shouldNotLeak: true
+        }
+      },
+      sources: {
+        BusinessActor: {
+          Role: 'Assignment'
+        }
+      }
+    }), {
+      requireComplete: false,
+      requireCompleteTargets: false,
+      sourceMetadata: {
+        suppliedBy: 'host-application',
+        loadedAt: '2026-07-09T16:00:00+09:00'
+      }
+    });
+
+    const status = getArchimate4RelationshipProfileStatus();
+
+    assert.equal(status.source, 'external');
+    assert.equal(status.hasSourceMetadata, true);
+    assert.deepEqual(status.sourceMetadata, {
+      sourceId: 'c260-appendix-b-local-profile',
+      sourceName: 'Host supplied Appendix B profile',
+      sourceVersion: 'C260',
+      sourceHash: 'sha256:test-profile',
+      sourceHashAlgorithm: 'sha256',
+      loadedAt: '2026-07-09T16:00:00+09:00',
+      suppliedBy: 'host-application'
+    });
+
+    status.sourceMetadata.sourceId = 'mutated';
+    assert.equal(
+      getArchimate4RelationshipProfileStatus().sourceMetadata.sourceId,
+      'c260-appendix-b-local-profile'
+    );
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
+
+  const resetStatus = getArchimate4RelationshipProfileStatus();
+
+  assert.equal(resetStatus.source, 'compatibility-fallback');
+  assert.equal(resetStatus.hasSourceMetadata, false);
+  assert.equal(resetStatus.sourceMetadata, null);
 });
 
 test('archimate 4 relationship profile loader reports invalid JSON strings clearly', () => {

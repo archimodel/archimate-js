@@ -1895,3 +1895,15 @@
 - Final staged diff check: `project_memory/runlogs/20260709-1212-profile-attribute-customization-staged-diff-check.txt` passed.
 - Audit: `project_memory/audit/reports/20260709-profile-attribute-customization-behavior-audit.md`.
 - Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.
+
+## 2026-07-09 loop 147
+
+- Goal: strengthen the external Appendix B relationship-profile path so a loaded host-supplied profile is auditable without embedding the licensed relationship matrix.
+- Implemented: `setArchimate4RelationshipProfile()` now records scalar source metadata from profile JSON or load options, and `getArchimate4RelationshipProfileStatus()` exposes cloned `sourceMetadata` plus `hasSourceMetadata`.
+- Guarded behavior: source id, name, version, URI, hash, generation time, load time, and supplier values are retained, while nested metadata objects are ignored so licensed table text does not leak through status output; resetting the relationship profile clears the metadata.
+- Docs/status: README, `docs/archimate4/sources.md`, `docs/archimate4/official-specification.md`, and `sourceCoverage.appendixBRelationshipMatrix.relationshipProfileSourceMetadataField` now describe the status field.
+- Verification: focused relationship-profile test passed in `project_memory/runlogs/20260709-1213-relationship-profile-source-metadata-focused-test.txt`; final `npm run test:language` passed with 191 tests in `project_memory/runlogs/20260709-1214-relationship-profile-source-metadata-test-language.txt`; changed-file ESLint passed in `project_memory/runlogs/20260709-1215-relationship-profile-source-metadata-eslint-changed.txt`; JSON parse passed in `project_memory/runlogs/20260709-1216-relationship-profile-source-metadata-json-check.txt`; `git diff --check` passed in `project_memory/runlogs/20260709-1217-relationship-profile-source-metadata-diff-check.txt`; `npm run demo:build` passed in `project_memory/runlogs/20260709-1218-relationship-profile-source-metadata-demo-build.txt`.
+- Known lint status: repo-wide `npm run lint` remains the expected legacy failure, recorded in `project_memory/runlogs/20260709-1219-relationship-profile-source-metadata-repo-lint.txt` with 4382 existing errors.
+- Final staged diff check: `project_memory/runlogs/20260709-1220-relationship-profile-source-metadata-staged-diff-check.txt` passed.
+- Audit: `project_memory/audit/reports/20260709-relationship-profile-source-metadata-audit.md`.
+- Remaining open issues: exact C260 Appendix A vector artwork redistribution, official Appendix B relationship matrix data, W262 PDF local availability, and MEFF 4.0 XSD remain external-source dependent.

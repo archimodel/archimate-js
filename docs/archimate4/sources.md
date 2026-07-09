@@ -578,6 +578,9 @@
 - `getArchimate4RelationshipProfileStatus()` reports the active source, accepted concept count,
   explicit target-cell count, expected source-target cell count, missing source/target-cell counts,
   and actual complete source/target coverage booleans for the loaded profile.
+- The same status API exposes optional `sourceMetadata` copied from the host-supplied profile or load
+  options. Only scalar audit fields such as source id, version, URI, hash, generation time, and
+  supplier are retained; nested objects are ignored so licensed table text is not leaked into status.
 - `getArchimate4RelationshipProfileCoverageReport()` returns the same coverage metadata plus the
   specific missing source types and missing source-target cells, allowing hosts to audit licensed
   Appendix B profile transcription without committing the table.

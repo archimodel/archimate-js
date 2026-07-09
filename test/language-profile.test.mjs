@@ -2099,6 +2099,10 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     sourceCoverage.appendixBRelationshipMatrix.relationshipProfileCoverageApi,
     'getArchimate4RelationshipProfileCoverageReport'
   );
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.relationshipProfileSourceMetadataField,
+    'getArchimate4RelationshipProfileStatus().sourceMetadata'
+  );
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
