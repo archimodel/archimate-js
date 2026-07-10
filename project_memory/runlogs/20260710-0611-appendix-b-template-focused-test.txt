@@ -1,0 +1,40 @@
+(node:105344) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile template covers every concept pair without inventing relationships (15.1807ms)
+✔ archimate 4 relationship profile activation rejects a complete but empty template (9.7241ms)
+✖ Appendix B relationship profile template CLI emits the complete TSV matrix (86.8903ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 242.9626
+
+✖ failing tests:
+
+test at test\relationship-rules.test.mjs:771:1
+✖ Appendix B relationship profile template CLI emits the complete TSV matrix (86.8903ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + "(node:7952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn't parse as CommonJS.\n" +
+  +   'Reparsing as ES module because module syntax was detected. This incurs a performance overhead.\n' +
+  +   'To eliminate this warning, add "type": "module" to D:\\github\\archimate-js\\package.json.\n' +
+  +   '(Use `node --trace-warnings ...` to show where the warning was created)\n'
+  - ''
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:781:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '(node:7952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/relationship-profile-loader.js is not specified and it doesn\'t parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add "type": "module" to D:\\github\\archimate-js\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

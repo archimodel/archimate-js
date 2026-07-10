@@ -103,11 +103,11 @@ test('migration utility preserves specialization information', async () => {
 });
 
 test('migration table records C260-derived ambiguous replacement candidates', () => {
-  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').replacement, 'DataObject');
+  assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').replacement, 'BusinessObject');
   assert.equal(ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').originalDomain, 'Business');
   assert.deepEqual(
     ARCHIMATE_3_TO_4_MIGRATIONS.get('Representation').alternativeReplacements,
-    [ 'Artifact', 'Material' ]
+    [ 'DataObject', 'Artifact', 'Material' ]
   );
   assert.deepEqual(
     ARCHIMATE_3_TO_4_MIGRATIONS.get('Gap').alternativeReplacements,
@@ -139,10 +139,10 @@ test('migration utility reports alternative replacement types for ambiguous C260
 
   const result = migrateArchimate3ModelTo4(model);
 
-  assert.equal(model.elementsNode.baseElements[0].type, 'DataObject');
+  assert.equal(model.elementsNode.baseElements[0].type, 'BusinessObject');
   assert.equal(model.elementsNode.baseElements[0].specialization, 'Representation');
   assert.equal(model.elementsNode.baseElements[0].originalArchiMate3Domain, 'Business');
-  assert.deepEqual(result.warnings[0].alternativeReplacementTypes, [ 'Artifact', 'Material' ]);
+  assert.deepEqual(result.warnings[0].alternativeReplacementTypes, [ 'DataObject', 'Artifact', 'Material' ]);
   assert.equal(result.warnings[0].originalDomain, 'Business');
 
   assert.equal(model.elementsNode.baseElements[1].type, 'Event');
@@ -339,6 +339,41 @@ test('migration utility warns for cross-domain service realization alternatives'
   assert.equal(relationshipWarning.sourceOriginalDomain, 'Business');
   assert.equal(relationshipWarning.targetOriginalDomain, 'Application');
   assert.match(relationshipWarning.message, /model-dependent/);
+});
+
+test('migration utility warns for cross-domain realizations between every merged behavior type', () => {
+  const cases = [
+    [ 'BusinessProcess', 'ApplicationProcess', 'Process' ],
+    [ 'ApplicationFunction', 'TechnologyFunction', 'Function' ],
+    [ 'BusinessEvent', 'TechnologyEvent', 'Event' ]
+  ];
+
+  for (const [ sourceType, targetType, migratedType ] of cases) {
+    const source = { id: sourceType + '-source', type: sourceType };
+    const target = { id: targetType + '-target', type: targetType };
+    const relationship = {
+      id: sourceType + '-to-' + targetType,
+      type: 'Realization',
+      source,
+      target
+    };
+    const result = migrateArchimate3ModelTo4({
+      elementsNode: {
+        baseElements: [ source, target ]
+      },
+      relationshipsNode: {
+        relationships: [ relationship ]
+      }
+    });
+    const warning = result.warnings.find((item) => item.relationshipId === relationship.id);
+
+    assert.equal(source.type, migratedType);
+    assert.equal(target.type, migratedType);
+    assert.equal(relationship.type, 'Realization');
+    assert.equal(warning.originalType, 'Realization');
+    assert.deepEqual(warning.alternativeReplacementTypes, [ 'Specialization', 'Aggregation' ]);
+    assert.match(warning.message, /merged behavior elements/);
+  }
 });
 
 test('migration utility does not warn for same-domain service realization or disabled service warnings', () => {

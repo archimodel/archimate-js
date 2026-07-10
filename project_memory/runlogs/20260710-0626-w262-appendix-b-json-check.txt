@@ -1,0 +1,12 @@
+OK package.json
+OK lib/metamodel/languages/archimate4-profile.json
+OK project_memory/audit/audit_registry.json
+OK project_memory/state/aria_state.json
+OK project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json
+OK project_memory/runlogs/20260710-0604-external-source-current-recheck.json
+OK project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json
+OK project_memory/runlogs/20260710-0613-appendix-b-machine-readable-source-search.json
+OK project_memory/runlogs/20260710-0616-status-completion-api-scan.json
+OK project_memory/runlogs/20260710-0622-w262-appendix-b-completion-audit.json
+OK project_memory/runlogs/20260710-0623-w262-appendix-b-c260-coverage-audit.json
+OK project_memory/runlogs/20260710-0625-w262-appendix-b-editor-http-smoke.json

@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "all": "run-s lint test",
+    "archimate4:relationship-template": "node --no-warnings scripts/write_archimate4_relationship_profile_template.mjs",
     "demo:build": "webpack --config demo/webpack.config.cjs",
     "lint": "eslint .",
     "test": "npm run test:language",

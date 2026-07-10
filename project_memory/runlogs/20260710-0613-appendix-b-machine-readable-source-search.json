@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-07-10T09:10:09+09:00",
+  "source": "official-site web search and scoped local machine-readable artifact search",
+  "containsRawSpecificationText": false,
+  "officialSearch": {
+    "domains": [
+      "opengroup.org",
+      "community.opengroup.org",
+      "publications.opengroup.org"
+    ],
+    "urlsReviewed": [
+      "https://www.opengroup.org/xsd/archimate/",
+      "https://www.opengroup.org/open-group-archimate-model-exchange-file-format",
+      "https://publications.opengroup.org/archimate-library/c260"
+    ],
+    "searchedArtifactTypes": [
+      "csv",
+      "tsv",
+      "json",
+      "xlsx",
+      "xls",
+      "xml-profile"
+    ],
+    "officialMachineReadableArtifactDiscovered": false,
+    "absenceIsSearchInference": true
+  },
+  "localSearch": {
+    "roots": [
+      "C:\\Users\\syska\\Downloads",
+      "C:\\Users\\syska\\.codex\\attachments"
+    ],
+    "namePatterns": [
+      "appendix-b",
+      "relationship-matrix",
+      "archimate-relationship"
+    ],
+    "extensions": [
+      "csv",
+      "tsv",
+      "json",
+      "xlsx",
+      "xls"
+    ],
+    "matchedFiles": [],
+    "matchCount": 0
+  },
+  "decision": "extend the existing host-supplied profile loader with a complete blank transcription template and empty-template activation guard"
+}

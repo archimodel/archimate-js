@@ -53,7 +53,9 @@
         "project_memory/runlogs/20260710-0491-demo-example-viewpoint-final-test-language.txt",
         "project_memory/runlogs/20260710-0502-demo-viewpoint-validation-test-language.txt",
         "project_memory/runlogs/20260710-0509-demo-viewpoint-validation-final-test-language.txt",
-        "project_memory/runlogs/20260710-0518-external-source-0515-test-language.txt"
+        "project_memory/runlogs/20260710-0518-external-source-0515-test-language.txt",
+        "project_memory/runlogs/20260710-0620-w262-appendix-b-test-language.txt",
+        "project_memory/runlogs/20260710-0628-w262-appendix-b-final-test-language.txt"
       ]
     },
     {
@@ -94,7 +96,8 @@
         "project_memory/runlogs/20260710-0504-demo-viewpoint-validation-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0511-demo-viewpoint-validation-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0520-external-source-0515-c260-coverage-audit.json",
-        "project_memory/runlogs/20260710-0525-external-source-0515-final-c260-coverage-audit.json"
+        "project_memory/runlogs/20260710-0525-external-source-0515-final-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0623-w262-appendix-b-c260-coverage-audit.json"
       ]
     },
     {
@@ -151,7 +154,10 @@
         "project_memory/runlogs/20260710-0452-status-completion-scan-refresh-completion-audit.json",
         "project_memory/runlogs/20260710-0456-status-completion-scan-refresh-status-snapshot.json",
         "project_memory/runlogs/20260710-0457-status-completion-scan-refresh-json-check.txt",
-        "project_memory/runlogs/20260710-0458-status-completion-scan-refresh-diff-check.txt"
+        "project_memory/runlogs/20260710-0458-status-completion-scan-refresh-diff-check.txt",
+        "project_memory/runlogs/20260710-0616-status-completion-api-scan.json",
+        "project_memory/runlogs/20260710-0616-status-completion-api-scan.stderr.txt",
+        "project_memory/runlogs/20260710-0618-status-completion-focused-test.txt"
       ]
     },
     {
@@ -316,7 +322,43 @@
         "project_memory/runlogs/20260710-0524-external-source-0515-final-completion-audit.json",
         "project_memory/runlogs/20260710-0525-external-source-0515-final-c260-coverage-audit.json",
         "project_memory/runlogs/20260710-0526-external-source-0515-prestage-json-check.txt",
-        "project_memory/runlogs/20260710-0527-external-source-0515-prestage-diff-check.txt"
+        "project_memory/runlogs/20260710-0527-external-source-0515-prestage-diff-check.txt",
+        "project_memory/runlogs/20260710-0604-external-source-current-recheck.json",
+        "project_memory/runlogs/20260710-0620-w262-appendix-b-test-language.txt"
+      ]
+    },
+    {
+      "id": "audit.archimate4.w262_appendix_b_ingestion",
+      "description": "W262 change-rationale coverage, migration corrections, Appendix B complete-matrix template generation, and empty-profile activation rejection remain verified without embedding normative matrix values",
+      "when": [
+        "post_change",
+        "pre_commit"
+      ],
+      "severity": "blocker",
+      "command": "node --test --test-name-pattern \"W262 change-rationale|reviewed W262|ambiguous replacement candidates|every merged behavior type|relationship profile template|complete but empty|Appendix B relationship profile template CLI\" test/language-profile.test.mjs test/migration.test.mjs test/relationship-rules.test.mjs",
+      "expect": {
+        "exit_code": 0
+      },
+      "artifacts": [
+        "project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json",
+        "project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json",
+        "project_memory/runlogs/20260710-0608-w262-coverage-migration-red-test.txt",
+        "project_memory/runlogs/20260710-0609-w262-coverage-migration-focused-test.txt",
+        "project_memory/runlogs/20260710-0610-appendix-b-template-red-test.txt",
+        "project_memory/runlogs/20260710-0612-appendix-b-template-final-focused-test.txt",
+        "project_memory/runlogs/20260710-0613-appendix-b-machine-readable-source-search.json",
+        "project_memory/runlogs/20260710-0615-w262-appendix-b-combined-focused-test.txt",
+        "project_memory/runlogs/20260710-0616-status-completion-api-scan.json",
+        "project_memory/runlogs/20260710-0617-w262-appendix-b-focused-test.txt",
+        "project_memory/runlogs/20260710-0619-w262-appendix-b-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0620-w262-appendix-b-test-language.txt",
+        "project_memory/runlogs/20260710-0621-w262-appendix-b-demo-build.txt",
+        "project_memory/runlogs/20260710-0622-w262-appendix-b-completion-audit.json",
+        "project_memory/runlogs/20260710-0623-w262-appendix-b-c260-coverage-audit.json",
+        "project_memory/runlogs/20260710-0625-w262-appendix-b-editor-http-smoke.json",
+        "project_memory/runlogs/20260710-0626-w262-appendix-b-json-check.txt",
+        "project_memory/runlogs/20260710-0627-w262-appendix-b-diff-check.txt",
+        "project_memory/runlogs/20260710-0628-w262-appendix-b-final-test-language.txt"
       ]
     },
     {
@@ -477,7 +519,7 @@
         "pre_commit"
       ],
       "severity": "blocker",
-      "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js demo/src/sample-canvas.js test/*.test.mjs",
+      "command": "npx eslint index.js lib/BaseViewer.js lib/core/index.js lib/core/languageProfile.js lib/metamodel/languages/index.js lib/metamodel/languages/archimate3-relationships.js lib/metamodel/languages/archimate4-relationships.js lib/metamodel/languages/relationship-profile-loader.js lib/metamodel/languages/retired-concepts.js lib/migration/archimate3-to-4.js lib/validation/archimate4-model.js lib/moddle/index.js lib/moddle/templateModel.js lib/import/Importer.js lib/features/palette/PaletteProvider.js lib/features/modeling/ElementFactory.js lib/features/modeling/ConnectionUpdater.js lib/features/modeling/behavior/AttachmentBehavior.js lib/features/modeling/cmd/ReplaceRelationshipRefHandler.js lib/features/popup-menu/ConnectionMenuProvider.js lib/features/popup-menu/ConnectionOptions.js lib/features/rules/ArchimateRules.js lib/draw/PathMap.js lib/draw/ArchimateRenderer.js lib/draw/ArchimateRendererUtil.js lib/util/ModelUtil.js lib/util/ModelPropertyUtil.js lib/util/RelationshipUtil.js lib/util/JunctionUtil.js lib/util/DerivedRelationshipUtil.js lib/util/MultiplicityUtil.js lib/util/ProfileAttributeUtil.js lib/util/ColorUtil.js demo/src/sample-canvas.js scripts/audit_archimate4_completion.mjs scripts/write_archimate4_relationship_profile_template.mjs scripts/write_archimate4_status_completion_scan.mjs test/*.test.mjs",
       "expect": {
         "exit_code": 0
       },
@@ -499,7 +541,8 @@
         "project_memory/runlogs/20260710-0487-demo-example-viewpoint-eslint-registry.txt",
         "project_memory/runlogs/20260710-0501-demo-viewpoint-validation-eslint-changed.txt",
         "project_memory/runlogs/20260710-0507-demo-viewpoint-validation-eslint-registry.txt",
-        "project_memory/runlogs/20260710-0517-external-source-0515-eslint-changed.txt"
+        "project_memory/runlogs/20260710-0517-external-source-0515-eslint-changed.txt",
+        "project_memory/runlogs/20260710-0619-w262-appendix-b-eslint-changed.txt"
       ]
     },
     {
@@ -513,7 +556,9 @@
       "expect": {
         "exit_code": 1
       },
-      "artifacts": []
+      "artifacts": [
+        "project_memory/runlogs/20260710-0624-w262-appendix-b-repo-lint.txt"
+      ]
     }
   ]
 }

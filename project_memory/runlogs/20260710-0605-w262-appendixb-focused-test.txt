@@ -1,0 +1,339 @@
+(node:26012) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ demo viewer and editor expose the ArchiMate 4 conformance report panel (1.252ms)
+✔ demo conformance panel source stays aligned with the flattened report boundary (23.2791ms)
+(node:42112) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (19.7345ms)
+✔ archimate 4 profile removes retired 3.x concepts (2.7461ms)
+✔ archimate 4 profile exposes Common Domain (2.381ms)
+✔ archimate 4 profile matches the C260 element catalog (5.2407ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (2.6496ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (2.2367ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (3.0403ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.8783ms)
+✔ archimate 4 palette exposes every standard element (3.0107ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (8.8129ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (9.0573ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (1.5515ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.5367ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (2.7227ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (51.7297ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (9.2094ms)
+✔ active profile rejects concepts and relationships outside the selected version (12.6394ms)
+✔ renderer uses active language profile pictogram refs (5.3055ms)
+✔ language profile customization supports C260 specialization profiles (5.1974ms)
+✔ language profile customization validates C260 profile attribute definitions (5.1874ms)
+✔ archimate 4 implementation status exposes profile attribute type coverage (31.3986ms)
+✔ custom profile attributes validate active concepts relationships and lineage lookup (8.9968ms)
+✔ language profile customization supports relationship specializations (3.5143ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (5.5332ms)
+✔ archimate 4 shape metadata preserves domain terminology (3.0622ms)
+✔ language profile customization supports viewpoint definitions (3.9137ms)
+✔ custom viewpoint definitions validate purpose content and allowed types (4.0311ms)
+✔ archimate 4 implementation status exposes C260 viewpoint classification tokens (9.8668ms)
+✔ archimate 4 implementation status exposes C260 viewpoint mechanism features (8.8216ms)
+✔ archimate 4 implementation status exposes C260 stakeholder concern features (6.5497ms)
+✔ archimate 4 implementation status is machine-readable and preserves external blockers (16.8517ms)
+✔ archimate 4 implementation status has no incomplete non-external summaries (11.0717ms)
+✔ archimate 4 conformance report preserves official blockers after W262 is reviewed locally (8.8036ms)
+✔ archimate 4 implementation status exposes model validation coverage (6.8406ms)
+✔ archimate 4 implementation status completion scan stays parseable (16.7919ms)
+✔ archimate 4 status completion scan writer emits current summaries (340.8227ms)
+✔ archimate 4 implementation status runlog references resolve to committed evidence (25.4375ms)
+✔ archimate 4 implementation status identity arrays contain no duplicate values (10.8785ms)
+✔ archimate 4 implementation status exposes C260 introduction coverage identity (9.7127ms)
+✔ archimate 4 introduction references stay outside conformance blockers (5.7435ms)
+✔ archimate 4 implementation status exposes C260 language structure coverage identity (4.8449ms)
+✔ archimate 4 implementation status exposes C260 common domain coverage identity (4.9374ms)
+✔ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (3.9558ms)
+✔ archimate 4 implementation status exposes C260 motivation domain coverage identity (4.4548ms)
+✔ archimate 4 implementation status exposes C260 strategy domain coverage identity (4.6427ms)
+✔ archimate 4 implementation status exposes C260 business domain coverage identity (5.0885ms)
+✔ archimate 4 implementation status exposes C260 application domain coverage identity (9.1753ms)
+✔ archimate 4 implementation status exposes C260 technology domain coverage identity (3.8166ms)
+✔ archimate 4 implementation status exposes C260 relationships between core domains coverage identity (3.4884ms)
+✔ archimate 4 implementation status exposes C260 implementation and migration domain coverage identity (3.6541ms)
+✔ archimate 4 implementation status exposes C260 stakeholders architecture views viewpoints coverage identity (3.7834ms)
+✔ archimate 4 implementation status exposes C260 language customization mechanisms coverage identity (3.8401ms)
+✔ archimate 4 implementation status exposes C260 appendix A notation coverage identity (3.5554ms)
+✔ archimate 4 implementation status exposes C260 appendix B relationships coverage identity (4.1194ms)
+✔ archimate 4 implementation status exposes C260 appendix C example viewpoints coverage identity (3.7895ms)
+✔ archimate 4 exposes Appendix C example viewpoints as an informative catalog (7.9978ms)
+✔ archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity (11.0108ms)
+✔ archimate 4 appendix D standards guidance stays outside conformance blockers (4.7614ms)
+✔ archimate 4 implementation status exposes C260 appendix E version changes coverage identity (9.7266ms)
+✔ archimate 4 appendix E version changes stay outside conformance blockers (3.9385ms)
+✔ archimate 4 implementation status exposes C260 appendix F acronym coverage identity (7.8883ms)
+✔ archimate 4 appendix F acronym vocabulary stays outside conformance blockers (8.1008ms)
+✔ archimate 4 implementation status exposes C260 document artifact boundary (12.7062ms)
+✔ archimate 4 document artifacts stay outside conformance blockers (6.1373ms)
+✔ archimate 4 implementation status exposes aggregate C260 coverage integrity (17.0209ms)
+✔ archimate 4 complete C260 coverage does not clear external conformance blockers (6.7797ms)
+✔ archimate 4 implementation status reconciles C260 PDF outline source with derived coverage (24.9065ms)
+✔ archimate 4 implementation status audits C260 outline assignment counts by coverage group (14.1019ms)
+✔ archimate 4 implementation status audits C260 coverage source runlog evidence (13.075ms)
+✔ archimate 4 implementation status exposes C260 definition vocabulary identity (4.89ms)
+✔ archimate 4 implementation status API can be imported directly by Node ESM (191.4071ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (3.1555ms)
+✖ archimate 4 implementation status exposes source coverage boundaries (5.3767ms)
+✔ archimate 4 source coverage counts match local and external classifications (4.6047ms)
+✔ archimate 4 required and companion source catalogs match source item flags (4.1112ms)
+✔ archimate 4 source coverage status agrees with external source runlog evidence (6.6929ms)
+✔ archimate 4 XML exchange stays experimental until official MEFF 4 XSD is present (4.7006ms)
+✔ archimate 4 source coverage does not treat 3.1 XSD evidence as MEFF 4 XSD (5.0128ms)
+✔ archimate 4 Appendix A artwork status agrees with pictogram audit evidence (7.7086ms)
+✔ archimate 4 local pictogram coverage does not satisfy Appendix A artwork rights (6.0321ms)
+✖ archimate 4 implementation status exposes official conformance readiness (9.9261ms)
+✔ archimate 4 implementation status exposes remaining gap identity (11.883ms)
+✔ archimate 4 external blocker gaps map to source coverage and readiness (5.7657ms)
+✔ archimate 4 missing required sources map to required-before-claim actions (7.8599ms)
+✔ archimate 4 reviewed W262 companion source stays outside remaining gaps and official blockers (6.0865ms)
+✔ archimate 4 conformance requirement blockers map to gaps and required sources (5.7124ms)
+✔ archimate 4 implementation status exposes C260 section coverage identity (18.7778ms)
+✔ archimate 4 implementation plan records current execution boundary (8.0694ms)
+✔ archimate 4 completion audit script maps status API to plan milestones (175.9925ms)
+✔ archimate 4 C260 coverage audit script verifies book-derived source evidence (152.4395ms)
+✖ archimate 4 conformance requirements are tracked per C260 shall and may clauses (4.3358ms)
+✔ archimate 4 optional example viewpoints stay outside conformance blockers (4.3644ms)
+✔ archimate 4 optional example viewpoint boundary is documented (3.5653ms)
+(node:86640) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (10.9045ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.9147ms)
+✔ connection rules evaluate relationships through the active language profile (1.4336ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (1.5379ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (1.89ms)
+✔ connection popup labels relationships with C260 role names (1.672ms)
+✔ connection popup exposes influence modifier actions (1.3732ms)
+✔ connection popup exposes explicit Access type actions (1.1549ms)
+✔ connection popup exposes explicit Association direction actions (2.8773ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (1.1848ms)
+✔ renderer displays influence modifier labels (1.0758ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (2.8518ms)
+✔ renderer preserves optional junction names outside the marker (1.0105ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (1.3433ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.1804ms)
+✔ archimate 4 relationship profile status exposes external source metadata (7.1961ms)
+✔ archimate 4 viewer-scoped relationship profiles reset before default 4 mode (10.4816ms)
+✔ archimate 4 global relationship profiles survive viewer-scoped reset checks (6.4824ms)
+✔ archimate 4 implementation status includes active relationship profile source metadata (30.9974ms)
+✔ archimate 4 external relationship profile metadata stays separate from Appendix B source coverage (13.6321ms)
+✔ archimate 4 default relationship fallback does not satisfy Appendix B source coverage (11.8758ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.577ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.364ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.3782ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.5619ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.2733ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.6195ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (8.576ms)
+✔ archimate 4 complete relationship profile can require every target cell (2.1347ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.2025ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (4.5948ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.4725ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1699ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.1393ms)
+ℹ tests 129
+ℹ suites 0
+ℹ pass 126
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1849.2124
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:2881:1
+✖ archimate 4 implementation status exposes source coverage boundaries (5.3767ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /20260710-0604-external-source-current-recheck/. Input:
+
+  '# ArchiMate 4 Source Ledger\n' +
+    '\n' +
+    '## Required Sources\n' +
+    '\n' +
+    '- ArchiMate 4 Specification, The Open Group, Document C260, April 2026.\n' +
+    '- The Motivation for Changes in the ArchiMate 4 Specification, The Open Group White Paper W262, April 2026.\n' +
+    '- The Open Group ArchiMate Model Exchange File Format page and any ArchiMate 4 XSD available under `https://www.opengroup.org/xsd/archimate/`.\n' +
+    '- ArchiMate 4 launch transcript supplied by the user.\n' +
+    '\n' +
+    '## Source Access Decision\n' +
+    '\n' +
+    '- C260 is now present locally as `C:\\Users\\syska\\Downloads\\978940181474E.pdf` and was reviewed on\n' +
+    '  2026-07-08.\n' +
+    '- The C260 conformance shall/may source scan is recorded in\n' +
+    '  `project_memory/runlogs/20260709-188-c260-conformance-shall-scan.txt`.\n' +
+    '- The supplied launch transcript is present locally at\n' +
+    '  `C:\\Users\\syska\\.codex\\attachments\\eab35e75-10d5-4e1d-854e-3cc8feb4496c\\pasted-text.txt`.\n' +
+    '- C260 is a licensed copyrighted publication; this repository records a derived implementation\n' +
+    '  specification and source trace, not copied normative prose or verbatim relationship tables.\n' +
+    '- W262 is published by The Open Group as a free PDF download that requires login. The latest\n' +
+    '  publication-page and local-source check is recorded in\n' +
+    '  `project_memory/runlogs/20260710-0515-external-source-current-recheck.json`; it detected the W262\n' +
+    '  title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the\n' +
+    '  recursive filename search under `C:\\Users\\syska\\Downloads` and\n' +
+    '  `C:\\Users\\syska\\.codex\\attachments` still found no local W262 or ArchiMate 4 motivation PDF\n' +
+    '  candidates.\n' +
+    '- A local ArchiMate-related PDF inventory is recorded in\n' +
+    '  `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies the\n' +
+    '  local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files, and confirms no\n' +
+    '  W262 candidate among those local PDFs.\n' +
+    '- The Open Group licensed-downloads page confirms Version 4 was released in April 2026.\n' +
+    '- The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.\n' +
+    '- Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.\n' +
+    '- Because redistribution rights for Appendix B relationship tables are not confirmed, this repository\n' +
+    '  does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement\n' +
+    '  point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.\n' +
+    '- The Editor demo exposes that replacement point in ArchiMate 4 mode by accepting host-supplied JSON,\n' +
+    '  CSV, or TSV relationship-profile data, requiring complete source-target cell coverage before loading,\n' +
+    '  and reporting source/cell coverage separately from official conformance blockers. The same UI remains\n' +
+    '  disabled in ArchiMate 3.x mode.\n' +
+    '- The local C260 source has been reviewed for Appendix B implementation needs, but a redistributable\n' +
+    '  Appendix B profile artifact is still not present in this repository.\n' +
+    '  `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable\n' +
+    '  profile artifact present", not "licensed C260 source reviewed".\n' +
+    '- A sanitized local ArchiMate 4 Non-Commercial License keyword boundary is recorded in\n' +
+    '  `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`. It does not contain raw\n' +
+    '  license text and does not clear the Appendix B redistributable-profile blocker or the Appendix A\n' +
+    '  exact-artwork-rights blocker.\n' +
+    '- `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable\n' +
+    '  metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.\n' +
+    '- Node-based audit tooling can import `getArchimate4ImplementationStatus()` directly from\n' +
+    '  `lib/metamodel/languages/index.js`; the package root remains the browser and webpack-oriented entry\n' +
+    '  point.\n' +
+    '- `getArchimate4ImplementationStatus().elementCatalog` reports expected, actual, missing, and extra\n' +
+    '  type lists for the C260-derived 42-element catalog, so hosts can audit exact type coverage rather\n' +
+    '  than only the element count.\n' +
+    '- `getArchimate4ImplementationStatus().relationshipConnectors` reports expected, actual, missing, and\n' +
+    '  extra type lists for `AndJunction` and `OrJunction` outside the element catalog.\n' +
+    '- `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including\n' +
+    '  `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing\n' +
+    '  companion source ids while external sources remain unresolved.\n' +
+    '- `getArchimate4ImplementationStatus().conformanceReadiness` reports\n' +
+    '  `requiredBeforeClaimByBlocker`, `missingRequiredBeforeClaimBlockerIds`, and\n' +
+    '  `extraRequiredBeforeClaimBlockerIds` so each official-claim prerequisite remains tied to an\n' +
+    '  external blocker id.\n' +
+    '- `getArchimate4ImplementationStatus().remainingGaps` reports `remainingGaps.expectedIds`,\n' +
+    '  `remainingGaps.actualIds`, `remainingGaps.missingIds`, `remainingGaps.extraIds`,\n' +
+    '  `missingOfficialConformanceGapIds`, and `missingCompanionGapSourceIds` so unresolved official\n' +
+    '  conformance blockers and companion-source gaps remain visible in one exact residual gap catalog.\n' +
+    '- `getArchimate4ImplementationStatus().sectionCoverage` reports `sectionCoverage.expectedIds`,\n' +
+    '  `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,\n' +
+    '  `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,\n' +
+    '  `sectionCoverage.missingExternalBlockerReferenceIds`,\n' +
+    '  `sectionCoverage.missingStatusKeyReferenceIds`, `externalDependentIds`, and `optionalIds` so C260\n' +
+    '  chapter and appendix coverage remains visible by exact section identity while rejecting\n' +
+    '  unregistered conformance requirement, external blocker, or status API key references. The exact\n' +
+    '  section list starts at Chapter 1 and includes the Introduction/Conformance and Definitions\n' +
+    '  chapters, not only the implementation-heavy language chapters.\n' +
+    '- `getArchimate4ImplementationStatus().introductionCoverage` reports\n' +
+    '  `introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,\n' +
+    '  `introductionCoverage.missingIntroductionIds`, and\n' +
+    '  `introductionCoverage.extraIntroductionIds` so the Chapter 1 Introduction/Conformance outline\n' +
+    '  remains visible by exact subsection identity.\n' +
+    '- `getArchimate4ImplementationStatus().introductionCoverage` also reports\n' +
+    '  `introductionCoverage.requirementSourceIds`, `introductionCoverage.referenceOnlyIds`,\n' +
+    '  `introductionCoverage.missingRequirementSourceIds`, and\n' +
+    '  `introductionCoverage.missingReferenceOnlyIds` so Chapter 1 Conformance remains the requirement\n' +
+    '  source while Objective, Overview, Normative References, Terminology, and Future Directions remain\n' +
+    '  reference-only status items outside source gaps, remaining gaps, and official conformance blockers.\n' +
+    '  The Chapter 1 outline was rechecked from the local C260 PDF in\n' +
+    '  `project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json`.\n' +
+    '- `getArchimate4ImplementationStatus().definitionCoverage` reports\n' +
+    '  `definitionCoverage.expectedIds`, `definitionCoverage.actualIds`,\n' +
+    '  `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the\n' +
+    '  Chapter 2 definition vocabulary remains visible by exact term identity without copying the\n' +
+    '  definition prose.\n' +
+    '- `getArchimate4ImplementationStatus().languageStructureCoverage` reports\n' +
+    '  `languageStructureCoverage.expectedIds`, `languageStructureCoverage.actualIds`,\n' +
+    '  `languageStructureCoverage.missingLanguageStructureIds`, and\n' +
+    '  `languageStructureCoverage.extraLanguageStructureIds` so the Chapter 3 Language Structure outline\n' +
+    '  remains visible by exact subsection identity.\n' +
+    '- `getArchimate4ImplementationStatus().commonDomainCoverage` reports\n' +
+    '  `commonDomainCoverage.expectedIds`, `commonDomainCoverage.actualIds`,\n' +
+    '  `commonDomainCoverage.missingCommonDomainIds`, and `commonDomainCoverage.extraCommonDomainIds`\n' +
+    '  so the Chapter 4 Common Domain outline remains visible by exact subsection and element-heading\n' +
+    '  identity.\n' +
+    '- `getArchimate4ImplementationStatus().relationshipsAndJunctionsCoverage` reports\n' +
+    '  `relationshipsAndJunctionsCoverage.expectedIds`, `relationshipsAndJunctionsCoverage.actualIds`,\n' +
+    '  `relationshipsAndJunctionsCoverage.missingRelationshipsAndJunctionsIds`, and\n' +
+    '  `relationshipsAndJunctionsCoverage.extraRelationshipsAndJunctionsIds` so the Chapter 5\n' +
+    '  Relationships and Junctions outline remains visible by exact subsection identity while the\n' +
+    '  normative Appendix B matrix remains externally supplied.\n' +
+    '- `getArchimate4ImplementationStatus().motivationDomainCoverage` reports\n' +
+    '  `motivationDomainCoverage.expectedIds`, `motivationDomainCoverage.actualIds`,\n' +
+    '  `motivationDomainCoverage.missingMotivationDomainIds`, and\n' +
+    '  `motivationDomainCoverage.extraMotivationDomainIds` so the Chapter 6 Motivation Domain outline\n' +
+    '  remains visible by exact subsection and element-heading identity.\n' +
+    '- `getArchimate4ImplementationStatus().strategyDomainCoverage` reports\n' +
+    '  `strategyDomainCoverage.expectedIds`, `strategyDomainCoverage.actualIds`,\n' +
+    '  `strategyDomainCoverage.missingStrategyDomainIds`, and\n' +
+    '  `strategyDomainCoverage.extraStrategyDomainIds` so the Chapter 7 Strategy Domain outline remains\n' +
+    '  visible by exact subsection and element-heading identity.\n' +
+    '- `getArchimate4ImplementationStatus().businessDomainCoverage` reports\n' +
+    '  `businessDomainCoverage.expectedIds`, `businessDomainCoverage.actualIds`,\n' +
+    '  `businessDomainCoverage.missingBusinessDomainIds`, and\n' +
+    '  `businessDomainCoverage.extraBusinessDomainIds` so the Chapter 8 Business Domain outline remains\n' +
+    '  visible by exact subsection and element-heading identity.\n' +
+    '- `getArchimate4ImplementationStatus().applicationDomainCoverage` reports\n' +
+    '  `applicationDomainCoverage.expectedIds`, `applicationDomainCoverage.actualIds`,\n' +
+    '  `applicationDomainCoverage.missingApplicationDomainIds`, and\n' +
+    '  `applicationDomainCoverage.extraApplicationDomainIds` so the Chapter 9 Application Domain outline\n' +
+    '  remains visible by exact subsect'... 70669 more characters
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3136:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# ArchiMate 4 Source Ledger\n\n## Required Sources\n\n- ArchiMate 4 Specification, The Open Group, Document C260, April 2026.\n- The Motivation for Changes in the ArchiMate 4 Specification, The Open Group White Paper W262, April 2026.\n- The Open Group ArchiMate Model Exchange File Format page and any ArchiMate 4 XSD available under `https://www.opengroup.org/xsd/archimate/`.\n- ArchiMate 4 launch transcript supplied by the user.\n\n## Source Access Decision\n\n- C260 is now present locally as `C:\\Users\\syska\\Downloads\\978940181474E.pdf` and was reviewed on\n  2026-07-08.\n- The C260 conformance shall/may source scan is recorded in\n  `project_memory/runlogs/20260709-188-c260-conformance-shall-scan.txt`.\n- The supplied launch transcript is present locally at\n  `C:\\Users\\syska\\.codex\\attachments\\eab35e75-10d5-4e1d-854e-3cc8feb4496c\\pasted-text.txt`.\n- C260 is a licensed copyrighted publication; this repository records a derived implementation\n  specification and source trace, not copied normative prose or verbatim relationship tables.\n- W262 is published by The Open Group as a free PDF download that requires login. The latest\n  publication-page and local-source check is recorded in\n  `project_memory/runlogs/20260710-0515-external-source-current-recheck.json`; it detected the W262\n  title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the\n  recursive filename search under `C:\\Users\\syska\\Downloads` and\n  `C:\\Users\\syska\\.codex\\attachments` still found no local W262 or ArchiMate 4 motivation PDF\n  candidates.\n- A local ArchiMate-related PDF inventory is recorded in\n  `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies the\n  local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files, and confirms no\n  W262 candidate among those local PDFs.\n- The Open Group licensed-downloads page confirms Version 4 was released in April 2026.\n- The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.\n- Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.\n- Because redistribution rights for Appendix B relationship tables are not confirmed, this repository\n  does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement\n  point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.\n- The Editor demo exposes that replacement point in ArchiMate 4 mode by accepting host-supplied JSON,\n  CSV, or TSV relationship-profile data, requiring complete source-target cell coverage before loading,\n  and reporting source/cell coverage separately from official conformance blockers. The same UI remains\n  disabled in ArchiMate 3.x mode.\n- The local C260 source has been reviewed for Appendix B implementation needs, but a redistributable\n  Appendix B profile artifact is still not present in this repository.\n  `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable\n  profile artifact present", not "licensed C260 source reviewed".\n- A sanitized local ArchiMate 4 Non-Commercial License keyword boundary is recorded in\n  `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`. It does not contain raw\n  license text and does not clear the Appendix B redistributable-profile blocker or the Appendix A\n  exact-artwork-rights blocker.\n- `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable\n  metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.\n- Node-based audit tooling can import `getArchimate4ImplementationStatus()` directly from\n  `lib/metamodel/languages/index.js`; the package root remains the browser and webpack-oriented entry\n  point.\n- `getArchimate4ImplementationStatus().elementCatalog` reports expected, actual, missing, and extra\n  type lists for the C260-derived 42-element catalog, so hosts can audit exact type coverage rather\n  than only the element count.\n- `getArchimate4ImplementationStatus().relationshipConnectors` reports expected, actual, missing, and\n  extra type lists for `AndJunction` and `OrJunction` outside the element catalog.\n- `getArchimate4ImplementationStatus()` also exposes `conformanceReadiness`, including\n  `officialConformanceClaimable: false`, blocker ids, missing required source ids, and missing\n  companion source ids while external sources remain unresolved.\n- `getArchimate4ImplementationStatus().conformanceReadiness` reports\n  `requiredBeforeClaimByBlocker`, `missingRequiredBeforeClaimBlockerIds`, and\n  `extraRequiredBeforeClaimBlockerIds` so each official-claim prerequisite remains tied to an\n  external blocker id.\n- `getArchimate4ImplementationStatus().remainingGaps` reports `remainingGaps.expectedIds`,\n  `remainingGaps.actualIds`, `remainingGaps.missingIds`, `remainingGaps.extraIds`,\n  `missingOfficialConformanceGapIds`, and `missingCompanionGapSourceIds` so unresolved official\n  conformance blockers and companion-source gaps remain visible in one exact residual gap catalog.\n- `getArchimate4ImplementationStatus().sectionCoverage` reports `sectionCoverage.expectedIds`,\n  `sectionCoverage.actualIds`, `sectionCoverage.missingIds`, `sectionCoverage.extraIds`,\n  `sectionCoverage.statusKeyIds`, `sectionCoverage.missingRequirementReferenceIds`,\n  `sectionCoverage.missingExternalBlockerReferenceIds`,\n  `sectionCoverage.missingStatusKeyReferenceIds`, `externalDependentIds`, and `optionalIds` so C260\n  chapter and appendix coverage remains visible by exact section identity while rejecting\n  unregistered conformance requirement, external blocker, or status API key references. The exact\n  section list starts at Chapter 1 and includes the Introduction/Conformance and Definitions\n  chapters, not only the implementation-heavy language chapters.\n- `getArchimate4ImplementationStatus().introductionCoverage` reports\n  `introductionCoverage.expectedIds`, `introductionCoverage.actualIds`,\n  `introductionCoverage.missingIntroductionIds`, and\n  `introductionCoverage.extraIntroductionIds` so the Chapter 1 Introduction/Conformance outline\n  remains visible by exact subsection identity.\n- `getArchimate4ImplementationStatus().introductionCoverage` also reports\n  `introductionCoverage.requirementSourceIds`, `introductionCoverage.referenceOnlyIds`,\n  `introductionCoverage.missingRequirementSourceIds`, and\n  `introductionCoverage.missingReferenceOnlyIds` so Chapter 1 Conformance remains the requirement\n  source while Objective, Overview, Normative References, Terminology, and Future Directions remain\n  reference-only status items outside source gaps, remaining gaps, and official conformance blockers.\n  The Chapter 1 outline was rechecked from the local C260 PDF in\n  `project_memory/runlogs/20260709-192610-c260-chapter1-outline-check.json`.\n- `getArchimate4ImplementationStatus().definitionCoverage` reports\n  `definitionCoverage.expectedIds`, `definitionCoverage.actualIds`,\n  `definitionCoverage.missingDefinitionIds`, and `definitionCoverage.extraDefinitionIds` so the\n  Chapter 2 definition vocabulary remains visible by exact term identity without copying the\n  definition prose.\n- `getArchimate4ImplementationStatus().languageStructureCoverage` reports\n  `languageStructureCoverage.expectedIds`, `languageStructureCoverage.actualIds`,\n  `languageStructureCoverage.missingLanguageStructureIds`, and\n  `languageStructureCoverage.extraLanguageStructureIds` so the Chapter 3 Language Structure outline\n  remains visible by exact subsection identity.\n- `getArchimate4ImplementationStatus().commonDomainCoverage` reports\n  `commonDomainCoverage.expectedIds`, `commonDomainCoverage.actualIds`,\n  `commonDomainCoverage.missingCommonDomainIds`, and `commonDomainCoverage.extraCommonDomainIds`\n  so the Chapter 4 Common Domain outline remains visible by exact subsection and element-heading\n  identity.\n- `getArchimate4ImplementationStatus().relationshipsAndJunctionsCoverage` reports\n  `relationshipsAndJunctionsCoverage.expectedIds`, `relationshipsAndJunctionsCoverage.actualIds`,\n  `relationshipsAndJunctionsCoverage.missingRelationshipsAndJunctionsIds`, and\n  `relationshipsAndJunctionsCoverage.extraRelationshipsAndJunctionsIds` so the Chapter 5\n  Relationships and Junctions outline remains visible by exact subsection identity while the\n  normative Appendix B matrix remains externally supplied.\n- `getArchimate4ImplementationStatus().motivationDomainCoverage` reports\n  `motivationDomainCoverage.expectedIds`, `motivationDomainCoverage.actualIds`,\n  `motivationDomainCoverage.missingMotivationDomainIds`, and\n  `motivationDomainCoverage.extraMotivationDomainIds` so the Chapter 6 Motivation Domain outline\n  remains visible by exact subsection and element-heading identity.\n- `getArchimate4ImplementationStatus().strategyDomainCoverage` reports\n  `strategyDomainCoverage.expectedIds`, `strategyDomainCoverage.actualIds`,\n  `strategyDomainCoverage.missingStrategyDomainIds`, and\n  `strategyDomainCoverage.extraStrategyDomainIds` so the Chapter 7 Strategy Domain outline remains\n  visible by exact subsection and element-heading identity.\n- `getArchimate4ImplementationStatus().businessDomainCoverage` reports\n  `businessDomainCoverage.expectedIds`, `businessDomainCoverage.actualIds`,\n  `businessDomainCoverage.missingBusinessDomainIds`, and\n  `businessDomainCoverage.extraBusinessDomainIds` so the Chapter 8 Business Domain outline remains\n  visible by exact subsection and element-heading identity.\n- `getArchimate4ImplementationStatus().applicationDomainCoverage` reports\n  `applicationDomainCoverage.expectedIds`, `applicationDomainCoverage.actualIds`,\n  `applicationDomainCoverage.missingApplicationDomainIds`, and\n  `applicationDomainCoverage.extraApplicationDomainIds` so the Chapter 9 Application Domain outline\n  remains visible by exact subsect'... 70669 more characters,
+    expected: /20260710-0604-external-source-current-recheck/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3358:1
+✖ archimate 4 implementation status exposes official conformance readiness (9.9261ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + []
+  - [
+  -   'w262'
+  - ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3413:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 'w262' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3853:1
+✖ archimate 4 conformance requirements are tracked per C260 shall and may clauses (4.3358ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3889:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

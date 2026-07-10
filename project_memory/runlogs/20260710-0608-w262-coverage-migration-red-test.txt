@@ -1,0 +1,62 @@
+(node:64608) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ archimate 4 implementation status exposes W262 change-rationale coverage (12.8894ms)
+(node:90916) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ migration table records C260-derived ambiguous replacement candidates (1.7143ms)
+✖ migration utility warns for cross-domain realizations between every merged behavior type (0.8024ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147.8615
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:3145:1
+✖ archimate 4 implementation status exposes W262 change-rationale coverage (12.8894ms)
+  TypeError: Cannot read properties of undefined (reading 'expectedIds')
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3163:29)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+
+test at test\migration.test.mjs:105:1
+✖ migration table records C260-derived ambiguous replacement candidates (1.7143ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'DataObject'
+  - 'BusinessObject'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/migration.test.mjs:106:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'DataObject',
+    expected: 'BusinessObject',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\migration.test.mjs:344:1
+✖ migration utility warns for cross-domain realizations between every merged behavior type (0.8024ms)
+  TypeError: Cannot read properties of undefined (reading 'originalType')
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/migration.test.mjs:373:26)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

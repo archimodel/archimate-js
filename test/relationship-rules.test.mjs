@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
+import { promisify } from 'node:util';
 import { getArchimate4ImplementationStatus } from '../lib/metamodel/languages/index.js';
 import {
   getArchimate4RelationshipProfileStatus,
@@ -10,12 +12,16 @@ import {
   setArchimate4RelationshipProfileForViewer
 } from '../lib/metamodel/languages/archimate4-relationships.js';
 import {
+  createRelationshipProfileMatrixTemplate,
   getRelationshipProfileCoverageReport,
   getRelationshipProfileCoverageStats,
   getRelationshipProfileStats,
   normalizeRelationshipProfile,
-  parseRelationshipProfile
+  parseRelationshipProfile,
+  serializeRelationshipProfileMatrix
 } from '../lib/metamodel/languages/relationship-profile-loader.js';
+
+const execFileAsync = promisify(execFile);
 
 async function readJson(path) {
   const text = await readFile(new URL(path, import.meta.url), 'utf8');
@@ -498,7 +504,7 @@ test('archimate 4 external relationship profile metadata stays separate from App
     });
     assert.equal(status.relationshipProfile.sourceMetadata.copiedNormativeText, undefined);
 
-    assert.equal(appendixB.status, 'external-profile-required');
+    assert.equal(appendixB.status, 'licensed-profile-data-required');
     assert.equal(appendixB.localSourcePresent, false);
     assert.equal(appendixB.redistributableProfilePresent, false);
     assert.equal(appendixB.externalBlocker, 'officialAppendixBRelationshipMatrix');
@@ -508,7 +514,7 @@ test('archimate 4 external relationship profile metadata stays separate from App
     assert.equal(status.conformanceReadiness.missingRequiredSources.includes('appendixBRelationshipMatrix'), true);
     assert.equal(
       status.conformanceReadiness.requiredBeforeClaimByBlocker.officialAppendixBRelationshipMatrix,
-      'Load an official or redistributable Appendix B relationship profile'
+      'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment'
     );
     assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
   } finally {
@@ -532,7 +538,7 @@ test('archimate 4 default relationship fallback does not satisfy Appendix B sour
   assert.equal(status.relationshipProfile.completeSourceCoverage, true);
   assert.equal(status.relationshipProfile.completeTargetCoverage, true);
 
-  assert.equal(appendixB.status, 'external-profile-required');
+  assert.equal(appendixB.status, 'licensed-profile-data-required');
   assert.equal(appendixB.localSourcePresent, false);
   assert.equal(appendixB.redistributableProfilePresent, false);
   assert.equal(appendixB.externalProfileLoaderImplemented, true);
@@ -724,6 +730,59 @@ test('archimate 4 complete relationship profile can require every target cell', 
     requireComplete: true,
     requireCompleteTargets: true
   }), /missing target element: BusinessActor -> BusinessActor/);
+});
+
+test('archimate 4 relationship profile template covers every concept pair without inventing relationships', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const validTypes = getArchimate4RelationshipProfileConceptTypes(profile);
+  const matrix = createRelationshipProfileMatrixTemplate(validTypes);
+  const matrixText = serializeRelationshipProfileMatrix(matrix, '\t');
+  const coverage = getRelationshipProfileCoverageReport({ matrixText }, validTypes);
+  const maps = normalizeRelationshipProfile({ matrixText }, validTypes, {
+    requireComplete: true,
+    requireCompleteTargets: true
+  });
+
+  assert.equal(matrix.length, validTypes.length + 1);
+  assert.deepEqual(matrix[0].slice(1), validTypes);
+  assert.deepEqual(matrix.slice(1).map((row) => row[0]), validTypes);
+  assert.equal(matrix.every((row) => row.length === validTypes.length + 1), true);
+  assert.equal(coverage.completeSourceCoverage, true);
+  assert.equal(coverage.completeTargetCoverage, true);
+  assert.equal(coverage.targetCellCount, validTypes.length * validTypes.length);
+  assert.equal(getRelationshipProfileStats(maps).relationshipCount, 0);
+});
+
+test('archimate 4 relationship profile activation rejects a complete but empty template', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const validTypes = getArchimate4RelationshipProfileConceptTypes(profile);
+  const matrix = createRelationshipProfileMatrixTemplate(validTypes);
+
+  try {
+    assert.throws(() => {
+      setArchimate4RelationshipProfile({ matrix });
+    }, /does not contain any allowed relationships/);
+    assert.equal(getArchimate4RelationshipProfileStatus().source, 'compatibility-fallback');
+  } finally {
+    resetArchimate4RelationshipProfileForTests();
+  }
+});
+
+test('Appendix B relationship profile template CLI emits the complete TSV matrix', async () => {
+  const profile = await readJson('../lib/metamodel/languages/archimate4-profile.json');
+  const validTypes = getArchimate4RelationshipProfileConceptTypes(profile);
+  const { stdout, stderr } = await execFileAsync(
+    process.execPath,
+    [ '--no-warnings', 'scripts/write_archimate4_relationship_profile_template.mjs' ],
+    { cwd: new URL('..', import.meta.url) }
+  );
+  const rows = stdout.trimEnd().split(/\r?\n/).map((row) => row.split('\t'));
+
+  assert.equal(stderr, '');
+  assert.equal(rows.length, validTypes.length + 1);
+  assert.equal(rows[0][0], 'sourceType');
+  assert.deepEqual(rows[0].slice(1), validTypes);
+  assert.deepEqual(rows.slice(1).map((row) => row[0]), validTypes);
 });
 
 test('archimate 4 row-array profiles keep blank complete sources', () => {

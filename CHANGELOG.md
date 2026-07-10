@@ -30,6 +30,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `CORE`: classified C260 Appendix E version-change headings as historical references and the ArchiMate 4 migration source boundary.
 * `CORE`: classified C260 Appendix F acronym tokens as vocabulary-only coverage outside ArchiMate 4 section coverage, source gaps, and conformance blockers.
 * `DOCS`: refreshed current W262 and MEFF 4.0 XSD source evidence while keeping official conformance blocked on missing external sources.
+* `CORE`: added exact W262 change-rationale coverage and aligned migration behavior for `Representation` and cross-domain merged behavior realizations.
+* `CORE`: added a complete Appendix B relationship-profile transcription template generator and rejected all-empty profile activation.
+* `DOCS`: recorded the local W262 PDF, personal-use Appendix B authorization boundary, and official/local machine-readable profile search result.
 * `DOCS`: added sanitized local ArchiMate PDF inventory evidence for C260 and W262 source classification.
 * `DOCS`: added sanitized ArchiMate 4 license-boundary evidence for Appendix A/B source blockers.
 * `CORE`: exposed the ArchiMate 4 implementation completion scan through `getArchimate4ImplementationStatus()`.

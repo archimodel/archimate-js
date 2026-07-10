@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "loop_id": 231,
-  "stage": "external_source_0515_final_verified",
+  "loop_id": 232,
+  "stage": "w262_appendix_b_ingestion_verified",
   "repo": {
     "root": "D:/github/archimate-js",
     "branch": "codex/archimate-4-support",
@@ -9,8 +9,8 @@
   },
   "change_context": {
     "change_type": "feature",
-    "diff_size": 0,
-    "touches_dependency_manifest": false
+    "diff_size": 1052,
+    "touches_dependency_manifest": true
   },
   "ckogate": {
     "profile_id": "standard_pr",
@@ -268,7 +268,12 @@
       "demo_relationship_profile_panel",
       "demo_example_viewpoint_catalog_panel",
       "demo_viewpoint_validation_panel",
-      "external_source_current_recheck_0515_guard"
+      "external_source_current_recheck_0515_guard",
+      "w262_local_companion_review",
+      "w262_change_coverage_guard",
+      "appendix_b_personal_use_boundary",
+      "appendix_b_profile_template_generator",
+      "appendix_b_empty_profile_activation_guard"
     ],
     "applied_checks": [
       "check_build_passes",
@@ -569,14 +574,13 @@
     ]
   },
   "last_run": {
-    "runlog_path": "project_memory/runlogs/20260710-0524-external-source-0515-final-completion-audit.json",
-    "audit_report_path": "project_memory/audit/reports/20260710-external-source-0515-recheck-audit.md",
+    "runlog_path": "project_memory/runlogs/20260710-0622-w262-appendix-b-completion-audit.json",
+    "audit_report_path": "project_memory/audit/reports/20260710-w262-appendix-b-ingestion-audit.md",
     "result": "pass"
   },
   "open_issues": [
     "Exact C260 Appendix A vector artwork redistribution remains external-source dependent.",
-    "Official Appendix B relationship matrix data or redistribution approval remains external-source dependent.",
-    "W262 PDF is still not present locally.",
+    "A complete machine-readable Appendix B relationship profile is not yet present; personal-use authorization is recorded separately from source-processing permission and profile-data availability.",
     "Official MEFF 4.0 XSD remains unavailable from the public XSD directory."
   ],
   "assumptions": [
@@ -817,11 +821,15 @@
     "Viewpoint container validation now treats present Viewpoints nodes and shorthand viewpoints values as descriptor containers: malformed root containers, child lists, and entries report structure diagnostics while absent fields remain allowed for partial in-memory editing.",
     "Viewpoint purpose/content validation now treats present viewpointPurpose and viewpointContent values as string token fields or string token arrays: malformed scalar values and list entries report structure diagnostics before supported-token checks run.",
     "Implementation-status completion scan evidence must be reproducible from getArchimate4ImplementationStatus rather than maintained as hand-written JSON.",
-    "MEFF 4.0 XSD and W262 source status were refreshed on 2026-07-10T06:01:25+09:00: the official XSD directory still exposes only 3.1 links, 4.0 candidates return 404, W262 publication metadata is visible, and no local W262 PDF is present."
+    "MEFF 4.0 XSD and W262 source status were refreshed on 2026-07-10T06:01:25+09:00: the official XSD directory still exposes only 3.1 links, 4.0 candidates return 404, W262 publication metadata is visible, and no local W262 PDF is present.",
+    "The local W262 PDF is now reviewed as a 22-page companion source and its 11 non-verbatim change-rationale topic ids are mapped to implementation status and page evidence.",
+    "Appendix B personal-use authorization does not by itself supply a complete machine-readable relationship profile or override the licensed C260 source-processing restriction.",
+    "A complete 55-by-55 Appendix B transcription template can be generated from the active concept catalog, but an all-empty template must not replace the compatibility fallback.",
+    "Official ArchiMate 4 conformance remains unclaimable while Appendix B profile values, the official MEFF 4.0 XSD, and exact Appendix A artwork rights remain unavailable."
   ],
   "timestamps": {
     "created_at": "2026-07-08T00:00:00+09:00",
-    "updated_at": "2026-07-10T06:01:25+09:00"
+    "updated_at": "2026-07-10T09:35:00+09:00"
   },
   "implemented_items": [
     "validateArchimate4Model() and validateArchimateModel() now validate View Node elementRef values against model-defined elements and connectors, reporting malformed, unknown, relationship-targeted, or unsupported references.",
@@ -879,6 +887,13 @@
     "The Appendix C example viewpoint demo panel is marked not applicable in ArchiMate 3.x mode and does not bundle full viewpoint definitions, allowed-type filters, or normative relationship constraints.",
     "The bundled Viewer and Editor demos now render a model-defined Viewpoint validation sample in ArchiMate 4 mode, showing a valid Demo Viewpoint with two elements, one relationship, and zero diagnostics.",
     "The Viewpoint validation demo panel is marked not applicable in ArchiMate 3.x mode while preserving the existing 3.x compatibility boundary.",
-    "sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260710-0515-external-source-current-recheck.json for the current external-source recheck."
+    "sourceCoverage.meff4Xsd and sourceCoverage.w262 now point at project_memory/runlogs/20260710-0515-external-source-current-recheck.json for the current external-source recheck.",
+    "sourceCoverage.w262 now records the local W262 PDF metadata, SHA-256, review evidence, and all 11 change-rationale topic ids; W262 no longer appears in missing companion sources or remaining gaps.",
+    "getArchimate4ImplementationStatus().w262ChangeCoverage exposes exact topic ids, page evidence, implementation classifications, status-key references, and complete coverage.",
+    "Representation migration now defaults to BusinessObject with DataObject, Artifact, and Material alternatives, and cross-domain Realization warnings cover Process, Function, Service, and Event.",
+    "scripts/write_archimate4_relationship_profile_template.mjs and npm run archimate4:relationship-template generate a complete blank TSV or CSV matrix for 55 ArchiMate 4 concept types.",
+    "setArchimate4RelationshipProfile() now rejects complete profiles that contain no allowed relationships before mutating the active relationship map.",
+    "Appendix B personal-use authorization, machine-readable profile absence, source-processing permission, and redistribution need are exposed as separate source-coverage fields.",
+    "The implementation-status completion scan now points at project_memory/runlogs/20260710-0616-status-completion-api-scan.json and records 50 top-level status keys, 41 complete summaries, and no incomplete summaries."
   ]
 }

@@ -14,13 +14,12 @@ const expectedRequiredExternalSources = [
   'appendixAArtworkRights'
 ];
 
-const expectedCompanionSources = [ 'w262' ];
+const expectedCompanionSources = [];
 
 const expectedRemainingGaps = [
   'officialAppendixBRelationshipMatrix',
   'officialMeff4Xsd',
-  'exactAppendixAArtworkRights',
-  'w262CompanionPaper'
+  'exactAppendixAArtworkRights'
 ];
 
 const expectedOfficialBlockers = [

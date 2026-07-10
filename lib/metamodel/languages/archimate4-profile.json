@@ -64,9 +64,11 @@
       "meff4Representation": "external-source-required"
     },
     "relationshipMatrix": {
-      "status": "external-profile-required",
-      "reason": "Appendix B table data is normative and is not embedded without redistribution rights.",
+      "status": "licensed-profile-data-required",
+      "reason": "Personal-use authorization is confirmed, but complete machine-readable Appendix B profile data is not present and automated extraction from the licensed source is not authorized.",
       "redistributableProfilePresent": false,
+      "machineReadableProfilePresent": false,
+      "personalUseAuthorizationConfirmed": true,
       "externalProfileLoaderImplemented": true,
       "coverageReportImplemented": true
     },
@@ -217,18 +219,17 @@
     },
     "gapCatalog": {
       "status": "external-source-dependent",
-      "expectedCount": 4,
+      "expectedCount": 3,
       "expectedIds": [
         "officialAppendixBRelationshipMatrix",
         "officialMeff4Xsd",
-        "exactAppendixAArtworkRights",
-        "w262CompanionPaper"
+        "exactAppendixAArtworkRights"
       ]
     },
     "gaps": [
       {
         "id": "officialAppendixBRelationshipMatrix",
-        "status": "external-profile-required",
+        "status": "licensed-profile-data-required",
         "sourceId": "appendixBRelationshipMatrix",
         "requirementId": "appendix-b-relationships",
         "officialConformanceBlocker": true
@@ -245,13 +246,6 @@
         "sourceId": "appendixAArtworkRights",
         "requirementId": "standard-iconography",
         "officialConformanceBlocker": true
-      },
-      {
-        "id": "w262CompanionPaper",
-        "status": "external-download-required",
-        "sourceId": "w262",
-        "companion": true,
-        "officialConformanceBlocker": false
       }
     ],
     "sectionCoverageCatalog": {
@@ -500,7 +494,7 @@
       {
         "id": "appendix-b-relationships",
         "c260Section": "Appendix B",
-        "status": "external-profile-required",
+        "status": "licensed-profile-data-required",
         "requirementId": "appendix-b-relationships",
         "externalBlocker": "officialAppendixBRelationshipMatrix",
         "statusKeys": [
@@ -509,7 +503,7 @@
           "relationshipProfile",
           "sourceCoverage"
         ],
-        "evidence": "relationship derivation helpers and profile loader are implemented; redistributable table data is not embedded"
+        "evidence": "relationship derivation helpers and profile loader are implemented; personal-use authorization is recorded, but complete machine-readable table data is not present"
       },
       {
         "id": "appendix-c-example-viewpoints",
@@ -1618,7 +1612,7 @@
       {
         "id": "appendix-b-relationships",
         "level": "shall",
-        "status": "external-profile-required",
+        "status": "licensed-profile-data-required",
         "externalBlocker": "officialAppendixBRelationshipMatrix"
       },
       {
@@ -1637,7 +1631,7 @@
         "exactAppendixAArtworkRights"
       ],
       "requiredBeforeClaim": [
-        "Load an official or redistributable Appendix B relationship profile",
+        "Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment",
         "Confirm the official MEFF 4.0 XSD namespace and serialization details",
         "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
       ],
@@ -1647,11 +1641,109 @@
         "exactAppendixAArtworkRights"
       ],
       "requiredBeforeClaimByBlocker": {
-        "officialAppendixBRelationshipMatrix": "Load an official or redistributable Appendix B relationship profile",
+        "officialAppendixBRelationshipMatrix": "Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment",
         "officialMeff4Xsd": "Confirm the official MEFF 4.0 XSD namespace and serialization details",
         "exactAppendixAArtworkRights": "Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source"
       }
     },
+    "w262ChangeCoverageCatalog": {
+      "status": "local-companion-reviewed",
+      "sourceId": "w262",
+      "sourceRunlogPath": "project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json",
+      "expectedCount": 11,
+      "expectedIds": [
+        "behavior-element-consolidation",
+        "consolidation-solution",
+        "consolidation-advantages",
+        "conversion-guidance",
+        "metamodel-update",
+        "language-structure-depiction",
+        "relationship-multiplicity",
+        "deprecated-concepts",
+        "simplification-boundary",
+        "definition-principles",
+        "concept-usage-statistics"
+      ]
+    },
+    "w262ChangeCoverage": [
+      {
+        "id": "behavior-element-consolidation",
+        "pageNumbers": [ 6 ],
+        "classification": "implemented",
+        "statusKeys": [ "commonDomainCoverage", "appendixEVersionChangesCoverage" ],
+        "implementationFiles": [ "lib/metamodel/languages/archimate4-profile.json", "lib/metamodel/languages/retired-concepts.js" ]
+      },
+      {
+        "id": "consolidation-solution",
+        "pageNumbers": [ 8 ],
+        "classification": "implemented",
+        "statusKeys": [ "elementCatalog", "commonDomainCoverage" ],
+        "implementationFiles": [ "lib/metamodel/languages/archimate4-profile.json" ]
+      },
+      {
+        "id": "consolidation-advantages",
+        "pageNumbers": [ 9 ],
+        "classification": "informative-rationale",
+        "statusKeys": [ "sourceCoverage" ],
+        "implementationFiles": [ "docs/archimate4/official-specification.md" ]
+      },
+      {
+        "id": "conversion-guidance",
+        "pageNumbers": [ 10 ],
+        "classification": "implemented",
+        "statusKeys": [ "appendixEVersionChangesCoverage", "implementationAndMigrationDomainCoverage" ],
+        "implementationFiles": [ "lib/migration/archimate3-to-4.js", "lib/metamodel/languages/retired-concepts.js" ]
+      },
+      {
+        "id": "metamodel-update",
+        "pageNumbers": [ 11 ],
+        "classification": "implemented",
+        "statusKeys": [ "elementCatalog", "relationshipConnectors" ],
+        "implementationFiles": [ "lib/metamodel/languages/archimate4-profile.json", "lib/moddle/resources/archimate4.json" ]
+      },
+      {
+        "id": "language-structure-depiction",
+        "pageNumbers": [ 12 ],
+        "classification": "implemented",
+        "statusKeys": [ "languageStructureCoverage", "commonDomainCoverage" ],
+        "implementationFiles": [ "lib/metamodel/languages/archimate4-profile.json", "lib/features/palette/PaletteProvider.js" ]
+      },
+      {
+        "id": "relationship-multiplicity",
+        "pageNumbers": [ 13 ],
+        "classification": "implemented",
+        "statusKeys": [ "relationshipsAndJunctionsCoverage", "modelValidation" ],
+        "implementationFiles": [ "lib/util/JunctionUtil.js", "lib/features/popup-menu/ConnectionMenuProvider.js", "lib/draw/ArchimateRenderer.js" ]
+      },
+      {
+        "id": "deprecated-concepts",
+        "pageNumbers": [ 13 ],
+        "classification": "implemented",
+        "statusKeys": [ "appendixEVersionChangesCoverage", "implementationAndMigrationDomainCoverage" ],
+        "implementationFiles": [ "lib/metamodel/languages/retired-concepts.js", "lib/migration/archimate3-to-4.js" ]
+      },
+      {
+        "id": "simplification-boundary",
+        "pageNumbers": [ 15 ],
+        "classification": "informative-rationale",
+        "statusKeys": [ "technologyDomainCoverage", "elementCatalog" ],
+        "implementationFiles": [ "lib/metamodel/languages/archimate4-profile.json" ]
+      },
+      {
+        "id": "definition-principles",
+        "pageNumbers": [ 16 ],
+        "classification": "informative-rationale",
+        "statusKeys": [ "definitionCoverage" ],
+        "implementationFiles": [ "docs/archimate4/official-specification.md" ]
+      },
+      {
+        "id": "concept-usage-statistics",
+        "pageNumbers": [ 17 ],
+        "classification": "informative-rationale",
+        "statusKeys": [ "sourceCoverage" ],
+        "implementationFiles": [ "docs/archimate4/sources.md" ]
+      }
+    ],
     "sourceCoverageCatalog": {
       "status": "implemented-with-external-blockers",
       "expectedCount": 6,
@@ -1684,20 +1776,43 @@
       },
       "w262": {
         "document": "W262",
-        "status": "external-download-required",
+        "status": "local-companion-reviewed",
         "url": "https://publications.opengroup.org/w262",
-        "localSourcePresent": false,
+        "localSourcePresent": true,
         "companion": true,
+        "localPdfPath": "C:\\Users\\syska\\Downloads\\w262.pdf",
+        "localPdfSizeBytes": 1213926,
+        "localPdfSha256": "29224AFB87646F88697B0D2C433A5AB05C24E327CA643FE9B464A935E8085AA3",
+        "localPdfMetadataTitle": "W262",
+        "localPdfTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+        "localPdfPages": 22,
+        "localPdfAuthor": "The Open Group",
+        "localReviewAt": "2026-07-10T08:52:36+09:00",
+        "localReviewRunlogPath": "project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json",
+        "changeCoverageRunlogPath": "project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json",
+        "localReviewTopicIds": [
+          "behavior-element-consolidation",
+          "consolidation-solution",
+          "consolidation-advantages",
+          "conversion-guidance",
+          "metamodel-update",
+          "language-structure-depiction",
+          "relationship-multiplicity",
+          "deprecated-concepts",
+          "simplification-boundary",
+          "definition-principles",
+          "concept-usage-statistics"
+        ],
         "publicationPageStatusCode": 200,
         "publicationPageTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
-        "lastPublicationPageCheckedAt": "2026-07-10T06:01:25+09:00",
-        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260710-0515-external-source-current-recheck.json",
+        "lastPublicationPageCheckedAt": "2026-07-10T08:52:36+09:00",
+        "lastPublicationPageRunlogPath": "project_memory/runlogs/20260710-0604-external-source-current-recheck.json",
         "freePdfDetected": true,
         "loginRequiredDetected": true,
         "pages22Detected": true,
         "published20260427Detected": true,
-        "lastLocalSearchAt": "2026-07-10T06:01:25+09:00",
-        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260710-0515-external-source-current-recheck.json",
+        "lastLocalSearchAt": "2026-07-10T08:52:36+09:00",
+        "lastLocalSearchRunlogPath": "project_memory/runlogs/20260710-0604-external-source-current-recheck.json",
         "localSearchRoots": [
           "C:\\Users\\syska\\Downloads",
           "C:\\Users\\syska\\.codex\\attachments"
@@ -1709,14 +1824,14 @@
           "*ArchiMate*Motivation*.pdf",
           "*Changes*ArchiMate*.pdf"
         ],
-        "localSearchMatchedFiles": [],
-        "localCandidateInventoryCheckedAt": "2026-07-09T21:10:00+09:00",
-        "localCandidateInventoryRunlogPath": "project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json",
-        "localCandidateInventoryW262Matched": false,
+        "localSearchMatchedFiles": [
+          "C:\\Users\\syska\\Downloads\\w262.pdf"
+        ],
+        "localCandidateInventoryCheckedAt": "2026-07-10T08:52:36+09:00",
+        "localCandidateInventoryRunlogPath": "project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json",
+        "localCandidateInventoryW262Matched": true,
         "localCandidateInventoryClassifications": [
-          "c260-specification",
-          "c260-sample",
-          "archimate4-non-commercial-license"
+          "w262-companion-paper"
         ]
       },
       "launchTranscript": {
@@ -1724,13 +1839,25 @@
         "localSourcePresent": true
       },
       "appendixBRelationshipMatrix": {
-        "status": "external-profile-required",
+        "status": "licensed-profile-data-required",
         "localSourcePresent": false,
-        "localSourceMeaning": "redistributable Appendix B profile artifact",
+        "localSourceMeaning": "complete machine-readable Appendix B relationship profile artifact",
         "localC260SourceReviewed": true,
         "redistributableProfilePresent": false,
+        "machineReadableProfilePresent": false,
+        "personalUseAuthorizationConfirmed": true,
+        "personalUseAuthorizationScope": "personal-use-only",
+        "redistributionRequiredForCurrentUse": false,
+        "sourceAutomationUsePermissionConfirmed": false,
+        "authorizationCheckedAt": "2026-07-10T08:52:36+09:00",
+        "authorizationRunlogPath": "project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json",
         "externalProfileLoaderImplemented": true,
         "coverageReportImplemented": true,
+        "profileTemplateGeneratorImplemented": true,
+        "profileTemplateGeneratorScript": "scripts/write_archimate4_relationship_profile_template.mjs",
+        "emptyTemplateActivationGuardImplemented": true,
+        "officialMachineReadableArtifactDiscovered": false,
+        "machineReadableArtifactSearchRunlogPath": "project_memory/runlogs/20260710-0613-appendix-b-machine-readable-source-search.json",
         "relationshipProfileStatusApi": "getArchimate4RelationshipProfileStatus",
         "relationshipProfileCoverageApi": "getArchimate4RelationshipProfileCoverageReport",
         "relationshipProfileResetApi": "resetArchimate4RelationshipProfile",
@@ -1751,8 +1878,8 @@
         "localSourcePresent": false,
         "required": true,
         "externalBlocker": "officialMeff4Xsd",
-        "lastCheckedAt": "2026-07-10T06:01:25+09:00",
-        "lastRunlogPath": "project_memory/runlogs/20260710-0515-external-source-current-recheck.json",
+        "lastCheckedAt": "2026-07-10T08:52:36+09:00",
+        "lastRunlogPath": "project_memory/runlogs/20260710-0604-external-source-current-recheck.json",
         "directoryStatusCode": 200,
         "official4XsdDiscovered": false,
         "discoveredXsdLinks": [

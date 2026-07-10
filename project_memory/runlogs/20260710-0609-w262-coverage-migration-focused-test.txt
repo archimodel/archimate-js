@@ -1,0 +1,21 @@
+(node:100528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 implementation status exposes W262 change-rationale coverage (17.0036ms)
+(node:87628) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/migration/archimate3-to-4.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ migration table records C260-derived ambiguous replacement candidates (1.4753ms)
+✔ migration utility warns for cross-domain service realization alternatives (0.8638ms)
+✔ migration utility warns for cross-domain realizations between every merged behavior type (0.3556ms)
+✔ migration utility does not warn for same-domain service realization or disabled service warnings (0.2213ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 153.2451

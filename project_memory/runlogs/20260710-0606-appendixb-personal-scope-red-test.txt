@@ -1,0 +1,133 @@
+(node:69528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ archimate 4 conformance report preserves official blockers after W262 is reviewed locally (18.4099ms)
+✖ archimate 4 implementation status exposes source coverage boundaries (10.3006ms)
+✖ archimate 4 implementation status exposes official conformance readiness (8.8493ms)
+(node:44228) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ archimate 4 external relationship profile metadata stays separate from Appendix B source coverage (23.5546ms)
+✖ archimate 4 default relationship fallback does not satisfy Appendix B source coverage (9.1478ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.9177
+
+✖ failing tests:
+
+test at test\language-profile.test.mjs:1029:1
+✖ archimate 4 conformance report preserves official blockers after W262 is reviewed locally (18.4099ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'internal-profile-data-required'
+  - 'licensed-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1049:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'internal-profile-data-required',
+    expected: 'licensed-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:2881:1
+✖ archimate 4 implementation status exposes source coverage boundaries (10.3006ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'internal-profile-data-required'
+  - 'licensed-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:2983:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'internal-profile-data-required',
+    expected: 'licensed-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3358:1
+✖ archimate 4 implementation status exposes official conformance readiness (8.8493ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'Load a complete machine-readable Appendix B relationship profile approved for this internal-use deployment',
+  -   'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment',
+      'Confirm the official MEFF 4.0 XSD namespace and serialization details',
+      'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3373:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Load a complete machine-readable Appendix B relationship profile approved for this internal-use deployment', 'Confirm the official MEFF 4.0 XSD namespace and serialization details', 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source' ],
+    expected: [ 'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment', 'Confirm the official MEFF 4.0 XSD namespace and serialization details', 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\relationship-rules.test.mjs:463:1
+✖ archimate 4 external relationship profile metadata stays separate from Appendix B source coverage (23.5546ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'internal-profile-data-required'
+  - 'licensed-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:501:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'internal-profile-data-required',
+    expected: 'licensed-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\relationship-rules.test.mjs:519:1
+✖ archimate 4 default relationship fallback does not satisfy Appendix B source coverage (9.1478ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'internal-profile-data-required'
+  - 'licensed-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:535:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'internal-profile-data-required',
+    expected: 'licensed-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

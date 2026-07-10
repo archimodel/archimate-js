@@ -1,0 +1,195 @@
+{
+  "checkedAt": "2026-07-10T09:06:56+09:00",
+  "source": "sanitized W262 heading and implementation coverage scan",
+  "document": "W262",
+  "pdfPath": "C:\\Users\\syska\\Downloads\\w262.pdf",
+  "pdfSha256": "29224AFB87646F88697B0D2C433A5AB05C24E327CA643FE9B464A935E8085AA3",
+  "containsRawW262Text": false,
+  "expectedTopicIds": [
+    "behavior-element-consolidation",
+    "consolidation-solution",
+    "consolidation-advantages",
+    "conversion-guidance",
+    "metamodel-update",
+    "language-structure-depiction",
+    "relationship-multiplicity",
+    "deprecated-concepts",
+    "simplification-boundary",
+    "definition-principles",
+    "concept-usage-statistics"
+  ],
+  "actualTopicIds": [
+    "behavior-element-consolidation",
+    "consolidation-solution",
+    "consolidation-advantages",
+    "conversion-guidance",
+    "metamodel-update",
+    "language-structure-depiction",
+    "relationship-multiplicity",
+    "deprecated-concepts",
+    "simplification-boundary",
+    "definition-principles",
+    "concept-usage-statistics"
+  ],
+  "missingTopicIds": [],
+  "topics": [
+    {
+      "id": "behavior-element-consolidation",
+      "pageNumbers": [
+        6
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "commonDomainCoverage",
+        "appendixEVersionChangesCoverage"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/archimate4-profile.json",
+        "lib/metamodel/languages/retired-concepts.js"
+      ]
+    },
+    {
+      "id": "consolidation-solution",
+      "pageNumbers": [
+        8
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "elementCatalog",
+        "commonDomainCoverage"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/archimate4-profile.json"
+      ]
+    },
+    {
+      "id": "consolidation-advantages",
+      "pageNumbers": [
+        9
+      ],
+      "classification": "informative-rationale",
+      "statusKeys": [
+        "sourceCoverage"
+      ],
+      "implementationFiles": [
+        "docs/archimate4/official-specification.md"
+      ]
+    },
+    {
+      "id": "conversion-guidance",
+      "pageNumbers": [
+        10
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "appendixEVersionChangesCoverage",
+        "implementationAndMigrationDomainCoverage"
+      ],
+      "implementationFiles": [
+        "lib/migration/archimate3-to-4.js",
+        "lib/metamodel/languages/retired-concepts.js"
+      ]
+    },
+    {
+      "id": "metamodel-update",
+      "pageNumbers": [
+        11
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "elementCatalog",
+        "relationshipConnectors"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/archimate4-profile.json",
+        "lib/moddle/resources/archimate4.json"
+      ]
+    },
+    {
+      "id": "language-structure-depiction",
+      "pageNumbers": [
+        12
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "languageStructureCoverage",
+        "commonDomainCoverage"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/archimate4-profile.json",
+        "lib/features/palette/PaletteProvider.js"
+      ]
+    },
+    {
+      "id": "relationship-multiplicity",
+      "pageNumbers": [
+        13
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "relationshipsAndJunctionsCoverage",
+        "modelValidation"
+      ],
+      "implementationFiles": [
+        "lib/util/JunctionUtil.js",
+        "lib/features/popup-menu/ConnectionMenuProvider.js",
+        "lib/draw/ArchimateRenderer.js"
+      ]
+    },
+    {
+      "id": "deprecated-concepts",
+      "pageNumbers": [
+        13
+      ],
+      "classification": "implemented",
+      "statusKeys": [
+        "appendixEVersionChangesCoverage",
+        "implementationAndMigrationDomainCoverage"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/retired-concepts.js",
+        "lib/migration/archimate3-to-4.js"
+      ]
+    },
+    {
+      "id": "simplification-boundary",
+      "pageNumbers": [
+        15
+      ],
+      "classification": "informative-rationale",
+      "statusKeys": [
+        "technologyDomainCoverage",
+        "elementCatalog"
+      ],
+      "implementationFiles": [
+        "lib/metamodel/languages/archimate4-profile.json"
+      ]
+    },
+    {
+      "id": "definition-principles",
+      "pageNumbers": [
+        16
+      ],
+      "classification": "informative-rationale",
+      "statusKeys": [
+        "definitionCoverage"
+      ],
+      "implementationFiles": [
+        "docs/archimate4/official-specification.md"
+      ]
+    },
+    {
+      "id": "concept-usage-statistics",
+      "pageNumbers": [
+        17
+      ],
+      "classification": "informative-rationale",
+      "statusKeys": [
+        "sourceCoverage"
+      ],
+      "implementationFiles": [
+        "docs/archimate4/sources.md"
+      ]
+    }
+  ]
+}

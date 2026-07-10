@@ -17,35 +17,46 @@
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
 - C260 is a licensed copyrighted publication; this repository records a derived implementation
   specification and source trace, not copied normative prose or verbatim relationship tables.
-- W262 is published by The Open Group as a free PDF download that requires login. The latest
-  publication-page and local-source check is recorded in
-  `project_memory/runlogs/20260710-0515-external-source-current-recheck.json`; it detected the W262
-  title, free PDF/login markers, 22-page metadata, and 2026-04-27 publication metadata, while the
-  recursive filename search under `C:\Users\syska\Downloads` and
-  `C:\Users\syska\.codex\attachments` still found no local W262 or ArchiMate 4 motivation PDF
-  candidates.
-- A local ArchiMate-related PDF inventory is recorded in
-  `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`; it identifies the
-  local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files, and confirms no
-  W262 candidate among those local PDFs.
+- W262 is published by The Open Group as a free PDF download that requires login. The 22-page local
+  PDF is now present at `C:\Users\syska\Downloads\w262.pdf`; its metadata, SHA-256, visual-review
+  pages, and non-verbatim topic ids are recorded in
+  `project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json`.
+- The latest publication-page and local-source search is recorded in
+  `project_memory/runlogs/20260710-0604-external-source-current-recheck.json`; it detected the W262
+  publication metadata and the local PDF path. The older 2026-07-09 PDF inventory predates this file
+  and is retained only as historical evidence.
+- W262 change-rationale coverage is recorded without source prose in
+  `project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json`. The 11 reviewed topics map
+  behavior consolidation, conversion, metamodel and domain terminology, multiplicity, deprecated
+  concepts, definition rationale, and usage statistics to implementation status keys.
 - The Open Group licensed-downloads page confirms Version 4 was released in April 2026.
 - The Open Group exchange-format page confirms the Model Exchange File Format is the standard interchange format.
 - Because any ArchiMate 4 XSD was not available locally, XML conformance remains experimental until the official MEFF 4.0 schema is supplied.
-- Because redistribution rights for Appendix B relationship tables are not confirmed, this repository
-  does not embed the Appendix B matrix. `setArchimate4RelationshipProfile(profile)` is the replacement
-  point for a user-supplied licensed relationship profile or derived non-verbatim implementation data.
+- The user confirmed that this deployment is personal-use-only, so redistribution is not required for
+  the current use. This authorization is recorded in
+  `project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json`.
+- The licensed C260 PDF visibly restricts AI or automated processing. Personal-use authorization does
+  not override that source-processing restriction, so no Appendix B matrix was automatically extracted
+  or committed from the PDF.
+- A complete machine-readable Appendix B relationship profile is still not present.
+  `setArchimate4RelationshipProfile(profile)` remains the replacement point for a human-prepared or
+  separately authorized JSON, CSV, or TSV profile.
+- Official-site and scoped local searches found no separate machine-readable Appendix B artifact; the
+  search boundary is recorded in
+  `project_memory/runlogs/20260710-0613-appendix-b-machine-readable-source-search.json`.
+- `npm run archimate4:relationship-template -- --out <path>.tsv` generates a complete 55-by-55 blank
+  transcription matrix. Activation rejects a template with no allowed relationship values.
 - The Editor demo exposes that replacement point in ArchiMate 4 mode by accepting host-supplied JSON,
   CSV, or TSV relationship-profile data, requiring complete source-target cell coverage before loading,
   and reporting source/cell coverage separately from official conformance blockers. The same UI remains
   disabled in ArchiMate 3.x mode.
-- The local C260 source has been reviewed for Appendix B implementation needs, but a redistributable
-  Appendix B profile artifact is still not present in this repository.
-  `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` therefore means "redistributable
-  profile artifact present", not "licensed C260 source reviewed".
+- `sourceCoverage.appendixBRelationshipMatrix.localSourcePresent` means "complete machine-readable
+  profile artifact present", not "licensed C260 source reviewed" or "personal-use authorization
+  confirmed". It remains `false` until the complete profile data is supplied and validated.
 - A sanitized local ArchiMate 4 Non-Commercial License keyword boundary is recorded in
   `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json`. It does not contain raw
-  license text and does not clear the Appendix B redistributable-profile blocker or the Appendix A
-  exact-artwork-rights blocker.
+  license text. Appendix B personal-use authorization is tracked separately, and the license boundary
+  still does not clear the Appendix A exact-artwork-rights blocker.
 - `getArchimate4ImplementationStatus()` exposes the current implementation boundary as machine-readable
   metadata, including implemented areas, experimental MEFF 4 exchange status, and external blockers.
 - Node-based audit tooling can import `getArchimate4ImplementationStatus()` directly from
@@ -292,10 +303,11 @@
   derived acronym tokens, and the recorded source-extraction runlogs while preserving the external
   Appendix B matrix, MEFF 4.0 XSD, Appendix A artwork-rights, and W262 boundaries.
 - The current implementation-status completion API scan is recorded in
-  `project_memory/runlogs/20260710-0450-status-completion-api-scan.json`; it records 49 top-level
-  status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage
-  status-key guard arrays including `exampleViewpointCatalog`. The companion stderr log is empty so
-  the runlog can be parsed by audit tooling without warning-text cleanup.
+  `project_memory/runlogs/20260710-0616-status-completion-api-scan.json`; it records 50 top-level
+  status keys, 41 `complete` summaries, no incomplete summaries, and the section coverage
+  status-key guard arrays including `exampleViewpointCatalog` and `w262ChangeCoverage`. The
+  companion stderr log is empty so the runlog can be parsed by audit tooling without warning-text
+  cleanup.
 - `getArchimate4ImplementationStatus().externalBlockerCatalog` reports
   `externalBlockerCatalog.expectedIds`, `externalBlockerCatalog.actualIds`,
   `externalBlockerCatalog.missingIds`, and `externalBlockerCatalog.extraIds` so readiness,
@@ -637,8 +649,8 @@
 ## Appendix E Migration Correction
 
 - C260 Appendix E guidance is reflected in `lib/metamodel/languages/retired-concepts.js`.
-- `Representation` now migrates to `DataObject` by default while warning that `Artifact` or `Material`
-  may be more precise for a specific model.
+- W262 conversion guidance is now applied to `Representation`: it migrates to `BusinessObject` by
+  default while warning that `DataObject`, `Artifact`, or `Material` may be more precise.
 - `Gap` records `Deliverable` as an alternative replacement to the default `Assessment`.
 - Business, application, and technology interactions default to `Process` while warning that `Function`
   may be more precise.
@@ -681,8 +693,9 @@
 - The default ArchiMate 4 relationship rules remain compatibility-derived from the existing 3.x maps
   until a licensed Appendix B profile artifact is supplied.
 - `archimate4-profile.json` records this as `sourceCoverage.appendixBRelationshipMatrix`: C260 has
-  been reviewed locally, the external profile loader and coverage report APIs are implemented, and the
-  redistributable Appendix B profile artifact is still not present.
+  been reviewed locally, personal-use authorization is recorded, the external profile loader and
+  coverage report APIs are implemented, and the complete machine-readable Appendix B profile is still
+  not present.
 - `lib/metamodel/languages/relationship-profile-loader.js` validates external relationship profiles
   against the C260-derived concept set: the 42-element catalog, `AndJunction` / `OrJunction`
   relationship connectors, and the 11 supported relationship types.
@@ -701,6 +714,9 @@
   Appendix B table to be transformed by the host without committing the table itself.
 - For spreadsheet exports, a host can pass `{ matrixText, matrixDelimiter }` with CSV/TSV content; the
   parser keeps complete source-target cell validation and does not store the licensed table in this repository.
+- `scripts/write_archimate4_relationship_profile_template.mjs` generates a complete blank TSV/CSV
+  transcription matrix from the active 42 elements, two junction connectors, and 11 relationship
+  concepts. `setArchimate4RelationshipProfile()` rejects a complete but all-empty matrix.
 - The loader rejects generic `Interface`, retired 3.x concepts, and unknown relationship codes before
   replacing the active relationship map.
 - Complete external profiles must include source rows for relationship connectors and relationship
@@ -1005,8 +1021,8 @@
 - The inventory classifies the full local C260 file as the 207-page `ArchiMate 4 Specification`,
   records the local C260 sample files separately, and classifies the `ArchiMate4_NCLv.1_ff` PDFs as
   ArchiMate 4 Non-Commercial License documents.
-- The same inventory records `w262Matched: false`, so the current W262 companion gap is not caused by
-  misclassifying the local C260 or license PDFs.
+- The same inventory records `w262Matched: false`; it predates the later local W262 delivery and is
+  retained as historical inventory evidence only. Current W262 evidence is in the 2026-07-10 runlogs.
 
 ## Local ArchiMate 4 License Boundary
 
@@ -1014,7 +1030,7 @@
   keyword presence for local ArchiMate 4 Non-Commercial License PDFs without storing license prose.
 - The boundary keeps `sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryClearsBlocker`
   and `sourceCoverage.appendixAArtworkRights.localLicenseBoundaryClearsBlocker` false.
-- Therefore the local NCL files are tracked as license context, not as a redistributable Appendix B
+- Therefore the local NCL files are tracked as license context, not as a complete Appendix B
   relationship profile or an approved Appendix A artwork source.
 
 ## ArchiMate 3.1 XSD Verification
@@ -1032,8 +1048,8 @@
 - `project_memory/runlogs/20260710-0123-c260-color-notation-source-check.json` records sanitized C260
   page/heading evidence for color and notational-cue coverage without storing specification prose.
 - `project_memory/runlogs/20260710-0162-archimate4-conformance-report-status-snapshot.json` records
-  the flattened `getArchimate4ConformanceReport()` output used to verify that official blockers and
-  the W262 companion gap remain visible to host tooling.
+  an earlier flattened `getArchimate4ConformanceReport()` snapshot. Current status removes the resolved
+  W262 companion gap while retaining the three official blockers.
 - `demo/viewer.html` and `demo/editor.html` now render the same flattened report in ArchiMate 4 mode.
   Browser smoke evidence is recorded in
   `project_memory/runlogs/20260710-0199-demo-conformance-panel-browser-smoke.txt`; it verifies 4.0

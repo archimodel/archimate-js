@@ -45,6 +45,6 @@ test('demo conformance panel source stays aligned with the flattened report boun
     'meff4Xsd',
     'appendixAArtworkRights'
   ]);
-  assert.deepEqual(report.missingCompanionSources, [ 'w262' ]);
+  assert.deepEqual(report.missingCompanionSources, []);
   assert.equal(report.requiredBeforeClaim.length, 3);
 });

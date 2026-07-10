@@ -958,7 +958,7 @@ test('archimate 4 implementation status is machine-readable and preserves extern
   assert.equal(profile.conformance.elementCatalog.expectedCount, 42);
   assert.deepEqual(profile.conformance.elementCatalog.expectedTypes, officialCatalog.elements);
   assert.equal(profile.conformance.elementCatalog.status, 'implemented');
-  assert.equal(profile.conformance.relationshipMatrix.status, 'external-profile-required');
+  assert.equal(profile.conformance.relationshipMatrix.status, 'licensed-profile-data-required');
   assert.equal(profile.conformance.exchangeFormat.status, 'experimental');
   assert.equal(profile.conformance.exchangeFormat.officialXsdRequired, true);
   assert.equal(profile.conformance.exchangeFormat.internalRoundTripTested, true);
@@ -1013,7 +1013,7 @@ test('archimate 4 implementation status has no incomplete non-external summaries
     'officialMeff4Xsd',
     'exactAppendixAArtworkRights'
   ];
-  const expectedGapIds = expectedOfficialBlockerIds.concat('w262CompanionPaper');
+  const expectedGapIds = expectedOfficialBlockerIds;
 
   assert.deepEqual(collectIncompleteStatusSummaries(status), []);
   assert.equal(status.conformanceReadiness.officialConformanceClaimable, false);
@@ -1026,7 +1026,7 @@ test('archimate 4 implementation status has no incomplete non-external summaries
   assert.deepEqual(status.remainingGaps.extraIds, []);
 });
 
-test('archimate 4 conformance report preserves official blockers and companion gaps', () => {
+test('archimate 4 conformance report preserves official blockers after W262 is reviewed locally', () => {
   const report = getArchimate4ConformanceReport();
   const expectedOfficialBlockerIds = [
     'officialAppendixBRelationshipMatrix',
@@ -1046,23 +1046,25 @@ test('archimate 4 conformance report preserves official blockers and companion g
   assert.deepEqual(report.requiredBeforeClaimBlockerIds, expectedOfficialBlockerIds);
   assert.deepEqual(report.blockers.map((blocker) => blocker.id), expectedOfficialBlockerIds);
   assert.deepEqual(report.blockers.map((blocker) => blocker.sourceId), report.missingRequiredSources);
-  assert.equal(report.blockers[0].status, 'external-profile-required');
+  assert.equal(report.blockers[0].status, 'licensed-profile-data-required');
   assert.equal(report.blockers[0].requirementId, 'appendix-b-relationships');
   assert.equal(report.blockers[0].missingRequiredSource, true);
-  assert.equal(report.blockers[0].requiredBeforeClaim, 'Load an official or redistributable Appendix B relationship profile');
+  assert.equal(
+    report.blockers[0].requiredBeforeClaim,
+    'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment'
+  );
   assert.equal(report.blockers[1].status, 'external-source-required');
   assert.equal(report.blockers[1].requiredBeforeClaim, 'Confirm the official MEFF 4.0 XSD namespace and serialization details');
   assert.equal(report.blockers[2].status, 'external-rights-required');
   assert.equal(report.blockers[2].requiredBeforeClaim, 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source');
-  assert.deepEqual(report.remainingGapIds, expectedOfficialBlockerIds.concat('w262CompanionPaper'));
+  assert.deepEqual(report.remainingGapIds, expectedOfficialBlockerIds);
   assert.deepEqual(report.officialConformanceGapIds, expectedOfficialBlockerIds);
-  assert.deepEqual(report.companionGapIds, [ 'w262CompanionPaper' ]);
-  assert.deepEqual(report.missingCompanionSources, [ 'w262' ]);
-  assert.equal(report.companionGaps[0].sourceId, 'w262');
-  assert.equal(report.companionGaps[0].officialConformanceBlocker, false);
+  assert.deepEqual(report.companionGapIds, []);
+  assert.deepEqual(report.missingCompanionSources, []);
+  assert.deepEqual(report.companionGaps, []);
   assert.equal(report.implementedShallCount, 3);
   assert.equal(report.externalBlockedShallCount, 2);
-  assert.equal(report.statusRunlogPath, 'project_memory/runlogs/20260710-0450-status-completion-api-scan.json');
+  assert.equal(report.statusRunlogPath, 'project_memory/runlogs/20260710-0616-status-completion-api-scan.json');
 });
 
 test('archimate 4 implementation status exposes model validation coverage', () => {
@@ -1132,9 +1134,9 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     new URL('../docs/superpowers/plans/2026-07-08-archimate-4-support.md', import.meta.url),
     'utf8'
   );
-  const runlog = await readJson('../project_memory/runlogs/20260710-0450-status-completion-api-scan.json');
+  const runlog = await readJson('../project_memory/runlogs/20260710-0616-status-completion-api-scan.json');
   const stderr = await readFile(
-    new URL('../project_memory/runlogs/20260710-0450-status-completion-api-scan.stderr.txt', import.meta.url),
+    new URL('../project_memory/runlogs/20260710-0616-status-completion-api-scan.stderr.txt', import.meta.url),
     'utf8'
   );
   const summaries = collectCompleteStatusSummaries(status);
@@ -1154,7 +1156,7 @@ test('archimate 4 implementation status completion scan stays parseable', async 
   assert.equal(completion.status, 'current-status-summary-derived');
   assert.equal(
     completion.sourceRunlogPath,
-    'project_memory/runlogs/20260710-0450-status-completion-api-scan.json'
+    'project_memory/runlogs/20260710-0616-status-completion-api-scan.json'
   );
   assert.deepEqual(completion.topKeys, Object.keys(status));
   assert.equal(completion.topKeyCount, Object.keys(status).length);
@@ -1174,8 +1176,8 @@ test('archimate 4 implementation status completion scan stays parseable', async 
     runlog.sectionCoverageMissingStatusKeyReferenceIds,
     status.sectionCoverage.missingStatusKeyReferenceIds
   );
-  assert.match(readme, /20260710-0450-status-completion-api-scan/);
-  assert.match(sources, /40 `complete` summaries/);
+  assert.match(readme, /20260710-0616-status-completion-api-scan/);
+  assert.match(sources, /41 `complete` summaries/);
   assert.match(officialSpec, /no incomplete summaries/);
   assert.match(plan, /Implementation-status completion API scan evidence/);
 });
@@ -2601,7 +2603,7 @@ test('archimate 4 complete C260 coverage does not clear external conformance blo
   assert.deepEqual(status.conformanceReadiness.requiredBeforeClaimBlockerIds, expectedOfficialBlockerIds);
   assert.deepEqual(status.conformanceReadiness.missingRequiredSources, expectedMissingRequiredSources);
   assert.deepEqual(status.remainingGaps.officialConformanceGapIds, expectedOfficialBlockerIds);
-  assert.deepEqual(status.remainingGaps.unresolvedIds, expectedOfficialBlockerIds.concat('w262CompanionPaper'));
+  assert.deepEqual(status.remainingGaps.unresolvedIds, expectedOfficialBlockerIds);
 });
 
 test('archimate 4 implementation status reconciles C260 PDF outline source with derived coverage', async () => {
@@ -2910,60 +2912,106 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
     sourceCoverage.c260.localPdfInventoryRunlogPath,
     'project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json'
   );
-  assert.equal(sourceCoverage.w262.status, 'external-download-required');
+  assert.equal(sourceCoverage.w262.status, 'local-companion-reviewed');
   assert.equal(sourceCoverage.w262.url, 'https://publications.opengroup.org/w262');
-  assert.equal(sourceCoverage.w262.localSourcePresent, false);
+  assert.equal(sourceCoverage.w262.localSourcePresent, true);
+  assert.equal(sourceCoverage.w262.localPdfPath, 'C:\\Users\\syska\\Downloads\\w262.pdf');
+  assert.equal(sourceCoverage.w262.localPdfSizeBytes, 1213926);
+  assert.equal(sourceCoverage.w262.localPdfSha256, '29224AFB87646F88697B0D2C433A5AB05C24E327CA643FE9B464A935E8085AA3');
+  assert.equal(sourceCoverage.w262.localPdfMetadataTitle, 'W262');
+  assert.equal(sourceCoverage.w262.localPdfTitle, 'The Motivation for Changes in the ArchiMate® 4 Specification');
+  assert.equal(sourceCoverage.w262.localPdfPages, 22);
+  assert.equal(sourceCoverage.w262.localPdfAuthor, 'The Open Group');
+  assert.equal(
+    sourceCoverage.w262.localReviewRunlogPath,
+    'project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json'
+  );
+  assert.deepEqual(sourceCoverage.w262.localReviewTopicIds, [
+    'behavior-element-consolidation',
+    'consolidation-solution',
+    'consolidation-advantages',
+    'conversion-guidance',
+    'metamodel-update',
+    'language-structure-depiction',
+    'relationship-multiplicity',
+    'deprecated-concepts',
+    'simplification-boundary',
+    'definition-principles',
+    'concept-usage-statistics'
+  ]);
   assert.equal(sourceCoverage.w262.publicationPageStatusCode, 200);
   assert.equal(
     sourceCoverage.w262.publicationPageTitle,
     'The Motivation for Changes in the ArchiMate® 4 Specification'
   );
-  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-10T06:01:25+09:00');
+  assert.equal(sourceCoverage.w262.lastPublicationPageCheckedAt, '2026-07-10T08:52:36+09:00');
   assert.equal(
     sourceCoverage.w262.lastPublicationPageRunlogPath,
-    'project_memory/runlogs/20260710-0515-external-source-current-recheck.json'
+    'project_memory/runlogs/20260710-0604-external-source-current-recheck.json'
   );
   assert.equal(sourceCoverage.w262.freePdfDetected, true);
   assert.equal(sourceCoverage.w262.loginRequiredDetected, true);
   assert.equal(sourceCoverage.w262.pages22Detected, true);
   assert.equal(sourceCoverage.w262.published20260427Detected, true);
-  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-10T06:01:25+09:00');
+  assert.equal(sourceCoverage.w262.lastLocalSearchAt, '2026-07-10T08:52:36+09:00');
   assert.equal(
     sourceCoverage.w262.lastLocalSearchRunlogPath,
-    'project_memory/runlogs/20260710-0515-external-source-current-recheck.json'
+    'project_memory/runlogs/20260710-0604-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.w262.localSearchRoots, [
     'C:\\Users\\syska\\Downloads',
     'C:\\Users\\syska\\.codex\\attachments'
   ]);
-  assert.deepEqual(sourceCoverage.w262.localSearchMatchedFiles, []);
-  assert.equal(sourceCoverage.w262.localCandidateInventoryCheckedAt, '2026-07-09T21:10:00+09:00');
+  assert.deepEqual(sourceCoverage.w262.localSearchMatchedFiles, [
+    'C:\\Users\\syska\\Downloads\\w262.pdf'
+  ]);
+  assert.equal(sourceCoverage.w262.localCandidateInventoryCheckedAt, '2026-07-10T08:52:36+09:00');
   assert.equal(
     sourceCoverage.w262.localCandidateInventoryRunlogPath,
-    'project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json'
+    'project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json'
   );
-  assert.equal(sourceCoverage.w262.localCandidateInventoryW262Matched, false);
+  assert.equal(sourceCoverage.w262.localCandidateInventoryW262Matched, true);
   assert.deepEqual(sourceCoverage.w262.localCandidateInventoryClassifications, [
-    'c260-specification',
-    'c260-sample',
-    'archimate4-non-commercial-license'
+    'w262-companion-paper'
   ]);
-  const localPdfInventory = await readJson('../project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json');
-  const localPdfClassifications = new Set(localPdfInventory.items.map((item) => item.classification));
-  assert.equal(localPdfInventory.checkedAt, sourceCoverage.w262.localCandidateInventoryCheckedAt);
-  assert.equal(localPdfInventory.w262Matched, sourceCoverage.w262.localCandidateInventoryW262Matched);
-  assert.equal(localPdfInventory.items.some((item) => {
-    return item.classification === 'c260-specification' && item.pages === sourceCoverage.c260.localPdfPages;
-  }), true);
-  assert.equal(localPdfClassifications.has('c260-specification'), true);
-  assert.equal(localPdfClassifications.has('archimate4-non-commercial-license'), true);
-  assert.equal(localPdfClassifications.has('w262-candidate'), false);
-  assert.equal(sourceCoverage.appendixBRelationshipMatrix.status, 'external-profile-required');
+  const localSourceAuthorization = await readJson(
+    '../project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json'
+  );
+  assert.equal(localSourceAuthorization.checkedAt, sourceCoverage.w262.localCandidateInventoryCheckedAt);
+  assert.equal(localSourceAuthorization.containsRawSpecificationText, false);
+  assert.equal(localSourceAuthorization.w262.localSourcePresent, true);
+  assert.equal(localSourceAuthorization.w262.companionGapCleared, true);
+  assert.equal(localSourceAuthorization.w262.sha256, sourceCoverage.w262.localPdfSha256);
+  assert.deepEqual(localSourceAuthorization.w262.topicIds, sourceCoverage.w262.localReviewTopicIds);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.status, 'licensed-profile-data-required');
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localC260SourceReviewed, true);
-  assert.equal(sourceCoverage.appendixBRelationshipMatrix.localSourceMeaning, 'redistributable Appendix B profile artifact');
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.localSourceMeaning,
+    'complete machine-readable Appendix B relationship profile artifact'
+  );
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.redistributableProfilePresent, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.machineReadableProfilePresent, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.personalUseAuthorizationConfirmed, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.personalUseAuthorizationScope, 'personal-use-only');
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.redistributionRequiredForCurrentUse, false);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.sourceAutomationUsePermissionConfirmed, false);
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.authorizationRunlogPath,
+    'project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json'
+  );
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.externalProfileLoaderImplemented, true);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.coverageReportImplemented, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.profileTemplateGeneratorImplemented, true);
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.profileTemplateGeneratorScript,
+    'scripts/write_archimate4_relationship_profile_template.mjs'
+  );
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.emptyTemplateActivationGuardImplemented, true);
+  assert.equal(sourceCoverage.appendixBRelationshipMatrix.officialMachineReadableArtifactDiscovered, false);
+  assert.equal(
+    sourceCoverage.appendixBRelationshipMatrix.machineReadableArtifactSearchRunlogPath,
+    'project_memory/runlogs/20260710-0613-appendix-b-machine-readable-source-search.json'
+  );
   assert.equal(
     sourceCoverage.appendixBRelationshipMatrix.relationshipProfileStatusApi,
     'getArchimate4RelationshipProfileStatus'
@@ -2992,12 +3040,20 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   );
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.localLicenseBoundaryClearsBlocker, false);
   assert.equal(sourceCoverage.appendixBRelationshipMatrix.explicitAppendixBProfileRedistributionApprovalDetected, false);
+  assert.equal(
+    localSourceAuthorization.appendixBRelationshipMatrix.personalUseAuthorizationConfirmed,
+    sourceCoverage.appendixBRelationshipMatrix.personalUseAuthorizationConfirmed
+  );
+  assert.equal(localSourceAuthorization.appendixBRelationshipMatrix.machineReadableProfilePresent, false);
+  assert.equal(localSourceAuthorization.appendixBRelationshipMatrix.sourceAutomationUsePermissionConfirmed, false);
+  assert.equal(localSourceAuthorization.appendixBRelationshipMatrix.committedAutomatedExtractionData, false);
+  assert.equal(localSourceAuthorization.appendixBRelationshipMatrix.officialConformanceBlockerCleared, false);
   assert.equal(sourceCoverage.meff4Xsd.status, 'external-source-required');
   assert.equal(sourceCoverage.meff4Xsd.directoryStatusCode, 200);
   assert.equal(sourceCoverage.meff4Xsd.official4XsdDiscovered, false);
   assert.equal(
     sourceCoverage.meff4Xsd.lastRunlogPath,
-    'project_memory/runlogs/20260710-0515-external-source-current-recheck.json'
+    'project_memory/runlogs/20260710-0604-external-source-current-recheck.json'
   );
   assert.deepEqual(sourceCoverage.meff4Xsd.discoveredXsdLinks, [
     '3.1/archimate3_Diagram.xsd',
@@ -3091,13 +3147,63 @@ test('archimate 4 implementation status exposes source coverage boundaries', asy
   assert.match(readme, /sourceCoverage\.missingSourceIds/);
   assert.match(sources, /W262 is published by The Open Group as a free PDF download/);
   assert.match(sources, /sourceCoverage\.actualSourceIds/);
-  assert.match(sources, /20260710-0515-external-source-current-recheck/);
-  assert.match(sources, /redistributable Appendix B profile artifact is still not present/);
+  assert.match(sources, /20260710-0604-external-source-current-recheck/);
+  assert.match(sources, /complete machine-readable Appendix B relationship profile/);
   assert.match(sources, /20260709-731-meff4-xsd-latest-recheck/);
-  assert.match(officialSpec, /20260710-0515-external-source-current-recheck/);
+  assert.match(officialSpec, /20260710-0604-external-source-current-recheck/);
   assert.match(sources, /20260709-1189-appendix-a-artwork-rights-pictogram-audit/);
   assert.match(officialSpec, /locally-authored renderer\s+paths/);
   assert.match(officialSpec, /sourceCoverage\.expectedSourceIds/);
+});
+
+test('archimate 4 implementation status exposes W262 change-rationale coverage', async () => {
+  const status = getArchimate4ImplementationStatus();
+  const coverage = status.w262ChangeCoverage;
+  const expectedTopicIds = [
+    'behavior-element-consolidation',
+    'consolidation-solution',
+    'consolidation-advantages',
+    'conversion-guidance',
+    'metamodel-update',
+    'language-structure-depiction',
+    'relationship-multiplicity',
+    'deprecated-concepts',
+    'simplification-boundary',
+    'definition-principles',
+    'concept-usage-statistics'
+  ];
+
+  assert.equal(status.sourceCoverage.items.w262.localSourcePresent, true);
+  assert.deepEqual(coverage.expectedIds, expectedTopicIds);
+  assert.deepEqual(coverage.actualIds, expectedTopicIds);
+  assert.deepEqual(coverage.missingIds, []);
+  assert.deepEqual(coverage.extraIds, []);
+  assert.deepEqual(coverage.missingPageEvidenceIds, []);
+  assert.deepEqual(coverage.missingStatusKeyReferenceIds, []);
+  assert.deepEqual(coverage.informativeIds, [
+    'consolidation-advantages',
+    'simplification-boundary',
+    'definition-principles',
+    'concept-usage-statistics'
+  ]);
+  assert.equal(coverage.complete, true);
+  assert.equal(
+    coverage.sourceRunlogPath,
+    'project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json'
+  );
+
+  for (const topic of coverage.items) {
+    assert.equal(topic.pageNumbers.length > 0, true, topic.id + ' needs page evidence');
+    for (const statusKey of topic.statusKeys) {
+      assert.equal(Object.prototype.hasOwnProperty.call(status, statusKey), true, statusKey + ' must exist');
+    }
+  }
+
+  const runlog = await readJson('../project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json');
+  assert.equal(runlog.containsRawW262Text, false);
+  assert.deepEqual(runlog.expectedTopicIds, expectedTopicIds);
+  assert.deepEqual(runlog.actualTopicIds, expectedTopicIds);
+  assert.deepEqual(runlog.missingTopicIds, []);
 });
 
 test('archimate 4 source coverage counts match local and external classifications', () => {
@@ -3116,9 +3222,8 @@ test('archimate 4 source coverage counts match local and external classification
   assert.equal(sourceCoverage.expectedCount, sourceCoverage.expectedSourceIds.length);
   assert.equal(sourceCoverage.total, sourceCoverage.actualSourceIds.length);
   assert.deepEqual(sourceCoverage.actualSourceIds, sourceCoverage.expectedSourceIds);
-  assert.deepEqual(localSourceIds, [ 'c260', 'launchTranscript' ]);
+  assert.deepEqual(localSourceIds, [ 'c260', 'w262', 'launchTranscript' ]);
   assert.deepEqual(externalSourceIds, [
-    'w262',
     'appendixBRelationshipMatrix',
     'meff4Xsd',
     'appendixAArtworkRights'
@@ -3330,7 +3435,7 @@ test('archimate 4 implementation status exposes official conformance readiness',
     'exactAppendixAArtworkRights'
   ]);
   assert.deepEqual(readiness.requiredBeforeClaim, [
-    'Load an official or redistributable Appendix B relationship profile',
+    'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment',
     'Confirm the official MEFF 4.0 XSD namespace and serialization details',
     'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
   ]);
@@ -3340,7 +3445,7 @@ test('archimate 4 implementation status exposes official conformance readiness',
     'exactAppendixAArtworkRights'
   ]);
   assert.deepEqual(readiness.requiredBeforeClaimByBlocker, {
-    officialAppendixBRelationshipMatrix: 'Load an official or redistributable Appendix B relationship profile',
+    officialAppendixBRelationshipMatrix: 'Load a complete machine-readable Appendix B relationship profile approved for this personal-use deployment',
     officialMeff4Xsd: 'Confirm the official MEFF 4.0 XSD namespace and serialization details',
     exactAppendixAArtworkRights: 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
   });
@@ -3369,7 +3474,7 @@ test('archimate 4 implementation status exposes official conformance readiness',
     'meff4Xsd',
     'appendixAArtworkRights'
   ]);
-  assert.deepEqual(Object.keys(profile.conformance.sourceCoverage).filter((key) => profile.conformance.sourceCoverage[key].companion && profile.conformance.sourceCoverage[key].localSourcePresent === false), [ 'w262' ]);
+  assert.deepEqual(Object.keys(profile.conformance.sourceCoverage).filter((key) => profile.conformance.sourceCoverage[key].companion && profile.conformance.sourceCoverage[key].localSourcePresent === false), []);
 });
 
 test('archimate 4 implementation status exposes remaining gap identity', async () => {
@@ -3383,8 +3488,7 @@ test('archimate 4 implementation status exposes remaining gap identity', async (
   const expectedGapIds = [
     'officialAppendixBRelationshipMatrix',
     'officialMeff4Xsd',
-    'exactAppendixAArtworkRights',
-    'w262CompanionPaper'
+    'exactAppendixAArtworkRights'
   ];
 
   assert.equal(gapCatalog.status, 'external-source-dependent');
@@ -3395,7 +3499,7 @@ test('archimate 4 implementation status exposes remaining gap identity', async (
     'officialMeff4Xsd',
     'exactAppendixAArtworkRights'
   ]);
-  assert.deepEqual(gaps.filter((gap) => gap.companion).map((gap) => gap.sourceId), [ 'w262' ]);
+  assert.deepEqual(gaps.filter((gap) => gap.companion).map((gap) => gap.sourceId), []);
 
   assert.match(languageIndex, /var remainingGaps = summarizeRemainingGaps/);
   assert.match(languageIndex, /remainingGaps: remainingGaps/);
@@ -3434,10 +3538,9 @@ test('archimate 4 external blocker gaps map to source coverage and readiness', (
   }
 
   assert.deepEqual(status.remainingGaps.companionGapSourceIds, status.sourceCoverage.missingCompanionSources);
-  assert.deepEqual(status.remainingGaps.companionGapSourceIds, [ 'w262' ]);
-  assert.equal(gapsById.get('w262CompanionPaper').sourceId, 'w262');
+  assert.deepEqual(status.remainingGaps.companionGapSourceIds, []);
   assert.equal(sourceCoverage.w262.companion, true);
-  assert.equal(sourceCoverage.w262.localSourcePresent, false);
+  assert.equal(sourceCoverage.w262.localSourcePresent, true);
 });
 
 test('archimate 4 missing required sources map to required-before-claim actions', () => {
@@ -3471,23 +3574,21 @@ test('archimate 4 missing required sources map to required-before-claim actions'
   }
 });
 
-test('archimate 4 W262 companion source stays outside official conformance blockers', () => {
+test('archimate 4 reviewed W262 companion source stays outside remaining gaps and official blockers', () => {
   const status = getArchimate4ImplementationStatus();
   const w262 = status.sourceCoverage.items.w262;
   const w262Gap = status.remainingGaps.items.find((gap) => {
     return gap.id === 'w262CompanionPaper';
   });
 
-  assert.equal(w262.status, 'external-download-required');
+  assert.equal(w262.status, 'local-companion-reviewed');
   assert.equal(w262.companion, true);
-  assert.equal(w262.localSourcePresent, false);
-  assert.equal(w262Gap.sourceId, 'w262');
-  assert.equal(w262Gap.companion, true);
-  assert.equal(w262Gap.officialConformanceBlocker, false);
+  assert.equal(w262.localSourcePresent, true);
+  assert.equal(w262Gap, undefined);
 
-  assert.equal(status.sourceCoverage.missingCompanionSources.includes('w262'), true);
-  assert.equal(status.conformanceReadiness.missingCompanionSources.includes('w262'), true);
-  assert.equal(status.remainingGaps.companionGapSourceIds.includes('w262'), true);
+  assert.equal(status.sourceCoverage.missingCompanionSources.includes('w262'), false);
+  assert.equal(status.conformanceReadiness.missingCompanionSources.includes('w262'), false);
+  assert.equal(status.remainingGaps.companionGapSourceIds.includes('w262'), false);
 
   assert.equal(status.sourceCoverage.missingRequiredSources.includes('w262'), false);
   assert.equal(status.conformanceReadiness.missingRequiredSources.includes('w262'), false);
@@ -3713,9 +3814,10 @@ test('archimate 4 implementation plan records current execution boundary', async
   assert.match(plan, /expectedTypes/);
   assert.match(plan, /missingTypes/);
   assert.doesNotMatch(plan, /As of commit/);
-  assert.match(plan, /Official Appendix B relationship matrix data/);
+  assert.match(plan, /Complete machine-readable Appendix B relationship profile data/);
   assert.match(plan, /Official MEFF 4\.0 XSD/);
-  assert.match(plan, /W262 is still not present locally/);
+  assert.match(plan, /W262 is locally reviewed/);
+  assert.match(plan, /w262ChangeCoverage/);
   assert.match(plan, /Exact Appendix A vector artwork redistribution rights remain unconfirmed/);
 });
 
@@ -3759,7 +3861,7 @@ test('archimate 4 completion audit script maps status API to plan milestones', a
     'meff4Xsd',
     'appendixAArtworkRights'
   ]);
-  assert.deepEqual(audit.externalBlockers.missingCompanionSources, [ 'w262' ]);
+  assert.deepEqual(audit.externalBlockers.missingCompanionSources, []);
   assert.equal(audit.evidence.incompleteSummaryCount, 0);
   assert.equal(audit.evidence.missingRunlogReferenceCount, 0);
   assert.equal(audit.failureCount, 0);
@@ -3809,7 +3911,7 @@ test('archimate 4 C260 coverage audit script verifies book-derived source eviden
     'meff4Xsd',
     'appendixAArtworkRights'
   ]);
-  assert.deepEqual(audit.externalBoundariesRetained.missingCompanionSources, [ 'w262' ]);
+  assert.deepEqual(audit.externalBoundariesRetained.missingCompanionSources, []);
   assert.equal(audit.failureCount, 0);
 });
 
@@ -3849,7 +3951,7 @@ test('archimate 4 conformance requirements are tracked per C260 shall and may cl
   assert.equal(byId.get('viewpoint-mechanism').status, 'implemented');
   assert.equal(byId.get('language-customization').status, 'implemented');
   assert.equal(byId.get('language-customization').implementationDefined, true);
-  assert.equal(byId.get('appendix-b-relationships').status, 'external-profile-required');
+  assert.equal(byId.get('appendix-b-relationships').status, 'licensed-profile-data-required');
   assert.equal(byId.get('appendix-b-relationships').externalBlocker, 'officialAppendixBRelationshipMatrix');
   assert.equal(byId.get('example-viewpoints').level, 'may');
   assert.equal(byId.get('example-viewpoints').status, 'not-bundled-informative');

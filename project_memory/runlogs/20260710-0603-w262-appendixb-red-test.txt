@@ -1,0 +1,521 @@
+(node:8936) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ demo viewer and editor expose the ArchiMate 4 conformance report panel (0.7789ms)
+✖ demo conformance panel source stays aligned with the flattened report boundary (14.0308ms)
+(node:104596) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 3 profile keeps retired 3.x concepts for compatibility (16.2634ms)
+✔ archimate 4 profile removes retired 3.x concepts (1.5926ms)
+✔ archimate 4 profile exposes Common Domain (2.1762ms)
+✔ archimate 4 profile matches the C260 element catalog (3.1849ms)
+✔ archimate 4 exposes relationship junction connectors outside the element catalog (1.3966ms)
+✔ archimate 4 deliverable pictogram ref uses standard spelling (1.3571ms)
+✔ archimate 4 profile uses standard Stakeholder and Course of Action spelling (2.325ms)
+✔ profile-aware metadata and palette include relationship junction connectors (1.6247ms)
+✔ archimate 4 palette exposes every standard element (1.9122ms)
+✔ archimate 4 Common Domain palette uses Common visual assets (7.5764ms)
+✔ profile palette keeps ArchiMate 3 icons while separating ArchiMate 4 fallback icons (6.6159ms)
+✔ context pad explains that relationship creation starts by dragging to a target element (0.9602ms)
+✔ demo sample switches concepts by selected ArchiMate profile (1.1119ms)
+✔ archimate 4 profile pictogram refs are defined for renderer path map (1.8257ms)
+✔ archimate font exposes Fontello glyphs for every ArchiMate 4 element (20.0134ms)
+✔ archimate 4 palette keeps Fontello glyph classes out of diagram-js palette cells (2.6612ms)
+✔ active profile rejects concepts and relationships outside the selected version (2.1814ms)
+✔ renderer uses active language profile pictogram refs (2.6356ms)
+✔ language profile customization supports C260 specialization profiles (2.5564ms)
+✔ language profile customization validates C260 profile attribute definitions (2.5186ms)
+✔ archimate 4 implementation status exposes profile attribute type coverage (13.1065ms)
+✔ custom profile attributes validate active concepts relationships and lineage lookup (4.8901ms)
+✔ language profile customization supports relationship specializations (2.8739ms)
+✔ relationship specializations are available in editor menus and inherit base behavior (3.3494ms)
+✔ archimate 4 shape metadata preserves domain terminology (1.838ms)
+✔ language profile customization supports viewpoint definitions (2.6048ms)
+✔ custom viewpoint definitions validate purpose content and allowed types (3.0286ms)
+✔ archimate 4 implementation status exposes C260 viewpoint classification tokens (6.1624ms)
+✔ archimate 4 implementation status exposes C260 viewpoint mechanism features (5.0184ms)
+✔ archimate 4 implementation status exposes C260 stakeholder concern features (4.3793ms)
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (6.2841ms)
+✖ archimate 4 implementation status has no incomplete non-external summaries (7.4554ms)
+✖ archimate 4 conformance report preserves official blockers after W262 is reviewed locally (5.236ms)
+✔ archimate 4 implementation status exposes model validation coverage (4.6151ms)
+✔ archimate 4 implementation status completion scan stays parseable (12.0832ms)
+✔ archimate 4 status completion scan writer emits current summaries (135.3971ms)
+✔ archimate 4 implementation status runlog references resolve to committed evidence (23.3373ms)
+✔ archimate 4 implementation status identity arrays contain no duplicate values (7.8957ms)
+✔ archimate 4 implementation status exposes C260 introduction coverage identity (6.6418ms)
+✔ archimate 4 introduction references stay outside conformance blockers (4.0593ms)
+✔ archimate 4 implementation status exposes C260 language structure coverage identity (3.0418ms)
+✔ archimate 4 implementation status exposes C260 common domain coverage identity (5.5225ms)
+✔ archimate 4 implementation status exposes C260 relationships and junctions coverage identity (4.9082ms)
+✔ archimate 4 implementation status exposes C260 motivation domain coverage identity (2.8444ms)
+✔ archimate 4 implementation status exposes C260 strategy domain coverage identity (3.0111ms)
+✔ archimate 4 implementation status exposes C260 business domain coverage identity (3.3473ms)
+✔ archimate 4 implementation status exposes C260 application domain coverage identity (3.1815ms)
+✔ archimate 4 implementation status exposes C260 technology domain coverage identity (2.8474ms)
+✔ archimate 4 implementation status exposes C260 relationships between core domains coverage identity (3.2243ms)
+✔ archimate 4 implementation status exposes C260 implementation and migration domain coverage identity (3.1269ms)
+✔ archimate 4 implementation status exposes C260 stakeholders architecture views viewpoints coverage identity (3.3827ms)
+✔ archimate 4 implementation status exposes C260 language customization mechanisms coverage identity (3.1468ms)
+✔ archimate 4 implementation status exposes C260 appendix A notation coverage identity (2.9723ms)
+✔ archimate 4 implementation status exposes C260 appendix B relationships coverage identity (4.9893ms)
+✔ archimate 4 implementation status exposes C260 appendix C example viewpoints coverage identity (2.9207ms)
+✔ archimate 4 exposes Appendix C example viewpoints as an informative catalog (7.249ms)
+✔ archimate 4 implementation status exposes C260 appendix D standards guidance coverage identity (7.809ms)
+✔ archimate 4 appendix D standards guidance stays outside conformance blockers (6.2263ms)
+✔ archimate 4 implementation status exposes C260 appendix E version changes coverage identity (7.6226ms)
+✔ archimate 4 appendix E version changes stay outside conformance blockers (3.9891ms)
+✔ archimate 4 implementation status exposes C260 appendix F acronym coverage identity (9.4591ms)
+✔ archimate 4 appendix F acronym vocabulary stays outside conformance blockers (4.1792ms)
+✔ archimate 4 implementation status exposes C260 document artifact boundary (8.9959ms)
+✔ archimate 4 document artifacts stay outside conformance blockers (3.9325ms)
+✔ archimate 4 implementation status exposes aggregate C260 coverage integrity (6.6207ms)
+✖ archimate 4 complete C260 coverage does not clear external conformance blockers (5.63ms)
+✔ archimate 4 implementation status reconciles C260 PDF outline source with derived coverage (7.72ms)
+✔ archimate 4 implementation status audits C260 outline assignment counts by coverage group (7.2683ms)
+✔ archimate 4 implementation status audits C260 coverage source runlog evidence (7.481ms)
+✔ archimate 4 implementation status exposes C260 definition vocabulary identity (2.9919ms)
+✔ archimate 4 implementation status API can be imported directly by Node ESM (108.2019ms)
+✔ archimate 4 implementation status tracks dedicated local pictogram coverage (2.0866ms)
+✖ archimate 4 implementation status exposes source coverage boundaries (2.5226ms)
+✖ archimate 4 source coverage counts match local and external classifications (3.8001ms)
+✔ archimate 4 required and companion source catalogs match source item flags (4.8915ms)
+✔ archimate 4 source coverage status agrees with external source runlog evidence (5.0395ms)
+✔ archimate 4 XML exchange stays experimental until official MEFF 4 XSD is present (4.061ms)
+✔ archimate 4 source coverage does not treat 3.1 XSD evidence as MEFF 4 XSD (4.3676ms)
+✔ archimate 4 Appendix A artwork status agrees with pictogram audit evidence (4.6276ms)
+✔ archimate 4 local pictogram coverage does not satisfy Appendix A artwork rights (3.7635ms)
+✖ archimate 4 implementation status exposes official conformance readiness (3.6133ms)
+✖ archimate 4 implementation status exposes remaining gap identity (3.4279ms)
+✖ archimate 4 external blocker gaps map to source coverage and readiness (4.2664ms)
+✔ archimate 4 missing required sources map to required-before-claim actions (3.9045ms)
+✖ archimate 4 reviewed W262 companion source stays outside remaining gaps and official blockers (3.9192ms)
+✔ archimate 4 conformance requirement blockers map to gaps and required sources (4.6432ms)
+✔ archimate 4 implementation status exposes C260 section coverage identity (8.3536ms)
+✔ archimate 4 implementation plan records current execution boundary (0.7251ms)
+✖ archimate 4 completion audit script maps status API to plan milestones (122.7264ms)
+✖ archimate 4 C260 coverage audit script verifies book-derived source evidence (116.6198ms)
+✖ archimate 4 conformance requirements are tracked per C260 shall and may clauses (3.1359ms)
+✔ archimate 4 optional example viewpoints stay outside conformance blockers (5.263ms)
+✔ archimate 4 optional example viewpoint boundary is documented (2.8245ms)
+(node:61312) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/github/archimate-js/lib/metamodel/languages/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\github\archimate-js\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ archimate 4 relationship profile has no retired source or target concepts (8.5857ms)
+✔ archimate 4 relationship fallback is compatibility-derived and replaceable (3.4338ms)
+✔ connection rules evaluate relationships through the active language profile (1.399ms)
+✔ existing relationship lookup ignores incomplete relationship endpoints (1.1214ms)
+✔ connection popup includes ArchiMate 4 relationship-concept aggregation helper (0.9136ms)
+✔ connection popup labels relationships with C260 role names (0.9191ms)
+✔ connection popup exposes influence modifier actions (0.6459ms)
+✔ connection popup exposes explicit Access type actions (0.6881ms)
+✔ connection popup exposes explicit Association direction actions (2.1891ms)
+✔ connection popup exposes ArchiMate 4 custom influence modifier input (1.3006ms)
+✔ renderer displays influence modifier labels (0.743ms)
+✔ relationship option attributes hydrate, persist and render explicit properties (2.3047ms)
+✔ renderer preserves optional junction names outside the marker (1.3388ms)
+✔ archimate 4 relationship profile loader accepts object maps with names and codes (2.1191ms)
+✔ archimate 4 relationship profile loader accepts JSON string profiles (0.2803ms)
+✔ archimate 4 relationship profile status exposes external source metadata (6.4365ms)
+✔ archimate 4 viewer-scoped relationship profiles reset before default 4 mode (10.9554ms)
+✔ archimate 4 global relationship profiles survive viewer-scoped reset checks (4.5602ms)
+✔ archimate 4 implementation status includes active relationship profile source metadata (20.8297ms)
+✖ archimate 4 external relationship profile metadata stays separate from Appendix B source coverage (10.8876ms)
+✖ archimate 4 default relationship fallback does not satisfy Appendix B source coverage (7.8092ms)
+✔ archimate 4 relationship profile loader reports invalid JSON strings clearly (0.4078ms)
+✔ archimate 4 relationship profile loader accepts row arrays (0.2324ms)
+✔ archimate 4 relationship profile loader accepts matrix arrays (0.317ms)
+✔ archimate 4 relationship profile coverage stats count explicit target cells (0.2041ms)
+✔ archimate 4 relationship profile coverage report lists missing sources and target cells (0.1197ms)
+✔ archimate 4 relationship profile loader accepts matrix text (0.3729ms)
+✔ archimate 4 relationship profile accepts relationship concepts and junctions (8.0748ms)
+✔ archimate 4 complete relationship profile can require every target cell (0.3916ms)
+✔ archimate 4 row-array profiles keep blank complete sources (0.1033ms)
+✔ archimate 4 complete relationship profile requires relationship concept sources (1.452ms)
+✔ archimate 4 relationship profile loader rejects retired or generic element types (0.2791ms)
+✔ archimate 4 relationship profile loader rejects unknown relationship codes (0.1648ms)
+✔ archimate 4 relationship profile loader can require complete source coverage (0.1024ms)
+ℹ tests 129
+ℹ suites 0
+ℹ pass 113
+ℹ fail 16
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1073.3238
+
+✖ failing tests:
+
+test at test\demo-conformance-panel.test.mjs:34:1
+✖ demo conformance panel source stays aligned with the flattened report boundary (14.0308ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   'w262'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/demo-conformance-panel.test.mjs:48:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'w262' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:943:1
+✖ archimate 4 implementation status is machine-readable and preserves external blockers (6.2841ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:961:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:1009:1
+✖ archimate 4 implementation status has no incomplete non-external summaries (7.4554ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'officialAppendixBRelationshipMatrix',
+      'officialMeff4Xsd',
+      'exactAppendixAArtworkRights',
+  +   'w262CompanionPaper'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1023:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights', 'w262CompanionPaper' ],
+    expected: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:1029:1
+✖ archimate 4 conformance report preserves official blockers after W262 is reviewed locally (5.236ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:1049:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:2584:1
+✖ archimate 4 complete C260 coverage does not clear external conformance blockers (5.63ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'officialAppendixBRelationshipMatrix',
+      'officialMeff4Xsd',
+      'exactAppendixAArtworkRights',
+  +   'w262CompanionPaper'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:2606:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights', 'w262CompanionPaper' ],
+    expected: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:2881:1
+✖ archimate 4 implementation status exposes source coverage boundaries (2.5226ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-download-required'
+  - 'local-companion-reviewed'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:2915:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-download-required',
+    expected: 'local-companion-reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3138:1
+✖ archimate 4 source coverage counts match local and external classifications (3.8001ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'c260',
+  -   'w262',
+      'launchTranscript'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3154:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'c260', 'launchTranscript' ],
+    expected: [ 'c260', 'w262', 'launchTranscript' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3351:1
+✖ archimate 4 implementation status exposes official conformance readiness (3.6133ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'Load an official or redistributable Appendix B relationship profile',
+  -   'Load a complete machine-readable Appendix B relationship profile approved for this internal-use deployment',
+      'Confirm the official MEFF 4.0 XSD namespace and serialization details',
+      'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3366:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Load an official or redistributable Appendix B relationship profile', 'Confirm the official MEFF 4.0 XSD namespace and serialization details', 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source' ],
+    expected: [ 'Load a complete machine-readable Appendix B relationship profile approved for this internal-use deployment', 'Confirm the official MEFF 4.0 XSD namespace and serialization details', 'Confirm exact Appendix A vector-artwork redistribution rights or approved artwork source' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3409:1
+✖ archimate 4 implementation status exposes remaining gap identity (3.4279ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'officialAppendixBRelationshipMatrix',
+      'officialMeff4Xsd',
+      'exactAppendixAArtworkRights',
+  +   'w262CompanionPaper'
+    ]
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3424:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights', 'w262CompanionPaper' ],
+    expected: [ 'officialAppendixBRelationshipMatrix', 'officialMeff4Xsd', 'exactAppendixAArtworkRights' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3442:1
+✖ archimate 4 external blocker gaps map to source coverage and readiness (4.2664ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   'w262'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3470:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'w262' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3506:1
+✖ archimate 4 reviewed W262 companion source stays outside remaining gaps and official blockers (3.9192ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-download-required'
+  - 'local-companion-reviewed'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3513:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-download-required',
+    expected: 'local-companion-reviewed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3752:1
+✖ archimate 4 completion audit script maps status API to plan milestones (122.7264ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   'w262'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3792:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'w262' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3798:1
+✖ archimate 4 C260 coverage audit script verifies book-derived source evidence (116.6198ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   'w262'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3842:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'w262' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\language-profile.test.mjs:3846:1
+✖ archimate 4 conformance requirements are tracked per C260 shall and may clauses (3.1359ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/language-profile.test.mjs:3882:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\relationship-rules.test.mjs:463:1
+✖ archimate 4 external relationship profile metadata stays separate from Appendix B source coverage (10.8876ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:501:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test\relationship-rules.test.mjs:519:1
+✖ archimate 4 default relationship fallback does not satisfy Appendix B source coverage (7.8092ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'external-profile-required'
+  - 'internal-profile-data-required'
+
+      at TestContext.<anonymous> (file:///D:/github/archimate-js/test/relationship-rules.test.mjs:535:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'external-profile-required',
+    expected: 'internal-profile-data-required',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

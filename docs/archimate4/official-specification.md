@@ -11,23 +11,26 @@ a reproduction of the C260 text or relationship tables. Use the licensed source 
   published April 2026, 207 PDF pages.
 - Supporting source reviewed: launch transcript
   `C:\Users\syska\.codex\attachments\eab35e75-10d5-4e1d-854e-3cc8feb4496c\pasted-text.txt`.
-- W262 companion paper status: The Open Group publication page for W262 is reachable and lists a free
-  PDF download that requires login; the PDF is not yet present locally. The latest page and local
-  Downloads/attachments check is recorded in
-  `project_memory/runlogs/20260710-0515-external-source-current-recheck.json`; it detected the W262
-  title, 22-page metadata, 2026-04-27 publication metadata, and found no matching local W262 PDF.
-- Local ArchiMate PDF inventory status: `project_memory/runlogs/20260709-2110-local-archimate-pdf-identification.json`
-  identifies the local 207-page C260 PDF, C260 samples, and ArchiMate 4 Non-Commercial License files,
-  and records no W262 candidate among those local PDFs.
+- W262 companion paper status: the 22-page PDF is present locally at
+  `C:\Users\syska\Downloads\w262.pdf` and has been reviewed for its non-normative change topics.
+  Sanitized metadata and topic evidence are recorded in
+  `project_memory/runlogs/20260710-0602-w262-local-source-and-appendix-b-authorization.json`.
+- The latest publication-page and local-source search is recorded in
+  `project_memory/runlogs/20260710-0604-external-source-current-recheck.json`; it detects the local
+  W262 path and still finds no official MEFF 4.0 XSD.
+- `getArchimate4ImplementationStatus().w262ChangeCoverage` maps all 11 reviewed W262 change-rationale
+  topics to page evidence and implementation status keys. Sanitized evidence is recorded in
+  `project_memory/runlogs/20260710-0607-w262-change-topic-coverage.json`.
 - Public MEFF 4.0 XSD status remains unresolved in this workspace. The public XSD directory checked
   earlier exposed 3.1/3.2 resources, not a confirmed 4.0 schema.
-- Appendix B source status is split deliberately: the licensed local C260 source has been reviewed,
-  the external relationship profile loader and coverage report APIs are implemented, and no
-  redistributable Appendix B profile artifact is committed.
+- Appendix B source status is split deliberately: personal-use authorization is confirmed and
+  redistribution is not required for this deployment, but a complete machine-readable relationship
+  profile is not present. The licensed C260 source also visibly restricts AI or automated processing,
+  so the implementation does not automatically extract or commit its matrix.
 - Local ArchiMate 4 Non-Commercial License boundary status:
   `project_memory/runlogs/20260709-2125-archimate4-ncl-license-boundary.json` records sanitized
-  keyword facts only and does not clear the Appendix B redistributable-profile blocker or the Appendix
-  A exact-artwork-rights blocker.
+  keyword facts only. The current Appendix B authorization is recorded separately and does not clear
+  the missing profile-data blocker; the Appendix A exact-artwork-rights blocker also remains.
 
 ## Conformance Requirements For This Repository
 
@@ -57,8 +60,8 @@ The demo must not imply that full viewpoint definitions, allowed-element filters
 relationship constraints are bundled.
 
 `getArchimate4ImplementationStatus()` must also surface source coverage metadata. This keeps the
-local C260 PDF and launch transcript, the missing W262 companion paper, the external Appendix B
-relationship matrix, the MEFF 4.0 XSD, and Appendix A artwork-rights boundary visible to host tools.
+local C260 PDF, local W262 companion paper, launch transcript, missing Appendix B profile data, the
+MEFF 4.0 XSD, and Appendix A artwork-rights boundary visible to host tools.
 The status must expose exact source identity fields (`sourceCoverage.expectedSourceIds`,
 `sourceCoverage.actualSourceIds`, `sourceCoverage.missingSourceIds`, and
 `sourceCoverage.extraSourceIds`) so a count-preserving but wrong source ledger cannot appear
@@ -286,9 +289,10 @@ the book-derived coverage ledger directly: 20 section groups, 22 tracked coverag
 aggregate coverage items, the 253-entry PDF outline assignment, the 31 Appendix F derived acronym
 tokens, and the source-extraction runlog references.
 The current implementation-status completion API scan is recorded in
-`project_memory/runlogs/20260710-0450-status-completion-api-scan.json`; it records 49 top-level
-status keys, 40 `complete` summaries, no incomplete summaries, and the section coverage status-key
-guard arrays including `exampleViewpointCatalog`, with an empty stderr companion log.
+`project_memory/runlogs/20260710-0616-status-completion-api-scan.json`; it records 50 top-level
+status keys, 41 `complete` summaries, no incomplete summaries, and the section coverage status-key
+guard arrays including `exampleViewpointCatalog` and `w262ChangeCoverage`, with an empty stderr
+companion log.
 The status must expose exact blocker identity fields (`externalBlockerCatalog.expectedIds`,
 `externalBlockerCatalog.actualIds`, `externalBlockerCatalog.missingIds`, and
 `externalBlockerCatalog.extraIds`) so readiness, requirement, and source-coverage blocker ids cannot
@@ -660,7 +664,8 @@ Replacement guidance:
 - `Constraint` -> specialization of `Requirement`.
 - `Contract` -> specialization of `BusinessObject`.
 - `Gap` -> specialization of `Assessment` or `Deliverable`.
-- `Representation` -> specialization of `DataObject`, `Artifact`, or `Material`.
+- `Representation` -> specialization of `BusinessObject` by default, with `DataObject`, `Artifact`,
+  or `Material` selected when the represented medium requires it.
 - `BusinessInteraction`, `ApplicationInteraction`, `TechnologyInteraction` -> specialization of
   `Function` or `Process`.
 - `ImplementationEvent` -> specialization of `Event`.
@@ -686,8 +691,8 @@ Relationship migration guidance:
   specific replacement is stated below.
 - Aggregation from `Path` to a technology internal active structure element should be replaced by a
   realization from the active structure element to `Path`.
-- Realization between services of different former layers may be replaced by specialization or
-  aggregation depending on modeling intent.
+- Realization between merged `Process`, `Function`, `Service`, or `Event` concepts from different
+  former domains may be replaced by specialization or aggregation depending on modeling intent.
 - Because the Appendix B matrix is not embedded in this repository, relationship migration validation
   is driven by a host-supplied relationship validator. When supplied, it checks the migrated endpoint
   types and can replace invalid relationships with `Association` while recording a warning.
@@ -698,20 +703,20 @@ Appendix B is normative for allowed relationships. The current compatibility-der
 fallback in `lib/metamodel/languages/archimate4-relationships.js` is insufficient for final ArchiMate 4
 conformance.
 
-`archimate4-profile.json` records the current Appendix B source-coverage boundary. The local C260
-source has been reviewed for implementation needs, but `localSourcePresent: false` means the
-redistributable Appendix B relationship profile artifact is absent. The implemented code path is the
-external profile loader plus `getArchimate4RelationshipProfileStatus()` and
-`getArchimate4RelationshipProfileCoverageReport()`.
+`archimate4-profile.json` records the current Appendix B source-coverage boundary. Personal-use
+authorization is recorded, but `localSourcePresent: false` means the complete machine-readable
+Appendix B relationship profile is absent. The implemented code path is the external profile loader,
+blank transcription-template generator, activation guard, `getArchimate4RelationshipProfileStatus()`,
+and `getArchimate4RelationshipProfileCoverageReport()`.
 
 Required implementation direction:
 
-- Load a dedicated official ArchiMate 4 relationship profile from Appendix B through
+- Load a complete ArchiMate 4 relationship profile through
   `setArchimate4RelationshipProfile(profile)` or the `archimate4RelationshipProfile` constructor
-  option, or replace the fallback with derived non-verbatim data after redistribution rights are
-  confirmed.
-- Do not commit a verbatim copy of the licensed Appendix B tables unless redistribution rights are
-  explicitly confirmed.
+  option. Use `npm run archimate4:relationship-template -- --out <path>.tsv` to generate the complete
+  source-target transcription shape when preparing human-authored or separately authorized data.
+- Do not automatically extract or commit the licensed Appendix B tables without source-processing
+  permission. A complete but all-empty template must be rejected during activation.
 - Keep tests focused on derived facts: no retired elements in source/target sets, interfaces preserved,
   junction restrictions, and matrix replacement point behavior.
 
@@ -902,8 +907,8 @@ Implemented multiplicity guard:
 
 Implemented migration guard:
 
-- `Representation` migration defaults to `DataObject` and reports `Artifact` and `Material` as
-  alternative replacement types.
+- `Representation` migration defaults to `BusinessObject` and reports `DataObject`, `Artifact`, and
+  `Material` as alternative replacement types.
 - `Gap` migration defaults to `Assessment` and reports `Deliverable` as an alternative replacement
   type.
 - Business, application, and technology interaction migrations default to `Process` and report

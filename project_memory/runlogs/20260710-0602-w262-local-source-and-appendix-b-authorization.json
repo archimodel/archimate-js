@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-07-10T08:52:36+09:00",
+  "source": "local PDF metadata, visual review, and user-provided deployment authorization",
+  "containsRawSpecificationText": false,
+  "w262": {
+    "path": "C:\\Users\\syska\\Downloads\\w262.pdf",
+    "sizeBytes": 1213926,
+    "sha256": "29224AFB87646F88697B0D2C433A5AB05C24E327CA643FE9B464A935E8085AA3",
+    "metadataTitle": "W262",
+    "displayTitle": "The Motivation for Changes in the ArchiMate® 4 Specification",
+    "pageCount": 22,
+    "author": "The Open Group",
+    "visualReviewPages": [
+      1,
+      3,
+      13
+    ],
+    "topicIds": [
+      "behavior-element-consolidation",
+      "consolidation-solution",
+      "consolidation-advantages",
+      "conversion-guidance",
+      "metamodel-update",
+      "language-structure-depiction",
+      "relationship-multiplicity",
+      "deprecated-concepts",
+      "simplification-boundary",
+      "definition-principles",
+      "concept-usage-statistics"
+    ],
+    "localSourcePresent": true,
+    "companionGapCleared": true
+  },
+  "appendixBRelationshipMatrix": {
+    "authorizationSource": "user statement in current Codex task",
+    "authorizationUpdatedAt": "2026-07-10T09:00:25+09:00",
+    "authorizationScope": "personal-use-only",
+    "personalUseAuthorizationConfirmed": true,
+    "redistributionRequiredForCurrentUse": false,
+    "redistributionConcernResolvedForCurrentUse": true,
+    "machineReadableProfilePresent": false,
+    "sourceAutomationUsePermissionConfirmed": false,
+    "sourceAutomationRestrictionObservedByVisualReview": true,
+    "committedAutomatedExtractionData": false,
+    "officialConformanceBlockerCleared": false,
+    "remainingRequirement": "complete machine-readable Appendix B relationship profile"
+  }
+}
