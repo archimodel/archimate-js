@@ -1,0 +1,94 @@
+
+> archimate-js@0.0.4 lint
+> eslint . --fix
+
+
+D:\github\archimate-js\lib\features\canvas-create\CanvasCreate.js
+  38:41  error  'ARCHIMATE_NODE' is not defined  no-undef
+
+D:\github\archimate-js\lib\features\context-pad\ContextPadProvider.js
+    4:3   error  'keys' is defined but never used. Allowed unused vars must match /^_/u                     no-unused-vars
+    5:3   error  'forEach' is defined but never used. Allowed unused vars must match /^_/u                  no-unused-vars
+   12:10  error  'is' is defined but never used. Allowed unused vars must match /^_/u                       no-unused-vars
+   12:69  error  'VIEW' is defined but never used. Allowed unused vars must match /^_/u                     no-unused-vars
+   17:7   error  'colorImageSvg' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+   19:7   error  'nestedImageSvg' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  107:18  error  'contextPad' is assigned a value but never used. Allowed unused vars must match /^_/u      no-unused-vars
+  108:13  error  'rules' is assigned a value but never used. Allowed unused vars must match /^_/u           no-unused-vars
+  116:14  error  'canvas' is assigned a value but never used. Allowed unused vars must match /^_/u          no-unused-vars
+  128:12  error  'setColor' is defined but never used. Allowed unused vars must match /^_/u                 no-unused-vars
+  296:12  error  'createAddJunction' is defined but never used. Allowed unused vars must match /^_/u        no-unused-vars
+  428:17  error  'translate' is assigned a value but never used. Allowed unused vars must match /^_/u       no-unused-vars
+  520:10  error  'getColor' is defined but never used. Allowed unused vars must match /^_/u                 no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\ArchimateFactory.js
+  11:10   error  'ARCHIMATE_CONNECTION' is defined but never used. Allowed unused vars must match /^_/u    no-unused-vars
+  11:32   error  'ARCHIMATE_ELEMENT' is defined but never used. Allowed unused vars must match /^_/u       no-unused-vars
+  11:113  error  'ARCHIMATE_RELATIONSHIP' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\ArchimateLayouter.js
+  151:10  error  'getMessageFlowManhattanOptions' is defined but never used. Allowed unused vars must match /^_/u    no-unused-vars
+  170:7   error  'isExpandedSubProcess' is not defined                                                               no-undef
+  174:7   error  'isExpandedSubProcess' is not defined                                                               no-undef
+  190:10  error  'getSubProcessManhattanOptions' is defined but never used. Allowed unused vars must match /^_/u     no-unused-vars
+  198:10  error  'isExpandedSubProcess' is not defined                                                               no-undef
+  205:10  error  'isCompensationAssociation' is defined but never used. Allowed unused vars must match /^_/u         no-unused-vars
+  261:10  error  'getLoopPreferredLayout' is defined but never used. Allowed unused vars must match /^_/u            no-unused-vars
+  277:10  error  'getBoundaryEventPreferredLayouts' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\Modeling.js
+  14:10  error  'logger' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\behavior\ConnectionToConnectionBehavior.js
+   2:3   error  'forEach' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  11:10  error  'logger' is defined but never used. Allowed unused vars must match /^_/u   no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\behavior\FixHoverBehavior.js
+   2:10  error  'is' is defined but never used. Allowed unused vars must match /^_/u              no-unused-vars
+  26:9   error  'shape' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\behavior\LabelBehavior.js
+  179:49  error  'ARCHIMATE_LABEL' is not defined  no-undef
+
+D:\github\archimate-js\lib\features\modeling\behavior\ReplaceElementBehaviour.js
+  77:5   error  'oldViewElement' is not defined  no-undef
+  79:24  error  'oldViewElement' is not defined  no-undef
+  79:43  error  'oldViewElement' is not defined  no-undef
+
+D:\github\archimate-js\lib\features\modeling\behavior\UnclaimIdBehavior.js
+  26:9  error  'elementRef' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\cmd\UpdatePropertiesHandler.js
+   3:3  error  'keys' is defined but never used. Allowed unused vars must match /^_/u                               no-unused-vars
+  15:5  error  'DI' is assigned a value but never used. Allowed unused vars must match /^_/u                        no-unused-vars
+  85:7  error  'oldViewElementProperties' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\ordering\ArchimateOrdering.js
+   6:3   error  'map' is defined but never used. Allowed unused vars must match /^_/u         no-unused-vars
+  37:11  error  'diElements' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\ordering\ArchimateOrderingProvider.js
+  11:10  error  'CONNECTION_LINE' is defined but never used. Allowed unused vars must match /^_/u          no-unused-vars
+  11:27  error  'CONNECTION_RELATIONSHIP' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  11:52  error  'is' is defined but never used. Allowed unused vars must match /^_/u                       no-unused-vars
+
+D:\github\archimate-js\lib\features\replace\ArchimateReplace.js
+    2:3   error  'pick' is defined but never used. Allowed unused vars must match /^_/u                        no-unused-vars
+    3:3   error  'assign' is defined but never used. Allowed unused vars must match /^_/u                      no-unused-vars
+   10:10  error  'getPropertyNames' is defined but never used. Allowed unused vars must match /^_/u            no-unused-vars
+   12:10  error  'copyProperties' is defined but never used. Allowed unused vars must match /^_/u              no-unused-vars
+   24:5   error  'CUSTOM_PROPERTIES' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+  149:10  error  'intersection' is defined but never used. Allowed unused vars must match /^_/u                no-unused-vars
+
+D:\github\archimate-js\lib\import\ArchimateImporter.js
+  21:8  error  'connectionPreview' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\util\ElementUtil.js
+  1:10  error  'logger' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\util\LabelUtil.js
+  63:3  error  'logger' is not defined  no-undef
+  64:3  error  'logger' is not defined  no-undef
+
+✖ 53 problems (53 errors, 0 warnings)
+

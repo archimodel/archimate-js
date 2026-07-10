@@ -1,0 +1,20 @@
+
+> archimate-js@0.0.4 lint
+> eslint .
+
+
+D:\github\archimate-js\lib\features\context-pad\ContextPadProvider.js
+  10:23  error  'CONNECTION_RELATIONSHIP' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+D:\github\archimate-js\lib\features\modeling\ArchimateLayouter.js
+  151:10  error  'getMessageFlowManhattanOptions' is defined but never used. Allowed unused vars must match /^_/u    no-unused-vars
+  170:7   error  'isExpandedSubProcess' is not defined                                                               no-undef
+  174:7   error  'isExpandedSubProcess' is not defined                                                               no-undef
+  190:10  error  'getSubProcessManhattanOptions' is defined but never used. Allowed unused vars must match /^_/u     no-unused-vars
+  198:10  error  'isExpandedSubProcess' is not defined                                                               no-undef
+  205:10  error  'isCompensationAssociation' is defined but never used. Allowed unused vars must match /^_/u         no-unused-vars
+  261:10  error  'getLoopPreferredLayout' is defined but never used. Allowed unused vars must match /^_/u            no-unused-vars
+  277:10  error  'getBoundaryEventPreferredLayouts' is defined but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+✖ 9 problems (9 errors, 0 warnings)
+

@@ -546,18 +546,20 @@
       ]
     },
     {
-      "id": "audit.lint.repo_legacy",
-      "description": "Repository-wide ESLint status is recorded; legacy failures remain outside this feature gate",
+      "id": "audit.lint.repo_clean",
+      "description": "Repository-wide ESLint passes with no remaining legacy baseline failures",
       "when": [
         "pre_commit"
       ],
-      "severity": "major",
+      "severity": "blocker",
       "command": "npm run lint",
       "expect": {
-        "exit_code": 1
+        "exit_code": 0
       },
       "artifacts": [
-        "project_memory/runlogs/20260710-0624-w262-appendix-b-repo-lint.txt"
+        "project_memory/runlogs/20260710-0702-repo-eslint-after-manual-pass2.txt",
+        "project_memory/runlogs/20260710-0706-eslint-fix-npm-all.txt",
+        "project_memory/runlogs/20260710-0711-eslint-cleanup-final-npm-all.txt"
       ]
     }
   ]
